@@ -21,7 +21,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// 素材库画板
-struct GloryApi_CourseMaterialBox {
+struct GloryApi_CourseMaterialBox: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -44,7 +44,7 @@ struct GloryApi_CourseMaterialBox {
 }
 
 /// 素材
-struct GloryApi_CourseMaterial {
+struct GloryApi_CourseMaterial: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -79,7 +79,7 @@ struct GloryApi_CourseMaterial {
 }
 
 /// 创建画板
-struct GloryApi_CreateCourseMaterialBoxRequest {
+struct GloryApi_CreateCourseMaterialBoxRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -102,7 +102,7 @@ struct GloryApi_CreateCourseMaterialBoxRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CreateCourseMaterialBoxResponse {
+struct GloryApi_CreateCourseMaterialBoxResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -126,7 +126,7 @@ struct GloryApi_CreateCourseMaterialBoxResponse {
 }
 
 /// 更新画板
-struct GloryApi_UpdateCourseMaterialBoxRequest {
+struct GloryApi_UpdateCourseMaterialBoxRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -153,7 +153,7 @@ struct GloryApi_UpdateCourseMaterialBoxRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UpdateCourseMaterialBoxResponse {
+struct GloryApi_UpdateCourseMaterialBoxResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -177,7 +177,7 @@ struct GloryApi_UpdateCourseMaterialBoxResponse {
 }
 
 /// 画板列表
-struct GloryApi_ListCourseMaterialBoxRequest {
+struct GloryApi_ListCourseMaterialBoxRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -210,7 +210,7 @@ struct GloryApi_ListCourseMaterialBoxRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListCourseMaterialBoxResponse {
+struct GloryApi_ListCourseMaterialBoxResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -244,7 +244,7 @@ struct GloryApi_ListCourseMaterialBoxResponse {
 }
 
 /// 删除画板
-struct GloryApi_DeleteCourseMaterialBoxRequest {
+struct GloryApi_DeleteCourseMaterialBoxRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -267,7 +267,7 @@ struct GloryApi_DeleteCourseMaterialBoxRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteCourseMaterialBoxResponse {
+struct GloryApi_DeleteCourseMaterialBoxResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -289,7 +289,7 @@ struct GloryApi_DeleteCourseMaterialBoxResponse {
 }
 
 /// 上传素材
-struct GloryApi_UploadCourseMaterialRequest {
+struct GloryApi_UploadCourseMaterialRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -314,7 +314,7 @@ struct GloryApi_UploadCourseMaterialRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UploadCourseMaterialResponse {
+struct GloryApi_UploadCourseMaterialResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -336,7 +336,7 @@ struct GloryApi_UploadCourseMaterialResponse {
 }
 
 /// 素材列表
-struct GloryApi_ListCourseMaterialRequest {
+struct GloryApi_ListCourseMaterialRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -373,7 +373,7 @@ struct GloryApi_ListCourseMaterialRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListCourseMaterialResponse {
+struct GloryApi_ListCourseMaterialResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -407,7 +407,7 @@ struct GloryApi_ListCourseMaterialResponse {
 }
 
 /// 删除素材
-struct GloryApi_DeleteCourseMaterialRequest {
+struct GloryApi_DeleteCourseMaterialRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -430,7 +430,7 @@ struct GloryApi_DeleteCourseMaterialRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteCourseMaterialResponse {
+struct GloryApi_DeleteCourseMaterialResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -450,25 +450,6 @@ struct GloryApi_DeleteCourseMaterialResponse {
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_CourseMaterialBox: @unchecked Sendable {}
-extension GloryApi_CourseMaterial: @unchecked Sendable {}
-extension GloryApi_CreateCourseMaterialBoxRequest: @unchecked Sendable {}
-extension GloryApi_CreateCourseMaterialBoxResponse: @unchecked Sendable {}
-extension GloryApi_UpdateCourseMaterialBoxRequest: @unchecked Sendable {}
-extension GloryApi_UpdateCourseMaterialBoxResponse: @unchecked Sendable {}
-extension GloryApi_ListCourseMaterialBoxRequest: @unchecked Sendable {}
-extension GloryApi_ListCourseMaterialBoxResponse: @unchecked Sendable {}
-extension GloryApi_DeleteCourseMaterialBoxRequest: @unchecked Sendable {}
-extension GloryApi_DeleteCourseMaterialBoxResponse: @unchecked Sendable {}
-extension GloryApi_UploadCourseMaterialRequest: @unchecked Sendable {}
-extension GloryApi_UploadCourseMaterialResponse: @unchecked Sendable {}
-extension GloryApi_ListCourseMaterialRequest: @unchecked Sendable {}
-extension GloryApi_ListCourseMaterialResponse: @unchecked Sendable {}
-extension GloryApi_DeleteCourseMaterialRequest: @unchecked Sendable {}
-extension GloryApi_DeleteCourseMaterialResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 

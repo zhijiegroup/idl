@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_CreateBillRequest {
+struct GloryApi_CreateBillRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -43,7 +43,7 @@ struct GloryApi_CreateBillRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CreateBillResponse {
+struct GloryApi_CreateBillResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -66,7 +66,7 @@ struct GloryApi_CreateBillResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_Bill {
+struct GloryApi_Bill: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -109,7 +109,7 @@ struct GloryApi_Bill {
   fileprivate var _shop: GloryApi_Shop? = nil
 }
 
-struct GloryApi_ListBillRequest {
+struct GloryApi_ListBillRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -144,7 +144,7 @@ struct GloryApi_ListBillRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListBillResponse {
+struct GloryApi_ListBillResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -177,7 +177,7 @@ struct GloryApi_ListBillResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_SettleBillRequest {
+struct GloryApi_SettleBillRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -202,7 +202,7 @@ struct GloryApi_SettleBillRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_SettleBillResponse {
+struct GloryApi_SettleBillResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -223,7 +223,7 @@ struct GloryApi_SettleBillResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetShopBillDetailRequest {
+struct GloryApi_GetShopBillDetailRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -246,7 +246,7 @@ struct GloryApi_GetShopBillDetailRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetShopBilDetailResponse {
+struct GloryApi_GetShopBilDetailResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -276,18 +276,6 @@ struct GloryApi_GetShopBilDetailResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
   fileprivate var _bill: GloryApi_Bill? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_CreateBillRequest: @unchecked Sendable {}
-extension GloryApi_CreateBillResponse: @unchecked Sendable {}
-extension GloryApi_Bill: @unchecked Sendable {}
-extension GloryApi_ListBillRequest: @unchecked Sendable {}
-extension GloryApi_ListBillResponse: @unchecked Sendable {}
-extension GloryApi_SettleBillRequest: @unchecked Sendable {}
-extension GloryApi_SettleBillResponse: @unchecked Sendable {}
-extension GloryApi_GetShopBillDetailRequest: @unchecked Sendable {}
-extension GloryApi_GetShopBilDetailResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 

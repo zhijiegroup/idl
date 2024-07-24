@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_Order {
+struct GloryApi_Order: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -60,7 +60,7 @@ struct GloryApi_Order {
   init() {}
 }
 
-struct GloryApi_Images {
+struct GloryApi_Images: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -76,7 +76,7 @@ struct GloryApi_Images {
   init() {}
 }
 
-struct GloryApi_CreateOrderInfo {
+struct GloryApi_CreateOrderInfo: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -198,7 +198,7 @@ struct GloryApi_CreateOrderInfo {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct GloryApi_SkuInfo {
+struct GloryApi_SkuInfo: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -217,7 +217,7 @@ struct GloryApi_SkuInfo {
   init() {}
 }
 
-struct GloryApi_OrderSku {
+struct GloryApi_OrderSku: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -242,7 +242,7 @@ struct GloryApi_OrderSku {
 }
 
 ///订单信息
-struct GloryApi_OrderInfo {
+struct GloryApi_OrderInfo: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -400,7 +400,7 @@ struct GloryApi_OrderInfo {
 }
 
 ///收获与配送信息
-struct GloryApi_DeliverInfo {
+struct GloryApi_DeliverInfo: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -432,7 +432,7 @@ struct GloryApi_DeliverInfo {
 }
 
 ///商品信息
-struct GloryApi_ProductInfo {
+struct GloryApi_ProductInfo: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -472,7 +472,7 @@ struct GloryApi_ProductInfo {
   fileprivate var _sku: GloryApi_Sku? = nil
 }
 
-struct GloryApi_OrderWithAuthor {
+struct GloryApi_OrderWithAuthor: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -493,7 +493,7 @@ struct GloryApi_OrderWithAuthor {
   fileprivate var _orderInfo: GloryApi_OrderInfo? = nil
 }
 
-struct GloryApi_CreateOrderRequest {
+struct GloryApi_CreateOrderRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -516,7 +516,7 @@ struct GloryApi_CreateOrderRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CreateOrderResponse {
+struct GloryApi_CreateOrderResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -545,7 +545,7 @@ struct GloryApi_CreateOrderResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_TransResponseInfo {
+struct GloryApi_TransResponseInfo: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -562,7 +562,7 @@ struct GloryApi_TransResponseInfo {
   init() {}
 }
 
-struct GloryApi_OrderResponse {
+struct GloryApi_OrderResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -577,7 +577,7 @@ struct GloryApi_OrderResponse {
   init() {}
 }
 
-struct GloryApi_GetOrderRequest {
+struct GloryApi_GetOrderRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -600,7 +600,7 @@ struct GloryApi_GetOrderRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_SellerInfo {
+struct GloryApi_SellerInfo: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -612,7 +612,7 @@ struct GloryApi_SellerInfo {
   init() {}
 }
 
-struct GloryApi_GetOrderResponse {
+struct GloryApi_GetOrderResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -664,7 +664,7 @@ struct GloryApi_GetOrderResponse {
   fileprivate var _deliverInfo: GloryApi_DeliverInfo? = nil
 }
 
-struct GloryApi_UpdateOrderRequest {
+struct GloryApi_UpdateOrderRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -695,7 +695,7 @@ struct GloryApi_UpdateOrderRequest {
   fileprivate var _order: GloryApi_Order? = nil
 }
 
-struct GloryApi_UpdateOrderResponse {
+struct GloryApi_UpdateOrderResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -718,7 +718,7 @@ struct GloryApi_UpdateOrderResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListOrderRequest {
+struct GloryApi_ListOrderRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -759,7 +759,7 @@ struct GloryApi_ListOrderRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListOrderResponse {
+struct GloryApi_ListOrderResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -792,7 +792,7 @@ struct GloryApi_ListOrderResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_DeleteOrderRequest {
+struct GloryApi_DeleteOrderRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -815,7 +815,7 @@ struct GloryApi_DeleteOrderRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteOrderResponse {
+struct GloryApi_DeleteOrderResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -836,7 +836,7 @@ struct GloryApi_DeleteOrderResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ShipGoodsRequest {
+struct GloryApi_ShipGoodsRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -859,7 +859,7 @@ struct GloryApi_ShipGoodsRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ShipGoodsResponse {
+struct GloryApi_ShipGoodsResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -880,7 +880,7 @@ struct GloryApi_ShipGoodsResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ConfirmReceiptGoodsRequest {
+struct GloryApi_ConfirmReceiptGoodsRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -903,7 +903,7 @@ struct GloryApi_ConfirmReceiptGoodsRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ConfirmReceiptGoodsResponse {
+struct GloryApi_ConfirmReceiptGoodsResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -924,7 +924,7 @@ struct GloryApi_ConfirmReceiptGoodsResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetOrderStatusRequest {
+struct GloryApi_GetOrderStatusRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -947,7 +947,7 @@ struct GloryApi_GetOrderStatusRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetOrderStatusResponse {
+struct GloryApi_GetOrderStatusResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -970,7 +970,7 @@ struct GloryApi_GetOrderStatusResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_CancelOrderRequest {
+struct GloryApi_CancelOrderRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -993,7 +993,7 @@ struct GloryApi_CancelOrderRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CancelOrderResponse {
+struct GloryApi_CancelOrderResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1014,7 +1014,7 @@ struct GloryApi_CancelOrderResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ShipGoodsInBatchesRequest {
+struct GloryApi_ShipGoodsInBatchesRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1037,7 +1037,7 @@ struct GloryApi_ShipGoodsInBatchesRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ShipGoodsInBatchesResponse {
+struct GloryApi_ShipGoodsInBatchesResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1058,7 +1058,7 @@ struct GloryApi_ShipGoodsInBatchesResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_FreeShippingInBatchesRequest {
+struct GloryApi_FreeShippingInBatchesRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1081,7 +1081,7 @@ struct GloryApi_FreeShippingInBatchesRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_FreeShippingInBatchesResponse {
+struct GloryApi_FreeShippingInBatchesResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1101,43 +1101,6 @@ struct GloryApi_FreeShippingInBatchesResponse {
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_Order: @unchecked Sendable {}
-extension GloryApi_Images: @unchecked Sendable {}
-extension GloryApi_CreateOrderInfo: @unchecked Sendable {}
-extension GloryApi_SkuInfo: @unchecked Sendable {}
-extension GloryApi_OrderSku: @unchecked Sendable {}
-extension GloryApi_OrderInfo: @unchecked Sendable {}
-extension GloryApi_DeliverInfo: @unchecked Sendable {}
-extension GloryApi_ProductInfo: @unchecked Sendable {}
-extension GloryApi_OrderWithAuthor: @unchecked Sendable {}
-extension GloryApi_CreateOrderRequest: @unchecked Sendable {}
-extension GloryApi_CreateOrderResponse: @unchecked Sendable {}
-extension GloryApi_TransResponseInfo: @unchecked Sendable {}
-extension GloryApi_OrderResponse: @unchecked Sendable {}
-extension GloryApi_GetOrderRequest: @unchecked Sendable {}
-extension GloryApi_SellerInfo: @unchecked Sendable {}
-extension GloryApi_GetOrderResponse: @unchecked Sendable {}
-extension GloryApi_UpdateOrderRequest: @unchecked Sendable {}
-extension GloryApi_UpdateOrderResponse: @unchecked Sendable {}
-extension GloryApi_ListOrderRequest: @unchecked Sendable {}
-extension GloryApi_ListOrderResponse: @unchecked Sendable {}
-extension GloryApi_DeleteOrderRequest: @unchecked Sendable {}
-extension GloryApi_DeleteOrderResponse: @unchecked Sendable {}
-extension GloryApi_ShipGoodsRequest: @unchecked Sendable {}
-extension GloryApi_ShipGoodsResponse: @unchecked Sendable {}
-extension GloryApi_ConfirmReceiptGoodsRequest: @unchecked Sendable {}
-extension GloryApi_ConfirmReceiptGoodsResponse: @unchecked Sendable {}
-extension GloryApi_GetOrderStatusRequest: @unchecked Sendable {}
-extension GloryApi_GetOrderStatusResponse: @unchecked Sendable {}
-extension GloryApi_CancelOrderRequest: @unchecked Sendable {}
-extension GloryApi_CancelOrderResponse: @unchecked Sendable {}
-extension GloryApi_ShipGoodsInBatchesRequest: @unchecked Sendable {}
-extension GloryApi_ShipGoodsInBatchesResponse: @unchecked Sendable {}
-extension GloryApi_FreeShippingInBatchesRequest: @unchecked Sendable {}
-extension GloryApi_FreeShippingInBatchesResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
@@ -1208,16 +1171,16 @@ extension GloryApi_Order: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
     if !self.orderStatus.isEmpty {
       try visitor.visitSingularStringField(value: self.orderStatus, fieldNumber: 6)
     }
-    if self.totalAmount != 0 {
+    if self.totalAmount.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.totalAmount, fieldNumber: 7)
     }
-    if self.originalAmount != 0 {
+    if self.originalAmount.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.originalAmount, fieldNumber: 8)
     }
-    if self.tax != 0 {
+    if self.tax.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.tax, fieldNumber: 9)
     }
-    if self.deliverFee != 0 {
+    if self.deliverFee.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.deliverFee, fieldNumber: 10)
     }
     if !self.currency.isEmpty {
@@ -1448,16 +1411,16 @@ extension GloryApi_CreateOrderInfo: SwiftProtobuf.Message, SwiftProtobuf._Messag
       if _storage._tenantID != 0 {
         try visitor.visitSingularInt64Field(value: _storage._tenantID, fieldNumber: 5)
       }
-      if _storage._totalAmount != 0 {
+      if _storage._totalAmount.bitPattern != 0 {
         try visitor.visitSingularDoubleField(value: _storage._totalAmount, fieldNumber: 7)
       }
-      if _storage._originalAmount != 0 {
+      if _storage._originalAmount.bitPattern != 0 {
         try visitor.visitSingularDoubleField(value: _storage._originalAmount, fieldNumber: 8)
       }
-      if _storage._tax != 0 {
+      if _storage._tax.bitPattern != 0 {
         try visitor.visitSingularDoubleField(value: _storage._tax, fieldNumber: 9)
       }
-      if _storage._deliverFee != 0 {
+      if _storage._deliverFee.bitPattern != 0 {
         try visitor.visitSingularDoubleField(value: _storage._deliverFee, fieldNumber: 10)
       }
       if !_storage._currency.isEmpty {
@@ -1820,22 +1783,22 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       if !_storage._payTime.isEmpty {
         try visitor.visitSingularStringField(value: _storage._payTime, fieldNumber: 7)
       }
-      if _storage._totalAmount != 0 {
+      if _storage._totalAmount.bitPattern != 0 {
         try visitor.visitSingularDoubleField(value: _storage._totalAmount, fieldNumber: 8)
       }
-      if _storage._originalAmount != 0 {
+      if _storage._originalAmount.bitPattern != 0 {
         try visitor.visitSingularDoubleField(value: _storage._originalAmount, fieldNumber: 9)
       }
-      if _storage._deliverFee != 0 {
+      if _storage._deliverFee.bitPattern != 0 {
         try visitor.visitSingularDoubleField(value: _storage._deliverFee, fieldNumber: 10)
       }
-      if _storage._discountAmount != 0 {
+      if _storage._discountAmount.bitPattern != 0 {
         try visitor.visitSingularDoubleField(value: _storage._discountAmount, fieldNumber: 11)
       }
-      if _storage._paymentAmount != 0 {
+      if _storage._paymentAmount.bitPattern != 0 {
         try visitor.visitSingularDoubleField(value: _storage._paymentAmount, fieldNumber: 12)
       }
-      if _storage._payableAmount != 0 {
+      if _storage._payableAmount.bitPattern != 0 {
         try visitor.visitSingularDoubleField(value: _storage._payableAmount, fieldNumber: 13)
       }
       if !_storage._productInfo.isEmpty {
@@ -2030,7 +1993,7 @@ extension GloryApi_ProductInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if !self.serviceInfo.isEmpty {
       try visitor.visitSingularStringField(value: self.serviceInfo, fieldNumber: 4)
     }
-    if self.unitPrice != 0 {
+    if self.unitPrice.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.unitPrice, fieldNumber: 5)
     }
     if self.quantity != 0 {
@@ -2172,10 +2135,10 @@ extension GloryApi_CreateOrderResponse: SwiftProtobuf.Message, SwiftProtobuf._Me
     if !self.transRes.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.transRes, fieldNumber: 2)
     }
-    if self.cnyTotal != 0 {
+    if self.cnyTotal.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.cnyTotal, fieldNumber: 3)
     }
-    if self.coinTotal != 0 {
+    if self.coinTotal.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.coinTotal, fieldNumber: 4)
     }
     try unknownFields.traverse(visitor: &visitor)

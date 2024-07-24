@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_Node {
+struct GloryApi_Node: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -56,7 +56,7 @@ struct GloryApi_Node {
   fileprivate var _detail: GloryApi_NodeDetail? = nil
 }
 
-struct GloryApi_Edge {
+struct GloryApi_Edge: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -74,7 +74,7 @@ struct GloryApi_Edge {
   init() {}
 }
 
-struct GloryApi_KnowledgeGraph {
+struct GloryApi_KnowledgeGraph: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -90,7 +90,7 @@ struct GloryApi_KnowledgeGraph {
   init() {}
 }
 
-struct GloryApi_ResourceCount {
+struct GloryApi_ResourceCount: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -104,7 +104,7 @@ struct GloryApi_ResourceCount {
   init() {}
 }
 
-struct GloryApi_NodeDetail {
+struct GloryApi_NodeDetail: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -201,7 +201,7 @@ struct GloryApi_NodeDetail {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct GloryApi_CreateKnowledgeGraphRequest {
+struct GloryApi_CreateKnowledgeGraphRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -222,7 +222,7 @@ struct GloryApi_CreateKnowledgeGraphRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CreateKnowledgeGraphResponse {
+struct GloryApi_CreateKnowledgeGraphResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -243,7 +243,7 @@ struct GloryApi_CreateKnowledgeGraphResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetKnowledgeGraphRequest {
+struct GloryApi_GetKnowledgeGraphRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -267,7 +267,7 @@ struct GloryApi_GetKnowledgeGraphRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetKnowledgeGraphResponse {
+struct GloryApi_GetKnowledgeGraphResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -299,7 +299,7 @@ struct GloryApi_GetKnowledgeGraphResponse {
   fileprivate var _graph: GloryApi_KnowledgeGraph? = nil
 }
 
-struct GloryApi_GetKnowledgeGraphNodeRequest {
+struct GloryApi_GetKnowledgeGraphNodeRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -324,7 +324,7 @@ struct GloryApi_GetKnowledgeGraphNodeRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetKnowledgeGraphNodeResponse {
+struct GloryApi_GetKnowledgeGraphNodeResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -354,20 +354,6 @@ struct GloryApi_GetKnowledgeGraphNodeResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
   fileprivate var _nodeDetail: GloryApi_NodeDetail? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_Node: @unchecked Sendable {}
-extension GloryApi_Edge: @unchecked Sendable {}
-extension GloryApi_KnowledgeGraph: @unchecked Sendable {}
-extension GloryApi_ResourceCount: @unchecked Sendable {}
-extension GloryApi_NodeDetail: @unchecked Sendable {}
-extension GloryApi_CreateKnowledgeGraphRequest: @unchecked Sendable {}
-extension GloryApi_CreateKnowledgeGraphResponse: @unchecked Sendable {}
-extension GloryApi_GetKnowledgeGraphRequest: @unchecked Sendable {}
-extension GloryApi_GetKnowledgeGraphResponse: @unchecked Sendable {}
-extension GloryApi_GetKnowledgeGraphNodeRequest: @unchecked Sendable {}
-extension GloryApi_GetKnowledgeGraphNodeResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
@@ -730,10 +716,10 @@ extension GloryApi_NodeDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
       if !_storage._teacher.isEmpty {
         try visitor.visitSingularStringField(value: _storage._teacher, fieldNumber: 17)
       }
-      if _storage._knowledgeHours != 0 {
+      if _storage._knowledgeHours.bitPattern != 0 {
         try visitor.visitSingularFloatField(value: _storage._knowledgeHours, fieldNumber: 18)
       }
-      if _storage._skillHours != 0 {
+      if _storage._skillHours.bitPattern != 0 {
         try visitor.visitSingularFloatField(value: _storage._skillHours, fieldNumber: 19)
       }
       if !_storage._createdAt.isEmpty {

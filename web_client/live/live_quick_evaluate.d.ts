@@ -108,6 +108,47 @@ export interface GetQuickEvaluationReportRequest {
   report_id?: string;
 }
 
+export interface GetQuickEvaluationTotalReportRequest {
+  base_request?: base.BaseRequest;
+  begin_time?: string;
+  end_time?: string;
+}
+
+export interface QuickEvaluationTotalReportItemEntry {
+  name?: string;
+  percent?: string;
+  detail?: string;
+}
+
+export interface QuickEvaluationTotalReportItem {
+  item_name?: string;
+  entries?: Array<QuickEvaluationTotalReportItemEntry>;
+  desc?: string;
+}
+
+export interface QuickEvaluationTotalReportStudentDetail {
+  name?: string;
+  result?: boolean;
+  reason?: string;
+  report_id?: string;
+  room_id?: string;
+}
+
+export interface QuickEvaluationTotalReport {
+  total_count?: number;
+  pass_count?: number;
+  no_pass_count?: number;
+  begin_time?: string;
+  end_time?: string;
+  items?: Array<QuickEvaluationTotalReportItem>;
+  pass_list?: Array<QuickEvaluationTotalReportStudentDetail>;
+  no_pass_list?: Array<QuickEvaluationTotalReportStudentDetail>;
+}
+
+export interface GetQuickEvaluationTotalReportResponse {
+  base_resp?: base.BaseResponse;
+}
+
 export interface PassDetail {
   user_id?: string;
   user_name?: string;

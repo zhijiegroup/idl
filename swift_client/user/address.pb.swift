@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_Address {
+struct GloryApi_Address: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -44,7 +44,7 @@ struct GloryApi_Address {
   init() {}
 }
 
-struct GloryApi_AddAddressRequest {
+struct GloryApi_AddAddressRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -75,7 +75,7 @@ struct GloryApi_AddAddressRequest {
   fileprivate var _address: GloryApi_Address? = nil
 }
 
-struct GloryApi_AddAddressResponse {
+struct GloryApi_AddAddressResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -98,7 +98,7 @@ struct GloryApi_AddAddressResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_DeleteAddressRequest {
+struct GloryApi_DeleteAddressRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -121,7 +121,7 @@ struct GloryApi_DeleteAddressRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteAddressResponse {
+struct GloryApi_DeleteAddressResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -142,7 +142,7 @@ struct GloryApi_DeleteAddressResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_UpdateAddressRequest {
+struct GloryApi_UpdateAddressRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -173,7 +173,7 @@ struct GloryApi_UpdateAddressRequest {
   fileprivate var _address: GloryApi_Address? = nil
 }
 
-struct GloryApi_UpdateAddressResponse {
+struct GloryApi_UpdateAddressResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -194,7 +194,7 @@ struct GloryApi_UpdateAddressResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetAddressRequest {
+struct GloryApi_GetAddressRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -217,7 +217,7 @@ struct GloryApi_GetAddressRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetAddressResponse {
+struct GloryApi_GetAddressResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -248,7 +248,7 @@ struct GloryApi_GetAddressResponse {
   fileprivate var _address: GloryApi_Address? = nil
 }
 
-struct GloryApi_ListAddressRequest {
+struct GloryApi_ListAddressRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -271,7 +271,7 @@ struct GloryApi_ListAddressRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ListAddressResponse {
+struct GloryApi_ListAddressResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -293,20 +293,6 @@ struct GloryApi_ListAddressResponse {
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_Address: @unchecked Sendable {}
-extension GloryApi_AddAddressRequest: @unchecked Sendable {}
-extension GloryApi_AddAddressResponse: @unchecked Sendable {}
-extension GloryApi_DeleteAddressRequest: @unchecked Sendable {}
-extension GloryApi_DeleteAddressResponse: @unchecked Sendable {}
-extension GloryApi_UpdateAddressRequest: @unchecked Sendable {}
-extension GloryApi_UpdateAddressResponse: @unchecked Sendable {}
-extension GloryApi_GetAddressRequest: @unchecked Sendable {}
-extension GloryApi_GetAddressResponse: @unchecked Sendable {}
-extension GloryApi_ListAddressRequest: @unchecked Sendable {}
-extension GloryApi_ListAddressResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 

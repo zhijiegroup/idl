@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_GetAndroidQRCodeRequest {
+struct GloryApi_GetAndroidQRCodeRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -41,7 +41,7 @@ struct GloryApi_GetAndroidQRCodeRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetAndroidQRCodeResponse {
+struct GloryApi_GetAndroidQRCodeResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -64,7 +64,7 @@ struct GloryApi_GetAndroidQRCodeResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_AppVersion {
+struct GloryApi_AppVersion: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -84,7 +84,7 @@ struct GloryApi_AppVersion {
   init() {}
 }
 
-struct GloryApi_VersionLog {
+struct GloryApi_VersionLog: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -124,7 +124,7 @@ struct GloryApi_VersionLog {
   fileprivate var _iosVersion: GloryApi_AppVersion? = nil
 }
 
-struct GloryApi_CreateVersionLogRequest {
+struct GloryApi_CreateVersionLogRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -155,7 +155,7 @@ struct GloryApi_CreateVersionLogRequest {
   fileprivate var _versionLog: GloryApi_VersionLog? = nil
 }
 
-struct GloryApi_CreateVersionLogResponse {
+struct GloryApi_CreateVersionLogResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -176,7 +176,7 @@ struct GloryApi_CreateVersionLogResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_UpdateVersionLogRequest {
+struct GloryApi_UpdateVersionLogRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -207,7 +207,7 @@ struct GloryApi_UpdateVersionLogRequest {
   fileprivate var _versionLog: GloryApi_VersionLog? = nil
 }
 
-struct GloryApi_UpdateVersionLogResponse {
+struct GloryApi_UpdateVersionLogResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -228,7 +228,7 @@ struct GloryApi_UpdateVersionLogResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListVersionLogRequest {
+struct GloryApi_ListVersionLogRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -261,7 +261,7 @@ struct GloryApi_ListVersionLogRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListVersionLogResponse {
+struct GloryApi_ListVersionLogResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -294,7 +294,7 @@ struct GloryApi_ListVersionLogResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_DeleteVersionLogRequest {
+struct GloryApi_DeleteVersionLogRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -317,7 +317,7 @@ struct GloryApi_DeleteVersionLogRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteVersionLogResponse {
+struct GloryApi_DeleteVersionLogResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -338,7 +338,7 @@ struct GloryApi_DeleteVersionLogResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetLatestVersionRequest {
+struct GloryApi_GetLatestVersionRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -362,7 +362,7 @@ struct GloryApi_GetLatestVersionRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetLatestVersionResponse {
+struct GloryApi_GetLatestVersionResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -392,23 +392,6 @@ struct GloryApi_GetLatestVersionResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
   fileprivate var _version: GloryApi_AppVersion? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_GetAndroidQRCodeRequest: @unchecked Sendable {}
-extension GloryApi_GetAndroidQRCodeResponse: @unchecked Sendable {}
-extension GloryApi_AppVersion: @unchecked Sendable {}
-extension GloryApi_VersionLog: @unchecked Sendable {}
-extension GloryApi_CreateVersionLogRequest: @unchecked Sendable {}
-extension GloryApi_CreateVersionLogResponse: @unchecked Sendable {}
-extension GloryApi_UpdateVersionLogRequest: @unchecked Sendable {}
-extension GloryApi_UpdateVersionLogResponse: @unchecked Sendable {}
-extension GloryApi_ListVersionLogRequest: @unchecked Sendable {}
-extension GloryApi_ListVersionLogResponse: @unchecked Sendable {}
-extension GloryApi_DeleteVersionLogRequest: @unchecked Sendable {}
-extension GloryApi_DeleteVersionLogResponse: @unchecked Sendable {}
-extension GloryApi_GetLatestVersionRequest: @unchecked Sendable {}
-extension GloryApi_GetLatestVersionResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 

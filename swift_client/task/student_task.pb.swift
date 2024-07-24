@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_StudentTaskLink {
+struct GloryApi_StudentTaskLink: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -34,7 +34,7 @@ struct GloryApi_StudentTaskLink {
   init() {}
 }
 
-struct GloryApi_TimeRange {
+struct GloryApi_TimeRange: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -48,7 +48,7 @@ struct GloryApi_TimeRange {
   init() {}
 }
 
-struct GloryApi_StudentTaskParameterResult {
+struct GloryApi_StudentTaskParameterResult: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -78,7 +78,7 @@ struct GloryApi_StudentTaskParameterResult {
   init() {}
 }
 
-struct GloryApi_StudentTaskRequirementResult {
+struct GloryApi_StudentTaskRequirementResult: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -96,7 +96,7 @@ struct GloryApi_StudentTaskRequirementResult {
   init() {}
 }
 
-struct GloryApi_StudentTaskAttachment {
+struct GloryApi_StudentTaskAttachment: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -110,7 +110,7 @@ struct GloryApi_StudentTaskAttachment {
   init() {}
 }
 
-struct GloryApi_StudentTask {
+struct GloryApi_StudentTask: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -278,7 +278,7 @@ struct GloryApi_StudentTask {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct GloryApi_TeacherRequirementEvaluation {
+struct GloryApi_TeacherRequirementEvaluation: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -292,7 +292,7 @@ struct GloryApi_TeacherRequirementEvaluation {
   init() {}
 }
 
-struct GloryApi_ListStudentTaskRequest {
+struct GloryApi_ListStudentTaskRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -367,7 +367,7 @@ struct GloryApi_ListStudentTaskRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListStudentTaskResponse {
+struct GloryApi_ListStudentTaskResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -400,7 +400,7 @@ struct GloryApi_ListStudentTaskResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_SubmitStudentTaskRequest {
+struct GloryApi_SubmitStudentTaskRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -418,7 +418,7 @@ struct GloryApi_SubmitStudentTaskRequest {
   init() {}
 }
 
-struct GloryApi_SubmitStudentTaskResponse {
+struct GloryApi_SubmitStudentTaskResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -439,7 +439,7 @@ struct GloryApi_SubmitStudentTaskResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetStudentTaskRequest {
+struct GloryApi_GetStudentTaskRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -462,7 +462,7 @@ struct GloryApi_GetStudentTaskRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetStudentTaskResponse {
+struct GloryApi_GetStudentTaskResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -495,7 +495,7 @@ struct GloryApi_GetStudentTaskResponse {
   fileprivate var _studentTask: GloryApi_StudentTask? = nil
 }
 
-struct GloryApi_TeacherListStudentTaskRequest {
+struct GloryApi_TeacherListStudentTaskRequest: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -588,7 +588,7 @@ struct GloryApi_TeacherListStudentTaskRequest {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct GloryApi_TeacherListStudentTaskResponse {
+struct GloryApi_TeacherListStudentTaskResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -621,7 +621,7 @@ struct GloryApi_TeacherListStudentTaskResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_TeacherEvaluateStudentTaskRequest {
+struct GloryApi_TeacherEvaluateStudentTaskRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -650,7 +650,7 @@ struct GloryApi_TeacherEvaluateStudentTaskRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_TeacherEvaluateStudentTaskResponse {
+struct GloryApi_TeacherEvaluateStudentTaskResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -671,7 +671,7 @@ struct GloryApi_TeacherEvaluateStudentTaskResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_StudentTaskStatsRequest {
+struct GloryApi_StudentTaskStatsRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -692,7 +692,7 @@ struct GloryApi_StudentTaskStatsRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_StudentTaskStatsResponse {
+struct GloryApi_StudentTaskStatsResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -725,7 +725,7 @@ struct GloryApi_StudentTaskStatsResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_StudentTaskEvaluateStatsRequest {
+struct GloryApi_StudentTaskEvaluateStatsRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -749,7 +749,7 @@ struct GloryApi_StudentTaskEvaluateStatsRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_StudentTaskEvaluateStatsResponse {
+struct GloryApi_StudentTaskEvaluateStatsResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -784,7 +784,7 @@ struct GloryApi_StudentTaskEvaluateStatsResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_StartStudentTaskTimeRequest {
+struct GloryApi_StartStudentTaskTimeRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -807,7 +807,7 @@ struct GloryApi_StartStudentTaskTimeRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_StartStudentTaskTimeResponse {
+struct GloryApi_StartStudentTaskTimeResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -827,32 +827,6 @@ struct GloryApi_StartStudentTaskTimeResponse {
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_StudentTaskLink: @unchecked Sendable {}
-extension GloryApi_TimeRange: @unchecked Sendable {}
-extension GloryApi_StudentTaskParameterResult: @unchecked Sendable {}
-extension GloryApi_StudentTaskRequirementResult: @unchecked Sendable {}
-extension GloryApi_StudentTaskAttachment: @unchecked Sendable {}
-extension GloryApi_StudentTask: @unchecked Sendable {}
-extension GloryApi_TeacherRequirementEvaluation: @unchecked Sendable {}
-extension GloryApi_ListStudentTaskRequest: @unchecked Sendable {}
-extension GloryApi_ListStudentTaskResponse: @unchecked Sendable {}
-extension GloryApi_SubmitStudentTaskRequest: @unchecked Sendable {}
-extension GloryApi_SubmitStudentTaskResponse: @unchecked Sendable {}
-extension GloryApi_GetStudentTaskRequest: @unchecked Sendable {}
-extension GloryApi_GetStudentTaskResponse: @unchecked Sendable {}
-extension GloryApi_TeacherListStudentTaskRequest: @unchecked Sendable {}
-extension GloryApi_TeacherListStudentTaskResponse: @unchecked Sendable {}
-extension GloryApi_TeacherEvaluateStudentTaskRequest: @unchecked Sendable {}
-extension GloryApi_TeacherEvaluateStudentTaskResponse: @unchecked Sendable {}
-extension GloryApi_StudentTaskStatsRequest: @unchecked Sendable {}
-extension GloryApi_StudentTaskStatsResponse: @unchecked Sendable {}
-extension GloryApi_StudentTaskEvaluateStatsRequest: @unchecked Sendable {}
-extension GloryApi_StudentTaskEvaluateStatsResponse: @unchecked Sendable {}
-extension GloryApi_StartStudentTaskTimeRequest: @unchecked Sendable {}
-extension GloryApi_StartStudentTaskTimeResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 

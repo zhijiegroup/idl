@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_ArticleCreation {
+struct GloryApi_ArticleCreation: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -56,7 +56,7 @@ struct GloryApi_ArticleCreation {
   init() {}
 }
 
-struct GloryApi_ArticleCreationDraft {
+struct GloryApi_ArticleCreationDraft: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -84,7 +84,7 @@ struct GloryApi_ArticleCreationDraft {
   init() {}
 }
 
-struct GloryApi_CreateArticleCreationRequest {
+struct GloryApi_CreateArticleCreationRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -125,7 +125,7 @@ struct GloryApi_CreateArticleCreationRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CreateArticleCreationResponse {
+struct GloryApi_CreateArticleCreationResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -146,7 +146,7 @@ struct GloryApi_CreateArticleCreationResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetArticleDetailRequest {
+struct GloryApi_GetArticleDetailRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -169,7 +169,7 @@ struct GloryApi_GetArticleDetailRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetArticleDetailResponse {
+struct GloryApi_GetArticleDetailResponse: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -218,7 +218,7 @@ struct GloryApi_GetArticleDetailResponse {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct GloryApi_ListMyArticleCreationRequest {
+struct GloryApi_ListMyArticleCreationRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -264,7 +264,7 @@ struct GloryApi_ListMyArticleCreationRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListMyArticleCreationResponse {
+struct GloryApi_ListMyArticleCreationResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -297,7 +297,7 @@ struct GloryApi_ListMyArticleCreationResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_CreateArticleCreationDraftRequest {
+struct GloryApi_CreateArticleCreationDraftRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -336,7 +336,7 @@ struct GloryApi_CreateArticleCreationDraftRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CreateArticleCreationDraftResponse {
+struct GloryApi_CreateArticleCreationDraftResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -358,7 +358,7 @@ struct GloryApi_CreateArticleCreationDraftResponse {
 }
 
 /// 保存修改后的文案
-struct GloryApi_CreateModifiedArticleCreationRequest {
+struct GloryApi_CreateModifiedArticleCreationRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -397,7 +397,7 @@ struct GloryApi_CreateModifiedArticleCreationRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CreateModifiedArticleCreationResponse {
+struct GloryApi_CreateModifiedArticleCreationResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -418,7 +418,7 @@ struct GloryApi_CreateModifiedArticleCreationResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListMyArticleCreationDraftRequest {
+struct GloryApi_ListMyArticleCreationDraftRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -459,7 +459,7 @@ struct GloryApi_ListMyArticleCreationDraftRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListMyArticleCreationDraftResponse {
+struct GloryApi_ListMyArticleCreationDraftResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -492,7 +492,7 @@ struct GloryApi_ListMyArticleCreationDraftResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_ArticleCreationDraftDetailRequest {
+struct GloryApi_ArticleCreationDraftDetailRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -515,7 +515,7 @@ struct GloryApi_ArticleCreationDraftDetailRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ArticleCreationDraftDetailResponse {
+struct GloryApi_ArticleCreationDraftDetailResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -546,7 +546,7 @@ struct GloryApi_ArticleCreationDraftDetailResponse {
   fileprivate var _data: GloryApi_ArticleCreationDraft? = nil
 }
 
-struct GloryApi_DeleteArticleCreationDraftRequest {
+struct GloryApi_DeleteArticleCreationDraftRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -569,7 +569,7 @@ struct GloryApi_DeleteArticleCreationDraftRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteArticleCreationDraftResponse {
+struct GloryApi_DeleteArticleCreationDraftResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -590,7 +590,7 @@ struct GloryApi_DeleteArticleCreationDraftResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ArticleCreationStatisticsRequest {
+struct GloryApi_ArticleCreationStatisticsRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -613,7 +613,7 @@ struct GloryApi_ArticleCreationStatisticsRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ArticleCreationStatisticsResponse {
+struct GloryApi_ArticleCreationStatisticsResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -644,7 +644,7 @@ struct GloryApi_ArticleCreationStatisticsResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetExampleArticleRequest {
+struct GloryApi_GetExampleArticleRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -669,7 +669,7 @@ struct GloryApi_GetExampleArticleRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetExampleArticleResponse {
+struct GloryApi_GetExampleArticleResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -692,7 +692,7 @@ struct GloryApi_GetExampleArticleResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetEvaluationStandardRequest {
+struct GloryApi_GetEvaluationStandardRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -717,7 +717,7 @@ struct GloryApi_GetEvaluationStandardRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetEvaluationStandardResponse {
+struct GloryApi_GetEvaluationStandardResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -742,7 +742,7 @@ struct GloryApi_GetEvaluationStandardResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_CreateEvaluationConfigRequest {
+struct GloryApi_CreateEvaluationConfigRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -771,7 +771,7 @@ struct GloryApi_CreateEvaluationConfigRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CreateEvaluationConfigResponse {
+struct GloryApi_CreateEvaluationConfigResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -792,7 +792,7 @@ struct GloryApi_CreateEvaluationConfigResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListEvaluationConfigRequest {
+struct GloryApi_ListEvaluationConfigRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -813,7 +813,7 @@ struct GloryApi_ListEvaluationConfigRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ListEvaluationConfigResponse {
+struct GloryApi_ListEvaluationConfigResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -843,7 +843,7 @@ struct GloryApi_ListEvaluationConfigResponse {
 }
 
 /// 批量评价学生
-struct GloryApi_BatchEvaluateArticleRequest {
+struct GloryApi_BatchEvaluateArticleRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -872,7 +872,7 @@ struct GloryApi_BatchEvaluateArticleRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_BatchEvaluateArticleResponse {
+struct GloryApi_BatchEvaluateArticleResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -894,7 +894,7 @@ struct GloryApi_BatchEvaluateArticleResponse {
 }
 
 /// 学生文案列表
-struct GloryApi_ListStudentArticleCreationRequest {
+struct GloryApi_ListStudentArticleCreationRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -944,7 +944,7 @@ struct GloryApi_ListStudentArticleCreationRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListStudentArticleCreationResponse {
+struct GloryApi_ListStudentArticleCreationResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -977,7 +977,7 @@ struct GloryApi_ListStudentArticleCreationResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_StudentArticleCreation {
+struct GloryApi_StudentArticleCreation: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1012,7 +1012,7 @@ struct GloryApi_StudentArticleCreation {
 }
 
 /// 学生文案详情
-struct GloryApi_StudentArticleCreationEvaluationDetailRequest {
+struct GloryApi_StudentArticleCreationEvaluationDetailRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1035,7 +1035,7 @@ struct GloryApi_StudentArticleCreationEvaluationDetailRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_StudentArticleCreationEvaluationDetailResponse {
+struct GloryApi_StudentArticleCreationEvaluationDetailResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1068,7 +1068,7 @@ struct GloryApi_StudentArticleCreationEvaluationDetailResponse {
   fileprivate var _basic: GloryApi_StudentArticleCreationBasic? = nil
 }
 
-struct GloryApi_StudentArticleCreationBasic {
+struct GloryApi_StudentArticleCreationBasic: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1086,7 +1086,7 @@ struct GloryApi_StudentArticleCreationBasic {
   init() {}
 }
 
-struct GloryApi_StudentArticleCreationOperation {
+struct GloryApi_StudentArticleCreationOperation: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1141,7 +1141,7 @@ struct GloryApi_StudentArticleCreationOperation {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct GloryApi_ArticleCreationInfo {
+struct GloryApi_ArticleCreationInfo: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1163,7 +1163,7 @@ struct GloryApi_ArticleCreationInfo {
   init() {}
 }
 
-struct GloryApi_ArticleContentModeration {
+struct GloryApi_ArticleContentModeration: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1200,7 +1200,7 @@ struct GloryApi_ArticleContentModeration {
   init() {}
 }
 
-struct GloryApi_WrongWord {
+struct GloryApi_WrongWord: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1220,7 +1220,7 @@ struct GloryApi_WrongWord {
   init() {}
 }
 
-struct GloryApi_Sentence {
+struct GloryApi_Sentence: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1235,7 +1235,7 @@ struct GloryApi_Sentence {
 }
 
 /// 文案纠错接口
-struct GloryApi_CorrectSentenceRequest {
+struct GloryApi_CorrectSentenceRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1258,7 +1258,7 @@ struct GloryApi_CorrectSentenceRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CorrectSentenceResponse {
+struct GloryApi_CorrectSentenceResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1281,7 +1281,7 @@ struct GloryApi_CorrectSentenceResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_Edits {
+struct GloryApi_Edits: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1302,7 +1302,7 @@ struct GloryApi_Edits {
 }
 
 /// 生成AI评价接口
-struct GloryApi_GenArticleAIEvaluationRequest {
+struct GloryApi_GenArticleAIEvaluationRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1331,7 +1331,7 @@ struct GloryApi_GenArticleAIEvaluationRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GenArticleAIEvaluationResponse {
+struct GloryApi_GenArticleAIEvaluationResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1356,7 +1356,7 @@ struct GloryApi_GenArticleAIEvaluationResponse {
 }
 
 /// 获取AI评价接口
-struct GloryApi_GetArticleAIEvaluationRequest {
+struct GloryApi_GetArticleAIEvaluationRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1382,7 +1382,7 @@ struct GloryApi_GetArticleAIEvaluationRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetArticleAIEvaluationResponse {
+struct GloryApi_GetArticleAIEvaluationResponse: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1434,7 +1434,7 @@ struct GloryApi_GetArticleAIEvaluationResponse {
 }
 
 /// 文案ai聊天
-struct GloryApi_ArticleAIChatRequest {
+struct GloryApi_ArticleAIChatRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1457,7 +1457,7 @@ struct GloryApi_ArticleAIChatRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ArticleAIChatResponse {
+struct GloryApi_ArticleAIChatResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1484,7 +1484,7 @@ struct GloryApi_ArticleAIChatResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ChatMessage {
+struct GloryApi_ChatMessage: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1498,7 +1498,7 @@ struct GloryApi_ChatMessage {
   init() {}
 }
 
-struct GloryApi_GetChatConfigRequest {
+struct GloryApi_GetChatConfigRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1519,7 +1519,7 @@ struct GloryApi_GetChatConfigRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetChatConfigResponse {
+struct GloryApi_GetChatConfigResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1552,7 +1552,7 @@ struct GloryApi_GetChatConfigResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_CreateDigitalVideoRequest {
+struct GloryApi_CreateDigitalVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1583,7 +1583,7 @@ struct GloryApi_CreateDigitalVideoRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CreateDigitalVideoResponse {
+struct GloryApi_CreateDigitalVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1606,7 +1606,7 @@ struct GloryApi_CreateDigitalVideoResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_DigitalVideo {
+struct GloryApi_DigitalVideo: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1632,7 +1632,7 @@ struct GloryApi_DigitalVideo {
   init() {}
 }
 
-struct GloryApi_ListDigitalVideoResponse {
+struct GloryApi_ListDigitalVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1665,7 +1665,7 @@ struct GloryApi_ListDigitalVideoResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_ListDigitalVideoRequest {
+struct GloryApi_ListDigitalVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1706,7 +1706,7 @@ struct GloryApi_ListDigitalVideoRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_GetDigitalVideoResponse {
+struct GloryApi_GetDigitalVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1737,7 +1737,7 @@ struct GloryApi_GetDigitalVideoResponse {
   fileprivate var _video: GloryApi_DigitalVideo? = nil
 }
 
-struct GloryApi_GetDigitalVideoRequest {
+struct GloryApi_GetDigitalVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1760,7 +1760,7 @@ struct GloryApi_GetDigitalVideoRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DigitalCode {
+struct GloryApi_DigitalCode: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1774,7 +1774,7 @@ struct GloryApi_DigitalCode {
   init() {}
 }
 
-struct GloryApi_ListDigitalCodeResponse {
+struct GloryApi_ListDigitalCodeResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1799,7 +1799,7 @@ struct GloryApi_ListDigitalCodeResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListDigitalCodeRequest {
+struct GloryApi_ListDigitalCodeRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1820,7 +1820,7 @@ struct GloryApi_ListDigitalCodeRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteDigitalVideoRequest {
+struct GloryApi_DeleteDigitalVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1843,7 +1843,7 @@ struct GloryApi_DeleteDigitalVideoRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteDigitalVideoResponse {
+struct GloryApi_DeleteDigitalVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1864,7 +1864,7 @@ struct GloryApi_DeleteDigitalVideoResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListDigitalAvatarRequest {
+struct GloryApi_ListDigitalAvatarRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1897,7 +1897,7 @@ struct GloryApi_ListDigitalAvatarRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_DigitalAvatar {
+struct GloryApi_DigitalAvatar: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1919,7 +1919,7 @@ struct GloryApi_DigitalAvatar {
   init() {}
 }
 
-struct GloryApi_ListDigitalAvatarResponse {
+struct GloryApi_ListDigitalAvatarResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1952,7 +1952,7 @@ struct GloryApi_ListDigitalAvatarResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_UploadBackgroundImageRequest {
+struct GloryApi_UploadBackgroundImageRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1973,7 +1973,7 @@ struct GloryApi_UploadBackgroundImageRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UploadBackgroundImageResponse {
+struct GloryApi_UploadBackgroundImageResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1996,7 +1996,7 @@ struct GloryApi_UploadBackgroundImageResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListBackgroundImageRequest {
+struct GloryApi_ListBackgroundImageRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2017,7 +2017,7 @@ struct GloryApi_ListBackgroundImageRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_OssImage {
+struct GloryApi_OssImage: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2031,7 +2031,7 @@ struct GloryApi_OssImage {
   init() {}
 }
 
-struct GloryApi_ListBackgroundImageResponse {
+struct GloryApi_ListBackgroundImageResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2054,7 +2054,7 @@ struct GloryApi_ListBackgroundImageResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_UpdateTenantCourseDataRequest {
+struct GloryApi_UpdateTenantCourseDataRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2088,7 +2088,7 @@ struct GloryApi_UpdateTenantCourseDataRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UpdateTenantCourseDataResponse {
+struct GloryApi_UpdateTenantCourseDataResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2109,7 +2109,7 @@ struct GloryApi_UpdateTenantCourseDataResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_UpdateModelPriceRequest {
+struct GloryApi_UpdateModelPriceRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2136,7 +2136,7 @@ struct GloryApi_UpdateModelPriceRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UpdateModelPriceResponse {
+struct GloryApi_UpdateModelPriceResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2157,7 +2157,7 @@ struct GloryApi_UpdateModelPriceResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetArticleCreationTenantRequest {
+struct GloryApi_GetArticleCreationTenantRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2180,7 +2180,7 @@ struct GloryApi_GetArticleCreationTenantRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetArticleCreationTenant {
+struct GloryApi_GetArticleCreationTenant: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2316,7 +2316,7 @@ struct GloryApi_GetArticleCreationTenant {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct GloryApi_GetArticleCreationTenantResponse {
+struct GloryApi_GetArticleCreationTenantResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2348,7 +2348,7 @@ struct GloryApi_GetArticleCreationTenantResponse {
 }
 
 /// 学校配置列表
-struct GloryApi_ListArticleCreationTenantRequest {
+struct GloryApi_ListArticleCreationTenantRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2379,7 +2379,7 @@ struct GloryApi_ListArticleCreationTenantRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListArticleCreationTenantResponse {
+struct GloryApi_ListArticleCreationTenantResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2412,7 +2412,7 @@ struct GloryApi_ListArticleCreationTenantResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_InitArticleCreationTenantRequest {
+struct GloryApi_InitArticleCreationTenantRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2433,7 +2433,7 @@ struct GloryApi_InitArticleCreationTenantRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_InitArticleCreationTenantResponse {
+struct GloryApi_InitArticleCreationTenantResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2454,7 +2454,7 @@ struct GloryApi_InitArticleCreationTenantResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_CalcArticleCreationTenantRequest {
+struct GloryApi_CalcArticleCreationTenantRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2475,7 +2475,7 @@ struct GloryApi_CalcArticleCreationTenantRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CalcArticleCreationTenantResponse {
+struct GloryApi_CalcArticleCreationTenantResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2497,7 +2497,7 @@ struct GloryApi_CalcArticleCreationTenantResponse {
 }
 
 /// 学校成本
-struct GloryApi_ListArticleCreationTenantCostRequest {
+struct GloryApi_ListArticleCreationTenantCostRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2528,7 +2528,7 @@ struct GloryApi_ListArticleCreationTenantCostRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ArticleCreationTenantCost {
+struct GloryApi_ArticleCreationTenantCost: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2583,7 +2583,7 @@ struct GloryApi_ArticleCreationTenantCost {
   init() {}
 }
 
-struct GloryApi_ListArticleCreationTenantCostResponse {
+struct GloryApi_ListArticleCreationTenantCostResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2616,7 +2616,7 @@ struct GloryApi_ListArticleCreationTenantCostResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_GetArticleCreationTenantCostRequest {
+struct GloryApi_GetArticleCreationTenantCostRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2637,7 +2637,7 @@ struct GloryApi_GetArticleCreationTenantCostRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetArticleCreationTenantCostResponse {
+struct GloryApi_GetArticleCreationTenantCostResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2686,7 +2686,7 @@ struct GloryApi_GetArticleCreationTenantCostResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetSubTopicAiResultRequest {
+struct GloryApi_GetSubTopicAiResultRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2723,7 +2723,7 @@ struct GloryApi_GetSubTopicAiResultRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetSubTopicAiResultResponse {
+struct GloryApi_GetSubTopicAiResultResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2753,102 +2753,6 @@ struct GloryApi_GetSubTopicAiResultResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
   fileprivate var _contentModeration: GloryApi_ArticleContentModeration? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_ArticleCreation: @unchecked Sendable {}
-extension GloryApi_ArticleCreationDraft: @unchecked Sendable {}
-extension GloryApi_CreateArticleCreationRequest: @unchecked Sendable {}
-extension GloryApi_CreateArticleCreationResponse: @unchecked Sendable {}
-extension GloryApi_GetArticleDetailRequest: @unchecked Sendable {}
-extension GloryApi_GetArticleDetailResponse: @unchecked Sendable {}
-extension GloryApi_ListMyArticleCreationRequest: @unchecked Sendable {}
-extension GloryApi_ListMyArticleCreationResponse: @unchecked Sendable {}
-extension GloryApi_CreateArticleCreationDraftRequest: @unchecked Sendable {}
-extension GloryApi_CreateArticleCreationDraftResponse: @unchecked Sendable {}
-extension GloryApi_CreateModifiedArticleCreationRequest: @unchecked Sendable {}
-extension GloryApi_CreateModifiedArticleCreationResponse: @unchecked Sendable {}
-extension GloryApi_ListMyArticleCreationDraftRequest: @unchecked Sendable {}
-extension GloryApi_ListMyArticleCreationDraftResponse: @unchecked Sendable {}
-extension GloryApi_ArticleCreationDraftDetailRequest: @unchecked Sendable {}
-extension GloryApi_ArticleCreationDraftDetailResponse: @unchecked Sendable {}
-extension GloryApi_DeleteArticleCreationDraftRequest: @unchecked Sendable {}
-extension GloryApi_DeleteArticleCreationDraftResponse: @unchecked Sendable {}
-extension GloryApi_ArticleCreationStatisticsRequest: @unchecked Sendable {}
-extension GloryApi_ArticleCreationStatisticsResponse: @unchecked Sendable {}
-extension GloryApi_GetExampleArticleRequest: @unchecked Sendable {}
-extension GloryApi_GetExampleArticleResponse: @unchecked Sendable {}
-extension GloryApi_GetEvaluationStandardRequest: @unchecked Sendable {}
-extension GloryApi_GetEvaluationStandardResponse: @unchecked Sendable {}
-extension GloryApi_CreateEvaluationConfigRequest: @unchecked Sendable {}
-extension GloryApi_CreateEvaluationConfigResponse: @unchecked Sendable {}
-extension GloryApi_ListEvaluationConfigRequest: @unchecked Sendable {}
-extension GloryApi_ListEvaluationConfigResponse: @unchecked Sendable {}
-extension GloryApi_BatchEvaluateArticleRequest: @unchecked Sendable {}
-extension GloryApi_BatchEvaluateArticleResponse: @unchecked Sendable {}
-extension GloryApi_ListStudentArticleCreationRequest: @unchecked Sendable {}
-extension GloryApi_ListStudentArticleCreationResponse: @unchecked Sendable {}
-extension GloryApi_StudentArticleCreation: @unchecked Sendable {}
-extension GloryApi_StudentArticleCreationEvaluationDetailRequest: @unchecked Sendable {}
-extension GloryApi_StudentArticleCreationEvaluationDetailResponse: @unchecked Sendable {}
-extension GloryApi_StudentArticleCreationBasic: @unchecked Sendable {}
-extension GloryApi_StudentArticleCreationOperation: @unchecked Sendable {}
-extension GloryApi_ArticleCreationInfo: @unchecked Sendable {}
-extension GloryApi_ArticleContentModeration: @unchecked Sendable {}
-extension GloryApi_WrongWord: @unchecked Sendable {}
-extension GloryApi_Sentence: @unchecked Sendable {}
-extension GloryApi_CorrectSentenceRequest: @unchecked Sendable {}
-extension GloryApi_CorrectSentenceResponse: @unchecked Sendable {}
-extension GloryApi_Edits: @unchecked Sendable {}
-extension GloryApi_GenArticleAIEvaluationRequest: @unchecked Sendable {}
-extension GloryApi_GenArticleAIEvaluationResponse: @unchecked Sendable {}
-extension GloryApi_GetArticleAIEvaluationRequest: @unchecked Sendable {}
-extension GloryApi_GetArticleAIEvaluationResponse: @unchecked Sendable {}
-extension GloryApi_ArticleAIChatRequest: @unchecked Sendable {}
-extension GloryApi_ArticleAIChatResponse: @unchecked Sendable {}
-extension GloryApi_ChatMessage: @unchecked Sendable {}
-extension GloryApi_GetChatConfigRequest: @unchecked Sendable {}
-extension GloryApi_GetChatConfigResponse: @unchecked Sendable {}
-extension GloryApi_CreateDigitalVideoRequest: @unchecked Sendable {}
-extension GloryApi_CreateDigitalVideoResponse: @unchecked Sendable {}
-extension GloryApi_DigitalVideo: @unchecked Sendable {}
-extension GloryApi_ListDigitalVideoResponse: @unchecked Sendable {}
-extension GloryApi_ListDigitalVideoRequest: @unchecked Sendable {}
-extension GloryApi_GetDigitalVideoResponse: @unchecked Sendable {}
-extension GloryApi_GetDigitalVideoRequest: @unchecked Sendable {}
-extension GloryApi_DigitalCode: @unchecked Sendable {}
-extension GloryApi_ListDigitalCodeResponse: @unchecked Sendable {}
-extension GloryApi_ListDigitalCodeRequest: @unchecked Sendable {}
-extension GloryApi_DeleteDigitalVideoRequest: @unchecked Sendable {}
-extension GloryApi_DeleteDigitalVideoResponse: @unchecked Sendable {}
-extension GloryApi_ListDigitalAvatarRequest: @unchecked Sendable {}
-extension GloryApi_DigitalAvatar: @unchecked Sendable {}
-extension GloryApi_ListDigitalAvatarResponse: @unchecked Sendable {}
-extension GloryApi_UploadBackgroundImageRequest: @unchecked Sendable {}
-extension GloryApi_UploadBackgroundImageResponse: @unchecked Sendable {}
-extension GloryApi_ListBackgroundImageRequest: @unchecked Sendable {}
-extension GloryApi_OssImage: @unchecked Sendable {}
-extension GloryApi_ListBackgroundImageResponse: @unchecked Sendable {}
-extension GloryApi_UpdateTenantCourseDataRequest: @unchecked Sendable {}
-extension GloryApi_UpdateTenantCourseDataResponse: @unchecked Sendable {}
-extension GloryApi_UpdateModelPriceRequest: @unchecked Sendable {}
-extension GloryApi_UpdateModelPriceResponse: @unchecked Sendable {}
-extension GloryApi_GetArticleCreationTenantRequest: @unchecked Sendable {}
-extension GloryApi_GetArticleCreationTenant: @unchecked Sendable {}
-extension GloryApi_GetArticleCreationTenantResponse: @unchecked Sendable {}
-extension GloryApi_ListArticleCreationTenantRequest: @unchecked Sendable {}
-extension GloryApi_ListArticleCreationTenantResponse: @unchecked Sendable {}
-extension GloryApi_InitArticleCreationTenantRequest: @unchecked Sendable {}
-extension GloryApi_InitArticleCreationTenantResponse: @unchecked Sendable {}
-extension GloryApi_CalcArticleCreationTenantRequest: @unchecked Sendable {}
-extension GloryApi_CalcArticleCreationTenantResponse: @unchecked Sendable {}
-extension GloryApi_ListArticleCreationTenantCostRequest: @unchecked Sendable {}
-extension GloryApi_ArticleCreationTenantCost: @unchecked Sendable {}
-extension GloryApi_ListArticleCreationTenantCostResponse: @unchecked Sendable {}
-extension GloryApi_GetArticleCreationTenantCostRequest: @unchecked Sendable {}
-extension GloryApi_GetArticleCreationTenantCostResponse: @unchecked Sendable {}
-extension GloryApi_GetSubTopicAiResultRequest: @unchecked Sendable {}
-extension GloryApi_GetSubTopicAiResultResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
@@ -6986,13 +6890,13 @@ extension GloryApi_UpdateModelPriceRequest: SwiftProtobuf.Message, SwiftProtobuf
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if self.assistantPrice != 0 {
+    if self.assistantPrice.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.assistantPrice, fieldNumber: 2)
     }
-    if self.simplePrice != 0 {
+    if self.simplePrice.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.simplePrice, fieldNumber: 3)
     }
-    if self.complexPrice != 0 {
+    if self.complexPrice.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.complexPrice, fieldNumber: 4)
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -7219,31 +7123,31 @@ extension GloryApi_GetArticleCreationTenant: SwiftProtobuf.Message, SwiftProtobu
       if !_storage._name.isEmpty {
         try visitor.visitSingularStringField(value: _storage._name, fieldNumber: 1)
       }
-      if _storage._totalSpend != 0 {
+      if _storage._totalSpend.bitPattern != 0 {
         try visitor.visitSingularDoubleField(value: _storage._totalSpend, fieldNumber: 2)
       }
-      if _storage._costMin != 0 {
+      if _storage._costMin.bitPattern != 0 {
         try visitor.visitSingularDoubleField(value: _storage._costMin, fieldNumber: 3)
       }
-      if _storage._costMax != 0 {
+      if _storage._costMax.bitPattern != 0 {
         try visitor.visitSingularDoubleField(value: _storage._costMax, fieldNumber: 4)
       }
-      if _storage._spendPercentMin != 0 {
+      if _storage._spendPercentMin.bitPattern != 0 {
         try visitor.visitSingularDoubleField(value: _storage._spendPercentMin, fieldNumber: 5)
       }
-      if _storage._spendPercentMax != 0 {
+      if _storage._spendPercentMax.bitPattern != 0 {
         try visitor.visitSingularDoubleField(value: _storage._spendPercentMax, fieldNumber: 6)
       }
       if _storage._complexUsageCount != 0 {
         try visitor.visitSingularInt64Field(value: _storage._complexUsageCount, fieldNumber: 7)
       }
-      if _storage._complexSpend != 0 {
+      if _storage._complexSpend.bitPattern != 0 {
         try visitor.visitSingularDoubleField(value: _storage._complexSpend, fieldNumber: 8)
       }
       if _storage._simpleUsageCount != 0 {
         try visitor.visitSingularInt64Field(value: _storage._simpleUsageCount, fieldNumber: 9)
       }
-      if _storage._simpleSpend != 0 {
+      if _storage._simpleSpend.bitPattern != 0 {
         try visitor.visitSingularDoubleField(value: _storage._simpleSpend, fieldNumber: 10)
       }
       if _storage._evaluationCount != 0 {
@@ -7255,10 +7159,10 @@ extension GloryApi_GetArticleCreationTenant: SwiftProtobuf.Message, SwiftProtobu
       if _storage._assistantUsageCount != 0 {
         try visitor.visitSingularInt64Field(value: _storage._assistantUsageCount, fieldNumber: 13)
       }
-      if _storage._assistantSpend != 0 {
+      if _storage._assistantSpend.bitPattern != 0 {
         try visitor.visitSingularDoubleField(value: _storage._assistantSpend, fieldNumber: 14)
       }
-      if _storage._assistantCountPercent != 0 {
+      if _storage._assistantCountPercent.bitPattern != 0 {
         try visitor.visitSingularDoubleField(value: _storage._assistantCountPercent, fieldNumber: 15)
       }
       if _storage._tenantID != 0 {
@@ -7686,19 +7590,19 @@ extension GloryApi_ArticleCreationTenantCost: SwiftProtobuf.Message, SwiftProtob
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
     }
-    if self.totalCostMin != 0 {
+    if self.totalCostMin.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.totalCostMin, fieldNumber: 4)
     }
-    if self.totalCostMax != 0 {
+    if self.totalCostMax.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.totalCostMax, fieldNumber: 5)
     }
-    if self.totalSpend != 0 {
+    if self.totalSpend.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.totalSpend, fieldNumber: 6)
     }
-    if self.spendPercentMin != 0 {
+    if self.spendPercentMin.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.spendPercentMin, fieldNumber: 7)
     }
-    if self.spendPercentMax != 0 {
+    if self.spendPercentMax.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.spendPercentMax, fieldNumber: 8)
     }
     if self.complexUsageCount != 0 {
@@ -7713,19 +7617,19 @@ extension GloryApi_ArticleCreationTenantCost: SwiftProtobuf.Message, SwiftProtob
     if self.assistantUsageCount != 0 {
       try visitor.visitSingularInt64Field(value: self.assistantUsageCount, fieldNumber: 12)
     }
-    if self.complexSpend != 0 {
+    if self.complexSpend.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.complexSpend, fieldNumber: 13)
     }
-    if self.simpleSpend != 0 {
+    if self.simpleSpend.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.simpleSpend, fieldNumber: 14)
     }
-    if self.assistantSpend != 0 {
+    if self.assistantSpend.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.assistantSpend, fieldNumber: 15)
     }
-    if self.assistantCost != 0 {
+    if self.assistantCost.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.assistantCost, fieldNumber: 16)
     }
-    if self.assistantUsagePercent != 0 {
+    if self.assistantUsagePercent.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.assistantUsagePercent, fieldNumber: 17)
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -7881,37 +7785,37 @@ extension GloryApi_GetArticleCreationTenantCostResponse: SwiftProtobuf.Message, 
     // allocates stack space for every if/case branch local when no optimizations
     // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
     // https://github.com/apple/swift-protobuf/issues/1182
-    if self.totalCostMin != 0 {
+    if self.totalCostMin.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.totalCostMin, fieldNumber: 1)
     }
-    if self.totalCostMax != 0 {
+    if self.totalCostMax.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.totalCostMax, fieldNumber: 2)
     }
-    if self.totalSpend != 0 {
+    if self.totalSpend.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.totalSpend, fieldNumber: 3)
     }
-    if self.totalCostPercentMin != 0 {
+    if self.totalCostPercentMin.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.totalCostPercentMin, fieldNumber: 4)
     }
-    if self.totalCostPercentMax != 0 {
+    if self.totalCostPercentMax.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.totalCostPercentMax, fieldNumber: 5)
     }
     if self.complexUsageCount != 0 {
       try visitor.visitSingularInt64Field(value: self.complexUsageCount, fieldNumber: 6)
     }
-    if self.complexSpend != 0 {
+    if self.complexSpend.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.complexSpend, fieldNumber: 7)
     }
     if self.simpleUsageCount != 0 {
       try visitor.visitSingularInt64Field(value: self.simpleUsageCount, fieldNumber: 8)
     }
-    if self.simpleSpend != 0 {
+    if self.simpleSpend.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.simpleSpend, fieldNumber: 9)
     }
     if self.assistantUsageCount != 0 {
       try visitor.visitSingularInt64Field(value: self.assistantUsageCount, fieldNumber: 10)
     }
-    if self.assistantSpend != 0 {
+    if self.assistantSpend.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.assistantSpend, fieldNumber: 11)
     }
     try { if let v = self._baseResp {

@@ -1138,6 +1138,9 @@ class glory_apiApi {
   $async.Future<$51.GetQuickEvaluationReportResponse> getQuickEvaluationReport($pb.ClientContext? ctx, $51.GetQuickEvaluationReportRequest request) =>
     _client.invoke<$51.GetQuickEvaluationReportResponse>(ctx, 'glory_api', 'GetQuickEvaluationReport', request, $51.GetQuickEvaluationReportResponse())
   ;
+  $async.Future<$51.GetQuickEvaluationTotalReportResponse> getQuickEvaluationTotalReport($pb.ClientContext? ctx, $51.GetQuickEvaluationTotalReportRequest request) =>
+    _client.invoke<$51.GetQuickEvaluationTotalReportResponse>(ctx, 'glory_api', 'GetQuickEvaluationTotalReport', request, $51.GetQuickEvaluationTotalReportResponse())
+  ;
   $async.Future<$51.DeleteQuickEvaluationReportResponse> deleteQuickEvaluationReport($pb.ClientContext? ctx, $51.DeleteQuickEvaluationReportRequest request) =>
     _client.invoke<$51.DeleteQuickEvaluationReportResponse>(ctx, 'glory_api', 'DeleteQuickEvaluationReport', request, $51.DeleteQuickEvaluationReportResponse())
   ;

@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_ProductName {
+struct GloryApi_ProductName: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -34,7 +34,7 @@ struct GloryApi_ProductName {
   init() {}
 }
 
-struct GloryApi_Template {
+struct GloryApi_Template: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -62,7 +62,7 @@ struct GloryApi_Template {
   init() {}
 }
 
-struct GloryApi_TemplateWithAuthorInfo {
+struct GloryApi_TemplateWithAuthorInfo: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -93,7 +93,7 @@ struct GloryApi_TemplateWithAuthorInfo {
   fileprivate var _authorInfo: Base_AuthorInfo? = nil
 }
 
-struct GloryApi_CreateTemplateRequest {
+struct GloryApi_CreateTemplateRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -124,7 +124,7 @@ struct GloryApi_CreateTemplateRequest {
   fileprivate var _template: GloryApi_Template? = nil
 }
 
-struct GloryApi_CreateTemplateResponse {
+struct GloryApi_CreateTemplateResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -147,7 +147,7 @@ struct GloryApi_CreateTemplateResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetTemplateRequest {
+struct GloryApi_GetTemplateRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -170,7 +170,7 @@ struct GloryApi_GetTemplateRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetTemplateResponse {
+struct GloryApi_GetTemplateResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -201,7 +201,7 @@ struct GloryApi_GetTemplateResponse {
   fileprivate var _template: GloryApi_TemplateWithAuthorInfo? = nil
 }
 
-struct GloryApi_DeleteTemplateRequest {
+struct GloryApi_DeleteTemplateRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -224,7 +224,7 @@ struct GloryApi_DeleteTemplateRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteTemplateResponse {
+struct GloryApi_DeleteTemplateResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -245,7 +245,7 @@ struct GloryApi_DeleteTemplateResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_UpdateTemplateRequest {
+struct GloryApi_UpdateTemplateRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -276,7 +276,7 @@ struct GloryApi_UpdateTemplateRequest {
   fileprivate var _template: GloryApi_Template? = nil
 }
 
-struct GloryApi_UpdateTemplateResponse {
+struct GloryApi_UpdateTemplateResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -299,7 +299,7 @@ struct GloryApi_UpdateTemplateResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListTemplateRequest {
+struct GloryApi_ListTemplateRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -322,7 +322,7 @@ struct GloryApi_ListTemplateRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ListTemplateResponse {
+struct GloryApi_ListTemplateResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -344,22 +344,6 @@ struct GloryApi_ListTemplateResponse {
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_ProductName: @unchecked Sendable {}
-extension GloryApi_Template: @unchecked Sendable {}
-extension GloryApi_TemplateWithAuthorInfo: @unchecked Sendable {}
-extension GloryApi_CreateTemplateRequest: @unchecked Sendable {}
-extension GloryApi_CreateTemplateResponse: @unchecked Sendable {}
-extension GloryApi_GetTemplateRequest: @unchecked Sendable {}
-extension GloryApi_GetTemplateResponse: @unchecked Sendable {}
-extension GloryApi_DeleteTemplateRequest: @unchecked Sendable {}
-extension GloryApi_DeleteTemplateResponse: @unchecked Sendable {}
-extension GloryApi_UpdateTemplateRequest: @unchecked Sendable {}
-extension GloryApi_UpdateTemplateResponse: @unchecked Sendable {}
-extension GloryApi_ListTemplateRequest: @unchecked Sendable {}
-extension GloryApi_ListTemplateResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
@@ -456,7 +440,7 @@ extension GloryApi_Template: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     if self.isDefault != false {
       try visitor.visitSingularBoolField(value: self.isDefault, fieldNumber: 6)
     }
-    if self.freightAmount != 0 {
+    if self.freightAmount.bitPattern != 0 {
       try visitor.visitSingularFloatField(value: self.freightAmount, fieldNumber: 7)
     }
     if !self.address.isEmpty {

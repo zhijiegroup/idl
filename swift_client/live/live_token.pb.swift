@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_LiveUserToken {
+struct GloryApi_LiveUserToken: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -42,7 +42,7 @@ struct GloryApi_LiveUserToken {
   init() {}
 }
 
-struct GloryApi_CreateLiveUserTokenRequest {
+struct GloryApi_CreateLiveUserTokenRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -67,7 +67,7 @@ struct GloryApi_CreateLiveUserTokenRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CreateLiveUserTokenResponse {
+struct GloryApi_CreateLiveUserTokenResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -93,12 +93,6 @@ struct GloryApi_CreateLiveUserTokenResponse {
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_LiveUserToken: @unchecked Sendable {}
-extension GloryApi_CreateLiveUserTokenRequest: @unchecked Sendable {}
-extension GloryApi_CreateLiveUserTokenResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 

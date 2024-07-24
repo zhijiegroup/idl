@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_ListSchoolLiveTrafficRequest {
+struct GloryApi_ListSchoolLiveTrafficRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -47,7 +47,7 @@ struct GloryApi_ListSchoolLiveTrafficRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ListSchoolLiveTrafficResponse {
+struct GloryApi_ListSchoolLiveTrafficResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -80,7 +80,7 @@ struct GloryApi_ListSchoolLiveTrafficResponse {
   fileprivate var _schoolLiveTrafficSummary: GloryApi_SchoolLiveTraffic? = nil
 }
 
-struct GloryApi_SchoolLiveTraffic {
+struct GloryApi_SchoolLiveTraffic: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -116,7 +116,7 @@ struct GloryApi_SchoolLiveTraffic {
   init() {}
 }
 
-struct GloryApi_GetSchoolLiveTrafficChartRequest {
+struct GloryApi_GetSchoolLiveTrafficChartRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -143,7 +143,7 @@ struct GloryApi_GetSchoolLiveTrafficChartRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_SchooLiveTrafficChart {
+struct GloryApi_SchooLiveTrafficChart: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -161,7 +161,7 @@ struct GloryApi_SchooLiveTrafficChart {
   init() {}
 }
 
-struct GloryApi_GetSchoolLiveTrafficChartResponse {
+struct GloryApi_GetSchoolLiveTrafficChartResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -192,7 +192,7 @@ struct GloryApi_GetSchoolLiveTrafficChartResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetAllLiveTrafficRequest {
+struct GloryApi_GetAllLiveTrafficRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -213,7 +213,7 @@ struct GloryApi_GetAllLiveTrafficRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetAllLiveTrafficResponse {
+struct GloryApi_GetAllLiveTrafficResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -242,7 +242,7 @@ struct GloryApi_GetAllLiveTrafficResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetSchooLiveTrafficRequest {
+struct GloryApi_GetSchooLiveTrafficRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -265,7 +265,7 @@ struct GloryApi_GetSchooLiveTrafficRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetSchooLiveTrafficResponse {
+struct GloryApi_GetSchooLiveTrafficResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -294,7 +294,7 @@ struct GloryApi_GetSchooLiveTrafficResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListTenantLiveTrafficConfigRequest {
+struct GloryApi_ListTenantLiveTrafficConfigRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -325,7 +325,7 @@ struct GloryApi_ListTenantLiveTrafficConfigRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_TenantTrafficConfig {
+struct GloryApi_TenantTrafficConfig: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -354,7 +354,7 @@ struct GloryApi_TenantTrafficConfig {
   init() {}
 }
 
-struct GloryApi_ListTenantLiveTrafficConfigResponse {
+struct GloryApi_ListTenantLiveTrafficConfigResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -387,7 +387,7 @@ struct GloryApi_ListTenantLiveTrafficConfigResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_UpdateTenantLiveTrafficConfigRequest {
+struct GloryApi_UpdateTenantLiveTrafficConfigRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -425,7 +425,7 @@ struct GloryApi_UpdateTenantLiveTrafficConfigRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UpdateTenantLiveTrafficConfigResponse {
+struct GloryApi_UpdateTenantLiveTrafficConfigResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -446,7 +446,7 @@ struct GloryApi_UpdateTenantLiveTrafficConfigResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListTrafficWarningRequest {
+struct GloryApi_ListTrafficWarningRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -481,7 +481,7 @@ struct GloryApi_ListTrafficWarningRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_TrafficWarning {
+struct GloryApi_TrafficWarning: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -503,7 +503,7 @@ struct GloryApi_TrafficWarning {
   init() {}
 }
 
-struct GloryApi_ListTrafficWarningResponse {
+struct GloryApi_ListTrafficWarningResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -536,7 +536,7 @@ struct GloryApi_ListTrafficWarningResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_DeleteTrafficWarningRequest {
+struct GloryApi_DeleteTrafficWarningRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -559,7 +559,7 @@ struct GloryApi_DeleteTrafficWarningRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteTrafficWarningResponse {
+struct GloryApi_DeleteTrafficWarningResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -579,29 +579,6 @@ struct GloryApi_DeleteTrafficWarningResponse {
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_ListSchoolLiveTrafficRequest: @unchecked Sendable {}
-extension GloryApi_ListSchoolLiveTrafficResponse: @unchecked Sendable {}
-extension GloryApi_SchoolLiveTraffic: @unchecked Sendable {}
-extension GloryApi_GetSchoolLiveTrafficChartRequest: @unchecked Sendable {}
-extension GloryApi_SchooLiveTrafficChart: @unchecked Sendable {}
-extension GloryApi_GetSchoolLiveTrafficChartResponse: @unchecked Sendable {}
-extension GloryApi_GetAllLiveTrafficRequest: @unchecked Sendable {}
-extension GloryApi_GetAllLiveTrafficResponse: @unchecked Sendable {}
-extension GloryApi_GetSchooLiveTrafficRequest: @unchecked Sendable {}
-extension GloryApi_GetSchooLiveTrafficResponse: @unchecked Sendable {}
-extension GloryApi_ListTenantLiveTrafficConfigRequest: @unchecked Sendable {}
-extension GloryApi_TenantTrafficConfig: @unchecked Sendable {}
-extension GloryApi_ListTenantLiveTrafficConfigResponse: @unchecked Sendable {}
-extension GloryApi_UpdateTenantLiveTrafficConfigRequest: @unchecked Sendable {}
-extension GloryApi_UpdateTenantLiveTrafficConfigResponse: @unchecked Sendable {}
-extension GloryApi_ListTrafficWarningRequest: @unchecked Sendable {}
-extension GloryApi_TrafficWarning: @unchecked Sendable {}
-extension GloryApi_ListTrafficWarningResponse: @unchecked Sendable {}
-extension GloryApi_DeleteTrafficWarningRequest: @unchecked Sendable {}
-extension GloryApi_DeleteTrafficWarningResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
@@ -762,7 +739,7 @@ extension GloryApi_SchoolLiveTraffic: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if self.remainingTraffic != 0 {
       try visitor.visitSingularInt64Field(value: self.remainingTraffic, fieldNumber: 4)
     }
-    if self.remainingPercent != 0 {
+    if self.remainingPercent.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.remainingPercent, fieldNumber: 5)
     }
     if self.maxLiveDuration != 0 {
@@ -895,7 +872,7 @@ extension GloryApi_SchooLiveTrafficChart: SwiftProtobuf.Message, SwiftProtobuf._
     if self.timestamp != 0 {
       try visitor.visitSingularInt64Field(value: self.timestamp, fieldNumber: 3)
     }
-    if self.subTraffic != 0 {
+    if self.subTraffic.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.subTraffic, fieldNumber: 4)
     }
     try unknownFields.traverse(visitor: &visitor)

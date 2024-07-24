@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_Payment {
+struct GloryApi_Payment: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -44,7 +44,7 @@ struct GloryApi_Payment {
   init() {}
 }
 
-struct GloryApi_PaymentWithAuthor {
+struct GloryApi_PaymentWithAuthor: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -75,7 +75,7 @@ struct GloryApi_PaymentWithAuthor {
   fileprivate var _authorInfo: Base_AuthorInfo? = nil
 }
 
-struct GloryApi_CreatePaymentRequest {
+struct GloryApi_CreatePaymentRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -108,7 +108,7 @@ struct GloryApi_CreatePaymentRequest {
   fileprivate var _payment: GloryApi_Payment? = nil
 }
 
-struct GloryApi_CreatePaymentResponse {
+struct GloryApi_CreatePaymentResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -155,7 +155,7 @@ struct GloryApi_CreatePaymentResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetPaymentRequest {
+struct GloryApi_GetPaymentRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -178,7 +178,7 @@ struct GloryApi_GetPaymentRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetPaymentResponse {
+struct GloryApi_GetPaymentResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -209,7 +209,7 @@ struct GloryApi_GetPaymentResponse {
   fileprivate var _paymentDetail: GloryApi_PaymentWithAuthor? = nil
 }
 
-struct GloryApi_UpdatePaymentRequest {
+struct GloryApi_UpdatePaymentRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -240,7 +240,7 @@ struct GloryApi_UpdatePaymentRequest {
   fileprivate var _payment: GloryApi_Payment? = nil
 }
 
-struct GloryApi_UpdatePaymentResponse {
+struct GloryApi_UpdatePaymentResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -263,7 +263,7 @@ struct GloryApi_UpdatePaymentResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_DeletePaymentRequest {
+struct GloryApi_DeletePaymentRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -286,7 +286,7 @@ struct GloryApi_DeletePaymentRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeletePaymentResponse {
+struct GloryApi_DeletePaymentResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -307,7 +307,7 @@ struct GloryApi_DeletePaymentResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_WechatPaymentNotifyRequest {
+struct GloryApi_WechatPaymentNotifyRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -317,7 +317,7 @@ struct GloryApi_WechatPaymentNotifyRequest {
   init() {}
 }
 
-struct GloryApi_WechatPaymentNotifyResponse {
+struct GloryApi_WechatPaymentNotifyResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -326,21 +326,6 @@ struct GloryApi_WechatPaymentNotifyResponse {
 
   init() {}
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_Payment: @unchecked Sendable {}
-extension GloryApi_PaymentWithAuthor: @unchecked Sendable {}
-extension GloryApi_CreatePaymentRequest: @unchecked Sendable {}
-extension GloryApi_CreatePaymentResponse: @unchecked Sendable {}
-extension GloryApi_GetPaymentRequest: @unchecked Sendable {}
-extension GloryApi_GetPaymentResponse: @unchecked Sendable {}
-extension GloryApi_UpdatePaymentRequest: @unchecked Sendable {}
-extension GloryApi_UpdatePaymentResponse: @unchecked Sendable {}
-extension GloryApi_DeletePaymentRequest: @unchecked Sendable {}
-extension GloryApi_DeletePaymentResponse: @unchecked Sendable {}
-extension GloryApi_WechatPaymentNotifyRequest: @unchecked Sendable {}
-extension GloryApi_WechatPaymentNotifyResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
@@ -389,7 +374,7 @@ extension GloryApi_Payment: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
     if !self.paymentStatus.isEmpty {
       try visitor.visitSingularStringField(value: self.paymentStatus, fieldNumber: 4)
     }
-    if self.totalAmount != 0 {
+    if self.totalAmount.bitPattern != 0 {
       try visitor.visitSingularFloatField(value: self.totalAmount, fieldNumber: 5)
     }
     if self.supplierPaymentID != 0 {
@@ -845,8 +830,8 @@ extension GloryApi_WechatPaymentNotifyRequest: SwiftProtobuf.Message, SwiftProto
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let _ = try decoder.nextFieldNumber() {
-    }
+    // Load everything into unknown fields
+    while try decoder.nextFieldNumber() != nil {}
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
@@ -864,8 +849,8 @@ extension GloryApi_WechatPaymentNotifyResponse: SwiftProtobuf.Message, SwiftProt
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let _ = try decoder.nextFieldNumber() {
-    }
+    // Load everything into unknown fields
+    while try decoder.nextFieldNumber() != nil {}
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {

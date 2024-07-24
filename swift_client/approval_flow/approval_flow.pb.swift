@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_SubmitApprovalFlowRequest {
+struct GloryApi_SubmitApprovalFlowRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -49,7 +49,7 @@ struct GloryApi_SubmitApprovalFlowRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_SubmitApprovalFlowResponse {
+struct GloryApi_SubmitApprovalFlowResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -70,7 +70,7 @@ struct GloryApi_SubmitApprovalFlowResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ApproveFlowRequest {
+struct GloryApi_ApproveFlowRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -99,7 +99,7 @@ struct GloryApi_ApproveFlowRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ApproveFlowResponse {
+struct GloryApi_ApproveFlowResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -120,7 +120,7 @@ struct GloryApi_ApproveFlowResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListApprovalFlowRequest {
+struct GloryApi_ListApprovalFlowRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -164,7 +164,7 @@ struct GloryApi_ListApprovalFlowRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListApprovalFlowResponse {
+struct GloryApi_ListApprovalFlowResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -197,7 +197,7 @@ struct GloryApi_ListApprovalFlowResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_ApprovalFlowLevel {
+struct GloryApi_ApprovalFlowLevel: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -221,7 +221,7 @@ struct GloryApi_ApprovalFlowLevel {
   init() {}
 }
 
-struct GloryApi_ApprovalFlowDetail {
+struct GloryApi_ApprovalFlowDetail: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -263,7 +263,7 @@ struct GloryApi_ApprovalFlowDetail {
   init() {}
 }
 
-struct GloryApi_GetApprovalFlowDetailRequest {
+struct GloryApi_GetApprovalFlowDetailRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -286,7 +286,7 @@ struct GloryApi_GetApprovalFlowDetailRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetApprovalFlowDetailResponse {
+struct GloryApi_GetApprovalFlowDetailResponse: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -325,19 +325,6 @@ struct GloryApi_GetApprovalFlowDetailResponse {
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_SubmitApprovalFlowRequest: @unchecked Sendable {}
-extension GloryApi_SubmitApprovalFlowResponse: @unchecked Sendable {}
-extension GloryApi_ApproveFlowRequest: @unchecked Sendable {}
-extension GloryApi_ApproveFlowResponse: @unchecked Sendable {}
-extension GloryApi_ListApprovalFlowRequest: @unchecked Sendable {}
-extension GloryApi_ListApprovalFlowResponse: @unchecked Sendable {}
-extension GloryApi_ApprovalFlowLevel: @unchecked Sendable {}
-extension GloryApi_ApprovalFlowDetail: @unchecked Sendable {}
-extension GloryApi_GetApprovalFlowDetailRequest: @unchecked Sendable {}
-extension GloryApi_GetApprovalFlowDetailResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 

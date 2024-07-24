@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_CreateQuickEvaluationRequest {
+struct GloryApi_CreateQuickEvaluationRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -53,7 +53,7 @@ struct GloryApi_CreateQuickEvaluationRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CreateQuickEvaluationResponse {
+struct GloryApi_CreateQuickEvaluationResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -74,7 +74,7 @@ struct GloryApi_CreateQuickEvaluationResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_UpdateQuickEvaluationRequest {
+struct GloryApi_UpdateQuickEvaluationRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -111,7 +111,7 @@ struct GloryApi_UpdateQuickEvaluationRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UpdateQuickEvaluationResponse {
+struct GloryApi_UpdateQuickEvaluationResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -132,7 +132,7 @@ struct GloryApi_UpdateQuickEvaluationResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_DeleteQuickEvaluationRequest {
+struct GloryApi_DeleteQuickEvaluationRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -155,7 +155,7 @@ struct GloryApi_DeleteQuickEvaluationRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteQuickEvaluationResponse {
+struct GloryApi_DeleteQuickEvaluationResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -176,7 +176,7 @@ struct GloryApi_DeleteQuickEvaluationResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_EvaluationStandard {
+struct GloryApi_EvaluationStandard: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -247,7 +247,7 @@ struct GloryApi_EvaluationStandard {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct GloryApi_ListQuickEvaluationRequest {
+struct GloryApi_ListQuickEvaluationRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -280,7 +280,7 @@ struct GloryApi_ListQuickEvaluationRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListQuickEvaluationResponse {
+struct GloryApi_ListQuickEvaluationResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -313,7 +313,7 @@ struct GloryApi_ListQuickEvaluationResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_CreateQuickEvaluationReportRequest {
+struct GloryApi_CreateQuickEvaluationReportRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -340,7 +340,7 @@ struct GloryApi_CreateQuickEvaluationReportRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CreateQuickEvaluationReportResponse {
+struct GloryApi_CreateQuickEvaluationReportResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -361,7 +361,7 @@ struct GloryApi_CreateQuickEvaluationReportResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListQuickEvaluationReportRequest {
+struct GloryApi_ListQuickEvaluationReportRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -394,7 +394,7 @@ struct GloryApi_ListQuickEvaluationReportRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_EvaluationReport {
+struct GloryApi_EvaluationReport: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -416,7 +416,7 @@ struct GloryApi_EvaluationReport {
   init() {}
 }
 
-struct GloryApi_ListQuickEvaluationReportResponse {
+struct GloryApi_ListQuickEvaluationReportResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -449,7 +449,7 @@ struct GloryApi_ListQuickEvaluationReportResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_GetQuickEvaluationReportRequest {
+struct GloryApi_GetQuickEvaluationReportRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -472,7 +472,131 @@ struct GloryApi_GetQuickEvaluationReportRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_PassDetail {
+struct GloryApi_GetQuickEvaluationTotalReportRequest: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var beginTime: Int64 = 0
+
+  var endTime: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_QuickEvaluationTotalReportItemEntry: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var name: String = String()
+
+  var percent: String = String()
+
+  var detail: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_QuickEvaluationTotalReportItem: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var itemName: String = String()
+
+  var entries: [GloryApi_QuickEvaluationTotalReportItemEntry] = []
+
+  var desc: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_QuickEvaluationTotalReportStudentDetail: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var name: String = String()
+
+  var result: Bool = false
+
+  var reason: String = String()
+
+  var reportID: Int64 = 0
+
+  var roomID: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_QuickEvaluationTotalReport: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var totalCount: Int32 = 0
+
+  var passCount: Int32 = 0
+
+  var noPassCount: Int32 = 0
+
+  var beginTime: String = String()
+
+  var endTime: String = String()
+
+  var items: [GloryApi_QuickEvaluationTotalReportItem] = []
+
+  var passList: [GloryApi_QuickEvaluationTotalReportStudentDetail] = []
+
+  var noPassList: [GloryApi_QuickEvaluationTotalReportStudentDetail] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_GetQuickEvaluationTotalReportResponse: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
+struct GloryApi_PassDetail: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -493,7 +617,7 @@ struct GloryApi_PassDetail {
   init() {}
 }
 
-struct GloryApi_NoPassInfo {
+struct GloryApi_NoPassInfo: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -513,7 +637,7 @@ struct GloryApi_NoPassInfo {
   init() {}
 }
 
-struct GloryApi_ReportDetail {
+struct GloryApi_ReportDetail: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -537,7 +661,7 @@ struct GloryApi_ReportDetail {
   init() {}
 }
 
-struct GloryApi_GetQuickEvaluationReportResponse {
+struct GloryApi_GetQuickEvaluationReportResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -568,7 +692,7 @@ struct GloryApi_GetQuickEvaluationReportResponse {
   fileprivate var _report: GloryApi_ReportDetail? = nil
 }
 
-struct GloryApi_GetQuickEvaluationDetailRequest {
+struct GloryApi_GetQuickEvaluationDetailRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -591,7 +715,7 @@ struct GloryApi_GetQuickEvaluationDetailRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_QuickEvaluationDetail {
+struct GloryApi_QuickEvaluationDetail: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -607,7 +731,7 @@ struct GloryApi_QuickEvaluationDetail {
   init() {}
 }
 
-struct GloryApi_QuickEvaluationDetailType {
+struct GloryApi_QuickEvaluationDetailType: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -621,7 +745,7 @@ struct GloryApi_QuickEvaluationDetailType {
   init() {}
 }
 
-struct GloryApi_QuickEvaluationDetailKey {
+struct GloryApi_QuickEvaluationDetailKey: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -645,7 +769,7 @@ struct GloryApi_QuickEvaluationDetailKey {
   init() {}
 }
 
-struct GloryApi_GetQuickEvaluationDetailResponse {
+struct GloryApi_GetQuickEvaluationDetailResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -676,7 +800,7 @@ struct GloryApi_GetQuickEvaluationDetailResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_DeleteQuickEvaluationReportResponse {
+struct GloryApi_DeleteQuickEvaluationReportResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -697,7 +821,7 @@ struct GloryApi_DeleteQuickEvaluationReportResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_DeleteQuickEvaluationReportRequest {
+struct GloryApi_DeleteQuickEvaluationReportRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -719,35 +843,6 @@ struct GloryApi_DeleteQuickEvaluationReportRequest {
 
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_CreateQuickEvaluationRequest: @unchecked Sendable {}
-extension GloryApi_CreateQuickEvaluationResponse: @unchecked Sendable {}
-extension GloryApi_UpdateQuickEvaluationRequest: @unchecked Sendable {}
-extension GloryApi_UpdateQuickEvaluationResponse: @unchecked Sendable {}
-extension GloryApi_DeleteQuickEvaluationRequest: @unchecked Sendable {}
-extension GloryApi_DeleteQuickEvaluationResponse: @unchecked Sendable {}
-extension GloryApi_EvaluationStandard: @unchecked Sendable {}
-extension GloryApi_ListQuickEvaluationRequest: @unchecked Sendable {}
-extension GloryApi_ListQuickEvaluationResponse: @unchecked Sendable {}
-extension GloryApi_CreateQuickEvaluationReportRequest: @unchecked Sendable {}
-extension GloryApi_CreateQuickEvaluationReportResponse: @unchecked Sendable {}
-extension GloryApi_ListQuickEvaluationReportRequest: @unchecked Sendable {}
-extension GloryApi_EvaluationReport: @unchecked Sendable {}
-extension GloryApi_ListQuickEvaluationReportResponse: @unchecked Sendable {}
-extension GloryApi_GetQuickEvaluationReportRequest: @unchecked Sendable {}
-extension GloryApi_PassDetail: @unchecked Sendable {}
-extension GloryApi_NoPassInfo: @unchecked Sendable {}
-extension GloryApi_ReportDetail: @unchecked Sendable {}
-extension GloryApi_GetQuickEvaluationReportResponse: @unchecked Sendable {}
-extension GloryApi_GetQuickEvaluationDetailRequest: @unchecked Sendable {}
-extension GloryApi_QuickEvaluationDetail: @unchecked Sendable {}
-extension GloryApi_QuickEvaluationDetailType: @unchecked Sendable {}
-extension GloryApi_QuickEvaluationDetailKey: @unchecked Sendable {}
-extension GloryApi_GetQuickEvaluationDetailResponse: @unchecked Sendable {}
-extension GloryApi_DeleteQuickEvaluationReportResponse: @unchecked Sendable {}
-extension GloryApi_DeleteQuickEvaluationReportRequest: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
@@ -1596,6 +1691,308 @@ extension GloryApi_GetQuickEvaluationReportRequest: SwiftProtobuf.Message, Swift
   static func ==(lhs: GloryApi_GetQuickEvaluationReportRequest, rhs: GloryApi_GetQuickEvaluationReportRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.reportID != rhs.reportID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetQuickEvaluationTotalReportRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetQuickEvaluationTotalReportRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "begin_time"),
+    3: .standard(proto: "end_time"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.beginTime) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.endTime) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.beginTime != 0 {
+      try visitor.visitSingularInt64Field(value: self.beginTime, fieldNumber: 2)
+    }
+    if self.endTime != 0 {
+      try visitor.visitSingularInt64Field(value: self.endTime, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetQuickEvaluationTotalReportRequest, rhs: GloryApi_GetQuickEvaluationTotalReportRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.beginTime != rhs.beginTime {return false}
+    if lhs.endTime != rhs.endTime {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_QuickEvaluationTotalReportItemEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QuickEvaluationTotalReportItemEntry"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "name"),
+    2: .same(proto: "percent"),
+    3: .same(proto: "detail"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.name) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.percent) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.detail) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.name.isEmpty {
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
+    }
+    if !self.percent.isEmpty {
+      try visitor.visitSingularStringField(value: self.percent, fieldNumber: 2)
+    }
+    if !self.detail.isEmpty {
+      try visitor.visitSingularStringField(value: self.detail, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_QuickEvaluationTotalReportItemEntry, rhs: GloryApi_QuickEvaluationTotalReportItemEntry) -> Bool {
+    if lhs.name != rhs.name {return false}
+    if lhs.percent != rhs.percent {return false}
+    if lhs.detail != rhs.detail {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_QuickEvaluationTotalReportItem: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QuickEvaluationTotalReportItem"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "item_name"),
+    2: .same(proto: "entries"),
+    3: .same(proto: "desc"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.itemName) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.entries) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.desc) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.itemName.isEmpty {
+      try visitor.visitSingularStringField(value: self.itemName, fieldNumber: 1)
+    }
+    if !self.entries.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.entries, fieldNumber: 2)
+    }
+    if !self.desc.isEmpty {
+      try visitor.visitSingularStringField(value: self.desc, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_QuickEvaluationTotalReportItem, rhs: GloryApi_QuickEvaluationTotalReportItem) -> Bool {
+    if lhs.itemName != rhs.itemName {return false}
+    if lhs.entries != rhs.entries {return false}
+    if lhs.desc != rhs.desc {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_QuickEvaluationTotalReportStudentDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QuickEvaluationTotalReportStudentDetail"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "name"),
+    2: .same(proto: "result"),
+    3: .same(proto: "reason"),
+    4: .standard(proto: "report_id"),
+    5: .standard(proto: "room_id"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.name) }()
+      case 2: try { try decoder.decodeSingularBoolField(value: &self.result) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.reason) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.reportID) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.roomID) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.name.isEmpty {
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
+    }
+    if self.result != false {
+      try visitor.visitSingularBoolField(value: self.result, fieldNumber: 2)
+    }
+    if !self.reason.isEmpty {
+      try visitor.visitSingularStringField(value: self.reason, fieldNumber: 3)
+    }
+    if self.reportID != 0 {
+      try visitor.visitSingularInt64Field(value: self.reportID, fieldNumber: 4)
+    }
+    if self.roomID != 0 {
+      try visitor.visitSingularInt64Field(value: self.roomID, fieldNumber: 5)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_QuickEvaluationTotalReportStudentDetail, rhs: GloryApi_QuickEvaluationTotalReportStudentDetail) -> Bool {
+    if lhs.name != rhs.name {return false}
+    if lhs.result != rhs.result {return false}
+    if lhs.reason != rhs.reason {return false}
+    if lhs.reportID != rhs.reportID {return false}
+    if lhs.roomID != rhs.roomID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_QuickEvaluationTotalReport: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".QuickEvaluationTotalReport"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "total_count"),
+    2: .standard(proto: "pass_count"),
+    3: .standard(proto: "no_pass_count"),
+    4: .standard(proto: "begin_time"),
+    5: .standard(proto: "end_time"),
+    6: .same(proto: "items"),
+    7: .standard(proto: "pass_list"),
+    8: .standard(proto: "no_pass_list"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt32Field(value: &self.totalCount) }()
+      case 2: try { try decoder.decodeSingularInt32Field(value: &self.passCount) }()
+      case 3: try { try decoder.decodeSingularInt32Field(value: &self.noPassCount) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.beginTime) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.endTime) }()
+      case 6: try { try decoder.decodeRepeatedMessageField(value: &self.items) }()
+      case 7: try { try decoder.decodeRepeatedMessageField(value: &self.passList) }()
+      case 8: try { try decoder.decodeRepeatedMessageField(value: &self.noPassList) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.totalCount != 0 {
+      try visitor.visitSingularInt32Field(value: self.totalCount, fieldNumber: 1)
+    }
+    if self.passCount != 0 {
+      try visitor.visitSingularInt32Field(value: self.passCount, fieldNumber: 2)
+    }
+    if self.noPassCount != 0 {
+      try visitor.visitSingularInt32Field(value: self.noPassCount, fieldNumber: 3)
+    }
+    if !self.beginTime.isEmpty {
+      try visitor.visitSingularStringField(value: self.beginTime, fieldNumber: 4)
+    }
+    if !self.endTime.isEmpty {
+      try visitor.visitSingularStringField(value: self.endTime, fieldNumber: 5)
+    }
+    if !self.items.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.items, fieldNumber: 6)
+    }
+    if !self.passList.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.passList, fieldNumber: 7)
+    }
+    if !self.noPassList.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.noPassList, fieldNumber: 8)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_QuickEvaluationTotalReport, rhs: GloryApi_QuickEvaluationTotalReport) -> Bool {
+    if lhs.totalCount != rhs.totalCount {return false}
+    if lhs.passCount != rhs.passCount {return false}
+    if lhs.noPassCount != rhs.noPassCount {return false}
+    if lhs.beginTime != rhs.beginTime {return false}
+    if lhs.endTime != rhs.endTime {return false}
+    if lhs.items != rhs.items {return false}
+    if lhs.passList != rhs.passList {return false}
+    if lhs.noPassList != rhs.noPassList {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetQuickEvaluationTotalReportResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetQuickEvaluationTotalReportResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetQuickEvaluationTotalReportResponse, rhs: GloryApi_GetQuickEvaluationTotalReportResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_CreateLiveControlRequest {
+struct GloryApi_CreateLiveControlRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -57,7 +57,7 @@ struct GloryApi_CreateLiveControlRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CreateLiveControlResponse {
+struct GloryApi_CreateLiveControlResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -78,7 +78,7 @@ struct GloryApi_CreateLiveControlResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_UpdateLiveControlRequest {
+struct GloryApi_UpdateLiveControlRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -119,7 +119,7 @@ struct GloryApi_UpdateLiveControlRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UpdateLiveControlResponse {
+struct GloryApi_UpdateLiveControlResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -140,7 +140,7 @@ struct GloryApi_UpdateLiveControlResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListLiveControlRequest {
+struct GloryApi_ListLiveControlRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -163,7 +163,7 @@ struct GloryApi_ListLiveControlRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_LiveControl {
+struct GloryApi_LiveControl: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -191,7 +191,7 @@ struct GloryApi_LiveControl {
   init() {}
 }
 
-struct GloryApi_ListLiveControlResponse {
+struct GloryApi_ListLiveControlResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -214,7 +214,7 @@ struct GloryApi_ListLiveControlResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_DeleteLiveControlRequest {
+struct GloryApi_DeleteLiveControlRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -237,7 +237,7 @@ struct GloryApi_DeleteLiveControlRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteLiveControlResponse {
+struct GloryApi_DeleteLiveControlResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -257,18 +257,6 @@ struct GloryApi_DeleteLiveControlResponse {
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_CreateLiveControlRequest: @unchecked Sendable {}
-extension GloryApi_CreateLiveControlResponse: @unchecked Sendable {}
-extension GloryApi_UpdateLiveControlRequest: @unchecked Sendable {}
-extension GloryApi_UpdateLiveControlResponse: @unchecked Sendable {}
-extension GloryApi_ListLiveControlRequest: @unchecked Sendable {}
-extension GloryApi_LiveControl: @unchecked Sendable {}
-extension GloryApi_ListLiveControlResponse: @unchecked Sendable {}
-extension GloryApi_DeleteLiveControlRequest: @unchecked Sendable {}
-extension GloryApi_DeleteLiveControlResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 

@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_VirtualCurrency {
+struct GloryApi_VirtualCurrency: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -55,7 +55,7 @@ struct GloryApi_VirtualCurrency {
   init() {}
 }
 
-struct GloryApi_UserInfo {
+struct GloryApi_UserInfo: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -73,7 +73,7 @@ struct GloryApi_UserInfo {
   init() {}
 }
 
-struct GloryApi_VirtualCurrencyInfo {
+struct GloryApi_VirtualCurrencyInfo: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -104,7 +104,7 @@ struct GloryApi_VirtualCurrencyInfo {
   fileprivate var _userInfo: GloryApi_UserInfo? = nil
 }
 
-struct GloryApi_AddVirtualCurrencyRequest {
+struct GloryApi_AddVirtualCurrencyRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -135,7 +135,7 @@ struct GloryApi_AddVirtualCurrencyRequest {
   fileprivate var _virtualCurrency: GloryApi_VirtualCurrency? = nil
 }
 
-struct GloryApi_AddVirtualCurrencyResponse {
+struct GloryApi_AddVirtualCurrencyResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -156,7 +156,7 @@ struct GloryApi_AddVirtualCurrencyResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_RechargeCurrencyRequest {
+struct GloryApi_RechargeCurrencyRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -179,7 +179,7 @@ struct GloryApi_RechargeCurrencyRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_RechargeCurrencyResponse {
+struct GloryApi_RechargeCurrencyResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -200,7 +200,7 @@ struct GloryApi_RechargeCurrencyResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_RechargeCurrencyInBatchesRequest {
+struct GloryApi_RechargeCurrencyInBatchesRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -223,7 +223,7 @@ struct GloryApi_RechargeCurrencyInBatchesRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_RechargeCurrencyInBatchesResponse {
+struct GloryApi_RechargeCurrencyInBatchesResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -244,7 +244,7 @@ struct GloryApi_RechargeCurrencyInBatchesResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetVirtualCurrencyRequest {
+struct GloryApi_GetVirtualCurrencyRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -267,7 +267,7 @@ struct GloryApi_GetVirtualCurrencyRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetVirtualCurrencyResponse {
+struct GloryApi_GetVirtualCurrencyResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -298,7 +298,7 @@ struct GloryApi_GetVirtualCurrencyResponse {
   fileprivate var _virtualCurrencyInfo: GloryApi_VirtualCurrencyInfo? = nil
 }
 
-struct GloryApi_ListVirtualCurrencyRequest {
+struct GloryApi_ListVirtualCurrencyRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -334,7 +334,7 @@ struct GloryApi_ListVirtualCurrencyRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListVirtualCurrencyResponse {
+struct GloryApi_ListVirtualCurrencyResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -366,22 +366,6 @@ struct GloryApi_ListVirtualCurrencyResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_VirtualCurrency: @unchecked Sendable {}
-extension GloryApi_UserInfo: @unchecked Sendable {}
-extension GloryApi_VirtualCurrencyInfo: @unchecked Sendable {}
-extension GloryApi_AddVirtualCurrencyRequest: @unchecked Sendable {}
-extension GloryApi_AddVirtualCurrencyResponse: @unchecked Sendable {}
-extension GloryApi_RechargeCurrencyRequest: @unchecked Sendable {}
-extension GloryApi_RechargeCurrencyResponse: @unchecked Sendable {}
-extension GloryApi_RechargeCurrencyInBatchesRequest: @unchecked Sendable {}
-extension GloryApi_RechargeCurrencyInBatchesResponse: @unchecked Sendable {}
-extension GloryApi_GetVirtualCurrencyRequest: @unchecked Sendable {}
-extension GloryApi_GetVirtualCurrencyResponse: @unchecked Sendable {}
-extension GloryApi_ListVirtualCurrencyRequest: @unchecked Sendable {}
-extension GloryApi_ListVirtualCurrencyResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 

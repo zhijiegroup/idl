@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_Seller {
+struct GloryApi_Seller: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -38,7 +38,7 @@ struct GloryApi_Seller {
   init() {}
 }
 
-struct GloryApi_CreateSellerRequest {
+struct GloryApi_CreateSellerRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -69,7 +69,7 @@ struct GloryApi_CreateSellerRequest {
   fileprivate var _seller: GloryApi_Seller? = nil
 }
 
-struct GloryApi_CreateSellerResponse {
+struct GloryApi_CreateSellerResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -91,12 +91,6 @@ struct GloryApi_CreateSellerResponse {
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_Seller: @unchecked Sendable {}
-extension GloryApi_CreateSellerRequest: @unchecked Sendable {}
-extension GloryApi_CreateSellerResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 

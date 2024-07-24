@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_Cart {
+struct GloryApi_Cart: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -50,7 +50,7 @@ struct GloryApi_Cart {
   fileprivate var _cartSku: GloryApi_CartSku? = nil
 }
 
-struct GloryApi_CartSku {
+struct GloryApi_CartSku: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -74,7 +74,7 @@ struct GloryApi_CartSku {
   init() {}
 }
 
-struct GloryApi_ProductShow {
+struct GloryApi_ProductShow: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -161,7 +161,7 @@ struct GloryApi_ProductShow {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct GloryApi_ShopShow {
+struct GloryApi_ShopShow: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -185,7 +185,7 @@ struct GloryApi_ShopShow {
   init() {}
 }
 
-struct GloryApi_CartShow {
+struct GloryApi_CartShow: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -207,7 +207,7 @@ struct GloryApi_CartShow {
   init() {}
 }
 
-struct GloryApi_CartWithAuthor {
+struct GloryApi_CartWithAuthor: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -238,7 +238,7 @@ struct GloryApi_CartWithAuthor {
   fileprivate var _authorInfo: Base_AuthorInfo? = nil
 }
 
-struct GloryApi_AddCartRequest {
+struct GloryApi_AddCartRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -271,7 +271,7 @@ struct GloryApi_AddCartRequest {
   fileprivate var _cart: GloryApi_Cart? = nil
 }
 
-struct GloryApi_AddCartResponse {
+struct GloryApi_AddCartResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -296,7 +296,7 @@ struct GloryApi_AddCartResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetCartRequest {
+struct GloryApi_GetCartRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -319,7 +319,7 @@ struct GloryApi_GetCartRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetCartResponse {
+struct GloryApi_GetCartResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -351,7 +351,7 @@ struct GloryApi_GetCartResponse {
   fileprivate var _cartInfo: GloryApi_CartShow? = nil
 }
 
-struct GloryApi_UpdateCartRequest {
+struct GloryApi_UpdateCartRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -382,7 +382,7 @@ struct GloryApi_UpdateCartRequest {
   fileprivate var _cartInfo: GloryApi_CartShow? = nil
 }
 
-struct GloryApi_UpdateCartResponse {
+struct GloryApi_UpdateCartResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -413,7 +413,7 @@ struct GloryApi_UpdateCartResponse {
   fileprivate var _cartInfo: GloryApi_CartShow? = nil
 }
 
-struct GloryApi_DeleteCartRequest {
+struct GloryApi_DeleteCartRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -444,7 +444,7 @@ struct GloryApi_DeleteCartRequest {
   fileprivate var _cartInfo: GloryApi_CartShow? = nil
 }
 
-struct GloryApi_DeleteCartResponse {
+struct GloryApi_DeleteCartResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -464,23 +464,6 @@ struct GloryApi_DeleteCartResponse {
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_Cart: @unchecked Sendable {}
-extension GloryApi_CartSku: @unchecked Sendable {}
-extension GloryApi_ProductShow: @unchecked Sendable {}
-extension GloryApi_ShopShow: @unchecked Sendable {}
-extension GloryApi_CartShow: @unchecked Sendable {}
-extension GloryApi_CartWithAuthor: @unchecked Sendable {}
-extension GloryApi_AddCartRequest: @unchecked Sendable {}
-extension GloryApi_AddCartResponse: @unchecked Sendable {}
-extension GloryApi_GetCartRequest: @unchecked Sendable {}
-extension GloryApi_GetCartResponse: @unchecked Sendable {}
-extension GloryApi_UpdateCartRequest: @unchecked Sendable {}
-extension GloryApi_UpdateCartResponse: @unchecked Sendable {}
-extension GloryApi_DeleteCartRequest: @unchecked Sendable {}
-extension GloryApi_DeleteCartResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
@@ -722,7 +705,7 @@ extension GloryApi_ProductShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       if _storage._quantity != 0 {
         try visitor.visitSingularInt32Field(value: _storage._quantity, fieldNumber: 4)
       }
-      if _storage._unitPrice != 0 {
+      if _storage._unitPrice.bitPattern != 0 {
         try visitor.visitSingularDoubleField(value: _storage._unitPrice, fieldNumber: 5)
       }
       if !_storage._productURL.isEmpty {
@@ -734,7 +717,7 @@ extension GloryApi_ProductShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       if !_storage._currency.isEmpty {
         try visitor.visitSingularStringField(value: _storage._currency, fieldNumber: 8)
       }
-      if _storage._freightAmount != 0 {
+      if _storage._freightAmount.bitPattern != 0 {
         try visitor.visitSingularFloatField(value: _storage._freightAmount, fieldNumber: 9)
       }
       if !_storage._channel.isEmpty {

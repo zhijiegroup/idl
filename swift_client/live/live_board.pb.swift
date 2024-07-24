@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_ListUserMajorAndClasRequest {
+struct GloryApi_ListUserMajorAndClasRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -41,7 +41,7 @@ struct GloryApi_ListUserMajorAndClasRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ListUserMajorAndClasResponse {
+struct GloryApi_ListUserMajorAndClasResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -64,7 +64,7 @@ struct GloryApi_ListUserMajorAndClasResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_MajorData {
+struct GloryApi_MajorData: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -80,7 +80,7 @@ struct GloryApi_MajorData {
   init() {}
 }
 
-struct GloryApi_ClasData {
+struct GloryApi_ClasData: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -94,7 +94,7 @@ struct GloryApi_ClasData {
   init() {}
 }
 
-struct GloryApi_GetAggregationLiveUrlRequest {
+struct GloryApi_GetAggregationLiveUrlRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -121,7 +121,7 @@ struct GloryApi_GetAggregationLiveUrlRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetAggregationLiveUrlResponse {
+struct GloryApi_GetAggregationLiveUrlResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -156,7 +156,7 @@ struct GloryApi_GetAggregationLiveUrlResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetLiveBoardDataRequest {
+struct GloryApi_GetLiveBoardDataRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -179,7 +179,7 @@ struct GloryApi_GetLiveBoardDataRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetLiveBoardDataResponse {
+struct GloryApi_GetLiveBoardDataResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -210,7 +210,7 @@ struct GloryApi_GetLiveBoardDataResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_LiveLikeData {
+struct GloryApi_LiveLikeData: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -224,7 +224,7 @@ struct GloryApi_LiveLikeData {
   init() {}
 }
 
-struct GloryApi_GetLiveBoardCommentsRequest {
+struct GloryApi_GetLiveBoardCommentsRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -247,7 +247,7 @@ struct GloryApi_GetLiveBoardCommentsRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetLiveBoardCommentsResponse {
+struct GloryApi_GetLiveBoardCommentsResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -270,7 +270,7 @@ struct GloryApi_GetLiveBoardCommentsResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListLivingUserRequest {
+struct GloryApi_ListLivingUserRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -295,7 +295,7 @@ struct GloryApi_ListLivingUserRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ListLivingUserResponse {
+struct GloryApi_ListLivingUserResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -318,7 +318,7 @@ struct GloryApi_ListLivingUserResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_LivingUser {
+struct GloryApi_LivingUser: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -336,7 +336,7 @@ struct GloryApi_LivingUser {
   init() {}
 }
 
-struct GloryApi_CloseCasterRequest {
+struct GloryApi_CloseCasterRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -359,7 +359,7 @@ struct GloryApi_CloseCasterRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CloseCasterResponse {
+struct GloryApi_CloseCasterResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -379,25 +379,6 @@ struct GloryApi_CloseCasterResponse {
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_ListUserMajorAndClasRequest: @unchecked Sendable {}
-extension GloryApi_ListUserMajorAndClasResponse: @unchecked Sendable {}
-extension GloryApi_MajorData: @unchecked Sendable {}
-extension GloryApi_ClasData: @unchecked Sendable {}
-extension GloryApi_GetAggregationLiveUrlRequest: @unchecked Sendable {}
-extension GloryApi_GetAggregationLiveUrlResponse: @unchecked Sendable {}
-extension GloryApi_GetLiveBoardDataRequest: @unchecked Sendable {}
-extension GloryApi_GetLiveBoardDataResponse: @unchecked Sendable {}
-extension GloryApi_LiveLikeData: @unchecked Sendable {}
-extension GloryApi_GetLiveBoardCommentsRequest: @unchecked Sendable {}
-extension GloryApi_GetLiveBoardCommentsResponse: @unchecked Sendable {}
-extension GloryApi_ListLivingUserRequest: @unchecked Sendable {}
-extension GloryApi_ListLivingUserResponse: @unchecked Sendable {}
-extension GloryApi_LivingUser: @unchecked Sendable {}
-extension GloryApi_CloseCasterRequest: @unchecked Sendable {}
-extension GloryApi_CloseCasterResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
