@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_Image {
+struct GloryApi_Image: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -36,7 +36,7 @@ struct GloryApi_Image {
   init() {}
 }
 
-struct GloryApi_ProductIndexInfo {
+struct GloryApi_ProductIndexInfo: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -65,7 +65,7 @@ struct GloryApi_ProductIndexInfo {
   init() {}
 }
 
-struct GloryApi_LiveRoomIndexInfo {
+struct GloryApi_LiveRoomIndexInfo: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -176,7 +176,7 @@ struct GloryApi_LiveRoomIndexInfo {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct GloryApi_MallIndexRequest {
+struct GloryApi_MallIndexRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -207,7 +207,7 @@ struct GloryApi_MallIndexRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_MallIndexResponse {
+struct GloryApi_MallIndexResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -241,14 +241,6 @@ struct GloryApi_MallIndexResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_Image: @unchecked Sendable {}
-extension GloryApi_ProductIndexInfo: @unchecked Sendable {}
-extension GloryApi_LiveRoomIndexInfo: @unchecked Sendable {}
-extension GloryApi_MallIndexRequest: @unchecked Sendable {}
-extension GloryApi_MallIndexResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
@@ -346,10 +338,10 @@ extension GloryApi_ProductIndexInfo: SwiftProtobuf.Message, SwiftProtobuf._Messa
     if !self.images.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.images, fieldNumber: 5)
     }
-    if self.salePrice != 0 {
+    if self.salePrice.bitPattern != 0 {
       try visitor.visitSingularFloatField(value: self.salePrice, fieldNumber: 6)
     }
-    if self.referencePrice != 0 {
+    if self.referencePrice.bitPattern != 0 {
       try visitor.visitSingularFloatField(value: self.referencePrice, fieldNumber: 7)
     }
     if self.isReal != false {

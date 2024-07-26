@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_ListOperationMetricsRequest {
+struct GloryApi_ListOperationMetricsRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -34,7 +34,7 @@ struct GloryApi_ListOperationMetricsRequest {
   init() {}
 }
 
-struct GloryApi_DailyOperationMetrics {
+struct GloryApi_DailyOperationMetrics: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -52,7 +52,7 @@ struct GloryApi_DailyOperationMetrics {
   init() {}
 }
 
-struct GloryApi_ListOperationMetricsResponse {
+struct GloryApi_ListOperationMetricsResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -80,12 +80,6 @@ struct GloryApi_ListOperationMetricsResponse {
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_ListOperationMetricsRequest: @unchecked Sendable {}
-extension GloryApi_DailyOperationMetrics: @unchecked Sendable {}
-extension GloryApi_ListOperationMetricsResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
@@ -154,7 +148,7 @@ extension GloryApi_DailyOperationMetrics: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.dailyOrderAmount != 0 {
+    if self.dailyOrderAmount.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.dailyOrderAmount, fieldNumber: 1)
     }
     if self.dailyOrderCount != 0 {
@@ -213,7 +207,7 @@ extension GloryApi_ListOperationMetricsResponse: SwiftProtobuf.Message, SwiftPro
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if self.orderAmount != 0 {
+    if self.orderAmount.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.orderAmount, fieldNumber: 2)
     }
     if self.orderCount != 0 {

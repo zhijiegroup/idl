@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_AdminUser {
+struct GloryApi_AdminUser: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -42,7 +42,7 @@ struct GloryApi_AdminUser {
   init() {}
 }
 
-struct GloryApi_AdminTenant {
+struct GloryApi_AdminTenant: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -56,7 +56,7 @@ struct GloryApi_AdminTenant {
   init() {}
 }
 
-struct GloryApi_GetAdminTenantRequest {
+struct GloryApi_GetAdminTenantRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -77,7 +77,7 @@ struct GloryApi_GetAdminTenantRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetAdminTenantResponse {
+struct GloryApi_GetAdminTenantResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -100,7 +100,7 @@ struct GloryApi_GetAdminTenantResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_CreateAdminUserRequest {
+struct GloryApi_CreateAdminUserRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -131,7 +131,7 @@ struct GloryApi_CreateAdminUserRequest {
   fileprivate var _adminUser: GloryApi_AdminUser? = nil
 }
 
-struct GloryApi_CreateAdminUserResponse {
+struct GloryApi_CreateAdminUserResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -152,7 +152,7 @@ struct GloryApi_CreateAdminUserResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_UpdateAdminUserRequest {
+struct GloryApi_UpdateAdminUserRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -183,7 +183,7 @@ struct GloryApi_UpdateAdminUserRequest {
   fileprivate var _adminUser: GloryApi_AdminUser? = nil
 }
 
-struct GloryApi_UpdateAdminUserResponse {
+struct GloryApi_UpdateAdminUserResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -204,7 +204,7 @@ struct GloryApi_UpdateAdminUserResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_DeleteAdminUserRequest {
+struct GloryApi_DeleteAdminUserRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -227,7 +227,7 @@ struct GloryApi_DeleteAdminUserRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteAdminUserResponse {
+struct GloryApi_DeleteAdminUserResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -248,7 +248,7 @@ struct GloryApi_DeleteAdminUserResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListAdminUserRequest {
+struct GloryApi_ListAdminUserRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -281,7 +281,7 @@ struct GloryApi_ListAdminUserRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListAdminUserResponse {
+struct GloryApi_ListAdminUserResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -313,21 +313,6 @@ struct GloryApi_ListAdminUserResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_AdminUser: @unchecked Sendable {}
-extension GloryApi_AdminTenant: @unchecked Sendable {}
-extension GloryApi_GetAdminTenantRequest: @unchecked Sendable {}
-extension GloryApi_GetAdminTenantResponse: @unchecked Sendable {}
-extension GloryApi_CreateAdminUserRequest: @unchecked Sendable {}
-extension GloryApi_CreateAdminUserResponse: @unchecked Sendable {}
-extension GloryApi_UpdateAdminUserRequest: @unchecked Sendable {}
-extension GloryApi_UpdateAdminUserResponse: @unchecked Sendable {}
-extension GloryApi_DeleteAdminUserRequest: @unchecked Sendable {}
-extension GloryApi_DeleteAdminUserResponse: @unchecked Sendable {}
-extension GloryApi_ListAdminUserRequest: @unchecked Sendable {}
-extension GloryApi_ListAdminUserResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 

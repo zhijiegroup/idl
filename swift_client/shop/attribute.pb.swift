@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_AttributeValue {
+struct GloryApi_AttributeValue: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -36,7 +36,7 @@ struct GloryApi_AttributeValue {
   init() {}
 }
 
-struct GloryApi_Attribute {
+struct GloryApi_Attribute: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -54,7 +54,7 @@ struct GloryApi_Attribute {
   init() {}
 }
 
-struct GloryApi_AttributeWithAuthor {
+struct GloryApi_AttributeWithAuthor: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -85,7 +85,7 @@ struct GloryApi_AttributeWithAuthor {
   fileprivate var _authorInfo: Base_AuthorInfo? = nil
 }
 
-struct GloryApi_CreateAttributeRequest {
+struct GloryApi_CreateAttributeRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -118,7 +118,7 @@ struct GloryApi_CreateAttributeRequest {
   fileprivate var _attribute: GloryApi_Attribute? = nil
 }
 
-struct GloryApi_CreateAttributeResponse {
+struct GloryApi_CreateAttributeResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -142,7 +142,7 @@ struct GloryApi_CreateAttributeResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetAttributeRequest {
+struct GloryApi_GetAttributeRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -165,7 +165,7 @@ struct GloryApi_GetAttributeRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetAttributeResponse {
+struct GloryApi_GetAttributeResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -196,7 +196,7 @@ struct GloryApi_GetAttributeResponse {
   fileprivate var _attributeDetail: GloryApi_AttributeWithAuthor? = nil
 }
 
-struct GloryApi_ListAttributeRequest {
+struct GloryApi_ListAttributeRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -231,7 +231,7 @@ struct GloryApi_ListAttributeRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListAttributeResponse {
+struct GloryApi_ListAttributeResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -264,7 +264,7 @@ struct GloryApi_ListAttributeResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_DeleteAttributeRequest {
+struct GloryApi_DeleteAttributeRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -287,7 +287,7 @@ struct GloryApi_DeleteAttributeRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteAttributeResponse {
+struct GloryApi_DeleteAttributeResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -308,7 +308,7 @@ struct GloryApi_DeleteAttributeResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_AddAttributeValueRequest {
+struct GloryApi_AddAttributeValueRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -333,7 +333,7 @@ struct GloryApi_AddAttributeValueRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_AddAttributeValueResponse {
+struct GloryApi_AddAttributeValueResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -354,7 +354,7 @@ struct GloryApi_AddAttributeValueResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_DeleteAttributeValueRequest {
+struct GloryApi_DeleteAttributeValueRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -377,7 +377,7 @@ struct GloryApi_DeleteAttributeValueRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteAttributeValueResponse {
+struct GloryApi_DeleteAttributeValueResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -397,24 +397,6 @@ struct GloryApi_DeleteAttributeValueResponse {
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_AttributeValue: @unchecked Sendable {}
-extension GloryApi_Attribute: @unchecked Sendable {}
-extension GloryApi_AttributeWithAuthor: @unchecked Sendable {}
-extension GloryApi_CreateAttributeRequest: @unchecked Sendable {}
-extension GloryApi_CreateAttributeResponse: @unchecked Sendable {}
-extension GloryApi_GetAttributeRequest: @unchecked Sendable {}
-extension GloryApi_GetAttributeResponse: @unchecked Sendable {}
-extension GloryApi_ListAttributeRequest: @unchecked Sendable {}
-extension GloryApi_ListAttributeResponse: @unchecked Sendable {}
-extension GloryApi_DeleteAttributeRequest: @unchecked Sendable {}
-extension GloryApi_DeleteAttributeResponse: @unchecked Sendable {}
-extension GloryApi_AddAttributeValueRequest: @unchecked Sendable {}
-extension GloryApi_AddAttributeValueResponse: @unchecked Sendable {}
-extension GloryApi_DeleteAttributeValueRequest: @unchecked Sendable {}
-extension GloryApi_DeleteAttributeValueResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 

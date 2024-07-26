@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_Tenant {
+struct GloryApi_Tenant: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -56,7 +56,7 @@ struct GloryApi_Tenant {
   init() {}
 }
 
-struct GloryApi_CreateTenantRequest {
+struct GloryApi_CreateTenantRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -88,7 +88,7 @@ struct GloryApi_CreateTenantRequest {
   fileprivate var _tenant: GloryApi_Tenant? = nil
 }
 
-struct GloryApi_CreateTenantResponse {
+struct GloryApi_CreateTenantResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -115,7 +115,7 @@ struct GloryApi_CreateTenantResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetTenantRequest {
+struct GloryApi_GetTenantRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -138,7 +138,7 @@ struct GloryApi_GetTenantRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetTenantResponse {
+struct GloryApi_GetTenantResponse: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -177,7 +177,7 @@ struct GloryApi_GetTenantResponse {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct GloryApi_UpdateTenantRequest {
+struct GloryApi_UpdateTenantRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -208,7 +208,7 @@ struct GloryApi_UpdateTenantRequest {
   fileprivate var _tenant: GloryApi_Tenant? = nil
 }
 
-struct GloryApi_UpdateTenantResponse {
+struct GloryApi_UpdateTenantResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -231,7 +231,7 @@ struct GloryApi_UpdateTenantResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_DeleteTenantRequest {
+struct GloryApi_DeleteTenantRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -254,7 +254,7 @@ struct GloryApi_DeleteTenantRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteTenantResponse {
+struct GloryApi_DeleteTenantResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -275,7 +275,7 @@ struct GloryApi_DeleteTenantResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListTenantRequest {
+struct GloryApi_ListTenantRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -308,7 +308,7 @@ struct GloryApi_ListTenantRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_TenantWithAuthor {
+struct GloryApi_TenantWithAuthor: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -339,7 +339,7 @@ struct GloryApi_TenantWithAuthor {
   fileprivate var _authorInfo: Base_AuthorInfo? = nil
 }
 
-struct GloryApi_ListTenantResponse {
+struct GloryApi_ListTenantResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -373,7 +373,7 @@ struct GloryApi_ListTenantResponse {
 }
 
 /// 学校组织架构
-struct GloryApi_TenantOrg {
+struct GloryApi_TenantOrg: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -399,7 +399,7 @@ struct GloryApi_TenantOrg {
   init() {}
 }
 
-struct GloryApi_GetTenantOrgRequest {
+struct GloryApi_GetTenantOrgRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -424,7 +424,7 @@ struct GloryApi_GetTenantOrgRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetTenantOrgResponse {
+struct GloryApi_GetTenantOrgResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -457,7 +457,7 @@ struct GloryApi_GetTenantOrgResponse {
   fileprivate var _tenantOrg: GloryApi_TenantOrg? = nil
 }
 
-struct GloryApi_EnterTenantRequest {
+struct GloryApi_EnterTenantRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -480,7 +480,7 @@ struct GloryApi_EnterTenantRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_EnterTenantResponse {
+struct GloryApi_EnterTenantResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -501,7 +501,7 @@ struct GloryApi_EnterTenantResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ExitTenantRequest {
+struct GloryApi_ExitTenantRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -522,7 +522,7 @@ struct GloryApi_ExitTenantRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ExitTenantResponse {
+struct GloryApi_ExitTenantResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -543,7 +543,7 @@ struct GloryApi_ExitTenantResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_IsEnterTenantRequest {
+struct GloryApi_IsEnterTenantRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -564,7 +564,7 @@ struct GloryApi_IsEnterTenantRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_IsTenantResponse {
+struct GloryApi_IsTenantResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -587,7 +587,7 @@ struct GloryApi_IsTenantResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_InitTenantRequest {
+struct GloryApi_InitTenantRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -610,7 +610,7 @@ struct GloryApi_InitTenantRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_InitTenantResponse {
+struct GloryApi_InitTenantResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -631,7 +631,7 @@ struct GloryApi_InitTenantResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_TenantSystem {
+struct GloryApi_TenantSystem: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -645,7 +645,7 @@ struct GloryApi_TenantSystem {
   init() {}
 }
 
-struct GloryApi_ListTenantSystemRequest {
+struct GloryApi_ListTenantSystemRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -666,7 +666,7 @@ struct GloryApi_ListTenantSystemRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ListTenantSystemResponse {
+struct GloryApi_ListTenantSystemResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -689,7 +689,7 @@ struct GloryApi_ListTenantSystemResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_CreateTenantCourseRequest {
+struct GloryApi_CreateTenantCourseRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -714,7 +714,7 @@ struct GloryApi_CreateTenantCourseRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CreateTenantCourseResponse {
+struct GloryApi_CreateTenantCourseResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -734,37 +734,6 @@ struct GloryApi_CreateTenantCourseResponse {
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_Tenant: @unchecked Sendable {}
-extension GloryApi_CreateTenantRequest: @unchecked Sendable {}
-extension GloryApi_CreateTenantResponse: @unchecked Sendable {}
-extension GloryApi_GetTenantRequest: @unchecked Sendable {}
-extension GloryApi_GetTenantResponse: @unchecked Sendable {}
-extension GloryApi_UpdateTenantRequest: @unchecked Sendable {}
-extension GloryApi_UpdateTenantResponse: @unchecked Sendable {}
-extension GloryApi_DeleteTenantRequest: @unchecked Sendable {}
-extension GloryApi_DeleteTenantResponse: @unchecked Sendable {}
-extension GloryApi_ListTenantRequest: @unchecked Sendable {}
-extension GloryApi_TenantWithAuthor: @unchecked Sendable {}
-extension GloryApi_ListTenantResponse: @unchecked Sendable {}
-extension GloryApi_TenantOrg: @unchecked Sendable {}
-extension GloryApi_GetTenantOrgRequest: @unchecked Sendable {}
-extension GloryApi_GetTenantOrgResponse: @unchecked Sendable {}
-extension GloryApi_EnterTenantRequest: @unchecked Sendable {}
-extension GloryApi_EnterTenantResponse: @unchecked Sendable {}
-extension GloryApi_ExitTenantRequest: @unchecked Sendable {}
-extension GloryApi_ExitTenantResponse: @unchecked Sendable {}
-extension GloryApi_IsEnterTenantRequest: @unchecked Sendable {}
-extension GloryApi_IsTenantResponse: @unchecked Sendable {}
-extension GloryApi_InitTenantRequest: @unchecked Sendable {}
-extension GloryApi_InitTenantResponse: @unchecked Sendable {}
-extension GloryApi_TenantSystem: @unchecked Sendable {}
-extension GloryApi_ListTenantSystemRequest: @unchecked Sendable {}
-extension GloryApi_ListTenantSystemResponse: @unchecked Sendable {}
-extension GloryApi_CreateTenantCourseRequest: @unchecked Sendable {}
-extension GloryApi_CreateTenantCourseResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 

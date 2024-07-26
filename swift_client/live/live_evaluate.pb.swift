@@ -21,7 +21,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// NOTE: class 改为 clas 为了和java的class关键字不冲突
-struct GloryApi_GetEvaluateSelectorRequest {
+struct GloryApi_GetEvaluateSelectorRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -42,7 +42,7 @@ struct GloryApi_GetEvaluateSelectorRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetEvaluateSelectorResponse {
+struct GloryApi_GetEvaluateSelectorResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -67,7 +67,7 @@ struct GloryApi_GetEvaluateSelectorResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_EvaluateRoom {
+struct GloryApi_EvaluateRoom: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -101,7 +101,7 @@ struct GloryApi_EvaluateRoom {
   init() {}
 }
 
-struct GloryApi_EvaluateData {
+struct GloryApi_EvaluateData: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -121,7 +121,7 @@ struct GloryApi_EvaluateData {
   init() {}
 }
 
-struct GloryApi_ListPersonalEvaluateRequest {
+struct GloryApi_ListPersonalEvaluateRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -157,7 +157,7 @@ struct GloryApi_ListPersonalEvaluateRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListPersonalEvaluateResponse {
+struct GloryApi_ListPersonalEvaluateResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -198,7 +198,7 @@ struct GloryApi_ListPersonalEvaluateResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_EvaluateSubOption {
+struct GloryApi_EvaluateSubOption: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -218,7 +218,7 @@ struct GloryApi_EvaluateSubOption {
   init() {}
 }
 
-struct GloryApi_EvaluateDetail {
+struct GloryApi_EvaluateDetail: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -238,7 +238,7 @@ struct GloryApi_EvaluateDetail {
   init() {}
 }
 
-struct GloryApi_ProductProfession {
+struct GloryApi_ProductProfession: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -254,7 +254,7 @@ struct GloryApi_ProductProfession {
   init() {}
 }
 
-struct GloryApi_Feedback {
+struct GloryApi_Feedback: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -272,7 +272,7 @@ struct GloryApi_Feedback {
   init() {}
 }
 
-struct GloryApi_AiResult {
+struct GloryApi_AiResult: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -301,7 +301,7 @@ struct GloryApi_AiResult {
   fileprivate var _feedback: GloryApi_Feedback? = nil
 }
 
-struct GloryApi_GetEvaluateDetailRequest {
+struct GloryApi_GetEvaluateDetailRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -334,7 +334,7 @@ struct GloryApi_GetEvaluateDetailRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_GetEvaluateDetailResponse {
+struct GloryApi_GetEvaluateDetailResponse: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -446,7 +446,7 @@ struct GloryApi_GetEvaluateDetailResponse {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct GloryApi_SubmitEvaluateRequest {
+struct GloryApi_SubmitEvaluateRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -495,7 +495,7 @@ struct GloryApi_SubmitEvaluateRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_SubmitEvaluateResponse {
+struct GloryApi_SubmitEvaluateResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -516,7 +516,7 @@ struct GloryApi_SubmitEvaluateResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_SubmitUserAttitudeForAIResultRequest {
+struct GloryApi_SubmitUserAttitudeForAIResultRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -541,7 +541,7 @@ struct GloryApi_SubmitUserAttitudeForAIResultRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_SubmitUserAttitudeForAIResultResponse {
+struct GloryApi_SubmitUserAttitudeForAIResultResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -562,7 +562,7 @@ struct GloryApi_SubmitUserAttitudeForAIResultResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_UnevaluatedRoom {
+struct GloryApi_UnevaluatedRoom: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -592,7 +592,7 @@ struct GloryApi_UnevaluatedRoom {
   init() {}
 }
 
-struct GloryApi_ListUnevaluatedRoomRequest {
+struct GloryApi_ListUnevaluatedRoomRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -632,7 +632,7 @@ struct GloryApi_ListUnevaluatedRoomRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListUnevaluatedRoomResponse {
+struct GloryApi_ListUnevaluatedRoomResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -667,7 +667,7 @@ struct GloryApi_ListUnevaluatedRoomResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_UserLiveData {
+struct GloryApi_UserLiveData: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -693,7 +693,7 @@ struct GloryApi_UserLiveData {
   init() {}
 }
 
-struct GloryApi_ListStudentEvalutionsRequest {
+struct GloryApi_ListStudentEvalutionsRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -730,7 +730,7 @@ struct GloryApi_ListStudentEvalutionsRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListStudentEvalutionsResponse {
+struct GloryApi_ListStudentEvalutionsResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -763,7 +763,7 @@ struct GloryApi_ListStudentEvalutionsResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_IgnoreLiveEvaluationRequest {
+struct GloryApi_IgnoreLiveEvaluationRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -786,7 +786,7 @@ struct GloryApi_IgnoreLiveEvaluationRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_IgnoreLiveEvaluationResponse {
+struct GloryApi_IgnoreLiveEvaluationResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -807,7 +807,7 @@ struct GloryApi_IgnoreLiveEvaluationResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_RegenerationAiFeedbackRequest {
+struct GloryApi_RegenerationAiFeedbackRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -830,7 +830,7 @@ struct GloryApi_RegenerationAiFeedbackRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_RegenerationAiFeedbackResponse {
+struct GloryApi_RegenerationAiFeedbackResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -851,7 +851,7 @@ struct GloryApi_RegenerationAiFeedbackResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_LiveRankDetail {
+struct GloryApi_LiveRankDetail: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -871,7 +871,7 @@ struct GloryApi_LiveRankDetail {
   init() {}
 }
 
-struct GloryApi_LiveRankMine {
+struct GloryApi_LiveRankMine: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -893,7 +893,7 @@ struct GloryApi_LiveRankMine {
   init() {}
 }
 
-struct GloryApi_LiveRank {
+struct GloryApi_LiveRank: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -916,7 +916,7 @@ struct GloryApi_LiveRank {
   fileprivate var _mine: GloryApi_LiveRankMine? = nil
 }
 
-struct GloryApi_ShopRankDetail {
+struct GloryApi_ShopRankDetail: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -932,7 +932,7 @@ struct GloryApi_ShopRankDetail {
   init() {}
 }
 
-struct GloryApi_ShopRankMine {
+struct GloryApi_ShopRankMine: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -950,7 +950,7 @@ struct GloryApi_ShopRankMine {
   init() {}
 }
 
-struct GloryApi_ShopRank {
+struct GloryApi_ShopRank: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -973,7 +973,7 @@ struct GloryApi_ShopRank {
   fileprivate var _mine: GloryApi_ShopRankMine? = nil
 }
 
-struct GloryApi_ProductRankDetail {
+struct GloryApi_ProductRankDetail: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -993,7 +993,7 @@ struct GloryApi_ProductRankDetail {
   init() {}
 }
 
-struct GloryApi_ProductRankMine {
+struct GloryApi_ProductRankMine: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1015,7 +1015,7 @@ struct GloryApi_ProductRankMine {
   init() {}
 }
 
-struct GloryApi_ProductRank {
+struct GloryApi_ProductRank: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1038,7 +1038,7 @@ struct GloryApi_ProductRank {
   fileprivate var _mine: GloryApi_ProductRankMine? = nil
 }
 
-struct GloryApi_LiveLikeRankDetail {
+struct GloryApi_LiveLikeRankDetail: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1058,7 +1058,7 @@ struct GloryApi_LiveLikeRankDetail {
   init() {}
 }
 
-struct GloryApi_LiveLikeRankMine {
+struct GloryApi_LiveLikeRankMine: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1080,7 +1080,7 @@ struct GloryApi_LiveLikeRankMine {
   init() {}
 }
 
-struct GloryApi_LiveLikeRank {
+struct GloryApi_LiveLikeRank: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1103,7 +1103,7 @@ struct GloryApi_LiveLikeRank {
   fileprivate var _mine: GloryApi_LiveLikeRankMine? = nil
 }
 
-struct GloryApi_LiveOrderRankDetail {
+struct GloryApi_LiveOrderRankDetail: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1123,7 +1123,7 @@ struct GloryApi_LiveOrderRankDetail {
   init() {}
 }
 
-struct GloryApi_LiveOrderRankMine {
+struct GloryApi_LiveOrderRankMine: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1145,7 +1145,7 @@ struct GloryApi_LiveOrderRankMine {
   init() {}
 }
 
-struct GloryApi_LiveOrderRank {
+struct GloryApi_LiveOrderRank: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1168,7 +1168,7 @@ struct GloryApi_LiveOrderRank {
   fileprivate var _mine: GloryApi_LiveOrderRankMine? = nil
 }
 
-struct GloryApi_LiveEvaluationRankDetail {
+struct GloryApi_LiveEvaluationRankDetail: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1188,7 +1188,7 @@ struct GloryApi_LiveEvaluationRankDetail {
   init() {}
 }
 
-struct GloryApi_LiveEvaluationRankMine {
+struct GloryApi_LiveEvaluationRankMine: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1210,7 +1210,7 @@ struct GloryApi_LiveEvaluationRankMine {
   init() {}
 }
 
-struct GloryApi_LiveEvaluationRank {
+struct GloryApi_LiveEvaluationRank: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1233,7 +1233,7 @@ struct GloryApi_LiveEvaluationRank {
   fileprivate var _mine: GloryApi_LiveEvaluationRankMine? = nil
 }
 
-struct GloryApi_GetRankRequest {
+struct GloryApi_GetRankRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1262,7 +1262,7 @@ struct GloryApi_GetRankRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetRankResponse {
+struct GloryApi_GetRankResponse: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1336,56 +1336,6 @@ struct GloryApi_GetRankResponse {
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_GetEvaluateSelectorRequest: @unchecked Sendable {}
-extension GloryApi_GetEvaluateSelectorResponse: @unchecked Sendable {}
-extension GloryApi_EvaluateRoom: @unchecked Sendable {}
-extension GloryApi_EvaluateData: @unchecked Sendable {}
-extension GloryApi_ListPersonalEvaluateRequest: @unchecked Sendable {}
-extension GloryApi_ListPersonalEvaluateResponse: @unchecked Sendable {}
-extension GloryApi_EvaluateSubOption: @unchecked Sendable {}
-extension GloryApi_EvaluateDetail: @unchecked Sendable {}
-extension GloryApi_ProductProfession: @unchecked Sendable {}
-extension GloryApi_Feedback: @unchecked Sendable {}
-extension GloryApi_AiResult: @unchecked Sendable {}
-extension GloryApi_GetEvaluateDetailRequest: @unchecked Sendable {}
-extension GloryApi_GetEvaluateDetailResponse: @unchecked Sendable {}
-extension GloryApi_SubmitEvaluateRequest: @unchecked Sendable {}
-extension GloryApi_SubmitEvaluateResponse: @unchecked Sendable {}
-extension GloryApi_SubmitUserAttitudeForAIResultRequest: @unchecked Sendable {}
-extension GloryApi_SubmitUserAttitudeForAIResultResponse: @unchecked Sendable {}
-extension GloryApi_UnevaluatedRoom: @unchecked Sendable {}
-extension GloryApi_ListUnevaluatedRoomRequest: @unchecked Sendable {}
-extension GloryApi_ListUnevaluatedRoomResponse: @unchecked Sendable {}
-extension GloryApi_UserLiveData: @unchecked Sendable {}
-extension GloryApi_ListStudentEvalutionsRequest: @unchecked Sendable {}
-extension GloryApi_ListStudentEvalutionsResponse: @unchecked Sendable {}
-extension GloryApi_IgnoreLiveEvaluationRequest: @unchecked Sendable {}
-extension GloryApi_IgnoreLiveEvaluationResponse: @unchecked Sendable {}
-extension GloryApi_RegenerationAiFeedbackRequest: @unchecked Sendable {}
-extension GloryApi_RegenerationAiFeedbackResponse: @unchecked Sendable {}
-extension GloryApi_LiveRankDetail: @unchecked Sendable {}
-extension GloryApi_LiveRankMine: @unchecked Sendable {}
-extension GloryApi_LiveRank: @unchecked Sendable {}
-extension GloryApi_ShopRankDetail: @unchecked Sendable {}
-extension GloryApi_ShopRankMine: @unchecked Sendable {}
-extension GloryApi_ShopRank: @unchecked Sendable {}
-extension GloryApi_ProductRankDetail: @unchecked Sendable {}
-extension GloryApi_ProductRankMine: @unchecked Sendable {}
-extension GloryApi_ProductRank: @unchecked Sendable {}
-extension GloryApi_LiveLikeRankDetail: @unchecked Sendable {}
-extension GloryApi_LiveLikeRankMine: @unchecked Sendable {}
-extension GloryApi_LiveLikeRank: @unchecked Sendable {}
-extension GloryApi_LiveOrderRankDetail: @unchecked Sendable {}
-extension GloryApi_LiveOrderRankMine: @unchecked Sendable {}
-extension GloryApi_LiveOrderRank: @unchecked Sendable {}
-extension GloryApi_LiveEvaluationRankDetail: @unchecked Sendable {}
-extension GloryApi_LiveEvaluationRankMine: @unchecked Sendable {}
-extension GloryApi_LiveEvaluationRank: @unchecked Sendable {}
-extension GloryApi_GetRankRequest: @unchecked Sendable {}
-extension GloryApi_GetRankResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
@@ -1525,10 +1475,10 @@ extension GloryApi_EvaluateRoom: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if !self.roomURL.isEmpty {
       try visitor.visitSingularStringField(value: self.roomURL, fieldNumber: 3)
     }
-    if self.score != 0 {
+    if self.score.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.score, fieldNumber: 4)
     }
-    if self.duration != 0 {
+    if self.duration.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.duration, fieldNumber: 5)
     }
     if self.like != 0 {
@@ -1600,10 +1550,10 @@ extension GloryApi_EvaluateData: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.averageScore != 0 {
+    if self.averageScore.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.averageScore, fieldNumber: 1)
     }
-    if self.totalDuration != 0 {
+    if self.totalDuration.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.totalDuration, fieldNumber: 2)
     }
     if self.totalLike != 0 {
@@ -1761,7 +1711,7 @@ extension GloryApi_EvaluateSubOption: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
     }
-    if self.total != 0 {
+    if self.total.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.total, fieldNumber: 2)
     }
     if !self.content.isEmpty {
@@ -1817,7 +1767,7 @@ extension GloryApi_EvaluateDetail: SwiftProtobuf.Message, SwiftProtobuf._Message
     if !self.option.isEmpty {
       try visitor.visitSingularStringField(value: self.option, fieldNumber: 1)
     }
-    if self.total != 0 {
+    if self.total.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.total, fieldNumber: 2)
     }
     if !self.score.isEmpty {
@@ -2186,7 +2136,7 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
       if _storage._userID != 0 {
         try visitor.visitSingularInt64Field(value: _storage._userID, fieldNumber: 5)
       }
-      if _storage._extraScore != 0 {
+      if _storage._extraScore.bitPattern != 0 {
         try visitor.visitSingularDoubleField(value: _storage._extraScore, fieldNumber: 6)
       }
       if !_storage._extraComment.isEmpty {
@@ -2195,7 +2145,7 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
       if !_storage._zeroComment.isEmpty {
         try visitor.visitSingularStringField(value: _storage._zeroComment, fieldNumber: 8)
       }
-      if _storage._score != 0 {
+      if _storage._score.bitPattern != 0 {
         try visitor.visitSingularDoubleField(value: _storage._score, fieldNumber: 9)
       }
       if !_storage._aiFeedback.isEmpty {
@@ -2332,7 +2282,7 @@ extension GloryApi_SubmitEvaluateRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if self.roomID != 0 {
       try visitor.visitSingularInt64Field(value: self.roomID, fieldNumber: 6)
     }
-    if self.extraScore != 0 {
+    if self.extraScore.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.extraScore, fieldNumber: 7)
     }
     if !self.extraComment.isEmpty {
@@ -2341,7 +2291,7 @@ extension GloryApi_SubmitEvaluateRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if !self.zeroComment.isEmpty {
       try visitor.visitSingularStringField(value: self.zeroComment, fieldNumber: 9)
     }
-    if self.score != 0 {
+    if self.score.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.score, fieldNumber: 10)
     }
     if !self.aiFeedback.isEmpty {
@@ -2750,7 +2700,7 @@ extension GloryApi_UserLiveData: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if !self.clas.isEmpty {
       try visitor.visitSingularStringField(value: self.clas, fieldNumber: 4)
     }
-    if self.totalDuration != 0 {
+    if self.totalDuration.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.totalDuration, fieldNumber: 5)
     }
     if self.totalLike != 0 {
@@ -2759,7 +2709,7 @@ extension GloryApi_UserLiveData: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if self.totalOrder != 0 {
       try visitor.visitSingularInt64Field(value: self.totalOrder, fieldNumber: 7)
     }
-    if self.averageScore != 0 {
+    if self.averageScore.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.averageScore, fieldNumber: 8)
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -3858,7 +3808,7 @@ extension GloryApi_LiveEvaluationRankDetail: SwiftProtobuf.Message, SwiftProtobu
     if !self.clas.isEmpty {
       try visitor.visitSingularStringField(value: self.clas, fieldNumber: 4)
     }
-    if self.score != 0 {
+    if self.score.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.score, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -3916,7 +3866,7 @@ extension GloryApi_LiveEvaluationRankMine: SwiftProtobuf.Message, SwiftProtobuf.
     if !self.clas.isEmpty {
       try visitor.visitSingularStringField(value: self.clas, fieldNumber: 4)
     }
-    if self.score != 0 {
+    if self.score.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.score, fieldNumber: 5)
     }
     if self.rank != 0 {

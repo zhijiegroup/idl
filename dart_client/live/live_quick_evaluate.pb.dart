@@ -1361,6 +1361,524 @@ class GetQuickEvaluationReportRequest extends $pb.GeneratedMessage {
   void clearReportId() => clearField(2);
 }
 
+class GetQuickEvaluationTotalReportRequest extends $pb.GeneratedMessage {
+  factory GetQuickEvaluationTotalReportRequest({
+    $0.BaseRequest? baseRequest,
+    $fixnum.Int64? beginTime,
+    $fixnum.Int64? endTime,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (beginTime != null) {
+      $result.beginTime = beginTime;
+    }
+    if (endTime != null) {
+      $result.endTime = endTime;
+    }
+    return $result;
+  }
+  GetQuickEvaluationTotalReportRequest._() : super();
+  factory GetQuickEvaluationTotalReportRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetQuickEvaluationTotalReportRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetQuickEvaluationTotalReportRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'beginTime')
+    ..aInt64(3, _omitFieldNames ? '' : 'endTime')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetQuickEvaluationTotalReportRequest clone() => GetQuickEvaluationTotalReportRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetQuickEvaluationTotalReportRequest copyWith(void Function(GetQuickEvaluationTotalReportRequest) updates) => super.copyWith((message) => updates(message as GetQuickEvaluationTotalReportRequest)) as GetQuickEvaluationTotalReportRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetQuickEvaluationTotalReportRequest create() => GetQuickEvaluationTotalReportRequest._();
+  GetQuickEvaluationTotalReportRequest createEmptyInstance() => create();
+  static $pb.PbList<GetQuickEvaluationTotalReportRequest> createRepeated() => $pb.PbList<GetQuickEvaluationTotalReportRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetQuickEvaluationTotalReportRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetQuickEvaluationTotalReportRequest>(create);
+  static GetQuickEvaluationTotalReportRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get beginTime => $_getI64(1);
+  @$pb.TagNumber(2)
+  set beginTime($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasBeginTime() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBeginTime() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get endTime => $_getI64(2);
+  @$pb.TagNumber(3)
+  set endTime($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasEndTime() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEndTime() => clearField(3);
+}
+
+class QuickEvaluationTotalReportItemEntry extends $pb.GeneratedMessage {
+  factory QuickEvaluationTotalReportItemEntry({
+    $core.String? name,
+    $core.String? percent,
+    $core.String? detail,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (percent != null) {
+      $result.percent = percent;
+    }
+    if (detail != null) {
+      $result.detail = detail;
+    }
+    return $result;
+  }
+  QuickEvaluationTotalReportItemEntry._() : super();
+  factory QuickEvaluationTotalReportItemEntry.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory QuickEvaluationTotalReportItemEntry.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'QuickEvaluationTotalReportItemEntry', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'percent')
+    ..aOS(3, _omitFieldNames ? '' : 'detail')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  QuickEvaluationTotalReportItemEntry clone() => QuickEvaluationTotalReportItemEntry()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  QuickEvaluationTotalReportItemEntry copyWith(void Function(QuickEvaluationTotalReportItemEntry) updates) => super.copyWith((message) => updates(message as QuickEvaluationTotalReportItemEntry)) as QuickEvaluationTotalReportItemEntry;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QuickEvaluationTotalReportItemEntry create() => QuickEvaluationTotalReportItemEntry._();
+  QuickEvaluationTotalReportItemEntry createEmptyInstance() => create();
+  static $pb.PbList<QuickEvaluationTotalReportItemEntry> createRepeated() => $pb.PbList<QuickEvaluationTotalReportItemEntry>();
+  @$core.pragma('dart2js:noInline')
+  static QuickEvaluationTotalReportItemEntry getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QuickEvaluationTotalReportItemEntry>(create);
+  static QuickEvaluationTotalReportItemEntry? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get percent => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set percent($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPercent() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPercent() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get detail => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set detail($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDetail() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDetail() => clearField(3);
+}
+
+class QuickEvaluationTotalReportItem extends $pb.GeneratedMessage {
+  factory QuickEvaluationTotalReportItem({
+    $core.String? itemName,
+    $core.Iterable<QuickEvaluationTotalReportItemEntry>? entries,
+    $core.String? desc,
+  }) {
+    final $result = create();
+    if (itemName != null) {
+      $result.itemName = itemName;
+    }
+    if (entries != null) {
+      $result.entries.addAll(entries);
+    }
+    if (desc != null) {
+      $result.desc = desc;
+    }
+    return $result;
+  }
+  QuickEvaluationTotalReportItem._() : super();
+  factory QuickEvaluationTotalReportItem.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory QuickEvaluationTotalReportItem.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'QuickEvaluationTotalReportItem', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemName')
+    ..pc<QuickEvaluationTotalReportItemEntry>(2, _omitFieldNames ? '' : 'entries', $pb.PbFieldType.PM, subBuilder: QuickEvaluationTotalReportItemEntry.create)
+    ..aOS(3, _omitFieldNames ? '' : 'desc')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  QuickEvaluationTotalReportItem clone() => QuickEvaluationTotalReportItem()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  QuickEvaluationTotalReportItem copyWith(void Function(QuickEvaluationTotalReportItem) updates) => super.copyWith((message) => updates(message as QuickEvaluationTotalReportItem)) as QuickEvaluationTotalReportItem;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QuickEvaluationTotalReportItem create() => QuickEvaluationTotalReportItem._();
+  QuickEvaluationTotalReportItem createEmptyInstance() => create();
+  static $pb.PbList<QuickEvaluationTotalReportItem> createRepeated() => $pb.PbList<QuickEvaluationTotalReportItem>();
+  @$core.pragma('dart2js:noInline')
+  static QuickEvaluationTotalReportItem getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QuickEvaluationTotalReportItem>(create);
+  static QuickEvaluationTotalReportItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemName => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemName($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasItemName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<QuickEvaluationTotalReportItemEntry> get entries => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.String get desc => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set desc($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDesc() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDesc() => clearField(3);
+}
+
+class QuickEvaluationTotalReportStudentDetail extends $pb.GeneratedMessage {
+  factory QuickEvaluationTotalReportStudentDetail({
+    $core.String? name,
+    $core.bool? result,
+    $core.String? reason,
+    $fixnum.Int64? reportId,
+    $fixnum.Int64? roomId,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (result != null) {
+      $result.result = result;
+    }
+    if (reason != null) {
+      $result.reason = reason;
+    }
+    if (reportId != null) {
+      $result.reportId = reportId;
+    }
+    if (roomId != null) {
+      $result.roomId = roomId;
+    }
+    return $result;
+  }
+  QuickEvaluationTotalReportStudentDetail._() : super();
+  factory QuickEvaluationTotalReportStudentDetail.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory QuickEvaluationTotalReportStudentDetail.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'QuickEvaluationTotalReportStudentDetail', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOB(2, _omitFieldNames ? '' : 'result')
+    ..aOS(3, _omitFieldNames ? '' : 'reason')
+    ..aInt64(4, _omitFieldNames ? '' : 'reportId')
+    ..aInt64(5, _omitFieldNames ? '' : 'roomId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  QuickEvaluationTotalReportStudentDetail clone() => QuickEvaluationTotalReportStudentDetail()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  QuickEvaluationTotalReportStudentDetail copyWith(void Function(QuickEvaluationTotalReportStudentDetail) updates) => super.copyWith((message) => updates(message as QuickEvaluationTotalReportStudentDetail)) as QuickEvaluationTotalReportStudentDetail;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QuickEvaluationTotalReportStudentDetail create() => QuickEvaluationTotalReportStudentDetail._();
+  QuickEvaluationTotalReportStudentDetail createEmptyInstance() => create();
+  static $pb.PbList<QuickEvaluationTotalReportStudentDetail> createRepeated() => $pb.PbList<QuickEvaluationTotalReportStudentDetail>();
+  @$core.pragma('dart2js:noInline')
+  static QuickEvaluationTotalReportStudentDetail getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QuickEvaluationTotalReportStudentDetail>(create);
+  static QuickEvaluationTotalReportStudentDetail? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get result => $_getBF(1);
+  @$pb.TagNumber(2)
+  set result($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasResult() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearResult() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get reason => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set reason($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasReason() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReason() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get reportId => $_getI64(3);
+  @$pb.TagNumber(4)
+  set reportId($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasReportId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearReportId() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get roomId => $_getI64(4);
+  @$pb.TagNumber(5)
+  set roomId($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasRoomId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRoomId() => clearField(5);
+}
+
+class QuickEvaluationTotalReport extends $pb.GeneratedMessage {
+  factory QuickEvaluationTotalReport({
+    $core.int? totalCount,
+    $core.int? passCount,
+    $core.int? noPassCount,
+    $core.String? beginTime,
+    $core.String? endTime,
+    $core.Iterable<QuickEvaluationTotalReportItem>? items,
+    $core.Iterable<QuickEvaluationTotalReportStudentDetail>? passList,
+    $core.Iterable<QuickEvaluationTotalReportStudentDetail>? noPassList,
+  }) {
+    final $result = create();
+    if (totalCount != null) {
+      $result.totalCount = totalCount;
+    }
+    if (passCount != null) {
+      $result.passCount = passCount;
+    }
+    if (noPassCount != null) {
+      $result.noPassCount = noPassCount;
+    }
+    if (beginTime != null) {
+      $result.beginTime = beginTime;
+    }
+    if (endTime != null) {
+      $result.endTime = endTime;
+    }
+    if (items != null) {
+      $result.items.addAll(items);
+    }
+    if (passList != null) {
+      $result.passList.addAll(passList);
+    }
+    if (noPassList != null) {
+      $result.noPassList.addAll(noPassList);
+    }
+    return $result;
+  }
+  QuickEvaluationTotalReport._() : super();
+  factory QuickEvaluationTotalReport.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory QuickEvaluationTotalReport.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'QuickEvaluationTotalReport', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'totalCount', $pb.PbFieldType.O3)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'passCount', $pb.PbFieldType.O3)
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'noPassCount', $pb.PbFieldType.O3)
+    ..aOS(4, _omitFieldNames ? '' : 'beginTime')
+    ..aOS(5, _omitFieldNames ? '' : 'endTime')
+    ..pc<QuickEvaluationTotalReportItem>(6, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: QuickEvaluationTotalReportItem.create)
+    ..pc<QuickEvaluationTotalReportStudentDetail>(7, _omitFieldNames ? '' : 'passList', $pb.PbFieldType.PM, subBuilder: QuickEvaluationTotalReportStudentDetail.create)
+    ..pc<QuickEvaluationTotalReportStudentDetail>(8, _omitFieldNames ? '' : 'noPassList', $pb.PbFieldType.PM, subBuilder: QuickEvaluationTotalReportStudentDetail.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  QuickEvaluationTotalReport clone() => QuickEvaluationTotalReport()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  QuickEvaluationTotalReport copyWith(void Function(QuickEvaluationTotalReport) updates) => super.copyWith((message) => updates(message as QuickEvaluationTotalReport)) as QuickEvaluationTotalReport;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QuickEvaluationTotalReport create() => QuickEvaluationTotalReport._();
+  QuickEvaluationTotalReport createEmptyInstance() => create();
+  static $pb.PbList<QuickEvaluationTotalReport> createRepeated() => $pb.PbList<QuickEvaluationTotalReport>();
+  @$core.pragma('dart2js:noInline')
+  static QuickEvaluationTotalReport getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QuickEvaluationTotalReport>(create);
+  static QuickEvaluationTotalReport? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get totalCount => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set totalCount($core.int v) { $_setSignedInt32(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasTotalCount() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTotalCount() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get passCount => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set passCount($core.int v) { $_setSignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPassCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPassCount() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get noPassCount => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set noPassCount($core.int v) { $_setSignedInt32(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasNoPassCount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNoPassCount() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get beginTime => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set beginTime($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasBeginTime() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearBeginTime() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get endTime => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set endTime($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasEndTime() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEndTime() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.List<QuickEvaluationTotalReportItem> get items => $_getList(5);
+
+  @$pb.TagNumber(7)
+  $core.List<QuickEvaluationTotalReportStudentDetail> get passList => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $core.List<QuickEvaluationTotalReportStudentDetail> get noPassList => $_getList(7);
+}
+
+class GetQuickEvaluationTotalReportResponse extends $pb.GeneratedMessage {
+  factory GetQuickEvaluationTotalReportResponse({
+    $0.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  GetQuickEvaluationTotalReportResponse._() : super();
+  factory GetQuickEvaluationTotalReportResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetQuickEvaluationTotalReportResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetQuickEvaluationTotalReportResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetQuickEvaluationTotalReportResponse clone() => GetQuickEvaluationTotalReportResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetQuickEvaluationTotalReportResponse copyWith(void Function(GetQuickEvaluationTotalReportResponse) updates) => super.copyWith((message) => updates(message as GetQuickEvaluationTotalReportResponse)) as GetQuickEvaluationTotalReportResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetQuickEvaluationTotalReportResponse create() => GetQuickEvaluationTotalReportResponse._();
+  GetQuickEvaluationTotalReportResponse createEmptyInstance() => create();
+  static $pb.PbList<GetQuickEvaluationTotalReportResponse> createRepeated() => $pb.PbList<GetQuickEvaluationTotalReportResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetQuickEvaluationTotalReportResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetQuickEvaluationTotalReportResponse>(create);
+  static GetQuickEvaluationTotalReportResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
 class PassDetail extends $pb.GeneratedMessage {
   factory PassDetail({
     $fixnum.Int64? userId,

@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_TeacherTaskTemplateParameter {
+struct GloryApi_TeacherTaskTemplateParameter: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -44,7 +44,7 @@ struct GloryApi_TeacherTaskTemplateParameter {
   init() {}
 }
 
-struct GloryApi_TeacherTaskTemplate {
+struct GloryApi_TeacherTaskTemplate: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -144,7 +144,7 @@ struct GloryApi_TeacherTaskTemplate {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct GloryApi_CreateTeacherTaskTemplateRequest {
+struct GloryApi_CreateTeacherTaskTemplateRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -175,7 +175,7 @@ struct GloryApi_CreateTeacherTaskTemplateRequest {
   fileprivate var _teacherTaskTemplate: GloryApi_TeacherTaskTemplate? = nil
 }
 
-struct GloryApi_CreateTeacherTaskTemplateResponse {
+struct GloryApi_CreateTeacherTaskTemplateResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -196,7 +196,7 @@ struct GloryApi_CreateTeacherTaskTemplateResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_UpdateTeacherTaskTemplateRequest {
+struct GloryApi_UpdateTeacherTaskTemplateRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -227,7 +227,7 @@ struct GloryApi_UpdateTeacherTaskTemplateRequest {
   fileprivate var _teacherTaskTemplate: GloryApi_TeacherTaskTemplate? = nil
 }
 
-struct GloryApi_UpdateTeacherTaskTemplateResponse {
+struct GloryApi_UpdateTeacherTaskTemplateResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -248,7 +248,7 @@ struct GloryApi_UpdateTeacherTaskTemplateResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListTeacherTaskTemplateRequest {
+struct GloryApi_ListTeacherTaskTemplateRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -288,7 +288,7 @@ struct GloryApi_ListTeacherTaskTemplateRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListTeacherTaskTemplateResponse {
+struct GloryApi_ListTeacherTaskTemplateResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -321,7 +321,7 @@ struct GloryApi_ListTeacherTaskTemplateResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_GetTeacherTaskTemplateRequest {
+struct GloryApi_GetTeacherTaskTemplateRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -344,7 +344,7 @@ struct GloryApi_GetTeacherTaskTemplateRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetTeacherTaskTemplateResponse {
+struct GloryApi_GetTeacherTaskTemplateResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -375,7 +375,7 @@ struct GloryApi_GetTeacherTaskTemplateResponse {
   fileprivate var _teacherTaskTemplate: GloryApi_TeacherTaskTemplate? = nil
 }
 
-struct GloryApi_DeleteTeacherTaskTemplateRequest {
+struct GloryApi_DeleteTeacherTaskTemplateRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -398,7 +398,7 @@ struct GloryApi_DeleteTeacherTaskTemplateRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteTeacherTaskTemplateResponse {
+struct GloryApi_DeleteTeacherTaskTemplateResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -418,21 +418,6 @@ struct GloryApi_DeleteTeacherTaskTemplateResponse {
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_TeacherTaskTemplateParameter: @unchecked Sendable {}
-extension GloryApi_TeacherTaskTemplate: @unchecked Sendable {}
-extension GloryApi_CreateTeacherTaskTemplateRequest: @unchecked Sendable {}
-extension GloryApi_CreateTeacherTaskTemplateResponse: @unchecked Sendable {}
-extension GloryApi_UpdateTeacherTaskTemplateRequest: @unchecked Sendable {}
-extension GloryApi_UpdateTeacherTaskTemplateResponse: @unchecked Sendable {}
-extension GloryApi_ListTeacherTaskTemplateRequest: @unchecked Sendable {}
-extension GloryApi_ListTeacherTaskTemplateResponse: @unchecked Sendable {}
-extension GloryApi_GetTeacherTaskTemplateRequest: @unchecked Sendable {}
-extension GloryApi_GetTeacherTaskTemplateResponse: @unchecked Sendable {}
-extension GloryApi_DeleteTeacherTaskTemplateRequest: @unchecked Sendable {}
-extension GloryApi_DeleteTeacherTaskTemplateResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 

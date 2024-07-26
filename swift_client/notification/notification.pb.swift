@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_Notification {
+struct GloryApi_Notification: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -46,7 +46,7 @@ struct GloryApi_Notification {
   init() {}
 }
 
-struct GloryApi_NotificationCount {
+struct GloryApi_NotificationCount: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -71,7 +71,7 @@ struct GloryApi_NotificationCount {
   fileprivate var _latest: GloryApi_Notification? = nil
 }
 
-struct GloryApi_ListNotificationRequest {
+struct GloryApi_ListNotificationRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -104,7 +104,7 @@ struct GloryApi_ListNotificationRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListNotificationResponse {
+struct GloryApi_ListNotificationResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -137,7 +137,7 @@ struct GloryApi_ListNotificationResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_ReadNotificationRequest {
+struct GloryApi_ReadNotificationRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -164,7 +164,7 @@ struct GloryApi_ReadNotificationRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ReadNotificationResponse {
+struct GloryApi_ReadNotificationResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -185,7 +185,7 @@ struct GloryApi_ReadNotificationResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_DeleteNotificationRequest {
+struct GloryApi_DeleteNotificationRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -208,7 +208,7 @@ struct GloryApi_DeleteNotificationRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteNotificationResponse {
+struct GloryApi_DeleteNotificationResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -229,7 +229,7 @@ struct GloryApi_DeleteNotificationResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_CountNotificationRequest {
+struct GloryApi_CountNotificationRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -254,7 +254,7 @@ struct GloryApi_CountNotificationRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CountNotificationResponse {
+struct GloryApi_CountNotificationResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -277,7 +277,7 @@ struct GloryApi_CountNotificationResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_TestNotificationRequest {
+struct GloryApi_TestNotificationRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -312,7 +312,7 @@ struct GloryApi_TestNotificationRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_TestNotificationResponse {
+struct GloryApi_TestNotificationResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -332,21 +332,6 @@ struct GloryApi_TestNotificationResponse {
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_Notification: @unchecked Sendable {}
-extension GloryApi_NotificationCount: @unchecked Sendable {}
-extension GloryApi_ListNotificationRequest: @unchecked Sendable {}
-extension GloryApi_ListNotificationResponse: @unchecked Sendable {}
-extension GloryApi_ReadNotificationRequest: @unchecked Sendable {}
-extension GloryApi_ReadNotificationResponse: @unchecked Sendable {}
-extension GloryApi_DeleteNotificationRequest: @unchecked Sendable {}
-extension GloryApi_DeleteNotificationResponse: @unchecked Sendable {}
-extension GloryApi_CountNotificationRequest: @unchecked Sendable {}
-extension GloryApi_CountNotificationResponse: @unchecked Sendable {}
-extension GloryApi_TestNotificationRequest: @unchecked Sendable {}
-extension GloryApi_TestNotificationResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 

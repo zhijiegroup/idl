@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_Sku {
+struct GloryApi_Sku: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -117,7 +117,7 @@ struct GloryApi_Sku {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct GloryApi_SkuAttributeWithOneValue {
+struct GloryApi_SkuAttributeWithOneValue: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -141,7 +141,7 @@ struct GloryApi_SkuAttributeWithOneValue {
   init() {}
 }
 
-struct GloryApi_SkuWithAuthor {
+struct GloryApi_SkuWithAuthor: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -174,7 +174,7 @@ struct GloryApi_SkuWithAuthor {
   fileprivate var _authorInfo: Base_AuthorInfo? = nil
 }
 
-struct GloryApi_SkuWithValueAuthor {
+struct GloryApi_SkuWithValueAuthor: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -207,7 +207,7 @@ struct GloryApi_SkuWithValueAuthor {
   fileprivate var _authorInfo: Base_AuthorInfo? = nil
 }
 
-struct GloryApi_SkuAttribute {
+struct GloryApi_SkuAttribute: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -236,7 +236,7 @@ struct GloryApi_SkuAttribute {
   fileprivate var _attribute: GloryApi_Attribute? = nil
 }
 
-struct GloryApi_CreateSkuRequest {
+struct GloryApi_CreateSkuRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -271,7 +271,7 @@ struct GloryApi_CreateSkuRequest {
   fileprivate var _sku: GloryApi_Sku? = nil
 }
 
-struct GloryApi_CreateSkuResponse {
+struct GloryApi_CreateSkuResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -295,7 +295,7 @@ struct GloryApi_CreateSkuResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetSkuRequest {
+struct GloryApi_GetSkuRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -318,7 +318,7 @@ struct GloryApi_GetSkuRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetSkuResponse {
+struct GloryApi_GetSkuResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -349,7 +349,7 @@ struct GloryApi_GetSkuResponse {
   fileprivate var _skuDetail: GloryApi_SkuWithValueAuthor? = nil
 }
 
-struct GloryApi_UpdateSkuRequest {
+struct GloryApi_UpdateSkuRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -380,7 +380,7 @@ struct GloryApi_UpdateSkuRequest {
   fileprivate var _sku: GloryApi_Sku? = nil
 }
 
-struct GloryApi_UpdateSkuResponse {
+struct GloryApi_UpdateSkuResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -403,7 +403,7 @@ struct GloryApi_UpdateSkuResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListSkuRequest {
+struct GloryApi_ListSkuRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -438,7 +438,7 @@ struct GloryApi_ListSkuRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListSkuResponse {
+struct GloryApi_ListSkuResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -471,7 +471,7 @@ struct GloryApi_ListSkuResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_DeleteSkuRequest {
+struct GloryApi_DeleteSkuRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -494,7 +494,7 @@ struct GloryApi_DeleteSkuRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteSkuResponse {
+struct GloryApi_DeleteSkuResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -514,24 +514,6 @@ struct GloryApi_DeleteSkuResponse {
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_Sku: @unchecked Sendable {}
-extension GloryApi_SkuAttributeWithOneValue: @unchecked Sendable {}
-extension GloryApi_SkuWithAuthor: @unchecked Sendable {}
-extension GloryApi_SkuWithValueAuthor: @unchecked Sendable {}
-extension GloryApi_SkuAttribute: @unchecked Sendable {}
-extension GloryApi_CreateSkuRequest: @unchecked Sendable {}
-extension GloryApi_CreateSkuResponse: @unchecked Sendable {}
-extension GloryApi_GetSkuRequest: @unchecked Sendable {}
-extension GloryApi_GetSkuResponse: @unchecked Sendable {}
-extension GloryApi_UpdateSkuRequest: @unchecked Sendable {}
-extension GloryApi_UpdateSkuResponse: @unchecked Sendable {}
-extension GloryApi_ListSkuRequest: @unchecked Sendable {}
-extension GloryApi_ListSkuResponse: @unchecked Sendable {}
-extension GloryApi_DeleteSkuRequest: @unchecked Sendable {}
-extension GloryApi_DeleteSkuResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
@@ -660,7 +642,7 @@ extension GloryApi_Sku: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementat
       if _storage._productID != 0 {
         try visitor.visitSingularInt64Field(value: _storage._productID, fieldNumber: 3)
       }
-      if _storage._unitPrice != 0 {
+      if _storage._unitPrice.bitPattern != 0 {
         try visitor.visitSingularDoubleField(value: _storage._unitPrice, fieldNumber: 5)
       }
       if !_storage._currency.isEmpty {

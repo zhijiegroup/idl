@@ -90,6 +90,36 @@ public final class LiveQuickEvaluate {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_GetQuickEvaluationReportRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetQuickEvaluationTotalReportRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetQuickEvaluationTotalReportRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_QuickEvaluationTotalReportItemEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_QuickEvaluationTotalReportItemEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_QuickEvaluationTotalReportItem_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_QuickEvaluationTotalReportItem_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_QuickEvaluationTotalReportStudentDetail_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_QuickEvaluationTotalReportStudentDetail_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_QuickEvaluationTotalReport_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_QuickEvaluationTotalReport_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetQuickEvaluationTotalReportResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetQuickEvaluationTotalReportResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_PassDetail_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -206,42 +236,64 @@ public final class LiveQuickEvaluate {
       "(\0132\030.base.PaginationResponse\"]\n\037GetQuick" +
       "EvaluationReportRequest\022\'\n\014base_request\030" +
       "\001 \001(\0132\021.base.BaseRequest\022\021\n\treport_id\030\002 " +
-      "\001(\003\"\207\001\n\nPassDetail\022\017\n\007user_id\030\001 \001(\003\022\021\n\tu" +
-      "ser_name\030\002 \001(\t\022\017\n\007room_id\030\003 \001(\003\022\025\n\rno_pa" +
-      "ss_items\030\004 \003(\t\022-\n\016no_pass_detail\030\005 \003(\0132\025" +
-      ".glory_api.NoPassInfo\"T\n\nNoPassInfo\022\013\n\003k" +
-      "ey\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\r\n\005value\030\003 \001(\t\022\014\n" +
-      "\004desc\030\004 \001(\t\022\016\n\006detail\030\005 \003(\t\"\276\001\n\014ReportDe" +
-      "tail\022\014\n\004name\030\001 \001(\t\022\022\n\nstart_time\030\002 \001(\003\022\020" +
-      "\n\010end_time\030\003 \001(\003\022\022\n\npass_total\030\004 \001(\003\022\025\n\r" +
-      "no_pass_total\030\005 \001(\003\022%\n\006passes\030\006 \003(\0132\025.gl" +
-      "ory_api.PassDetail\022(\n\tno_passes\030\007 \003(\0132\025." +
-      "glory_api.PassDetail\"r\n GetQuickEvaluati" +
-      "onReportResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
-      "se.BaseResponse\022\'\n\006report\030\002 \001(\0132\027.glory_" +
-      "api.ReportDetail\"[\n\037GetQuickEvaluationDe" +
-      "tailRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
-      ".BaseRequest\022\017\n\007room_id\030\002 \001(\003\"E\n\025QuickEv" +
-      "aluationDetail\022\013\n\003key\030\001 \001(\t\022\017\n\007is_pass\030\002" +
-      " \001(\010\022\016\n\006detail\030\003 \001(\t\"^\n\031QuickEvaluationD" +
-      "etailType\022\014\n\004type\030\001 \001(\t\0223\n\006detail\030\002 \003(\0132" +
-      "#.glory_api.QuickEvaluationDetailKey\"\250\001\n" +
-      "\030QuickEvaluationDetailKey\022\013\n\003key\030\001 \001(\t\022\014" +
-      "\n\004name\030\002 \001(\t\022\014\n\004desc\030\003 \001(\t\022\016\n\006result\030\004 \001" +
-      "(\010\022\022\n\nref_result\030\005 \001(\t\0220\n\006detail\030\006 \003(\0132 " +
-      ".glory_api.QuickEvaluationDetail\022\r\n\005orde" +
-      "r\030\007 \001(\005\"\324\001\n GetQuickEvaluationDetailResp" +
-      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
-      "nse\022\022\n\nstart_time\030\002 \001(\003\022\020\n\010end_time\030\003 \001(" +
-      "\003\022\016\n\006result\030\004 \001(\010\022E\n\027quick_evaluation_de" +
-      "tail\030\005 \003(\0132$.glory_api.QuickEvaluationDe" +
-      "tailType\022\014\n\004name\030\006 \001(\t\"L\n#DeleteQuickEva" +
-      "luationReportResponse\022%\n\tbase_resp\030\001 \001(\013" +
-      "2\022.base.BaseResponse\"a\n\"DeleteQuickEvalu" +
-      "ationReportRequest\022\'\n\014base_request\030\001 \001(\013" +
-      "2\021.base.BaseRequest\022\022\n\nreport_ids\030\002 \003(\003B" +
-      "#\n\037com.zhijiejiaoyu.glory_api.liveP\001b\006pr" +
-      "oto3"
+      "\001(\003\"u\n$GetQuickEvaluationTotalReportRequ" +
+      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
+      "uest\022\022\n\nbegin_time\030\002 \001(\003\022\020\n\010end_time\030\003 \001" +
+      "(\003\"T\n#QuickEvaluationTotalReportItemEntr" +
+      "y\022\014\n\004name\030\001 \001(\t\022\017\n\007percent\030\002 \001(\t\022\016\n\006deta" +
+      "il\030\003 \001(\t\"\202\001\n\036QuickEvaluationTotalReportI" +
+      "tem\022\021\n\titem_name\030\001 \001(\t\022?\n\007entries\030\002 \003(\0132" +
+      "..glory_api.QuickEvaluationTotalReportIt" +
+      "emEntry\022\014\n\004desc\030\003 \001(\t\"{\n\'QuickEvaluation" +
+      "TotalReportStudentDetail\022\014\n\004name\030\001 \001(\t\022\016" +
+      "\n\006result\030\002 \001(\010\022\016\n\006reason\030\003 \001(\t\022\021\n\treport" +
+      "_id\030\004 \001(\003\022\017\n\007room_id\030\005 \001(\003\"\315\002\n\032QuickEval" +
+      "uationTotalReport\022\023\n\013total_count\030\001 \001(\005\022\022" +
+      "\n\npass_count\030\002 \001(\005\022\025\n\rno_pass_count\030\003 \001(" +
+      "\005\022\022\n\nbegin_time\030\004 \001(\t\022\020\n\010end_time\030\005 \001(\t\022" +
+      "8\n\005items\030\006 \003(\0132).glory_api.QuickEvaluati" +
+      "onTotalReportItem\022E\n\tpass_list\030\007 \003(\01322.g" +
+      "lory_api.QuickEvaluationTotalReportStude" +
+      "ntDetail\022H\n\014no_pass_list\030\010 \003(\01322.glory_a" +
+      "pi.QuickEvaluationTotalReportStudentDeta" +
+      "il\"N\n%GetQuickEvaluationTotalReportRespo" +
+      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
+      "se\"\207\001\n\nPassDetail\022\017\n\007user_id\030\001 \001(\003\022\021\n\tus" +
+      "er_name\030\002 \001(\t\022\017\n\007room_id\030\003 \001(\003\022\025\n\rno_pas" +
+      "s_items\030\004 \003(\t\022-\n\016no_pass_detail\030\005 \003(\0132\025." +
+      "glory_api.NoPassInfo\"T\n\nNoPassInfo\022\013\n\003ke" +
+      "y\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\r\n\005value\030\003 \001(\t\022\014\n\004" +
+      "desc\030\004 \001(\t\022\016\n\006detail\030\005 \003(\t\"\276\001\n\014ReportDet" +
+      "ail\022\014\n\004name\030\001 \001(\t\022\022\n\nstart_time\030\002 \001(\003\022\020\n" +
+      "\010end_time\030\003 \001(\003\022\022\n\npass_total\030\004 \001(\003\022\025\n\rn" +
+      "o_pass_total\030\005 \001(\003\022%\n\006passes\030\006 \003(\0132\025.glo" +
+      "ry_api.PassDetail\022(\n\tno_passes\030\007 \003(\0132\025.g" +
+      "lory_api.PassDetail\"r\n GetQuickEvaluatio" +
+      "nReportResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponse\022\'\n\006report\030\002 \001(\0132\027.glory_a" +
+      "pi.ReportDetail\"[\n\037GetQuickEvaluationDet" +
+      "ailRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
+      "BaseRequest\022\017\n\007room_id\030\002 \001(\003\"E\n\025QuickEva" +
+      "luationDetail\022\013\n\003key\030\001 \001(\t\022\017\n\007is_pass\030\002 " +
+      "\001(\010\022\016\n\006detail\030\003 \001(\t\"^\n\031QuickEvaluationDe" +
+      "tailType\022\014\n\004type\030\001 \001(\t\0223\n\006detail\030\002 \003(\0132#" +
+      ".glory_api.QuickEvaluationDetailKey\"\250\001\n\030" +
+      "QuickEvaluationDetailKey\022\013\n\003key\030\001 \001(\t\022\014\n" +
+      "\004name\030\002 \001(\t\022\014\n\004desc\030\003 \001(\t\022\016\n\006result\030\004 \001(" +
+      "\010\022\022\n\nref_result\030\005 \001(\t\0220\n\006detail\030\006 \003(\0132 ." +
+      "glory_api.QuickEvaluationDetail\022\r\n\005order" +
+      "\030\007 \001(\005\"\324\001\n GetQuickEvaluationDetailRespo" +
+      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
+      "se\022\022\n\nstart_time\030\002 \001(\003\022\020\n\010end_time\030\003 \001(\003" +
+      "\022\016\n\006result\030\004 \001(\010\022E\n\027quick_evaluation_det" +
+      "ail\030\005 \003(\0132$.glory_api.QuickEvaluationDet" +
+      "ailType\022\014\n\004name\030\006 \001(\t\"L\n#DeleteQuickEval" +
+      "uationReportResponse\022%\n\tbase_resp\030\001 \001(\0132" +
+      "\022.base.BaseResponse\"a\n\"DeleteQuickEvalua" +
+      "tionReportRequest\022\'\n\014base_request\030\001 \001(\0132" +
+      "\021.base.BaseRequest\022\022\n\nreport_ids\030\002 \003(\003B#" +
+      "\n\037com.zhijiejiaoyu.glory_api.liveP\001b\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -339,68 +391,104 @@ public final class LiveQuickEvaluate {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetQuickEvaluationReportRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ReportId", });
-    internal_static_glory_api_PassDetail_descriptor =
+    internal_static_glory_api_GetQuickEvaluationTotalReportRequest_descriptor =
       getDescriptor().getMessageTypes().get(15);
+    internal_static_glory_api_GetQuickEvaluationTotalReportRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetQuickEvaluationTotalReportRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "BeginTime", "EndTime", });
+    internal_static_glory_api_QuickEvaluationTotalReportItemEntry_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_glory_api_QuickEvaluationTotalReportItemEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_QuickEvaluationTotalReportItemEntry_descriptor,
+        new java.lang.String[] { "Name", "Percent", "Detail", });
+    internal_static_glory_api_QuickEvaluationTotalReportItem_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_glory_api_QuickEvaluationTotalReportItem_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_QuickEvaluationTotalReportItem_descriptor,
+        new java.lang.String[] { "ItemName", "Entries", "Desc", });
+    internal_static_glory_api_QuickEvaluationTotalReportStudentDetail_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_glory_api_QuickEvaluationTotalReportStudentDetail_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_QuickEvaluationTotalReportStudentDetail_descriptor,
+        new java.lang.String[] { "Name", "Result", "Reason", "ReportId", "RoomId", });
+    internal_static_glory_api_QuickEvaluationTotalReport_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_glory_api_QuickEvaluationTotalReport_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_QuickEvaluationTotalReport_descriptor,
+        new java.lang.String[] { "TotalCount", "PassCount", "NoPassCount", "BeginTime", "EndTime", "Items", "PassList", "NoPassList", });
+    internal_static_glory_api_GetQuickEvaluationTotalReportResponse_descriptor =
+      getDescriptor().getMessageTypes().get(20);
+    internal_static_glory_api_GetQuickEvaluationTotalReportResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetQuickEvaluationTotalReportResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_PassDetail_descriptor =
+      getDescriptor().getMessageTypes().get(21);
     internal_static_glory_api_PassDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_PassDetail_descriptor,
         new java.lang.String[] { "UserId", "UserName", "RoomId", "NoPassItems", "NoPassDetail", });
     internal_static_glory_api_NoPassInfo_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_glory_api_NoPassInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_NoPassInfo_descriptor,
         new java.lang.String[] { "Key", "Name", "Value", "Desc", "Detail", });
     internal_static_glory_api_ReportDetail_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_glory_api_ReportDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ReportDetail_descriptor,
         new java.lang.String[] { "Name", "StartTime", "EndTime", "PassTotal", "NoPassTotal", "Passes", "NoPasses", });
     internal_static_glory_api_GetQuickEvaluationReportResponse_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_glory_api_GetQuickEvaluationReportResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetQuickEvaluationReportResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Report", });
     internal_static_glory_api_GetQuickEvaluationDetailRequest_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_glory_api_GetQuickEvaluationDetailRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetQuickEvaluationDetailRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "RoomId", });
     internal_static_glory_api_QuickEvaluationDetail_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_glory_api_QuickEvaluationDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_QuickEvaluationDetail_descriptor,
         new java.lang.String[] { "Key", "IsPass", "Detail", });
     internal_static_glory_api_QuickEvaluationDetailType_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_glory_api_QuickEvaluationDetailType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_QuickEvaluationDetailType_descriptor,
         new java.lang.String[] { "Type", "Detail", });
     internal_static_glory_api_QuickEvaluationDetailKey_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_glory_api_QuickEvaluationDetailKey_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_QuickEvaluationDetailKey_descriptor,
         new java.lang.String[] { "Key", "Name", "Desc", "Result", "RefResult", "Detail", "Order", });
     internal_static_glory_api_GetQuickEvaluationDetailResponse_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_glory_api_GetQuickEvaluationDetailResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetQuickEvaluationDetailResponse_descriptor,
         new java.lang.String[] { "BaseResp", "StartTime", "EndTime", "Result", "QuickEvaluationDetail", "Name", });
     internal_static_glory_api_DeleteQuickEvaluationReportResponse_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_glory_api_DeleteQuickEvaluationReportResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteQuickEvaluationReportResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_DeleteQuickEvaluationReportRequest_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_glory_api_DeleteQuickEvaluationReportRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteQuickEvaluationReportRequest_descriptor,

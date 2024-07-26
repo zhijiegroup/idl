@@ -21,7 +21,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// GetRoleTemplate
-struct GloryApi_GetRoleTemplateRequest {
+struct GloryApi_GetRoleTemplateRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -44,7 +44,7 @@ struct GloryApi_GetRoleTemplateRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetRoleTemplateResponse {
+struct GloryApi_GetRoleTemplateResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -68,7 +68,7 @@ struct GloryApi_GetRoleTemplateResponse {
 }
 
 /// UpdateRoleTemplate
-struct GloryApi_UpdateRoleTemplateRequest {
+struct GloryApi_UpdateRoleTemplateRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -93,7 +93,7 @@ struct GloryApi_UpdateRoleTemplateRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UpdateRoleTemplateResponse {
+struct GloryApi_UpdateRoleTemplateResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -113,13 +113,6 @@ struct GloryApi_UpdateRoleTemplateResponse {
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_GetRoleTemplateRequest: @unchecked Sendable {}
-extension GloryApi_GetRoleTemplateResponse: @unchecked Sendable {}
-extension GloryApi_UpdateRoleTemplateRequest: @unchecked Sendable {}
-extension GloryApi_UpdateRoleTemplateResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 

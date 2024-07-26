@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_RoomUser {
+struct GloryApi_RoomUser: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -40,7 +40,7 @@ struct GloryApi_RoomUser {
   init() {}
 }
 
-struct GloryApi_UserEnterRoomRequest {
+struct GloryApi_UserEnterRoomRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -65,7 +65,7 @@ struct GloryApi_UserEnterRoomRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UserEnterRoomResponse {
+struct GloryApi_UserEnterRoomResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -88,7 +88,7 @@ struct GloryApi_UserEnterRoomResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_UserExitRoomRequest {
+struct GloryApi_UserExitRoomRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -113,7 +113,7 @@ struct GloryApi_UserExitRoomRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UserExitRoomResponse {
+struct GloryApi_UserExitRoomResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -134,7 +134,7 @@ struct GloryApi_UserExitRoomResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListActiveRoomUserRequest {
+struct GloryApi_ListActiveRoomUserRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -169,7 +169,7 @@ struct GloryApi_ListActiveRoomUserRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListActiveRoomUserResponse {
+struct GloryApi_ListActiveRoomUserResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -201,16 +201,6 @@ struct GloryApi_ListActiveRoomUserResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_RoomUser: @unchecked Sendable {}
-extension GloryApi_UserEnterRoomRequest: @unchecked Sendable {}
-extension GloryApi_UserEnterRoomResponse: @unchecked Sendable {}
-extension GloryApi_UserExitRoomRequest: @unchecked Sendable {}
-extension GloryApi_UserExitRoomResponse: @unchecked Sendable {}
-extension GloryApi_ListActiveRoomUserRequest: @unchecked Sendable {}
-extension GloryApi_ListActiveRoomUserResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 

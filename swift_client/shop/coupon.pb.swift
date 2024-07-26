@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_CreateCouponRequest {
+struct GloryApi_CreateCouponRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -67,7 +67,7 @@ struct GloryApi_CreateCouponRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CreateCouponResponse {
+struct GloryApi_CreateCouponResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -88,7 +88,7 @@ struct GloryApi_CreateCouponResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListCouponRequest {
+struct GloryApi_ListCouponRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -121,7 +121,7 @@ struct GloryApi_ListCouponRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_CouponDetail {
+struct GloryApi_CouponDetail: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -248,7 +248,7 @@ struct GloryApi_CouponDetail {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct GloryApi_ListCouponResponse {
+struct GloryApi_ListCouponResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -281,7 +281,7 @@ struct GloryApi_ListCouponResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_GetCouponDetailRequest {
+struct GloryApi_GetCouponDetailRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -304,7 +304,7 @@ struct GloryApi_GetCouponDetailRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetCouponDetailResponse {
+struct GloryApi_GetCouponDetailResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -335,7 +335,7 @@ struct GloryApi_GetCouponDetailResponse {
   fileprivate var _couponDetail: GloryApi_CouponDetail? = nil
 }
 
-struct GloryApi_UpdateCouponRequest {
+struct GloryApi_UpdateCouponRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -382,7 +382,7 @@ struct GloryApi_UpdateCouponRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UpdateCouponResponse {
+struct GloryApi_UpdateCouponResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -403,7 +403,7 @@ struct GloryApi_UpdateCouponResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_AbolishCouponRequest {
+struct GloryApi_AbolishCouponRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -426,7 +426,7 @@ struct GloryApi_AbolishCouponRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_AbolishCouponResponse {
+struct GloryApi_AbolishCouponResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -447,7 +447,7 @@ struct GloryApi_AbolishCouponResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_UpdateCouponDistributionStatusRequest {
+struct GloryApi_UpdateCouponDistributionStatusRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -472,7 +472,7 @@ struct GloryApi_UpdateCouponDistributionStatusRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UpdateCouponDistributionStatusResponse {
+struct GloryApi_UpdateCouponDistributionStatusResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -493,7 +493,7 @@ struct GloryApi_UpdateCouponDistributionStatusResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_DeleteCouponRequest {
+struct GloryApi_DeleteCouponRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -516,7 +516,7 @@ struct GloryApi_DeleteCouponRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteCouponResponse {
+struct GloryApi_DeleteCouponResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -537,7 +537,7 @@ struct GloryApi_DeleteCouponResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ClaimCouponRequest {
+struct GloryApi_ClaimCouponRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -560,7 +560,7 @@ struct GloryApi_ClaimCouponRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ClaimCouponResponse {
+struct GloryApi_ClaimCouponResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -581,7 +581,7 @@ struct GloryApi_ClaimCouponResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListMyCouponRequest {
+struct GloryApi_ListMyCouponRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -602,7 +602,7 @@ struct GloryApi_ListMyCouponRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ListMyCouponResponse {
+struct GloryApi_ListMyCouponResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -624,28 +624,6 @@ struct GloryApi_ListMyCouponResponse {
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_CreateCouponRequest: @unchecked Sendable {}
-extension GloryApi_CreateCouponResponse: @unchecked Sendable {}
-extension GloryApi_ListCouponRequest: @unchecked Sendable {}
-extension GloryApi_CouponDetail: @unchecked Sendable {}
-extension GloryApi_ListCouponResponse: @unchecked Sendable {}
-extension GloryApi_GetCouponDetailRequest: @unchecked Sendable {}
-extension GloryApi_GetCouponDetailResponse: @unchecked Sendable {}
-extension GloryApi_UpdateCouponRequest: @unchecked Sendable {}
-extension GloryApi_UpdateCouponResponse: @unchecked Sendable {}
-extension GloryApi_AbolishCouponRequest: @unchecked Sendable {}
-extension GloryApi_AbolishCouponResponse: @unchecked Sendable {}
-extension GloryApi_UpdateCouponDistributionStatusRequest: @unchecked Sendable {}
-extension GloryApi_UpdateCouponDistributionStatusResponse: @unchecked Sendable {}
-extension GloryApi_DeleteCouponRequest: @unchecked Sendable {}
-extension GloryApi_DeleteCouponResponse: @unchecked Sendable {}
-extension GloryApi_ClaimCouponRequest: @unchecked Sendable {}
-extension GloryApi_ClaimCouponResponse: @unchecked Sendable {}
-extension GloryApi_ListMyCouponRequest: @unchecked Sendable {}
-extension GloryApi_ListMyCouponResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
@@ -712,10 +690,10 @@ extension GloryApi_CreateCouponRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
     if !self.couponTitle.isEmpty {
       try visitor.visitSingularStringField(value: self.couponTitle, fieldNumber: 4)
     }
-    if self.couponMinUseAmount != 0 {
+    if self.couponMinUseAmount.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.couponMinUseAmount, fieldNumber: 5)
     }
-    if self.couponAmount != 0 {
+    if self.couponAmount.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.couponAmount, fieldNumber: 6)
     }
     if self.couponTotal != 0 {
@@ -999,10 +977,10 @@ extension GloryApi_CouponDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
       if !_storage._couponTitle.isEmpty {
         try visitor.visitSingularStringField(value: _storage._couponTitle, fieldNumber: 4)
       }
-      if _storage._couponMinUseAmount != 0 {
+      if _storage._couponMinUseAmount.bitPattern != 0 {
         try visitor.visitSingularDoubleField(value: _storage._couponMinUseAmount, fieldNumber: 5)
       }
-      if _storage._couponAmount != 0 {
+      if _storage._couponAmount.bitPattern != 0 {
         try visitor.visitSingularDoubleField(value: _storage._couponAmount, fieldNumber: 6)
       }
       if _storage._couponTotal != 0 {
@@ -1290,10 +1268,10 @@ extension GloryApi_UpdateCouponRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
     if !self.couponTitle.isEmpty {
       try visitor.visitSingularStringField(value: self.couponTitle, fieldNumber: 4)
     }
-    if self.couponMinUseAmount != 0 {
+    if self.couponMinUseAmount.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.couponMinUseAmount, fieldNumber: 5)
     }
-    if self.couponAmount != 0 {
+    if self.couponAmount.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.couponAmount, fieldNumber: 6)
     }
     if self.couponTotal != 0 {

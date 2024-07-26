@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_CourseModules {
+struct GloryApi_CourseModules: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -30,7 +30,7 @@ struct GloryApi_CourseModules {
   init() {}
 }
 
-struct GloryApi_Occupation {
+struct GloryApi_Occupation: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -44,7 +44,7 @@ struct GloryApi_Occupation {
   init() {}
 }
 
-struct GloryApi_Course {
+struct GloryApi_Course: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -176,7 +176,7 @@ struct GloryApi_Course {
 }
 
 /// 创建模块化课程
-struct GloryApi_CreateCourseRequest {
+struct GloryApi_CreateCourseRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -207,7 +207,7 @@ struct GloryApi_CreateCourseRequest {
   fileprivate var _course: GloryApi_Course? = nil
 }
 
-struct GloryApi_CreateCourseResponse {
+struct GloryApi_CreateCourseResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -231,7 +231,7 @@ struct GloryApi_CreateCourseResponse {
 }
 
 /// 获取模块化课程
-struct GloryApi_GetCourseRequest {
+struct GloryApi_GetCourseRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -255,7 +255,7 @@ struct GloryApi_GetCourseRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetCourseResponse {
+struct GloryApi_GetCourseResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -291,7 +291,7 @@ struct GloryApi_GetCourseResponse {
 }
 
 /// 更新模块化课程
-struct GloryApi_UpdateCourseRequest {
+struct GloryApi_UpdateCourseRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -322,7 +322,7 @@ struct GloryApi_UpdateCourseRequest {
   fileprivate var _course: GloryApi_Course? = nil
 }
 
-struct GloryApi_UpdateCourseResponse {
+struct GloryApi_UpdateCourseResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -346,7 +346,7 @@ struct GloryApi_UpdateCourseResponse {
 }
 
 /// 删除模块化课程
-struct GloryApi_DeleteCourseRequest {
+struct GloryApi_DeleteCourseRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -369,7 +369,7 @@ struct GloryApi_DeleteCourseRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteCourseResponse {
+struct GloryApi_DeleteCourseResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -391,7 +391,7 @@ struct GloryApi_DeleteCourseResponse {
 }
 
 /// 模块化课程列表
-struct GloryApi_ListCourseRequest {
+struct GloryApi_ListCourseRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -452,7 +452,7 @@ struct GloryApi_ListCourseRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListCourseResponse {
+struct GloryApi_ListCourseResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -485,7 +485,7 @@ struct GloryApi_ListCourseResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_GetCourseIdsRequest {
+struct GloryApi_GetCourseIdsRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -508,7 +508,7 @@ struct GloryApi_GetCourseIdsRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetCourseIdsResponse {
+struct GloryApi_GetCourseIdsResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -531,7 +531,7 @@ struct GloryApi_GetCourseIdsResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListLatestCourseRequest {
+struct GloryApi_ListLatestCourseRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -554,7 +554,7 @@ struct GloryApi_ListLatestCourseRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ListLatestCourseResponse {
+struct GloryApi_ListLatestCourseResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -577,7 +577,7 @@ struct GloryApi_ListLatestCourseResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListHottestCourseRequest {
+struct GloryApi_ListHottestCourseRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -600,7 +600,7 @@ struct GloryApi_ListHottestCourseRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ListHottestCourseResponse {
+struct GloryApi_ListHottestCourseResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -623,7 +623,7 @@ struct GloryApi_ListHottestCourseResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_CourseType {
+struct GloryApi_CourseType: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -639,7 +639,7 @@ struct GloryApi_CourseType {
   init() {}
 }
 
-struct GloryApi_GetCourseTypeTreeRequest {
+struct GloryApi_GetCourseTypeTreeRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -660,7 +660,7 @@ struct GloryApi_GetCourseTypeTreeRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetCourseTypeTreeResponse {
+struct GloryApi_GetCourseTypeTreeResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -683,7 +683,7 @@ struct GloryApi_GetCourseTypeTreeResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetCourseTypeListRequest {
+struct GloryApi_GetCourseTypeListRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -706,7 +706,7 @@ struct GloryApi_GetCourseTypeListRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetCourseTypeListResponse {
+struct GloryApi_GetCourseTypeListResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -737,33 +737,6 @@ struct GloryApi_GetCourseTypeListResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_CourseModules: @unchecked Sendable {}
-extension GloryApi_Occupation: @unchecked Sendable {}
-extension GloryApi_Course: @unchecked Sendable {}
-extension GloryApi_CreateCourseRequest: @unchecked Sendable {}
-extension GloryApi_CreateCourseResponse: @unchecked Sendable {}
-extension GloryApi_GetCourseRequest: @unchecked Sendable {}
-extension GloryApi_GetCourseResponse: @unchecked Sendable {}
-extension GloryApi_UpdateCourseRequest: @unchecked Sendable {}
-extension GloryApi_UpdateCourseResponse: @unchecked Sendable {}
-extension GloryApi_DeleteCourseRequest: @unchecked Sendable {}
-extension GloryApi_DeleteCourseResponse: @unchecked Sendable {}
-extension GloryApi_ListCourseRequest: @unchecked Sendable {}
-extension GloryApi_ListCourseResponse: @unchecked Sendable {}
-extension GloryApi_GetCourseIdsRequest: @unchecked Sendable {}
-extension GloryApi_GetCourseIdsResponse: @unchecked Sendable {}
-extension GloryApi_ListLatestCourseRequest: @unchecked Sendable {}
-extension GloryApi_ListLatestCourseResponse: @unchecked Sendable {}
-extension GloryApi_ListHottestCourseRequest: @unchecked Sendable {}
-extension GloryApi_ListHottestCourseResponse: @unchecked Sendable {}
-extension GloryApi_CourseType: @unchecked Sendable {}
-extension GloryApi_GetCourseTypeTreeRequest: @unchecked Sendable {}
-extension GloryApi_GetCourseTypeTreeResponse: @unchecked Sendable {}
-extension GloryApi_GetCourseTypeListRequest: @unchecked Sendable {}
-extension GloryApi_GetCourseTypeListResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "glory_api"
@@ -773,8 +746,8 @@ extension GloryApi_CourseModules: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let _ = try decoder.nextFieldNumber() {
-    }
+    // Load everything into unknown fields
+    while try decoder.nextFieldNumber() != nil {}
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
@@ -963,10 +936,10 @@ extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
       if !_storage._courseTeacherName.isEmpty {
         try visitor.visitSingularStringField(value: _storage._courseTeacherName, fieldNumber: 4)
       }
-      if _storage._knowledgeHours != 0 {
+      if _storage._knowledgeHours.bitPattern != 0 {
         try visitor.visitSingularFloatField(value: _storage._knowledgeHours, fieldNumber: 5)
       }
-      if _storage._skillHours != 0 {
+      if _storage._skillHours.bitPattern != 0 {
         try visitor.visitSingularFloatField(value: _storage._skillHours, fieldNumber: 6)
       }
       if !_storage._courseDescription.isEmpty {

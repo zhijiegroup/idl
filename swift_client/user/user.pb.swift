@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_TenantDept {
+struct GloryApi_TenantDept: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -46,7 +46,7 @@ struct GloryApi_TenantDept {
   init() {}
 }
 
-struct GloryApi_User {
+struct GloryApi_User: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -156,7 +156,7 @@ struct GloryApi_User {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct GloryApi_UserFollow {
+struct GloryApi_UserFollow: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -180,7 +180,7 @@ struct GloryApi_UserFollow {
   init() {}
 }
 
-struct GloryApi_UserSocialSummary {
+struct GloryApi_UserSocialSummary: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -203,7 +203,7 @@ struct GloryApi_UserSocialSummary {
 }
 
 /// login
-struct GloryApi_LoginRequest {
+struct GloryApi_LoginRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -230,7 +230,7 @@ struct GloryApi_LoginRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_LoginResponse {
+struct GloryApi_LoginResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -262,7 +262,7 @@ struct GloryApi_LoginResponse {
 }
 
 /// logout
-struct GloryApi_LogoutRequest {
+struct GloryApi_LogoutRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -283,7 +283,7 @@ struct GloryApi_LogoutRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_LogoutResponse {
+struct GloryApi_LogoutResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -305,7 +305,7 @@ struct GloryApi_LogoutResponse {
 }
 
 /// get verification code
-struct GloryApi_GetVerifyCodeRequest {
+struct GloryApi_GetVerifyCodeRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -328,7 +328,7 @@ struct GloryApi_GetVerifyCodeRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetVerifyCodeResponse {
+struct GloryApi_GetVerifyCodeResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -349,7 +349,7 @@ struct GloryApi_GetVerifyCodeResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_CheckVerifyCodeRequest {
+struct GloryApi_CheckVerifyCodeRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -374,7 +374,7 @@ struct GloryApi_CheckVerifyCodeRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CheckVerifyCodeResponse {
+struct GloryApi_CheckVerifyCodeResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -399,7 +399,7 @@ struct GloryApi_CheckVerifyCodeResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_LoginWithPasswordRequest {
+struct GloryApi_LoginWithPasswordRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -424,7 +424,7 @@ struct GloryApi_LoginWithPasswordRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_LoginWithPasswordResponse {
+struct GloryApi_LoginWithPasswordResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -455,7 +455,7 @@ struct GloryApi_LoginWithPasswordResponse {
   fileprivate var _data: GloryApi_User? = nil
 }
 
-struct GloryApi_UpdatePasswordRequest {
+struct GloryApi_UpdatePasswordRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -482,7 +482,7 @@ struct GloryApi_UpdatePasswordRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UpdatePasswordResponse {
+struct GloryApi_UpdatePasswordResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -504,7 +504,7 @@ struct GloryApi_UpdatePasswordResponse {
 }
 
 /// Get User
-struct GloryApi_GetUserRequest {
+struct GloryApi_GetUserRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -527,7 +527,7 @@ struct GloryApi_GetUserRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetUserResponse {
+struct GloryApi_GetUserResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -573,7 +573,7 @@ struct GloryApi_GetUserResponse {
   fileprivate var _tenant: GloryApi_Tenant? = nil
 }
 
-struct GloryApi_GetUserByPhoneRequest {
+struct GloryApi_GetUserByPhoneRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -596,7 +596,7 @@ struct GloryApi_GetUserByPhoneRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetUserByPhoneResponse {
+struct GloryApi_GetUserByPhoneResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -629,7 +629,7 @@ struct GloryApi_GetUserByPhoneResponse {
   fileprivate var _user: GloryApi_User? = nil
 }
 
-struct GloryApi_UpdateUserRequest {
+struct GloryApi_UpdateUserRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -660,7 +660,7 @@ struct GloryApi_UpdateUserRequest {
   fileprivate var _data: GloryApi_User? = nil
 }
 
-struct GloryApi_UpdateUserResponse {
+struct GloryApi_UpdateUserResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -681,7 +681,7 @@ struct GloryApi_UpdateUserResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_UpdatePhoneRequest {
+struct GloryApi_UpdatePhoneRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -706,7 +706,7 @@ struct GloryApi_UpdatePhoneRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UpdatePhoneResponse {
+struct GloryApi_UpdatePhoneResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -727,7 +727,7 @@ struct GloryApi_UpdatePhoneResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_PagePermission {
+struct GloryApi_PagePermission: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -747,7 +747,7 @@ struct GloryApi_PagePermission {
   init() {}
 }
 
-struct GloryApi_GetUserPagePermissionRequest {
+struct GloryApi_GetUserPagePermissionRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -772,7 +772,7 @@ struct GloryApi_GetUserPagePermissionRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetUserPagePermissionResponse {
+struct GloryApi_GetUserPagePermissionResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -796,7 +796,7 @@ struct GloryApi_GetUserPagePermissionResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_CreateRolePagePermissionRequest {
+struct GloryApi_CreateRolePagePermissionRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -827,7 +827,7 @@ struct GloryApi_CreateRolePagePermissionRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CreateRolePagePermissionResponse {
+struct GloryApi_CreateRolePagePermissionResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -850,7 +850,7 @@ struct GloryApi_CreateRolePagePermissionResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetRolePagePermissionRequest {
+struct GloryApi_GetRolePagePermissionRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -877,7 +877,7 @@ struct GloryApi_GetRolePagePermissionRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetRolePagePermissionResponse {
+struct GloryApi_GetRolePagePermissionResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -912,7 +912,7 @@ struct GloryApi_GetRolePagePermissionResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_UpdateRolePagePermissionRequest {
+struct GloryApi_UpdateRolePagePermissionRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -945,7 +945,7 @@ struct GloryApi_UpdateRolePagePermissionRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UpdateRolePagePermissionResponse {
+struct GloryApi_UpdateRolePagePermissionResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -966,7 +966,7 @@ struct GloryApi_UpdateRolePagePermissionResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_Permission {
+struct GloryApi_Permission: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -990,7 +990,7 @@ struct GloryApi_Permission {
   init() {}
 }
 
-struct GloryApi_ListPermissionRequest {
+struct GloryApi_ListPermissionRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1035,7 +1035,7 @@ struct GloryApi_ListPermissionRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListPermissionResponse {
+struct GloryApi_ListPermissionResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1074,7 +1074,7 @@ struct GloryApi_ListPermissionResponse {
 /// "system_admin":          学校管理员
 /// "system_short_reviewer": 短视频预审员
 /// "user_define":           自定义
-struct GloryApi_RoleType {
+struct GloryApi_RoleType: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1088,7 +1088,7 @@ struct GloryApi_RoleType {
   init() {}
 }
 
-struct GloryApi_GetRoleTypeRequest {
+struct GloryApi_GetRoleTypeRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1113,7 +1113,7 @@ struct GloryApi_GetRoleTypeRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetRoleTypeResponse {
+struct GloryApi_GetRoleTypeResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1136,7 +1136,7 @@ struct GloryApi_GetRoleTypeResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_Role {
+struct GloryApi_Role: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1164,7 +1164,7 @@ struct GloryApi_Role {
   init() {}
 }
 
-struct GloryApi_RolePermission {
+struct GloryApi_RolePermission: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1182,7 +1182,7 @@ struct GloryApi_RolePermission {
   init() {}
 }
 
-struct GloryApi_ListRoleRequest {
+struct GloryApi_ListRoleRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1227,7 +1227,7 @@ struct GloryApi_ListRoleRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListRoleResponse {
+struct GloryApi_ListRoleResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1261,7 +1261,7 @@ struct GloryApi_ListRoleResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_CreateRoleRequest {
+struct GloryApi_CreateRoleRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1292,7 +1292,7 @@ struct GloryApi_CreateRoleRequest {
   fileprivate var _role: GloryApi_Role? = nil
 }
 
-struct GloryApi_CreateRoleResponse {
+struct GloryApi_CreateRoleResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1316,7 +1316,7 @@ struct GloryApi_CreateRoleResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GiveRolePermissionRequest {
+struct GloryApi_GiveRolePermissionRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1341,7 +1341,7 @@ struct GloryApi_GiveRolePermissionRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GiveRolePermissionResponse {
+struct GloryApi_GiveRolePermissionResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1362,7 +1362,7 @@ struct GloryApi_GiveRolePermissionResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_RemoveRolePermissionRequest {
+struct GloryApi_RemoveRolePermissionRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1386,7 +1386,7 @@ struct GloryApi_RemoveRolePermissionRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_RemoveRolePermissionResponse {
+struct GloryApi_RemoveRolePermissionResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1407,7 +1407,7 @@ struct GloryApi_RemoveRolePermissionResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_DeleteRoleRequest {
+struct GloryApi_DeleteRoleRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1431,7 +1431,7 @@ struct GloryApi_DeleteRoleRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteRoleResponse {
+struct GloryApi_DeleteRoleResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1452,7 +1452,7 @@ struct GloryApi_DeleteRoleResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_Resource {
+struct GloryApi_Resource: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1478,7 +1478,7 @@ struct GloryApi_Resource {
   init() {}
 }
 
-struct GloryApi_ListResourceRequest {
+struct GloryApi_ListResourceRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1519,7 +1519,7 @@ struct GloryApi_ListResourceRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListResourceResponse {
+struct GloryApi_ListResourceResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1553,7 +1553,7 @@ struct GloryApi_ListResourceResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_ListUserByRole {
+struct GloryApi_ListUserByRole: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1577,7 +1577,7 @@ struct GloryApi_ListUserByRole {
   init() {}
 }
 
-struct GloryApi_ListUserByRoleRequest {
+struct GloryApi_ListUserByRoleRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1617,7 +1617,7 @@ struct GloryApi_ListUserByRoleRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListUserByRoleResponse {
+struct GloryApi_ListUserByRoleResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1652,7 +1652,7 @@ struct GloryApi_ListUserByRoleResponse {
 }
 
 /// 关注用户
-struct GloryApi_FollowUserRequest {
+struct GloryApi_FollowUserRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1678,7 +1678,7 @@ struct GloryApi_FollowUserRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_FollowUserResponse {
+struct GloryApi_FollowUserResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1700,7 +1700,7 @@ struct GloryApi_FollowUserResponse {
 }
 
 /// 我的关注列表
-struct GloryApi_ListMyFollowingRequest {
+struct GloryApi_ListMyFollowingRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1731,7 +1731,7 @@ struct GloryApi_ListMyFollowingRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListMyFollowingResponse {
+struct GloryApi_ListMyFollowingResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1765,7 +1765,7 @@ struct GloryApi_ListMyFollowingResponse {
 }
 
 /// 我的粉丝列表
-struct GloryApi_ListMyFollowerRequest {
+struct GloryApi_ListMyFollowerRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1796,7 +1796,7 @@ struct GloryApi_ListMyFollowerRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListMyFollowerResponse {
+struct GloryApi_ListMyFollowerResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1830,7 +1830,7 @@ struct GloryApi_ListMyFollowerResponse {
 }
 
 /// 我的朋友列表
-struct GloryApi_ListMyFriendRequest {
+struct GloryApi_ListMyFriendRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1861,7 +1861,7 @@ struct GloryApi_ListMyFriendRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListMyFriendResponse {
+struct GloryApi_ListMyFriendResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1895,7 +1895,7 @@ struct GloryApi_ListMyFriendResponse {
 }
 
 /// 我的社交信息
-struct GloryApi_GetMySocialSummaryRequest {
+struct GloryApi_GetMySocialSummaryRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1916,7 +1916,7 @@ struct GloryApi_GetMySocialSummaryRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetMySocialSummaryResponse {
+struct GloryApi_GetMySocialSummaryResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1947,7 +1947,7 @@ struct GloryApi_GetMySocialSummaryResponse {
   fileprivate var _socialSummary: GloryApi_UserSocialSummary? = nil
 }
 
-struct GloryApi_UpdateUserTenantRequest {
+struct GloryApi_UpdateUserTenantRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1976,7 +1976,7 @@ struct GloryApi_UpdateUserTenantRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UpdateUserTenantResponse {
+struct GloryApi_UpdateUserTenantResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1997,7 +1997,7 @@ struct GloryApi_UpdateUserTenantResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListUserRequest {
+struct GloryApi_ListUserRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2020,7 +2020,7 @@ struct GloryApi_ListUserRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ListUserResponse {
+struct GloryApi_ListUserResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2043,7 +2043,7 @@ struct GloryApi_ListUserResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_UserBindWechatRequest {
+struct GloryApi_UserBindWechatRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2066,7 +2066,7 @@ struct GloryApi_UserBindWechatRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UserBindWechatResponse {
+struct GloryApi_UserBindWechatResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2093,7 +2093,7 @@ struct GloryApi_UserBindWechatResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_UserUnbindWechatRequest {
+struct GloryApi_UserUnbindWechatRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2114,7 +2114,7 @@ struct GloryApi_UserUnbindWechatRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UserUnbindWechatResponse {
+struct GloryApi_UserUnbindWechatResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2135,7 +2135,7 @@ struct GloryApi_UserUnbindWechatResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_DeleteUserRequest {
+struct GloryApi_DeleteUserRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2156,7 +2156,7 @@ struct GloryApi_DeleteUserRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteUserResponse {
+struct GloryApi_DeleteUserResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2177,7 +2177,7 @@ struct GloryApi_DeleteUserResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_UserMajor {
+struct GloryApi_UserMajor: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2191,7 +2191,7 @@ struct GloryApi_UserMajor {
   init() {}
 }
 
-struct GloryApi_GetUserMajorRequest {
+struct GloryApi_GetUserMajorRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2212,7 +2212,7 @@ struct GloryApi_GetUserMajorRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetUserMajorResponse {
+struct GloryApi_GetUserMajorResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2235,7 +2235,7 @@ struct GloryApi_GetUserMajorResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_OwnAccess {
+struct GloryApi_OwnAccess: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2264,7 +2264,7 @@ struct GloryApi_OwnAccess {
   init() {}
 }
 
-struct GloryApi_OwnAccessHeader {
+struct GloryApi_OwnAccessHeader: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2278,7 +2278,7 @@ struct GloryApi_OwnAccessHeader {
   init() {}
 }
 
-struct GloryApi_ListOwnAccessRequest {
+struct GloryApi_ListOwnAccessRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2313,7 +2313,7 @@ struct GloryApi_ListOwnAccessRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListOwnAccessResponse {
+struct GloryApi_ListOwnAccessResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2347,93 +2347,6 @@ struct GloryApi_ListOwnAccessResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_TenantDept: @unchecked Sendable {}
-extension GloryApi_User: @unchecked Sendable {}
-extension GloryApi_UserFollow: @unchecked Sendable {}
-extension GloryApi_UserSocialSummary: @unchecked Sendable {}
-extension GloryApi_LoginRequest: @unchecked Sendable {}
-extension GloryApi_LoginResponse: @unchecked Sendable {}
-extension GloryApi_LogoutRequest: @unchecked Sendable {}
-extension GloryApi_LogoutResponse: @unchecked Sendable {}
-extension GloryApi_GetVerifyCodeRequest: @unchecked Sendable {}
-extension GloryApi_GetVerifyCodeResponse: @unchecked Sendable {}
-extension GloryApi_CheckVerifyCodeRequest: @unchecked Sendable {}
-extension GloryApi_CheckVerifyCodeResponse: @unchecked Sendable {}
-extension GloryApi_LoginWithPasswordRequest: @unchecked Sendable {}
-extension GloryApi_LoginWithPasswordResponse: @unchecked Sendable {}
-extension GloryApi_UpdatePasswordRequest: @unchecked Sendable {}
-extension GloryApi_UpdatePasswordResponse: @unchecked Sendable {}
-extension GloryApi_GetUserRequest: @unchecked Sendable {}
-extension GloryApi_GetUserResponse: @unchecked Sendable {}
-extension GloryApi_GetUserByPhoneRequest: @unchecked Sendable {}
-extension GloryApi_GetUserByPhoneResponse: @unchecked Sendable {}
-extension GloryApi_UpdateUserRequest: @unchecked Sendable {}
-extension GloryApi_UpdateUserResponse: @unchecked Sendable {}
-extension GloryApi_UpdatePhoneRequest: @unchecked Sendable {}
-extension GloryApi_UpdatePhoneResponse: @unchecked Sendable {}
-extension GloryApi_PagePermission: @unchecked Sendable {}
-extension GloryApi_GetUserPagePermissionRequest: @unchecked Sendable {}
-extension GloryApi_GetUserPagePermissionResponse: @unchecked Sendable {}
-extension GloryApi_CreateRolePagePermissionRequest: @unchecked Sendable {}
-extension GloryApi_CreateRolePagePermissionResponse: @unchecked Sendable {}
-extension GloryApi_GetRolePagePermissionRequest: @unchecked Sendable {}
-extension GloryApi_GetRolePagePermissionResponse: @unchecked Sendable {}
-extension GloryApi_UpdateRolePagePermissionRequest: @unchecked Sendable {}
-extension GloryApi_UpdateRolePagePermissionResponse: @unchecked Sendable {}
-extension GloryApi_Permission: @unchecked Sendable {}
-extension GloryApi_ListPermissionRequest: @unchecked Sendable {}
-extension GloryApi_ListPermissionResponse: @unchecked Sendable {}
-extension GloryApi_RoleType: @unchecked Sendable {}
-extension GloryApi_GetRoleTypeRequest: @unchecked Sendable {}
-extension GloryApi_GetRoleTypeResponse: @unchecked Sendable {}
-extension GloryApi_Role: @unchecked Sendable {}
-extension GloryApi_RolePermission: @unchecked Sendable {}
-extension GloryApi_ListRoleRequest: @unchecked Sendable {}
-extension GloryApi_ListRoleResponse: @unchecked Sendable {}
-extension GloryApi_CreateRoleRequest: @unchecked Sendable {}
-extension GloryApi_CreateRoleResponse: @unchecked Sendable {}
-extension GloryApi_GiveRolePermissionRequest: @unchecked Sendable {}
-extension GloryApi_GiveRolePermissionResponse: @unchecked Sendable {}
-extension GloryApi_RemoveRolePermissionRequest: @unchecked Sendable {}
-extension GloryApi_RemoveRolePermissionResponse: @unchecked Sendable {}
-extension GloryApi_DeleteRoleRequest: @unchecked Sendable {}
-extension GloryApi_DeleteRoleResponse: @unchecked Sendable {}
-extension GloryApi_Resource: @unchecked Sendable {}
-extension GloryApi_ListResourceRequest: @unchecked Sendable {}
-extension GloryApi_ListResourceResponse: @unchecked Sendable {}
-extension GloryApi_ListUserByRole: @unchecked Sendable {}
-extension GloryApi_ListUserByRoleRequest: @unchecked Sendable {}
-extension GloryApi_ListUserByRoleResponse: @unchecked Sendable {}
-extension GloryApi_FollowUserRequest: @unchecked Sendable {}
-extension GloryApi_FollowUserResponse: @unchecked Sendable {}
-extension GloryApi_ListMyFollowingRequest: @unchecked Sendable {}
-extension GloryApi_ListMyFollowingResponse: @unchecked Sendable {}
-extension GloryApi_ListMyFollowerRequest: @unchecked Sendable {}
-extension GloryApi_ListMyFollowerResponse: @unchecked Sendable {}
-extension GloryApi_ListMyFriendRequest: @unchecked Sendable {}
-extension GloryApi_ListMyFriendResponse: @unchecked Sendable {}
-extension GloryApi_GetMySocialSummaryRequest: @unchecked Sendable {}
-extension GloryApi_GetMySocialSummaryResponse: @unchecked Sendable {}
-extension GloryApi_UpdateUserTenantRequest: @unchecked Sendable {}
-extension GloryApi_UpdateUserTenantResponse: @unchecked Sendable {}
-extension GloryApi_ListUserRequest: @unchecked Sendable {}
-extension GloryApi_ListUserResponse: @unchecked Sendable {}
-extension GloryApi_UserBindWechatRequest: @unchecked Sendable {}
-extension GloryApi_UserBindWechatResponse: @unchecked Sendable {}
-extension GloryApi_UserUnbindWechatRequest: @unchecked Sendable {}
-extension GloryApi_UserUnbindWechatResponse: @unchecked Sendable {}
-extension GloryApi_DeleteUserRequest: @unchecked Sendable {}
-extension GloryApi_DeleteUserResponse: @unchecked Sendable {}
-extension GloryApi_UserMajor: @unchecked Sendable {}
-extension GloryApi_GetUserMajorRequest: @unchecked Sendable {}
-extension GloryApi_GetUserMajorResponse: @unchecked Sendable {}
-extension GloryApi_OwnAccess: @unchecked Sendable {}
-extension GloryApi_OwnAccessHeader: @unchecked Sendable {}
-extension GloryApi_ListOwnAccessRequest: @unchecked Sendable {}
-extension GloryApi_ListOwnAccessResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 

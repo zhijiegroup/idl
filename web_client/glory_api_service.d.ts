@@ -1600,6 +1600,10 @@ CreateLivePlanProduct create live plan product */
     request: live_quick_evaluate.GetQuickEvaluationReportRequest
   ): Promise<live_quick_evaluate.GetQuickEvaluationReportResponse>;
 
+  GetQuickEvaluationTotalReport(
+    request: live_quick_evaluate.GetQuickEvaluationTotalReportRequest
+  ): Promise<live_quick_evaluate.GetQuickEvaluationTotalReportResponse>;
+
   DeleteQuickEvaluationReport(
     request: live_quick_evaluate.DeleteQuickEvaluationReportRequest
   ): Promise<live_quick_evaluate.DeleteQuickEvaluationReportResponse>;

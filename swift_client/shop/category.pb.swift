@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_Category {
+struct GloryApi_Category: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -38,7 +38,7 @@ struct GloryApi_Category {
   init() {}
 }
 
-struct GloryApi_CategoryWithAuthor {
+struct GloryApi_CategoryWithAuthor: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -69,7 +69,7 @@ struct GloryApi_CategoryWithAuthor {
   fileprivate var _authorInfo: Base_AuthorInfo? = nil
 }
 
-struct GloryApi_CreateCategoryRequest {
+struct GloryApi_CreateCategoryRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -100,7 +100,7 @@ struct GloryApi_CreateCategoryRequest {
   fileprivate var _category: GloryApi_Category? = nil
 }
 
-struct GloryApi_CreateCategoryResponse {
+struct GloryApi_CreateCategoryResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -124,7 +124,7 @@ struct GloryApi_CreateCategoryResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetCategoryRequest {
+struct GloryApi_GetCategoryRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -147,7 +147,7 @@ struct GloryApi_GetCategoryRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetCategoryResponse {
+struct GloryApi_GetCategoryResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -178,7 +178,7 @@ struct GloryApi_GetCategoryResponse {
   fileprivate var _categoryDetail: GloryApi_CategoryWithAuthor? = nil
 }
 
-struct GloryApi_UpdateCategoryRequest {
+struct GloryApi_UpdateCategoryRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -209,7 +209,7 @@ struct GloryApi_UpdateCategoryRequest {
   fileprivate var _category: GloryApi_Category? = nil
 }
 
-struct GloryApi_UpdateCategoryResponse {
+struct GloryApi_UpdateCategoryResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -232,7 +232,7 @@ struct GloryApi_UpdateCategoryResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListCategoryRequest {
+struct GloryApi_ListCategoryRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -271,7 +271,7 @@ struct GloryApi_ListCategoryRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListCategoryResponse {
+struct GloryApi_ListCategoryResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -304,7 +304,7 @@ struct GloryApi_ListCategoryResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_DeleteCategoryRequest {
+struct GloryApi_DeleteCategoryRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -327,7 +327,7 @@ struct GloryApi_DeleteCategoryRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteCategoryResponse {
+struct GloryApi_DeleteCategoryResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -347,21 +347,6 @@ struct GloryApi_DeleteCategoryResponse {
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_Category: @unchecked Sendable {}
-extension GloryApi_CategoryWithAuthor: @unchecked Sendable {}
-extension GloryApi_CreateCategoryRequest: @unchecked Sendable {}
-extension GloryApi_CreateCategoryResponse: @unchecked Sendable {}
-extension GloryApi_GetCategoryRequest: @unchecked Sendable {}
-extension GloryApi_GetCategoryResponse: @unchecked Sendable {}
-extension GloryApi_UpdateCategoryRequest: @unchecked Sendable {}
-extension GloryApi_UpdateCategoryResponse: @unchecked Sendable {}
-extension GloryApi_ListCategoryRequest: @unchecked Sendable {}
-extension GloryApi_ListCategoryResponse: @unchecked Sendable {}
-extension GloryApi_DeleteCategoryRequest: @unchecked Sendable {}
-extension GloryApi_DeleteCategoryResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 

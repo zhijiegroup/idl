@@ -21,7 +21,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// 创建工作岗位
-struct GloryApi_CreateJobRequest {
+struct GloryApi_CreateJobRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -44,7 +44,7 @@ struct GloryApi_CreateJobRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CreateJobResponse {
+struct GloryApi_CreateJobResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -65,7 +65,7 @@ struct GloryApi_CreateJobResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_Job {
+struct GloryApi_Job: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -80,7 +80,7 @@ struct GloryApi_Job {
 }
 
 /// 工作岗位列表
-struct GloryApi_ListJobRequest {
+struct GloryApi_ListJobRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -111,7 +111,7 @@ struct GloryApi_ListJobRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListJobResponse {
+struct GloryApi_ListJobResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -145,7 +145,7 @@ struct GloryApi_ListJobResponse {
 }
 
 /// 更新工作岗位
-struct GloryApi_UpdateJobRequest {
+struct GloryApi_UpdateJobRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -170,7 +170,7 @@ struct GloryApi_UpdateJobRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UpdateJobResponse {
+struct GloryApi_UpdateJobResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -192,7 +192,7 @@ struct GloryApi_UpdateJobResponse {
 }
 
 /// 删除工作岗位
-struct GloryApi_DeleteJobRequest {
+struct GloryApi_DeleteJobRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -215,7 +215,7 @@ struct GloryApi_DeleteJobRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteJobResponse {
+struct GloryApi_DeleteJobResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -235,18 +235,6 @@ struct GloryApi_DeleteJobResponse {
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_CreateJobRequest: @unchecked Sendable {}
-extension GloryApi_CreateJobResponse: @unchecked Sendable {}
-extension GloryApi_Job: @unchecked Sendable {}
-extension GloryApi_ListJobRequest: @unchecked Sendable {}
-extension GloryApi_ListJobResponse: @unchecked Sendable {}
-extension GloryApi_UpdateJobRequest: @unchecked Sendable {}
-extension GloryApi_UpdateJobResponse: @unchecked Sendable {}
-extension GloryApi_DeleteJobRequest: @unchecked Sendable {}
-extension GloryApi_DeleteJobResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 

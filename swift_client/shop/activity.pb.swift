@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_ActivityProduct {
+struct GloryApi_ActivityProduct: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -48,7 +48,7 @@ struct GloryApi_ActivityProduct {
   init() {}
 }
 
-struct GloryApi_CreateActivityRequest {
+struct GloryApi_CreateActivityRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -94,7 +94,7 @@ struct GloryApi_CreateActivityRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CreateActivityResponse {
+struct GloryApi_CreateActivityResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -115,7 +115,7 @@ struct GloryApi_CreateActivityResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListActivityRequest {
+struct GloryApi_ListActivityRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -156,7 +156,7 @@ struct GloryApi_ListActivityRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ActivityDetail {
+struct GloryApi_ActivityDetail: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -188,7 +188,7 @@ struct GloryApi_ActivityDetail {
   init() {}
 }
 
-struct GloryApi_ListActivityResponse {
+struct GloryApi_ListActivityResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -221,7 +221,7 @@ struct GloryApi_ListActivityResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_GetActivityDetailRequest {
+struct GloryApi_GetActivityDetailRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -244,7 +244,7 @@ struct GloryApi_GetActivityDetailRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetActivityDetailResponse {
+struct GloryApi_GetActivityDetailResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -275,7 +275,7 @@ struct GloryApi_GetActivityDetailResponse {
   fileprivate var _activityDetail: GloryApi_ActivityDetail? = nil
 }
 
-struct GloryApi_UpdateActivityRequest {
+struct GloryApi_UpdateActivityRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -323,7 +323,7 @@ struct GloryApi_UpdateActivityRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UpdateActivityResponse {
+struct GloryApi_UpdateActivityResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -344,7 +344,7 @@ struct GloryApi_UpdateActivityResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_DeleteActivityRequest {
+struct GloryApi_DeleteActivityRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -367,7 +367,7 @@ struct GloryApi_DeleteActivityRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteActivityResponse {
+struct GloryApi_DeleteActivityResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -388,7 +388,7 @@ struct GloryApi_DeleteActivityResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_DisableActivityRequest {
+struct GloryApi_DisableActivityRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -411,7 +411,7 @@ struct GloryApi_DisableActivityRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DisableActivityResponse {
+struct GloryApi_DisableActivityResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -431,23 +431,6 @@ struct GloryApi_DisableActivityResponse {
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_ActivityProduct: @unchecked Sendable {}
-extension GloryApi_CreateActivityRequest: @unchecked Sendable {}
-extension GloryApi_CreateActivityResponse: @unchecked Sendable {}
-extension GloryApi_ListActivityRequest: @unchecked Sendable {}
-extension GloryApi_ActivityDetail: @unchecked Sendable {}
-extension GloryApi_ListActivityResponse: @unchecked Sendable {}
-extension GloryApi_GetActivityDetailRequest: @unchecked Sendable {}
-extension GloryApi_GetActivityDetailResponse: @unchecked Sendable {}
-extension GloryApi_UpdateActivityRequest: @unchecked Sendable {}
-extension GloryApi_UpdateActivityResponse: @unchecked Sendable {}
-extension GloryApi_DeleteActivityRequest: @unchecked Sendable {}
-extension GloryApi_DeleteActivityResponse: @unchecked Sendable {}
-extension GloryApi_DisableActivityRequest: @unchecked Sendable {}
-extension GloryApi_DisableActivityResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 

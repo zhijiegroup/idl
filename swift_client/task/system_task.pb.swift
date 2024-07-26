@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_TaskParameter {
+struct GloryApi_TaskParameter: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -50,7 +50,7 @@ struct GloryApi_TaskParameter {
   init() {}
 }
 
-struct GloryApi_TaskConfig {
+struct GloryApi_TaskConfig: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -73,7 +73,7 @@ struct GloryApi_TaskConfig {
   init() {}
 }
 
-struct GloryApi_SystemTaskParameter {
+struct GloryApi_SystemTaskParameter: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -99,7 +99,7 @@ struct GloryApi_SystemTaskParameter {
   init() {}
 }
 
-struct GloryApi_SystemTask {
+struct GloryApi_SystemTask: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -150,7 +150,7 @@ struct GloryApi_SystemTask {
   fileprivate var _updater: GloryApi_User? = nil
 }
 
-struct GloryApi_GetTaskConfigRequest {
+struct GloryApi_GetTaskConfigRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -171,7 +171,7 @@ struct GloryApi_GetTaskConfigRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetTaskConfigResponse {
+struct GloryApi_GetTaskConfigResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -194,7 +194,7 @@ struct GloryApi_GetTaskConfigResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_CreateSystemTaskRequest {
+struct GloryApi_CreateSystemTaskRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -225,7 +225,7 @@ struct GloryApi_CreateSystemTaskRequest {
   fileprivate var _systemTask: GloryApi_SystemTask? = nil
 }
 
-struct GloryApi_CreateSystemTaskResponse {
+struct GloryApi_CreateSystemTaskResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -246,7 +246,7 @@ struct GloryApi_CreateSystemTaskResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListSystemTaskRequest {
+struct GloryApi_ListSystemTaskRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -281,7 +281,7 @@ struct GloryApi_ListSystemTaskRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListSystemTaskResponse {
+struct GloryApi_ListSystemTaskResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -314,7 +314,7 @@ struct GloryApi_ListSystemTaskResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_GetSystemTaskRequest {
+struct GloryApi_GetSystemTaskRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -337,7 +337,7 @@ struct GloryApi_GetSystemTaskRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetSystemTaskResponse {
+struct GloryApi_GetSystemTaskResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -368,7 +368,7 @@ struct GloryApi_GetSystemTaskResponse {
   fileprivate var _systemTask: GloryApi_SystemTask? = nil
 }
 
-struct GloryApi_UpdateSystemTaskRequest {
+struct GloryApi_UpdateSystemTaskRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -399,7 +399,7 @@ struct GloryApi_UpdateSystemTaskRequest {
   fileprivate var _systemTask: GloryApi_SystemTask? = nil
 }
 
-struct GloryApi_UpdateSystemTaskResponse {
+struct GloryApi_UpdateSystemTaskResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -420,7 +420,7 @@ struct GloryApi_UpdateSystemTaskResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_DeleteSystemTaskRequest {
+struct GloryApi_DeleteSystemTaskRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -443,7 +443,7 @@ struct GloryApi_DeleteSystemTaskRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteSystemTaskResponse {
+struct GloryApi_DeleteSystemTaskResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -463,25 +463,6 @@ struct GloryApi_DeleteSystemTaskResponse {
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_TaskParameter: @unchecked Sendable {}
-extension GloryApi_TaskConfig: @unchecked Sendable {}
-extension GloryApi_SystemTaskParameter: @unchecked Sendable {}
-extension GloryApi_SystemTask: @unchecked Sendable {}
-extension GloryApi_GetTaskConfigRequest: @unchecked Sendable {}
-extension GloryApi_GetTaskConfigResponse: @unchecked Sendable {}
-extension GloryApi_CreateSystemTaskRequest: @unchecked Sendable {}
-extension GloryApi_CreateSystemTaskResponse: @unchecked Sendable {}
-extension GloryApi_ListSystemTaskRequest: @unchecked Sendable {}
-extension GloryApi_ListSystemTaskResponse: @unchecked Sendable {}
-extension GloryApi_GetSystemTaskRequest: @unchecked Sendable {}
-extension GloryApi_GetSystemTaskResponse: @unchecked Sendable {}
-extension GloryApi_UpdateSystemTaskRequest: @unchecked Sendable {}
-extension GloryApi_UpdateSystemTaskResponse: @unchecked Sendable {}
-extension GloryApi_DeleteSystemTaskRequest: @unchecked Sendable {}
-extension GloryApi_DeleteSystemTaskResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 

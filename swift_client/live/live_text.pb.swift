@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_LiveText {
+struct GloryApi_LiveText: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -44,7 +44,7 @@ struct GloryApi_LiveText {
   init() {}
 }
 
-struct GloryApi_CreateLiveTextRequest {
+struct GloryApi_CreateLiveTextRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -73,7 +73,7 @@ struct GloryApi_CreateLiveTextRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CreateLiveTextResponse {
+struct GloryApi_CreateLiveTextResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -96,7 +96,7 @@ struct GloryApi_CreateLiveTextResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_UpdateLiveTextRequest {
+struct GloryApi_UpdateLiveTextRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -125,7 +125,7 @@ struct GloryApi_UpdateLiveTextRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UpdateLiveTextResponse {
+struct GloryApi_UpdateLiveTextResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -146,7 +146,7 @@ struct GloryApi_UpdateLiveTextResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListLiveTextRequest {
+struct GloryApi_ListLiveTextRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -183,7 +183,7 @@ struct GloryApi_ListLiveTextRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListLiveTextResponse {
+struct GloryApi_ListLiveTextResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -216,7 +216,7 @@ struct GloryApi_ListLiveTextResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_GetLiveTextRequest {
+struct GloryApi_GetLiveTextRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -239,7 +239,7 @@ struct GloryApi_GetLiveTextRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetLiveTextResponse {
+struct GloryApi_GetLiveTextResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -270,7 +270,7 @@ struct GloryApi_GetLiveTextResponse {
   fileprivate var _liveText: GloryApi_LiveText? = nil
 }
 
-struct GloryApi_DeleteLiveTextsRequest {
+struct GloryApi_DeleteLiveTextsRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -293,7 +293,7 @@ struct GloryApi_DeleteLiveTextsRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteLiveTextsResponse {
+struct GloryApi_DeleteLiveTextsResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -314,7 +314,7 @@ struct GloryApi_DeleteLiveTextsResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_TeacherListStudentShortVideoTextRequest {
+struct GloryApi_TeacherListStudentShortVideoTextRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -353,7 +353,7 @@ struct GloryApi_TeacherListStudentShortVideoTextRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_TeacherListStudentShortVideoTextResponse {
+struct GloryApi_TeacherListStudentShortVideoTextResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -385,22 +385,6 @@ struct GloryApi_TeacherListStudentShortVideoTextResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_LiveText: @unchecked Sendable {}
-extension GloryApi_CreateLiveTextRequest: @unchecked Sendable {}
-extension GloryApi_CreateLiveTextResponse: @unchecked Sendable {}
-extension GloryApi_UpdateLiveTextRequest: @unchecked Sendable {}
-extension GloryApi_UpdateLiveTextResponse: @unchecked Sendable {}
-extension GloryApi_ListLiveTextRequest: @unchecked Sendable {}
-extension GloryApi_ListLiveTextResponse: @unchecked Sendable {}
-extension GloryApi_GetLiveTextRequest: @unchecked Sendable {}
-extension GloryApi_GetLiveTextResponse: @unchecked Sendable {}
-extension GloryApi_DeleteLiveTextsRequest: @unchecked Sendable {}
-extension GloryApi_DeleteLiveTextsResponse: @unchecked Sendable {}
-extension GloryApi_TeacherListStudentShortVideoTextRequest: @unchecked Sendable {}
-extension GloryApi_TeacherListStudentShortVideoTextResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 

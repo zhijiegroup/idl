@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_Shop {
+struct GloryApi_Shop: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -336,7 +336,7 @@ struct GloryApi_Shop {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct GloryApi_ShopQualification {
+struct GloryApi_ShopQualification: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -366,7 +366,7 @@ struct GloryApi_ShopQualification {
   init() {}
 }
 
-struct GloryApi_ShopBusiness {
+struct GloryApi_ShopBusiness: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -378,7 +378,7 @@ struct GloryApi_ShopBusiness {
   init() {}
 }
 
-struct GloryApi_ShopKeeper {
+struct GloryApi_ShopKeeper: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -396,7 +396,7 @@ struct GloryApi_ShopKeeper {
   init() {}
 }
 
-struct GloryApi_ShopWithAuthor {
+struct GloryApi_ShopWithAuthor: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -437,7 +437,7 @@ struct GloryApi_ShopWithAuthor {
   fileprivate var _shopBusiness: GloryApi_ShopBusiness? = nil
 }
 
-struct GloryApi_CreateShopRequest {
+struct GloryApi_CreateShopRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -470,7 +470,7 @@ struct GloryApi_CreateShopRequest {
   fileprivate var _shop: GloryApi_Shop? = nil
 }
 
-struct GloryApi_CreateShopResponse {
+struct GloryApi_CreateShopResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -494,7 +494,7 @@ struct GloryApi_CreateShopResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetShopRequest {
+struct GloryApi_GetShopRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -517,7 +517,7 @@ struct GloryApi_GetShopRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetShopResponse {
+struct GloryApi_GetShopResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -548,7 +548,7 @@ struct GloryApi_GetShopResponse {
   fileprivate var _shopDetail: GloryApi_ShopWithAuthor? = nil
 }
 
-struct GloryApi_UpdateShopRequest {
+struct GloryApi_UpdateShopRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -579,7 +579,7 @@ struct GloryApi_UpdateShopRequest {
   fileprivate var _shop: GloryApi_Shop? = nil
 }
 
-struct GloryApi_UpdateShopResponse {
+struct GloryApi_UpdateShopResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -602,7 +602,7 @@ struct GloryApi_UpdateShopResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListShopRequest {
+struct GloryApi_ListShopRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -655,7 +655,7 @@ struct GloryApi_ListShopRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListShopResponse {
+struct GloryApi_ListShopResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -688,7 +688,7 @@ struct GloryApi_ListShopResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_DeleteShopRequest {
+struct GloryApi_DeleteShopRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -711,7 +711,7 @@ struct GloryApi_DeleteShopRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteShopResponse {
+struct GloryApi_DeleteShopResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -732,7 +732,7 @@ struct GloryApi_DeleteShopResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ReopenShopRequest {
+struct GloryApi_ReopenShopRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -755,7 +755,7 @@ struct GloryApi_ReopenShopRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ReopenShopResponse {
+struct GloryApi_ReopenShopResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -776,7 +776,7 @@ struct GloryApi_ReopenShopResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_AddShopAccessRequest {
+struct GloryApi_AddShopAccessRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -804,7 +804,7 @@ struct GloryApi_AddShopAccessRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_AddShopAccessResponse {
+struct GloryApi_AddShopAccessResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -825,7 +825,7 @@ struct GloryApi_AddShopAccessResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_RemoveShopAccessRequest {
+struct GloryApi_RemoveShopAccessRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -848,7 +848,7 @@ struct GloryApi_RemoveShopAccessRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_RemoveShopAccessResponse {
+struct GloryApi_RemoveShopAccessResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -869,7 +869,7 @@ struct GloryApi_RemoveShopAccessResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_VerifyFieldRequest {
+struct GloryApi_VerifyFieldRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -892,7 +892,7 @@ struct GloryApi_VerifyFieldRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_VerifyFieldResponse {
+struct GloryApi_VerifyFieldResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -915,7 +915,7 @@ struct GloryApi_VerifyFieldResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ShopAccess {
+struct GloryApi_ShopAccess: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -942,7 +942,7 @@ struct GloryApi_ShopAccess {
   init() {}
 }
 
-struct GloryApi_ListShopAccessRequest {
+struct GloryApi_ListShopAccessRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -968,7 +968,7 @@ struct GloryApi_ListShopAccessRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ListShopAccessResponse {
+struct GloryApi_ListShopAccessResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -991,7 +991,7 @@ struct GloryApi_ListShopAccessResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_AddShopCategoryRequest {
+struct GloryApi_AddShopCategoryRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1018,7 +1018,7 @@ struct GloryApi_AddShopCategoryRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_AddShopCategoryResponse {
+struct GloryApi_AddShopCategoryResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1039,7 +1039,7 @@ struct GloryApi_AddShopCategoryResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_RemoveShopCategoryRequest {
+struct GloryApi_RemoveShopCategoryRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1065,7 +1065,7 @@ struct GloryApi_RemoveShopCategoryRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_RemoveShopCategoryResponse {
+struct GloryApi_RemoveShopCategoryResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1086,7 +1086,7 @@ struct GloryApi_RemoveShopCategoryResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetShopCategoryRequest {
+struct GloryApi_GetShopCategoryRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1110,7 +1110,7 @@ struct GloryApi_GetShopCategoryRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ShopCategory {
+struct GloryApi_ShopCategory: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1133,7 +1133,7 @@ struct GloryApi_ShopCategory {
   fileprivate var _category: GloryApi_Category? = nil
 }
 
-struct GloryApi_GetShopCategoryResponse {
+struct GloryApi_GetShopCategoryResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1158,7 +1158,7 @@ struct GloryApi_GetShopCategoryResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListShopQualificationRequest {
+struct GloryApi_ListShopQualificationRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1181,7 +1181,7 @@ struct GloryApi_ListShopQualificationRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ListShopQualificationResponse {
+struct GloryApi_ListShopQualificationResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1205,7 +1205,7 @@ struct GloryApi_ListShopQualificationResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_UpdateShopManagerRequest {
+struct GloryApi_UpdateShopManagerRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1232,7 +1232,7 @@ struct GloryApi_UpdateShopManagerRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UpdateShopManagerResponse {
+struct GloryApi_UpdateShopManagerResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1253,7 +1253,7 @@ struct GloryApi_UpdateShopManagerResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_UpdateShopStatusRequest {
+struct GloryApi_UpdateShopStatusRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1278,7 +1278,7 @@ struct GloryApi_UpdateShopStatusRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UpdateShopStatusResponse {
+struct GloryApi_UpdateShopStatusResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1299,7 +1299,7 @@ struct GloryApi_UpdateShopStatusResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetShopBusinessDataRequest {
+struct GloryApi_GetShopBusinessDataRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1324,7 +1324,7 @@ struct GloryApi_GetShopBusinessDataRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ShopChartData {
+struct GloryApi_ShopChartData: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1344,7 +1344,7 @@ struct GloryApi_ShopChartData {
   init() {}
 }
 
-struct GloryApi_ShopBusinessData {
+struct GloryApi_ShopBusinessData: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1364,7 +1364,7 @@ struct GloryApi_ShopBusinessData {
   init() {}
 }
 
-struct GloryApi_GetShopBusinessDataResponse {
+struct GloryApi_GetShopBusinessDataResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1395,7 +1395,7 @@ struct GloryApi_GetShopBusinessDataResponse {
   fileprivate var _shopBusinessData: GloryApi_ShopBusinessData? = nil
 }
 
-struct GloryApi_ShopSummary {
+struct GloryApi_ShopSummary: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1423,7 +1423,7 @@ struct GloryApi_ShopSummary {
   init() {}
 }
 
-struct GloryApi_ListShopSummaryRequest {
+struct GloryApi_ListShopSummaryRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1462,7 +1462,7 @@ struct GloryApi_ListShopSummaryRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListShopSummaryResponse {
+struct GloryApi_ListShopSummaryResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1495,7 +1495,7 @@ struct GloryApi_ListShopSummaryResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_ListShopBySellerIDRequest {
+struct GloryApi_ListShopBySellerIDRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1518,7 +1518,7 @@ struct GloryApi_ListShopBySellerIDRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ListShopBySellerIDResponse {
+struct GloryApi_ListShopBySellerIDResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1540,57 +1540,6 @@ struct GloryApi_ListShopBySellerIDResponse {
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_Shop: @unchecked Sendable {}
-extension GloryApi_ShopQualification: @unchecked Sendable {}
-extension GloryApi_ShopBusiness: @unchecked Sendable {}
-extension GloryApi_ShopKeeper: @unchecked Sendable {}
-extension GloryApi_ShopWithAuthor: @unchecked Sendable {}
-extension GloryApi_CreateShopRequest: @unchecked Sendable {}
-extension GloryApi_CreateShopResponse: @unchecked Sendable {}
-extension GloryApi_GetShopRequest: @unchecked Sendable {}
-extension GloryApi_GetShopResponse: @unchecked Sendable {}
-extension GloryApi_UpdateShopRequest: @unchecked Sendable {}
-extension GloryApi_UpdateShopResponse: @unchecked Sendable {}
-extension GloryApi_ListShopRequest: @unchecked Sendable {}
-extension GloryApi_ListShopResponse: @unchecked Sendable {}
-extension GloryApi_DeleteShopRequest: @unchecked Sendable {}
-extension GloryApi_DeleteShopResponse: @unchecked Sendable {}
-extension GloryApi_ReopenShopRequest: @unchecked Sendable {}
-extension GloryApi_ReopenShopResponse: @unchecked Sendable {}
-extension GloryApi_AddShopAccessRequest: @unchecked Sendable {}
-extension GloryApi_AddShopAccessResponse: @unchecked Sendable {}
-extension GloryApi_RemoveShopAccessRequest: @unchecked Sendable {}
-extension GloryApi_RemoveShopAccessResponse: @unchecked Sendable {}
-extension GloryApi_VerifyFieldRequest: @unchecked Sendable {}
-extension GloryApi_VerifyFieldResponse: @unchecked Sendable {}
-extension GloryApi_ShopAccess: @unchecked Sendable {}
-extension GloryApi_ListShopAccessRequest: @unchecked Sendable {}
-extension GloryApi_ListShopAccessResponse: @unchecked Sendable {}
-extension GloryApi_AddShopCategoryRequest: @unchecked Sendable {}
-extension GloryApi_AddShopCategoryResponse: @unchecked Sendable {}
-extension GloryApi_RemoveShopCategoryRequest: @unchecked Sendable {}
-extension GloryApi_RemoveShopCategoryResponse: @unchecked Sendable {}
-extension GloryApi_GetShopCategoryRequest: @unchecked Sendable {}
-extension GloryApi_ShopCategory: @unchecked Sendable {}
-extension GloryApi_GetShopCategoryResponse: @unchecked Sendable {}
-extension GloryApi_ListShopQualificationRequest: @unchecked Sendable {}
-extension GloryApi_ListShopQualificationResponse: @unchecked Sendable {}
-extension GloryApi_UpdateShopManagerRequest: @unchecked Sendable {}
-extension GloryApi_UpdateShopManagerResponse: @unchecked Sendable {}
-extension GloryApi_UpdateShopStatusRequest: @unchecked Sendable {}
-extension GloryApi_UpdateShopStatusResponse: @unchecked Sendable {}
-extension GloryApi_GetShopBusinessDataRequest: @unchecked Sendable {}
-extension GloryApi_ShopChartData: @unchecked Sendable {}
-extension GloryApi_ShopBusinessData: @unchecked Sendable {}
-extension GloryApi_GetShopBusinessDataResponse: @unchecked Sendable {}
-extension GloryApi_ShopSummary: @unchecked Sendable {}
-extension GloryApi_ListShopSummaryRequest: @unchecked Sendable {}
-extension GloryApi_ListShopSummaryResponse: @unchecked Sendable {}
-extension GloryApi_ListShopBySellerIDRequest: @unchecked Sendable {}
-extension GloryApi_ListShopBySellerIDResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
@@ -3892,7 +3841,7 @@ extension GloryApi_ShopChartData: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     if !self.date.isEmpty {
       try visitor.visitSingularStringField(value: self.date, fieldNumber: 1)
     }
-    if self.dealAmount != 0 {
+    if self.dealAmount.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.dealAmount, fieldNumber: 2)
     }
     if self.shopBuyerAmount != 0 {
@@ -3948,7 +3897,7 @@ extension GloryApi_ShopBusinessData: SwiftProtobuf.Message, SwiftProtobuf._Messa
     if !self.shopChartData.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.shopChartData, fieldNumber: 1)
     }
-    if self.totalDealAmount != 0 {
+    if self.totalDealAmount.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.totalDealAmount, fieldNumber: 2)
     }
     if self.totalVisitorAmount != 0 {
@@ -4060,7 +4009,7 @@ extension GloryApi_ShopSummary: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if !self.shopName.isEmpty {
       try visitor.visitSingularStringField(value: self.shopName, fieldNumber: 3)
     }
-    if self.dealAmount != 0 {
+    if self.dealAmount.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.dealAmount, fieldNumber: 4)
     }
     if self.orderTotal != 0 {

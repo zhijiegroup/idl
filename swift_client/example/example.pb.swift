@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_Example {
+struct GloryApi_Example: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -34,7 +34,7 @@ struct GloryApi_Example {
   init() {}
 }
 
-struct GloryApi_ExampleWithAuthor {
+struct GloryApi_ExampleWithAuthor: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -65,7 +65,7 @@ struct GloryApi_ExampleWithAuthor {
   fileprivate var _authorInfo: Base_AuthorInfo? = nil
 }
 
-struct GloryApi_CreateExampleRequest {
+struct GloryApi_CreateExampleRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -98,7 +98,7 @@ struct GloryApi_CreateExampleRequest {
   fileprivate var _example: GloryApi_Example? = nil
 }
 
-struct GloryApi_CreateExampleResponse {
+struct GloryApi_CreateExampleResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -122,7 +122,7 @@ struct GloryApi_CreateExampleResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetExampleRequest {
+struct GloryApi_GetExampleRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -145,7 +145,7 @@ struct GloryApi_GetExampleRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetExampleResponse {
+struct GloryApi_GetExampleResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -176,7 +176,7 @@ struct GloryApi_GetExampleResponse {
   fileprivate var _exampleDetail: GloryApi_ExampleWithAuthor? = nil
 }
 
-struct GloryApi_UpdateExampleRequest {
+struct GloryApi_UpdateExampleRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -207,7 +207,7 @@ struct GloryApi_UpdateExampleRequest {
   fileprivate var _example: GloryApi_Example? = nil
 }
 
-struct GloryApi_UpdateExampleResponse {
+struct GloryApi_UpdateExampleResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -230,7 +230,7 @@ struct GloryApi_UpdateExampleResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListExampleRequest {
+struct GloryApi_ListExampleRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -263,7 +263,7 @@ struct GloryApi_ListExampleRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListExampleResponse {
+struct GloryApi_ListExampleResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -296,7 +296,7 @@ struct GloryApi_ListExampleResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_DeleteExampleRequest {
+struct GloryApi_DeleteExampleRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -319,7 +319,7 @@ struct GloryApi_DeleteExampleRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteExampleResponse {
+struct GloryApi_DeleteExampleResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -339,21 +339,6 @@ struct GloryApi_DeleteExampleResponse {
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_Example: @unchecked Sendable {}
-extension GloryApi_ExampleWithAuthor: @unchecked Sendable {}
-extension GloryApi_CreateExampleRequest: @unchecked Sendable {}
-extension GloryApi_CreateExampleResponse: @unchecked Sendable {}
-extension GloryApi_GetExampleRequest: @unchecked Sendable {}
-extension GloryApi_GetExampleResponse: @unchecked Sendable {}
-extension GloryApi_UpdateExampleRequest: @unchecked Sendable {}
-extension GloryApi_UpdateExampleResponse: @unchecked Sendable {}
-extension GloryApi_ListExampleRequest: @unchecked Sendable {}
-extension GloryApi_ListExampleResponse: @unchecked Sendable {}
-extension GloryApi_DeleteExampleRequest: @unchecked Sendable {}
-extension GloryApi_DeleteExampleResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 

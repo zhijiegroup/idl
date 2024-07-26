@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_ShortVideoProduct {
+struct GloryApi_ShortVideoProduct: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -36,7 +36,7 @@ struct GloryApi_ShortVideoProduct {
   init() {}
 }
 
-struct GloryApi_ShortVideoShop {
+struct GloryApi_ShortVideoShop: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -52,7 +52,7 @@ struct GloryApi_ShortVideoShop {
   init() {}
 }
 
-struct GloryApi_ShortVideoUser {
+struct GloryApi_ShortVideoUser: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -74,7 +74,7 @@ struct GloryApi_ShortVideoUser {
   init() {}
 }
 
-struct GloryApi_ShortVideo {
+struct GloryApi_ShortVideo: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -222,7 +222,7 @@ struct GloryApi_ShortVideo {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct GloryApi_StageVideo {
+struct GloryApi_StageVideo: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -277,7 +277,7 @@ struct GloryApi_StageVideo {
   fileprivate var _shop: GloryApi_ShortVideoShop? = nil
 }
 
-struct GloryApi_ShortVideoComment {
+struct GloryApi_ShortVideoComment: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -314,7 +314,7 @@ struct GloryApi_ShortVideoComment {
   fileprivate var _userInfo: GloryApi_ShortVideoUser? = nil
 }
 
-struct GloryApi_CreateShortVideoRequest {
+struct GloryApi_CreateShortVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -360,7 +360,7 @@ struct GloryApi_CreateShortVideoRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CreateShortVideoResponse {
+struct GloryApi_CreateShortVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -383,7 +383,7 @@ struct GloryApi_CreateShortVideoResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_StageShortVideoRequest {
+struct GloryApi_StageShortVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -426,7 +426,7 @@ struct GloryApi_StageShortVideoRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_StageShortVideoResponse {
+struct GloryApi_StageShortVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -450,7 +450,7 @@ struct GloryApi_StageShortVideoResponse {
 }
 
 /// 我的短视频列表
-struct GloryApi_ListMyShortVideoRequest {
+struct GloryApi_ListMyShortVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -486,7 +486,7 @@ struct GloryApi_ListMyShortVideoRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListMyShortVideoResponse {
+struct GloryApi_ListMyShortVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -520,7 +520,7 @@ struct GloryApi_ListMyShortVideoResponse {
 }
 
 /// 我的暂存视频列表
-struct GloryApi_ListMyStageVideoRequest {
+struct GloryApi_ListMyStageVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -551,7 +551,7 @@ struct GloryApi_ListMyStageVideoRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListMyStageVideoResponse {
+struct GloryApi_ListMyStageVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -575,7 +575,7 @@ struct GloryApi_ListMyStageVideoResponse {
 }
 
 /// 我的喜欢视频列表
-struct GloryApi_ListMyLikeVideoRequest {
+struct GloryApi_ListMyLikeVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -606,7 +606,7 @@ struct GloryApi_ListMyLikeVideoRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListMyLikeVideoResponse {
+struct GloryApi_ListMyLikeVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -640,7 +640,7 @@ struct GloryApi_ListMyLikeVideoResponse {
 }
 
 /// 我的收藏视频列表
-struct GloryApi_ListMyFavoriteVideoRequest {
+struct GloryApi_ListMyFavoriteVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -671,7 +671,7 @@ struct GloryApi_ListMyFavoriteVideoRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListMyFavoriteVideoResponse {
+struct GloryApi_ListMyFavoriteVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -705,7 +705,7 @@ struct GloryApi_ListMyFavoriteVideoResponse {
 }
 
 /// 获取短视频详情
-struct GloryApi_GetShortVideoRequest {
+struct GloryApi_GetShortVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -728,7 +728,7 @@ struct GloryApi_GetShortVideoRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetShortVideoResponse {
+struct GloryApi_GetShortVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -760,7 +760,7 @@ struct GloryApi_GetShortVideoResponse {
 }
 
 /// 更新短视频详情
-struct GloryApi_UpdateShortVideoRequest {
+struct GloryApi_UpdateShortVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -798,7 +798,7 @@ struct GloryApi_UpdateShortVideoRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UpdateShortVideoResponse {
+struct GloryApi_UpdateShortVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -822,7 +822,7 @@ struct GloryApi_UpdateShortVideoResponse {
 }
 
 /// 删除短视频
-struct GloryApi_DeleteShortVideoRequest {
+struct GloryApi_DeleteShortVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -845,7 +845,7 @@ struct GloryApi_DeleteShortVideoRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteShortVideoResponse {
+struct GloryApi_DeleteShortVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -867,7 +867,7 @@ struct GloryApi_DeleteShortVideoResponse {
 }
 
 /// 获取暂存视频详情
-struct GloryApi_GetStageVideoRequest {
+struct GloryApi_GetStageVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -890,7 +890,7 @@ struct GloryApi_GetStageVideoRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetStageVideoResponse {
+struct GloryApi_GetStageVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -922,7 +922,7 @@ struct GloryApi_GetStageVideoResponse {
 }
 
 /// 删除暂存视频
-struct GloryApi_DeleteStageVideoRequest {
+struct GloryApi_DeleteStageVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -945,7 +945,7 @@ struct GloryApi_DeleteStageVideoRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteStageVideoResponse {
+struct GloryApi_DeleteStageVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -966,7 +966,7 @@ struct GloryApi_DeleteStageVideoResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_UpdateStageVideoRequest {
+struct GloryApi_UpdateStageVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1014,7 +1014,7 @@ struct GloryApi_UpdateStageVideoRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UpdateStageVideoResponse {
+struct GloryApi_UpdateStageVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1038,7 +1038,7 @@ struct GloryApi_UpdateStageVideoResponse {
 }
 
 /// 管理平台短视频列表
-struct GloryApi_ManagementListShortVideoRequest {
+struct GloryApi_ManagementListShortVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1078,7 +1078,7 @@ struct GloryApi_ManagementListShortVideoRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ManagementListShortVideoResponse {
+struct GloryApi_ManagementListShortVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1112,7 +1112,7 @@ struct GloryApi_ManagementListShortVideoResponse {
 }
 
 /// 管理平台审核短视频
-struct GloryApi_ManagementCensorShortVideoRequest {
+struct GloryApi_ManagementCensorShortVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1139,7 +1139,7 @@ struct GloryApi_ManagementCensorShortVideoRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ManagementCensorShortVideoResponse {
+struct GloryApi_ManagementCensorShortVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1161,7 +1161,7 @@ struct GloryApi_ManagementCensorShortVideoResponse {
 }
 
 /// 管理平台删除短视频
-struct GloryApi_ManagementDeleteShortVideoRequest {
+struct GloryApi_ManagementDeleteShortVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1184,7 +1184,7 @@ struct GloryApi_ManagementDeleteShortVideoRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ManagementDeleteShortVideoResponse {
+struct GloryApi_ManagementDeleteShortVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1206,7 +1206,7 @@ struct GloryApi_ManagementDeleteShortVideoResponse {
 }
 
 /// APP首页短视频列表
-struct GloryApi_ListShortVideoRequest {
+struct GloryApi_ListShortVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1239,7 +1239,7 @@ struct GloryApi_ListShortVideoRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListShortVideoResponse {
+struct GloryApi_ListShortVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1273,7 +1273,7 @@ struct GloryApi_ListShortVideoResponse {
 }
 
 /// 点赞短视频
-struct GloryApi_LikeShortVideoRequest {
+struct GloryApi_LikeShortVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1298,7 +1298,7 @@ struct GloryApi_LikeShortVideoRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_LikeShortVideoResponse {
+struct GloryApi_LikeShortVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1320,7 +1320,7 @@ struct GloryApi_LikeShortVideoResponse {
 }
 
 /// 收藏短视频
-struct GloryApi_FavoriteShortVideoRequest {
+struct GloryApi_FavoriteShortVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1345,7 +1345,7 @@ struct GloryApi_FavoriteShortVideoRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_FavoriteShortVideoResponse {
+struct GloryApi_FavoriteShortVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1367,7 +1367,7 @@ struct GloryApi_FavoriteShortVideoResponse {
 }
 
 /// 发布评论
-struct GloryApi_CreateShortVideoCommentRequest {
+struct GloryApi_CreateShortVideoCommentRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1397,7 +1397,7 @@ struct GloryApi_CreateShortVideoCommentRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CreateShortVideoCommentResponse {
+struct GloryApi_CreateShortVideoCommentResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1421,7 +1421,7 @@ struct GloryApi_CreateShortVideoCommentResponse {
 }
 
 /// 删除评论
-struct GloryApi_DeleteShortVideoCommentRequest {
+struct GloryApi_DeleteShortVideoCommentRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1444,7 +1444,7 @@ struct GloryApi_DeleteShortVideoCommentRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteShortVideoCommentResponse {
+struct GloryApi_DeleteShortVideoCommentResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1466,7 +1466,7 @@ struct GloryApi_DeleteShortVideoCommentResponse {
 }
 
 /// 短视频评论列表
-struct GloryApi_ListShortVideoCommentRequest {
+struct GloryApi_ListShortVideoCommentRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1501,7 +1501,7 @@ struct GloryApi_ListShortVideoCommentRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListShortVideoCommentResponse {
+struct GloryApi_ListShortVideoCommentResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1534,7 +1534,7 @@ struct GloryApi_ListShortVideoCommentResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_TeacherListStudentShortVideoRequest {
+struct GloryApi_TeacherListStudentShortVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1573,7 +1573,7 @@ struct GloryApi_TeacherListStudentShortVideoRequest {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_TeacherListStudentShortVideoResponse {
+struct GloryApi_TeacherListStudentShortVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1605,59 +1605,6 @@ struct GloryApi_TeacherListStudentShortVideoResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_ShortVideoProduct: @unchecked Sendable {}
-extension GloryApi_ShortVideoShop: @unchecked Sendable {}
-extension GloryApi_ShortVideoUser: @unchecked Sendable {}
-extension GloryApi_ShortVideo: @unchecked Sendable {}
-extension GloryApi_StageVideo: @unchecked Sendable {}
-extension GloryApi_ShortVideoComment: @unchecked Sendable {}
-extension GloryApi_CreateShortVideoRequest: @unchecked Sendable {}
-extension GloryApi_CreateShortVideoResponse: @unchecked Sendable {}
-extension GloryApi_StageShortVideoRequest: @unchecked Sendable {}
-extension GloryApi_StageShortVideoResponse: @unchecked Sendable {}
-extension GloryApi_ListMyShortVideoRequest: @unchecked Sendable {}
-extension GloryApi_ListMyShortVideoResponse: @unchecked Sendable {}
-extension GloryApi_ListMyStageVideoRequest: @unchecked Sendable {}
-extension GloryApi_ListMyStageVideoResponse: @unchecked Sendable {}
-extension GloryApi_ListMyLikeVideoRequest: @unchecked Sendable {}
-extension GloryApi_ListMyLikeVideoResponse: @unchecked Sendable {}
-extension GloryApi_ListMyFavoriteVideoRequest: @unchecked Sendable {}
-extension GloryApi_ListMyFavoriteVideoResponse: @unchecked Sendable {}
-extension GloryApi_GetShortVideoRequest: @unchecked Sendable {}
-extension GloryApi_GetShortVideoResponse: @unchecked Sendable {}
-extension GloryApi_UpdateShortVideoRequest: @unchecked Sendable {}
-extension GloryApi_UpdateShortVideoResponse: @unchecked Sendable {}
-extension GloryApi_DeleteShortVideoRequest: @unchecked Sendable {}
-extension GloryApi_DeleteShortVideoResponse: @unchecked Sendable {}
-extension GloryApi_GetStageVideoRequest: @unchecked Sendable {}
-extension GloryApi_GetStageVideoResponse: @unchecked Sendable {}
-extension GloryApi_DeleteStageVideoRequest: @unchecked Sendable {}
-extension GloryApi_DeleteStageVideoResponse: @unchecked Sendable {}
-extension GloryApi_UpdateStageVideoRequest: @unchecked Sendable {}
-extension GloryApi_UpdateStageVideoResponse: @unchecked Sendable {}
-extension GloryApi_ManagementListShortVideoRequest: @unchecked Sendable {}
-extension GloryApi_ManagementListShortVideoResponse: @unchecked Sendable {}
-extension GloryApi_ManagementCensorShortVideoRequest: @unchecked Sendable {}
-extension GloryApi_ManagementCensorShortVideoResponse: @unchecked Sendable {}
-extension GloryApi_ManagementDeleteShortVideoRequest: @unchecked Sendable {}
-extension GloryApi_ManagementDeleteShortVideoResponse: @unchecked Sendable {}
-extension GloryApi_ListShortVideoRequest: @unchecked Sendable {}
-extension GloryApi_ListShortVideoResponse: @unchecked Sendable {}
-extension GloryApi_LikeShortVideoRequest: @unchecked Sendable {}
-extension GloryApi_LikeShortVideoResponse: @unchecked Sendable {}
-extension GloryApi_FavoriteShortVideoRequest: @unchecked Sendable {}
-extension GloryApi_FavoriteShortVideoResponse: @unchecked Sendable {}
-extension GloryApi_CreateShortVideoCommentRequest: @unchecked Sendable {}
-extension GloryApi_CreateShortVideoCommentResponse: @unchecked Sendable {}
-extension GloryApi_DeleteShortVideoCommentRequest: @unchecked Sendable {}
-extension GloryApi_DeleteShortVideoCommentResponse: @unchecked Sendable {}
-extension GloryApi_ListShortVideoCommentRequest: @unchecked Sendable {}
-extension GloryApi_ListShortVideoCommentResponse: @unchecked Sendable {}
-extension GloryApi_TeacherListStudentShortVideoRequest: @unchecked Sendable {}
-extension GloryApi_TeacherListStudentShortVideoResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 

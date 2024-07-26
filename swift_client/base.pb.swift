@@ -21,7 +21,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// All response will contain BaseResponse
-struct Base_BaseResponse {
+struct Base_BaseResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -38,7 +38,7 @@ struct Base_BaseResponse {
 }
 
 /// GeneralResponse is used for return early with only the BaseResponse
-struct Base_GeneralResponse {
+struct Base_GeneralResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -59,7 +59,7 @@ struct Base_GeneralResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct Base_PaginationRequest {
+struct Base_PaginationRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -79,7 +79,7 @@ struct Base_PaginationRequest {
   init() {}
 }
 
-struct Base_PaginationResponse {
+struct Base_PaginationResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -102,7 +102,7 @@ struct Base_PaginationResponse {
   init() {}
 }
 
-struct Base_AuthorInfo {
+struct Base_AuthorInfo: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -120,7 +120,7 @@ struct Base_AuthorInfo {
   init() {}
 }
 
-struct Base_BaseRequest {
+struct Base_BaseRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -132,15 +132,6 @@ struct Base_BaseRequest {
 
   init() {}
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension Base_BaseResponse: @unchecked Sendable {}
-extension Base_GeneralResponse: @unchecked Sendable {}
-extension Base_PaginationRequest: @unchecked Sendable {}
-extension Base_PaginationResponse: @unchecked Sendable {}
-extension Base_AuthorInfo: @unchecked Sendable {}
-extension Base_BaseRequest: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 

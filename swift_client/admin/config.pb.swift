@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_Config {
+struct GloryApi_Config: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -54,7 +54,7 @@ struct GloryApi_Config {
   init() {}
 }
 
-struct GloryApi_AddConfig {
+struct GloryApi_AddConfig: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -84,7 +84,7 @@ struct GloryApi_AddConfig {
   init() {}
 }
 
-struct GloryApi_CreateConfigRequest {
+struct GloryApi_CreateConfigRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -115,7 +115,7 @@ struct GloryApi_CreateConfigRequest {
   fileprivate var _config: GloryApi_AddConfig? = nil
 }
 
-struct GloryApi_CreateConfigResponse {
+struct GloryApi_CreateConfigResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -136,7 +136,7 @@ struct GloryApi_CreateConfigResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_UpdateConfig {
+struct GloryApi_UpdateConfig: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -160,7 +160,7 @@ struct GloryApi_UpdateConfig {
   init() {}
 }
 
-struct GloryApi_UpdateConfigRequest {
+struct GloryApi_UpdateConfigRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -191,7 +191,7 @@ struct GloryApi_UpdateConfigRequest {
   fileprivate var _config: GloryApi_UpdateConfig? = nil
 }
 
-struct GloryApi_UpdateConfigResponse {
+struct GloryApi_UpdateConfigResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -212,7 +212,7 @@ struct GloryApi_UpdateConfigResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_UpdateLangConfigRequest {
+struct GloryApi_UpdateLangConfigRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -235,7 +235,7 @@ struct GloryApi_UpdateLangConfigRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UpdateLangConfigResponse {
+struct GloryApi_UpdateLangConfigResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -256,7 +256,7 @@ struct GloryApi_UpdateLangConfigResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_DeleteConfigRequest {
+struct GloryApi_DeleteConfigRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -279,7 +279,7 @@ struct GloryApi_DeleteConfigRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteConfigResponse {
+struct GloryApi_DeleteConfigResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -300,7 +300,7 @@ struct GloryApi_DeleteConfigResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetConfigRequest {
+struct GloryApi_GetConfigRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -333,7 +333,7 @@ struct GloryApi_GetConfigRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetConfigResponse {
+struct GloryApi_GetConfigResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -356,7 +356,7 @@ struct GloryApi_GetConfigResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_STS {
+struct GloryApi_STS: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -374,7 +374,7 @@ struct GloryApi_STS {
   init() {}
 }
 
-struct GloryApi_GetSTSRequest {
+struct GloryApi_GetSTSRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -395,7 +395,7 @@ struct GloryApi_GetSTSRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetSTSResponse {
+struct GloryApi_GetSTSResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -426,7 +426,7 @@ struct GloryApi_GetSTSResponse {
   fileprivate var _sts: GloryApi_STS? = nil
 }
 
-struct GloryApi_WebofficeToken {
+struct GloryApi_WebofficeToken: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -448,7 +448,7 @@ struct GloryApi_WebofficeToken {
   init() {}
 }
 
-struct GloryApi_GenerateWebofficeTokenRequest {
+struct GloryApi_GenerateWebofficeTokenRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -471,7 +471,7 @@ struct GloryApi_GenerateWebofficeTokenRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GenerateWebofficeTokenResponse {
+struct GloryApi_GenerateWebofficeTokenResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -502,7 +502,7 @@ struct GloryApi_GenerateWebofficeTokenResponse {
   fileprivate var _webofficeToken: GloryApi_WebofficeToken? = nil
 }
 
-struct GloryApi_RefreshWebofficeToken {
+struct GloryApi_RefreshWebofficeToken: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -522,7 +522,7 @@ struct GloryApi_RefreshWebofficeToken {
   init() {}
 }
 
-struct GloryApi_RefreshWebofficeTokenRequest {
+struct GloryApi_RefreshWebofficeTokenRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -547,7 +547,7 @@ struct GloryApi_RefreshWebofficeTokenRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_RefreshWebofficeTokenResponse {
+struct GloryApi_RefreshWebofficeTokenResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -577,31 +577,6 @@ struct GloryApi_RefreshWebofficeTokenResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
   fileprivate var _refreshWebofficeToken: GloryApi_RefreshWebofficeToken? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_Config: @unchecked Sendable {}
-extension GloryApi_AddConfig: @unchecked Sendable {}
-extension GloryApi_CreateConfigRequest: @unchecked Sendable {}
-extension GloryApi_CreateConfigResponse: @unchecked Sendable {}
-extension GloryApi_UpdateConfig: @unchecked Sendable {}
-extension GloryApi_UpdateConfigRequest: @unchecked Sendable {}
-extension GloryApi_UpdateConfigResponse: @unchecked Sendable {}
-extension GloryApi_UpdateLangConfigRequest: @unchecked Sendable {}
-extension GloryApi_UpdateLangConfigResponse: @unchecked Sendable {}
-extension GloryApi_DeleteConfigRequest: @unchecked Sendable {}
-extension GloryApi_DeleteConfigResponse: @unchecked Sendable {}
-extension GloryApi_GetConfigRequest: @unchecked Sendable {}
-extension GloryApi_GetConfigResponse: @unchecked Sendable {}
-extension GloryApi_STS: @unchecked Sendable {}
-extension GloryApi_GetSTSRequest: @unchecked Sendable {}
-extension GloryApi_GetSTSResponse: @unchecked Sendable {}
-extension GloryApi_WebofficeToken: @unchecked Sendable {}
-extension GloryApi_GenerateWebofficeTokenRequest: @unchecked Sendable {}
-extension GloryApi_GenerateWebofficeTokenResponse: @unchecked Sendable {}
-extension GloryApi_RefreshWebofficeToken: @unchecked Sendable {}
-extension GloryApi_RefreshWebofficeTokenRequest: @unchecked Sendable {}
-extension GloryApi_RefreshWebofficeTokenResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 

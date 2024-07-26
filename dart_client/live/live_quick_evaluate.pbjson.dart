@@ -276,6 +276,110 @@ final $typed_data.Uint8List getQuickEvaluationReportRequestDescriptor = $convert
     'IRLmJhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhsKCXJlcG9ydF9pZBgCIAEoA1IIcmVw'
     'b3J0SWQ=');
 
+@$core.Deprecated('Use getQuickEvaluationTotalReportRequestDescriptor instead')
+const GetQuickEvaluationTotalReportRequest$json = {
+  '1': 'GetQuickEvaluationTotalReportRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'begin_time', '3': 2, '4': 1, '5': 3, '10': 'beginTime'},
+    {'1': 'end_time', '3': 3, '4': 1, '5': 3, '10': 'endTime'},
+  ],
+};
+
+/// Descriptor for `GetQuickEvaluationTotalReportRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getQuickEvaluationTotalReportRequestDescriptor = $convert.base64Decode(
+    'CiRHZXRRdWlja0V2YWx1YXRpb25Ub3RhbFJlcG9ydFJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GA'
+    'EgASgLMhEuYmFzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSHQoKYmVnaW5fdGltZRgCIAEo'
+    'A1IJYmVnaW5UaW1lEhkKCGVuZF90aW1lGAMgASgDUgdlbmRUaW1l');
+
+@$core.Deprecated('Use quickEvaluationTotalReportItemEntryDescriptor instead')
+const QuickEvaluationTotalReportItemEntry$json = {
+  '1': 'QuickEvaluationTotalReportItemEntry',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'percent', '3': 2, '4': 1, '5': 9, '10': 'percent'},
+    {'1': 'detail', '3': 3, '4': 1, '5': 9, '10': 'detail'},
+  ],
+};
+
+/// Descriptor for `QuickEvaluationTotalReportItemEntry`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List quickEvaluationTotalReportItemEntryDescriptor = $convert.base64Decode(
+    'CiNRdWlja0V2YWx1YXRpb25Ub3RhbFJlcG9ydEl0ZW1FbnRyeRISCgRuYW1lGAEgASgJUgRuYW'
+    '1lEhgKB3BlcmNlbnQYAiABKAlSB3BlcmNlbnQSFgoGZGV0YWlsGAMgASgJUgZkZXRhaWw=');
+
+@$core.Deprecated('Use quickEvaluationTotalReportItemDescriptor instead')
+const QuickEvaluationTotalReportItem$json = {
+  '1': 'QuickEvaluationTotalReportItem',
+  '2': [
+    {'1': 'item_name', '3': 1, '4': 1, '5': 9, '10': 'itemName'},
+    {'1': 'entries', '3': 2, '4': 3, '5': 11, '6': '.glory_api.QuickEvaluationTotalReportItemEntry', '10': 'entries'},
+    {'1': 'desc', '3': 3, '4': 1, '5': 9, '10': 'desc'},
+  ],
+};
+
+/// Descriptor for `QuickEvaluationTotalReportItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List quickEvaluationTotalReportItemDescriptor = $convert.base64Decode(
+    'Ch5RdWlja0V2YWx1YXRpb25Ub3RhbFJlcG9ydEl0ZW0SGwoJaXRlbV9uYW1lGAEgASgJUghpdG'
+    'VtTmFtZRJICgdlbnRyaWVzGAIgAygLMi4uZ2xvcnlfYXBpLlF1aWNrRXZhbHVhdGlvblRvdGFs'
+    'UmVwb3J0SXRlbUVudHJ5UgdlbnRyaWVzEhIKBGRlc2MYAyABKAlSBGRlc2M=');
+
+@$core.Deprecated('Use quickEvaluationTotalReportStudentDetailDescriptor instead')
+const QuickEvaluationTotalReportStudentDetail$json = {
+  '1': 'QuickEvaluationTotalReportStudentDetail',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'result', '3': 2, '4': 1, '5': 8, '10': 'result'},
+    {'1': 'reason', '3': 3, '4': 1, '5': 9, '10': 'reason'},
+    {'1': 'report_id', '3': 4, '4': 1, '5': 3, '10': 'reportId'},
+    {'1': 'room_id', '3': 5, '4': 1, '5': 3, '10': 'roomId'},
+  ],
+};
+
+/// Descriptor for `QuickEvaluationTotalReportStudentDetail`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List quickEvaluationTotalReportStudentDetailDescriptor = $convert.base64Decode(
+    'CidRdWlja0V2YWx1YXRpb25Ub3RhbFJlcG9ydFN0dWRlbnREZXRhaWwSEgoEbmFtZRgBIAEoCV'
+    'IEbmFtZRIWCgZyZXN1bHQYAiABKAhSBnJlc3VsdBIWCgZyZWFzb24YAyABKAlSBnJlYXNvbhIb'
+    'CglyZXBvcnRfaWQYBCABKANSCHJlcG9ydElkEhcKB3Jvb21faWQYBSABKANSBnJvb21JZA==');
+
+@$core.Deprecated('Use quickEvaluationTotalReportDescriptor instead')
+const QuickEvaluationTotalReport$json = {
+  '1': 'QuickEvaluationTotalReport',
+  '2': [
+    {'1': 'total_count', '3': 1, '4': 1, '5': 5, '10': 'totalCount'},
+    {'1': 'pass_count', '3': 2, '4': 1, '5': 5, '10': 'passCount'},
+    {'1': 'no_pass_count', '3': 3, '4': 1, '5': 5, '10': 'noPassCount'},
+    {'1': 'begin_time', '3': 4, '4': 1, '5': 9, '10': 'beginTime'},
+    {'1': 'end_time', '3': 5, '4': 1, '5': 9, '10': 'endTime'},
+    {'1': 'items', '3': 6, '4': 3, '5': 11, '6': '.glory_api.QuickEvaluationTotalReportItem', '10': 'items'},
+    {'1': 'pass_list', '3': 7, '4': 3, '5': 11, '6': '.glory_api.QuickEvaluationTotalReportStudentDetail', '10': 'passList'},
+    {'1': 'no_pass_list', '3': 8, '4': 3, '5': 11, '6': '.glory_api.QuickEvaluationTotalReportStudentDetail', '10': 'noPassList'},
+  ],
+};
+
+/// Descriptor for `QuickEvaluationTotalReport`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List quickEvaluationTotalReportDescriptor = $convert.base64Decode(
+    'ChpRdWlja0V2YWx1YXRpb25Ub3RhbFJlcG9ydBIfCgt0b3RhbF9jb3VudBgBIAEoBVIKdG90YW'
+    'xDb3VudBIdCgpwYXNzX2NvdW50GAIgASgFUglwYXNzQ291bnQSIgoNbm9fcGFzc19jb3VudBgD'
+    'IAEoBVILbm9QYXNzQ291bnQSHQoKYmVnaW5fdGltZRgEIAEoCVIJYmVnaW5UaW1lEhkKCGVuZF'
+    '90aW1lGAUgASgJUgdlbmRUaW1lEj8KBWl0ZW1zGAYgAygLMikuZ2xvcnlfYXBpLlF1aWNrRXZh'
+    'bHVhdGlvblRvdGFsUmVwb3J0SXRlbVIFaXRlbXMSTwoJcGFzc19saXN0GAcgAygLMjIuZ2xvcn'
+    'lfYXBpLlF1aWNrRXZhbHVhdGlvblRvdGFsUmVwb3J0U3R1ZGVudERldGFpbFIIcGFzc0xpc3QS'
+    'VAoMbm9fcGFzc19saXN0GAggAygLMjIuZ2xvcnlfYXBpLlF1aWNrRXZhbHVhdGlvblRvdGFsUm'
+    'Vwb3J0U3R1ZGVudERldGFpbFIKbm9QYXNzTGlzdA==');
+
+@$core.Deprecated('Use getQuickEvaluationTotalReportResponseDescriptor instead')
+const GetQuickEvaluationTotalReportResponse$json = {
+  '1': 'GetQuickEvaluationTotalReportResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `GetQuickEvaluationTotalReportResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getQuickEvaluationTotalReportResponseDescriptor = $convert.base64Decode(
+    'CiVHZXRRdWlja0V2YWx1YXRpb25Ub3RhbFJlcG9ydFJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIA'
+    'EoCzISLmJhc2UuQmFzZVJlc3BvbnNlUghiYXNlUmVzcA==');
+
 @$core.Deprecated('Use passDetailDescriptor instead')
 const PassDetail$json = {
   '1': 'PassDetail',

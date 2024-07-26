@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct GloryApi_TenantConfig {
+struct GloryApi_TenantConfig: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -38,7 +38,7 @@ struct GloryApi_TenantConfig {
   init() {}
 }
 
-struct GloryApi_UpdateTenantConfigRequest {
+struct GloryApi_UpdateTenantConfigRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -69,7 +69,7 @@ struct GloryApi_UpdateTenantConfigRequest {
   fileprivate var _config: GloryApi_TenantConfig? = nil
 }
 
-struct GloryApi_UpdateTenantConfigResponse {
+struct GloryApi_UpdateTenantConfigResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -90,7 +90,7 @@ struct GloryApi_UpdateTenantConfigResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListTenantConfigRequest {
+struct GloryApi_ListTenantConfigRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -113,7 +113,7 @@ struct GloryApi_ListTenantConfigRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ListTenantConfigResponse {
+struct GloryApi_ListTenantConfigResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -145,14 +145,6 @@ struct GloryApi_ListTenantConfigResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_TenantConfig: @unchecked Sendable {}
-extension GloryApi_UpdateTenantConfigRequest: @unchecked Sendable {}
-extension GloryApi_UpdateTenantConfigResponse: @unchecked Sendable {}
-extension GloryApi_ListTenantConfigRequest: @unchecked Sendable {}
-extension GloryApi_ListTenantConfigResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 

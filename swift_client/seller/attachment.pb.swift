@@ -20,7 +20,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-enum GloryApi_AttachmentType: SwiftProtobuf.Enum {
+enum GloryApi_AttachmentType: SwiftProtobuf.Enum, Swift.CaseIterable {
   typealias RawValue = Int
   case unSpecified // = 0
   case image // = 1
@@ -49,22 +49,16 @@ enum GloryApi_AttachmentType: SwiftProtobuf.Enum {
     }
   }
 
-}
-
-#if swift(>=4.2)
-
-extension GloryApi_AttachmentType: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
   static let allCases: [GloryApi_AttachmentType] = [
     .unSpecified,
     .image,
     .pdf,
   ]
+
 }
 
-#endif  // swift(>=4.2)
-
-struct GloryApi_Attachment {
+struct GloryApi_Attachment: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -82,7 +76,7 @@ struct GloryApi_Attachment {
   init() {}
 }
 
-struct GloryApi_AttachmentWithAuthor {
+struct GloryApi_AttachmentWithAuthor: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -113,7 +107,7 @@ struct GloryApi_AttachmentWithAuthor {
   fileprivate var _authorInfo: Base_AuthorInfo? = nil
 }
 
-struct GloryApi_UploadAttachmentRequest {
+struct GloryApi_UploadAttachmentRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -147,7 +141,7 @@ struct GloryApi_UploadAttachmentRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UploadAttachmentResponse {
+struct GloryApi_UploadAttachmentResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -173,7 +167,7 @@ struct GloryApi_UploadAttachmentResponse {
 }
 
 /// 代替UploadAttachment,使用前端直传OSS的方式
-struct GloryApi_SaveAttachmentRequest {
+struct GloryApi_SaveAttachmentRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -210,7 +204,7 @@ struct GloryApi_SaveAttachmentRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_SaveAttachmentResponse {
+struct GloryApi_SaveAttachmentResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -235,7 +229,7 @@ struct GloryApi_SaveAttachmentResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListAttachmentRequest {
+struct GloryApi_ListAttachmentRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -258,7 +252,7 @@ struct GloryApi_ListAttachmentRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ListAttachmentResponse {
+struct GloryApi_ListAttachmentResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -281,7 +275,7 @@ struct GloryApi_ListAttachmentResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_DeleteAttachmentRequest {
+struct GloryApi_DeleteAttachmentRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -304,7 +298,7 @@ struct GloryApi_DeleteAttachmentRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteAttachmentResponse {
+struct GloryApi_DeleteAttachmentResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -324,20 +318,6 @@ struct GloryApi_DeleteAttachmentResponse {
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
-
-#if swift(>=5.5) && canImport(_Concurrency)
-extension GloryApi_AttachmentType: @unchecked Sendable {}
-extension GloryApi_Attachment: @unchecked Sendable {}
-extension GloryApi_AttachmentWithAuthor: @unchecked Sendable {}
-extension GloryApi_UploadAttachmentRequest: @unchecked Sendable {}
-extension GloryApi_UploadAttachmentResponse: @unchecked Sendable {}
-extension GloryApi_SaveAttachmentRequest: @unchecked Sendable {}
-extension GloryApi_SaveAttachmentResponse: @unchecked Sendable {}
-extension GloryApi_ListAttachmentRequest: @unchecked Sendable {}
-extension GloryApi_ListAttachmentResponse: @unchecked Sendable {}
-extension GloryApi_DeleteAttachmentRequest: @unchecked Sendable {}
-extension GloryApi_DeleteAttachmentResponse: @unchecked Sendable {}
-#endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
