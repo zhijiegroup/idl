@@ -112,6 +112,7 @@ message GetQuickEvaluationTotalReportRequest {
     base.BaseRequest base_request = 1;
     int64 begin_time = 2;
     int64 end_time = 3;
+    int64 standard_id = 4;
 }
 
 message QuickEvaluationTotalReportItemEntry {
@@ -147,6 +148,7 @@ message QuickEvaluationTotalReport {
 
 message GetQuickEvaluationTotalReportResponse {
     base.BaseResponse base_resp = 1;
+    QuickEvaluationTotalReport report = 2;
 }
 
 message PassDetail {
