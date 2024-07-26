@@ -61,6 +61,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 18: {
+            com.zhijiejiaoyu.glory_api.live.QuickEvaluationTotalReport.Builder subBuilder = null;
+            if (report != null) {
+              subBuilder = report .toBuilder();
+            }
+            report = input.readMessage(com.zhijiejiaoyu.glory_api.live.QuickEvaluationTotalReport.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(report );
+              report = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -119,6 +132,32 @@ private static final long serialVersionUID = 0L;
     return getBaseResp();
   }
 
+  public static final int REPORT_FIELD_NUMBER = 2;
+  private com.zhijiejiaoyu.glory_api.live.QuickEvaluationTotalReport report ;
+  /**
+   * <code>.glory_api.QuickEvaluationTotalReport report = 2;</code>
+   * @return Whether the report field is set.
+   */
+  @java.lang.Override
+  public boolean hasReport() {
+    return report != null;
+  }
+  /**
+   * <code>.glory_api.QuickEvaluationTotalReport report = 2;</code>
+   * @return The report.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.live.QuickEvaluationTotalReport getReport() {
+    return report == null ? com.zhijiejiaoyu.glory_api.live.QuickEvaluationTotalReport.getDefaultInstance() : report ;
+  }
+  /**
+   * <code>.glory_api.QuickEvaluationTotalReport report = 2;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.live.QuickEvaluationTotalReportOrBuilder getReportOrBuilder() {
+    return getReport();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -136,6 +175,9 @@ private static final long serialVersionUID = 0L;
     if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
+    if (report != null) {
+      output.writeMessage(2, getReport());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -148,6 +190,10 @@ private static final long serialVersionUID = 0L;
     if (baseResp != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
+    }
+    if (report != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getReport());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -169,6 +215,11 @@ private static final long serialVersionUID = 0L;
       if (!getBaseResp()
           .equals(other.getBaseResp())) return false;
     }
+    if (hasReport() != other.hasReport()) return false;
+    if (hasReport()) {
+      if (!getReport()
+          .equals(other.getReport())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -183,6 +234,10 @@ private static final long serialVersionUID = 0L;
     if (hasBaseResp()) {
       hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
       hash = (53 * hash) + getBaseResp().hashCode();
+    }
+    if (hasReport()) {
+      hash = (37 * hash) + REPORT_FIELD_NUMBER;
+      hash = (53 * hash) + getReport().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -323,6 +378,12 @@ private static final long serialVersionUID = 0L;
         baseResp = null;
         baseRespBuilder = null;
       }
+      if (reportBuilder == null) {
+        report = null;
+      } else {
+        report = null;
+        reportBuilder = null;
+      }
       return this;
     }
 
@@ -353,6 +414,11 @@ private static final long serialVersionUID = 0L;
         result.baseResp = baseResp ;
       } else {
         result.baseResp = baseRespBuilder .build();
+      }
+      if (reportBuilder == null) {
+        result.report = report ;
+      } else {
+        result.report = reportBuilder .build();
       }
       onBuilt();
       return result;
@@ -404,6 +470,9 @@ private static final long serialVersionUID = 0L;
       if (other == com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationTotalReportResponse.getDefaultInstance()) return this;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
+      }
+      if (other.hasReport()) {
+        mergeReport(other.getReport());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -551,6 +620,125 @@ private static final long serialVersionUID = 0L;
         baseResp = null;
       }
       return baseRespBuilder ;
+    }
+
+    private com.zhijiejiaoyu.glory_api.live.QuickEvaluationTotalReport report ;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.live.QuickEvaluationTotalReport, com.zhijiejiaoyu.glory_api.live.QuickEvaluationTotalReport.Builder, com.zhijiejiaoyu.glory_api.live.QuickEvaluationTotalReportOrBuilder> reportBuilder ;
+    /**
+     * <code>.glory_api.QuickEvaluationTotalReport report = 2;</code>
+     * @return Whether the report field is set.
+     */
+    public boolean hasReport() {
+      return reportBuilder != null || report != null;
+    }
+    /**
+     * <code>.glory_api.QuickEvaluationTotalReport report = 2;</code>
+     * @return The report.
+     */
+    public com.zhijiejiaoyu.glory_api.live.QuickEvaluationTotalReport getReport() {
+      if (reportBuilder == null) {
+        return report == null ? com.zhijiejiaoyu.glory_api.live.QuickEvaluationTotalReport.getDefaultInstance() : report ;
+      } else {
+        return reportBuilder .getMessage();
+      }
+    }
+    /**
+     * <code>.glory_api.QuickEvaluationTotalReport report = 2;</code>
+     */
+    public Builder setReport(com.zhijiejiaoyu.glory_api.live.QuickEvaluationTotalReport value) {
+      if (reportBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        report = value;
+        onChanged();
+      } else {
+        reportBuilder .setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.QuickEvaluationTotalReport report = 2;</code>
+     */
+    public Builder setReport(
+        com.zhijiejiaoyu.glory_api.live.QuickEvaluationTotalReport.Builder builderForValue) {
+      if (reportBuilder == null) {
+        report = builderForValue.build();
+        onChanged();
+      } else {
+        reportBuilder .setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.QuickEvaluationTotalReport report = 2;</code>
+     */
+    public Builder mergeReport(com.zhijiejiaoyu.glory_api.live.QuickEvaluationTotalReport value) {
+      if (reportBuilder == null) {
+        if (report != null) {
+          report =
+            com.zhijiejiaoyu.glory_api.live.QuickEvaluationTotalReport.newBuilder(report ).mergeFrom(value).buildPartial();
+        } else {
+          report = value;
+        }
+        onChanged();
+      } else {
+        reportBuilder .mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.QuickEvaluationTotalReport report = 2;</code>
+     */
+    public Builder clearReport() {
+      if (reportBuilder == null) {
+        report = null;
+        onChanged();
+      } else {
+        report = null;
+        reportBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.QuickEvaluationTotalReport report = 2;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.live.QuickEvaluationTotalReport.Builder getReportBuilder() {
+      
+      onChanged();
+      return getReportFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.glory_api.QuickEvaluationTotalReport report = 2;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.live.QuickEvaluationTotalReportOrBuilder getReportOrBuilder() {
+      if (reportBuilder != null) {
+        return reportBuilder .getMessageOrBuilder();
+      } else {
+        return report == null ?
+            com.zhijiejiaoyu.glory_api.live.QuickEvaluationTotalReport.getDefaultInstance() : report ;
+      }
+    }
+    /**
+     * <code>.glory_api.QuickEvaluationTotalReport report = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.live.QuickEvaluationTotalReport, com.zhijiejiaoyu.glory_api.live.QuickEvaluationTotalReport.Builder, com.zhijiejiaoyu.glory_api.live.QuickEvaluationTotalReportOrBuilder> 
+        getReportFieldBuilder() {
+      if (reportBuilder == null) {
+        reportBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.live.QuickEvaluationTotalReport, com.zhijiejiaoyu.glory_api.live.QuickEvaluationTotalReport.Builder, com.zhijiejiaoyu.glory_api.live.QuickEvaluationTotalReportOrBuilder>(
+                getReport(),
+                getParentForChildren(),
+                isClean());
+        report = null;
+      }
+      return reportBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -283,6 +283,7 @@ const GetQuickEvaluationTotalReportRequest$json = {
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'begin_time', '3': 2, '4': 1, '5': 3, '10': 'beginTime'},
     {'1': 'end_time', '3': 3, '4': 1, '5': 3, '10': 'endTime'},
+    {'1': 'standard_id', '3': 4, '4': 1, '5': 3, '10': 'standardId'},
   ],
 };
 
@@ -290,7 +291,8 @@ const GetQuickEvaluationTotalReportRequest$json = {
 final $typed_data.Uint8List getQuickEvaluationTotalReportRequestDescriptor = $convert.base64Decode(
     'CiRHZXRRdWlja0V2YWx1YXRpb25Ub3RhbFJlcG9ydFJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GA'
     'EgASgLMhEuYmFzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSHQoKYmVnaW5fdGltZRgCIAEo'
-    'A1IJYmVnaW5UaW1lEhkKCGVuZF90aW1lGAMgASgDUgdlbmRUaW1l');
+    'A1IJYmVnaW5UaW1lEhkKCGVuZF90aW1lGAMgASgDUgdlbmRUaW1lEh8KC3N0YW5kYXJkX2lkGA'
+    'QgASgDUgpzdGFuZGFyZElk');
 
 @$core.Deprecated('Use quickEvaluationTotalReportItemEntryDescriptor instead')
 const QuickEvaluationTotalReportItemEntry$json = {
@@ -372,13 +374,15 @@ const GetQuickEvaluationTotalReportResponse$json = {
   '1': 'GetQuickEvaluationTotalReportResponse',
   '2': [
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'report', '3': 2, '4': 1, '5': 11, '6': '.glory_api.QuickEvaluationTotalReport', '10': 'report'},
   ],
 };
 
 /// Descriptor for `GetQuickEvaluationTotalReportResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getQuickEvaluationTotalReportResponseDescriptor = $convert.base64Decode(
     'CiVHZXRRdWlja0V2YWx1YXRpb25Ub3RhbFJlcG9ydFJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIA'
-    'EoCzISLmJhc2UuQmFzZVJlc3BvbnNlUghiYXNlUmVzcA==');
+    'EoCzISLmJhc2UuQmFzZVJlc3BvbnNlUghiYXNlUmVzcBI9CgZyZXBvcnQYAiABKAsyJS5nbG9y'
+    'eV9hcGkuUXVpY2tFdmFsdWF0aW9uVG90YWxSZXBvcnRSBnJlcG9ydA==');
 
 @$core.Deprecated('Use passDetailDescriptor instead')
 const PassDetail$json = {

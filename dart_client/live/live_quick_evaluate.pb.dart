@@ -1366,6 +1366,7 @@ class GetQuickEvaluationTotalReportRequest extends $pb.GeneratedMessage {
     $0.BaseRequest? baseRequest,
     $fixnum.Int64? beginTime,
     $fixnum.Int64? endTime,
+    $fixnum.Int64? standardId,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -1377,6 +1378,9 @@ class GetQuickEvaluationTotalReportRequest extends $pb.GeneratedMessage {
     if (endTime != null) {
       $result.endTime = endTime;
     }
+    if (standardId != null) {
+      $result.standardId = standardId;
+    }
     return $result;
   }
   GetQuickEvaluationTotalReportRequest._() : super();
@@ -1387,6 +1391,7 @@ class GetQuickEvaluationTotalReportRequest extends $pb.GeneratedMessage {
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'beginTime')
     ..aInt64(3, _omitFieldNames ? '' : 'endTime')
+    ..aInt64(4, _omitFieldNames ? '' : 'standardId')
     ..hasRequiredFields = false
   ;
 
@@ -1439,6 +1444,15 @@ class GetQuickEvaluationTotalReportRequest extends $pb.GeneratedMessage {
   $core.bool hasEndTime() => $_has(2);
   @$pb.TagNumber(3)
   void clearEndTime() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get standardId => $_getI64(3);
+  @$pb.TagNumber(4)
+  set standardId($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasStandardId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStandardId() => clearField(4);
 }
 
 class QuickEvaluationTotalReportItemEntry extends $pb.GeneratedMessage {
@@ -1830,10 +1844,14 @@ class QuickEvaluationTotalReport extends $pb.GeneratedMessage {
 class GetQuickEvaluationTotalReportResponse extends $pb.GeneratedMessage {
   factory GetQuickEvaluationTotalReportResponse({
     $0.BaseResponse? baseResp,
+    QuickEvaluationTotalReport? report,
   }) {
     final $result = create();
     if (baseResp != null) {
       $result.baseResp = baseResp;
+    }
+    if (report != null) {
+      $result.report = report;
     }
     return $result;
   }
@@ -1843,6 +1861,7 @@ class GetQuickEvaluationTotalReportResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetQuickEvaluationTotalReportResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<QuickEvaluationTotalReport>(2, _omitFieldNames ? '' : 'report', subBuilder: QuickEvaluationTotalReport.create)
     ..hasRequiredFields = false
   ;
 
@@ -1877,6 +1896,17 @@ class GetQuickEvaluationTotalReportResponse extends $pb.GeneratedMessage {
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
   $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  QuickEvaluationTotalReport get report => $_getN(1);
+  @$pb.TagNumber(2)
+  set report(QuickEvaluationTotalReport v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasReport() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReport() => clearField(2);
+  @$pb.TagNumber(2)
+  QuickEvaluationTotalReport ensureReport() => $_ensure(1);
 }
 
 class PassDetail extends $pb.GeneratedMessage {

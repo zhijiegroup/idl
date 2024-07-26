@@ -490,6 +490,8 @@ struct GloryApi_GetQuickEvaluationTotalReportRequest: Sendable {
 
   var endTime: Int64 = 0
 
+  var standardID: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -589,11 +591,21 @@ struct GloryApi_GetQuickEvaluationTotalReportResponse: Sendable {
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
+  var report: GloryApi_QuickEvaluationTotalReport {
+    get {return _report ?? GloryApi_QuickEvaluationTotalReport()}
+    set {_report = newValue}
+  }
+  /// Returns true if `report` has been explicitly set.
+  var hasReport: Bool {return self._report != nil}
+  /// Clears the value of `report`. Subsequent reads from it will return its default value.
+  mutating func clearReport() {self._report = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _report: GloryApi_QuickEvaluationTotalReport? = nil
 }
 
 struct GloryApi_PassDetail: Sendable {
@@ -1702,6 +1714,7 @@ extension GloryApi_GetQuickEvaluationTotalReportRequest: SwiftProtobuf.Message, 
     1: .standard(proto: "base_request"),
     2: .standard(proto: "begin_time"),
     3: .standard(proto: "end_time"),
+    4: .standard(proto: "standard_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1713,6 +1726,7 @@ extension GloryApi_GetQuickEvaluationTotalReportRequest: SwiftProtobuf.Message, 
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.beginTime) }()
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.endTime) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.standardID) }()
       default: break
       }
     }
@@ -1732,6 +1746,9 @@ extension GloryApi_GetQuickEvaluationTotalReportRequest: SwiftProtobuf.Message, 
     if self.endTime != 0 {
       try visitor.visitSingularInt64Field(value: self.endTime, fieldNumber: 3)
     }
+    if self.standardID != 0 {
+      try visitor.visitSingularInt64Field(value: self.standardID, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1739,6 +1756,7 @@ extension GloryApi_GetQuickEvaluationTotalReportRequest: SwiftProtobuf.Message, 
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.beginTime != rhs.beginTime {return false}
     if lhs.endTime != rhs.endTime {return false}
+    if lhs.standardID != rhs.standardID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1966,6 +1984,7 @@ extension GloryApi_GetQuickEvaluationTotalReportResponse: SwiftProtobuf.Message,
   static let protoMessageName: String = _protobuf_package + ".GetQuickEvaluationTotalReportResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
+    2: .same(proto: "report"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1975,6 +1994,7 @@ extension GloryApi_GetQuickEvaluationTotalReportResponse: SwiftProtobuf.Message,
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._report) }()
       default: break
       }
     }
@@ -1988,11 +2008,15 @@ extension GloryApi_GetQuickEvaluationTotalReportResponse: SwiftProtobuf.Message,
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    try { if let v = self._report {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetQuickEvaluationTotalReportResponse, rhs: GloryApi_GetQuickEvaluationTotalReportResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
+    if lhs._report != rhs._report {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

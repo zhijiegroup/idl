@@ -21,4 +21,19 @@ public interface GetQuickEvaluationTotalReportResponseOrBuilder extends
    * <code>.base.BaseResponse base_resp = 1;</code>
    */
   com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder();
+
+  /**
+   * <code>.glory_api.QuickEvaluationTotalReport report = 2;</code>
+   * @return Whether the report field is set.
+   */
+  boolean hasReport();
+  /**
+   * <code>.glory_api.QuickEvaluationTotalReport report = 2;</code>
+   * @return The report.
+   */
+  com.zhijiejiaoyu.glory_api.live.QuickEvaluationTotalReport getReport();
+  /**
+   * <code>.glory_api.QuickEvaluationTotalReport report = 2;</code>
+   */
+  com.zhijiejiaoyu.glory_api.live.QuickEvaluationTotalReportOrBuilder getReportOrBuilder();
 }
