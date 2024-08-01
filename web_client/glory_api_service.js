@@ -2866,6 +2866,14 @@ export class glory_api {
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
+  GetTenantTrafficTotalReport(request) {
+    const uri = `${this.uriPrefix}/api/live/get_tenant_traffic_total_report`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CreateVersionLog(request) {
     const uri = `${this.uriPrefix}/api/app/create_version_log`;
     const body = JSONbigint.stringify(request);

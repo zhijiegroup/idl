@@ -473,6 +473,70 @@ final $typed_data.Uint8List getQuickEvaluationDetailRequestDescriptor = $convert
     'IRLmJhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhcKB3Jvb21faWQYAiABKANSBnJvb21J'
     'ZA==');
 
+@$core.Deprecated('Use getTenantTrafficTotalReportRequestDescriptor instead')
+const GetTenantTrafficTotalReportRequest$json = {
+  '1': 'GetTenantTrafficTotalReportRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `GetTenantTrafficTotalReportRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTenantTrafficTotalReportRequestDescriptor = $convert.base64Decode(
+    'CiJHZXRUZW5hbnRUcmFmZmljVG90YWxSZXBvcnRSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIA'
+    'EoCzIRLmJhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EjcKCnBhZ2luYXRpb24YZCABKAsy'
+    'Fy5iYXNlLlBhZ2luYXRpb25SZXF1ZXN0UgpwYWdpbmF0aW9u');
+
+@$core.Deprecated('Use tenantTrafficReportDescriptor instead')
+const TenantTrafficReport$json = {
+  '1': 'TenantTrafficReport',
+  '2': [
+    {'1': 'tenant_id', '3': 1, '4': 1, '5': 3, '10': 'tenantId'},
+    {'1': 'tenant_name', '3': 2, '4': 1, '5': 9, '10': 'tenantName'},
+    {'1': 'total_traffic', '3': 12, '4': 1, '5': 1, '10': 'totalTraffic'},
+    {'1': 'used_traffic', '3': 3, '4': 1, '5': 1, '10': 'usedTraffic'},
+    {'1': 'unused_traffic', '3': 4, '4': 1, '5': 1, '10': 'unusedTraffic'},
+    {'1': 'live_duration_total', '3': 5, '4': 1, '5': 3, '10': 'liveDurationTotal'},
+    {'1': 'live_cost_total', '3': 6, '4': 1, '5': 9, '10': 'liveCostTotal'},
+    {'1': 'max_single_duration', '3': 7, '4': 1, '5': 3, '10': 'maxSingleDuration'},
+    {'1': 'average_single_duration', '3': 8, '4': 1, '5': 1, '10': 'averageSingleDuration'},
+    {'1': 'max_day_traffic', '3': 9, '4': 1, '5': 1, '10': 'maxDayTraffic'},
+    {'1': 'average_day_traffic', '3': 10, '4': 1, '5': 1, '10': 'averageDayTraffic'},
+    {'1': 'expected_days', '3': 11, '4': 1, '5': 9, '10': 'expectedDays'},
+  ],
+};
+
+/// Descriptor for `TenantTrafficReport`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List tenantTrafficReportDescriptor = $convert.base64Decode(
+    'ChNUZW5hbnRUcmFmZmljUmVwb3J0EhsKCXRlbmFudF9pZBgBIAEoA1IIdGVuYW50SWQSHwoLdG'
+    'VuYW50X25hbWUYAiABKAlSCnRlbmFudE5hbWUSIwoNdG90YWxfdHJhZmZpYxgMIAEoAVIMdG90'
+    'YWxUcmFmZmljEiEKDHVzZWRfdHJhZmZpYxgDIAEoAVILdXNlZFRyYWZmaWMSJQoOdW51c2VkX3'
+    'RyYWZmaWMYBCABKAFSDXVudXNlZFRyYWZmaWMSLgoTbGl2ZV9kdXJhdGlvbl90b3RhbBgFIAEo'
+    'A1IRbGl2ZUR1cmF0aW9uVG90YWwSJgoPbGl2ZV9jb3N0X3RvdGFsGAYgASgJUg1saXZlQ29zdF'
+    'RvdGFsEi4KE21heF9zaW5nbGVfZHVyYXRpb24YByABKANSEW1heFNpbmdsZUR1cmF0aW9uEjYK'
+    'F2F2ZXJhZ2Vfc2luZ2xlX2R1cmF0aW9uGAggASgBUhVhdmVyYWdlU2luZ2xlRHVyYXRpb24SJg'
+    'oPbWF4X2RheV90cmFmZmljGAkgASgBUg1tYXhEYXlUcmFmZmljEi4KE2F2ZXJhZ2VfZGF5X3Ry'
+    'YWZmaWMYCiABKAFSEWF2ZXJhZ2VEYXlUcmFmZmljEiMKDWV4cGVjdGVkX2RheXMYCyABKAlSDG'
+    'V4cGVjdGVkRGF5cw==');
+
+@$core.Deprecated('Use getTenantTrafficTotalReportResponseDescriptor instead')
+const GetTenantTrafficTotalReportResponse$json = {
+  '1': 'GetTenantTrafficTotalReportResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'report_list', '3': 2, '4': 3, '5': 11, '6': '.glory_api.TenantTrafficReport', '10': 'reportList'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationResponse', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `GetTenantTrafficTotalReportResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTenantTrafficTotalReportResponseDescriptor = $convert.base64Decode(
+    'CiNHZXRUZW5hbnRUcmFmZmljVG90YWxSZXBvcnRSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKA'
+    'syEi5iYXNlLkJhc2VSZXNwb25zZVIIYmFzZVJlc3ASPwoLcmVwb3J0X2xpc3QYAiADKAsyHi5n'
+    'bG9yeV9hcGkuVGVuYW50VHJhZmZpY1JlcG9ydFIKcmVwb3J0TGlzdBI4CgpwYWdpbmF0aW9uGG'
+    'QgASgLMhguYmFzZS5QYWdpbmF0aW9uUmVzcG9uc2VSCnBhZ2luYXRpb24=');
+
 @$core.Deprecated('Use quickEvaluationDetailDescriptor instead')
 const QuickEvaluationDetail$json = {
   '1': 'QuickEvaluationDetail',

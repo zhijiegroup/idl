@@ -727,6 +727,104 @@ struct GloryApi_GetQuickEvaluationDetailRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
+struct GloryApi_GetTenantTrafficTotalReportRequest: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var pagination: Base_PaginationRequest {
+    get {return _pagination ?? Base_PaginationRequest()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+  fileprivate var _pagination: Base_PaginationRequest? = nil
+}
+
+struct GloryApi_TenantTrafficReport: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var tenantID: Int64 = 0
+
+  var tenantName: String = String()
+
+  var totalTraffic: Double = 0
+
+  var usedTraffic: Double = 0
+
+  var unusedTraffic: Double = 0
+
+  var liveDurationTotal: Int64 = 0
+
+  var liveCostTotal: String = String()
+
+  var maxSingleDuration: Int64 = 0
+
+  var averageSingleDuration: Double = 0
+
+  var maxDayTraffic: Double = 0
+
+  var averageDayTraffic: Double = 0
+
+  var expectedDays: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_GetTenantTrafficTotalReportResponse: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var reportList: [GloryApi_TenantTrafficReport] = []
+
+  var pagination: Base_PaginationResponse {
+    get {return _pagination ?? Base_PaginationResponse()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _pagination: Base_PaginationResponse? = nil
+}
+
 struct GloryApi_QuickEvaluationDetail: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -2281,6 +2379,194 @@ extension GloryApi_GetQuickEvaluationDetailRequest: SwiftProtobuf.Message, Swift
   static func ==(lhs: GloryApi_GetQuickEvaluationDetailRequest, rhs: GloryApi_GetQuickEvaluationDetailRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.roomID != rhs.roomID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetTenantTrafficTotalReportRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetTenantTrafficTotalReportRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    100: .same(proto: "pagination"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetTenantTrafficTotalReportRequest, rhs: GloryApi_GetTenantTrafficTotalReportRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs._pagination != rhs._pagination {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_TenantTrafficReport: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".TenantTrafficReport"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "tenant_id"),
+    2: .standard(proto: "tenant_name"),
+    12: .standard(proto: "total_traffic"),
+    3: .standard(proto: "used_traffic"),
+    4: .standard(proto: "unused_traffic"),
+    5: .standard(proto: "live_duration_total"),
+    6: .standard(proto: "live_cost_total"),
+    7: .standard(proto: "max_single_duration"),
+    8: .standard(proto: "average_single_duration"),
+    9: .standard(proto: "max_day_traffic"),
+    10: .standard(proto: "average_day_traffic"),
+    11: .standard(proto: "expected_days"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.tenantName) }()
+      case 3: try { try decoder.decodeSingularDoubleField(value: &self.usedTraffic) }()
+      case 4: try { try decoder.decodeSingularDoubleField(value: &self.unusedTraffic) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.liveDurationTotal) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.liveCostTotal) }()
+      case 7: try { try decoder.decodeSingularInt64Field(value: &self.maxSingleDuration) }()
+      case 8: try { try decoder.decodeSingularDoubleField(value: &self.averageSingleDuration) }()
+      case 9: try { try decoder.decodeSingularDoubleField(value: &self.maxDayTraffic) }()
+      case 10: try { try decoder.decodeSingularDoubleField(value: &self.averageDayTraffic) }()
+      case 11: try { try decoder.decodeSingularStringField(value: &self.expectedDays) }()
+      case 12: try { try decoder.decodeSingularDoubleField(value: &self.totalTraffic) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.tenantID != 0 {
+      try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 1)
+    }
+    if !self.tenantName.isEmpty {
+      try visitor.visitSingularStringField(value: self.tenantName, fieldNumber: 2)
+    }
+    if self.usedTraffic.bitPattern != 0 {
+      try visitor.visitSingularDoubleField(value: self.usedTraffic, fieldNumber: 3)
+    }
+    if self.unusedTraffic.bitPattern != 0 {
+      try visitor.visitSingularDoubleField(value: self.unusedTraffic, fieldNumber: 4)
+    }
+    if self.liveDurationTotal != 0 {
+      try visitor.visitSingularInt64Field(value: self.liveDurationTotal, fieldNumber: 5)
+    }
+    if !self.liveCostTotal.isEmpty {
+      try visitor.visitSingularStringField(value: self.liveCostTotal, fieldNumber: 6)
+    }
+    if self.maxSingleDuration != 0 {
+      try visitor.visitSingularInt64Field(value: self.maxSingleDuration, fieldNumber: 7)
+    }
+    if self.averageSingleDuration.bitPattern != 0 {
+      try visitor.visitSingularDoubleField(value: self.averageSingleDuration, fieldNumber: 8)
+    }
+    if self.maxDayTraffic.bitPattern != 0 {
+      try visitor.visitSingularDoubleField(value: self.maxDayTraffic, fieldNumber: 9)
+    }
+    if self.averageDayTraffic.bitPattern != 0 {
+      try visitor.visitSingularDoubleField(value: self.averageDayTraffic, fieldNumber: 10)
+    }
+    if !self.expectedDays.isEmpty {
+      try visitor.visitSingularStringField(value: self.expectedDays, fieldNumber: 11)
+    }
+    if self.totalTraffic.bitPattern != 0 {
+      try visitor.visitSingularDoubleField(value: self.totalTraffic, fieldNumber: 12)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_TenantTrafficReport, rhs: GloryApi_TenantTrafficReport) -> Bool {
+    if lhs.tenantID != rhs.tenantID {return false}
+    if lhs.tenantName != rhs.tenantName {return false}
+    if lhs.totalTraffic != rhs.totalTraffic {return false}
+    if lhs.usedTraffic != rhs.usedTraffic {return false}
+    if lhs.unusedTraffic != rhs.unusedTraffic {return false}
+    if lhs.liveDurationTotal != rhs.liveDurationTotal {return false}
+    if lhs.liveCostTotal != rhs.liveCostTotal {return false}
+    if lhs.maxSingleDuration != rhs.maxSingleDuration {return false}
+    if lhs.averageSingleDuration != rhs.averageSingleDuration {return false}
+    if lhs.maxDayTraffic != rhs.maxDayTraffic {return false}
+    if lhs.averageDayTraffic != rhs.averageDayTraffic {return false}
+    if lhs.expectedDays != rhs.expectedDays {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetTenantTrafficTotalReportResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetTenantTrafficTotalReportResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .standard(proto: "report_list"),
+    100: .same(proto: "pagination"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.reportList) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.reportList.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.reportList, fieldNumber: 2)
+    }
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetTenantTrafficTotalReportResponse, rhs: GloryApi_GetTenantTrafficTotalReportResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.reportList != rhs.reportList {return false}
+    if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

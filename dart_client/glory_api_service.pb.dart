@@ -1147,6 +1147,9 @@ class glory_apiApi {
   $async.Future<$51.GetQuickEvaluationDetailResponse> getQuickEvaluationDetail($pb.ClientContext? ctx, $51.GetQuickEvaluationDetailRequest request) =>
     _client.invoke<$51.GetQuickEvaluationDetailResponse>(ctx, 'glory_api', 'GetQuickEvaluationDetail', request, $51.GetQuickEvaluationDetailResponse())
   ;
+  $async.Future<$51.GetTenantTrafficTotalReportResponse> getTenantTrafficTotalReport($pb.ClientContext? ctx, $51.GetTenantTrafficTotalReportRequest request) =>
+    _client.invoke<$51.GetTenantTrafficTotalReportResponse>(ctx, 'glory_api', 'GetTenantTrafficTotalReport', request, $51.GetTenantTrafficTotalReportResponse())
+  ;
   $async.Future<$47.CreateVersionLogResponse> createVersionLog($pb.ClientContext? ctx, $47.CreateVersionLogRequest request) =>
     _client.invoke<$47.CreateVersionLogResponse>(ctx, 'glory_api', 'CreateVersionLog', request, $47.CreateVersionLogResponse())
   ;

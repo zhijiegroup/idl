@@ -436,6 +436,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$51.GetQuickEvaluationTotalReportResponse> getQuickEvaluationTotalReport($pb.ServerContext ctx, $51.GetQuickEvaluationTotalReportRequest request);
   $async.Future<$51.DeleteQuickEvaluationReportResponse> deleteQuickEvaluationReport($pb.ServerContext ctx, $51.DeleteQuickEvaluationReportRequest request);
   $async.Future<$51.GetQuickEvaluationDetailResponse> getQuickEvaluationDetail($pb.ServerContext ctx, $51.GetQuickEvaluationDetailRequest request);
+  $async.Future<$51.GetTenantTrafficTotalReportResponse> getTenantTrafficTotalReport($pb.ServerContext ctx, $51.GetTenantTrafficTotalReportRequest request);
   $async.Future<$47.CreateVersionLogResponse> createVersionLog($pb.ServerContext ctx, $47.CreateVersionLogRequest request);
   $async.Future<$47.UpdateVersionLogResponse> updateVersionLog($pb.ServerContext ctx, $47.UpdateVersionLogRequest request);
   $async.Future<$47.ListVersionLogResponse> listVersionLog($pb.ServerContext ctx, $47.ListVersionLogRequest request);
@@ -890,6 +891,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetQuickEvaluationTotalReport': return $51.GetQuickEvaluationTotalReportRequest();
       case 'DeleteQuickEvaluationReport': return $51.DeleteQuickEvaluationReportRequest();
       case 'GetQuickEvaluationDetail': return $51.GetQuickEvaluationDetailRequest();
+      case 'GetTenantTrafficTotalReport': return $51.GetTenantTrafficTotalReportRequest();
       case 'CreateVersionLog': return $47.CreateVersionLogRequest();
       case 'UpdateVersionLog': return $47.UpdateVersionLogRequest();
       case 'ListVersionLog': return $47.ListVersionLogRequest();
@@ -1347,6 +1349,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetQuickEvaluationTotalReport': return this.getQuickEvaluationTotalReport(ctx, request as $51.GetQuickEvaluationTotalReportRequest);
       case 'DeleteQuickEvaluationReport': return this.deleteQuickEvaluationReport(ctx, request as $51.DeleteQuickEvaluationReportRequest);
       case 'GetQuickEvaluationDetail': return this.getQuickEvaluationDetail(ctx, request as $51.GetQuickEvaluationDetailRequest);
+      case 'GetTenantTrafficTotalReport': return this.getTenantTrafficTotalReport(ctx, request as $51.GetTenantTrafficTotalReportRequest);
       case 'CreateVersionLog': return this.createVersionLog(ctx, request as $47.CreateVersionLogRequest);
       case 'UpdateVersionLog': return this.updateVersionLog(ctx, request as $47.UpdateVersionLogRequest);
       case 'ListVersionLog': return this.listVersionLog(ctx, request as $47.ListVersionLogRequest);

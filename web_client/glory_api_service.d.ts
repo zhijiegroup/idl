@@ -1612,6 +1612,10 @@ CreateLivePlanProduct create live plan product */
     request: live_quick_evaluate.GetQuickEvaluationDetailRequest
   ): Promise<live_quick_evaluate.GetQuickEvaluationDetailResponse>;
 
+  GetTenantTrafficTotalReport(
+    request: live_quick_evaluate.GetTenantTrafficTotalReportRequest
+  ): Promise<live_quick_evaluate.GetTenantTrafficTotalReportResponse>;
+
   /** App 版本管理 */
   CreateVersionLog(
     request: app.CreateVersionLogRequest

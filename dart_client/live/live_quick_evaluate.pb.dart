@@ -2359,6 +2359,354 @@ class GetQuickEvaluationDetailRequest extends $pb.GeneratedMessage {
   void clearRoomId() => clearField(2);
 }
 
+class GetTenantTrafficTotalReportRequest extends $pb.GeneratedMessage {
+  factory GetTenantTrafficTotalReportRequest({
+    $0.BaseRequest? baseRequest,
+    $0.PaginationRequest? pagination,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
+    }
+    return $result;
+  }
+  GetTenantTrafficTotalReportRequest._() : super();
+  factory GetTenantTrafficTotalReportRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetTenantTrafficTotalReportRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTenantTrafficTotalReportRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetTenantTrafficTotalReportRequest clone() => GetTenantTrafficTotalReportRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetTenantTrafficTotalReportRequest copyWith(void Function(GetTenantTrafficTotalReportRequest) updates) => super.copyWith((message) => updates(message as GetTenantTrafficTotalReportRequest)) as GetTenantTrafficTotalReportRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTenantTrafficTotalReportRequest create() => GetTenantTrafficTotalReportRequest._();
+  GetTenantTrafficTotalReportRequest createEmptyInstance() => create();
+  static $pb.PbList<GetTenantTrafficTotalReportRequest> createRepeated() => $pb.PbList<GetTenantTrafficTotalReportRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetTenantTrafficTotalReportRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetTenantTrafficTotalReportRequest>(create);
+  static GetTenantTrafficTotalReportRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(100)
+  $0.PaginationRequest get pagination => $_getN(1);
+  @$pb.TagNumber(100)
+  set pagination($0.PaginationRequest v) { setField(100, v); }
+  @$pb.TagNumber(100)
+  $core.bool hasPagination() => $_has(1);
+  @$pb.TagNumber(100)
+  void clearPagination() => clearField(100);
+  @$pb.TagNumber(100)
+  $0.PaginationRequest ensurePagination() => $_ensure(1);
+}
+
+class TenantTrafficReport extends $pb.GeneratedMessage {
+  factory TenantTrafficReport({
+    $fixnum.Int64? tenantId,
+    $core.String? tenantName,
+    $core.double? usedTraffic,
+    $core.double? unusedTraffic,
+    $fixnum.Int64? liveDurationTotal,
+    $core.String? liveCostTotal,
+    $fixnum.Int64? maxSingleDuration,
+    $core.double? averageSingleDuration,
+    $core.double? maxDayTraffic,
+    $core.double? averageDayTraffic,
+    $core.String? expectedDays,
+    $core.double? totalTraffic,
+  }) {
+    final $result = create();
+    if (tenantId != null) {
+      $result.tenantId = tenantId;
+    }
+    if (tenantName != null) {
+      $result.tenantName = tenantName;
+    }
+    if (usedTraffic != null) {
+      $result.usedTraffic = usedTraffic;
+    }
+    if (unusedTraffic != null) {
+      $result.unusedTraffic = unusedTraffic;
+    }
+    if (liveDurationTotal != null) {
+      $result.liveDurationTotal = liveDurationTotal;
+    }
+    if (liveCostTotal != null) {
+      $result.liveCostTotal = liveCostTotal;
+    }
+    if (maxSingleDuration != null) {
+      $result.maxSingleDuration = maxSingleDuration;
+    }
+    if (averageSingleDuration != null) {
+      $result.averageSingleDuration = averageSingleDuration;
+    }
+    if (maxDayTraffic != null) {
+      $result.maxDayTraffic = maxDayTraffic;
+    }
+    if (averageDayTraffic != null) {
+      $result.averageDayTraffic = averageDayTraffic;
+    }
+    if (expectedDays != null) {
+      $result.expectedDays = expectedDays;
+    }
+    if (totalTraffic != null) {
+      $result.totalTraffic = totalTraffic;
+    }
+    return $result;
+  }
+  TenantTrafficReport._() : super();
+  factory TenantTrafficReport.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TenantTrafficReport.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TenantTrafficReport', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'tenantId')
+    ..aOS(2, _omitFieldNames ? '' : 'tenantName')
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'usedTraffic', $pb.PbFieldType.OD)
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'unusedTraffic', $pb.PbFieldType.OD)
+    ..aInt64(5, _omitFieldNames ? '' : 'liveDurationTotal')
+    ..aOS(6, _omitFieldNames ? '' : 'liveCostTotal')
+    ..aInt64(7, _omitFieldNames ? '' : 'maxSingleDuration')
+    ..a<$core.double>(8, _omitFieldNames ? '' : 'averageSingleDuration', $pb.PbFieldType.OD)
+    ..a<$core.double>(9, _omitFieldNames ? '' : 'maxDayTraffic', $pb.PbFieldType.OD)
+    ..a<$core.double>(10, _omitFieldNames ? '' : 'averageDayTraffic', $pb.PbFieldType.OD)
+    ..aOS(11, _omitFieldNames ? '' : 'expectedDays')
+    ..a<$core.double>(12, _omitFieldNames ? '' : 'totalTraffic', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TenantTrafficReport clone() => TenantTrafficReport()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TenantTrafficReport copyWith(void Function(TenantTrafficReport) updates) => super.copyWith((message) => updates(message as TenantTrafficReport)) as TenantTrafficReport;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TenantTrafficReport create() => TenantTrafficReport._();
+  TenantTrafficReport createEmptyInstance() => create();
+  static $pb.PbList<TenantTrafficReport> createRepeated() => $pb.PbList<TenantTrafficReport>();
+  @$core.pragma('dart2js:noInline')
+  static TenantTrafficReport getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TenantTrafficReport>(create);
+  static TenantTrafficReport? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get tenantId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set tenantId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasTenantId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTenantId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get tenantName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set tenantName($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTenantName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTenantName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get usedTraffic => $_getN(2);
+  @$pb.TagNumber(3)
+  set usedTraffic($core.double v) { $_setDouble(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasUsedTraffic() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearUsedTraffic() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get unusedTraffic => $_getN(3);
+  @$pb.TagNumber(4)
+  set unusedTraffic($core.double v) { $_setDouble(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasUnusedTraffic() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearUnusedTraffic() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get liveDurationTotal => $_getI64(4);
+  @$pb.TagNumber(5)
+  set liveDurationTotal($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasLiveDurationTotal() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLiveDurationTotal() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get liveCostTotal => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set liveCostTotal($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasLiveCostTotal() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLiveCostTotal() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get maxSingleDuration => $_getI64(6);
+  @$pb.TagNumber(7)
+  set maxSingleDuration($fixnum.Int64 v) { $_setInt64(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasMaxSingleDuration() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearMaxSingleDuration() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.double get averageSingleDuration => $_getN(7);
+  @$pb.TagNumber(8)
+  set averageSingleDuration($core.double v) { $_setDouble(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasAverageSingleDuration() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAverageSingleDuration() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.double get maxDayTraffic => $_getN(8);
+  @$pb.TagNumber(9)
+  set maxDayTraffic($core.double v) { $_setDouble(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasMaxDayTraffic() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearMaxDayTraffic() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.double get averageDayTraffic => $_getN(9);
+  @$pb.TagNumber(10)
+  set averageDayTraffic($core.double v) { $_setDouble(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasAverageDayTraffic() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearAverageDayTraffic() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get expectedDays => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set expectedDays($core.String v) { $_setString(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasExpectedDays() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearExpectedDays() => clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.double get totalTraffic => $_getN(11);
+  @$pb.TagNumber(12)
+  set totalTraffic($core.double v) { $_setDouble(11, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasTotalTraffic() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearTotalTraffic() => clearField(12);
+}
+
+class GetTenantTrafficTotalReportResponse extends $pb.GeneratedMessage {
+  factory GetTenantTrafficTotalReportResponse({
+    $0.BaseResponse? baseResp,
+    $core.Iterable<TenantTrafficReport>? reportList,
+    $0.PaginationResponse? pagination,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (reportList != null) {
+      $result.reportList.addAll(reportList);
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
+    }
+    return $result;
+  }
+  GetTenantTrafficTotalReportResponse._() : super();
+  factory GetTenantTrafficTotalReportResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetTenantTrafficTotalReportResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTenantTrafficTotalReportResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..pc<TenantTrafficReport>(2, _omitFieldNames ? '' : 'reportList', $pb.PbFieldType.PM, subBuilder: TenantTrafficReport.create)
+    ..aOM<$0.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetTenantTrafficTotalReportResponse clone() => GetTenantTrafficTotalReportResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetTenantTrafficTotalReportResponse copyWith(void Function(GetTenantTrafficTotalReportResponse) updates) => super.copyWith((message) => updates(message as GetTenantTrafficTotalReportResponse)) as GetTenantTrafficTotalReportResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTenantTrafficTotalReportResponse create() => GetTenantTrafficTotalReportResponse._();
+  GetTenantTrafficTotalReportResponse createEmptyInstance() => create();
+  static $pb.PbList<GetTenantTrafficTotalReportResponse> createRepeated() => $pb.PbList<GetTenantTrafficTotalReportResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetTenantTrafficTotalReportResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetTenantTrafficTotalReportResponse>(create);
+  static GetTenantTrafficTotalReportResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<TenantTrafficReport> get reportList => $_getList(1);
+
+  @$pb.TagNumber(100)
+  $0.PaginationResponse get pagination => $_getN(2);
+  @$pb.TagNumber(100)
+  set pagination($0.PaginationResponse v) { setField(100, v); }
+  @$pb.TagNumber(100)
+  $core.bool hasPagination() => $_has(2);
+  @$pb.TagNumber(100)
+  void clearPagination() => clearField(100);
+  @$pb.TagNumber(100)
+  $0.PaginationResponse ensurePagination() => $_ensure(2);
+}
+
 class QuickEvaluationDetail extends $pb.GeneratedMessage {
   factory QuickEvaluationDetail({
     $core.String? key,

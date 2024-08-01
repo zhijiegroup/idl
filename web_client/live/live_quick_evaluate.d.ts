@@ -188,6 +188,32 @@ export interface GetQuickEvaluationDetailRequest {
   room_id?: string;
 }
 
+export interface GetTenantTrafficTotalReportRequest {
+  base_request?: base.BaseRequest;
+  pagination?: base.PaginationRequest;
+}
+
+export interface TenantTrafficReport {
+  tenant_id?: string;
+  tenant_name?: string;
+  total_traffic?: number;
+  used_traffic?: number;
+  unused_traffic?: number;
+  live_duration_total?: string;
+  live_cost_total?: string;
+  max_single_duration?: string;
+  average_single_duration?: number;
+  max_day_traffic?: number;
+  average_day_traffic?: number;
+  expected_days?: string;
+}
+
+export interface GetTenantTrafficTotalReportResponse {
+  base_resp?: base.BaseResponse;
+  report_list?: Array<TenantTrafficReport>;
+  pagination?: base.PaginationResponse;
+}
+
 export interface QuickEvaluationDetail {
   key?: string;
   is_pass?: boolean;
