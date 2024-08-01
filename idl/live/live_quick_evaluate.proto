@@ -187,6 +187,32 @@ message GetQuickEvaluationDetailRequest {
     int64 room_id = 2;
 }
 
+message GetTenantTrafficTotalReportRequest {
+    base.BaseRequest base_request = 1;
+    base.PaginationRequest pagination = 100;
+}
+
+message TenantTrafficReport {
+    int64 tenant_id = 1;
+    string tenant_name = 2;
+    double total_traffic = 12;
+    double used_traffic = 3;
+    double unused_traffic = 4;
+    int64 live_duration_total = 5;
+    string live_cost_total = 6;
+    int64 max_single_duration = 7;
+    double average_single_duration = 8;
+    double max_day_traffic = 9;
+    double average_day_traffic = 10;
+    string expected_days = 11;
+}
+
+message GetTenantTrafficTotalReportResponse {
+    base.BaseResponse base_resp = 1;
+    repeated TenantTrafficReport report_list = 2;
+    base.PaginationResponse pagination = 100;
+}
+
 message QuickEvaluationDetail {
     string key = 1;
     bool is_pass = 2;

@@ -1412,7 +1412,9 @@ service glory_api {
   rpc GetQuickEvaluationDetail(GetQuickEvaluationDetailRequest) returns (GetQuickEvaluationDetailResponse) {
     option (api.get) = '/api/live/get_quick_evaluation_detail';
   }
-
+  rpc GetTenantTrafficTotalReport(GetTenantTrafficTotalReportRequest) returns (GetTenantTrafficTotalReportResponse) {
+    option (api.post) = '/api/live/get_tenant_traffic_total_report';
+  }
   // App 版本管理
   rpc CreateVersionLog(CreateVersionLogRequest) returns (CreateVersionLogResponse) {
     option (api.post) = '/api/app/create_version_log';
