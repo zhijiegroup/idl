@@ -33,4 +33,10 @@ public interface GetQuickEvaluationTotalReportRequestOrBuilder extends
    * @return The endTime.
    */
   long getEndTime();
+
+  /**
+   * <code>int64 standard_id = 4;</code>
+   * @return The standardId.
+   */
+  long getStandardId();
 }

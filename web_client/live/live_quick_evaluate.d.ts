@@ -112,6 +112,7 @@ export interface GetQuickEvaluationTotalReportRequest {
   base_request?: base.BaseRequest;
   begin_time?: string;
   end_time?: string;
+  standard_id?: string;
 }
 
 export interface QuickEvaluationTotalReportItemEntry {
@@ -147,6 +148,7 @@ export interface QuickEvaluationTotalReport {
 
 export interface GetQuickEvaluationTotalReportResponse {
   base_resp?: base.BaseResponse;
+  report?: QuickEvaluationTotalReport;
 }
 
 export interface PassDetail {

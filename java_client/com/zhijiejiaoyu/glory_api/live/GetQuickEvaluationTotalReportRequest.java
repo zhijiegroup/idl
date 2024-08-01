@@ -71,6 +71,11 @@ private static final long serialVersionUID = 0L;
             endTime = input.readInt64();
             break;
           }
+          case 32: {
+
+            standardId = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -151,6 +156,17 @@ private static final long serialVersionUID = 0L;
     return endTime ;
   }
 
+  public static final int STANDARD_ID_FIELD_NUMBER = 4;
+  private long standardId ;
+  /**
+   * <code>int64 standard_id = 4;</code>
+   * @return The standardId.
+   */
+  @java.lang.Override
+  public long getStandardId() {
+    return standardId ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -174,6 +190,9 @@ private static final long serialVersionUID = 0L;
     if (endTime != 0L) {
       output.writeInt64(3, endTime );
     }
+    if (standardId != 0L) {
+      output.writeInt64(4, standardId );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -194,6 +213,10 @@ private static final long serialVersionUID = 0L;
     if (endTime != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, endTime );
+    }
+    if (standardId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(4, standardId );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -219,6 +242,8 @@ private static final long serialVersionUID = 0L;
         != other.getBeginTime()) return false;
     if (getEndTime()
         != other.getEndTime()) return false;
+    if (getStandardId()
+        != other.getStandardId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -240,6 +265,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + END_TIME_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getEndTime());
+    hash = (37 * hash) + STANDARD_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getStandardId());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -383,6 +411,8 @@ private static final long serialVersionUID = 0L;
 
       endTime = 0L;
 
+      standardId = 0L;
+
       return this;
     }
 
@@ -416,6 +446,7 @@ private static final long serialVersionUID = 0L;
       }
       result.beginTime = beginTime ;
       result.endTime = endTime ;
+      result.standardId = standardId ;
       onBuilt();
       return result;
     }
@@ -472,6 +503,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getEndTime() != 0L) {
         setEndTime(other.getEndTime());
+      }
+      if (other.getStandardId() != 0L) {
+        setStandardId(other.getStandardId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -679,6 +713,37 @@ private static final long serialVersionUID = 0L;
     public Builder clearEndTime() {
       
       endTime = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long standardId ;
+    /**
+     * <code>int64 standard_id = 4;</code>
+     * @return The standardId.
+     */
+    @java.lang.Override
+    public long getStandardId() {
+      return standardId ;
+    }
+    /**
+     * <code>int64 standard_id = 4;</code>
+     * @param value The standardId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStandardId(long value) {
+      
+      standardId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 standard_id = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStandardId() {
+      
+      standardId = 0L;
       onChanged();
       return this;
     }
