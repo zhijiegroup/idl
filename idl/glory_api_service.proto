@@ -21,6 +21,7 @@ import "shop/freight_template.proto";
 import "shop/coupon.proto";
 import "shop/activity.proto";
 import "shop/bill.proto";
+import "shop/statistics.proto";
 import "seller/attachment.proto";
 import "seller/seller.proto";
 import "payment/payment.proto";
@@ -527,6 +528,12 @@ service glory_api {
   // 账单详情
   rpc GetShopBillDetail(GetShopBillDetailRequest) returns (GetShopBilDetailResponse) {
     option (api.post) = '/api/shop/get_bill_detail';
+  }
+
+  // shop statistics
+  // 店铺销售统计（统计数据与图表）
+  rpc ShopSalesStatistics(SalesStatsRequest) returns (SalesStatsResponse) {
+    option (api.post) = '/api/shop/statistics/sales';
   }
 
   // seller

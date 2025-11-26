@@ -1,0 +1,32 @@
+syntax = "proto3";
+package glory_api;
+option java_package = "com.zhijiejiaoyu.glory_api.shop";
+option java_multiple_files = true;
+
+import "base.proto";
+
+message SalesStatsRequest {
+  base.BaseRequest base_request = 1;
+  int64 shop_id = 2;
+  int64 start = 3; // unix seconds, inclusive
+  int64 end = 4;   // unix seconds, exclusive
+  string granularity = 5; // hour|day|week|month|quarter|year
+  string timezone = 6;    // optional timezone name
+  bool include_order_count = 7;
+}
+
+message SalesBucket {
+  int64 bucket_start_ts = 1;
+  int64 bucket_end_ts = 2;
+  int64 amount_cents = 3;
+  int64 order_count = 4;
+}
+
+message SalesStatsResponse {
+  base.BaseResponse base_resp = 1;
+  int64 total_amount_cents = 2;
+  int64 total_order_count = 3;
+  string granularity = 4;
+  repeated SalesBucket buckets = 5;
+}
+
