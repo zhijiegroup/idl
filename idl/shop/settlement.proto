@@ -1,0 +1,34 @@
+syntax = "proto3";
+package glory_api;
+option java_package = "com.zhijiejiaoyu.glory_api.shop";
+option java_multiple_files = true;
+
+import "base.proto";
+
+enum SettlementCycle {
+  WEEKLY = 0;
+  MONTHLY = 1;
+  QUARTERLY = 2;
+  YEARLY = 3;
+}
+
+message SetSettlementCycleRequest {
+  base.BaseRequest base_request = 1;
+  int64 shop_id = 2;
+  SettlementCycle cycle = 3;
+}
+
+message SetSettlementCycleResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+message GetSettlementCycleRequest {
+  base.BaseRequest base_request = 1;
+  int64 shop_id = 2;
+}
+
+message GetSettlementCycleResponse {
+  base.BaseResponse base_resp = 1;
+  SettlementCycle cycle = 2;
+}
+
