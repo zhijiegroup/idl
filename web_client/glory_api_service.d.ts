@@ -19,6 +19,8 @@ import * as freight_template from "./shop/freight_template";
 import * as coupon from "./shop/coupon";
 import * as activity from "./shop/activity";
 import * as bill from "./shop/bill";
+import * as statistics from "./shop/statistics";
+import * as settlement from "./shop/settlement";
 import * as attachment from "./seller/attachment";
 import * as seller from "./seller/seller";
 import * as payment from "./payment/payment";
@@ -81,6 +83,8 @@ export {
   coupon,
   activity,
   bill,
+  statistics,
+  settlement,
   attachment,
   seller,
   payment,
@@ -595,6 +599,23 @@ list the permissions that supported */
   GetShopBillDetail(
     request: bill.GetShopBillDetailRequest
   ): Promise<bill.GetShopBilDetailResponse>;
+
+  /** shop statistics
+店铺销售统计（统计数据与图表） */
+  ShopSalesStatistics(
+    request: statistics.SalesStatsRequest
+  ): Promise<statistics.SalesStatsResponse>;
+
+  /** settlement cycle
+设置店铺结算周期 */
+  SetSettlementCycle(
+    request: settlement.SetSettlementCycleRequest
+  ): Promise<settlement.SetSettlementCycleResponse>;
+
+  /** 获取店铺结算周期 */
+  GetSettlementCycle(
+    request: settlement.GetSettlementCycleRequest
+  ): Promise<settlement.GetSettlementCycleResponse>;
 
   /** seller */
   UploadAttachment(

@@ -21,6 +21,8 @@ import * as freight_template from "./shop/freight_template";
 import * as coupon from "./shop/coupon";
 import * as activity from "./shop/activity";
 import * as bill from "./shop/bill";
+import * as statistics from "./shop/statistics";
+import * as settlement from "./shop/settlement";
 import * as attachment from "./seller/attachment";
 import * as seller from "./seller/seller";
 import * as payment from "./payment/payment";
@@ -83,6 +85,8 @@ export {
   coupon,
   activity,
   bill,
+  statistics,
+  settlement,
   attachment,
   seller,
   payment,
@@ -1088,6 +1092,28 @@ export class glory_api {
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
+  }
+
+  ShopSalesStatistics(request) {
+    const uri = `${this.uriPrefix}/api/shop/statistics/sales`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  SetSettlementCycle(request) {
+    const uri = `${this.uriPrefix}/api/shop/set_settlement_cycle`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetSettlementCycle(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/shop/get_settlement_cycle${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
   UploadAttachment(request) {
