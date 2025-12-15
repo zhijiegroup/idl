@@ -6,10 +6,11 @@ import * as base from "../base";
 export { base };
 
 export enum SettlementCycle {
-  WEEKLY = 0,
-  MONTHLY = 1,
-  QUARTERLY = 2,
-  YEARLY = 3,
+  UNSET = 0,
+  WEEKLY = 1,
+  MONTHLY = 2,
+  QUARTERLY = 3,
+  YEARLY = 4,
 }
 
 export interface SetSettlementCycleRequest {

@@ -9,40 +9,48 @@ package com.zhijiejiaoyu.glory_api.shop;
 public enum SettlementCycle
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>WEEKLY = 0;</code>
+   * <code>UNSET = 0;</code>
    */
-  WEEKLY(0),
+  UNSET(0),
   /**
-   * <code>MONTHLY = 1;</code>
+   * <code>WEEKLY = 1;</code>
    */
-  MONTHLY(1),
+  WEEKLY(1),
   /**
-   * <code>QUARTERLY = 2;</code>
+   * <code>MONTHLY = 2;</code>
    */
-  QUARTERLY(2),
+  MONTHLY(2),
   /**
-   * <code>YEARLY = 3;</code>
+   * <code>QUARTERLY = 3;</code>
    */
-  YEARLY(3),
+  QUARTERLY(3),
+  /**
+   * <code>YEARLY = 4;</code>
+   */
+  YEARLY(4),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>WEEKLY = 0;</code>
+   * <code>UNSET = 0;</code>
    */
-  public static final int WEEKLY_VALUE = 0;
+  public static final int UNSET_VALUE = 0;
   /**
-   * <code>MONTHLY = 1;</code>
+   * <code>WEEKLY = 1;</code>
    */
-  public static final int MONTHLY_VALUE = 1;
+  public static final int WEEKLY_VALUE = 1;
   /**
-   * <code>QUARTERLY = 2;</code>
+   * <code>MONTHLY = 2;</code>
    */
-  public static final int QUARTERLY_VALUE = 2;
+  public static final int MONTHLY_VALUE = 2;
   /**
-   * <code>YEARLY = 3;</code>
+   * <code>QUARTERLY = 3;</code>
    */
-  public static final int YEARLY_VALUE = 3;
+  public static final int QUARTERLY_VALUE = 3;
+  /**
+   * <code>YEARLY = 4;</code>
+   */
+  public static final int YEARLY_VALUE = 4;
 
 
   public final int getNumber() {
@@ -69,10 +77,11 @@ public enum SettlementCycle
    */
   public static SettlementCycle forNumber(int value) {
     switch (value) {
-      case 0: return WEEKLY;
-      case 1: return MONTHLY;
-      case 2: return QUARTERLY;
-      case 3: return YEARLY;
+      case 0: return UNSET;
+      case 1: return WEEKLY;
+      case 2: return MONTHLY;
+      case 3: return QUARTERLY;
+      case 4: return YEARLY;
       default: return null;
     }
   }

@@ -44,7 +44,7 @@ class SetSettlementCycleRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetSettlementCycleRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'shopId')
-    ..e<SettlementCycle>(3, _omitFieldNames ? '' : 'cycle', $pb.PbFieldType.OE, defaultOrMaker: SettlementCycle.WEEKLY, valueOf: SettlementCycle.valueOf, enumValues: SettlementCycle.values)
+    ..e<SettlementCycle>(3, _omitFieldNames ? '' : 'cycle', $pb.PbFieldType.OE, defaultOrMaker: SettlementCycle.UNSET, valueOf: SettlementCycle.valueOf, enumValues: SettlementCycle.values)
     ..hasRequiredFields = false
   ;
 
@@ -237,7 +237,7 @@ class GetSettlementCycleResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSettlementCycleResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
-    ..e<SettlementCycle>(2, _omitFieldNames ? '' : 'cycle', $pb.PbFieldType.OE, defaultOrMaker: SettlementCycle.WEEKLY, valueOf: SettlementCycle.valueOf, enumValues: SettlementCycle.values)
+    ..e<SettlementCycle>(2, _omitFieldNames ? '' : 'cycle', $pb.PbFieldType.OE, defaultOrMaker: SettlementCycle.UNSET, valueOf: SettlementCycle.valueOf, enumValues: SettlementCycle.values)
     ..hasRequiredFields = false
   ;
 

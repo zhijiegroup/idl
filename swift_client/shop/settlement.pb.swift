@@ -22,38 +22,42 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 
 enum GloryApi_SettlementCycle: SwiftProtobuf.Enum, Swift.CaseIterable {
   typealias RawValue = Int
-  case weekly // = 0
-  case monthly // = 1
-  case quarterly // = 2
-  case yearly // = 3
+  case unset // = 0
+  case weekly // = 1
+  case monthly // = 2
+  case quarterly // = 3
+  case yearly // = 4
   case UNRECOGNIZED(Int)
 
   init() {
-    self = .weekly
+    self = .unset
   }
 
   init?(rawValue: Int) {
     switch rawValue {
-    case 0: self = .weekly
-    case 1: self = .monthly
-    case 2: self = .quarterly
-    case 3: self = .yearly
+    case 0: self = .unset
+    case 1: self = .weekly
+    case 2: self = .monthly
+    case 3: self = .quarterly
+    case 4: self = .yearly
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
 
   var rawValue: Int {
     switch self {
-    case .weekly: return 0
-    case .monthly: return 1
-    case .quarterly: return 2
-    case .yearly: return 3
+    case .unset: return 0
+    case .weekly: return 1
+    case .monthly: return 2
+    case .quarterly: return 3
+    case .yearly: return 4
     case .UNRECOGNIZED(let i): return i
     }
   }
 
   // The compiler won't synthesize support with the UNRECOGNIZED case.
   static let allCases: [GloryApi_SettlementCycle] = [
+    .unset,
     .weekly,
     .monthly,
     .quarterly,
@@ -78,7 +82,7 @@ struct GloryApi_SetSettlementCycleRequest: Sendable {
 
   var shopID: Int64 = 0
 
-  var cycle: GloryApi_SettlementCycle = .weekly
+  var cycle: GloryApi_SettlementCycle = .unset
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -145,7 +149,7 @@ struct GloryApi_GetSettlementCycleResponse: Sendable {
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
-  var cycle: GloryApi_SettlementCycle = .weekly
+  var cycle: GloryApi_SettlementCycle = .unset
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -159,7 +163,7 @@ struct GloryApi_GetSettlementCycleResponse: Sendable {
 fileprivate let _protobuf_package = "glory_api"
 
 extension GloryApi_SettlementCycle: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0WEEKLY\0\u{1}MONTHLY\0\u{1}QUARTERLY\0\u{1}YEARLY\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0UNSET\0\u{1}WEEKLY\0\u{1}MONTHLY\0\u{1}QUARTERLY\0\u{1}YEARLY\0")
 }
 
 extension GloryApi_SetSettlementCycleRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
@@ -191,7 +195,7 @@ extension GloryApi_SetSettlementCycleRequest: SwiftProtobuf.Message, SwiftProtob
     if self.shopID != 0 {
       try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 2)
     }
-    if self.cycle != .weekly {
+    if self.cycle != .unset {
       try visitor.visitSingularEnumField(value: self.cycle, fieldNumber: 3)
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -304,7 +308,7 @@ extension GloryApi_GetSettlementCycleResponse: SwiftProtobuf.Message, SwiftProto
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if self.cycle != .weekly {
+    if self.cycle != .unset {
       try visitor.visitSingularEnumField(value: self.cycle, fieldNumber: 2)
     }
     try unknownFields.traverse(visitor: &visitor)

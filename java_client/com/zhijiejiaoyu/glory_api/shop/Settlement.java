@@ -54,10 +54,10 @@ public final class Settlement {
       "shop_id\030\002 \001(\003\"n\n\032GetSettlementCycleRespo" +
       "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
       "se\022)\n\005cycle\030\002 \001(\0162\032.glory_api.Settlement" +
-      "Cycle*E\n\017SettlementCycle\022\n\n\006WEEKLY\020\000\022\013\n\007" +
-      "MONTHLY\020\001\022\r\n\tQUARTERLY\020\002\022\n\n\006YEARLY\020\003B#\n\037" +
-      "com.zhijiejiaoyu.glory_api.shopP\001b\006proto" +
-      "3"
+      "Cycle*P\n\017SettlementCycle\022\t\n\005UNSET\020\000\022\n\n\006W" +
+      "EEKLY\020\001\022\013\n\007MONTHLY\020\002\022\r\n\tQUARTERLY\020\003\022\n\n\006Y" +
+      "EARLY\020\004B#\n\037com.zhijiejiaoyu.glory_api.sh" +
+      "opP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

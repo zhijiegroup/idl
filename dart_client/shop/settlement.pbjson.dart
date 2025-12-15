@@ -17,17 +17,18 @@ import 'dart:typed_data' as $typed_data;
 const SettlementCycle$json = {
   '1': 'SettlementCycle',
   '2': [
-    {'1': 'WEEKLY', '2': 0},
-    {'1': 'MONTHLY', '2': 1},
-    {'1': 'QUARTERLY', '2': 2},
-    {'1': 'YEARLY', '2': 3},
+    {'1': 'UNSET', '2': 0},
+    {'1': 'WEEKLY', '2': 1},
+    {'1': 'MONTHLY', '2': 2},
+    {'1': 'QUARTERLY', '2': 3},
+    {'1': 'YEARLY', '2': 4},
   ],
 };
 
 /// Descriptor for `SettlementCycle`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List settlementCycleDescriptor = $convert.base64Decode(
-    'Cg9TZXR0bGVtZW50Q3ljbGUSCgoGV0VFS0xZEAASCwoHTU9OVEhMWRABEg0KCVFVQVJURVJMWR'
-    'ACEgoKBllFQVJMWRAD');
+    'Cg9TZXR0bGVtZW50Q3ljbGUSCQoFVU5TRVQQABIKCgZXRUVLTFkQARILCgdNT05USExZEAISDQ'
+    'oJUVVBUlRFUkxZEAMSCgoGWUVBUkxZEAQ=');
 
 @$core.Deprecated('Use setSettlementCycleRequestDescriptor instead')
 const SetSettlementCycleRequest$json = {

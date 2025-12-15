@@ -14,12 +14,14 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class SettlementCycle extends $pb.ProtobufEnum {
-  static const SettlementCycle WEEKLY = SettlementCycle._(0, _omitEnumNames ? '' : 'WEEKLY');
-  static const SettlementCycle MONTHLY = SettlementCycle._(1, _omitEnumNames ? '' : 'MONTHLY');
-  static const SettlementCycle QUARTERLY = SettlementCycle._(2, _omitEnumNames ? '' : 'QUARTERLY');
-  static const SettlementCycle YEARLY = SettlementCycle._(3, _omitEnumNames ? '' : 'YEARLY');
+  static const SettlementCycle UNSET = SettlementCycle._(0, _omitEnumNames ? '' : 'UNSET');
+  static const SettlementCycle WEEKLY = SettlementCycle._(1, _omitEnumNames ? '' : 'WEEKLY');
+  static const SettlementCycle MONTHLY = SettlementCycle._(2, _omitEnumNames ? '' : 'MONTHLY');
+  static const SettlementCycle QUARTERLY = SettlementCycle._(3, _omitEnumNames ? '' : 'QUARTERLY');
+  static const SettlementCycle YEARLY = SettlementCycle._(4, _omitEnumNames ? '' : 'YEARLY');
 
   static const $core.List<SettlementCycle> values = <SettlementCycle> [
+    UNSET,
     WEEKLY,
     MONTHLY,
     QUARTERLY,

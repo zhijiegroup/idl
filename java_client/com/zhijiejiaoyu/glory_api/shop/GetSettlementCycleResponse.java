@@ -162,7 +162,7 @@ private static final long serialVersionUID = 0L;
     if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
-    if (cycle != com.zhijiejiaoyu.glory_api.shop.SettlementCycle.WEEKLY.getNumber()) {
+    if (cycle != com.zhijiejiaoyu.glory_api.shop.SettlementCycle.UNSET.getNumber()) {
       output.writeEnum(2, cycle );
     }
     unknownFields.writeTo(output);
@@ -178,7 +178,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    if (cycle != com.zhijiejiaoyu.glory_api.shop.SettlementCycle.WEEKLY.getNumber()) {
+    if (cycle != com.zhijiejiaoyu.glory_api.shop.SettlementCycle.UNSET.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(2, cycle );
     }
