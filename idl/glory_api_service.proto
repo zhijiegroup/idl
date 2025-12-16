@@ -659,6 +659,11 @@ service glory_api {
     option (api.post) = '/api/currency/list';
   }
 
+  // 撤回成长币充值申请
+  rpc CancelRecharge(CancelRechargeRequest) returns (CancelRechargeResponse) {
+    option (api.post) = '/api/currency/cancel_recharge';
+  }
+
   rpc ListAccountOperation(ListAccountOperationRequest) returns (ListAccountOperationResponse) {
     option (api.post) = '/api/account/list_operation';
   }

@@ -80,4 +80,14 @@ message ListVirtualCurrencyResponse {
   base.PaginationResponse pagination = 100;
 }
 
+// 撤回成长币充值申请
+message CancelRechargeRequest {
+  base.BaseRequest base_request = 1;
+  int64 user_id = 2; // 申请撤回的用户ID
+  string reason = 3; // 撤回原因（可选）
+}
+
+message CancelRechargeResponse {
+  base.BaseResponse base_resp = 1;
+}
 
