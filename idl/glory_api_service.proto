@@ -537,6 +537,11 @@ service glory_api {
     option (api.post) = '/api/shop/statistics/sales';
   }
 
+  // 店铺结算统计（真实店铺已结算金额）
+  rpc ShopSettledAmount(SettledStatsRequest) returns (SettledStatsResponse) {
+    option (api.post) = '/api/shop/statistics/settled_amount';
+  }
+
   // settlement cycle
   // 设置店铺结算周期
   rpc SetSettlementCycle(SetSettlementCycleRequest) returns (SetSettlementCycleResponse) {

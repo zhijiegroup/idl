@@ -30,3 +30,15 @@ message SalesStatsResponse {
   repeated SalesBucket buckets = 5;
 }
 
+// 真实店铺已结算金额统计
+message SettledStatsRequest {
+  base.BaseRequest base_request = 1;
+  int64 shop_id = 2; // 可选：指定店铺ID，不传统计所有真实店铺
+  int64 start = 3;   // 可选：起始时间 unix秒（含）
+  int64 end = 4;     // 可选：结束时间 unix秒（不含）
+}
+
+message SettledStatsResponse {
+  base.BaseResponse base_resp = 1;
+  int64 total_amount_cents = 2; // 已结算账单总金额（单位：分）
+}
