@@ -79,6 +79,16 @@ public final class VirtualCurrencyOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_ListVirtualCurrencyResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_CancelRechargeRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_CancelRechargeRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_CancelRechargeResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_CancelRechargeResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -125,8 +135,12 @@ public final class VirtualCurrencyOuterClass {
       "e.BaseResponse\022=\n\025virtual_currency_info\030" +
       "\002 \003(\0132\036.glory_api.VirtualCurrencyInfo\022,\n" +
       "\npagination\030d \001(\0132\030.base.PaginationRespo" +
-      "nseB\'\n#com.zhijiejiaoyu.glory_api.curren" +
-      "cyP\001b\006proto3"
+      "nse\"a\n\025CancelRechargeRequest\022\'\n\014base_req" +
+      "uest\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007user_id" +
+      "\030\002 \001(\003\022\016\n\006reason\030\003 \001(\t\"?\n\026CancelRecharge" +
+      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
+      "esponseB\'\n#com.zhijiejiaoyu.glory_api.cu" +
+      "rrencyP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -211,6 +225,18 @@ public final class VirtualCurrencyOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListVirtualCurrencyResponse_descriptor,
         new java.lang.String[] { "BaseResp", "VirtualCurrencyInfo", "Pagination", });
+    internal_static_glory_api_CancelRechargeRequest_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_glory_api_CancelRechargeRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_CancelRechargeRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "UserId", "Reason", });
+    internal_static_glory_api_CancelRechargeResponse_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_glory_api_CancelRechargeResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_CancelRechargeResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }
 

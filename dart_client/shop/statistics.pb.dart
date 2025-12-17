@@ -346,6 +346,167 @@ class SalesStatsResponse extends $pb.GeneratedMessage {
   $core.List<SalesBucket> get buckets => $_getList(4);
 }
 
+/// 真实店铺已结算金额统计
+class SettledStatsRequest extends $pb.GeneratedMessage {
+  factory SettledStatsRequest({
+    $0.BaseRequest? baseRequest,
+    $fixnum.Int64? shopId,
+    $fixnum.Int64? start,
+    $fixnum.Int64? end,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (shopId != null) {
+      $result.shopId = shopId;
+    }
+    if (start != null) {
+      $result.start = start;
+    }
+    if (end != null) {
+      $result.end = end;
+    }
+    return $result;
+  }
+  SettledStatsRequest._() : super();
+  factory SettledStatsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SettledStatsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SettledStatsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'shopId')
+    ..aInt64(3, _omitFieldNames ? '' : 'start')
+    ..aInt64(4, _omitFieldNames ? '' : 'end')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SettledStatsRequest clone() => SettledStatsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SettledStatsRequest copyWith(void Function(SettledStatsRequest) updates) => super.copyWith((message) => updates(message as SettledStatsRequest)) as SettledStatsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SettledStatsRequest create() => SettledStatsRequest._();
+  SettledStatsRequest createEmptyInstance() => create();
+  static $pb.PbList<SettledStatsRequest> createRepeated() => $pb.PbList<SettledStatsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SettledStatsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SettledStatsRequest>(create);
+  static SettledStatsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get shopId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set shopId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasShopId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearShopId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get start => $_getI64(2);
+  @$pb.TagNumber(3)
+  set start($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasStart() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStart() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get end => $_getI64(3);
+  @$pb.TagNumber(4)
+  set end($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasEnd() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEnd() => clearField(4);
+}
+
+class SettledStatsResponse extends $pb.GeneratedMessage {
+  factory SettledStatsResponse({
+    $0.BaseResponse? baseResp,
+    $fixnum.Int64? totalAmountCents,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (totalAmountCents != null) {
+      $result.totalAmountCents = totalAmountCents;
+    }
+    return $result;
+  }
+  SettledStatsResponse._() : super();
+  factory SettledStatsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SettledStatsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SettledStatsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'totalAmountCents')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SettledStatsResponse clone() => SettledStatsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SettledStatsResponse copyWith(void Function(SettledStatsResponse) updates) => super.copyWith((message) => updates(message as SettledStatsResponse)) as SettledStatsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SettledStatsResponse create() => SettledStatsResponse._();
+  SettledStatsResponse createEmptyInstance() => create();
+  static $pb.PbList<SettledStatsResponse> createRepeated() => $pb.PbList<SettledStatsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SettledStatsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SettledStatsResponse>(create);
+  static SettledStatsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get totalAmountCents => $_getI64(1);
+  @$pb.TagNumber(2)
+  set totalAmountCents($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTotalAmountCents() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTotalAmountCents() => clearField(2);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

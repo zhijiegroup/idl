@@ -606,6 +606,11 @@ list the permissions that supported */
     request: statistics.SalesStatsRequest
   ): Promise<statistics.SalesStatsResponse>;
 
+  /** 店铺结算统计（真实店铺已结算金额） */
+  ShopSettledAmount(
+    request: statistics.SettledStatsRequest
+  ): Promise<statistics.SettledStatsResponse>;
+
   /** settlement cycle
 设置店铺结算周期 */
   SetSettlementCycle(
@@ -747,6 +752,11 @@ list the permissions that supported */
   ListVCurrency(
     request: virtual_currency.ListVirtualCurrencyRequest
   ): Promise<virtual_currency.ListVirtualCurrencyResponse>;
+
+  /** 撤回成长币充值申请 */
+  CancelRecharge(
+    request: virtual_currency.CancelRechargeRequest
+  ): Promise<virtual_currency.CancelRechargeResponse>;
 
   ListAccountOperation(
     request: account_operation.ListAccountOperationRequest

@@ -453,6 +453,9 @@ class glory_apiApi {
   $async.Future<$16.SalesStatsResponse> shopSalesStatistics($pb.ClientContext? ctx, $16.SalesStatsRequest request) =>
     _client.invoke<$16.SalesStatsResponse>(ctx, 'glory_api', 'ShopSalesStatistics', request, $16.SalesStatsResponse())
   ;
+  $async.Future<$16.SettledStatsResponse> shopSettledAmount($pb.ClientContext? ctx, $16.SettledStatsRequest request) =>
+    _client.invoke<$16.SettledStatsResponse>(ctx, 'glory_api', 'ShopSettledAmount', request, $16.SettledStatsResponse())
+  ;
   $async.Future<$17.SetSettlementCycleResponse> setSettlementCycle($pb.ClientContext? ctx, $17.SetSettlementCycleRequest request) =>
     _client.invoke<$17.SetSettlementCycleResponse>(ctx, 'glory_api', 'SetSettlementCycle', request, $17.SetSettlementCycleResponse())
   ;
@@ -554,6 +557,9 @@ class glory_apiApi {
   ;
   $async.Future<$25.ListVirtualCurrencyResponse> listVCurrency($pb.ClientContext? ctx, $25.ListVirtualCurrencyRequest request) =>
     _client.invoke<$25.ListVirtualCurrencyResponse>(ctx, 'glory_api', 'ListVCurrency', request, $25.ListVirtualCurrencyResponse())
+  ;
+  $async.Future<$25.CancelRechargeResponse> cancelRecharge($pb.ClientContext? ctx, $25.CancelRechargeRequest request) =>
+    _client.invoke<$25.CancelRechargeResponse>(ctx, 'glory_api', 'CancelRecharge', request, $25.CancelRechargeResponse())
   ;
   $async.Future<$26.ListAccountOperationResponse> listAccountOperation($pb.ClientContext? ctx, $26.ListAccountOperationRequest request) =>
     _client.invoke<$26.ListAccountOperationResponse>(ctx, 'glory_api', 'ListAccountOperation', request, $26.ListAccountOperationResponse())

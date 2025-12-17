@@ -29,6 +29,16 @@ public final class Statistics {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_SalesStatsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_SettledStatsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_SettledStatsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_SettledStatsResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_SettledStatsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -50,7 +60,12 @@ public final class Statistics {
       "resp\030\001 \001(\0132\022.base.BaseResponse\022\032\n\022total_" +
       "amount_cents\030\002 \001(\003\022\031\n\021total_order_count\030" +
       "\003 \001(\003\022\023\n\013granularity\030\004 \001(\t\022\'\n\007buckets\030\005 " +
-      "\003(\0132\026.glory_api.SalesBucketB#\n\037com.zhiji" +
+      "\003(\0132\026.glory_api.SalesBucket\"k\n\023SettledSt" +
+      "atsRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
+      "BaseRequest\022\017\n\007shop_id\030\002 \001(\003\022\r\n\005start\030\003 " +
+      "\001(\003\022\013\n\003end\030\004 \001(\003\"Y\n\024SettledStatsResponse" +
+      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022" +
+      "\032\n\022total_amount_cents\030\002 \001(\003B#\n\037com.zhiji" +
       "ejiaoyu.glory_api.shopP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -76,6 +91,18 @@ public final class Statistics {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_SalesStatsResponse_descriptor,
         new java.lang.String[] { "BaseResp", "TotalAmountCents", "TotalOrderCount", "Granularity", "Buckets", });
+    internal_static_glory_api_SettledStatsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_glory_api_SettledStatsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_SettledStatsRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "ShopId", "Start", "End", });
+    internal_static_glory_api_SettledStatsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_glory_api_SettledStatsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_SettledStatsResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "TotalAmountCents", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }
 

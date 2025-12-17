@@ -86,3 +86,16 @@ export interface ListVirtualCurrencyResponse {
   virtual_currency_info?: Array<VirtualCurrencyInfo>;
   pagination?: base.PaginationResponse;
 }
+
+/** 撤回成长币充值申请 */
+export interface CancelRechargeRequest {
+  base_request?: base.BaseRequest;
+  /** 申请撤回的用户ID */
+  user_id?: string;
+  /** 撤回原因（可选） */
+  reason?: string;
+}
+
+export interface CancelRechargeResponse {
+  base_resp?: base.BaseResponse;
+}

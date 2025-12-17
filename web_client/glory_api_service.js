@@ -1102,6 +1102,14 @@ export class glory_api {
     );
   }
 
+  ShopSettledAmount(request) {
+    const uri = `${this.uriPrefix}/api/shop/statistics/settled_amount`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   SetSettlementCycle(request) {
     const uri = `${this.uriPrefix}/api/shop/set_settlement_cycle`;
     const body = JSONbigint.stringify(request);
@@ -1354,6 +1362,14 @@ export class glory_api {
 
   ListVCurrency(request) {
     const uri = `${this.uriPrefix}/api/currency/list`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CancelRecharge(request) {
+    const uri = `${this.uriPrefix}/api/currency/cancel_recharge`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

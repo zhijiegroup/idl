@@ -206,6 +206,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$15.SettleBillResponse> settleShopBill($pb.ServerContext ctx, $15.SettleBillRequest request);
   $async.Future<$15.GetShopBilDetailResponse> getShopBillDetail($pb.ServerContext ctx, $15.GetShopBillDetailRequest request);
   $async.Future<$16.SalesStatsResponse> shopSalesStatistics($pb.ServerContext ctx, $16.SalesStatsRequest request);
+  $async.Future<$16.SettledStatsResponse> shopSettledAmount($pb.ServerContext ctx, $16.SettledStatsRequest request);
   $async.Future<$17.SetSettlementCycleResponse> setSettlementCycle($pb.ServerContext ctx, $17.SetSettlementCycleRequest request);
   $async.Future<$17.GetSettlementCycleResponse> getSettlementCycle($pb.ServerContext ctx, $17.GetSettlementCycleRequest request);
   $async.Future<$18.UploadAttachmentResponse> uploadAttachment($pb.ServerContext ctx, $18.UploadAttachmentRequest request);
@@ -240,6 +241,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$25.RechargeCurrencyInBatchesResponse> rechargeCurrencyInBatches($pb.ServerContext ctx, $25.RechargeCurrencyInBatchesRequest request);
   $async.Future<$25.GetVirtualCurrencyResponse> getVCurrency($pb.ServerContext ctx, $25.GetVirtualCurrencyRequest request);
   $async.Future<$25.ListVirtualCurrencyResponse> listVCurrency($pb.ServerContext ctx, $25.ListVirtualCurrencyRequest request);
+  $async.Future<$25.CancelRechargeResponse> cancelRecharge($pb.ServerContext ctx, $25.CancelRechargeRequest request);
   $async.Future<$26.ListAccountOperationResponse> listAccountOperation($pb.ServerContext ctx, $26.ListAccountOperationRequest request);
   $async.Future<$27.CreateRoomResponse> createRoom($pb.ServerContext ctx, $27.CreateRoomRequest request);
   $async.Future<$27.GetRoomResponse> getRoom($pb.ServerContext ctx, $27.GetRoomRequest request);
@@ -664,6 +666,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'SettleShopBill': return $15.SettleBillRequest();
       case 'GetShopBillDetail': return $15.GetShopBillDetailRequest();
       case 'ShopSalesStatistics': return $16.SalesStatsRequest();
+      case 'ShopSettledAmount': return $16.SettledStatsRequest();
       case 'SetSettlementCycle': return $17.SetSettlementCycleRequest();
       case 'GetSettlementCycle': return $17.GetSettlementCycleRequest();
       case 'UploadAttachment': return $18.UploadAttachmentRequest();
@@ -698,6 +701,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'RechargeCurrencyInBatches': return $25.RechargeCurrencyInBatchesRequest();
       case 'GetVCurrency': return $25.GetVirtualCurrencyRequest();
       case 'ListVCurrency': return $25.ListVirtualCurrencyRequest();
+      case 'CancelRecharge': return $25.CancelRechargeRequest();
       case 'ListAccountOperation': return $26.ListAccountOperationRequest();
       case 'CreateRoom': return $27.CreateRoomRequest();
       case 'GetRoom': return $27.GetRoomRequest();
@@ -1125,6 +1129,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'SettleShopBill': return this.settleShopBill(ctx, request as $15.SettleBillRequest);
       case 'GetShopBillDetail': return this.getShopBillDetail(ctx, request as $15.GetShopBillDetailRequest);
       case 'ShopSalesStatistics': return this.shopSalesStatistics(ctx, request as $16.SalesStatsRequest);
+      case 'ShopSettledAmount': return this.shopSettledAmount(ctx, request as $16.SettledStatsRequest);
       case 'SetSettlementCycle': return this.setSettlementCycle(ctx, request as $17.SetSettlementCycleRequest);
       case 'GetSettlementCycle': return this.getSettlementCycle(ctx, request as $17.GetSettlementCycleRequest);
       case 'UploadAttachment': return this.uploadAttachment(ctx, request as $18.UploadAttachmentRequest);
@@ -1159,6 +1164,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'RechargeCurrencyInBatches': return this.rechargeCurrencyInBatches(ctx, request as $25.RechargeCurrencyInBatchesRequest);
       case 'GetVCurrency': return this.getVCurrency(ctx, request as $25.GetVirtualCurrencyRequest);
       case 'ListVCurrency': return this.listVCurrency(ctx, request as $25.ListVirtualCurrencyRequest);
+      case 'CancelRecharge': return this.cancelRecharge(ctx, request as $25.CancelRechargeRequest);
       case 'ListAccountOperation': return this.listAccountOperation(ctx, request as $26.ListAccountOperationRequest);
       case 'CreateRoom': return this.createRoom(ctx, request as $27.CreateRoomRequest);
       case 'GetRoom': return this.getRoom(ctx, request as $27.GetRoomRequest);

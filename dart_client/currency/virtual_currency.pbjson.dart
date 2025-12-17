@@ -215,3 +215,32 @@ final $typed_data.Uint8List listVirtualCurrencyResponseDescriptor = $convert.bas
     'Lmdsb3J5X2FwaS5WaXJ0dWFsQ3VycmVuY3lJbmZvUhN2aXJ0dWFsQ3VycmVuY3lJbmZvEjgKCn'
     'BhZ2luYXRpb24YZCABKAsyGC5iYXNlLlBhZ2luYXRpb25SZXNwb25zZVIKcGFnaW5hdGlvbg==');
 
+@$core.Deprecated('Use cancelRechargeRequestDescriptor instead')
+const CancelRechargeRequest$json = {
+  '1': 'CancelRechargeRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 3, '10': 'userId'},
+    {'1': 'reason', '3': 3, '4': 1, '5': 9, '10': 'reason'},
+  ],
+};
+
+/// Descriptor for `CancelRechargeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List cancelRechargeRequestDescriptor = $convert.base64Decode(
+    'ChVDYW5jZWxSZWNoYXJnZVJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS5CYX'
+    'NlUmVxdWVzdFILYmFzZVJlcXVlc3QSFwoHdXNlcl9pZBgCIAEoA1IGdXNlcklkEhYKBnJlYXNv'
+    'bhgDIAEoCVIGcmVhc29u');
+
+@$core.Deprecated('Use cancelRechargeResponseDescriptor instead')
+const CancelRechargeResponse$json = {
+  '1': 'CancelRechargeResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `CancelRechargeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List cancelRechargeResponseDescriptor = $convert.base64Decode(
+    'ChZDYW5jZWxSZWNoYXJnZVJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQmFzZV'
+    'Jlc3BvbnNlUghiYXNlUmVzcA==');
+

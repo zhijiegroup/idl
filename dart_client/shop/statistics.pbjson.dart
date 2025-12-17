@@ -72,3 +72,35 @@ final $typed_data.Uint8List salesStatsResponseDescriptor = $convert.base64Decode
     '51bGFyaXR5GAQgASgJUgtncmFudWxhcml0eRIwCgdidWNrZXRzGAUgAygLMhYuZ2xvcnlfYXBp'
     'LlNhbGVzQnVja2V0UgdidWNrZXRz');
 
+@$core.Deprecated('Use settledStatsRequestDescriptor instead')
+const SettledStatsRequest$json = {
+  '1': 'SettledStatsRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'shop_id', '3': 2, '4': 1, '5': 3, '10': 'shopId'},
+    {'1': 'start', '3': 3, '4': 1, '5': 3, '10': 'start'},
+    {'1': 'end', '3': 4, '4': 1, '5': 3, '10': 'end'},
+  ],
+};
+
+/// Descriptor for `SettledStatsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List settledStatsRequestDescriptor = $convert.base64Decode(
+    'ChNTZXR0bGVkU3RhdHNSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2UuQmFzZV'
+    'JlcXVlc3RSC2Jhc2VSZXF1ZXN0EhcKB3Nob3BfaWQYAiABKANSBnNob3BJZBIUCgVzdGFydBgD'
+    'IAEoA1IFc3RhcnQSEAoDZW5kGAQgASgDUgNlbmQ=');
+
+@$core.Deprecated('Use settledStatsResponseDescriptor instead')
+const SettledStatsResponse$json = {
+  '1': 'SettledStatsResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'total_amount_cents', '3': 2, '4': 1, '5': 3, '10': 'totalAmountCents'},
+  ],
+};
+
+/// Descriptor for `SettledStatsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List settledStatsResponseDescriptor = $convert.base64Decode(
+    'ChRTZXR0bGVkU3RhdHNSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLkJhc2VSZX'
+    'Nwb25zZVIIYmFzZVJlc3ASLAoSdG90YWxfYW1vdW50X2NlbnRzGAIgASgDUhB0b3RhbEFtb3Vu'
+    'dENlbnRz');
+

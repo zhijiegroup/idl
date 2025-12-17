@@ -33,3 +33,20 @@ export interface SalesStatsResponse {
   granularity?: string;
   buckets?: Array<SalesBucket>;
 }
+
+/** 真实店铺已结算金额统计 */
+export interface SettledStatsRequest {
+  base_request?: base.BaseRequest;
+  /** 可选：指定店铺ID，不传统计所有真实店铺 */
+  shop_id?: string;
+  /** 可选：起始时间 unix秒（含） */
+  start?: string;
+  /** 可选：结束时间 unix秒（不含） */
+  end?: string;
+}
+
+export interface SettledStatsResponse {
+  base_resp?: base.BaseResponse;
+  /** 已结算账单总金额（单位：分） */
+  total_amount_cents?: string;
+}
