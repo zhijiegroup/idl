@@ -15,12 +15,12 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-struct GloryApi_Notification: Sendable {
+nonisolated struct GloryApi_Notification: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -46,7 +46,7 @@ struct GloryApi_Notification: Sendable {
   init() {}
 }
 
-struct GloryApi_NotificationCount: Sendable {
+nonisolated struct GloryApi_NotificationCount: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -56,11 +56,11 @@ struct GloryApi_NotificationCount: Sendable {
   var count: UInt32 = 0
 
   var latest: GloryApi_Notification {
-    get {return _latest ?? GloryApi_Notification()}
+    get {_latest ?? GloryApi_Notification()}
     set {_latest = newValue}
   }
   /// Returns true if `latest` has been explicitly set.
-  var hasLatest: Bool {return self._latest != nil}
+  var hasLatest: Bool {self._latest != nil}
   /// Clears the value of `latest`. Subsequent reads from it will return its default value.
   mutating func clearLatest() {self._latest = nil}
 
@@ -71,28 +71,28 @@ struct GloryApi_NotificationCount: Sendable {
   fileprivate var _latest: GloryApi_Notification? = nil
 }
 
-struct GloryApi_ListNotificationRequest: Sendable {
+nonisolated struct GloryApi_ListNotificationRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var notificationType: Int32 = 0
 
   var pagination: Base_PaginationRequest {
-    get {return _pagination ?? Base_PaginationRequest()}
+    get {_pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -104,28 +104,28 @@ struct GloryApi_ListNotificationRequest: Sendable {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListNotificationResponse: Sendable {
+nonisolated struct GloryApi_ListNotificationResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var notificationList: [GloryApi_Notification] = []
 
   var pagination: Base_PaginationResponse {
-    get {return _pagination ?? Base_PaginationResponse()}
+    get {_pagination ?? Base_PaginationResponse()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -137,17 +137,17 @@ struct GloryApi_ListNotificationResponse: Sendable {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_ReadNotificationRequest: Sendable {
+nonisolated struct GloryApi_ReadNotificationRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -164,17 +164,17 @@ struct GloryApi_ReadNotificationRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ReadNotificationResponse: Sendable {
+nonisolated struct GloryApi_ReadNotificationResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -185,17 +185,17 @@ struct GloryApi_ReadNotificationResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_DeleteNotificationRequest: Sendable {
+nonisolated struct GloryApi_DeleteNotificationRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -208,17 +208,17 @@ struct GloryApi_DeleteNotificationRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteNotificationResponse: Sendable {
+nonisolated struct GloryApi_DeleteNotificationResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -229,17 +229,17 @@ struct GloryApi_DeleteNotificationResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_CountNotificationRequest: Sendable {
+nonisolated struct GloryApi_CountNotificationRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -254,17 +254,17 @@ struct GloryApi_CountNotificationRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CountNotificationResponse: Sendable {
+nonisolated struct GloryApi_CountNotificationResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -277,17 +277,17 @@ struct GloryApi_CountNotificationResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_TestNotificationRequest: Sendable {
+nonisolated struct GloryApi_TestNotificationRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -312,17 +312,17 @@ struct GloryApi_TestNotificationRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_TestNotificationResponse: Sendable {
+nonisolated struct GloryApi_TestNotificationResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -335,9 +335,9 @@ struct GloryApi_TestNotificationResponse: Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "glory_api"
+fileprivate nonisolated let _protobuf_package = "glory_api"
 
-extension GloryApi_Notification: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_Notification: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Notification"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}notification_id\0\u{3}notification_type\0\u{3}notification_status\0\u{3}notification_result\0\u{3}notification_title\0\u{3}notification_content\0\u{3}created_by\0\u{3}created_at\0")
 
@@ -402,7 +402,7 @@ extension GloryApi_Notification: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 }
 
-extension GloryApi_NotificationCount: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_NotificationCount: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".NotificationCount"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}type\0\u{1}count\0\u{1}latest\0")
 
@@ -446,7 +446,7 @@ extension GloryApi_NotificationCount: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension GloryApi_ListNotificationRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListNotificationRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListNotificationRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}notification_type\0\u{2}b\u{1}pagination\0")
 
@@ -490,7 +490,7 @@ extension GloryApi_ListNotificationRequest: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension GloryApi_ListNotificationResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListNotificationResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListNotificationResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}notification_list\0\u{2}b\u{1}pagination\0")
 
@@ -534,7 +534,7 @@ extension GloryApi_ListNotificationResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension GloryApi_ReadNotificationRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ReadNotificationRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ReadNotificationRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}notification_id\0\u{3}notification_type\0\u{1}all\0")
 
@@ -583,7 +583,7 @@ extension GloryApi_ReadNotificationRequest: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension GloryApi_ReadNotificationResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ReadNotificationResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ReadNotificationResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 
@@ -617,7 +617,7 @@ extension GloryApi_ReadNotificationResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension GloryApi_DeleteNotificationRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_DeleteNotificationRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DeleteNotificationRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}notification_ids\0")
 
@@ -656,7 +656,7 @@ extension GloryApi_DeleteNotificationRequest: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension GloryApi_DeleteNotificationResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_DeleteNotificationResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DeleteNotificationResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 
@@ -690,7 +690,7 @@ extension GloryApi_DeleteNotificationResponse: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension GloryApi_CountNotificationRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_CountNotificationRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CountNotificationRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{1}notify\0\u{1}latest\0")
 
@@ -734,7 +734,7 @@ extension GloryApi_CountNotificationRequest: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension GloryApi_CountNotificationResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_CountNotificationResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CountNotificationResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{1}count\0")
 
@@ -773,7 +773,7 @@ extension GloryApi_CountNotificationResponse: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension GloryApi_TestNotificationRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_TestNotificationRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".TestNotificationRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}user_id\0\u{3}link_id\0\u{3}notification_type\0\u{3}notification_result\0\u{3}notification_content\0\u{1}intValue\0\u{1}strValue\0")
 
@@ -842,7 +842,7 @@ extension GloryApi_TestNotificationRequest: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension GloryApi_TestNotificationResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_TestNotificationResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".TestNotificationResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 

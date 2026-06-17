@@ -15,23 +15,23 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
 /// NOTE: class 改为 clas 为了和java的class关键字不冲突
-struct GloryApi_GetEvaluateSelectorRequest: Sendable {
+nonisolated struct GloryApi_GetEvaluateSelectorRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -42,17 +42,17 @@ struct GloryApi_GetEvaluateSelectorRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetEvaluateSelectorResponse: Sendable {
+nonisolated struct GloryApi_GetEvaluateSelectorResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -67,7 +67,7 @@ struct GloryApi_GetEvaluateSelectorResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_EvaluateRoom: Sendable {
+nonisolated struct GloryApi_EvaluateRoom: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -101,7 +101,7 @@ struct GloryApi_EvaluateRoom: Sendable {
   init() {}
 }
 
-struct GloryApi_EvaluateData: Sendable {
+nonisolated struct GloryApi_EvaluateData: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -121,17 +121,17 @@ struct GloryApi_EvaluateData: Sendable {
   init() {}
 }
 
-struct GloryApi_ListPersonalEvaluateRequest: Sendable {
+nonisolated struct GloryApi_ListPersonalEvaluateRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -141,11 +141,11 @@ struct GloryApi_ListPersonalEvaluateRequest: Sendable {
   var evaluationType: String = String()
 
   var pagination: Base_PaginationRequest {
-    get {return _pagination ?? Base_PaginationRequest()}
+    get {_pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -157,35 +157,35 @@ struct GloryApi_ListPersonalEvaluateRequest: Sendable {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListPersonalEvaluateResponse: Sendable {
+nonisolated struct GloryApi_ListPersonalEvaluateResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var evaluateData: GloryApi_EvaluateData {
-    get {return _evaluateData ?? GloryApi_EvaluateData()}
+    get {_evaluateData ?? GloryApi_EvaluateData()}
     set {_evaluateData = newValue}
   }
   /// Returns true if `evaluateData` has been explicitly set.
-  var hasEvaluateData: Bool {return self._evaluateData != nil}
+  var hasEvaluateData: Bool {self._evaluateData != nil}
   /// Clears the value of `evaluateData`. Subsequent reads from it will return its default value.
   mutating func clearEvaluateData() {self._evaluateData = nil}
 
   var pagination: Base_PaginationResponse {
-    get {return _pagination ?? Base_PaginationResponse()}
+    get {_pagination ?? Base_PaginationResponse()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -198,7 +198,7 @@ struct GloryApi_ListPersonalEvaluateResponse: Sendable {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_EvaluateSubOption: Sendable {
+nonisolated struct GloryApi_EvaluateSubOption: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -218,7 +218,7 @@ struct GloryApi_EvaluateSubOption: Sendable {
   init() {}
 }
 
-struct GloryApi_EvaluateDetail: Sendable {
+nonisolated struct GloryApi_EvaluateDetail: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -238,7 +238,7 @@ struct GloryApi_EvaluateDetail: Sendable {
   init() {}
 }
 
-struct GloryApi_ProductProfession: Sendable {
+nonisolated struct GloryApi_ProductProfession: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -254,7 +254,7 @@ struct GloryApi_ProductProfession: Sendable {
   init() {}
 }
 
-struct GloryApi_Feedback: Sendable {
+nonisolated struct GloryApi_Feedback: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -272,7 +272,7 @@ struct GloryApi_Feedback: Sendable {
   init() {}
 }
 
-struct GloryApi_AiResult: Sendable {
+nonisolated struct GloryApi_AiResult: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -282,11 +282,11 @@ struct GloryApi_AiResult: Sendable {
   var roomID: Int64 = 0
 
   var feedback: GloryApi_Feedback {
-    get {return _feedback ?? GloryApi_Feedback()}
+    get {_feedback ?? GloryApi_Feedback()}
     set {_feedback = newValue}
   }
   /// Returns true if `feedback` has been explicitly set.
-  var hasFeedback: Bool {return self._feedback != nil}
+  var hasFeedback: Bool {self._feedback != nil}
   /// Clears the value of `feedback`. Subsequent reads from it will return its default value.
   mutating func clearFeedback() {self._feedback = nil}
 
@@ -301,28 +301,28 @@ struct GloryApi_AiResult: Sendable {
   fileprivate var _feedback: GloryApi_Feedback? = nil
 }
 
-struct GloryApi_GetEvaluateDetailRequest: Sendable {
+nonisolated struct GloryApi_GetEvaluateDetailRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var roomID: Int64 = 0
 
   var pagination: Base_PaginationRequest {
-    get {return _pagination ?? Base_PaginationRequest()}
+    get {_pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -334,108 +334,108 @@ struct GloryApi_GetEvaluateDetailRequest: Sendable {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_GetEvaluateDetailResponse: @unchecked Sendable {
+nonisolated struct GloryApi_GetEvaluateDetailResponse: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _storage._baseResp ?? Base_BaseResponse()}
+    get {_storage._baseResp ?? Base_BaseResponse()}
     set {_uniqueStorage()._baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return _storage._baseResp != nil}
+  var hasBaseResp: Bool {_storage._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {_uniqueStorage()._baseResp = nil}
 
   /// temp：暂存 submit: 提交  template：仅模版数据
   var type: String {
-    get {return _storage._type}
+    get {_storage._type}
     set {_uniqueStorage()._type = newValue}
   }
 
   var evaluateID: Int64 {
-    get {return _storage._evaluateID}
+    get {_storage._evaluateID}
     set {_uniqueStorage()._evaluateID = newValue}
   }
 
   var templateID: Int64 {
-    get {return _storage._templateID}
+    get {_storage._templateID}
     set {_uniqueStorage()._templateID = newValue}
   }
 
   var userID: Int64 {
-    get {return _storage._userID}
+    get {_storage._userID}
     set {_uniqueStorage()._userID = newValue}
   }
 
   var extraScore: Double {
-    get {return _storage._extraScore}
+    get {_storage._extraScore}
     set {_uniqueStorage()._extraScore = newValue}
   }
 
   var extraComment: String {
-    get {return _storage._extraComment}
+    get {_storage._extraComment}
     set {_uniqueStorage()._extraComment = newValue}
   }
 
   var zeroComment: String {
-    get {return _storage._zeroComment}
+    get {_storage._zeroComment}
     set {_uniqueStorage()._zeroComment = newValue}
   }
 
   var score: Double {
-    get {return _storage._score}
+    get {_storage._score}
     set {_uniqueStorage()._score = newValue}
   }
 
   var aiFeedback: String {
-    get {return _storage._aiFeedback}
+    get {_storage._aiFeedback}
     set {_uniqueStorage()._aiFeedback = newValue}
   }
 
   var baseline: Bool {
-    get {return _storage._baseline}
+    get {_storage._baseline}
     set {_uniqueStorage()._baseline = newValue}
   }
 
   var aiFeedbackID: Int64 {
-    get {return _storage._aiFeedbackID}
+    get {_storage._aiFeedbackID}
     set {_uniqueStorage()._aiFeedbackID = newValue}
   }
 
   var createdUser: String {
-    get {return _storage._createdUser}
+    get {_storage._createdUser}
     set {_uniqueStorage()._createdUser = newValue}
   }
 
   var anchor: String {
-    get {return _storage._anchor}
+    get {_storage._anchor}
     set {_uniqueStorage()._anchor = newValue}
   }
 
   var liveStartTime: Int64 {
-    get {return _storage._liveStartTime}
+    get {_storage._liveStartTime}
     set {_uniqueStorage()._liveStartTime = newValue}
   }
 
   var liveEndTime: Int64 {
-    get {return _storage._liveEndTime}
+    get {_storage._liveEndTime}
     set {_uniqueStorage()._liveEndTime = newValue}
   }
 
   var isUseAi: Bool {
-    get {return _storage._isUseAi}
+    get {_storage._isUseAi}
     set {_uniqueStorage()._isUseAi = newValue}
   }
 
   var aiResult: [GloryApi_AiResult] {
-    get {return _storage._aiResult}
+    get {_storage._aiResult}
     set {_uniqueStorage()._aiResult = newValue}
   }
 
   var detail: [GloryApi_EvaluateDetail] {
-    get {return _storage._detail}
+    get {_storage._detail}
     set {_uniqueStorage()._detail = newValue}
   }
 
@@ -446,17 +446,17 @@ struct GloryApi_GetEvaluateDetailResponse: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct GloryApi_SubmitEvaluateRequest: Sendable {
+nonisolated struct GloryApi_SubmitEvaluateRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -495,17 +495,17 @@ struct GloryApi_SubmitEvaluateRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_SubmitEvaluateResponse: Sendable {
+nonisolated struct GloryApi_SubmitEvaluateResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -516,17 +516,17 @@ struct GloryApi_SubmitEvaluateResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_SubmitUserAttitudeForAIResultRequest: Sendable {
+nonisolated struct GloryApi_SubmitUserAttitudeForAIResultRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -541,17 +541,17 @@ struct GloryApi_SubmitUserAttitudeForAIResultRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_SubmitUserAttitudeForAIResultResponse: Sendable {
+nonisolated struct GloryApi_SubmitUserAttitudeForAIResultResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -562,7 +562,7 @@ struct GloryApi_SubmitUserAttitudeForAIResultResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_UnevaluatedRoom: Sendable {
+nonisolated struct GloryApi_UnevaluatedRoom: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -592,26 +592,26 @@ struct GloryApi_UnevaluatedRoom: Sendable {
   init() {}
 }
 
-struct GloryApi_ListUnevaluatedRoomRequest: Sendable {
+nonisolated struct GloryApi_ListUnevaluatedRoomRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var pagination: Base_PaginationRequest {
-    get {return _pagination ?? Base_PaginationRequest()}
+    get {_pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -632,17 +632,17 @@ struct GloryApi_ListUnevaluatedRoomRequest: Sendable {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListUnevaluatedRoomResponse: Sendable {
+nonisolated struct GloryApi_ListUnevaluatedRoomResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -651,11 +651,11 @@ struct GloryApi_ListUnevaluatedRoomResponse: Sendable {
   var unevaluatedRoom: [GloryApi_UnevaluatedRoom] = []
 
   var pagination: Base_PaginationResponse {
-    get {return _pagination ?? Base_PaginationResponse()}
+    get {_pagination ?? Base_PaginationResponse()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -667,7 +667,7 @@ struct GloryApi_ListUnevaluatedRoomResponse: Sendable {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_UserLiveData: Sendable {
+nonisolated struct GloryApi_UserLiveData: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -693,17 +693,17 @@ struct GloryApi_UserLiveData: Sendable {
   init() {}
 }
 
-struct GloryApi_ListStudentEvalutionsRequest: Sendable {
+nonisolated struct GloryApi_ListStudentEvalutionsRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -714,11 +714,11 @@ struct GloryApi_ListStudentEvalutionsRequest: Sendable {
   var clas: String = String()
 
   var pagination: Base_PaginationRequest {
-    get {return _pagination ?? Base_PaginationRequest()}
+    get {_pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -730,28 +730,28 @@ struct GloryApi_ListStudentEvalutionsRequest: Sendable {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListStudentEvalutionsResponse: Sendable {
+nonisolated struct GloryApi_ListStudentEvalutionsResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var liveData: [GloryApi_UserLiveData] = []
 
   var pagination: Base_PaginationResponse {
-    get {return _pagination ?? Base_PaginationResponse()}
+    get {_pagination ?? Base_PaginationResponse()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -763,17 +763,17 @@ struct GloryApi_ListStudentEvalutionsResponse: Sendable {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_IgnoreLiveEvaluationRequest: Sendable {
+nonisolated struct GloryApi_IgnoreLiveEvaluationRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -786,17 +786,17 @@ struct GloryApi_IgnoreLiveEvaluationRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_IgnoreLiveEvaluationResponse: Sendable {
+nonisolated struct GloryApi_IgnoreLiveEvaluationResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -807,17 +807,17 @@ struct GloryApi_IgnoreLiveEvaluationResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_RegenerationAiFeedbackRequest: Sendable {
+nonisolated struct GloryApi_RegenerationAiFeedbackRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -830,17 +830,17 @@ struct GloryApi_RegenerationAiFeedbackRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_RegenerationAiFeedbackResponse: Sendable {
+nonisolated struct GloryApi_RegenerationAiFeedbackResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -851,7 +851,7 @@ struct GloryApi_RegenerationAiFeedbackResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_LiveRankDetail: Sendable {
+nonisolated struct GloryApi_LiveRankDetail: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -871,7 +871,7 @@ struct GloryApi_LiveRankDetail: Sendable {
   init() {}
 }
 
-struct GloryApi_LiveRankMine: Sendable {
+nonisolated struct GloryApi_LiveRankMine: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -893,7 +893,7 @@ struct GloryApi_LiveRankMine: Sendable {
   init() {}
 }
 
-struct GloryApi_LiveRank: Sendable {
+nonisolated struct GloryApi_LiveRank: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -901,11 +901,11 @@ struct GloryApi_LiveRank: Sendable {
   var rankList: [GloryApi_LiveRankDetail] = []
 
   var mine: GloryApi_LiveRankMine {
-    get {return _mine ?? GloryApi_LiveRankMine()}
+    get {_mine ?? GloryApi_LiveRankMine()}
     set {_mine = newValue}
   }
   /// Returns true if `mine` has been explicitly set.
-  var hasMine: Bool {return self._mine != nil}
+  var hasMine: Bool {self._mine != nil}
   /// Clears the value of `mine`. Subsequent reads from it will return its default value.
   mutating func clearMine() {self._mine = nil}
 
@@ -916,7 +916,7 @@ struct GloryApi_LiveRank: Sendable {
   fileprivate var _mine: GloryApi_LiveRankMine? = nil
 }
 
-struct GloryApi_ShopRankDetail: Sendable {
+nonisolated struct GloryApi_ShopRankDetail: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -932,7 +932,7 @@ struct GloryApi_ShopRankDetail: Sendable {
   init() {}
 }
 
-struct GloryApi_ShopRankMine: Sendable {
+nonisolated struct GloryApi_ShopRankMine: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -950,7 +950,7 @@ struct GloryApi_ShopRankMine: Sendable {
   init() {}
 }
 
-struct GloryApi_ShopRank: Sendable {
+nonisolated struct GloryApi_ShopRank: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -958,11 +958,11 @@ struct GloryApi_ShopRank: Sendable {
   var rankList: [GloryApi_ShopRankDetail] = []
 
   var mine: GloryApi_ShopRankMine {
-    get {return _mine ?? GloryApi_ShopRankMine()}
+    get {_mine ?? GloryApi_ShopRankMine()}
     set {_mine = newValue}
   }
   /// Returns true if `mine` has been explicitly set.
-  var hasMine: Bool {return self._mine != nil}
+  var hasMine: Bool {self._mine != nil}
   /// Clears the value of `mine`. Subsequent reads from it will return its default value.
   mutating func clearMine() {self._mine = nil}
 
@@ -973,7 +973,7 @@ struct GloryApi_ShopRank: Sendable {
   fileprivate var _mine: GloryApi_ShopRankMine? = nil
 }
 
-struct GloryApi_ProductRankDetail: Sendable {
+nonisolated struct GloryApi_ProductRankDetail: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -993,7 +993,7 @@ struct GloryApi_ProductRankDetail: Sendable {
   init() {}
 }
 
-struct GloryApi_ProductRankMine: Sendable {
+nonisolated struct GloryApi_ProductRankMine: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1015,7 +1015,7 @@ struct GloryApi_ProductRankMine: Sendable {
   init() {}
 }
 
-struct GloryApi_ProductRank: Sendable {
+nonisolated struct GloryApi_ProductRank: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1023,11 +1023,11 @@ struct GloryApi_ProductRank: Sendable {
   var rankList: [GloryApi_ProductRankDetail] = []
 
   var mine: GloryApi_ProductRankMine {
-    get {return _mine ?? GloryApi_ProductRankMine()}
+    get {_mine ?? GloryApi_ProductRankMine()}
     set {_mine = newValue}
   }
   /// Returns true if `mine` has been explicitly set.
-  var hasMine: Bool {return self._mine != nil}
+  var hasMine: Bool {self._mine != nil}
   /// Clears the value of `mine`. Subsequent reads from it will return its default value.
   mutating func clearMine() {self._mine = nil}
 
@@ -1038,7 +1038,7 @@ struct GloryApi_ProductRank: Sendable {
   fileprivate var _mine: GloryApi_ProductRankMine? = nil
 }
 
-struct GloryApi_LiveLikeRankDetail: Sendable {
+nonisolated struct GloryApi_LiveLikeRankDetail: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1058,7 +1058,7 @@ struct GloryApi_LiveLikeRankDetail: Sendable {
   init() {}
 }
 
-struct GloryApi_LiveLikeRankMine: Sendable {
+nonisolated struct GloryApi_LiveLikeRankMine: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1080,7 +1080,7 @@ struct GloryApi_LiveLikeRankMine: Sendable {
   init() {}
 }
 
-struct GloryApi_LiveLikeRank: Sendable {
+nonisolated struct GloryApi_LiveLikeRank: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1088,11 +1088,11 @@ struct GloryApi_LiveLikeRank: Sendable {
   var rankList: [GloryApi_LiveLikeRankDetail] = []
 
   var mine: GloryApi_LiveLikeRankMine {
-    get {return _mine ?? GloryApi_LiveLikeRankMine()}
+    get {_mine ?? GloryApi_LiveLikeRankMine()}
     set {_mine = newValue}
   }
   /// Returns true if `mine` has been explicitly set.
-  var hasMine: Bool {return self._mine != nil}
+  var hasMine: Bool {self._mine != nil}
   /// Clears the value of `mine`. Subsequent reads from it will return its default value.
   mutating func clearMine() {self._mine = nil}
 
@@ -1103,7 +1103,7 @@ struct GloryApi_LiveLikeRank: Sendable {
   fileprivate var _mine: GloryApi_LiveLikeRankMine? = nil
 }
 
-struct GloryApi_LiveOrderRankDetail: Sendable {
+nonisolated struct GloryApi_LiveOrderRankDetail: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1123,7 +1123,7 @@ struct GloryApi_LiveOrderRankDetail: Sendable {
   init() {}
 }
 
-struct GloryApi_LiveOrderRankMine: Sendable {
+nonisolated struct GloryApi_LiveOrderRankMine: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1145,7 +1145,7 @@ struct GloryApi_LiveOrderRankMine: Sendable {
   init() {}
 }
 
-struct GloryApi_LiveOrderRank: Sendable {
+nonisolated struct GloryApi_LiveOrderRank: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1153,11 +1153,11 @@ struct GloryApi_LiveOrderRank: Sendable {
   var rankList: [GloryApi_LiveOrderRankDetail] = []
 
   var mine: GloryApi_LiveOrderRankMine {
-    get {return _mine ?? GloryApi_LiveOrderRankMine()}
+    get {_mine ?? GloryApi_LiveOrderRankMine()}
     set {_mine = newValue}
   }
   /// Returns true if `mine` has been explicitly set.
-  var hasMine: Bool {return self._mine != nil}
+  var hasMine: Bool {self._mine != nil}
   /// Clears the value of `mine`. Subsequent reads from it will return its default value.
   mutating func clearMine() {self._mine = nil}
 
@@ -1168,7 +1168,7 @@ struct GloryApi_LiveOrderRank: Sendable {
   fileprivate var _mine: GloryApi_LiveOrderRankMine? = nil
 }
 
-struct GloryApi_LiveEvaluationRankDetail: Sendable {
+nonisolated struct GloryApi_LiveEvaluationRankDetail: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1188,7 +1188,7 @@ struct GloryApi_LiveEvaluationRankDetail: Sendable {
   init() {}
 }
 
-struct GloryApi_LiveEvaluationRankMine: Sendable {
+nonisolated struct GloryApi_LiveEvaluationRankMine: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1210,7 +1210,7 @@ struct GloryApi_LiveEvaluationRankMine: Sendable {
   init() {}
 }
 
-struct GloryApi_LiveEvaluationRank: Sendable {
+nonisolated struct GloryApi_LiveEvaluationRank: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1218,11 +1218,11 @@ struct GloryApi_LiveEvaluationRank: Sendable {
   var rankList: [GloryApi_LiveEvaluationRankDetail] = []
 
   var mine: GloryApi_LiveEvaluationRankMine {
-    get {return _mine ?? GloryApi_LiveEvaluationRankMine()}
+    get {_mine ?? GloryApi_LiveEvaluationRankMine()}
     set {_mine = newValue}
   }
   /// Returns true if `mine` has been explicitly set.
-  var hasMine: Bool {return self._mine != nil}
+  var hasMine: Bool {self._mine != nil}
   /// Clears the value of `mine`. Subsequent reads from it will return its default value.
   mutating func clearMine() {self._mine = nil}
 
@@ -1233,17 +1233,17 @@ struct GloryApi_LiveEvaluationRank: Sendable {
   fileprivate var _mine: GloryApi_LiveEvaluationRankMine? = nil
 }
 
-struct GloryApi_GetRankRequest: Sendable {
+nonisolated struct GloryApi_GetRankRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -1262,71 +1262,71 @@ struct GloryApi_GetRankRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetRankResponse: @unchecked Sendable {
+nonisolated struct GloryApi_GetRankResponse: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _storage._baseResp ?? Base_BaseResponse()}
+    get {_storage._baseResp ?? Base_BaseResponse()}
     set {_uniqueStorage()._baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return _storage._baseResp != nil}
+  var hasBaseResp: Bool {_storage._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {_uniqueStorage()._baseResp = nil}
 
   var live: GloryApi_LiveRank {
-    get {return _storage._live ?? GloryApi_LiveRank()}
+    get {_storage._live ?? GloryApi_LiveRank()}
     set {_uniqueStorage()._live = newValue}
   }
   /// Returns true if `live` has been explicitly set.
-  var hasLive: Bool {return _storage._live != nil}
+  var hasLive: Bool {_storage._live != nil}
   /// Clears the value of `live`. Subsequent reads from it will return its default value.
   mutating func clearLive() {_uniqueStorage()._live = nil}
 
   var shop: GloryApi_ShopRank {
-    get {return _storage._shop ?? GloryApi_ShopRank()}
+    get {_storage._shop ?? GloryApi_ShopRank()}
     set {_uniqueStorage()._shop = newValue}
   }
   /// Returns true if `shop` has been explicitly set.
-  var hasShop: Bool {return _storage._shop != nil}
+  var hasShop: Bool {_storage._shop != nil}
   /// Clears the value of `shop`. Subsequent reads from it will return its default value.
   mutating func clearShop() {_uniqueStorage()._shop = nil}
 
   var product: GloryApi_ProductRank {
-    get {return _storage._product ?? GloryApi_ProductRank()}
+    get {_storage._product ?? GloryApi_ProductRank()}
     set {_uniqueStorage()._product = newValue}
   }
   /// Returns true if `product` has been explicitly set.
-  var hasProduct: Bool {return _storage._product != nil}
+  var hasProduct: Bool {_storage._product != nil}
   /// Clears the value of `product`. Subsequent reads from it will return its default value.
   mutating func clearProduct() {_uniqueStorage()._product = nil}
 
   var liveLike: GloryApi_LiveLikeRank {
-    get {return _storage._liveLike ?? GloryApi_LiveLikeRank()}
+    get {_storage._liveLike ?? GloryApi_LiveLikeRank()}
     set {_uniqueStorage()._liveLike = newValue}
   }
   /// Returns true if `liveLike` has been explicitly set.
-  var hasLiveLike: Bool {return _storage._liveLike != nil}
+  var hasLiveLike: Bool {_storage._liveLike != nil}
   /// Clears the value of `liveLike`. Subsequent reads from it will return its default value.
   mutating func clearLiveLike() {_uniqueStorage()._liveLike = nil}
 
   var liveOrder: GloryApi_LiveOrderRank {
-    get {return _storage._liveOrder ?? GloryApi_LiveOrderRank()}
+    get {_storage._liveOrder ?? GloryApi_LiveOrderRank()}
     set {_uniqueStorage()._liveOrder = newValue}
   }
   /// Returns true if `liveOrder` has been explicitly set.
-  var hasLiveOrder: Bool {return _storage._liveOrder != nil}
+  var hasLiveOrder: Bool {_storage._liveOrder != nil}
   /// Clears the value of `liveOrder`. Subsequent reads from it will return its default value.
   mutating func clearLiveOrder() {_uniqueStorage()._liveOrder = nil}
 
   var liveEvaluation: GloryApi_LiveEvaluationRank {
-    get {return _storage._liveEvaluation ?? GloryApi_LiveEvaluationRank()}
+    get {_storage._liveEvaluation ?? GloryApi_LiveEvaluationRank()}
     set {_uniqueStorage()._liveEvaluation = newValue}
   }
   /// Returns true if `liveEvaluation` has been explicitly set.
-  var hasLiveEvaluation: Bool {return _storage._liveEvaluation != nil}
+  var hasLiveEvaluation: Bool {_storage._liveEvaluation != nil}
   /// Clears the value of `liveEvaluation`. Subsequent reads from it will return its default value.
   mutating func clearLiveEvaluation() {_uniqueStorage()._liveEvaluation = nil}
 
@@ -1339,9 +1339,9 @@ struct GloryApi_GetRankResponse: @unchecked Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "glory_api"
+fileprivate nonisolated let _protobuf_package = "glory_api"
 
-extension GloryApi_GetEvaluateSelectorRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetEvaluateSelectorRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetEvaluateSelectorRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0")
 
@@ -1375,7 +1375,7 @@ extension GloryApi_GetEvaluateSelectorRequest: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension GloryApi_GetEvaluateSelectorResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetEvaluateSelectorResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetEvaluateSelectorResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{1}major\0\u{2}b\u{1}clas\0")
 
@@ -1419,7 +1419,7 @@ extension GloryApi_GetEvaluateSelectorResponse: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension GloryApi_EvaluateRoom: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_EvaluateRoom: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".EvaluateRoom"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}room_id\0\u{3}room_title\0\u{3}room_url\0\u{1}score\0\u{1}duration\0\u{1}like\0\u{1}order\0\u{3}ai_feedback\0\u{3}evaluated_time\0\u{3}live_time\0\u{3}evaluated_type\0\u{3}quick_evaluation_is_pass\0")
 
@@ -1504,7 +1504,7 @@ extension GloryApi_EvaluateRoom: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 }
 
-extension GloryApi_EvaluateData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_EvaluateData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".EvaluateData"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}average_score\0\u{3}total_duration\0\u{3}total_like\0\u{3}total_order\0\u{3}evaluate_list\0")
 
@@ -1554,7 +1554,7 @@ extension GloryApi_EvaluateData: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 }
 
-extension GloryApi_ListPersonalEvaluateRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListPersonalEvaluateRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListPersonalEvaluateRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}user_id\0\u{3}evaluation_type\0\u{2}a\u{1}pagination\0")
 
@@ -1603,7 +1603,7 @@ extension GloryApi_ListPersonalEvaluateRequest: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension GloryApi_ListPersonalEvaluateResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListPersonalEvaluateResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListPersonalEvaluateResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}evaluate_data\0\u{2}b\u{1}pagination\0")
 
@@ -1647,7 +1647,7 @@ extension GloryApi_ListPersonalEvaluateResponse: SwiftProtobuf.Message, SwiftPro
   }
 }
 
-extension GloryApi_EvaluateSubOption: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_EvaluateSubOption: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".EvaluateSubOption"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}name\0\u{1}total\0\u{1}content\0\u{1}score\0\u{3}name_key\0")
 
@@ -1697,7 +1697,7 @@ extension GloryApi_EvaluateSubOption: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension GloryApi_EvaluateDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_EvaluateDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".EvaluateDetail"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}option\0\u{1}total\0\u{1}score\0\u{3}is_expand\0\u{1}suboption\0")
 
@@ -1747,7 +1747,7 @@ extension GloryApi_EvaluateDetail: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension GloryApi_ProductProfession: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ProductProfession: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ProductProfession"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}product_name\0\u{3}product_class\0\u{3}product_attributed\0")
 
@@ -1787,7 +1787,7 @@ extension GloryApi_ProductProfession: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension GloryApi_Feedback: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_Feedback: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Feedback"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}enjoyment\0\u{1}logic\0\u{1}innovative\0\u{3}product_profession\0")
 
@@ -1832,7 +1832,7 @@ extension GloryApi_Feedback: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
   }
 }
 
-extension GloryApi_AiResult: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_AiResult: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".AiResult"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}live_ai_feedback_id\0\u{3}room_id\0\u{1}feedback\0\u{3}user_attitude\0\u{3}created_at\0")
 
@@ -1886,7 +1886,7 @@ extension GloryApi_AiResult: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
   }
 }
 
-extension GloryApi_GetEvaluateDetailRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetEvaluateDetailRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetEvaluateDetailRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}room_id\0\u{2}b\u{1}pagination\0")
 
@@ -1930,7 +1930,7 @@ extension GloryApi_GetEvaluateDetailRequest: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetEvaluateDetailResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{1}type\0\u{3}evaluate_id\0\u{3}template_id\0\u{3}user_id\0\u{3}extra_score\0\u{3}extra_comment\0\u{3}zero_comment\0\u{1}score\0\u{3}ai_feedback\0\u{1}baseline\0\u{3}ai_feedback_id\0\u{3}created_user\0\u{1}anchor\0\u{3}live_start_time\0\u{3}live_end_time\0\u{3}is_use_ai\0\u{3}ai_result\0\u{2}R\u{1}detail\0")
 
@@ -2126,7 +2126,7 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension GloryApi_SubmitEvaluateRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_SubmitEvaluateRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".SubmitEvaluateRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{1}type\0\u{3}evaluate_id\0\u{3}template_id\0\u{3}user_id\0\u{3}room_id\0\u{3}extra_score\0\u{3}extra_comment\0\u{3}zero_comment\0\u{1}score\0\u{3}ai_feedback\0\u{1}baseline\0\u{3}ai_feedback_id\0\u{1}detail\0")
 
@@ -2225,7 +2225,7 @@ extension GloryApi_SubmitEvaluateRequest: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension GloryApi_SubmitEvaluateResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_SubmitEvaluateResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".SubmitEvaluateResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 
@@ -2259,7 +2259,7 @@ extension GloryApi_SubmitEvaluateResponse: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension GloryApi_SubmitUserAttitudeForAIResultRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_SubmitUserAttitudeForAIResultRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".SubmitUserAttitudeForAIResultRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}live_ai_feedback_id\0\u{1}attitude\0")
 
@@ -2303,7 +2303,7 @@ extension GloryApi_SubmitUserAttitudeForAIResultRequest: SwiftProtobuf.Message, 
   }
 }
 
-extension GloryApi_SubmitUserAttitudeForAIResultResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_SubmitUserAttitudeForAIResultResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".SubmitUserAttitudeForAIResultResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 
@@ -2337,7 +2337,7 @@ extension GloryApi_SubmitUserAttitudeForAIResultResponse: SwiftProtobuf.Message,
   }
 }
 
-extension GloryApi_UnevaluatedRoom: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_UnevaluatedRoom: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UnevaluatedRoom"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}room_id\0\u{3}room_title\0\u{3}room_url\0\u{3}shop_name\0\u{3}user_id\0\u{3}user_name\0\u{1}status\0\u{3}is_use_ai\0\u{3}start_time\0\u{3}end_time\0")
 
@@ -2412,7 +2412,7 @@ extension GloryApi_UnevaluatedRoom: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension GloryApi_ListUnevaluatedRoomRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListUnevaluatedRoomRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListUnevaluatedRoomRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{1}pagination\0\u{3}shop_or_user_name\0\u{3}room_status\0\u{3}start_time\0\u{3}end_time\0")
 
@@ -2471,7 +2471,7 @@ extension GloryApi_ListUnevaluatedRoomRequest: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension GloryApi_ListUnevaluatedRoomResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListUnevaluatedRoomResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListUnevaluatedRoomResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}living_total\0\u{3}unevaluated_room\0\u{2}a\u{1}pagination\0")
 
@@ -2520,7 +2520,7 @@ extension GloryApi_ListUnevaluatedRoomResponse: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension GloryApi_UserLiveData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_UserLiveData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UserLiveData"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}user_id\0\u{3}user_name\0\u{1}major\0\u{1}clas\0\u{3}total_duration\0\u{3}total_like\0\u{3}total_order\0\u{3}average_score\0")
 
@@ -2585,7 +2585,7 @@ extension GloryApi_UserLiveData: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 }
 
-extension GloryApi_ListStudentEvalutionsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListStudentEvalutionsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListStudentEvalutionsRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{1}name\0\u{1}major\0\u{1}clas\0\u{1}pagination\0")
 
@@ -2639,7 +2639,7 @@ extension GloryApi_ListStudentEvalutionsRequest: SwiftProtobuf.Message, SwiftPro
   }
 }
 
-extension GloryApi_ListStudentEvalutionsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListStudentEvalutionsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListStudentEvalutionsResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}live_data\0\u{2}b\u{1}pagination\0")
 
@@ -2683,7 +2683,7 @@ extension GloryApi_ListStudentEvalutionsResponse: SwiftProtobuf.Message, SwiftPr
   }
 }
 
-extension GloryApi_IgnoreLiveEvaluationRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_IgnoreLiveEvaluationRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".IgnoreLiveEvaluationRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}room_id\0")
 
@@ -2722,7 +2722,7 @@ extension GloryApi_IgnoreLiveEvaluationRequest: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension GloryApi_IgnoreLiveEvaluationResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_IgnoreLiveEvaluationResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".IgnoreLiveEvaluationResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 
@@ -2756,7 +2756,7 @@ extension GloryApi_IgnoreLiveEvaluationResponse: SwiftProtobuf.Message, SwiftPro
   }
 }
 
-extension GloryApi_RegenerationAiFeedbackRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_RegenerationAiFeedbackRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".RegenerationAiFeedbackRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}room_id\0")
 
@@ -2795,7 +2795,7 @@ extension GloryApi_RegenerationAiFeedbackRequest: SwiftProtobuf.Message, SwiftPr
   }
 }
 
-extension GloryApi_RegenerationAiFeedbackResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_RegenerationAiFeedbackResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".RegenerationAiFeedbackResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 
@@ -2829,7 +2829,7 @@ extension GloryApi_RegenerationAiFeedbackResponse: SwiftProtobuf.Message, SwiftP
   }
 }
 
-extension GloryApi_LiveRankDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_LiveRankDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".LiveRankDetail"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}user_name\0\u{1}tenant\0\u{1}major\0\u{1}clas\0\u{3}live_duration\0")
 
@@ -2879,7 +2879,7 @@ extension GloryApi_LiveRankDetail: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension GloryApi_LiveRankMine: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_LiveRankMine: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".LiveRankMine"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}user_name\0\u{1}tenant\0\u{1}major\0\u{1}clas\0\u{3}live_duration\0\u{1}rank\0")
 
@@ -2934,7 +2934,7 @@ extension GloryApi_LiveRankMine: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 }
 
-extension GloryApi_LiveRank: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_LiveRank: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".LiveRank"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}rank_list\0\u{2}c\u{1}mine\0")
 
@@ -2973,7 +2973,7 @@ extension GloryApi_LiveRank: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
   }
 }
 
-extension GloryApi_ShopRankDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ShopRankDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ShopRankDetail"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}shop_name\0\u{3}shop_url\0\u{3}sale_amount\0")
 
@@ -3013,7 +3013,7 @@ extension GloryApi_ShopRankDetail: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension GloryApi_ShopRankMine: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ShopRankMine: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ShopRankMine"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}shop_name\0\u{3}shop_url\0\u{3}sale_amount\0\u{1}rank\0")
 
@@ -3058,7 +3058,7 @@ extension GloryApi_ShopRankMine: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 }
 
-extension GloryApi_ShopRank: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ShopRank: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ShopRank"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}rank_list\0\u{2}c\u{1}mine\0")
 
@@ -3097,7 +3097,7 @@ extension GloryApi_ShopRank: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
   }
 }
 
-extension GloryApi_ProductRankDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ProductRankDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ProductRankDetail"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}product_name\0\u{3}product_url\0\u{3}shop_name\0\u{3}shop_url\0\u{3}sale_amount\0")
 
@@ -3147,7 +3147,7 @@ extension GloryApi_ProductRankDetail: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension GloryApi_ProductRankMine: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ProductRankMine: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ProductRankMine"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}product_name\0\u{3}product_url\0\u{3}shop_name\0\u{3}shop_url\0\u{3}sale_amount\0\u{1}rank\0")
 
@@ -3202,7 +3202,7 @@ extension GloryApi_ProductRankMine: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension GloryApi_ProductRank: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ProductRank: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ProductRank"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}rank_list\0\u{2}c\u{1}mine\0")
 
@@ -3241,7 +3241,7 @@ extension GloryApi_ProductRank: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 }
 
-extension GloryApi_LiveLikeRankDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_LiveLikeRankDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".LiveLikeRankDetail"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}user_name\0\u{1}tenant\0\u{1}major\0\u{1}clas\0\u{3}like_amount\0")
 
@@ -3291,7 +3291,7 @@ extension GloryApi_LiveLikeRankDetail: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension GloryApi_LiveLikeRankMine: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_LiveLikeRankMine: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".LiveLikeRankMine"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}user_name\0\u{1}tenant\0\u{1}major\0\u{1}clas\0\u{3}like_amount\0\u{1}rank\0")
 
@@ -3346,7 +3346,7 @@ extension GloryApi_LiveLikeRankMine: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension GloryApi_LiveLikeRank: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_LiveLikeRank: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".LiveLikeRank"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}rank_list\0\u{2}c\u{1}mine\0")
 
@@ -3385,7 +3385,7 @@ extension GloryApi_LiveLikeRank: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 }
 
-extension GloryApi_LiveOrderRankDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_LiveOrderRankDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".LiveOrderRankDetail"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}user_name\0\u{1}tenant\0\u{1}major\0\u{1}clas\0\u{3}order_amount\0")
 
@@ -3435,7 +3435,7 @@ extension GloryApi_LiveOrderRankDetail: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension GloryApi_LiveOrderRankMine: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_LiveOrderRankMine: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".LiveOrderRankMine"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}user_name\0\u{1}tenant\0\u{1}major\0\u{1}clas\0\u{3}order_amount\0\u{1}rank\0")
 
@@ -3490,7 +3490,7 @@ extension GloryApi_LiveOrderRankMine: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension GloryApi_LiveOrderRank: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_LiveOrderRank: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".LiveOrderRank"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}rank_list\0\u{2}c\u{1}mine\0")
 
@@ -3529,7 +3529,7 @@ extension GloryApi_LiveOrderRank: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 }
 
-extension GloryApi_LiveEvaluationRankDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_LiveEvaluationRankDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".LiveEvaluationRankDetail"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}user_name\0\u{1}tenant\0\u{1}major\0\u{1}clas\0\u{1}score\0")
 
@@ -3579,7 +3579,7 @@ extension GloryApi_LiveEvaluationRankDetail: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension GloryApi_LiveEvaluationRankMine: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_LiveEvaluationRankMine: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".LiveEvaluationRankMine"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}user_name\0\u{1}tenant\0\u{1}major\0\u{1}clas\0\u{1}score\0\u{1}rank\0")
 
@@ -3634,7 +3634,7 @@ extension GloryApi_LiveEvaluationRankMine: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension GloryApi_LiveEvaluationRank: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_LiveEvaluationRank: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".LiveEvaluationRank"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}rank_list\0\u{2}c\u{1}mine\0")
 
@@ -3673,7 +3673,7 @@ extension GloryApi_LiveEvaluationRank: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension GloryApi_GetRankRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetRankRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetRankRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{1}category\0\u{1}type\0\u{1}start\0\u{1}end\0")
 
@@ -3727,7 +3727,7 @@ extension GloryApi_GetRankRequest: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension GloryApi_GetRankResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetRankResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetRankResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{1}live\0\u{1}shop\0\u{1}product\0\u{3}live_like\0\u{3}live_order\0\u{3}live_evaluation\0")
 

@@ -15,22 +15,22 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-struct GloryApi_ListSchoolLiveTrafficRequest: Sendable {
+nonisolated struct GloryApi_ListSchoolLiveTrafficRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -47,26 +47,26 @@ struct GloryApi_ListSchoolLiveTrafficRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ListSchoolLiveTrafficResponse: Sendable {
+nonisolated struct GloryApi_ListSchoolLiveTrafficResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var schoolLiveTrafficSummary: GloryApi_SchoolLiveTraffic {
-    get {return _schoolLiveTrafficSummary ?? GloryApi_SchoolLiveTraffic()}
+    get {_schoolLiveTrafficSummary ?? GloryApi_SchoolLiveTraffic()}
     set {_schoolLiveTrafficSummary = newValue}
   }
   /// Returns true if `schoolLiveTrafficSummary` has been explicitly set.
-  var hasSchoolLiveTrafficSummary: Bool {return self._schoolLiveTrafficSummary != nil}
+  var hasSchoolLiveTrafficSummary: Bool {self._schoolLiveTrafficSummary != nil}
   /// Clears the value of `schoolLiveTrafficSummary`. Subsequent reads from it will return its default value.
   mutating func clearSchoolLiveTrafficSummary() {self._schoolLiveTrafficSummary = nil}
 
@@ -80,7 +80,7 @@ struct GloryApi_ListSchoolLiveTrafficResponse: Sendable {
   fileprivate var _schoolLiveTrafficSummary: GloryApi_SchoolLiveTraffic? = nil
 }
 
-struct GloryApi_SchoolLiveTraffic: Sendable {
+nonisolated struct GloryApi_SchoolLiveTraffic: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -116,17 +116,17 @@ struct GloryApi_SchoolLiveTraffic: Sendable {
   init() {}
 }
 
-struct GloryApi_GetSchoolLiveTrafficChartRequest: Sendable {
+nonisolated struct GloryApi_GetSchoolLiveTrafficChartRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -143,7 +143,7 @@ struct GloryApi_GetSchoolLiveTrafficChartRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_SchooLiveTrafficChart: Sendable {
+nonisolated struct GloryApi_SchooLiveTrafficChart: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -161,17 +161,17 @@ struct GloryApi_SchooLiveTrafficChart: Sendable {
   init() {}
 }
 
-struct GloryApi_GetSchoolLiveTrafficChartResponse: Sendable {
+nonisolated struct GloryApi_GetSchoolLiveTrafficChartResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -192,17 +192,17 @@ struct GloryApi_GetSchoolLiveTrafficChartResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetAllLiveTrafficRequest: Sendable {
+nonisolated struct GloryApi_GetAllLiveTrafficRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -213,17 +213,17 @@ struct GloryApi_GetAllLiveTrafficRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetAllLiveTrafficResponse: Sendable {
+nonisolated struct GloryApi_GetAllLiveTrafficResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -242,17 +242,17 @@ struct GloryApi_GetAllLiveTrafficResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetSchooLiveTrafficRequest: Sendable {
+nonisolated struct GloryApi_GetSchooLiveTrafficRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -265,17 +265,17 @@ struct GloryApi_GetSchooLiveTrafficRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetSchooLiveTrafficResponse: Sendable {
+nonisolated struct GloryApi_GetSchooLiveTrafficResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -294,26 +294,26 @@ struct GloryApi_GetSchooLiveTrafficResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListTenantLiveTrafficConfigRequest: Sendable {
+nonisolated struct GloryApi_ListTenantLiveTrafficConfigRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var pagination: Base_PaginationRequest {
-    get {return _pagination ?? Base_PaginationRequest()}
+    get {_pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -325,7 +325,7 @@ struct GloryApi_ListTenantLiveTrafficConfigRequest: Sendable {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_TenantTrafficConfig: Sendable {
+nonisolated struct GloryApi_TenantTrafficConfig: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -354,28 +354,28 @@ struct GloryApi_TenantTrafficConfig: Sendable {
   init() {}
 }
 
-struct GloryApi_ListTenantLiveTrafficConfigResponse: Sendable {
+nonisolated struct GloryApi_ListTenantLiveTrafficConfigResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var tenantTrafficConfigList: [GloryApi_TenantTrafficConfig] = []
 
   var pagination: Base_PaginationResponse {
-    get {return _pagination ?? Base_PaginationResponse()}
+    get {_pagination ?? Base_PaginationResponse()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -387,17 +387,17 @@ struct GloryApi_ListTenantLiveTrafficConfigResponse: Sendable {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_UpdateTenantLiveTrafficConfigRequest: Sendable {
+nonisolated struct GloryApi_UpdateTenantLiveTrafficConfigRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -425,17 +425,17 @@ struct GloryApi_UpdateTenantLiveTrafficConfigRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UpdateTenantLiveTrafficConfigResponse: Sendable {
+nonisolated struct GloryApi_UpdateTenantLiveTrafficConfigResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -446,17 +446,17 @@ struct GloryApi_UpdateTenantLiveTrafficConfigResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListTrafficWarningRequest: Sendable {
+nonisolated struct GloryApi_ListTrafficWarningRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -465,11 +465,11 @@ struct GloryApi_ListTrafficWarningRequest: Sendable {
   var tenantID: Int64 = 0
 
   var pagination: Base_PaginationRequest {
-    get {return _pagination ?? Base_PaginationRequest()}
+    get {_pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -481,7 +481,7 @@ struct GloryApi_ListTrafficWarningRequest: Sendable {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_TrafficWarning: Sendable {
+nonisolated struct GloryApi_TrafficWarning: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -503,28 +503,28 @@ struct GloryApi_TrafficWarning: Sendable {
   init() {}
 }
 
-struct GloryApi_ListTrafficWarningResponse: Sendable {
+nonisolated struct GloryApi_ListTrafficWarningResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var trafficWarningList: [GloryApi_TrafficWarning] = []
 
   var pagination: Base_PaginationResponse {
-    get {return _pagination ?? Base_PaginationResponse()}
+    get {_pagination ?? Base_PaginationResponse()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -536,17 +536,17 @@ struct GloryApi_ListTrafficWarningResponse: Sendable {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_DeleteTrafficWarningRequest: Sendable {
+nonisolated struct GloryApi_DeleteTrafficWarningRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -559,17 +559,17 @@ struct GloryApi_DeleteTrafficWarningRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteTrafficWarningResponse: Sendable {
+nonisolated struct GloryApi_DeleteTrafficWarningResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -582,9 +582,9 @@ struct GloryApi_DeleteTrafficWarningResponse: Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "glory_api"
+fileprivate nonisolated let _protobuf_package = "glory_api"
 
-extension GloryApi_ListSchoolLiveTrafficRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListSchoolLiveTrafficRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListSchoolLiveTrafficRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}tenant_id\0\u{1}start\0\u{1}end\0")
 
@@ -633,7 +633,7 @@ extension GloryApi_ListSchoolLiveTrafficRequest: SwiftProtobuf.Message, SwiftPro
   }
 }
 
-extension GloryApi_ListSchoolLiveTrafficResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListSchoolLiveTrafficResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListSchoolLiveTrafficResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}school_live_traffic_summary\0\u{3}school_live_traffic_list\0")
 
@@ -677,7 +677,7 @@ extension GloryApi_ListSchoolLiveTrafficResponse: SwiftProtobuf.Message, SwiftPr
   }
 }
 
-extension GloryApi_SchoolLiveTraffic: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_SchoolLiveTraffic: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".SchoolLiveTraffic"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}tenant_id\0\u{3}tenant_name\0\u{3}used_traffic\0\u{3}remaining_traffic\0\u{3}remaining_percent\0\u{3}max_live_duration\0\u{3}average_live_duration\0\u{3}max_day_traffic\0\u{3}average_day_traffic\0\u{3}maybe_use_day\0\u{3}total_live_duration\0\u{3}total_live_cost\0")
 
@@ -762,7 +762,7 @@ extension GloryApi_SchoolLiveTraffic: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension GloryApi_GetSchoolLiveTrafficChartRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetSchoolLiveTrafficChartRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetSchoolLiveTrafficChartRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}tenant_id\0\u{1}start\0\u{1}end\0")
 
@@ -811,7 +811,7 @@ extension GloryApi_GetSchoolLiveTrafficChartRequest: SwiftProtobuf.Message, Swif
   }
 }
 
-extension GloryApi_SchooLiveTrafficChart: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_SchooLiveTrafficChart: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".SchooLiveTrafficChart"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}date\0\u{1}traffic\0\u{1}timestamp\0\u{3}sub_traffic\0")
 
@@ -856,7 +856,7 @@ extension GloryApi_SchooLiveTrafficChart: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension GloryApi_GetSchoolLiveTrafficChartResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetSchoolLiveTrafficChartResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetSchoolLiveTrafficChartResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}total_traffic\0\u{3}ali_total_traffic\0\u{3}live_traffic_chart\0\u{3}ali_live_traffic_chart\0\u{3}sub_traffic_chart\0")
 
@@ -915,7 +915,7 @@ extension GloryApi_GetSchoolLiveTrafficChartResponse: SwiftProtobuf.Message, Swi
   }
 }
 
-extension GloryApi_GetAllLiveTrafficRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetAllLiveTrafficRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetAllLiveTrafficRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0")
 
@@ -949,7 +949,7 @@ extension GloryApi_GetAllLiveTrafficRequest: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension GloryApi_GetAllLiveTrafficResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetAllLiveTrafficResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetAllLiveTrafficResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}total_traffic\0\u{3}ali_total_traffic\0\u{3}total_cost\0\u{3}ali_total_cost\0")
 
@@ -1003,7 +1003,7 @@ extension GloryApi_GetAllLiveTrafficResponse: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension GloryApi_GetSchooLiveTrafficRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetSchooLiveTrafficRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetSchooLiveTrafficRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}tenant_id\0")
 
@@ -1042,7 +1042,7 @@ extension GloryApi_GetSchooLiveTrafficRequest: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension GloryApi_GetSchooLiveTrafficResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetSchooLiveTrafficResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetSchooLiveTrafficResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}total_traffic\0\u{3}used_traffic\0\u{3}average_day_traffic\0\u{3}maybe_use_day\0")
 
@@ -1096,7 +1096,7 @@ extension GloryApi_GetSchooLiveTrafficResponse: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension GloryApi_ListTenantLiveTrafficConfigRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListTenantLiveTrafficConfigRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListTenantLiveTrafficConfigRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{2}c\u{1}pagination\0")
 
@@ -1135,7 +1135,7 @@ extension GloryApi_ListTenantLiveTrafficConfigRequest: SwiftProtobuf.Message, Sw
   }
 }
 
-extension GloryApi_TenantTrafficConfig: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_TenantTrafficConfig: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".TenantTrafficConfig"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}tenant_id\0\u{3}tenant_name\0\u{3}live_duration_limit\0\u{3}traffic_day_limit\0\u{3}traffic_all_count\0\u{3}traffic_used_warning_count\0\u{3}max_living_limit\0")
 
@@ -1195,7 +1195,7 @@ extension GloryApi_TenantTrafficConfig: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension GloryApi_ListTenantLiveTrafficConfigResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListTenantLiveTrafficConfigResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListTenantLiveTrafficConfigResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}tenant_traffic_config_list\0\u{2}b\u{1}pagination\0")
 
@@ -1239,7 +1239,7 @@ extension GloryApi_ListTenantLiveTrafficConfigResponse: SwiftProtobuf.Message, S
   }
 }
 
-extension GloryApi_UpdateTenantLiveTrafficConfigRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_UpdateTenantLiveTrafficConfigRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UpdateTenantLiveTrafficConfigRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}tenant_id\0\u{3}live_duration_limit\0\u{3}traffic_day_limit\0\u{3}traffic_all_count\0\u{3}traffic_used_warning_count\0\u{3}day_traffic_limit_percent\0\u{3}all_traffic_limit_percent\0\u{3}max_living_limit\0")
 
@@ -1313,7 +1313,7 @@ extension GloryApi_UpdateTenantLiveTrafficConfigRequest: SwiftProtobuf.Message, 
   }
 }
 
-extension GloryApi_UpdateTenantLiveTrafficConfigResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_UpdateTenantLiveTrafficConfigResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UpdateTenantLiveTrafficConfigResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 
@@ -1347,7 +1347,7 @@ extension GloryApi_UpdateTenantLiveTrafficConfigResponse: SwiftProtobuf.Message,
   }
 }
 
-extension GloryApi_ListTrafficWarningRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListTrafficWarningRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListTrafficWarningRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}warning_type\0\u{3}tenant_id\0\u{2}a\u{1}pagination\0")
 
@@ -1396,7 +1396,7 @@ extension GloryApi_ListTrafficWarningRequest: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension GloryApi_TrafficWarning: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_TrafficWarning: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".TrafficWarning"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}traffic_warning_id\0\u{3}tenant_id\0\u{3}tenant_name\0\u{3}warning_type\0\u{3}warning_content\0\u{3}created_at\0")
 
@@ -1451,7 +1451,7 @@ extension GloryApi_TrafficWarning: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension GloryApi_ListTrafficWarningResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListTrafficWarningResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListTrafficWarningResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}traffic_warning_list\0\u{2}b\u{1}pagination\0")
 
@@ -1495,7 +1495,7 @@ extension GloryApi_ListTrafficWarningResponse: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension GloryApi_DeleteTrafficWarningRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_DeleteTrafficWarningRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DeleteTrafficWarningRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}traffic_warning_id\0")
 
@@ -1534,7 +1534,7 @@ extension GloryApi_DeleteTrafficWarningRequest: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension GloryApi_DeleteTrafficWarningResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_DeleteTrafficWarningResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DeleteTrafficWarningResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 

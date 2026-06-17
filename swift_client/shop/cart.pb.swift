@@ -15,12 +15,12 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-struct GloryApi_Cart: Sendable {
+nonisolated struct GloryApi_Cart: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -35,11 +35,11 @@ struct GloryApi_Cart: Sendable {
   var tenantID: Int64 = 0
 
   var cartSku: GloryApi_CartSku {
-    get {return _cartSku ?? GloryApi_CartSku()}
+    get {_cartSku ?? GloryApi_CartSku()}
     set {_cartSku = newValue}
   }
   /// Returns true if `cartSku` has been explicitly set.
-  var hasCartSku: Bool {return self._cartSku != nil}
+  var hasCartSku: Bool {self._cartSku != nil}
   /// Clears the value of `cartSku`. Subsequent reads from it will return its default value.
   mutating func clearCartSku() {self._cartSku = nil}
 
@@ -50,7 +50,7 @@ struct GloryApi_Cart: Sendable {
   fileprivate var _cartSku: GloryApi_CartSku? = nil
 }
 
-struct GloryApi_CartSku: Sendable {
+nonisolated struct GloryApi_CartSku: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -74,83 +74,83 @@ struct GloryApi_CartSku: Sendable {
   init() {}
 }
 
-struct GloryApi_ProductShow: @unchecked Sendable {
+nonisolated struct GloryApi_ProductShow: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var productID: Int64 {
-    get {return _storage._productID}
+    get {_storage._productID}
     set {_uniqueStorage()._productID = newValue}
   }
 
   var skuID: Int64 {
-    get {return _storage._skuID}
+    get {_storage._skuID}
     set {_uniqueStorage()._skuID = newValue}
   }
 
   var productName: String {
-    get {return _storage._productName}
+    get {_storage._productName}
     set {_uniqueStorage()._productName = newValue}
   }
 
   ///数量
   var quantity: Int32 {
-    get {return _storage._quantity}
+    get {_storage._quantity}
     set {_uniqueStorage()._quantity = newValue}
   }
 
   ///价格
   var unitPrice: Double {
-    get {return _storage._unitPrice}
+    get {_storage._unitPrice}
     set {_uniqueStorage()._unitPrice = newValue}
   }
 
   var productURL: String {
-    get {return _storage._productURL}
+    get {_storage._productURL}
     set {_uniqueStorage()._productURL = newValue}
   }
 
   var skuInfo: String {
-    get {return _storage._skuInfo}
+    get {_storage._skuInfo}
     set {_uniqueStorage()._skuInfo = newValue}
   }
 
   var currency: String {
-    get {return _storage._currency}
+    get {_storage._currency}
     set {_uniqueStorage()._currency = newValue}
   }
 
   var freightAmount: Float {
-    get {return _storage._freightAmount}
+    get {_storage._freightAmount}
     set {_uniqueStorage()._freightAmount = newValue}
   }
 
   ///live:直播间订单,normal:非直播间订单
   var channel: String {
-    get {return _storage._channel}
+    get {_storage._channel}
     set {_uniqueStorage()._channel = newValue}
   }
 
   /// 优惠券
   var coupon: [GloryApi_CouponDetail] {
-    get {return _storage._coupon}
+    get {_storage._coupon}
     set {_uniqueStorage()._coupon = newValue}
   }
 
   /// 活动
   var activity: GloryApi_ActivityDetail {
-    get {return _storage._activity ?? GloryApi_ActivityDetail()}
+    get {_storage._activity ?? GloryApi_ActivityDetail()}
     set {_uniqueStorage()._activity = newValue}
   }
   /// Returns true if `activity` has been explicitly set.
-  var hasActivity: Bool {return _storage._activity != nil}
+  var hasActivity: Bool {_storage._activity != nil}
   /// Clears the value of `activity`. Subsequent reads from it will return its default value.
   mutating func clearActivity() {_uniqueStorage()._activity = nil}
 
   /// 该商品是否被删除
   var isDeleted: Bool {
-    get {return _storage._isDeleted}
+    get {_storage._isDeleted}
     set {_uniqueStorage()._isDeleted = newValue}
   }
 
@@ -161,7 +161,7 @@ struct GloryApi_ProductShow: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct GloryApi_ShopShow: Sendable {
+nonisolated struct GloryApi_ShopShow: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -185,7 +185,7 @@ struct GloryApi_ShopShow: Sendable {
   init() {}
 }
 
-struct GloryApi_CartShow: Sendable {
+nonisolated struct GloryApi_CartShow: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -207,26 +207,26 @@ struct GloryApi_CartShow: Sendable {
   init() {}
 }
 
-struct GloryApi_CartWithAuthor: Sendable {
+nonisolated struct GloryApi_CartWithAuthor: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var cart: GloryApi_Cart {
-    get {return _cart ?? GloryApi_Cart()}
+    get {_cart ?? GloryApi_Cart()}
     set {_cart = newValue}
   }
   /// Returns true if `cart` has been explicitly set.
-  var hasCart: Bool {return self._cart != nil}
+  var hasCart: Bool {self._cart != nil}
   /// Clears the value of `cart`. Subsequent reads from it will return its default value.
   mutating func clearCart() {self._cart = nil}
 
   var authorInfo: Base_AuthorInfo {
-    get {return _authorInfo ?? Base_AuthorInfo()}
+    get {_authorInfo ?? Base_AuthorInfo()}
     set {_authorInfo = newValue}
   }
   /// Returns true if `authorInfo` has been explicitly set.
-  var hasAuthorInfo: Bool {return self._authorInfo != nil}
+  var hasAuthorInfo: Bool {self._authorInfo != nil}
   /// Clears the value of `authorInfo`. Subsequent reads from it will return its default value.
   mutating func clearAuthorInfo() {self._authorInfo = nil}
 
@@ -238,26 +238,26 @@ struct GloryApi_CartWithAuthor: Sendable {
   fileprivate var _authorInfo: Base_AuthorInfo? = nil
 }
 
-struct GloryApi_AddCartRequest: Sendable {
+nonisolated struct GloryApi_AddCartRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var cart: GloryApi_Cart {
-    get {return _cart ?? GloryApi_Cart()}
+    get {_cart ?? GloryApi_Cart()}
     set {_cart = newValue}
   }
   /// Returns true if `cart` has been explicitly set.
-  var hasCart: Bool {return self._cart != nil}
+  var hasCart: Bool {self._cart != nil}
   /// Clears the value of `cart`. Subsequent reads from it will return its default value.
   mutating func clearCart() {self._cart = nil}
 
@@ -271,17 +271,17 @@ struct GloryApi_AddCartRequest: Sendable {
   fileprivate var _cart: GloryApi_Cart? = nil
 }
 
-struct GloryApi_AddCartResponse: Sendable {
+nonisolated struct GloryApi_AddCartResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -296,17 +296,17 @@ struct GloryApi_AddCartResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetCartRequest: Sendable {
+nonisolated struct GloryApi_GetCartRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -319,27 +319,27 @@ struct GloryApi_GetCartRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetCartResponse: Sendable {
+nonisolated struct GloryApi_GetCartResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   ///CartWithAuthor cart_detail =2;
   var cartInfo: GloryApi_CartShow {
-    get {return _cartInfo ?? GloryApi_CartShow()}
+    get {_cartInfo ?? GloryApi_CartShow()}
     set {_cartInfo = newValue}
   }
   /// Returns true if `cartInfo` has been explicitly set.
-  var hasCartInfo: Bool {return self._cartInfo != nil}
+  var hasCartInfo: Bool {self._cartInfo != nil}
   /// Clears the value of `cartInfo`. Subsequent reads from it will return its default value.
   mutating func clearCartInfo() {self._cartInfo = nil}
 
@@ -351,26 +351,26 @@ struct GloryApi_GetCartResponse: Sendable {
   fileprivate var _cartInfo: GloryApi_CartShow? = nil
 }
 
-struct GloryApi_UpdateCartRequest: Sendable {
+nonisolated struct GloryApi_UpdateCartRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var cartInfo: GloryApi_CartShow {
-    get {return _cartInfo ?? GloryApi_CartShow()}
+    get {_cartInfo ?? GloryApi_CartShow()}
     set {_cartInfo = newValue}
   }
   /// Returns true if `cartInfo` has been explicitly set.
-  var hasCartInfo: Bool {return self._cartInfo != nil}
+  var hasCartInfo: Bool {self._cartInfo != nil}
   /// Clears the value of `cartInfo`. Subsequent reads from it will return its default value.
   mutating func clearCartInfo() {self._cartInfo = nil}
 
@@ -382,26 +382,26 @@ struct GloryApi_UpdateCartRequest: Sendable {
   fileprivate var _cartInfo: GloryApi_CartShow? = nil
 }
 
-struct GloryApi_UpdateCartResponse: Sendable {
+nonisolated struct GloryApi_UpdateCartResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var cartInfo: GloryApi_CartShow {
-    get {return _cartInfo ?? GloryApi_CartShow()}
+    get {_cartInfo ?? GloryApi_CartShow()}
     set {_cartInfo = newValue}
   }
   /// Returns true if `cartInfo` has been explicitly set.
-  var hasCartInfo: Bool {return self._cartInfo != nil}
+  var hasCartInfo: Bool {self._cartInfo != nil}
   /// Clears the value of `cartInfo`. Subsequent reads from it will return its default value.
   mutating func clearCartInfo() {self._cartInfo = nil}
 
@@ -413,26 +413,26 @@ struct GloryApi_UpdateCartResponse: Sendable {
   fileprivate var _cartInfo: GloryApi_CartShow? = nil
 }
 
-struct GloryApi_DeleteCartRequest: Sendable {
+nonisolated struct GloryApi_DeleteCartRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var cartInfo: GloryApi_CartShow {
-    get {return _cartInfo ?? GloryApi_CartShow()}
+    get {_cartInfo ?? GloryApi_CartShow()}
     set {_cartInfo = newValue}
   }
   /// Returns true if `cartInfo` has been explicitly set.
-  var hasCartInfo: Bool {return self._cartInfo != nil}
+  var hasCartInfo: Bool {self._cartInfo != nil}
   /// Clears the value of `cartInfo`. Subsequent reads from it will return its default value.
   mutating func clearCartInfo() {self._cartInfo = nil}
 
@@ -444,17 +444,17 @@ struct GloryApi_DeleteCartRequest: Sendable {
   fileprivate var _cartInfo: GloryApi_CartShow? = nil
 }
 
-struct GloryApi_DeleteCartResponse: Sendable {
+nonisolated struct GloryApi_DeleteCartResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -467,9 +467,9 @@ struct GloryApi_DeleteCartResponse: Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "glory_api"
+fileprivate nonisolated let _protobuf_package = "glory_api"
 
-extension GloryApi_Cart: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_Cart: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Cart"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}cart_id\0\u{3}user_id\0\u{3}seller_id\0\u{3}tenant_id\0\u{3}cart_sku\0")
 
@@ -523,7 +523,7 @@ extension GloryApi_Cart: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
   }
 }
 
-extension GloryApi_CartSku: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_CartSku: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CartSku"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}cart_sku_id\0\u{3}sku_id\0\u{1}quantity\0\u{3}shop_id\0\u{1}channel\0\u{3}activity_id\0")
 
@@ -578,7 +578,7 @@ extension GloryApi_CartSku: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
   }
 }
 
-extension GloryApi_ProductShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ProductShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ProductShow"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}product_id\0\u{3}sku_id\0\u{3}product_name\0\u{1}quantity\0\u{3}unit_price\0\u{3}product_url\0\u{3}sku_info\0\u{1}currency\0\u{3}freight_amount\0\u{1}channel\0\u{1}coupon\0\u{1}activity\0\u{3}is_deleted\0")
 
@@ -732,7 +732,7 @@ extension GloryApi_ProductShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 }
 
-extension GloryApi_ShopShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ShopShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ShopShow"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}cart_sku_id\0\u{3}sku_id\0\u{1}quantity\0\u{3}shop_id\0\u{3}shop_name\0\u{1}product\0\u{3}shop_logo\0")
 
@@ -792,7 +792,7 @@ extension GloryApi_ShopShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
   }
 }
 
-extension GloryApi_CartShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_CartShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CartShow"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}cart_id\0\u{3}user_id\0\u{3}seller_id\0\u{3}tenant_id\0\u{1}shop\0\u{3}total_quantity\0")
 
@@ -847,7 +847,7 @@ extension GloryApi_CartShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
   }
 }
 
-extension GloryApi_CartWithAuthor: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_CartWithAuthor: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CartWithAuthor"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}cart\0\u{3}author_info\0")
 
@@ -886,7 +886,7 @@ extension GloryApi_CartWithAuthor: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension GloryApi_AddCartRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_AddCartRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".AddCartRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{1}cart\0\u{3}created_by\0")
 
@@ -930,7 +930,7 @@ extension GloryApi_AddCartRequest: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension GloryApi_AddCartResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_AddCartResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".AddCartResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}cart_id\0\u{3}cart_num\0")
 
@@ -974,7 +974,7 @@ extension GloryApi_AddCartResponse: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension GloryApi_GetCartRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetCartRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetCartRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}cart_id\0")
 
@@ -1013,7 +1013,7 @@ extension GloryApi_GetCartRequest: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension GloryApi_GetCartResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetCartResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetCartResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{4}\u{2}cart_info\0")
 
@@ -1052,7 +1052,7 @@ extension GloryApi_GetCartResponse: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension GloryApi_UpdateCartRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_UpdateCartRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UpdateCartRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}cart_info\0")
 
@@ -1091,7 +1091,7 @@ extension GloryApi_UpdateCartRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension GloryApi_UpdateCartResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_UpdateCartResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UpdateCartResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}cart_info\0")
 
@@ -1130,7 +1130,7 @@ extension GloryApi_UpdateCartResponse: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension GloryApi_DeleteCartRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_DeleteCartRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DeleteCartRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}cart_info\0")
 
@@ -1169,7 +1169,7 @@ extension GloryApi_DeleteCartRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension GloryApi_DeleteCartResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_DeleteCartResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DeleteCartResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 

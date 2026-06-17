@@ -15,12 +15,12 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-struct GloryApi_ShortVideoProduct: Sendable {
+nonisolated struct GloryApi_ShortVideoProduct: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -36,7 +36,7 @@ struct GloryApi_ShortVideoProduct: Sendable {
   init() {}
 }
 
-struct GloryApi_ShortVideoShop: Sendable {
+nonisolated struct GloryApi_ShortVideoShop: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -52,7 +52,7 @@ struct GloryApi_ShortVideoShop: Sendable {
   init() {}
 }
 
-struct GloryApi_ShortVideoUser: Sendable {
+nonisolated struct GloryApi_ShortVideoUser: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -74,144 +74,144 @@ struct GloryApi_ShortVideoUser: Sendable {
   init() {}
 }
 
-struct GloryApi_ShortVideo: @unchecked Sendable {
+nonisolated struct GloryApi_ShortVideo: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   /// 短视频ID
   var shortVideoID: Int64 {
-    get {return _storage._shortVideoID}
+    get {_storage._shortVideoID}
     set {_uniqueStorage()._shortVideoID = newValue}
   }
 
   /// 短视频URL
   var videoURL: String {
-    get {return _storage._videoURL}
+    get {_storage._videoURL}
     set {_uniqueStorage()._videoURL = newValue}
   }
 
   /// 视频封面URL
   var coverURL: String {
-    get {return _storage._coverURL}
+    get {_storage._coverURL}
     set {_uniqueStorage()._coverURL = newValue}
   }
 
   /// 短视频描述
   var description_p: String {
-    get {return _storage._description_p}
+    get {_storage._description_p}
     set {_uniqueStorage()._description_p = newValue}
   }
 
   /// 视频可见性：1. 公开，2: 隐私，仅自己可见
   var visibility: Int32 {
-    get {return _storage._visibility}
+    get {_storage._visibility}
     set {_uniqueStorage()._visibility = newValue}
   }
 
   /// 视频文件大小
   var videoLength: Int32 {
-    get {return _storage._videoLength}
+    get {_storage._videoLength}
     set {_uniqueStorage()._videoLength = newValue}
   }
 
   /// 视频时长
   var videoDuration: Int32 {
-    get {return _storage._videoDuration}
+    get {_storage._videoDuration}
     set {_uniqueStorage()._videoDuration = newValue}
   }
 
   /// 审核状态：1: 待审核，2: 审核通过，3:审核被驳回
   var censorStatus: Int32 {
-    get {return _storage._censorStatus}
+    get {_storage._censorStatus}
     set {_uniqueStorage()._censorStatus = newValue}
   }
 
   ///视频被驳回原因
   var censorRejectedReason: String {
-    get {return _storage._censorRejectedReason}
+    get {_storage._censorRejectedReason}
     set {_uniqueStorage()._censorRejectedReason = newValue}
   }
 
   /// 商品列表
   var products: [GloryApi_ShortVideoProduct] {
-    get {return _storage._products}
+    get {_storage._products}
     set {_uniqueStorage()._products = newValue}
   }
 
   /// 店铺信息
   var shop: GloryApi_ShortVideoShop {
-    get {return _storage._shop ?? GloryApi_ShortVideoShop()}
+    get {_storage._shop ?? GloryApi_ShortVideoShop()}
     set {_uniqueStorage()._shop = newValue}
   }
   /// Returns true if `shop` has been explicitly set.
-  var hasShop: Bool {return _storage._shop != nil}
+  var hasShop: Bool {_storage._shop != nil}
   /// Clears the value of `shop`. Subsequent reads from it will return its default value.
   mutating func clearShop() {_uniqueStorage()._shop = nil}
 
   /// 用户信息
   var userInfo: GloryApi_ShortVideoUser {
-    get {return _storage._userInfo ?? GloryApi_ShortVideoUser()}
+    get {_storage._userInfo ?? GloryApi_ShortVideoUser()}
     set {_uniqueStorage()._userInfo = newValue}
   }
   /// Returns true if `userInfo` has been explicitly set.
-  var hasUserInfo: Bool {return _storage._userInfo != nil}
+  var hasUserInfo: Bool {_storage._userInfo != nil}
   /// Clears the value of `userInfo`. Subsequent reads from it will return its default value.
   mutating func clearUserInfo() {_uniqueStorage()._userInfo = nil}
 
   /// 是否喜欢
   var isLike: Bool {
-    get {return _storage._isLike}
+    get {_storage._isLike}
     set {_uniqueStorage()._isLike = newValue}
   }
 
   /// 喜欢数量
   var likeCount: Int64 {
-    get {return _storage._likeCount}
+    get {_storage._likeCount}
     set {_uniqueStorage()._likeCount = newValue}
   }
 
   /// 是否收藏
   var isFavorite: Bool {
-    get {return _storage._isFavorite}
+    get {_storage._isFavorite}
     set {_uniqueStorage()._isFavorite = newValue}
   }
 
   /// 收藏数量
   var favoriteCount: Int64 {
-    get {return _storage._favoriteCount}
+    get {_storage._favoriteCount}
     set {_uniqueStorage()._favoriteCount = newValue}
   }
 
   /// 评论数量
   var commentCount: Int64 {
-    get {return _storage._commentCount}
+    get {_storage._commentCount}
     set {_uniqueStorage()._commentCount = newValue}
   }
 
   /// 学生班级信息
   var classDept: GloryApi_TenantDept {
-    get {return _storage._classDept ?? GloryApi_TenantDept()}
+    get {_storage._classDept ?? GloryApi_TenantDept()}
     set {_uniqueStorage()._classDept = newValue}
   }
   /// Returns true if `classDept` has been explicitly set.
-  var hasClassDept: Bool {return _storage._classDept != nil}
+  var hasClassDept: Bool {_storage._classDept != nil}
   /// Clears the value of `classDept`. Subsequent reads from it will return its default value.
   mutating func clearClassDept() {_uniqueStorage()._classDept = nil}
 
   /// 学生专业信息
   var majorDept: GloryApi_TenantDept {
-    get {return _storage._majorDept ?? GloryApi_TenantDept()}
+    get {_storage._majorDept ?? GloryApi_TenantDept()}
     set {_uniqueStorage()._majorDept = newValue}
   }
   /// Returns true if `majorDept` has been explicitly set.
-  var hasMajorDept: Bool {return _storage._majorDept != nil}
+  var hasMajorDept: Bool {_storage._majorDept != nil}
   /// Clears the value of `majorDept`. Subsequent reads from it will return its default value.
   mutating func clearMajorDept() {_uniqueStorage()._majorDept = nil}
 
   /// 创建时间
   var createdAt: String {
-    get {return _storage._createdAt}
+    get {_storage._createdAt}
     set {_uniqueStorage()._createdAt = newValue}
   }
 
@@ -222,7 +222,7 @@ struct GloryApi_ShortVideo: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct GloryApi_StageVideo: Sendable {
+nonisolated struct GloryApi_StageVideo: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -259,11 +259,11 @@ struct GloryApi_StageVideo: Sendable {
 
   /// 店铺信息
   var shop: GloryApi_ShortVideoShop {
-    get {return _shop ?? GloryApi_ShortVideoShop()}
+    get {_shop ?? GloryApi_ShortVideoShop()}
     set {_shop = newValue}
   }
   /// Returns true if `shop` has been explicitly set.
-  var hasShop: Bool {return self._shop != nil}
+  var hasShop: Bool {self._shop != nil}
   /// Clears the value of `shop`. Subsequent reads from it will return its default value.
   mutating func clearShop() {self._shop = nil}
 
@@ -277,7 +277,7 @@ struct GloryApi_StageVideo: Sendable {
   fileprivate var _shop: GloryApi_ShortVideoShop? = nil
 }
 
-struct GloryApi_ShortVideoComment: Sendable {
+nonisolated struct GloryApi_ShortVideoComment: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -299,11 +299,11 @@ struct GloryApi_ShortVideoComment: Sendable {
 
   /// 评论用户信息
   var userInfo: GloryApi_ShortVideoUser {
-    get {return _userInfo ?? GloryApi_ShortVideoUser()}
+    get {_userInfo ?? GloryApi_ShortVideoUser()}
     set {_userInfo = newValue}
   }
   /// Returns true if `userInfo` has been explicitly set.
-  var hasUserInfo: Bool {return self._userInfo != nil}
+  var hasUserInfo: Bool {self._userInfo != nil}
   /// Clears the value of `userInfo`. Subsequent reads from it will return its default value.
   mutating func clearUserInfo() {self._userInfo = nil}
 
@@ -314,17 +314,17 @@ struct GloryApi_ShortVideoComment: Sendable {
   fileprivate var _userInfo: GloryApi_ShortVideoUser? = nil
 }
 
-struct GloryApi_CreateShortVideoRequest: Sendable {
+nonisolated struct GloryApi_CreateShortVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -360,17 +360,17 @@ struct GloryApi_CreateShortVideoRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CreateShortVideoResponse: Sendable {
+nonisolated struct GloryApi_CreateShortVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -383,17 +383,17 @@ struct GloryApi_CreateShortVideoResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_StageShortVideoRequest: Sendable {
+nonisolated struct GloryApi_StageShortVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -426,17 +426,17 @@ struct GloryApi_StageShortVideoRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_StageShortVideoResponse: Sendable {
+nonisolated struct GloryApi_StageShortVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -450,17 +450,17 @@ struct GloryApi_StageShortVideoResponse: Sendable {
 }
 
 /// 我的短视频列表
-struct GloryApi_ListMyShortVideoRequest: Sendable {
+nonisolated struct GloryApi_ListMyShortVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -470,11 +470,11 @@ struct GloryApi_ListMyShortVideoRequest: Sendable {
   var userID: Int64 = 0
 
   var pagination: Base_PaginationRequest {
-    get {return _pagination ?? Base_PaginationRequest()}
+    get {_pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -486,28 +486,28 @@ struct GloryApi_ListMyShortVideoRequest: Sendable {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListMyShortVideoResponse: Sendable {
+nonisolated struct GloryApi_ListMyShortVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var shortVideoList: [GloryApi_ShortVideo] = []
 
   var pagination: Base_PaginationResponse {
-    get {return _pagination ?? Base_PaginationResponse()}
+    get {_pagination ?? Base_PaginationResponse()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -520,26 +520,26 @@ struct GloryApi_ListMyShortVideoResponse: Sendable {
 }
 
 /// 我的暂存视频列表
-struct GloryApi_ListMyStageVideoRequest: Sendable {
+nonisolated struct GloryApi_ListMyStageVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var pagination: Base_PaginationRequest {
-    get {return _pagination ?? Base_PaginationRequest()}
+    get {_pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -551,17 +551,17 @@ struct GloryApi_ListMyStageVideoRequest: Sendable {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListMyStageVideoResponse: Sendable {
+nonisolated struct GloryApi_ListMyStageVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -575,26 +575,26 @@ struct GloryApi_ListMyStageVideoResponse: Sendable {
 }
 
 /// 我的喜欢视频列表
-struct GloryApi_ListMyLikeVideoRequest: Sendable {
+nonisolated struct GloryApi_ListMyLikeVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var pagination: Base_PaginationRequest {
-    get {return _pagination ?? Base_PaginationRequest()}
+    get {_pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -606,28 +606,28 @@ struct GloryApi_ListMyLikeVideoRequest: Sendable {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListMyLikeVideoResponse: Sendable {
+nonisolated struct GloryApi_ListMyLikeVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var shortVideoList: [GloryApi_ShortVideo] = []
 
   var pagination: Base_PaginationResponse {
-    get {return _pagination ?? Base_PaginationResponse()}
+    get {_pagination ?? Base_PaginationResponse()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -640,26 +640,26 @@ struct GloryApi_ListMyLikeVideoResponse: Sendable {
 }
 
 /// 我的收藏视频列表
-struct GloryApi_ListMyFavoriteVideoRequest: Sendable {
+nonisolated struct GloryApi_ListMyFavoriteVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var pagination: Base_PaginationRequest {
-    get {return _pagination ?? Base_PaginationRequest()}
+    get {_pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -671,28 +671,28 @@ struct GloryApi_ListMyFavoriteVideoRequest: Sendable {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListMyFavoriteVideoResponse: Sendable {
+nonisolated struct GloryApi_ListMyFavoriteVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var shortVideoList: [GloryApi_ShortVideo] = []
 
   var pagination: Base_PaginationResponse {
-    get {return _pagination ?? Base_PaginationResponse()}
+    get {_pagination ?? Base_PaginationResponse()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -705,17 +705,17 @@ struct GloryApi_ListMyFavoriteVideoResponse: Sendable {
 }
 
 /// 获取短视频详情
-struct GloryApi_GetShortVideoRequest: Sendable {
+nonisolated struct GloryApi_GetShortVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -728,26 +728,26 @@ struct GloryApi_GetShortVideoRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetShortVideoResponse: Sendable {
+nonisolated struct GloryApi_GetShortVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var shortVideo: GloryApi_ShortVideo {
-    get {return _shortVideo ?? GloryApi_ShortVideo()}
+    get {_shortVideo ?? GloryApi_ShortVideo()}
     set {_shortVideo = newValue}
   }
   /// Returns true if `shortVideo` has been explicitly set.
-  var hasShortVideo: Bool {return self._shortVideo != nil}
+  var hasShortVideo: Bool {self._shortVideo != nil}
   /// Clears the value of `shortVideo`. Subsequent reads from it will return its default value.
   mutating func clearShortVideo() {self._shortVideo = nil}
 
@@ -760,17 +760,17 @@ struct GloryApi_GetShortVideoResponse: Sendable {
 }
 
 /// 更新短视频详情
-struct GloryApi_UpdateShortVideoRequest: Sendable {
+nonisolated struct GloryApi_UpdateShortVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -798,17 +798,17 @@ struct GloryApi_UpdateShortVideoRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UpdateShortVideoResponse: Sendable {
+nonisolated struct GloryApi_UpdateShortVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -822,17 +822,17 @@ struct GloryApi_UpdateShortVideoResponse: Sendable {
 }
 
 /// 删除短视频
-struct GloryApi_DeleteShortVideoRequest: Sendable {
+nonisolated struct GloryApi_DeleteShortVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -845,17 +845,17 @@ struct GloryApi_DeleteShortVideoRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteShortVideoResponse: Sendable {
+nonisolated struct GloryApi_DeleteShortVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -867,17 +867,17 @@ struct GloryApi_DeleteShortVideoResponse: Sendable {
 }
 
 /// 获取暂存视频详情
-struct GloryApi_GetStageVideoRequest: Sendable {
+nonisolated struct GloryApi_GetStageVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -890,26 +890,26 @@ struct GloryApi_GetStageVideoRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetStageVideoResponse: Sendable {
+nonisolated struct GloryApi_GetStageVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var stageVideo: GloryApi_StageVideo {
-    get {return _stageVideo ?? GloryApi_StageVideo()}
+    get {_stageVideo ?? GloryApi_StageVideo()}
     set {_stageVideo = newValue}
   }
   /// Returns true if `stageVideo` has been explicitly set.
-  var hasStageVideo: Bool {return self._stageVideo != nil}
+  var hasStageVideo: Bool {self._stageVideo != nil}
   /// Clears the value of `stageVideo`. Subsequent reads from it will return its default value.
   mutating func clearStageVideo() {self._stageVideo = nil}
 
@@ -922,17 +922,17 @@ struct GloryApi_GetStageVideoResponse: Sendable {
 }
 
 /// 删除暂存视频
-struct GloryApi_DeleteStageVideoRequest: Sendable {
+nonisolated struct GloryApi_DeleteStageVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -945,17 +945,17 @@ struct GloryApi_DeleteStageVideoRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteStageVideoResponse: Sendable {
+nonisolated struct GloryApi_DeleteStageVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -966,17 +966,17 @@ struct GloryApi_DeleteStageVideoResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_UpdateStageVideoRequest: Sendable {
+nonisolated struct GloryApi_UpdateStageVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -1014,17 +1014,17 @@ struct GloryApi_UpdateStageVideoRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UpdateStageVideoResponse: Sendable {
+nonisolated struct GloryApi_UpdateStageVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -1038,17 +1038,17 @@ struct GloryApi_UpdateStageVideoResponse: Sendable {
 }
 
 /// 管理平台短视频列表
-struct GloryApi_ManagementListShortVideoRequest: Sendable {
+nonisolated struct GloryApi_ManagementListShortVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -1062,11 +1062,11 @@ struct GloryApi_ManagementListShortVideoRequest: Sendable {
   var classID: Int64 = 0
 
   var pagination: Base_PaginationRequest {
-    get {return _pagination ?? Base_PaginationRequest()}
+    get {_pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -1078,28 +1078,28 @@ struct GloryApi_ManagementListShortVideoRequest: Sendable {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ManagementListShortVideoResponse: Sendable {
+nonisolated struct GloryApi_ManagementListShortVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var shortVideoList: [GloryApi_ShortVideo] = []
 
   var pagination: Base_PaginationResponse {
-    get {return _pagination ?? Base_PaginationResponse()}
+    get {_pagination ?? Base_PaginationResponse()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -1112,17 +1112,17 @@ struct GloryApi_ManagementListShortVideoResponse: Sendable {
 }
 
 /// 管理平台审核短视频
-struct GloryApi_ManagementCensorShortVideoRequest: Sendable {
+nonisolated struct GloryApi_ManagementCensorShortVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -1139,17 +1139,17 @@ struct GloryApi_ManagementCensorShortVideoRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ManagementCensorShortVideoResponse: Sendable {
+nonisolated struct GloryApi_ManagementCensorShortVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -1161,17 +1161,17 @@ struct GloryApi_ManagementCensorShortVideoResponse: Sendable {
 }
 
 /// 管理平台删除短视频
-struct GloryApi_ManagementDeleteShortVideoRequest: Sendable {
+nonisolated struct GloryApi_ManagementDeleteShortVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -1184,17 +1184,17 @@ struct GloryApi_ManagementDeleteShortVideoRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ManagementDeleteShortVideoResponse: Sendable {
+nonisolated struct GloryApi_ManagementDeleteShortVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -1206,28 +1206,28 @@ struct GloryApi_ManagementDeleteShortVideoResponse: Sendable {
 }
 
 /// APP首页短视频列表
-struct GloryApi_ListShortVideoRequest: Sendable {
+nonisolated struct GloryApi_ListShortVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var key: String = String()
 
   var pagination: Base_PaginationRequest {
-    get {return _pagination ?? Base_PaginationRequest()}
+    get {_pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -1239,28 +1239,28 @@ struct GloryApi_ListShortVideoRequest: Sendable {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListShortVideoResponse: Sendable {
+nonisolated struct GloryApi_ListShortVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var shortVideoList: [GloryApi_ShortVideo] = []
 
   var pagination: Base_PaginationResponse {
-    get {return _pagination ?? Base_PaginationResponse()}
+    get {_pagination ?? Base_PaginationResponse()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -1273,17 +1273,17 @@ struct GloryApi_ListShortVideoResponse: Sendable {
 }
 
 /// 点赞短视频
-struct GloryApi_LikeShortVideoRequest: Sendable {
+nonisolated struct GloryApi_LikeShortVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -1298,17 +1298,17 @@ struct GloryApi_LikeShortVideoRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_LikeShortVideoResponse: Sendable {
+nonisolated struct GloryApi_LikeShortVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -1320,17 +1320,17 @@ struct GloryApi_LikeShortVideoResponse: Sendable {
 }
 
 /// 收藏短视频
-struct GloryApi_FavoriteShortVideoRequest: Sendable {
+nonisolated struct GloryApi_FavoriteShortVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -1345,17 +1345,17 @@ struct GloryApi_FavoriteShortVideoRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_FavoriteShortVideoResponse: Sendable {
+nonisolated struct GloryApi_FavoriteShortVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -1367,17 +1367,17 @@ struct GloryApi_FavoriteShortVideoResponse: Sendable {
 }
 
 /// 发布评论
-struct GloryApi_CreateShortVideoCommentRequest: Sendable {
+nonisolated struct GloryApi_CreateShortVideoCommentRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -1397,17 +1397,17 @@ struct GloryApi_CreateShortVideoCommentRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CreateShortVideoCommentResponse: Sendable {
+nonisolated struct GloryApi_CreateShortVideoCommentResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -1421,17 +1421,17 @@ struct GloryApi_CreateShortVideoCommentResponse: Sendable {
 }
 
 /// 删除评论
-struct GloryApi_DeleteShortVideoCommentRequest: Sendable {
+nonisolated struct GloryApi_DeleteShortVideoCommentRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -1444,17 +1444,17 @@ struct GloryApi_DeleteShortVideoCommentRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteShortVideoCommentResponse: Sendable {
+nonisolated struct GloryApi_DeleteShortVideoCommentResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResponse: Base_BaseResponse {
-    get {return _baseResponse ?? Base_BaseResponse()}
+    get {_baseResponse ?? Base_BaseResponse()}
     set {_baseResponse = newValue}
   }
   /// Returns true if `baseResponse` has been explicitly set.
-  var hasBaseResponse: Bool {return self._baseResponse != nil}
+  var hasBaseResponse: Bool {self._baseResponse != nil}
   /// Clears the value of `baseResponse`. Subsequent reads from it will return its default value.
   mutating func clearBaseResponse() {self._baseResponse = nil}
 
@@ -1466,17 +1466,17 @@ struct GloryApi_DeleteShortVideoCommentResponse: Sendable {
 }
 
 /// 短视频评论列表
-struct GloryApi_ListShortVideoCommentRequest: Sendable {
+nonisolated struct GloryApi_ListShortVideoCommentRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -1485,11 +1485,11 @@ struct GloryApi_ListShortVideoCommentRequest: Sendable {
   var parentCommentID: Int64 = 0
 
   var pagination: Base_PaginationRequest {
-    get {return _pagination ?? Base_PaginationRequest()}
+    get {_pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -1501,28 +1501,28 @@ struct GloryApi_ListShortVideoCommentRequest: Sendable {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListShortVideoCommentResponse: Sendable {
+nonisolated struct GloryApi_ListShortVideoCommentResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var shortVideoCommentList: [GloryApi_ShortVideoComment] = []
 
   var pagination: Base_PaginationResponse {
-    get {return _pagination ?? Base_PaginationResponse()}
+    get {_pagination ?? Base_PaginationResponse()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -1534,17 +1534,17 @@ struct GloryApi_ListShortVideoCommentResponse: Sendable {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_TeacherListStudentShortVideoRequest: Sendable {
+nonisolated struct GloryApi_TeacherListStudentShortVideoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -1557,11 +1557,11 @@ struct GloryApi_TeacherListStudentShortVideoRequest: Sendable {
   var endTime: String = String()
 
   var pagination: Base_PaginationRequest {
-    get {return _pagination ?? Base_PaginationRequest()}
+    get {_pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -1573,28 +1573,28 @@ struct GloryApi_TeacherListStudentShortVideoRequest: Sendable {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_TeacherListStudentShortVideoResponse: Sendable {
+nonisolated struct GloryApi_TeacherListStudentShortVideoResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var shortVideoList: [GloryApi_ShortVideo] = []
 
   var pagination: Base_PaginationResponse {
-    get {return _pagination ?? Base_PaginationResponse()}
+    get {_pagination ?? Base_PaginationResponse()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -1608,9 +1608,9 @@ struct GloryApi_TeacherListStudentShortVideoResponse: Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "glory_api"
+fileprivate nonisolated let _protobuf_package = "glory_api"
 
-extension GloryApi_ShortVideoProduct: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ShortVideoProduct: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ShortVideoProduct"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}product_id\0\u{3}product_promotion_text\0")
 
@@ -1645,7 +1645,7 @@ extension GloryApi_ShortVideoProduct: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension GloryApi_ShortVideoShop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ShortVideoShop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ShortVideoShop"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}shop_id\0\u{3}shop_name\0")
 
@@ -1680,7 +1680,7 @@ extension GloryApi_ShortVideoShop: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension GloryApi_ShortVideoUser: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ShortVideoUser: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ShortVideoUser"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}user_id\0\u{3}user_name\0\u{3}avatar_url\0\u{3}is_follow\0")
 
@@ -1725,7 +1725,7 @@ extension GloryApi_ShortVideoUser: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension GloryApi_ShortVideo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ShortVideo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ShortVideo"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}short_video_id\0\u{3}video_url\0\u{3}cover_url\0\u{1}description\0\u{1}visibility\0\u{3}video_length\0\u{3}video_duration\0\u{3}censor_status\0\u{3}censor_rejected_reason\0\u{1}products\0\u{1}shop\0\u{3}user_info\0\u{3}is_like\0\u{3}like_count\0\u{3}is_favorite\0\u{3}favorite_count\0\u{3}comment_count\0\u{3}class_dept\0\u{3}major_dept\0\u{3}created_at\0")
 
@@ -1928,7 +1928,7 @@ extension GloryApi_ShortVideo: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension GloryApi_StageVideo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_StageVideo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".StageVideo"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}stage_video_id\0\u{3}video_url\0\u{3}video_path\0\u{3}cover_url\0\u{3}cover_path\0\u{1}description\0\u{1}visibility\0\u{3}video_length\0\u{3}video_duration\0\u{1}products\0\u{1}shop\0\u{3}created_at\0")
 
@@ -2017,7 +2017,7 @@ extension GloryApi_StageVideo: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension GloryApi_ShortVideoComment: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ShortVideoComment: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ShortVideoComment"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}comment_id\0\u{3}short_video_id\0\u{1}content\0\u{3}created_at\0\u{3}reply_count\0\u{3}user_info\0")
 
@@ -2076,7 +2076,7 @@ extension GloryApi_ShortVideoComment: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension GloryApi_CreateShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_CreateShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CreateShortVideoRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}video_path\0\u{3}cover_path\0\u{1}description\0\u{1}visibility\0\u{3}video_length\0\u{3}video_duration\0\u{1}products\0\u{3}shop_id\0\u{3}stage_video_id\0")
 
@@ -2155,7 +2155,7 @@ extension GloryApi_CreateShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension GloryApi_CreateShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_CreateShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CreateShortVideoResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}short_video_id\0")
 
@@ -2194,7 +2194,7 @@ extension GloryApi_CreateShortVideoResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension GloryApi_StageShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_StageShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".StageShortVideoRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}video_path\0\u{3}cover_path\0\u{1}description\0\u{1}visibility\0\u{3}video_length\0\u{3}video_duration\0\u{1}products\0\u{3}shop_id\0")
 
@@ -2268,7 +2268,7 @@ extension GloryApi_StageShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension GloryApi_StageShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_StageShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".StageShortVideoResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}stage_video_id\0")
 
@@ -2307,7 +2307,7 @@ extension GloryApi_StageShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension GloryApi_ListMyShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListMyShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListMyShortVideoRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{1}type\0\u{3}user_id\0\u{2}a\u{1}pagination\0")
 
@@ -2356,7 +2356,7 @@ extension GloryApi_ListMyShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension GloryApi_ListMyShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListMyShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListMyShortVideoResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}short_video_list\0\u{2}b\u{1}pagination\0")
 
@@ -2400,7 +2400,7 @@ extension GloryApi_ListMyShortVideoResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension GloryApi_ListMyStageVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListMyStageVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListMyStageVideoRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{2}c\u{1}pagination\0")
 
@@ -2439,7 +2439,7 @@ extension GloryApi_ListMyStageVideoRequest: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension GloryApi_ListMyStageVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListMyStageVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListMyStageVideoResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}stage_video_list\0")
 
@@ -2478,7 +2478,7 @@ extension GloryApi_ListMyStageVideoResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension GloryApi_ListMyLikeVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListMyLikeVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListMyLikeVideoRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{2}c\u{1}pagination\0")
 
@@ -2517,7 +2517,7 @@ extension GloryApi_ListMyLikeVideoRequest: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension GloryApi_ListMyLikeVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListMyLikeVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListMyLikeVideoResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}short_video_list\0\u{2}b\u{1}pagination\0")
 
@@ -2561,7 +2561,7 @@ extension GloryApi_ListMyLikeVideoResponse: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension GloryApi_ListMyFavoriteVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListMyFavoriteVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListMyFavoriteVideoRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{2}c\u{1}pagination\0")
 
@@ -2600,7 +2600,7 @@ extension GloryApi_ListMyFavoriteVideoRequest: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension GloryApi_ListMyFavoriteVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListMyFavoriteVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListMyFavoriteVideoResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}short_video_list\0\u{2}b\u{1}pagination\0")
 
@@ -2644,7 +2644,7 @@ extension GloryApi_ListMyFavoriteVideoResponse: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension GloryApi_GetShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetShortVideoRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}short_video_id\0")
 
@@ -2683,7 +2683,7 @@ extension GloryApi_GetShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension GloryApi_GetShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetShortVideoResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}short_video\0")
 
@@ -2722,7 +2722,7 @@ extension GloryApi_GetShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension GloryApi_UpdateShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_UpdateShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UpdateShortVideoRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}short_video_id\0\u{3}cover_path\0\u{1}description\0\u{1}visibility\0\u{1}products\0\u{3}shop_id\0")
 
@@ -2786,7 +2786,7 @@ extension GloryApi_UpdateShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension GloryApi_UpdateShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_UpdateShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UpdateShortVideoResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}short_video_id\0")
 
@@ -2825,7 +2825,7 @@ extension GloryApi_UpdateShortVideoResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension GloryApi_DeleteShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_DeleteShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DeleteShortVideoRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}short_video_id\0")
 
@@ -2864,7 +2864,7 @@ extension GloryApi_DeleteShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension GloryApi_DeleteShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_DeleteShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DeleteShortVideoResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 
@@ -2898,7 +2898,7 @@ extension GloryApi_DeleteShortVideoResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension GloryApi_GetStageVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetStageVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetStageVideoRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}stage_video_id\0")
 
@@ -2937,7 +2937,7 @@ extension GloryApi_GetStageVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension GloryApi_GetStageVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetStageVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetStageVideoResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}stage_video\0")
 
@@ -2976,7 +2976,7 @@ extension GloryApi_GetStageVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension GloryApi_DeleteStageVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_DeleteStageVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DeleteStageVideoRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}stage_video_id\0")
 
@@ -3015,7 +3015,7 @@ extension GloryApi_DeleteStageVideoRequest: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension GloryApi_DeleteStageVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_DeleteStageVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DeleteStageVideoResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 
@@ -3049,7 +3049,7 @@ extension GloryApi_DeleteStageVideoResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension GloryApi_UpdateStageVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_UpdateStageVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UpdateStageVideoRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}stage_video_id\0\u{3}video_path\0\u{3}cover_path\0\u{1}description\0\u{1}visibility\0\u{3}video_length\0\u{3}video_duration\0\u{1}products\0\u{3}shop_id\0")
 
@@ -3128,7 +3128,7 @@ extension GloryApi_UpdateStageVideoRequest: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension GloryApi_UpdateStageVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_UpdateStageVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UpdateStageVideoResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}stage_video_id\0")
 
@@ -3167,7 +3167,7 @@ extension GloryApi_UpdateStageVideoResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension GloryApi_ManagementListShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ManagementListShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ManagementListShortVideoRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{1}type\0\u{3}major_id\0\u{3}class_id\0\u{2}`\u{1}pagination\0")
 
@@ -3221,7 +3221,7 @@ extension GloryApi_ManagementListShortVideoRequest: SwiftProtobuf.Message, Swift
   }
 }
 
-extension GloryApi_ManagementListShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ManagementListShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ManagementListShortVideoResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}short_video_list\0\u{2}b\u{1}pagination\0")
 
@@ -3265,7 +3265,7 @@ extension GloryApi_ManagementListShortVideoResponse: SwiftProtobuf.Message, Swif
   }
 }
 
-extension GloryApi_ManagementCensorShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ManagementCensorShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ManagementCensorShortVideoRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}short_video_id\0\u{3}censor_status\0\u{3}censor_rejected_reason\0")
 
@@ -3314,7 +3314,7 @@ extension GloryApi_ManagementCensorShortVideoRequest: SwiftProtobuf.Message, Swi
   }
 }
 
-extension GloryApi_ManagementCensorShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ManagementCensorShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ManagementCensorShortVideoResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 
@@ -3348,7 +3348,7 @@ extension GloryApi_ManagementCensorShortVideoResponse: SwiftProtobuf.Message, Sw
   }
 }
 
-extension GloryApi_ManagementDeleteShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ManagementDeleteShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ManagementDeleteShortVideoRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}short_video_id\0")
 
@@ -3387,7 +3387,7 @@ extension GloryApi_ManagementDeleteShortVideoRequest: SwiftProtobuf.Message, Swi
   }
 }
 
-extension GloryApi_ManagementDeleteShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ManagementDeleteShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ManagementDeleteShortVideoResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 
@@ -3421,7 +3421,7 @@ extension GloryApi_ManagementDeleteShortVideoResponse: SwiftProtobuf.Message, Sw
   }
 }
 
-extension GloryApi_ListShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListShortVideoRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{1}key\0\u{2}b\u{1}pagination\0")
 
@@ -3465,7 +3465,7 @@ extension GloryApi_ListShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension GloryApi_ListShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListShortVideoResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}short_video_list\0\u{2}b\u{1}pagination\0")
 
@@ -3509,7 +3509,7 @@ extension GloryApi_ListShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension GloryApi_LikeShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_LikeShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".LikeShortVideoRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}short_video_id\0\u{1}like\0")
 
@@ -3553,7 +3553,7 @@ extension GloryApi_LikeShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension GloryApi_LikeShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_LikeShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".LikeShortVideoResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 
@@ -3587,7 +3587,7 @@ extension GloryApi_LikeShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension GloryApi_FavoriteShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_FavoriteShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".FavoriteShortVideoRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}short_video_id\0\u{1}favorite\0")
 
@@ -3631,7 +3631,7 @@ extension GloryApi_FavoriteShortVideoRequest: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension GloryApi_FavoriteShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_FavoriteShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".FavoriteShortVideoResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 
@@ -3665,7 +3665,7 @@ extension GloryApi_FavoriteShortVideoResponse: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension GloryApi_CreateShortVideoCommentRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_CreateShortVideoCommentRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CreateShortVideoCommentRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}short_video_id\0\u{1}content\0\u{3}parent_comment_id\0")
 
@@ -3714,7 +3714,7 @@ extension GloryApi_CreateShortVideoCommentRequest: SwiftProtobuf.Message, SwiftP
   }
 }
 
-extension GloryApi_CreateShortVideoCommentResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_CreateShortVideoCommentResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CreateShortVideoCommentResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}comment_id\0")
 
@@ -3753,7 +3753,7 @@ extension GloryApi_CreateShortVideoCommentResponse: SwiftProtobuf.Message, Swift
   }
 }
 
-extension GloryApi_DeleteShortVideoCommentRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_DeleteShortVideoCommentRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DeleteShortVideoCommentRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}short_video_comment_id\0")
 
@@ -3792,7 +3792,7 @@ extension GloryApi_DeleteShortVideoCommentRequest: SwiftProtobuf.Message, SwiftP
   }
 }
 
-extension GloryApi_DeleteShortVideoCommentResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_DeleteShortVideoCommentResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DeleteShortVideoCommentResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_response\0")
 
@@ -3826,7 +3826,7 @@ extension GloryApi_DeleteShortVideoCommentResponse: SwiftProtobuf.Message, Swift
   }
 }
 
-extension GloryApi_ListShortVideoCommentRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListShortVideoCommentRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListShortVideoCommentRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}short_video_id\0\u{3}parent_comment_id\0\u{2}a\u{1}pagination\0")
 
@@ -3875,7 +3875,7 @@ extension GloryApi_ListShortVideoCommentRequest: SwiftProtobuf.Message, SwiftPro
   }
 }
 
-extension GloryApi_ListShortVideoCommentResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListShortVideoCommentResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListShortVideoCommentResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}short_video_comment_list\0\u{2}b\u{1}pagination\0")
 
@@ -3919,7 +3919,7 @@ extension GloryApi_ListShortVideoCommentResponse: SwiftProtobuf.Message, SwiftPr
   }
 }
 
-extension GloryApi_TeacherListStudentShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_TeacherListStudentShortVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".TeacherListStudentShortVideoRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}student_name\0\u{3}class_ids\0\u{3}start_time\0\u{3}end_time\0\u{2}_\u{1}pagination\0")
 
@@ -3978,7 +3978,7 @@ extension GloryApi_TeacherListStudentShortVideoRequest: SwiftProtobuf.Message, S
   }
 }
 
-extension GloryApi_TeacherListStudentShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_TeacherListStudentShortVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".TeacherListStudentShortVideoResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}short_video_list\0\u{2}b\u{1}pagination\0")
 

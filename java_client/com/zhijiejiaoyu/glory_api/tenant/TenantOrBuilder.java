@@ -184,4 +184,24 @@ public interface TenantOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCoursesBytes(int index);
+
+  /**
+   * <pre>
+   * 学校账户有效期截止时间
+   * </pre>
+   *
+   * <code>string expiry_date = 14;</code>
+   * @return The expiryDate.
+   */
+  java.lang.String getExpiryDate();
+  /**
+   * <pre>
+   * 学校账户有效期截止时间
+   * </pre>
+   *
+   * <code>string expiry_date = 14;</code>
+   * @return The bytes for expiryDate.
+   */
+  com.google.protobuf.ByteString
+      getExpiryDateBytes();
 }

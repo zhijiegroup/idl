@@ -15,88 +15,88 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-struct GloryApi_WXPayInfo: @unchecked Sendable {
+nonisolated struct GloryApi_WXPayInfo: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   ///必传
   var description_p: String {
-    get {return _storage._description_p}
+    get {_storage._description_p}
     set {_uniqueStorage()._description_p = newValue}
   }
 
   ///商户系统内部订单号，只能是数字、大小写字母_-*且在同一个商户号下唯一
   var outTradeNo: String {
-    get {return _storage._outTradeNo}
+    get {_storage._outTradeNo}
     set {_uniqueStorage()._outTradeNo = newValue}
   }
 
   var amount: GloryApi_Amount {
-    get {return _storage._amount ?? GloryApi_Amount()}
+    get {_storage._amount ?? GloryApi_Amount()}
     set {_uniqueStorage()._amount = newValue}
   }
   /// Returns true if `amount` has been explicitly set.
-  var hasAmount: Bool {return _storage._amount != nil}
+  var hasAmount: Bool {_storage._amount != nil}
   /// Clears the value of `amount`. Subsequent reads from it will return its default value.
   mutating func clearAmount() {_uniqueStorage()._amount = nil}
 
   /// 信开放平台审核通过的移动应用appid
   var appid: String {
-    get {return _storage._appid}
+    get {_storage._appid}
     set {_uniqueStorage()._appid = newValue}
   }
 
   ///非必传
   var attach: String {
-    get {return _storage._attach}
+    get {_storage._attach}
     set {_uniqueStorage()._attach = newValue}
   }
 
   ///订单优惠标记
   var goodsTag: String {
-    get {return _storage._goodsTag}
+    get {_storage._goodsTag}
     set {_uniqueStorage()._goodsTag = newValue}
   }
 
   ///电子发票入口开放标识 传入true时，支付成功消息和支付详情页将出现开票入口。需要在微信支付商户平台或微信公众平台开通电子发票功能，传此字段才可生效
   var supportFapiao: Bool {
-    get {return _storage._supportFapiao}
+    get {_storage._supportFapiao}
     set {_uniqueStorage()._supportFapiao = newValue}
   }
 
   ///优惠功能
   var detail: GloryApi_Detail {
-    get {return _storage._detail ?? GloryApi_Detail()}
+    get {_storage._detail ?? GloryApi_Detail()}
     set {_uniqueStorage()._detail = newValue}
   }
   /// Returns true if `detail` has been explicitly set.
-  var hasDetail: Bool {return _storage._detail != nil}
+  var hasDetail: Bool {_storage._detail != nil}
   /// Clears the value of `detail`. Subsequent reads from it will return its default value.
   mutating func clearDetail() {_uniqueStorage()._detail = nil}
 
   ///支付场景描述
   var sceneInfo: GloryApi_SceneInfo {
-    get {return _storage._sceneInfo ?? GloryApi_SceneInfo()}
+    get {_storage._sceneInfo ?? GloryApi_SceneInfo()}
     set {_uniqueStorage()._sceneInfo = newValue}
   }
   /// Returns true if `sceneInfo` has been explicitly set.
-  var hasSceneInfo: Bool {return _storage._sceneInfo != nil}
+  var hasSceneInfo: Bool {_storage._sceneInfo != nil}
   /// Clears the value of `sceneInfo`. Subsequent reads from it will return its default value.
   mutating func clearSceneInfo() {_uniqueStorage()._sceneInfo = nil}
 
   /// 结算信息
   var settleInfo: GloryApi_SettleInfo {
-    get {return _storage._settleInfo ?? GloryApi_SettleInfo()}
+    get {_storage._settleInfo ?? GloryApi_SettleInfo()}
     set {_uniqueStorage()._settleInfo = newValue}
   }
   /// Returns true if `settleInfo` has been explicitly set.
-  var hasSettleInfo: Bool {return _storage._settleInfo != nil}
+  var hasSettleInfo: Bool {_storage._settleInfo != nil}
   /// Clears the value of `settleInfo`. Subsequent reads from it will return its default value.
   mutating func clearSettleInfo() {_uniqueStorage()._settleInfo = nil}
 
@@ -107,7 +107,7 @@ struct GloryApi_WXPayInfo: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct GloryApi_Amount: Sendable {
+nonisolated struct GloryApi_Amount: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -123,7 +123,7 @@ struct GloryApi_Amount: Sendable {
   init() {}
 }
 
-struct GloryApi_Detail: Sendable {
+nonisolated struct GloryApi_Detail: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -142,7 +142,7 @@ struct GloryApi_Detail: Sendable {
   init() {}
 }
 
-struct GloryApi_GoodsDetail: Sendable {
+nonisolated struct GloryApi_GoodsDetail: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -167,7 +167,7 @@ struct GloryApi_GoodsDetail: Sendable {
   init() {}
 }
 
-struct GloryApi_SceneInfo: Sendable {
+nonisolated struct GloryApi_SceneInfo: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -180,11 +180,11 @@ struct GloryApi_SceneInfo: Sendable {
 
   ///商户门店信息
   var storeInfo: GloryApi_StoreInfo {
-    get {return _storeInfo ?? GloryApi_StoreInfo()}
+    get {_storeInfo ?? GloryApi_StoreInfo()}
     set {_storeInfo = newValue}
   }
   /// Returns true if `storeInfo` has been explicitly set.
-  var hasStoreInfo: Bool {return self._storeInfo != nil}
+  var hasStoreInfo: Bool {self._storeInfo != nil}
   /// Clears the value of `storeInfo`. Subsequent reads from it will return its default value.
   mutating func clearStoreInfo() {self._storeInfo = nil}
 
@@ -195,7 +195,7 @@ struct GloryApi_SceneInfo: Sendable {
   fileprivate var _storeInfo: GloryApi_StoreInfo? = nil
 }
 
-struct GloryApi_StoreInfo: Sendable {
+nonisolated struct GloryApi_StoreInfo: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -217,7 +217,7 @@ struct GloryApi_StoreInfo: Sendable {
   init() {}
 }
 
-struct GloryApi_SettleInfo: Sendable {
+nonisolated struct GloryApi_SettleInfo: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -230,7 +230,7 @@ struct GloryApi_SettleInfo: Sendable {
   init() {}
 }
 
-struct GloryApi_PayerAmount: Sendable {
+nonisolated struct GloryApi_PayerAmount: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -247,7 +247,7 @@ struct GloryApi_PayerAmount: Sendable {
   init() {}
 }
 
-struct GloryApi_Payer: Sendable {
+nonisolated struct GloryApi_Payer: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -259,7 +259,7 @@ struct GloryApi_Payer: Sendable {
   init() {}
 }
 
-struct GloryApi_WxOderInfo: Sendable {
+nonisolated struct GloryApi_WxOderInfo: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -285,20 +285,20 @@ struct GloryApi_WxOderInfo: Sendable {
   var transactionID: String = String()
 
   var amount: GloryApi_PayerAmount {
-    get {return _amount ?? GloryApi_PayerAmount()}
+    get {_amount ?? GloryApi_PayerAmount()}
     set {_amount = newValue}
   }
   /// Returns true if `amount` has been explicitly set.
-  var hasAmount: Bool {return self._amount != nil}
+  var hasAmount: Bool {self._amount != nil}
   /// Clears the value of `amount`. Subsequent reads from it will return its default value.
   mutating func clearAmount() {self._amount = nil}
 
   var payer: GloryApi_Payer {
-    get {return _payer ?? GloryApi_Payer()}
+    get {_payer ?? GloryApi_Payer()}
     set {_payer = newValue}
   }
   /// Returns true if `payer` has been explicitly set.
-  var hasPayer: Bool {return self._payer != nil}
+  var hasPayer: Bool {self._payer != nil}
   /// Clears the value of `payer`. Subsequent reads from it will return its default value.
   mutating func clearPayer() {self._payer = nil}
 
@@ -310,26 +310,26 @@ struct GloryApi_WxOderInfo: Sendable {
   fileprivate var _payer: GloryApi_Payer? = nil
 }
 
-struct GloryApi_PrepayRequest: Sendable {
+nonisolated struct GloryApi_PrepayRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var payInfo: GloryApi_WXPayInfo {
-    get {return _payInfo ?? GloryApi_WXPayInfo()}
+    get {_payInfo ?? GloryApi_WXPayInfo()}
     set {_payInfo = newValue}
   }
   /// Returns true if `payInfo` has been explicitly set.
-  var hasPayInfo: Bool {return self._payInfo != nil}
+  var hasPayInfo: Bool {self._payInfo != nil}
   /// Clears the value of `payInfo`. Subsequent reads from it will return its default value.
   mutating func clearPayInfo() {self._payInfo = nil}
 
@@ -341,17 +341,17 @@ struct GloryApi_PrepayRequest: Sendable {
   fileprivate var _payInfo: GloryApi_WXPayInfo? = nil
 }
 
-struct GloryApi_PrepayResponse: Sendable {
+nonisolated struct GloryApi_PrepayResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -383,17 +383,17 @@ struct GloryApi_PrepayResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_CloseOrderRequest: Sendable {
+nonisolated struct GloryApi_CloseOrderRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -407,17 +407,17 @@ struct GloryApi_CloseOrderRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CloseOrderResponse: Sendable {
+nonisolated struct GloryApi_CloseOrderResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -430,17 +430,17 @@ struct GloryApi_CloseOrderResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_QueryOrderByIdRequest: Sendable {
+nonisolated struct GloryApi_QueryOrderByIdRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -454,26 +454,26 @@ struct GloryApi_QueryOrderByIdRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_QueryOrderByIdResponse: @unchecked Sendable {
+nonisolated struct GloryApi_QueryOrderByIdResponse: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _storage._baseResp ?? Base_BaseResponse()}
+    get {_storage._baseResp ?? Base_BaseResponse()}
     set {_uniqueStorage()._baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return _storage._baseResp != nil}
+  var hasBaseResp: Bool {_storage._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {_uniqueStorage()._baseResp = nil}
 
   var orderInfo: GloryApi_WxOderInfo {
-    get {return _storage._orderInfo ?? GloryApi_WxOderInfo()}
+    get {_storage._orderInfo ?? GloryApi_WxOderInfo()}
     set {_uniqueStorage()._orderInfo = newValue}
   }
   /// Returns true if `orderInfo` has been explicitly set.
-  var hasOrderInfo: Bool {return _storage._orderInfo != nil}
+  var hasOrderInfo: Bool {_storage._orderInfo != nil}
   /// Clears the value of `orderInfo`. Subsequent reads from it will return its default value.
   mutating func clearOrderInfo() {_uniqueStorage()._orderInfo = nil}
 
@@ -484,17 +484,17 @@ struct GloryApi_QueryOrderByIdResponse: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct GloryApi_QueryOrderByOutTradeNoRequest: Sendable {
+nonisolated struct GloryApi_QueryOrderByOutTradeNoRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -508,26 +508,26 @@ struct GloryApi_QueryOrderByOutTradeNoRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_QueryOrderByOutTradeNoResponse: @unchecked Sendable {
+nonisolated struct GloryApi_QueryOrderByOutTradeNoResponse: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _storage._baseResp ?? Base_BaseResponse()}
+    get {_storage._baseResp ?? Base_BaseResponse()}
     set {_uniqueStorage()._baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return _storage._baseResp != nil}
+  var hasBaseResp: Bool {_storage._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {_uniqueStorage()._baseResp = nil}
 
   var orderInfo: GloryApi_WxOderInfo {
-    get {return _storage._orderInfo ?? GloryApi_WxOderInfo()}
+    get {_storage._orderInfo ?? GloryApi_WxOderInfo()}
     set {_uniqueStorage()._orderInfo = newValue}
   }
   /// Returns true if `orderInfo` has been explicitly set.
-  var hasOrderInfo: Bool {return _storage._orderInfo != nil}
+  var hasOrderInfo: Bool {_storage._orderInfo != nil}
   /// Clears the value of `orderInfo`. Subsequent reads from it will return its default value.
   mutating func clearOrderInfo() {_uniqueStorage()._orderInfo = nil}
 
@@ -540,9 +540,9 @@ struct GloryApi_QueryOrderByOutTradeNoResponse: @unchecked Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "glory_api"
+fileprivate nonisolated let _protobuf_package = "glory_api"
 
-extension GloryApi_WXPayInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_WXPayInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".WXPayInfo"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}description\0\u{3}out_trade_no\0\u{1}amount\0\u{1}attach\0\u{3}goods_tag\0\u{3}support_fapiao\0\u{1}detail\0\u{3}scene_info\0\u{3}settle_info\0\u{1}appid\0")
 
@@ -675,7 +675,7 @@ extension GloryApi_WXPayInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
   }
 }
 
-extension GloryApi_Amount: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_Amount: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Amount"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}total\0\u{1}currency\0")
 
@@ -710,7 +710,7 @@ extension GloryApi_Amount: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
   }
 }
 
-extension GloryApi_Detail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_Detail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Detail"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}cost_price\0\u{3}invoice_id\0\u{3}goods_detail\0")
 
@@ -750,7 +750,7 @@ extension GloryApi_Detail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
   }
 }
 
-extension GloryApi_GoodsDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GoodsDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GoodsDetail"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}merchant_goods_id\0\u{3}wechatpay_goods_id\0\u{3}goods_name\0\u{1}quantity\0\u{3}unit_price\0")
 
@@ -800,7 +800,7 @@ extension GloryApi_GoodsDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 }
 
-extension GloryApi_SceneInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_SceneInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".SceneInfo"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}payer_client_ip\0\u{3}device_id\0\u{3}store_info\0")
 
@@ -844,7 +844,7 @@ extension GloryApi_SceneInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
   }
 }
 
-extension GloryApi_StoreInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_StoreInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".StoreInfo"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{1}name\0\u{3}area_code\0\u{1}address\0")
 
@@ -889,7 +889,7 @@ extension GloryApi_StoreInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
   }
 }
 
-extension GloryApi_SettleInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_SettleInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".SettleInfo"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}profit_sharing\0")
 
@@ -919,7 +919,7 @@ extension GloryApi_SettleInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension GloryApi_PayerAmount: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_PayerAmount: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".PayerAmount"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}currency\0\u{3}payer_total\0\u{1}total\0")
 
@@ -959,7 +959,7 @@ extension GloryApi_PayerAmount: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 }
 
-extension GloryApi_Payer: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_Payer: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Payer"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}openid\0")
 
@@ -989,7 +989,7 @@ extension GloryApi_Payer: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
   }
 }
 
-extension GloryApi_WxOderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_WxOderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".WxOderInfo"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}appid\0\u{1}attach\0\u{3}bank_type\0\u{1}mchid\0\u{3}out_trade_no\0\u{3}success_time\0\u{3}trade_state\0\u{3}trade_state_desc\0\u{3}trade_type\0\u{3}transaction_id\0\u{1}amount\0\u{1}payer\0")
 
@@ -1078,7 +1078,7 @@ extension GloryApi_WxOderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension GloryApi_PrepayRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_PrepayRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".PrepayRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}pay_info\0")
 
@@ -1117,7 +1117,7 @@ extension GloryApi_PrepayRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 }
 
-extension GloryApi_PrepayResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_PrepayResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".PrepayResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}prepay_id\0\u{1}partnerid\0\u{1}package\0\u{1}noncestr\0\u{1}timestamp\0\u{1}sign\0\u{1}appid\0")
 
@@ -1186,7 +1186,7 @@ extension GloryApi_PrepayResponse: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension GloryApi_CloseOrderRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_CloseOrderRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CloseOrderRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}out_trade_no\0")
 
@@ -1225,7 +1225,7 @@ extension GloryApi_CloseOrderRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension GloryApi_CloseOrderResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_CloseOrderResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CloseOrderResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}status_code\0")
 
@@ -1264,7 +1264,7 @@ extension GloryApi_CloseOrderResponse: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension GloryApi_QueryOrderByIdRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_QueryOrderByIdRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryOrderByIdRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}transaction_id\0")
 
@@ -1303,7 +1303,7 @@ extension GloryApi_QueryOrderByIdRequest: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension GloryApi_QueryOrderByIdResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_QueryOrderByIdResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryOrderByIdResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{1}orderInfo\0")
 
@@ -1380,7 +1380,7 @@ extension GloryApi_QueryOrderByIdResponse: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension GloryApi_QueryOrderByOutTradeNoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_QueryOrderByOutTradeNoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryOrderByOutTradeNoRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}out_trade_no\0")
 
@@ -1419,7 +1419,7 @@ extension GloryApi_QueryOrderByOutTradeNoRequest: SwiftProtobuf.Message, SwiftPr
   }
 }
 
-extension GloryApi_QueryOrderByOutTradeNoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_QueryOrderByOutTradeNoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QueryOrderByOutTradeNoResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{1}orderInfo\0")
 

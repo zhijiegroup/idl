@@ -15,22 +15,22 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-struct GloryApi_GetAndroidQRCodeRequest: Sendable {
+nonisolated struct GloryApi_GetAndroidQRCodeRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -41,17 +41,17 @@ struct GloryApi_GetAndroidQRCodeRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetAndroidQRCodeResponse: Sendable {
+nonisolated struct GloryApi_GetAndroidQRCodeResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -64,7 +64,7 @@ struct GloryApi_GetAndroidQRCodeResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_AppVersion: Sendable {
+nonisolated struct GloryApi_AppVersion: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -84,7 +84,7 @@ struct GloryApi_AppVersion: Sendable {
   init() {}
 }
 
-struct GloryApi_VersionLog: Sendable {
+nonisolated struct GloryApi_VersionLog: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -95,20 +95,20 @@ struct GloryApi_VersionLog: Sendable {
   var versionType: String = String()
 
   var androidVersion: GloryApi_AppVersion {
-    get {return _androidVersion ?? GloryApi_AppVersion()}
+    get {_androidVersion ?? GloryApi_AppVersion()}
     set {_androidVersion = newValue}
   }
   /// Returns true if `androidVersion` has been explicitly set.
-  var hasAndroidVersion: Bool {return self._androidVersion != nil}
+  var hasAndroidVersion: Bool {self._androidVersion != nil}
   /// Clears the value of `androidVersion`. Subsequent reads from it will return its default value.
   mutating func clearAndroidVersion() {self._androidVersion = nil}
 
   var iosVersion: GloryApi_AppVersion {
-    get {return _iosVersion ?? GloryApi_AppVersion()}
+    get {_iosVersion ?? GloryApi_AppVersion()}
     set {_iosVersion = newValue}
   }
   /// Returns true if `iosVersion` has been explicitly set.
-  var hasIosVersion: Bool {return self._iosVersion != nil}
+  var hasIosVersion: Bool {self._iosVersion != nil}
   /// Clears the value of `iosVersion`. Subsequent reads from it will return its default value.
   mutating func clearIosVersion() {self._iosVersion = nil}
 
@@ -124,26 +124,26 @@ struct GloryApi_VersionLog: Sendable {
   fileprivate var _iosVersion: GloryApi_AppVersion? = nil
 }
 
-struct GloryApi_CreateVersionLogRequest: Sendable {
+nonisolated struct GloryApi_CreateVersionLogRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var versionLog: GloryApi_VersionLog {
-    get {return _versionLog ?? GloryApi_VersionLog()}
+    get {_versionLog ?? GloryApi_VersionLog()}
     set {_versionLog = newValue}
   }
   /// Returns true if `versionLog` has been explicitly set.
-  var hasVersionLog: Bool {return self._versionLog != nil}
+  var hasVersionLog: Bool {self._versionLog != nil}
   /// Clears the value of `versionLog`. Subsequent reads from it will return its default value.
   mutating func clearVersionLog() {self._versionLog = nil}
 
@@ -155,17 +155,17 @@ struct GloryApi_CreateVersionLogRequest: Sendable {
   fileprivate var _versionLog: GloryApi_VersionLog? = nil
 }
 
-struct GloryApi_CreateVersionLogResponse: Sendable {
+nonisolated struct GloryApi_CreateVersionLogResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -176,26 +176,26 @@ struct GloryApi_CreateVersionLogResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_UpdateVersionLogRequest: Sendable {
+nonisolated struct GloryApi_UpdateVersionLogRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var versionLog: GloryApi_VersionLog {
-    get {return _versionLog ?? GloryApi_VersionLog()}
+    get {_versionLog ?? GloryApi_VersionLog()}
     set {_versionLog = newValue}
   }
   /// Returns true if `versionLog` has been explicitly set.
-  var hasVersionLog: Bool {return self._versionLog != nil}
+  var hasVersionLog: Bool {self._versionLog != nil}
   /// Clears the value of `versionLog`. Subsequent reads from it will return its default value.
   mutating func clearVersionLog() {self._versionLog = nil}
 
@@ -207,17 +207,17 @@ struct GloryApi_UpdateVersionLogRequest: Sendable {
   fileprivate var _versionLog: GloryApi_VersionLog? = nil
 }
 
-struct GloryApi_UpdateVersionLogResponse: Sendable {
+nonisolated struct GloryApi_UpdateVersionLogResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -228,28 +228,28 @@ struct GloryApi_UpdateVersionLogResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListVersionLogRequest: Sendable {
+nonisolated struct GloryApi_ListVersionLogRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var versionType: String = String()
 
   var pagination: Base_PaginationRequest {
-    get {return _pagination ?? Base_PaginationRequest()}
+    get {_pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -261,28 +261,28 @@ struct GloryApi_ListVersionLogRequest: Sendable {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListVersionLogResponse: Sendable {
+nonisolated struct GloryApi_ListVersionLogResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var versionLogs: [GloryApi_VersionLog] = []
 
   var pagination: Base_PaginationResponse {
-    get {return _pagination ?? Base_PaginationResponse()}
+    get {_pagination ?? Base_PaginationResponse()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -294,17 +294,17 @@ struct GloryApi_ListVersionLogResponse: Sendable {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_DeleteVersionLogRequest: Sendable {
+nonisolated struct GloryApi_DeleteVersionLogRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -317,17 +317,17 @@ struct GloryApi_DeleteVersionLogRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteVersionLogResponse: Sendable {
+nonisolated struct GloryApi_DeleteVersionLogResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -338,17 +338,17 @@ struct GloryApi_DeleteVersionLogResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetLatestVersionRequest: Sendable {
+nonisolated struct GloryApi_GetLatestVersionRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -362,26 +362,26 @@ struct GloryApi_GetLatestVersionRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetLatestVersionResponse: Sendable {
+nonisolated struct GloryApi_GetLatestVersionResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var version: GloryApi_AppVersion {
-    get {return _version ?? GloryApi_AppVersion()}
+    get {_version ?? GloryApi_AppVersion()}
     set {_version = newValue}
   }
   /// Returns true if `version` has been explicitly set.
-  var hasVersion: Bool {return self._version != nil}
+  var hasVersion: Bool {self._version != nil}
   /// Clears the value of `version`. Subsequent reads from it will return its default value.
   mutating func clearVersion() {self._version = nil}
 
@@ -395,9 +395,9 @@ struct GloryApi_GetLatestVersionResponse: Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "glory_api"
+fileprivate nonisolated let _protobuf_package = "glory_api"
 
-extension GloryApi_GetAndroidQRCodeRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetAndroidQRCodeRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetAndroidQRCodeRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0")
 
@@ -431,7 +431,7 @@ extension GloryApi_GetAndroidQRCodeRequest: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension GloryApi_GetAndroidQRCodeResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetAndroidQRCodeResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetAndroidQRCodeResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}qrcode_url\0")
 
@@ -470,7 +470,7 @@ extension GloryApi_GetAndroidQRCodeResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension GloryApi_AppVersion: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_AppVersion: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".AppVersion"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}version\0\u{1}changelog\0\u{1}path\0\u{3}force_update\0\u{3}force_update_min_version\0")
 
@@ -520,7 +520,7 @@ extension GloryApi_AppVersion: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension GloryApi_VersionLog: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_VersionLog: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".VersionLog"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}version_log_id\0\u{3}version_type\0\u{3}android_version\0\u{3}ios_version\0\u{3}creator_name\0\u{3}created_at\0")
 
@@ -579,7 +579,7 @@ extension GloryApi_VersionLog: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension GloryApi_CreateVersionLogRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_CreateVersionLogRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CreateVersionLogRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}version_log\0")
 
@@ -618,7 +618,7 @@ extension GloryApi_CreateVersionLogRequest: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension GloryApi_CreateVersionLogResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_CreateVersionLogResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CreateVersionLogResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 
@@ -652,7 +652,7 @@ extension GloryApi_CreateVersionLogResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension GloryApi_UpdateVersionLogRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_UpdateVersionLogRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UpdateVersionLogRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}version_log\0")
 
@@ -691,7 +691,7 @@ extension GloryApi_UpdateVersionLogRequest: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension GloryApi_UpdateVersionLogResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_UpdateVersionLogResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UpdateVersionLogResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 
@@ -725,7 +725,7 @@ extension GloryApi_UpdateVersionLogResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension GloryApi_ListVersionLogRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListVersionLogRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListVersionLogRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}version_type\0\u{2}b\u{1}pagination\0")
 
@@ -769,7 +769,7 @@ extension GloryApi_ListVersionLogRequest: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension GloryApi_ListVersionLogResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListVersionLogResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListVersionLogResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}version_logs\0\u{2}b\u{1}pagination\0")
 
@@ -813,7 +813,7 @@ extension GloryApi_ListVersionLogResponse: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension GloryApi_DeleteVersionLogRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_DeleteVersionLogRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DeleteVersionLogRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}version_log_id\0")
 
@@ -852,7 +852,7 @@ extension GloryApi_DeleteVersionLogRequest: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension GloryApi_DeleteVersionLogResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_DeleteVersionLogResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DeleteVersionLogResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 
@@ -886,7 +886,7 @@ extension GloryApi_DeleteVersionLogResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension GloryApi_GetLatestVersionRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetLatestVersionRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetLatestVersionRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{1}os\0")
 
@@ -925,7 +925,7 @@ extension GloryApi_GetLatestVersionRequest: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension GloryApi_GetLatestVersionResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetLatestVersionResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetLatestVersionResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{1}version\0")
 

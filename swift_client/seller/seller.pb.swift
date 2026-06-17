@@ -15,12 +15,12 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-struct GloryApi_Seller: Sendable {
+nonisolated struct GloryApi_Seller: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -38,26 +38,26 @@ struct GloryApi_Seller: Sendable {
   init() {}
 }
 
-struct GloryApi_CreateSellerRequest: Sendable {
+nonisolated struct GloryApi_CreateSellerRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var seller: GloryApi_Seller {
-    get {return _seller ?? GloryApi_Seller()}
+    get {_seller ?? GloryApi_Seller()}
     set {_seller = newValue}
   }
   /// Returns true if `seller` has been explicitly set.
-  var hasSeller: Bool {return self._seller != nil}
+  var hasSeller: Bool {self._seller != nil}
   /// Clears the value of `seller`. Subsequent reads from it will return its default value.
   mutating func clearSeller() {self._seller = nil}
 
@@ -69,17 +69,17 @@ struct GloryApi_CreateSellerRequest: Sendable {
   fileprivate var _seller: GloryApi_Seller? = nil
 }
 
-struct GloryApi_CreateSellerResponse: Sendable {
+nonisolated struct GloryApi_CreateSellerResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -94,9 +94,9 @@ struct GloryApi_CreateSellerResponse: Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "glory_api"
+fileprivate nonisolated let _protobuf_package = "glory_api"
 
-extension GloryApi_Seller: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_Seller: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Seller"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}seller_id\0\u{3}tenant_id\0\u{3}user_id\0\u{1}shop\0")
 
@@ -141,7 +141,7 @@ extension GloryApi_Seller: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
   }
 }
 
-extension GloryApi_CreateSellerRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_CreateSellerRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CreateSellerRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{1}seller\0")
 
@@ -180,7 +180,7 @@ extension GloryApi_CreateSellerRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension GloryApi_CreateSellerResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_CreateSellerResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CreateSellerResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}seller_id\0")
 

@@ -15,12 +15,12 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-struct GloryApi_CourseModules: Sendable {
+nonisolated struct GloryApi_CourseModules: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -30,7 +30,7 @@ struct GloryApi_CourseModules: Sendable {
   init() {}
 }
 
-struct GloryApi_Occupation: Sendable {
+nonisolated struct GloryApi_Occupation: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -44,127 +44,127 @@ struct GloryApi_Occupation: Sendable {
   init() {}
 }
 
-struct GloryApi_Course: @unchecked Sendable {
+nonisolated struct GloryApi_Course: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   /// 课程ID
   var courseID: Int64 {
-    get {return _storage._courseID}
+    get {_storage._courseID}
     set {_uniqueStorage()._courseID = newValue}
   }
 
   /// 课程名称
   var courseName: String {
-    get {return _storage._courseName}
+    get {_storage._courseName}
     set {_uniqueStorage()._courseName = newValue}
   }
 
   /// 课程开发单位
   var courseOrganization: String {
-    get {return _storage._courseOrganization}
+    get {_storage._courseOrganization}
     set {_uniqueStorage()._courseOrganization = newValue}
   }
 
   /// 主讲老师名称
   var courseTeacherName: String {
-    get {return _storage._courseTeacherName}
+    get {_storage._courseTeacherName}
     set {_uniqueStorage()._courseTeacherName = newValue}
   }
 
   /// 知识点学时
   var knowledgeHours: Float {
-    get {return _storage._knowledgeHours}
+    get {_storage._knowledgeHours}
     set {_uniqueStorage()._knowledgeHours = newValue}
   }
 
   /// 技能学时
   var skillHours: Float {
-    get {return _storage._skillHours}
+    get {_storage._skillHours}
     set {_uniqueStorage()._skillHours = newValue}
   }
 
   /// 课程简介
   var courseDescription: String {
-    get {return _storage._courseDescription}
+    get {_storage._courseDescription}
     set {_uniqueStorage()._courseDescription = newValue}
   }
 
   /// 课程关联的职业岗位
   var courseOccupation: [GloryApi_Occupation] {
-    get {return _storage._courseOccupation}
+    get {_storage._courseOccupation}
     set {_uniqueStorage()._courseOccupation = newValue}
   }
 
   /// 课程封面图片OSS路径
   var courseCoverPath: String {
-    get {return _storage._courseCoverPath}
+    get {_storage._courseCoverPath}
     set {_uniqueStorage()._courseCoverPath = newValue}
   }
 
   /// 课程封面图片OSS url
   var courseCoverURL: String {
-    get {return _storage._courseCoverURL}
+    get {_storage._courseCoverURL}
     set {_uniqueStorage()._courseCoverURL = newValue}
   }
 
   /// 课程分类：1.学校课程；2.职场提升
   var courseClassification: Int32 {
-    get {return _storage._courseClassification}
+    get {_storage._courseClassification}
     set {_uniqueStorage()._courseClassification = newValue}
   }
 
   /// 课程层次：1.中职；2.高职；3.中高职
   var courseLevel: Int32 {
-    get {return _storage._courseLevel}
+    get {_storage._courseLevel}
     set {_uniqueStorage()._courseLevel = newValue}
   }
 
   /// 课程专业代码
   var courseMajor: String {
-    get {return _storage._courseMajor}
+    get {_storage._courseMajor}
     set {_uniqueStorage()._courseMajor = newValue}
   }
 
   /// 课程行业代码
   var courseIndustry: String {
-    get {return _storage._courseIndustry}
+    get {_storage._courseIndustry}
     set {_uniqueStorage()._courseIndustry = newValue}
   }
 
   /// 课程类型：1.专业核心课；2.名师公开课
   var courseType: Int32 {
-    get {return _storage._courseType}
+    get {_storage._courseType}
     set {_uniqueStorage()._courseType = newValue}
   }
 
   /// 1. 模块化课程；2.非模块化课程；3.定制课程
   var courseModule: Int32 {
-    get {return _storage._courseModule}
+    get {_storage._courseModule}
     set {_uniqueStorage()._courseModule = newValue}
   }
 
   /// 能力指标或能力方向
   var courseModules: [GloryApi_CourseModule] {
-    get {return _storage._courseModules}
+    get {_storage._courseModules}
     set {_uniqueStorage()._courseModules = newValue}
   }
 
   /// 创建时间
   var createdAt: String {
-    get {return _storage._createdAt}
+    get {_storage._createdAt}
     set {_uniqueStorage()._createdAt = newValue}
   }
 
   var assigned: Bool {
-    get {return _storage._assigned}
+    get {_storage._assigned}
     set {_uniqueStorage()._assigned = newValue}
   }
 
   /// 课程语言
   var language: String {
-    get {return _storage._language}
+    get {_storage._language}
     set {_uniqueStorage()._language = newValue}
   }
 
@@ -176,26 +176,26 @@ struct GloryApi_Course: @unchecked Sendable {
 }
 
 /// 创建模块化课程
-struct GloryApi_CreateCourseRequest: Sendable {
+nonisolated struct GloryApi_CreateCourseRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var course: GloryApi_Course {
-    get {return _course ?? GloryApi_Course()}
+    get {_course ?? GloryApi_Course()}
     set {_course = newValue}
   }
   /// Returns true if `course` has been explicitly set.
-  var hasCourse: Bool {return self._course != nil}
+  var hasCourse: Bool {self._course != nil}
   /// Clears the value of `course`. Subsequent reads from it will return its default value.
   mutating func clearCourse() {self._course = nil}
 
@@ -207,17 +207,17 @@ struct GloryApi_CreateCourseRequest: Sendable {
   fileprivate var _course: GloryApi_Course? = nil
 }
 
-struct GloryApi_CreateCourseResponse: Sendable {
+nonisolated struct GloryApi_CreateCourseResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -231,17 +231,17 @@ struct GloryApi_CreateCourseResponse: Sendable {
 }
 
 /// 获取模块化课程
-struct GloryApi_GetCourseRequest: Sendable {
+nonisolated struct GloryApi_GetCourseRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -255,26 +255,26 @@ struct GloryApi_GetCourseRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetCourseResponse: Sendable {
+nonisolated struct GloryApi_GetCourseResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var course: GloryApi_Course {
-    get {return _course ?? GloryApi_Course()}
+    get {_course ?? GloryApi_Course()}
     set {_course = newValue}
   }
   /// Returns true if `course` has been explicitly set.
-  var hasCourse: Bool {return self._course != nil}
+  var hasCourse: Bool {self._course != nil}
   /// Clears the value of `course`. Subsequent reads from it will return its default value.
   mutating func clearCourse() {self._course = nil}
 
@@ -291,26 +291,26 @@ struct GloryApi_GetCourseResponse: Sendable {
 }
 
 /// 更新模块化课程
-struct GloryApi_UpdateCourseRequest: Sendable {
+nonisolated struct GloryApi_UpdateCourseRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var course: GloryApi_Course {
-    get {return _course ?? GloryApi_Course()}
+    get {_course ?? GloryApi_Course()}
     set {_course = newValue}
   }
   /// Returns true if `course` has been explicitly set.
-  var hasCourse: Bool {return self._course != nil}
+  var hasCourse: Bool {self._course != nil}
   /// Clears the value of `course`. Subsequent reads from it will return its default value.
   mutating func clearCourse() {self._course = nil}
 
@@ -322,17 +322,17 @@ struct GloryApi_UpdateCourseRequest: Sendable {
   fileprivate var _course: GloryApi_Course? = nil
 }
 
-struct GloryApi_UpdateCourseResponse: Sendable {
+nonisolated struct GloryApi_UpdateCourseResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -346,17 +346,17 @@ struct GloryApi_UpdateCourseResponse: Sendable {
 }
 
 /// 删除模块化课程
-struct GloryApi_DeleteCourseRequest: Sendable {
+nonisolated struct GloryApi_DeleteCourseRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -369,17 +369,17 @@ struct GloryApi_DeleteCourseRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteCourseResponse: Sendable {
+nonisolated struct GloryApi_DeleteCourseResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -391,17 +391,17 @@ struct GloryApi_DeleteCourseResponse: Sendable {
 }
 
 /// 模块化课程列表
-struct GloryApi_ListCourseRequest: Sendable {
+nonisolated struct GloryApi_ListCourseRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -436,11 +436,11 @@ struct GloryApi_ListCourseRequest: Sendable {
   var language: [String] = []
 
   var pagination: Base_PaginationRequest {
-    get {return _pagination ?? Base_PaginationRequest()}
+    get {_pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -452,28 +452,28 @@ struct GloryApi_ListCourseRequest: Sendable {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListCourseResponse: Sendable {
+nonisolated struct GloryApi_ListCourseResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var courses: [GloryApi_Course] = []
 
   var pagination: Base_PaginationResponse {
-    get {return _pagination ?? Base_PaginationResponse()}
+    get {_pagination ?? Base_PaginationResponse()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -485,17 +485,17 @@ struct GloryApi_ListCourseResponse: Sendable {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_GetCourseIdsRequest: Sendable {
+nonisolated struct GloryApi_GetCourseIdsRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -508,17 +508,17 @@ struct GloryApi_GetCourseIdsRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetCourseIdsResponse: Sendable {
+nonisolated struct GloryApi_GetCourseIdsResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -531,17 +531,17 @@ struct GloryApi_GetCourseIdsResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListLatestCourseRequest: Sendable {
+nonisolated struct GloryApi_ListLatestCourseRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -554,17 +554,17 @@ struct GloryApi_ListLatestCourseRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ListLatestCourseResponse: Sendable {
+nonisolated struct GloryApi_ListLatestCourseResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -577,17 +577,17 @@ struct GloryApi_ListLatestCourseResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListHottestCourseRequest: Sendable {
+nonisolated struct GloryApi_ListHottestCourseRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -600,17 +600,17 @@ struct GloryApi_ListHottestCourseRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ListHottestCourseResponse: Sendable {
+nonisolated struct GloryApi_ListHottestCourseResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -623,7 +623,7 @@ struct GloryApi_ListHottestCourseResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_CourseType: Sendable {
+nonisolated struct GloryApi_CourseType: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -639,17 +639,17 @@ struct GloryApi_CourseType: Sendable {
   init() {}
 }
 
-struct GloryApi_GetCourseTypeTreeRequest: Sendable {
+nonisolated struct GloryApi_GetCourseTypeTreeRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -660,17 +660,17 @@ struct GloryApi_GetCourseTypeTreeRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetCourseTypeTreeResponse: Sendable {
+nonisolated struct GloryApi_GetCourseTypeTreeResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -683,17 +683,17 @@ struct GloryApi_GetCourseTypeTreeResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetCourseTypeListRequest: Sendable {
+nonisolated struct GloryApi_GetCourseTypeListRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -706,17 +706,17 @@ struct GloryApi_GetCourseTypeListRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetCourseTypeListResponse: Sendable {
+nonisolated struct GloryApi_GetCourseTypeListResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -739,9 +739,9 @@ struct GloryApi_GetCourseTypeListResponse: Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "glory_api"
+fileprivate nonisolated let _protobuf_package = "glory_api"
 
-extension GloryApi_CourseModules: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_CourseModules: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CourseModules"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -760,7 +760,7 @@ extension GloryApi_CourseModules: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 }
 
-extension GloryApi_Occupation: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_Occupation: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Occupation"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}job_id\0\u{1}name\0")
 
@@ -795,7 +795,7 @@ extension GloryApi_Occupation: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Course"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}course_id\0\u{3}course_name\0\u{3}course_organization\0\u{3}course_teacher_name\0\u{3}knowledge_hours\0\u{3}skill_hours\0\u{3}course_description\0\u{3}course_occupation\0\u{3}course_cover_path\0\u{3}course_cover_url\0\u{3}course_classification\0\u{3}course_level\0\u{3}course_major\0\u{3}course_industry\0\u{3}course_type\0\u{3}course_module\0\u{3}course_modules\0\u{3}created_at\0\u{1}assigned\0\u{1}language\0")
 
@@ -994,7 +994,7 @@ extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
   }
 }
 
-extension GloryApi_CreateCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_CreateCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CreateCourseRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{1}course\0")
 
@@ -1033,7 +1033,7 @@ extension GloryApi_CreateCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension GloryApi_CreateCourseResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_CreateCourseResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CreateCourseResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}course_id\0")
 
@@ -1072,7 +1072,7 @@ extension GloryApi_CreateCourseResponse: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension GloryApi_GetCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetCourseRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}course_id\0")
 
@@ -1111,7 +1111,7 @@ extension GloryApi_GetCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension GloryApi_GetCourseResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetCourseResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetCourseResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{1}course\0\u{3}is_joined\0\u{3}course_progress\0")
 
@@ -1160,7 +1160,7 @@ extension GloryApi_GetCourseResponse: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension GloryApi_UpdateCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_UpdateCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UpdateCourseRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{1}course\0")
 
@@ -1199,7 +1199,7 @@ extension GloryApi_UpdateCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension GloryApi_UpdateCourseResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_UpdateCourseResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UpdateCourseResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}course_id\0")
 
@@ -1238,7 +1238,7 @@ extension GloryApi_UpdateCourseResponse: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension GloryApi_DeleteCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_DeleteCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DeleteCourseRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}course_id\0")
 
@@ -1277,7 +1277,7 @@ extension GloryApi_DeleteCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension GloryApi_DeleteCourseResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_DeleteCourseResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DeleteCourseResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 
@@ -1311,7 +1311,7 @@ extension GloryApi_DeleteCourseResponse: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension GloryApi_ListCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListCourseRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}course_classification\0\u{3}course_module\0\u{1}major\0\u{1}level\0\u{3}course_type\0\u{3}course_industry\0\u{1}simple\0\u{2}\u{2}key\0\u{1}assigned\0\u{1}language\0\u{2}X\u{1}pagination\0")
 
@@ -1400,7 +1400,7 @@ extension GloryApi_ListCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension GloryApi_ListCourseResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListCourseResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListCourseResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{1}courses\0\u{2}b\u{1}pagination\0")
 
@@ -1444,7 +1444,7 @@ extension GloryApi_ListCourseResponse: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension GloryApi_GetCourseIdsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetCourseIdsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetCourseIdsRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}major_code\0")
 
@@ -1483,7 +1483,7 @@ extension GloryApi_GetCourseIdsRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension GloryApi_GetCourseIdsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetCourseIdsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetCourseIdsResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}course_ids\0")
 
@@ -1522,7 +1522,7 @@ extension GloryApi_GetCourseIdsResponse: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension GloryApi_ListLatestCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListLatestCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListLatestCourseRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{1}size\0")
 
@@ -1561,7 +1561,7 @@ extension GloryApi_ListLatestCourseRequest: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension GloryApi_ListLatestCourseResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListLatestCourseResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListLatestCourseResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{1}courses\0")
 
@@ -1600,7 +1600,7 @@ extension GloryApi_ListLatestCourseResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension GloryApi_ListHottestCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListHottestCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListHottestCourseRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{1}size\0")
 
@@ -1639,7 +1639,7 @@ extension GloryApi_ListHottestCourseRequest: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension GloryApi_ListHottestCourseResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListHottestCourseResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListHottestCourseResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{1}courses\0")
 
@@ -1678,7 +1678,7 @@ extension GloryApi_ListHottestCourseResponse: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension GloryApi_CourseType: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_CourseType: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CourseType"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}label\0\u{1}value\0\u{1}children\0")
 
@@ -1718,7 +1718,7 @@ extension GloryApi_CourseType: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension GloryApi_GetCourseTypeTreeRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetCourseTypeTreeRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetCourseTypeTreeRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0")
 
@@ -1752,7 +1752,7 @@ extension GloryApi_GetCourseTypeTreeRequest: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension GloryApi_GetCourseTypeTreeResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetCourseTypeTreeResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetCourseTypeTreeResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{1}types\0")
 
@@ -1791,7 +1791,7 @@ extension GloryApi_GetCourseTypeTreeResponse: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension GloryApi_GetCourseTypeListRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetCourseTypeListRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetCourseTypeListRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{1}assigned\0")
 
@@ -1830,7 +1830,7 @@ extension GloryApi_GetCourseTypeListRequest: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension GloryApi_GetCourseTypeListResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetCourseTypeListResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetCourseTypeListResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{1}levels\0\u{1}types\0\u{1}majors\0\u{1}industries\0\u{1}languages\0")
 

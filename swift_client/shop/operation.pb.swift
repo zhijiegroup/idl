@@ -15,12 +15,12 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-struct GloryApi_ListOperationMetricsRequest: Sendable {
+nonisolated struct GloryApi_ListOperationMetricsRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -34,7 +34,7 @@ struct GloryApi_ListOperationMetricsRequest: Sendable {
   init() {}
 }
 
-struct GloryApi_DailyOperationMetrics: Sendable {
+nonisolated struct GloryApi_DailyOperationMetrics: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -52,17 +52,17 @@ struct GloryApi_DailyOperationMetrics: Sendable {
   init() {}
 }
 
-struct GloryApi_ListOperationMetricsResponse: Sendable {
+nonisolated struct GloryApi_ListOperationMetricsResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -83,9 +83,9 @@ struct GloryApi_ListOperationMetricsResponse: Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "glory_api"
+fileprivate nonisolated let _protobuf_package = "glory_api"
 
-extension GloryApi_ListOperationMetricsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListOperationMetricsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListOperationMetricsRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}shop_id\0\u{1}days\0")
 
@@ -120,7 +120,7 @@ extension GloryApi_ListOperationMetricsRequest: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension GloryApi_DailyOperationMetrics: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_DailyOperationMetrics: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DailyOperationMetrics"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}daily_order_amount\0\u{3}daily_order_count\0\u{3}daily_distinct_user_count\0\u{3}metrics_date\0")
 
@@ -165,7 +165,7 @@ extension GloryApi_DailyOperationMetrics: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension GloryApi_ListOperationMetricsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListOperationMetricsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListOperationMetricsResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}order_amount\0\u{3}order_count\0\u{3}distinct_user_count\0\u{3}daily_metrics\0")
 

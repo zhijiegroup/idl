@@ -15,12 +15,12 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-struct GloryApi_StudentTaskLink: Sendable {
+nonisolated struct GloryApi_StudentTaskLink: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -34,7 +34,7 @@ struct GloryApi_StudentTaskLink: Sendable {
   init() {}
 }
 
-struct GloryApi_TimeRange: Sendable {
+nonisolated struct GloryApi_TimeRange: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -48,7 +48,7 @@ struct GloryApi_TimeRange: Sendable {
   init() {}
 }
 
-struct GloryApi_StudentTaskParameterResult: Sendable {
+nonisolated struct GloryApi_StudentTaskParameterResult: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -78,7 +78,7 @@ struct GloryApi_StudentTaskParameterResult: Sendable {
   init() {}
 }
 
-struct GloryApi_StudentTaskRequirementResult: Sendable {
+nonisolated struct GloryApi_StudentTaskRequirementResult: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -96,7 +96,7 @@ struct GloryApi_StudentTaskRequirementResult: Sendable {
   init() {}
 }
 
-struct GloryApi_StudentTaskAttachment: Sendable {
+nonisolated struct GloryApi_StudentTaskAttachment: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -110,164 +110,164 @@ struct GloryApi_StudentTaskAttachment: Sendable {
   init() {}
 }
 
-struct GloryApi_StudentTask: @unchecked Sendable {
+nonisolated struct GloryApi_StudentTask: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var studentTaskID: Int64 {
-    get {return _storage._studentTaskID}
+    get {_storage._studentTaskID}
     set {_uniqueStorage()._studentTaskID = newValue}
   }
 
   /// 任务状态，参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc
   var taskStatus: String {
-    get {return _storage._taskStatus}
+    get {_storage._taskStatus}
     set {_uniqueStorage()._taskStatus = newValue}
   }
 
   /// 任务提交时间
   var submittedAt: String {
-    get {return _storage._submittedAt}
+    get {_storage._submittedAt}
     set {_uniqueStorage()._submittedAt = newValue}
   }
 
   /// 任务提交参数
   var submitParameter: String {
-    get {return _storage._submitParameter}
+    get {_storage._submitParameter}
     set {_uniqueStorage()._submitParameter = newValue}
   }
 
   /// 任务提交描述
   var submitDescription: String {
-    get {return _storage._submitDescription}
+    get {_storage._submitDescription}
     set {_uniqueStorage()._submitDescription = newValue}
   }
 
   /// 任务提交附件
   var attachments: [GloryApi_StudentTaskAttachment] {
-    get {return _storage._attachments}
+    get {_storage._attachments}
     set {_uniqueStorage()._attachments = newValue}
   }
 
   /// 任务评价时间
   var evaluatedAt: String {
-    get {return _storage._evaluatedAt}
+    get {_storage._evaluatedAt}
     set {_uniqueStorage()._evaluatedAt = newValue}
   }
 
   /// 任务参数评价结果
   var studentTaskParameterResult: [GloryApi_StudentTaskParameterResult] {
-    get {return _storage._studentTaskParameterResult}
+    get {_storage._studentTaskParameterResult}
     set {_uniqueStorage()._studentTaskParameterResult = newValue}
   }
 
   /// 任务要求评价结果
   var studentTaskRequirementResult: [GloryApi_StudentTaskRequirementResult] {
-    get {return _storage._studentTaskRequirementResult}
+    get {_storage._studentTaskRequirementResult}
     set {_uniqueStorage()._studentTaskRequirementResult = newValue}
   }
 
   /// 任务要求失败原因
   var teacherFailedReason: String {
-    get {return _storage._teacherFailedReason}
+    get {_storage._teacherFailedReason}
     set {_uniqueStorage()._teacherFailedReason = newValue}
   }
 
   /// 任务评分
   var teacherEvaluateScore: Int32 {
-    get {return _storage._teacherEvaluateScore}
+    get {_storage._teacherEvaluateScore}
     set {_uniqueStorage()._teacherEvaluateScore = newValue}
   }
 
   /// 任务所属平台："app"，"web"，"app/web"，""
   var taskPlatform: String {
-    get {return _storage._taskPlatform}
+    get {_storage._taskPlatform}
     set {_uniqueStorage()._taskPlatform = newValue}
   }
 
   /// 预置任务标识
   var systemTaskKey: String {
-    get {return _storage._systemTaskKey}
+    get {_storage._systemTaskKey}
     set {_uniqueStorage()._systemTaskKey = newValue}
   }
 
   /// 任务所属教师任务
   var teacherTask: GloryApi_TeacherTask {
-    get {return _storage._teacherTask ?? GloryApi_TeacherTask()}
+    get {_storage._teacherTask ?? GloryApi_TeacherTask()}
     set {_uniqueStorage()._teacherTask = newValue}
   }
   /// Returns true if `teacherTask` has been explicitly set.
-  var hasTeacherTask: Bool {return _storage._teacherTask != nil}
+  var hasTeacherTask: Bool {_storage._teacherTask != nil}
   /// Clears the value of `teacherTask`. Subsequent reads from it will return its default value.
   mutating func clearTeacherTask() {_uniqueStorage()._teacherTask = nil}
 
   /// 任务链接
   var taskLinks: [GloryApi_StudentTaskLink] {
-    get {return _storage._taskLinks}
+    get {_storage._taskLinks}
     set {_uniqueStorage()._taskLinks = newValue}
   }
 
   /// 任务结果连接
   var taskResultLinks: [GloryApi_StudentTaskLink] {
-    get {return _storage._taskResultLinks}
+    get {_storage._taskResultLinks}
     set {_uniqueStorage()._taskResultLinks = newValue}
   }
 
   /// 学生班级信息
   var classDept: GloryApi_TenantDept {
-    get {return _storage._classDept ?? GloryApi_TenantDept()}
+    get {_storage._classDept ?? GloryApi_TenantDept()}
     set {_uniqueStorage()._classDept = newValue}
   }
   /// Returns true if `classDept` has been explicitly set.
-  var hasClassDept: Bool {return _storage._classDept != nil}
+  var hasClassDept: Bool {_storage._classDept != nil}
   /// Clears the value of `classDept`. Subsequent reads from it will return its default value.
   mutating func clearClassDept() {_uniqueStorage()._classDept = nil}
 
   /// 学生专业信息
   var majorDept: GloryApi_TenantDept {
-    get {return _storage._majorDept ?? GloryApi_TenantDept()}
+    get {_storage._majorDept ?? GloryApi_TenantDept()}
     set {_uniqueStorage()._majorDept = newValue}
   }
   /// Returns true if `majorDept` has been explicitly set.
-  var hasMajorDept: Bool {return _storage._majorDept != nil}
+  var hasMajorDept: Bool {_storage._majorDept != nil}
   /// Clears the value of `majorDept`. Subsequent reads from it will return its default value.
   mutating func clearMajorDept() {_uniqueStorage()._majorDept = nil}
 
   /// 学生信息
   var student: GloryApi_User {
-    get {return _storage._student ?? GloryApi_User()}
+    get {_storage._student ?? GloryApi_User()}
     set {_uniqueStorage()._student = newValue}
   }
   /// Returns true if `student` has been explicitly set.
-  var hasStudent: Bool {return _storage._student != nil}
+  var hasStudent: Bool {_storage._student != nil}
   /// Clears the value of `student`. Subsequent reads from it will return its default value.
   mutating func clearStudent() {_uniqueStorage()._student = nil}
 
   /// 老师信息
   var teacher: GloryApi_User {
-    get {return _storage._teacher ?? GloryApi_User()}
+    get {_storage._teacher ?? GloryApi_User()}
     set {_uniqueStorage()._teacher = newValue}
   }
   /// Returns true if `teacher` has been explicitly set.
-  var hasTeacher: Bool {return _storage._teacher != nil}
+  var hasTeacher: Bool {_storage._teacher != nil}
   /// Clears the value of `teacher`. Subsequent reads from it will return its default value.
   mutating func clearTeacher() {_uniqueStorage()._teacher = nil}
 
   /// 任务完成使用时间，单位秒
   var taskDuration: Int64 {
-    get {return _storage._taskDuration}
+    get {_storage._taskDuration}
     set {_uniqueStorage()._taskDuration = newValue}
   }
 
   /// 学生任务开始时间
   var taskStudentStartTime: Int64 {
-    get {return _storage._taskStudentStartTime}
+    get {_storage._taskStudentStartTime}
     set {_uniqueStorage()._taskStudentStartTime = newValue}
   }
 
   var resultMessage: String {
-    get {return _storage._resultMessage}
+    get {_storage._resultMessage}
     set {_uniqueStorage()._resultMessage = newValue}
   }
 
@@ -278,7 +278,7 @@ struct GloryApi_StudentTask: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct GloryApi_TeacherRequirementEvaluation: Sendable {
+nonisolated struct GloryApi_TeacherRequirementEvaluation: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -292,7 +292,7 @@ struct GloryApi_TeacherRequirementEvaluation: Sendable {
   init() {}
 }
 
-struct GloryApi_ListStudentTaskRequest: Sendable {
+nonisolated struct GloryApi_ListStudentTaskRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -312,47 +312,47 @@ struct GloryApi_ListStudentTaskRequest: Sendable {
   var status: String = String()
 
   var taskStart: GloryApi_TimeRange {
-    get {return _taskStart ?? GloryApi_TimeRange()}
+    get {_taskStart ?? GloryApi_TimeRange()}
     set {_taskStart = newValue}
   }
   /// Returns true if `taskStart` has been explicitly set.
-  var hasTaskStart: Bool {return self._taskStart != nil}
+  var hasTaskStart: Bool {self._taskStart != nil}
   /// Clears the value of `taskStart`. Subsequent reads from it will return its default value.
   mutating func clearTaskStart() {self._taskStart = nil}
 
   var taskEnd: GloryApi_TimeRange {
-    get {return _taskEnd ?? GloryApi_TimeRange()}
+    get {_taskEnd ?? GloryApi_TimeRange()}
     set {_taskEnd = newValue}
   }
   /// Returns true if `taskEnd` has been explicitly set.
-  var hasTaskEnd: Bool {return self._taskEnd != nil}
+  var hasTaskEnd: Bool {self._taskEnd != nil}
   /// Clears the value of `taskEnd`. Subsequent reads from it will return its default value.
   mutating func clearTaskEnd() {self._taskEnd = nil}
 
   var taskSubmittedAt: GloryApi_TimeRange {
-    get {return _taskSubmittedAt ?? GloryApi_TimeRange()}
+    get {_taskSubmittedAt ?? GloryApi_TimeRange()}
     set {_taskSubmittedAt = newValue}
   }
   /// Returns true if `taskSubmittedAt` has been explicitly set.
-  var hasTaskSubmittedAt: Bool {return self._taskSubmittedAt != nil}
+  var hasTaskSubmittedAt: Bool {self._taskSubmittedAt != nil}
   /// Clears the value of `taskSubmittedAt`. Subsequent reads from it will return its default value.
   mutating func clearTaskSubmittedAt() {self._taskSubmittedAt = nil}
 
   var taskEvaluatedAt: GloryApi_TimeRange {
-    get {return _taskEvaluatedAt ?? GloryApi_TimeRange()}
+    get {_taskEvaluatedAt ?? GloryApi_TimeRange()}
     set {_taskEvaluatedAt = newValue}
   }
   /// Returns true if `taskEvaluatedAt` has been explicitly set.
-  var hasTaskEvaluatedAt: Bool {return self._taskEvaluatedAt != nil}
+  var hasTaskEvaluatedAt: Bool {self._taskEvaluatedAt != nil}
   /// Clears the value of `taskEvaluatedAt`. Subsequent reads from it will return its default value.
   mutating func clearTaskEvaluatedAt() {self._taskEvaluatedAt = nil}
 
   var pagination: Base_PaginationRequest {
-    get {return _pagination ?? Base_PaginationRequest()}
+    get {_pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -367,28 +367,28 @@ struct GloryApi_ListStudentTaskRequest: Sendable {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListStudentTaskResponse: Sendable {
+nonisolated struct GloryApi_ListStudentTaskResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var studentTasks: [GloryApi_StudentTask] = []
 
   var pagination: Base_PaginationResponse {
-    get {return _pagination ?? Base_PaginationResponse()}
+    get {_pagination ?? Base_PaginationResponse()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -400,7 +400,7 @@ struct GloryApi_ListStudentTaskResponse: Sendable {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_SubmitStudentTaskRequest: Sendable {
+nonisolated struct GloryApi_SubmitStudentTaskRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -418,17 +418,17 @@ struct GloryApi_SubmitStudentTaskRequest: Sendable {
   init() {}
 }
 
-struct GloryApi_SubmitStudentTaskResponse: Sendable {
+nonisolated struct GloryApi_SubmitStudentTaskResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -439,17 +439,17 @@ struct GloryApi_SubmitStudentTaskResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetStudentTaskRequest: Sendable {
+nonisolated struct GloryApi_GetStudentTaskRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -462,26 +462,26 @@ struct GloryApi_GetStudentTaskRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetStudentTaskResponse: Sendable {
+nonisolated struct GloryApi_GetStudentTaskResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var studentTask: GloryApi_StudentTask {
-    get {return _studentTask ?? GloryApi_StudentTask()}
+    get {_studentTask ?? GloryApi_StudentTask()}
     set {_studentTask = newValue}
   }
   /// Returns true if `studentTask` has been explicitly set.
-  var hasStudentTask: Bool {return self._studentTask != nil}
+  var hasStudentTask: Bool {self._studentTask != nil}
   /// Clears the value of `studentTask`. Subsequent reads from it will return its default value.
   mutating func clearStudentTask() {self._studentTask = nil}
 
@@ -495,89 +495,89 @@ struct GloryApi_GetStudentTaskResponse: Sendable {
   fileprivate var _studentTask: GloryApi_StudentTask? = nil
 }
 
-struct GloryApi_TeacherListStudentTaskRequest: @unchecked Sendable {
+nonisolated struct GloryApi_TeacherListStudentTaskRequest: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _storage._baseRequest ?? Base_BaseRequest()}
+    get {_storage._baseRequest ?? Base_BaseRequest()}
     set {_uniqueStorage()._baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return _storage._baseRequest != nil}
+  var hasBaseRequest: Bool {_storage._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {_uniqueStorage()._baseRequest = nil}
 
   /// 任务评价类型：1. 机器评价任务；2. 教师评价任务
   var taskEvaluateType: Int32 {
-    get {return _storage._taskEvaluateType}
+    get {_storage._taskEvaluateType}
     set {_uniqueStorage()._taskEvaluateType = newValue}
   }
 
   /// 任务评价状态：1. 待评价；2. 已评价；3. 未提交
   var taskEvaluateStatus: Int32 {
-    get {return _storage._taskEvaluateStatus}
+    get {_storage._taskEvaluateStatus}
     set {_uniqueStorage()._taskEvaluateStatus = newValue}
   }
 
   var keyword: String {
-    get {return _storage._keyword}
+    get {_storage._keyword}
     set {_uniqueStorage()._keyword = newValue}
   }
 
   var classIds: [Int64] {
-    get {return _storage._classIds}
+    get {_storage._classIds}
     set {_uniqueStorage()._classIds = newValue}
   }
 
   var status: String {
-    get {return _storage._status}
+    get {_storage._status}
     set {_uniqueStorage()._status = newValue}
   }
 
   var taskStart: GloryApi_TimeRange {
-    get {return _storage._taskStart ?? GloryApi_TimeRange()}
+    get {_storage._taskStart ?? GloryApi_TimeRange()}
     set {_uniqueStorage()._taskStart = newValue}
   }
   /// Returns true if `taskStart` has been explicitly set.
-  var hasTaskStart: Bool {return _storage._taskStart != nil}
+  var hasTaskStart: Bool {_storage._taskStart != nil}
   /// Clears the value of `taskStart`. Subsequent reads from it will return its default value.
   mutating func clearTaskStart() {_uniqueStorage()._taskStart = nil}
 
   var taskEnd: GloryApi_TimeRange {
-    get {return _storage._taskEnd ?? GloryApi_TimeRange()}
+    get {_storage._taskEnd ?? GloryApi_TimeRange()}
     set {_uniqueStorage()._taskEnd = newValue}
   }
   /// Returns true if `taskEnd` has been explicitly set.
-  var hasTaskEnd: Bool {return _storage._taskEnd != nil}
+  var hasTaskEnd: Bool {_storage._taskEnd != nil}
   /// Clears the value of `taskEnd`. Subsequent reads from it will return its default value.
   mutating func clearTaskEnd() {_uniqueStorage()._taskEnd = nil}
 
   var taskSubmittedAt: GloryApi_TimeRange {
-    get {return _storage._taskSubmittedAt ?? GloryApi_TimeRange()}
+    get {_storage._taskSubmittedAt ?? GloryApi_TimeRange()}
     set {_uniqueStorage()._taskSubmittedAt = newValue}
   }
   /// Returns true if `taskSubmittedAt` has been explicitly set.
-  var hasTaskSubmittedAt: Bool {return _storage._taskSubmittedAt != nil}
+  var hasTaskSubmittedAt: Bool {_storage._taskSubmittedAt != nil}
   /// Clears the value of `taskSubmittedAt`. Subsequent reads from it will return its default value.
   mutating func clearTaskSubmittedAt() {_uniqueStorage()._taskSubmittedAt = nil}
 
   var taskEvaluatedAt: GloryApi_TimeRange {
-    get {return _storage._taskEvaluatedAt ?? GloryApi_TimeRange()}
+    get {_storage._taskEvaluatedAt ?? GloryApi_TimeRange()}
     set {_uniqueStorage()._taskEvaluatedAt = newValue}
   }
   /// Returns true if `taskEvaluatedAt` has been explicitly set.
-  var hasTaskEvaluatedAt: Bool {return _storage._taskEvaluatedAt != nil}
+  var hasTaskEvaluatedAt: Bool {_storage._taskEvaluatedAt != nil}
   /// Clears the value of `taskEvaluatedAt`. Subsequent reads from it will return its default value.
   mutating func clearTaskEvaluatedAt() {_uniqueStorage()._taskEvaluatedAt = nil}
 
   var pagination: Base_PaginationRequest {
-    get {return _storage._pagination ?? Base_PaginationRequest()}
+    get {_storage._pagination ?? Base_PaginationRequest()}
     set {_uniqueStorage()._pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return _storage._pagination != nil}
+  var hasPagination: Bool {_storage._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {_uniqueStorage()._pagination = nil}
 
@@ -588,28 +588,28 @@ struct GloryApi_TeacherListStudentTaskRequest: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct GloryApi_TeacherListStudentTaskResponse: Sendable {
+nonisolated struct GloryApi_TeacherListStudentTaskResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var studentTasks: [GloryApi_StudentTask] = []
 
   var pagination: Base_PaginationResponse {
-    get {return _pagination ?? Base_PaginationResponse()}
+    get {_pagination ?? Base_PaginationResponse()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -621,17 +621,17 @@ struct GloryApi_TeacherListStudentTaskResponse: Sendable {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_TeacherEvaluateStudentTaskRequest: Sendable {
+nonisolated struct GloryApi_TeacherEvaluateStudentTaskRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -650,17 +650,17 @@ struct GloryApi_TeacherEvaluateStudentTaskRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_TeacherEvaluateStudentTaskResponse: Sendable {
+nonisolated struct GloryApi_TeacherEvaluateStudentTaskResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -671,17 +671,17 @@ struct GloryApi_TeacherEvaluateStudentTaskResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_StudentTaskStatsRequest: Sendable {
+nonisolated struct GloryApi_StudentTaskStatsRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -692,17 +692,17 @@ struct GloryApi_StudentTaskStatsRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_StudentTaskStatsResponse: Sendable {
+nonisolated struct GloryApi_StudentTaskStatsResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -725,17 +725,17 @@ struct GloryApi_StudentTaskStatsResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_StudentTaskEvaluateStatsRequest: Sendable {
+nonisolated struct GloryApi_StudentTaskEvaluateStatsRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -749,17 +749,17 @@ struct GloryApi_StudentTaskEvaluateStatsRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_StudentTaskEvaluateStatsResponse: Sendable {
+nonisolated struct GloryApi_StudentTaskEvaluateStatsResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -784,17 +784,17 @@ struct GloryApi_StudentTaskEvaluateStatsResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_StartStudentTaskTimeRequest: Sendable {
+nonisolated struct GloryApi_StartStudentTaskTimeRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -807,17 +807,17 @@ struct GloryApi_StartStudentTaskTimeRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_StartStudentTaskTimeResponse: Sendable {
+nonisolated struct GloryApi_StartStudentTaskTimeResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -830,9 +830,9 @@ struct GloryApi_StartStudentTaskTimeResponse: Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "glory_api"
+fileprivate nonisolated let _protobuf_package = "glory_api"
 
-extension GloryApi_StudentTaskLink: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_StudentTaskLink: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".StudentTaskLink"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}name\0\u{1}url\0")
 
@@ -867,7 +867,7 @@ extension GloryApi_StudentTaskLink: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension GloryApi_TimeRange: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_TimeRange: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".TimeRange"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}start\0\u{1}end\0")
 
@@ -902,7 +902,7 @@ extension GloryApi_TimeRange: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
   }
 }
 
-extension GloryApi_StudentTaskParameterResult: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_StudentTaskParameterResult: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".StudentTaskParameterResult"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}task_parameter_id\0\u{3}task_parameter_key\0\u{3}task_parameter_name\0\u{3}task_parameter_operator\0\u{3}task_parameter_value\0\u{3}task_parameter_type\0\u{3}task_parameter_result\0\u{3}is_passed\0\u{3}failed_reason\0\u{1}children\0")
 
@@ -977,7 +977,7 @@ extension GloryApi_StudentTaskParameterResult: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension GloryApi_StudentTaskRequirementResult: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_StudentTaskRequirementResult: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".StudentTaskRequirementResult"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}task_requirement_id\0\u{3}task_requirement\0\u{3}is_passed\0")
 
@@ -1017,7 +1017,7 @@ extension GloryApi_StudentTaskRequirementResult: SwiftProtobuf.Message, SwiftPro
   }
 }
 
-extension GloryApi_StudentTaskAttachment: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_StudentTaskAttachment: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".StudentTaskAttachment"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}oss_path\0\u{3}oss_url\0")
 
@@ -1052,7 +1052,7 @@ extension GloryApi_StudentTaskAttachment: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".StudentTask"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}student_task_id\0\u{3}task_status\0\u{3}submitted_at\0\u{3}submit_parameter\0\u{3}submit_description\0\u{1}attachments\0\u{3}evaluated_at\0\u{3}student_task_parameter_result\0\u{3}student_task_requirement_result\0\u{3}teacher_failed_reason\0\u{3}teacher_evaluate_score\0\u{3}task_platform\0\u{3}system_task_key\0\u{3}teacher_task\0\u{3}task_links\0\u{3}task_result_links\0\u{3}class_dept\0\u{3}major_dept\0\u{1}student\0\u{1}teacher\0\u{3}task_duration\0\u{3}task_student_start_time\0\u{3}result_message\0")
 
@@ -1276,7 +1276,7 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 }
 
-extension GloryApi_TeacherRequirementEvaluation: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_TeacherRequirementEvaluation: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".TeacherRequirementEvaluation"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}requirement_id\0\u{3}requirement_pass\0")
 
@@ -1311,7 +1311,7 @@ extension GloryApi_TeacherRequirementEvaluation: SwiftProtobuf.Message, SwiftPro
   }
 }
 
-extension GloryApi_ListStudentTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListStudentTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListStudentTaskRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}type\0\u{1}keyword\0\u{1}platform\0\u{1}status\0\u{3}task_start\0\u{3}task_end\0\u{3}task_submitted_at\0\u{3}task_evaluated_at\0\u{2}\\\u{1}pagination\0")
 
@@ -1385,7 +1385,7 @@ extension GloryApi_ListStudentTaskRequest: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension GloryApi_ListStudentTaskResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListStudentTaskResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListStudentTaskResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}student_tasks\0\u{2}b\u{1}pagination\0")
 
@@ -1429,7 +1429,7 @@ extension GloryApi_ListStudentTaskResponse: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension GloryApi_SubmitStudentTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_SubmitStudentTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".SubmitStudentTaskRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}student_task_id\0\u{3}student_task_parameter\0\u{3}student_task_description\0\u{3}student_task_attachments\0")
 
@@ -1474,7 +1474,7 @@ extension GloryApi_SubmitStudentTaskRequest: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension GloryApi_SubmitStudentTaskResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_SubmitStudentTaskResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".SubmitStudentTaskResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 
@@ -1508,7 +1508,7 @@ extension GloryApi_SubmitStudentTaskResponse: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension GloryApi_GetStudentTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetStudentTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetStudentTaskRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}student_task_id\0")
 
@@ -1547,7 +1547,7 @@ extension GloryApi_GetStudentTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension GloryApi_GetStudentTaskResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetStudentTaskResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetStudentTaskResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}student_task\0\u{3}room_id\0")
 
@@ -1591,7 +1591,7 @@ extension GloryApi_GetStudentTaskResponse: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension GloryApi_TeacherListStudentTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_TeacherListStudentTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".TeacherListStudentTaskRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}task_evaluate_type\0\u{3}task_evaluate_status\0\u{1}keyword\0\u{3}class_ids\0\u{1}status\0\u{3}task_start\0\u{3}task_end\0\u{3}task_submitted_at\0\u{3}task_evaluated_at\0\u{2}Z\u{1}pagination\0")
 
@@ -1731,7 +1731,7 @@ extension GloryApi_TeacherListStudentTaskRequest: SwiftProtobuf.Message, SwiftPr
   }
 }
 
-extension GloryApi_TeacherListStudentTaskResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_TeacherListStudentTaskResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".TeacherListStudentTaskResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}student_tasks\0\u{2}b\u{1}pagination\0")
 
@@ -1775,7 +1775,7 @@ extension GloryApi_TeacherListStudentTaskResponse: SwiftProtobuf.Message, SwiftP
   }
 }
 
-extension GloryApi_TeacherEvaluateStudentTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_TeacherEvaluateStudentTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".TeacherEvaluateStudentTaskRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}student_task_id\0\u{3}requirement_evaluations\0\u{3}failed_reason\0\u{3}evaluate_score\0")
 
@@ -1829,7 +1829,7 @@ extension GloryApi_TeacherEvaluateStudentTaskRequest: SwiftProtobuf.Message, Swi
   }
 }
 
-extension GloryApi_TeacherEvaluateStudentTaskResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_TeacherEvaluateStudentTaskResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".TeacherEvaluateStudentTaskResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 
@@ -1863,7 +1863,7 @@ extension GloryApi_TeacherEvaluateStudentTaskResponse: SwiftProtobuf.Message, Sw
   }
 }
 
-extension GloryApi_StudentTaskStatsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_StudentTaskStatsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".StudentTaskStatsRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0")
 
@@ -1897,7 +1897,7 @@ extension GloryApi_StudentTaskStatsRequest: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension GloryApi_StudentTaskStatsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_StudentTaskStatsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".StudentTaskStatsResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}total_task_count\0\u{3}waiting_submit_count\0\u{3}waiting_evaluate_count\0\u{3}evaluate_passed_count\0\u{3}evaluate_failed_count\0\u{3}expire_count\0")
 
@@ -1961,7 +1961,7 @@ extension GloryApi_StudentTaskStatsResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension GloryApi_StudentTaskEvaluateStatsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_StudentTaskEvaluateStatsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".StudentTaskEvaluateStatsRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}task_evaluate_type\0")
 
@@ -2000,7 +2000,7 @@ extension GloryApi_StudentTaskEvaluateStatsRequest: SwiftProtobuf.Message, Swift
   }
 }
 
-extension GloryApi_StudentTaskEvaluateStatsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_StudentTaskEvaluateStatsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".StudentTaskEvaluateStatsResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}total_task_count\0\u{3}waiting_evaluate_count\0\u{3}evaluated_count\0\u{3}waiting_submit_count\0\u{3}expire_count\0\u{3}passed_count\0\u{3}no_pass_count\0")
 
@@ -2069,7 +2069,7 @@ extension GloryApi_StudentTaskEvaluateStatsResponse: SwiftProtobuf.Message, Swif
   }
 }
 
-extension GloryApi_StartStudentTaskTimeRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_StartStudentTaskTimeRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".StartStudentTaskTimeRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}student_task_id\0")
 
@@ -2108,7 +2108,7 @@ extension GloryApi_StartStudentTaskTimeRequest: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension GloryApi_StartStudentTaskTimeResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_StartStudentTaskTimeResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".StartStudentTaskTimeResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 

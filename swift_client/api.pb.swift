@@ -17,7 +17,7 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
@@ -31,7 +31,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 // declaration. To avoid naming collisions, the names are prefixed with the name of
 // the scope where the extend directive occurs.
 
-extension SwiftProtobuf.Google_Protobuf_EnumValueOptions {
+nonisolated extension SwiftProtobuf.Google_Protobuf_EnumValueOptions {
 
   var Api_httpCode: Int32 {
     get {return getExtensionValue(ext: Api_Extensions_http_code) ?? 0}
@@ -49,7 +49,7 @@ extension SwiftProtobuf.Google_Protobuf_EnumValueOptions {
   }
 }
 
-extension SwiftProtobuf.Google_Protobuf_FieldOptions {
+nonisolated extension SwiftProtobuf.Google_Protobuf_FieldOptions {
 
   var Api_rawBody: String {
     get {return getExtensionValue(ext: Api_Extensions_raw_body) ?? String()}
@@ -202,7 +202,7 @@ extension SwiftProtobuf.Google_Protobuf_FieldOptions {
   }
 }
 
-extension SwiftProtobuf.Google_Protobuf_MethodOptions {
+nonisolated extension SwiftProtobuf.Google_Protobuf_MethodOptions {
 
   var Api_get: String {
     get {return getExtensionValue(ext: Api_Extensions_get) ?? String()}
@@ -452,7 +452,7 @@ extension SwiftProtobuf.Google_Protobuf_MethodOptions {
 /// this .proto file. It can be used any place an `SwiftProtobuf.ExtensionMap` is needed
 /// in parsing, or it can be combined with other `SwiftProtobuf.SimpleExtensionMap`s to create
 /// a larger `SwiftProtobuf.SimpleExtensionMap`.
-let Api_Api_Extensions: SwiftProtobuf.SimpleExtensionMap = [
+nonisolated let Api_Api_Extensions: SwiftProtobuf.SimpleExtensionMap = [
   Api_Extensions_raw_body,
   Api_Extensions_query,
   Api_Extensions_header,
@@ -486,137 +486,137 @@ let Api_Api_Extensions: SwiftProtobuf.SimpleExtensionMap = [
 // constructing a `SimpleExtensionMap`, otherwise, use the above _Extension Properties_
 // accessors for the extension fields on the messages directly.
 
-let Api_Extensions_raw_body = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_FieldOptions>(
+nonisolated let Api_Extensions_raw_body = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_FieldOptions>(
   _protobuf_fieldNumber: 50101,
   fieldName: "api.raw_body"
 )
 
-let Api_Extensions_query = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_FieldOptions>(
+nonisolated let Api_Extensions_query = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_FieldOptions>(
   _protobuf_fieldNumber: 50102,
   fieldName: "api.query"
 )
 
-let Api_Extensions_header = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_FieldOptions>(
+nonisolated let Api_Extensions_header = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_FieldOptions>(
   _protobuf_fieldNumber: 50103,
   fieldName: "api.header"
 )
 
-let Api_Extensions_cookie = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_FieldOptions>(
+nonisolated let Api_Extensions_cookie = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_FieldOptions>(
   _protobuf_fieldNumber: 50104,
   fieldName: "api.cookie"
 )
 
-let Api_Extensions_body = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_FieldOptions>(
+nonisolated let Api_Extensions_body = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_FieldOptions>(
   _protobuf_fieldNumber: 50105,
   fieldName: "api.body"
 )
 
-let Api_Extensions_path = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_FieldOptions>(
+nonisolated let Api_Extensions_path = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_FieldOptions>(
   _protobuf_fieldNumber: 50106,
   fieldName: "api.path"
 )
 
-let Api_Extensions_vd = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_FieldOptions>(
+nonisolated let Api_Extensions_vd = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_FieldOptions>(
   _protobuf_fieldNumber: 50107,
   fieldName: "api.vd"
 )
 
-let Api_Extensions_form = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_FieldOptions>(
+nonisolated let Api_Extensions_form = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_FieldOptions>(
   _protobuf_fieldNumber: 50108,
   fieldName: "api.form"
 )
 
-let Api_Extensions_go_tag = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_FieldOptions>(
+nonisolated let Api_Extensions_go_tag = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_FieldOptions>(
   _protobuf_fieldNumber: 51001,
   fieldName: "api.go_tag"
 )
 
-let Api_Extensions_js_conv = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_FieldOptions>(
+nonisolated let Api_Extensions_js_conv = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_FieldOptions>(
   _protobuf_fieldNumber: 50109,
   fieldName: "api.js_conv"
 )
 
-let Api_Extensions_get = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
+nonisolated let Api_Extensions_get = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
   _protobuf_fieldNumber: 50201,
   fieldName: "api.get"
 )
 
-let Api_Extensions_post = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
+nonisolated let Api_Extensions_post = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
   _protobuf_fieldNumber: 50202,
   fieldName: "api.post"
 )
 
-let Api_Extensions_put = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
+nonisolated let Api_Extensions_put = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
   _protobuf_fieldNumber: 50203,
   fieldName: "api.put"
 )
 
-let Api_Extensions_delete = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
+nonisolated let Api_Extensions_delete = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
   _protobuf_fieldNumber: 50204,
   fieldName: "api.delete"
 )
 
-let Api_Extensions_patch = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
+nonisolated let Api_Extensions_patch = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
   _protobuf_fieldNumber: 50205,
   fieldName: "api.patch"
 )
 
-let Api_Extensions_options = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
+nonisolated let Api_Extensions_options = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
   _protobuf_fieldNumber: 50206,
   fieldName: "api.options"
 )
 
-let Api_Extensions_head = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
+nonisolated let Api_Extensions_head = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
   _protobuf_fieldNumber: 50207,
   fieldName: "api.head"
 )
 
-let Api_Extensions_any = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
+nonisolated let Api_Extensions_any = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
   _protobuf_fieldNumber: 50208,
   fieldName: "api.any"
 )
 
-let Api_Extensions_gen_path = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
+nonisolated let Api_Extensions_gen_path = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
   _protobuf_fieldNumber: 50301,
   fieldName: "api.gen_path"
 )
 
-let Api_Extensions_api_version = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
+nonisolated let Api_Extensions_api_version = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
   _protobuf_fieldNumber: 50302,
   fieldName: "api.api_version"
 )
 
-let Api_Extensions_tag = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
+nonisolated let Api_Extensions_tag = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
   _protobuf_fieldNumber: 50303,
   fieldName: "api.tag"
 )
 
-let Api_Extensions_name = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
+nonisolated let Api_Extensions_name = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
   _protobuf_fieldNumber: 50304,
   fieldName: "api.name"
 )
 
-let Api_Extensions_api_level = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
+nonisolated let Api_Extensions_api_level = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
   _protobuf_fieldNumber: 50305,
   fieldName: "api.api_level"
 )
 
-let Api_Extensions_serializer = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
+nonisolated let Api_Extensions_serializer = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
   _protobuf_fieldNumber: 50306,
   fieldName: "api.serializer"
 )
 
-let Api_Extensions_param = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
+nonisolated let Api_Extensions_param = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
   _protobuf_fieldNumber: 50307,
   fieldName: "api.param"
 )
 
-let Api_Extensions_baseurl = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
+nonisolated let Api_Extensions_baseurl = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, SwiftProtobuf.Google_Protobuf_MethodOptions>(
   _protobuf_fieldNumber: 50308,
   fieldName: "api.baseurl"
 )
 
-let Api_Extensions_http_code = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufInt32>, SwiftProtobuf.Google_Protobuf_EnumValueOptions>(
+nonisolated let Api_Extensions_http_code = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufInt32>, SwiftProtobuf.Google_Protobuf_EnumValueOptions>(
   _protobuf_fieldNumber: 50401,
   fieldName: "api.http_code"
 )

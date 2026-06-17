@@ -15,22 +15,22 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-struct GloryApi_CreateQuickEvaluationRequest: Sendable {
+nonisolated struct GloryApi_CreateQuickEvaluationRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -53,17 +53,17 @@ struct GloryApi_CreateQuickEvaluationRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CreateQuickEvaluationResponse: Sendable {
+nonisolated struct GloryApi_CreateQuickEvaluationResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -74,17 +74,17 @@ struct GloryApi_CreateQuickEvaluationResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_UpdateQuickEvaluationRequest: Sendable {
+nonisolated struct GloryApi_UpdateQuickEvaluationRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -111,17 +111,17 @@ struct GloryApi_UpdateQuickEvaluationRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_UpdateQuickEvaluationResponse: Sendable {
+nonisolated struct GloryApi_UpdateQuickEvaluationResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -132,17 +132,17 @@ struct GloryApi_UpdateQuickEvaluationResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_DeleteQuickEvaluationRequest: Sendable {
+nonisolated struct GloryApi_DeleteQuickEvaluationRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -155,17 +155,17 @@ struct GloryApi_DeleteQuickEvaluationRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteQuickEvaluationResponse: Sendable {
+nonisolated struct GloryApi_DeleteQuickEvaluationResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -176,67 +176,67 @@ struct GloryApi_DeleteQuickEvaluationResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_EvaluationStandard: @unchecked Sendable {
+nonisolated struct GloryApi_EvaluationStandard: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var standardID: Int64 {
-    get {return _storage._standardID}
+    get {_storage._standardID}
     set {_uniqueStorage()._standardID = newValue}
   }
 
   var name: String {
-    get {return _storage._name}
+    get {_storage._name}
     set {_uniqueStorage()._name = newValue}
   }
 
   var minDuration: Int64 {
-    get {return _storage._minDuration}
+    get {_storage._minDuration}
     set {_uniqueStorage()._minDuration = newValue}
   }
 
   var maxDuration: Int64 {
-    get {return _storage._maxDuration}
+    get {_storage._maxDuration}
     set {_uniqueStorage()._maxDuration = newValue}
   }
 
   var keywords: [String] {
-    get {return _storage._keywords}
+    get {_storage._keywords}
     set {_uniqueStorage()._keywords = newValue}
   }
 
   var keywordMinCount: Int32 {
-    get {return _storage._keywordMinCount}
+    get {_storage._keywordMinCount}
     set {_uniqueStorage()._keywordMinCount = newValue}
   }
 
   var creator: String {
-    get {return _storage._creator}
+    get {_storage._creator}
     set {_uniqueStorage()._creator = newValue}
   }
 
   var updator: String {
-    get {return _storage._updator}
+    get {_storage._updator}
     set {_uniqueStorage()._updator = newValue}
   }
 
   var isEnable: Bool {
-    get {return _storage._isEnable}
+    get {_storage._isEnable}
     set {_uniqueStorage()._isEnable = newValue}
   }
 
   var updatedAt: Int64 {
-    get {return _storage._updatedAt}
+    get {_storage._updatedAt}
     set {_uniqueStorage()._updatedAt = newValue}
   }
 
   var major: GloryApi_TenantDept {
-    get {return _storage._major ?? GloryApi_TenantDept()}
+    get {_storage._major ?? GloryApi_TenantDept()}
     set {_uniqueStorage()._major = newValue}
   }
   /// Returns true if `major` has been explicitly set.
-  var hasMajor: Bool {return _storage._major != nil}
+  var hasMajor: Bool {_storage._major != nil}
   /// Clears the value of `major`. Subsequent reads from it will return its default value.
   mutating func clearMajor() {_uniqueStorage()._major = nil}
 
@@ -247,28 +247,28 @@ struct GloryApi_EvaluationStandard: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct GloryApi_ListQuickEvaluationRequest: Sendable {
+nonisolated struct GloryApi_ListQuickEvaluationRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var majorID: Int64 = 0
 
   var pagination: Base_PaginationRequest {
-    get {return _pagination ?? Base_PaginationRequest()}
+    get {_pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -280,28 +280,28 @@ struct GloryApi_ListQuickEvaluationRequest: Sendable {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListQuickEvaluationResponse: Sendable {
+nonisolated struct GloryApi_ListQuickEvaluationResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var standardList: [GloryApi_EvaluationStandard] = []
 
   var pagination: Base_PaginationResponse {
-    get {return _pagination ?? Base_PaginationResponse()}
+    get {_pagination ?? Base_PaginationResponse()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -313,17 +313,17 @@ struct GloryApi_ListQuickEvaluationResponse: Sendable {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_CreateQuickEvaluationReportRequest: Sendable {
+nonisolated struct GloryApi_CreateQuickEvaluationReportRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -340,17 +340,17 @@ struct GloryApi_CreateQuickEvaluationReportRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CreateQuickEvaluationReportResponse: Sendable {
+nonisolated struct GloryApi_CreateQuickEvaluationReportResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -361,28 +361,28 @@ struct GloryApi_CreateQuickEvaluationReportResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListQuickEvaluationReportRequest: Sendable {
+nonisolated struct GloryApi_ListQuickEvaluationReportRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var name: String = String()
 
   var pagination: Base_PaginationRequest {
-    get {return _pagination ?? Base_PaginationRequest()}
+    get {_pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -394,7 +394,7 @@ struct GloryApi_ListQuickEvaluationReportRequest: Sendable {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_EvaluationReport: Sendable {
+nonisolated struct GloryApi_EvaluationReport: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -416,28 +416,28 @@ struct GloryApi_EvaluationReport: Sendable {
   init() {}
 }
 
-struct GloryApi_ListQuickEvaluationReportResponse: Sendable {
+nonisolated struct GloryApi_ListQuickEvaluationReportResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var reportList: [GloryApi_EvaluationReport] = []
 
   var pagination: Base_PaginationResponse {
-    get {return _pagination ?? Base_PaginationResponse()}
+    get {_pagination ?? Base_PaginationResponse()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -449,17 +449,17 @@ struct GloryApi_ListQuickEvaluationReportResponse: Sendable {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_GetQuickEvaluationReportRequest: Sendable {
+nonisolated struct GloryApi_GetQuickEvaluationReportRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -472,17 +472,17 @@ struct GloryApi_GetQuickEvaluationReportRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetQuickEvaluationTotalReportRequest: Sendable {
+nonisolated struct GloryApi_GetQuickEvaluationTotalReportRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -499,7 +499,7 @@ struct GloryApi_GetQuickEvaluationTotalReportRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_QuickEvaluationTotalReportItemEntry: Sendable {
+nonisolated struct GloryApi_QuickEvaluationTotalReportItemEntry: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -515,7 +515,7 @@ struct GloryApi_QuickEvaluationTotalReportItemEntry: Sendable {
   init() {}
 }
 
-struct GloryApi_QuickEvaluationTotalReportItem: Sendable {
+nonisolated struct GloryApi_QuickEvaluationTotalReportItem: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -531,7 +531,7 @@ struct GloryApi_QuickEvaluationTotalReportItem: Sendable {
   init() {}
 }
 
-struct GloryApi_QuickEvaluationTotalReportStudentDetail: Sendable {
+nonisolated struct GloryApi_QuickEvaluationTotalReportStudentDetail: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -551,7 +551,7 @@ struct GloryApi_QuickEvaluationTotalReportStudentDetail: Sendable {
   init() {}
 }
 
-struct GloryApi_QuickEvaluationTotalReport: Sendable {
+nonisolated struct GloryApi_QuickEvaluationTotalReport: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -577,26 +577,26 @@ struct GloryApi_QuickEvaluationTotalReport: Sendable {
   init() {}
 }
 
-struct GloryApi_GetQuickEvaluationTotalReportResponse: Sendable {
+nonisolated struct GloryApi_GetQuickEvaluationTotalReportResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var report: GloryApi_QuickEvaluationTotalReport {
-    get {return _report ?? GloryApi_QuickEvaluationTotalReport()}
+    get {_report ?? GloryApi_QuickEvaluationTotalReport()}
     set {_report = newValue}
   }
   /// Returns true if `report` has been explicitly set.
-  var hasReport: Bool {return self._report != nil}
+  var hasReport: Bool {self._report != nil}
   /// Clears the value of `report`. Subsequent reads from it will return its default value.
   mutating func clearReport() {self._report = nil}
 
@@ -608,7 +608,7 @@ struct GloryApi_GetQuickEvaluationTotalReportResponse: Sendable {
   fileprivate var _report: GloryApi_QuickEvaluationTotalReport? = nil
 }
 
-struct GloryApi_PassDetail: Sendable {
+nonisolated struct GloryApi_PassDetail: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -629,7 +629,7 @@ struct GloryApi_PassDetail: Sendable {
   init() {}
 }
 
-struct GloryApi_NoPassInfo: Sendable {
+nonisolated struct GloryApi_NoPassInfo: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -649,7 +649,7 @@ struct GloryApi_NoPassInfo: Sendable {
   init() {}
 }
 
-struct GloryApi_ReportDetail: Sendable {
+nonisolated struct GloryApi_ReportDetail: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -673,26 +673,26 @@ struct GloryApi_ReportDetail: Sendable {
   init() {}
 }
 
-struct GloryApi_GetQuickEvaluationReportResponse: Sendable {
+nonisolated struct GloryApi_GetQuickEvaluationReportResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var report: GloryApi_ReportDetail {
-    get {return _report ?? GloryApi_ReportDetail()}
+    get {_report ?? GloryApi_ReportDetail()}
     set {_report = newValue}
   }
   /// Returns true if `report` has been explicitly set.
-  var hasReport: Bool {return self._report != nil}
+  var hasReport: Bool {self._report != nil}
   /// Clears the value of `report`. Subsequent reads from it will return its default value.
   mutating func clearReport() {self._report = nil}
 
@@ -704,17 +704,17 @@ struct GloryApi_GetQuickEvaluationReportResponse: Sendable {
   fileprivate var _report: GloryApi_ReportDetail? = nil
 }
 
-struct GloryApi_GetQuickEvaluationDetailRequest: Sendable {
+nonisolated struct GloryApi_GetQuickEvaluationDetailRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -727,26 +727,26 @@ struct GloryApi_GetQuickEvaluationDetailRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetTenantTrafficTotalReportRequest: Sendable {
+nonisolated struct GloryApi_GetTenantTrafficTotalReportRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var pagination: Base_PaginationRequest {
-    get {return _pagination ?? Base_PaginationRequest()}
+    get {_pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -758,7 +758,7 @@ struct GloryApi_GetTenantTrafficTotalReportRequest: Sendable {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_TenantTrafficReport: Sendable {
+nonisolated struct GloryApi_TenantTrafficReport: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -792,28 +792,28 @@ struct GloryApi_TenantTrafficReport: Sendable {
   init() {}
 }
 
-struct GloryApi_GetTenantTrafficTotalReportResponse: Sendable {
+nonisolated struct GloryApi_GetTenantTrafficTotalReportResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var reportList: [GloryApi_TenantTrafficReport] = []
 
   var pagination: Base_PaginationResponse {
-    get {return _pagination ?? Base_PaginationResponse()}
+    get {_pagination ?? Base_PaginationResponse()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -825,7 +825,7 @@ struct GloryApi_GetTenantTrafficTotalReportResponse: Sendable {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_QuickEvaluationDetail: Sendable {
+nonisolated struct GloryApi_QuickEvaluationDetail: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -841,7 +841,7 @@ struct GloryApi_QuickEvaluationDetail: Sendable {
   init() {}
 }
 
-struct GloryApi_QuickEvaluationDetailType: Sendable {
+nonisolated struct GloryApi_QuickEvaluationDetailType: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -855,7 +855,7 @@ struct GloryApi_QuickEvaluationDetailType: Sendable {
   init() {}
 }
 
-struct GloryApi_QuickEvaluationDetailKey: Sendable {
+nonisolated struct GloryApi_QuickEvaluationDetailKey: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -879,17 +879,17 @@ struct GloryApi_QuickEvaluationDetailKey: Sendable {
   init() {}
 }
 
-struct GloryApi_GetQuickEvaluationDetailResponse: Sendable {
+nonisolated struct GloryApi_GetQuickEvaluationDetailResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -910,17 +910,17 @@ struct GloryApi_GetQuickEvaluationDetailResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_DeleteQuickEvaluationReportResponse: Sendable {
+nonisolated struct GloryApi_DeleteQuickEvaluationReportResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -931,17 +931,17 @@ struct GloryApi_DeleteQuickEvaluationReportResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_DeleteQuickEvaluationReportRequest: Sendable {
+nonisolated struct GloryApi_DeleteQuickEvaluationReportRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -956,9 +956,9 @@ struct GloryApi_DeleteQuickEvaluationReportRequest: Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "glory_api"
+fileprivate nonisolated let _protobuf_package = "glory_api"
 
-extension GloryApi_CreateQuickEvaluationRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_CreateQuickEvaluationRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CreateQuickEvaluationRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{1}name\0\u{3}min_duration\0\u{3}max_duration\0\u{3}major_id\0\u{1}keywords\0\u{3}keyword_min_count\0")
 
@@ -1022,7 +1022,7 @@ extension GloryApi_CreateQuickEvaluationRequest: SwiftProtobuf.Message, SwiftPro
   }
 }
 
-extension GloryApi_CreateQuickEvaluationResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_CreateQuickEvaluationResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CreateQuickEvaluationResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 
@@ -1056,7 +1056,7 @@ extension GloryApi_CreateQuickEvaluationResponse: SwiftProtobuf.Message, SwiftPr
   }
 }
 
-extension GloryApi_UpdateQuickEvaluationRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_UpdateQuickEvaluationRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UpdateQuickEvaluationRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}standard_id\0\u{1}name\0\u{3}min_duration\0\u{3}max_duration\0\u{1}keywords\0\u{3}keyword_min_count\0\u{3}is_enable\0\u{3}major_id\0")
 
@@ -1130,7 +1130,7 @@ extension GloryApi_UpdateQuickEvaluationRequest: SwiftProtobuf.Message, SwiftPro
   }
 }
 
-extension GloryApi_UpdateQuickEvaluationResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_UpdateQuickEvaluationResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UpdateQuickEvaluationResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 
@@ -1164,7 +1164,7 @@ extension GloryApi_UpdateQuickEvaluationResponse: SwiftProtobuf.Message, SwiftPr
   }
 }
 
-extension GloryApi_DeleteQuickEvaluationRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_DeleteQuickEvaluationRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DeleteQuickEvaluationRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}standard_id\0")
 
@@ -1203,7 +1203,7 @@ extension GloryApi_DeleteQuickEvaluationRequest: SwiftProtobuf.Message, SwiftPro
   }
 }
 
-extension GloryApi_DeleteQuickEvaluationResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_DeleteQuickEvaluationResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DeleteQuickEvaluationResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 
@@ -1237,7 +1237,7 @@ extension GloryApi_DeleteQuickEvaluationResponse: SwiftProtobuf.Message, SwiftPr
   }
 }
 
-extension GloryApi_EvaluationStandard: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_EvaluationStandard: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".EvaluationStandard"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}standard_id\0\u{1}name\0\u{3}min_duration\0\u{3}max_duration\0\u{1}keywords\0\u{3}keyword_min_count\0\u{1}creator\0\u{1}updator\0\u{3}is_enable\0\u{3}updated_at\0\u{1}major\0")
 
@@ -1377,7 +1377,7 @@ extension GloryApi_EvaluationStandard: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension GloryApi_ListQuickEvaluationRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListQuickEvaluationRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListQuickEvaluationRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}major_id\0\u{2}b\u{1}pagination\0")
 
@@ -1421,7 +1421,7 @@ extension GloryApi_ListQuickEvaluationRequest: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension GloryApi_ListQuickEvaluationResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListQuickEvaluationResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListQuickEvaluationResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}standard_list\0\u{2}b\u{1}pagination\0")
 
@@ -1465,7 +1465,7 @@ extension GloryApi_ListQuickEvaluationResponse: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension GloryApi_CreateQuickEvaluationReportRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_CreateQuickEvaluationReportRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CreateQuickEvaluationReportRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{1}name\0\u{3}start_time\0\u{3}end_time\0")
 
@@ -1514,7 +1514,7 @@ extension GloryApi_CreateQuickEvaluationReportRequest: SwiftProtobuf.Message, Sw
   }
 }
 
-extension GloryApi_CreateQuickEvaluationReportResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_CreateQuickEvaluationReportResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CreateQuickEvaluationReportResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 
@@ -1548,7 +1548,7 @@ extension GloryApi_CreateQuickEvaluationReportResponse: SwiftProtobuf.Message, S
   }
 }
 
-extension GloryApi_ListQuickEvaluationReportRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListQuickEvaluationReportRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListQuickEvaluationReportRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{1}name\0\u{2}b\u{1}pagination\0")
 
@@ -1592,7 +1592,7 @@ extension GloryApi_ListQuickEvaluationReportRequest: SwiftProtobuf.Message, Swif
   }
 }
 
-extension GloryApi_EvaluationReport: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_EvaluationReport: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".EvaluationReport"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}report_id\0\u{1}name\0\u{3}start_time\0\u{3}end_time\0\u{3}created_at\0\u{3}created_by\0")
 
@@ -1647,7 +1647,7 @@ extension GloryApi_EvaluationReport: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension GloryApi_ListQuickEvaluationReportResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListQuickEvaluationReportResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListQuickEvaluationReportResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}report_list\0\u{2}b\u{1}pagination\0")
 
@@ -1691,7 +1691,7 @@ extension GloryApi_ListQuickEvaluationReportResponse: SwiftProtobuf.Message, Swi
   }
 }
 
-extension GloryApi_GetQuickEvaluationReportRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetQuickEvaluationReportRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetQuickEvaluationReportRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}report_id\0")
 
@@ -1730,7 +1730,7 @@ extension GloryApi_GetQuickEvaluationReportRequest: SwiftProtobuf.Message, Swift
   }
 }
 
-extension GloryApi_GetQuickEvaluationTotalReportRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetQuickEvaluationTotalReportRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetQuickEvaluationTotalReportRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}begin_time\0\u{3}end_time\0\u{3}standard_id\0")
 
@@ -1779,7 +1779,7 @@ extension GloryApi_GetQuickEvaluationTotalReportRequest: SwiftProtobuf.Message, 
   }
 }
 
-extension GloryApi_QuickEvaluationTotalReportItemEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_QuickEvaluationTotalReportItemEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QuickEvaluationTotalReportItemEntry"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}name\0\u{1}percent\0\u{1}detail\0")
 
@@ -1819,7 +1819,7 @@ extension GloryApi_QuickEvaluationTotalReportItemEntry: SwiftProtobuf.Message, S
   }
 }
 
-extension GloryApi_QuickEvaluationTotalReportItem: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_QuickEvaluationTotalReportItem: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QuickEvaluationTotalReportItem"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}item_name\0\u{1}entries\0\u{1}desc\0")
 
@@ -1859,7 +1859,7 @@ extension GloryApi_QuickEvaluationTotalReportItem: SwiftProtobuf.Message, SwiftP
   }
 }
 
-extension GloryApi_QuickEvaluationTotalReportStudentDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_QuickEvaluationTotalReportStudentDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QuickEvaluationTotalReportStudentDetail"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}name\0\u{1}result\0\u{1}reason\0\u{3}report_id\0\u{3}room_id\0")
 
@@ -1909,7 +1909,7 @@ extension GloryApi_QuickEvaluationTotalReportStudentDetail: SwiftProtobuf.Messag
   }
 }
 
-extension GloryApi_QuickEvaluationTotalReport: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_QuickEvaluationTotalReport: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QuickEvaluationTotalReport"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}total_count\0\u{3}pass_count\0\u{3}no_pass_count\0\u{3}begin_time\0\u{3}end_time\0\u{1}items\0\u{3}pass_list\0\u{3}no_pass_list\0")
 
@@ -1974,7 +1974,7 @@ extension GloryApi_QuickEvaluationTotalReport: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension GloryApi_GetQuickEvaluationTotalReportResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetQuickEvaluationTotalReportResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetQuickEvaluationTotalReportResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{1}report\0")
 
@@ -2013,7 +2013,7 @@ extension GloryApi_GetQuickEvaluationTotalReportResponse: SwiftProtobuf.Message,
   }
 }
 
-extension GloryApi_PassDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_PassDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".PassDetail"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}user_id\0\u{3}user_name\0\u{3}room_id\0\u{3}no_pass_items\0\u{3}no_pass_detail\0")
 
@@ -2063,7 +2063,7 @@ extension GloryApi_PassDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension GloryApi_NoPassInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_NoPassInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".NoPassInfo"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}key\0\u{1}name\0\u{1}value\0\u{1}desc\0\u{1}detail\0")
 
@@ -2113,7 +2113,7 @@ extension GloryApi_NoPassInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension GloryApi_ReportDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ReportDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ReportDetail"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}name\0\u{3}start_time\0\u{3}end_time\0\u{3}pass_total\0\u{3}no_pass_total\0\u{1}passes\0\u{3}no_passes\0")
 
@@ -2173,7 +2173,7 @@ extension GloryApi_ReportDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 }
 
-extension GloryApi_GetQuickEvaluationReportResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetQuickEvaluationReportResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetQuickEvaluationReportResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{1}report\0")
 
@@ -2212,7 +2212,7 @@ extension GloryApi_GetQuickEvaluationReportResponse: SwiftProtobuf.Message, Swif
   }
 }
 
-extension GloryApi_GetQuickEvaluationDetailRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetQuickEvaluationDetailRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetQuickEvaluationDetailRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}room_id\0")
 
@@ -2251,7 +2251,7 @@ extension GloryApi_GetQuickEvaluationDetailRequest: SwiftProtobuf.Message, Swift
   }
 }
 
-extension GloryApi_GetTenantTrafficTotalReportRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetTenantTrafficTotalReportRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetTenantTrafficTotalReportRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{2}c\u{1}pagination\0")
 
@@ -2290,7 +2290,7 @@ extension GloryApi_GetTenantTrafficTotalReportRequest: SwiftProtobuf.Message, Sw
   }
 }
 
-extension GloryApi_TenantTrafficReport: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_TenantTrafficReport: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".TenantTrafficReport"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}tenant_id\0\u{3}tenant_name\0\u{3}used_traffic\0\u{3}unused_traffic\0\u{3}live_duration_total\0\u{3}live_cost_total\0\u{3}max_single_duration\0\u{3}average_single_duration\0\u{3}max_day_traffic\0\u{3}average_day_traffic\0\u{3}expected_days\0\u{3}total_traffic\0")
 
@@ -2375,7 +2375,7 @@ extension GloryApi_TenantTrafficReport: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension GloryApi_GetTenantTrafficTotalReportResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetTenantTrafficTotalReportResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetTenantTrafficTotalReportResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}report_list\0\u{2}b\u{1}pagination\0")
 
@@ -2419,7 +2419,7 @@ extension GloryApi_GetTenantTrafficTotalReportResponse: SwiftProtobuf.Message, S
   }
 }
 
-extension GloryApi_QuickEvaluationDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_QuickEvaluationDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QuickEvaluationDetail"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}key\0\u{3}is_pass\0\u{1}detail\0")
 
@@ -2459,7 +2459,7 @@ extension GloryApi_QuickEvaluationDetail: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension GloryApi_QuickEvaluationDetailType: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_QuickEvaluationDetailType: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QuickEvaluationDetailType"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}type\0\u{1}detail\0")
 
@@ -2494,7 +2494,7 @@ extension GloryApi_QuickEvaluationDetailType: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension GloryApi_QuickEvaluationDetailKey: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_QuickEvaluationDetailKey: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".QuickEvaluationDetailKey"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}key\0\u{1}name\0\u{1}desc\0\u{1}result\0\u{3}ref_result\0\u{1}detail\0\u{1}order\0")
 
@@ -2554,7 +2554,7 @@ extension GloryApi_QuickEvaluationDetailKey: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension GloryApi_GetQuickEvaluationDetailResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetQuickEvaluationDetailResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetQuickEvaluationDetailResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}start_time\0\u{3}end_time\0\u{1}result\0\u{3}quick_evaluation_detail\0\u{1}name\0")
 
@@ -2613,7 +2613,7 @@ extension GloryApi_GetQuickEvaluationDetailResponse: SwiftProtobuf.Message, Swif
   }
 }
 
-extension GloryApi_DeleteQuickEvaluationReportResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_DeleteQuickEvaluationReportResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DeleteQuickEvaluationReportResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 
@@ -2647,7 +2647,7 @@ extension GloryApi_DeleteQuickEvaluationReportResponse: SwiftProtobuf.Message, S
   }
 }
 
-extension GloryApi_DeleteQuickEvaluationReportRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_DeleteQuickEvaluationReportRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DeleteQuickEvaluationReportRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}report_ids\0")
 

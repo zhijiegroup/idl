@@ -15,12 +15,12 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-struct GloryApi_Image: Sendable {
+nonisolated struct GloryApi_Image: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -36,7 +36,7 @@ struct GloryApi_Image: Sendable {
   init() {}
 }
 
-struct GloryApi_ProductIndexInfo: Sendable {
+nonisolated struct GloryApi_ProductIndexInfo: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -65,107 +65,107 @@ struct GloryApi_ProductIndexInfo: Sendable {
   init() {}
 }
 
-struct GloryApi_LiveRoomIndexInfo: @unchecked Sendable {
+nonisolated struct GloryApi_LiveRoomIndexInfo: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var roomID: Int64 {
-    get {return _storage._roomID}
+    get {_storage._roomID}
     set {_uniqueStorage()._roomID = newValue}
   }
 
   var userID: Int64 {
-    get {return _storage._userID}
+    get {_storage._userID}
     set {_uniqueStorage()._userID = newValue}
   }
 
   var groupID: String {
-    get {return _storage._groupID}
+    get {_storage._groupID}
     set {_uniqueStorage()._groupID = newValue}
   }
 
   var appName: String {
-    get {return _storage._appName}
+    get {_storage._appName}
     set {_uniqueStorage()._appName = newValue}
   }
 
   var streamName: String {
-    get {return _storage._streamName}
+    get {_storage._streamName}
     set {_uniqueStorage()._streamName = newValue}
   }
 
   var upURL: String {
-    get {return _storage._upURL}
+    get {_storage._upURL}
     set {_uniqueStorage()._upURL = newValue}
   }
 
   var playURL: String {
-    get {return _storage._playURL}
+    get {_storage._playURL}
     set {_uniqueStorage()._playURL = newValue}
   }
 
   var startTime: String {
-    get {return _storage._startTime}
+    get {_storage._startTime}
     set {_uniqueStorage()._startTime = newValue}
   }
 
   var likeCount: Int64 {
-    get {return _storage._likeCount}
+    get {_storage._likeCount}
     set {_uniqueStorage()._likeCount = newValue}
   }
 
   var endTime: String {
-    get {return _storage._endTime}
+    get {_storage._endTime}
     set {_uniqueStorage()._endTime = newValue}
   }
 
   var status: String {
-    get {return _storage._status}
+    get {_storage._status}
     set {_uniqueStorage()._status = newValue}
   }
 
   ///直播的封面的url
   var roomImageURL: String {
-    get {return _storage._roomImageURL}
+    get {_storage._roomImageURL}
     set {_uniqueStorage()._roomImageURL = newValue}
   }
 
   ///直播的标题
   var roomTitle: String {
-    get {return _storage._roomTitle}
+    get {_storage._roomTitle}
     set {_uniqueStorage()._roomTitle = newValue}
   }
 
   var userName: String {
-    get {return _storage._userName}
+    get {_storage._userName}
     set {_uniqueStorage()._userName = newValue}
   }
 
   /// 用户头像
   var userAvatar: String {
-    get {return _storage._userAvatar}
+    get {_storage._userAvatar}
     set {_uniqueStorage()._userAvatar = newValue}
   }
 
   var shopName: String {
-    get {return _storage._shopName}
+    get {_storage._shopName}
     set {_uniqueStorage()._shopName = newValue}
   }
 
   var shopLogoURL: String {
-    get {return _storage._shopLogoURL}
+    get {_storage._shopLogoURL}
     set {_uniqueStorage()._shopLogoURL = newValue}
   }
 
   var shopID: Int64 {
-    get {return _storage._shopID}
+    get {_storage._shopID}
     set {_uniqueStorage()._shopID = newValue}
   }
 
   /// 是否已关注用户
   var isFollow: Bool {
-    get {return _storage._isFollow}
+    get {_storage._isFollow}
     set {_uniqueStorage()._isFollow = newValue}
   }
 
@@ -176,26 +176,26 @@ struct GloryApi_LiveRoomIndexInfo: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct GloryApi_MallIndexRequest: Sendable {
+nonisolated struct GloryApi_MallIndexRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var pagination: Base_PaginationRequest {
-    get {return _pagination ?? Base_PaginationRequest()}
+    get {_pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -207,17 +207,17 @@ struct GloryApi_MallIndexRequest: Sendable {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_MallIndexResponse: Sendable {
+nonisolated struct GloryApi_MallIndexResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -226,11 +226,11 @@ struct GloryApi_MallIndexResponse: Sendable {
   var productsInfo: [GloryApi_ProductIndexInfo] = []
 
   var pagination: Base_PaginationResponse {
-    get {return _pagination ?? Base_PaginationResponse()}
+    get {_pagination ?? Base_PaginationResponse()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -244,9 +244,9 @@ struct GloryApi_MallIndexResponse: Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "glory_api"
+fileprivate nonisolated let _protobuf_package = "glory_api"
 
-extension GloryApi_Image: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_Image: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Image"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}product_image_id\0\u{3}image_type\0\u{3}image_url\0")
 
@@ -286,7 +286,7 @@ extension GloryApi_Image: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
   }
 }
 
-extension GloryApi_ProductIndexInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ProductIndexInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ProductIndexInfo"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}product_id\0\u{3}shop_id\0\u{3}product_name\0\u{3}category_id\0\u{1}images\0\u{3}sale_price\0\u{3}reference_price\0\u{3}is_real\0")
 
@@ -351,7 +351,7 @@ extension GloryApi_ProductIndexInfo: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension GloryApi_LiveRoomIndexInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_LiveRoomIndexInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".LiveRoomIndexInfo"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}room_id\0\u{3}user_id\0\u{3}group_id\0\u{3}app_name\0\u{3}stream_name\0\u{3}up_url\0\u{3}play_url\0\u{3}start_time\0\u{3}like_count\0\u{3}end_time\0\u{1}status\0\u{3}room_image_url\0\u{3}room_title\0\u{3}user_name\0\u{3}user_avatar\0\u{3}shop_name\0\u{3}shop_logo_url\0\u{3}shop_id\0\u{3}is_follow\0")
 
@@ -543,7 +543,7 @@ extension GloryApi_LiveRoomIndexInfo: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension GloryApi_MallIndexRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_MallIndexRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MallIndexRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{1}pagination\0")
 
@@ -582,7 +582,7 @@ extension GloryApi_MallIndexRequest: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension GloryApi_MallIndexResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_MallIndexResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MallIndexResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}live_room_info\0\u{3}products_info\0\u{2}a\u{1}pagination\0")
 

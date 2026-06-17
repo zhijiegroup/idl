@@ -15,12 +15,12 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-struct GloryApi_VirtualCurrency: Sendable {
+nonisolated struct GloryApi_VirtualCurrency: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -55,7 +55,7 @@ struct GloryApi_VirtualCurrency: Sendable {
   init() {}
 }
 
-struct GloryApi_UserInfo: Sendable {
+nonisolated struct GloryApi_UserInfo: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -73,26 +73,26 @@ struct GloryApi_UserInfo: Sendable {
   init() {}
 }
 
-struct GloryApi_VirtualCurrencyInfo: Sendable {
+nonisolated struct GloryApi_VirtualCurrencyInfo: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var virtualCurrency: GloryApi_VirtualCurrency {
-    get {return _virtualCurrency ?? GloryApi_VirtualCurrency()}
+    get {_virtualCurrency ?? GloryApi_VirtualCurrency()}
     set {_virtualCurrency = newValue}
   }
   /// Returns true if `virtualCurrency` has been explicitly set.
-  var hasVirtualCurrency: Bool {return self._virtualCurrency != nil}
+  var hasVirtualCurrency: Bool {self._virtualCurrency != nil}
   /// Clears the value of `virtualCurrency`. Subsequent reads from it will return its default value.
   mutating func clearVirtualCurrency() {self._virtualCurrency = nil}
 
   var userInfo: GloryApi_UserInfo {
-    get {return _userInfo ?? GloryApi_UserInfo()}
+    get {_userInfo ?? GloryApi_UserInfo()}
     set {_userInfo = newValue}
   }
   /// Returns true if `userInfo` has been explicitly set.
-  var hasUserInfo: Bool {return self._userInfo != nil}
+  var hasUserInfo: Bool {self._userInfo != nil}
   /// Clears the value of `userInfo`. Subsequent reads from it will return its default value.
   mutating func clearUserInfo() {self._userInfo = nil}
 
@@ -104,26 +104,26 @@ struct GloryApi_VirtualCurrencyInfo: Sendable {
   fileprivate var _userInfo: GloryApi_UserInfo? = nil
 }
 
-struct GloryApi_AddVirtualCurrencyRequest: Sendable {
+nonisolated struct GloryApi_AddVirtualCurrencyRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var virtualCurrency: GloryApi_VirtualCurrency {
-    get {return _virtualCurrency ?? GloryApi_VirtualCurrency()}
+    get {_virtualCurrency ?? GloryApi_VirtualCurrency()}
     set {_virtualCurrency = newValue}
   }
   /// Returns true if `virtualCurrency` has been explicitly set.
-  var hasVirtualCurrency: Bool {return self._virtualCurrency != nil}
+  var hasVirtualCurrency: Bool {self._virtualCurrency != nil}
   /// Clears the value of `virtualCurrency`. Subsequent reads from it will return its default value.
   mutating func clearVirtualCurrency() {self._virtualCurrency = nil}
 
@@ -135,17 +135,17 @@ struct GloryApi_AddVirtualCurrencyRequest: Sendable {
   fileprivate var _virtualCurrency: GloryApi_VirtualCurrency? = nil
 }
 
-struct GloryApi_AddVirtualCurrencyResponse: Sendable {
+nonisolated struct GloryApi_AddVirtualCurrencyResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -156,17 +156,17 @@ struct GloryApi_AddVirtualCurrencyResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_RechargeCurrencyRequest: Sendable {
+nonisolated struct GloryApi_RechargeCurrencyRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -179,17 +179,17 @@ struct GloryApi_RechargeCurrencyRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_RechargeCurrencyResponse: Sendable {
+nonisolated struct GloryApi_RechargeCurrencyResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -200,17 +200,17 @@ struct GloryApi_RechargeCurrencyResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_RechargeCurrencyInBatchesRequest: Sendable {
+nonisolated struct GloryApi_RechargeCurrencyInBatchesRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -223,17 +223,17 @@ struct GloryApi_RechargeCurrencyInBatchesRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_RechargeCurrencyInBatchesResponse: Sendable {
+nonisolated struct GloryApi_RechargeCurrencyInBatchesResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -244,17 +244,17 @@ struct GloryApi_RechargeCurrencyInBatchesResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetVirtualCurrencyRequest: Sendable {
+nonisolated struct GloryApi_GetVirtualCurrencyRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -267,26 +267,26 @@ struct GloryApi_GetVirtualCurrencyRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetVirtualCurrencyResponse: Sendable {
+nonisolated struct GloryApi_GetVirtualCurrencyResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var virtualCurrencyInfo: GloryApi_VirtualCurrencyInfo {
-    get {return _virtualCurrencyInfo ?? GloryApi_VirtualCurrencyInfo()}
+    get {_virtualCurrencyInfo ?? GloryApi_VirtualCurrencyInfo()}
     set {_virtualCurrencyInfo = newValue}
   }
   /// Returns true if `virtualCurrencyInfo` has been explicitly set.
-  var hasVirtualCurrencyInfo: Bool {return self._virtualCurrencyInfo != nil}
+  var hasVirtualCurrencyInfo: Bool {self._virtualCurrencyInfo != nil}
   /// Clears the value of `virtualCurrencyInfo`. Subsequent reads from it will return its default value.
   mutating func clearVirtualCurrencyInfo() {self._virtualCurrencyInfo = nil}
 
@@ -298,17 +298,17 @@ struct GloryApi_GetVirtualCurrencyResponse: Sendable {
   fileprivate var _virtualCurrencyInfo: GloryApi_VirtualCurrencyInfo? = nil
 }
 
-struct GloryApi_ListVirtualCurrencyRequest: Sendable {
+nonisolated struct GloryApi_ListVirtualCurrencyRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -318,11 +318,11 @@ struct GloryApi_ListVirtualCurrencyRequest: Sendable {
   var status: String = String()
 
   var pagination: Base_PaginationRequest {
-    get {return _pagination ?? Base_PaginationRequest()}
+    get {_pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -334,28 +334,28 @@ struct GloryApi_ListVirtualCurrencyRequest: Sendable {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListVirtualCurrencyResponse: Sendable {
+nonisolated struct GloryApi_ListVirtualCurrencyResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var virtualCurrencyInfo: [GloryApi_VirtualCurrencyInfo] = []
 
   var pagination: Base_PaginationResponse {
-    get {return _pagination ?? Base_PaginationResponse()}
+    get {_pagination ?? Base_PaginationResponse()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -368,17 +368,17 @@ struct GloryApi_ListVirtualCurrencyResponse: Sendable {
 }
 
 /// 撤回成长币充值申请
-struct GloryApi_CancelRechargeRequest: Sendable {
+nonisolated struct GloryApi_CancelRechargeRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -395,17 +395,17 @@ struct GloryApi_CancelRechargeRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CancelRechargeResponse: Sendable {
+nonisolated struct GloryApi_CancelRechargeResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -418,9 +418,9 @@ struct GloryApi_CancelRechargeResponse: Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "glory_api"
+fileprivate nonisolated let _protobuf_package = "glory_api"
 
-extension GloryApi_VirtualCurrency: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_VirtualCurrency: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".VirtualCurrency"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}user_id\0\u{1}balance\0\u{1}unit\0\u{1}channel\0\u{1}explain\0\u{1}name\0\u{3}recharge_amount\0\u{1}status\0\u{3}created_at\0")
 
@@ -490,7 +490,7 @@ extension GloryApi_VirtualCurrency: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension GloryApi_UserInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_UserInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UserInfo"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{1}phone\0\u{1}token\0\u{1}name\0")
 
@@ -535,7 +535,7 @@ extension GloryApi_UserInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
   }
 }
 
-extension GloryApi_VirtualCurrencyInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_VirtualCurrencyInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".VirtualCurrencyInfo"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}virtual_currency\0\u{1}userInfo\0")
 
@@ -574,7 +574,7 @@ extension GloryApi_VirtualCurrencyInfo: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension GloryApi_AddVirtualCurrencyRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_AddVirtualCurrencyRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".AddVirtualCurrencyRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}virtual_currency\0")
 
@@ -613,7 +613,7 @@ extension GloryApi_AddVirtualCurrencyRequest: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension GloryApi_AddVirtualCurrencyResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_AddVirtualCurrencyResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".AddVirtualCurrencyResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 
@@ -647,7 +647,7 @@ extension GloryApi_AddVirtualCurrencyResponse: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension GloryApi_RechargeCurrencyRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_RechargeCurrencyRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".RechargeCurrencyRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}user_id\0")
 
@@ -686,7 +686,7 @@ extension GloryApi_RechargeCurrencyRequest: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension GloryApi_RechargeCurrencyResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_RechargeCurrencyResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".RechargeCurrencyResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 
@@ -720,7 +720,7 @@ extension GloryApi_RechargeCurrencyResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension GloryApi_RechargeCurrencyInBatchesRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_RechargeCurrencyInBatchesRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".RechargeCurrencyInBatchesRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}users_id\0")
 
@@ -759,7 +759,7 @@ extension GloryApi_RechargeCurrencyInBatchesRequest: SwiftProtobuf.Message, Swif
   }
 }
 
-extension GloryApi_RechargeCurrencyInBatchesResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_RechargeCurrencyInBatchesResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".RechargeCurrencyInBatchesResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 
@@ -793,7 +793,7 @@ extension GloryApi_RechargeCurrencyInBatchesResponse: SwiftProtobuf.Message, Swi
   }
 }
 
-extension GloryApi_GetVirtualCurrencyRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetVirtualCurrencyRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetVirtualCurrencyRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}user_id\0")
 
@@ -832,7 +832,7 @@ extension GloryApi_GetVirtualCurrencyRequest: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension GloryApi_GetVirtualCurrencyResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetVirtualCurrencyResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetVirtualCurrencyResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}virtual_currency_info\0")
 
@@ -871,7 +871,7 @@ extension GloryApi_GetVirtualCurrencyResponse: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension GloryApi_ListVirtualCurrencyRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListVirtualCurrencyRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListVirtualCurrencyRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}user_id\0\u{1}status\0\u{2}a\u{1}pagination\0")
 
@@ -920,7 +920,7 @@ extension GloryApi_ListVirtualCurrencyRequest: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension GloryApi_ListVirtualCurrencyResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListVirtualCurrencyResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListVirtualCurrencyResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}virtual_currency_info\0\u{2}b\u{1}pagination\0")
 
@@ -964,7 +964,7 @@ extension GloryApi_ListVirtualCurrencyResponse: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension GloryApi_CancelRechargeRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_CancelRechargeRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CancelRechargeRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}user_id\0\u{1}reason\0")
 
@@ -1008,7 +1008,7 @@ extension GloryApi_CancelRechargeRequest: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension GloryApi_CancelRechargeResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_CancelRechargeResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CancelRechargeResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 

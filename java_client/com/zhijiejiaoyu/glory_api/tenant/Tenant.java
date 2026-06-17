@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     businessSystem = com.google.protobuf.LazyStringArrayList.EMPTY;
     platform = "";
     courses = com.google.protobuf.LazyStringArrayList.EMPTY;
+    expiryDate = "";
   }
 
   @java.lang.Override
@@ -119,6 +120,12 @@ private static final long serialVersionUID = 0L;
               mutable_bitField0_ |= 0x00000002;
             }
             courses .add(s);
+            break;
+          }
+          case 114: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            expiryDate = s;
             break;
           }
           default: {
@@ -523,6 +530,52 @@ private static final long serialVersionUID = 0L;
     return courses .getByteString(index);
   }
 
+  public static final int EXPIRY_DATE_FIELD_NUMBER = 14;
+  private volatile java.lang.Object expiryDate ;
+  /**
+   * <pre>
+   * 学校账户有效期截止时间
+   * </pre>
+   *
+   * <code>string expiry_date = 14;</code>
+   * @return The expiryDate.
+   */
+  @java.lang.Override
+  public java.lang.String getExpiryDate() {
+    java.lang.Object ref = expiryDate ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      expiryDate = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 学校账户有效期截止时间
+   * </pre>
+   *
+   * <code>string expiry_date = 14;</code>
+   * @return The bytes for expiryDate.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getExpiryDateBytes() {
+    java.lang.Object ref = expiryDate ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      expiryDate = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -566,6 +619,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < courses .size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, courses .getRaw(i));
+    }
+    if (!getExpiryDateBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, expiryDate );
     }
     unknownFields.writeTo(output);
   }
@@ -618,6 +674,9 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getCoursesList().size();
     }
+    if (!getExpiryDateBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, expiryDate );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -653,6 +712,8 @@ private static final long serialVersionUID = 0L;
         != other.getCourseTotalCount()) return false;
     if (!getCoursesList()
         .equals(other.getCoursesList())) return false;
+    if (!getExpiryDate()
+        .equals(other.getExpiryDate())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -689,6 +750,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + COURSES_FIELD_NUMBER;
       hash = (53 * hash) + getCoursesList().hashCode();
     }
+    hash = (37 * hash) + EXPIRY_DATE_FIELD_NUMBER;
+    hash = (53 * hash) + getExpiryDate().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -842,6 +905,8 @@ private static final long serialVersionUID = 0L;
 
       courses = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0 = (bitField0 & ~0x00000002);
+      expiryDate = "";
+
       return this;
     }
 
@@ -887,6 +952,7 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0 & ~0x00000002);
       }
       result.courses = courses ;
+      result.expiryDate = expiryDate ;
       onBuilt();
       return result;
     }
@@ -983,6 +1049,10 @@ private static final long serialVersionUID = 0L;
           ensureCoursesIsMutable();
           courses .addAll(other.courses );
         }
+        onChanged();
+      }
+      if (!other.getExpiryDate().isEmpty()) {
+        expiryDate = other.expiryDate ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1861,6 +1931,102 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureCoursesIsMutable();
       courses .add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object expiryDate = "";
+    /**
+     * <pre>
+     * 学校账户有效期截止时间
+     * </pre>
+     *
+     * <code>string expiry_date = 14;</code>
+     * @return The expiryDate.
+     */
+    public java.lang.String getExpiryDate() {
+      java.lang.Object ref = expiryDate ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        expiryDate = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 学校账户有效期截止时间
+     * </pre>
+     *
+     * <code>string expiry_date = 14;</code>
+     * @return The bytes for expiryDate.
+     */
+    public com.google.protobuf.ByteString
+        getExpiryDateBytes() {
+      java.lang.Object ref = expiryDate ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        expiryDate = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 学校账户有效期截止时间
+     * </pre>
+     *
+     * <code>string expiry_date = 14;</code>
+     * @param value The expiryDate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExpiryDate(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      expiryDate = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 学校账户有效期截止时间
+     * </pre>
+     *
+     * <code>string expiry_date = 14;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearExpiryDate() {
+      
+      expiryDate = getDefaultInstance().getExpiryDate();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 学校账户有效期截止时间
+     * </pre>
+     *
+     * <code>string expiry_date = 14;</code>
+     * @param value The bytes for expiryDate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExpiryDateBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      expiryDate = value;
       onChanged();
       return this;
     }

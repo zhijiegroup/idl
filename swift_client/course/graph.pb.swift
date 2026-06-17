@@ -15,12 +15,12 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-struct GloryApi_Node: Sendable {
+nonisolated struct GloryApi_Node: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -39,11 +39,11 @@ struct GloryApi_Node: Sendable {
   var weight: Int32 = 0
 
   var detail: GloryApi_NodeDetail {
-    get {return _detail ?? GloryApi_NodeDetail()}
+    get {_detail ?? GloryApi_NodeDetail()}
     set {_detail = newValue}
   }
   /// Returns true if `detail` has been explicitly set.
-  var hasDetail: Bool {return self._detail != nil}
+  var hasDetail: Bool {self._detail != nil}
   /// Clears the value of `detail`. Subsequent reads from it will return its default value.
   mutating func clearDetail() {self._detail = nil}
 
@@ -56,7 +56,7 @@ struct GloryApi_Node: Sendable {
   fileprivate var _detail: GloryApi_NodeDetail? = nil
 }
 
-struct GloryApi_Edge: Sendable {
+nonisolated struct GloryApi_Edge: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -74,7 +74,7 @@ struct GloryApi_Edge: Sendable {
   init() {}
 }
 
-struct GloryApi_KnowledgeGraph: Sendable {
+nonisolated struct GloryApi_KnowledgeGraph: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -90,7 +90,7 @@ struct GloryApi_KnowledgeGraph: Sendable {
   init() {}
 }
 
-struct GloryApi_ResourceCount: Sendable {
+nonisolated struct GloryApi_ResourceCount: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -104,93 +104,93 @@ struct GloryApi_ResourceCount: Sendable {
   init() {}
 }
 
-struct GloryApi_NodeDetail: @unchecked Sendable {
+nonisolated struct GloryApi_NodeDetail: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var id: Int64 {
-    get {return _storage._id}
+    get {_storage._id}
     set {_uniqueStorage()._id = newValue}
   }
 
   var code: String {
-    get {return _storage._code}
+    get {_storage._code}
     set {_uniqueStorage()._code = newValue}
   }
 
   var name: String {
-    get {return _storage._name}
+    get {_storage._name}
     set {_uniqueStorage()._name = newValue}
   }
 
   var desc: String {
-    get {return _storage._desc}
+    get {_storage._desc}
     set {_uniqueStorage()._desc = newValue}
   }
 
   var organization: String {
-    get {return _storage._organization}
+    get {_storage._organization}
     set {_uniqueStorage()._organization = newValue}
   }
 
   var level: String {
-    get {return _storage._level}
+    get {_storage._level}
     set {_uniqueStorage()._level = newValue}
   }
 
   var industry: String {
-    get {return _storage._industry}
+    get {_storage._industry}
     set {_uniqueStorage()._industry = newValue}
   }
 
   var type: String {
-    get {return _storage._type}
+    get {_storage._type}
     set {_uniqueStorage()._type = newValue}
   }
 
   var cover: String {
-    get {return _storage._cover}
+    get {_storage._cover}
     set {_uniqueStorage()._cover = newValue}
   }
 
   var classification: String {
-    get {return _storage._classification}
+    get {_storage._classification}
     set {_uniqueStorage()._classification = newValue}
   }
 
   var module: Int32 {
-    get {return _storage._module}
+    get {_storage._module}
     set {_uniqueStorage()._module = newValue}
   }
 
   var major: String {
-    get {return _storage._major}
+    get {_storage._major}
     set {_uniqueStorage()._major = newValue}
   }
 
   var teacher: String {
-    get {return _storage._teacher}
+    get {_storage._teacher}
     set {_uniqueStorage()._teacher = newValue}
   }
 
   var knowledgeHours: Float {
-    get {return _storage._knowledgeHours}
+    get {_storage._knowledgeHours}
     set {_uniqueStorage()._knowledgeHours = newValue}
   }
 
   var skillHours: Float {
-    get {return _storage._skillHours}
+    get {_storage._skillHours}
     set {_uniqueStorage()._skillHours = newValue}
   }
 
   var createdAt: String {
-    get {return _storage._createdAt}
+    get {_storage._createdAt}
     set {_uniqueStorage()._createdAt = newValue}
   }
 
   var resources: [GloryApi_ResourceCount] {
-    get {return _storage._resources}
+    get {_storage._resources}
     set {_uniqueStorage()._resources = newValue}
   }
 
@@ -201,17 +201,17 @@ struct GloryApi_NodeDetail: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct GloryApi_CreateKnowledgeGraphRequest: Sendable {
+nonisolated struct GloryApi_CreateKnowledgeGraphRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -222,17 +222,17 @@ struct GloryApi_CreateKnowledgeGraphRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CreateKnowledgeGraphResponse: Sendable {
+nonisolated struct GloryApi_CreateKnowledgeGraphResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -243,17 +243,17 @@ struct GloryApi_CreateKnowledgeGraphResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetKnowledgeGraphRequest: Sendable {
+nonisolated struct GloryApi_GetKnowledgeGraphRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -267,27 +267,27 @@ struct GloryApi_GetKnowledgeGraphRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetKnowledgeGraphResponse: Sendable {
+nonisolated struct GloryApi_GetKnowledgeGraphResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   /// 知识图谱
   var graph: GloryApi_KnowledgeGraph {
-    get {return _graph ?? GloryApi_KnowledgeGraph()}
+    get {_graph ?? GloryApi_KnowledgeGraph()}
     set {_graph = newValue}
   }
   /// Returns true if `graph` has been explicitly set.
-  var hasGraph: Bool {return self._graph != nil}
+  var hasGraph: Bool {self._graph != nil}
   /// Clears the value of `graph`. Subsequent reads from it will return its default value.
   mutating func clearGraph() {self._graph = nil}
 
@@ -299,17 +299,17 @@ struct GloryApi_GetKnowledgeGraphResponse: Sendable {
   fileprivate var _graph: GloryApi_KnowledgeGraph? = nil
 }
 
-struct GloryApi_GetKnowledgeGraphNodeRequest: Sendable {
+nonisolated struct GloryApi_GetKnowledgeGraphNodeRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -324,26 +324,26 @@ struct GloryApi_GetKnowledgeGraphNodeRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetKnowledgeGraphNodeResponse: Sendable {
+nonisolated struct GloryApi_GetKnowledgeGraphNodeResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var nodeDetail: GloryApi_NodeDetail {
-    get {return _nodeDetail ?? GloryApi_NodeDetail()}
+    get {_nodeDetail ?? GloryApi_NodeDetail()}
     set {_nodeDetail = newValue}
   }
   /// Returns true if `nodeDetail` has been explicitly set.
-  var hasNodeDetail: Bool {return self._nodeDetail != nil}
+  var hasNodeDetail: Bool {self._nodeDetail != nil}
   /// Clears the value of `nodeDetail`. Subsequent reads from it will return its default value.
   mutating func clearNodeDetail() {self._nodeDetail = nil}
 
@@ -357,9 +357,9 @@ struct GloryApi_GetKnowledgeGraphNodeResponse: Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "glory_api"
+fileprivate nonisolated let _protobuf_package = "glory_api"
 
-extension GloryApi_Node: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_Node: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Node"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{3}node_id\0\u{2}\u{2}label\0\u{1}value\0\u{1}type\0\u{1}weight\0\u{1}detail\0\u{1}assigned\0")
 
@@ -428,7 +428,7 @@ extension GloryApi_Node: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
   }
 }
 
-extension GloryApi_Edge: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_Edge: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Edge"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}type\0\u{1}label\0\u{3}begin_id\0\u{3}end_id\0")
 
@@ -473,7 +473,7 @@ extension GloryApi_Edge: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
   }
 }
 
-extension GloryApi_KnowledgeGraph: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_KnowledgeGraph: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".KnowledgeGraph"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}node\0\u{1}edge\0")
 
@@ -508,7 +508,7 @@ extension GloryApi_KnowledgeGraph: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension GloryApi_ResourceCount: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ResourceCount: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ResourceCount"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}type\0\u{1}count\0")
 
@@ -543,7 +543,7 @@ extension GloryApi_ResourceCount: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 }
 
-extension GloryApi_NodeDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_NodeDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".NodeDetail"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{1}code\0\u{1}name\0\u{1}desc\0\u{1}organization\0\u{1}level\0\u{1}industry\0\u{1}type\0\u{1}cover\0\u{1}classification\0\u{1}module\0\u{1}major\0\u{2}\u{5}teacher\0\u{3}knowledge_hours\0\u{3}skill_hours\0\u{3}created_at\0\u{1}resources\0")
 
@@ -721,7 +721,7 @@ extension GloryApi_NodeDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension GloryApi_CreateKnowledgeGraphRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_CreateKnowledgeGraphRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CreateKnowledgeGraphRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0")
 
@@ -755,7 +755,7 @@ extension GloryApi_CreateKnowledgeGraphRequest: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension GloryApi_CreateKnowledgeGraphResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_CreateKnowledgeGraphResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CreateKnowledgeGraphResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 
@@ -789,7 +789,7 @@ extension GloryApi_CreateKnowledgeGraphResponse: SwiftProtobuf.Message, SwiftPro
   }
 }
 
-extension GloryApi_GetKnowledgeGraphRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetKnowledgeGraphRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetKnowledgeGraphRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}course_ids\0")
 
@@ -828,7 +828,7 @@ extension GloryApi_GetKnowledgeGraphRequest: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension GloryApi_GetKnowledgeGraphResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetKnowledgeGraphResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetKnowledgeGraphResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{1}graph\0")
 
@@ -867,7 +867,7 @@ extension GloryApi_GetKnowledgeGraphResponse: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension GloryApi_GetKnowledgeGraphNodeRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetKnowledgeGraphNodeRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetKnowledgeGraphNodeRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{1}type\0\u{1}id\0")
 
@@ -911,7 +911,7 @@ extension GloryApi_GetKnowledgeGraphNodeRequest: SwiftProtobuf.Message, SwiftPro
   }
 }
 
-extension GloryApi_GetKnowledgeGraphNodeResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetKnowledgeGraphNodeResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetKnowledgeGraphNodeResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}node_detail\0")
 

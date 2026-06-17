@@ -15,13 +15,13 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
 /// All response will contain BaseResponse
-struct Base_BaseResponse: Sendable {
+nonisolated struct Base_BaseResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -38,17 +38,17 @@ struct Base_BaseResponse: Sendable {
 }
 
 /// GeneralResponse is used for return early with only the BaseResponse
-struct Base_GeneralResponse: Sendable {
+nonisolated struct Base_GeneralResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -59,7 +59,7 @@ struct Base_GeneralResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct Base_PaginationRequest: Sendable {
+nonisolated struct Base_PaginationRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -79,7 +79,7 @@ struct Base_PaginationRequest: Sendable {
   init() {}
 }
 
-struct Base_PaginationResponse: Sendable {
+nonisolated struct Base_PaginationResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -102,7 +102,7 @@ struct Base_PaginationResponse: Sendable {
   init() {}
 }
 
-struct Base_AuthorInfo: Sendable {
+nonisolated struct Base_AuthorInfo: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -120,7 +120,7 @@ struct Base_AuthorInfo: Sendable {
   init() {}
 }
 
-struct Base_BaseRequest: Sendable {
+nonisolated struct Base_BaseRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -135,9 +135,9 @@ struct Base_BaseRequest: Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "base"
+fileprivate nonisolated let _protobuf_package = "base"
 
-extension Base_BaseResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension Base_BaseResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".BaseResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}status_code\0\u{3}status_message\0\u{3}entry_id\0")
 
@@ -177,7 +177,7 @@ extension Base_BaseResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
   }
 }
 
-extension Base_GeneralResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension Base_GeneralResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GeneralResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 
@@ -211,7 +211,7 @@ extension Base_GeneralResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 }
 
-extension Base_PaginationRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension Base_PaginationRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".PaginationRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}size\0\u{1}page\0\u{3}sort_key\0\u{3}sort_descending\0")
 
@@ -256,7 +256,7 @@ extension Base_PaginationRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 }
 
-extension Base_PaginationResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension Base_PaginationResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".PaginationResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}size\0\u{1}page\0\u{3}total_count\0\u{3}sort_key\0\u{3}sort_descending\0")
 
@@ -306,7 +306,7 @@ extension Base_PaginationResponse: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension Base_AuthorInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension Base_AuthorInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".AuthorInfo"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{4}e\u{1}created_by\0\u{3}created_at\0\u{3}updated_by\0\u{3}updated_at\0")
 
@@ -351,7 +351,7 @@ extension Base_AuthorInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
   }
 }
 
-extension Base_BaseRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension Base_BaseRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".BaseRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}auth_token\0")
 

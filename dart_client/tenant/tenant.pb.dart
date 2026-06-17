@@ -28,6 +28,7 @@ class Tenant extends $pb.GeneratedMessage {
     $core.String? platform,
     $core.int? courseTotalCount,
     $core.Iterable<$core.String>? courses,
+    $core.String? expiryDate,
   }) {
     final $result = create();
     if (tenantId != null) {
@@ -60,6 +61,9 @@ class Tenant extends $pb.GeneratedMessage {
     if (courses != null) {
       $result.courses.addAll(courses);
     }
+    if (expiryDate != null) {
+      $result.expiryDate = expiryDate;
+    }
     return $result;
   }
   Tenant._() : super();
@@ -77,6 +81,7 @@ class Tenant extends $pb.GeneratedMessage {
     ..aOS(11, _omitFieldNames ? '' : 'platform')
     ..a<$core.int>(12, _omitFieldNames ? '' : 'courseTotalCount', $pb.PbFieldType.O3)
     ..pPS(13, _omitFieldNames ? '' : 'courses')
+    ..aOS(14, _omitFieldNames ? '' : 'expiryDate')
     ..hasRequiredFields = false
   ;
 
@@ -178,6 +183,15 @@ class Tenant extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(13)
   $core.List<$core.String> get courses => $_getList(9);
+
+  @$pb.TagNumber(14)
+  $core.String get expiryDate => $_getSZ(10);
+  @$pb.TagNumber(14)
+  set expiryDate($core.String v) { $_setString(10, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasExpiryDate() => $_has(10);
+  @$pb.TagNumber(14)
+  void clearExpiryDate() => clearField(14);
 }
 
 class CreateTenantRequest extends $pb.GeneratedMessage {

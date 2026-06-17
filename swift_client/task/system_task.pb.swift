@@ -15,12 +15,12 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-struct GloryApi_TaskParameter: Sendable {
+nonisolated struct GloryApi_TaskParameter: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -50,7 +50,7 @@ struct GloryApi_TaskParameter: Sendable {
   init() {}
 }
 
-struct GloryApi_TaskConfig: Sendable {
+nonisolated struct GloryApi_TaskConfig: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -73,7 +73,7 @@ struct GloryApi_TaskConfig: Sendable {
   init() {}
 }
 
-struct GloryApi_SystemTaskParameter: Sendable {
+nonisolated struct GloryApi_SystemTaskParameter: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -99,7 +99,7 @@ struct GloryApi_SystemTaskParameter: Sendable {
   init() {}
 }
 
-struct GloryApi_SystemTask: Sendable {
+nonisolated struct GloryApi_SystemTask: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -125,20 +125,20 @@ struct GloryApi_SystemTask: Sendable {
   var updatedAt: String = String()
 
   var creator: GloryApi_User {
-    get {return _creator ?? GloryApi_User()}
+    get {_creator ?? GloryApi_User()}
     set {_creator = newValue}
   }
   /// Returns true if `creator` has been explicitly set.
-  var hasCreator: Bool {return self._creator != nil}
+  var hasCreator: Bool {self._creator != nil}
   /// Clears the value of `creator`. Subsequent reads from it will return its default value.
   mutating func clearCreator() {self._creator = nil}
 
   var updater: GloryApi_User {
-    get {return _updater ?? GloryApi_User()}
+    get {_updater ?? GloryApi_User()}
     set {_updater = newValue}
   }
   /// Returns true if `updater` has been explicitly set.
-  var hasUpdater: Bool {return self._updater != nil}
+  var hasUpdater: Bool {self._updater != nil}
   /// Clears the value of `updater`. Subsequent reads from it will return its default value.
   mutating func clearUpdater() {self._updater = nil}
 
@@ -150,17 +150,17 @@ struct GloryApi_SystemTask: Sendable {
   fileprivate var _updater: GloryApi_User? = nil
 }
 
-struct GloryApi_GetTaskConfigRequest: Sendable {
+nonisolated struct GloryApi_GetTaskConfigRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -171,17 +171,17 @@ struct GloryApi_GetTaskConfigRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetTaskConfigResponse: Sendable {
+nonisolated struct GloryApi_GetTaskConfigResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -194,26 +194,26 @@ struct GloryApi_GetTaskConfigResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_CreateSystemTaskRequest: Sendable {
+nonisolated struct GloryApi_CreateSystemTaskRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var systemTask: GloryApi_SystemTask {
-    get {return _systemTask ?? GloryApi_SystemTask()}
+    get {_systemTask ?? GloryApi_SystemTask()}
     set {_systemTask = newValue}
   }
   /// Returns true if `systemTask` has been explicitly set.
-  var hasSystemTask: Bool {return self._systemTask != nil}
+  var hasSystemTask: Bool {self._systemTask != nil}
   /// Clears the value of `systemTask`. Subsequent reads from it will return its default value.
   mutating func clearSystemTask() {self._systemTask = nil}
 
@@ -225,17 +225,17 @@ struct GloryApi_CreateSystemTaskRequest: Sendable {
   fileprivate var _systemTask: GloryApi_SystemTask? = nil
 }
 
-struct GloryApi_CreateSystemTaskResponse: Sendable {
+nonisolated struct GloryApi_CreateSystemTaskResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -246,17 +246,17 @@ struct GloryApi_CreateSystemTaskResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListSystemTaskRequest: Sendable {
+nonisolated struct GloryApi_ListSystemTaskRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -265,11 +265,11 @@ struct GloryApi_ListSystemTaskRequest: Sendable {
   var business: String = String()
 
   var pagination: Base_PaginationRequest {
-    get {return _pagination ?? Base_PaginationRequest()}
+    get {_pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -281,28 +281,28 @@ struct GloryApi_ListSystemTaskRequest: Sendable {
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
-struct GloryApi_ListSystemTaskResponse: Sendable {
+nonisolated struct GloryApi_ListSystemTaskResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var systemTasks: [GloryApi_SystemTask] = []
 
   var pagination: Base_PaginationResponse {
-    get {return _pagination ?? Base_PaginationResponse()}
+    get {_pagination ?? Base_PaginationResponse()}
     set {_pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {return self._pagination != nil}
+  var hasPagination: Bool {self._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
@@ -314,17 +314,17 @@ struct GloryApi_ListSystemTaskResponse: Sendable {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_GetSystemTaskRequest: Sendable {
+nonisolated struct GloryApi_GetSystemTaskRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -337,26 +337,26 @@ struct GloryApi_GetSystemTaskRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_GetSystemTaskResponse: Sendable {
+nonisolated struct GloryApi_GetSystemTaskResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var systemTask: GloryApi_SystemTask {
-    get {return _systemTask ?? GloryApi_SystemTask()}
+    get {_systemTask ?? GloryApi_SystemTask()}
     set {_systemTask = newValue}
   }
   /// Returns true if `systemTask` has been explicitly set.
-  var hasSystemTask: Bool {return self._systemTask != nil}
+  var hasSystemTask: Bool {self._systemTask != nil}
   /// Clears the value of `systemTask`. Subsequent reads from it will return its default value.
   mutating func clearSystemTask() {self._systemTask = nil}
 
@@ -368,26 +368,26 @@ struct GloryApi_GetSystemTaskResponse: Sendable {
   fileprivate var _systemTask: GloryApi_SystemTask? = nil
 }
 
-struct GloryApi_UpdateSystemTaskRequest: Sendable {
+nonisolated struct GloryApi_UpdateSystemTaskRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var systemTask: GloryApi_SystemTask {
-    get {return _systemTask ?? GloryApi_SystemTask()}
+    get {_systemTask ?? GloryApi_SystemTask()}
     set {_systemTask = newValue}
   }
   /// Returns true if `systemTask` has been explicitly set.
-  var hasSystemTask: Bool {return self._systemTask != nil}
+  var hasSystemTask: Bool {self._systemTask != nil}
   /// Clears the value of `systemTask`. Subsequent reads from it will return its default value.
   mutating func clearSystemTask() {self._systemTask = nil}
 
@@ -399,17 +399,17 @@ struct GloryApi_UpdateSystemTaskRequest: Sendable {
   fileprivate var _systemTask: GloryApi_SystemTask? = nil
 }
 
-struct GloryApi_UpdateSystemTaskResponse: Sendable {
+nonisolated struct GloryApi_UpdateSystemTaskResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -420,17 +420,17 @@ struct GloryApi_UpdateSystemTaskResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_DeleteSystemTaskRequest: Sendable {
+nonisolated struct GloryApi_DeleteSystemTaskRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
+    get {_baseRequest ?? Base_BaseRequest()}
     set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
@@ -443,17 +443,17 @@ struct GloryApi_DeleteSystemTaskRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_DeleteSystemTaskResponse: Sendable {
+nonisolated struct GloryApi_DeleteSystemTaskResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
+    get {_baseResp ?? Base_BaseResponse()}
     set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
@@ -466,9 +466,9 @@ struct GloryApi_DeleteSystemTaskResponse: Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "glory_api"
+fileprivate nonisolated let _protobuf_package = "glory_api"
 
-extension GloryApi_TaskParameter: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_TaskParameter: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".TaskParameter"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}task_parameter_key\0\u{3}task_parameter_name\0\u{3}task_parameter_operator\0\u{3}task_parameter_type\0\u{3}task_parameter_default\0\u{3}task_parameter_enums\0\u{3}task_parameter_children\0\u{3}task_parameter_visible_in_system\0\u{3}task_parameter_required\0\u{3}max_length\0")
 
@@ -543,7 +543,7 @@ extension GloryApi_TaskParameter: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 }
 
-extension GloryApi_TaskConfig: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_TaskConfig: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".TaskConfig"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}task_key\0\u{3}task_name\0\u{3}task_business\0\u{3}task_content\0\u{3}task_platform\0\u{1}parameters\0")
 
@@ -598,7 +598,7 @@ extension GloryApi_TaskConfig: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension GloryApi_SystemTaskParameter: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_SystemTaskParameter: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".SystemTaskParameter"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}task_parameter_id\0\u{3}task_parameter_key\0\u{3}task_parameter_name\0\u{3}task_parameter_operator\0\u{3}task_parameter_type\0\u{3}task_parameter_value\0\u{1}children\0\u{3}task_parameter_visible_in_system\0")
 
@@ -663,7 +663,7 @@ extension GloryApi_SystemTaskParameter: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension GloryApi_SystemTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_SystemTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".SystemTask"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}system_task_id\0\u{3}system_task_key\0\u{3}system_task_name\0\u{3}system_task_business\0\u{3}system_task_content\0\u{3}system_task_link\0\u{3}system_task_platform\0\u{3}system_task_parameters\0\u{3}created_at\0\u{3}updated_at\0\u{1}creator\0\u{1}updater\0")
 
@@ -752,7 +752,7 @@ extension GloryApi_SystemTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension GloryApi_GetTaskConfigRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetTaskConfigRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetTaskConfigRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0")
 
@@ -786,7 +786,7 @@ extension GloryApi_GetTaskConfigRequest: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension GloryApi_GetTaskConfigResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetTaskConfigResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetTaskConfigResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{1}tasks\0")
 
@@ -825,7 +825,7 @@ extension GloryApi_GetTaskConfigResponse: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension GloryApi_CreateSystemTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_CreateSystemTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CreateSystemTaskRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}system_task\0")
 
@@ -864,7 +864,7 @@ extension GloryApi_CreateSystemTaskRequest: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension GloryApi_CreateSystemTaskResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_CreateSystemTaskResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CreateSystemTaskResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 
@@ -898,7 +898,7 @@ extension GloryApi_CreateSystemTaskResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension GloryApi_ListSystemTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListSystemTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListSystemTaskRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{1}name\0\u{1}business\0\u{2}a\u{1}pagination\0")
 
@@ -947,7 +947,7 @@ extension GloryApi_ListSystemTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension GloryApi_ListSystemTaskResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_ListSystemTaskResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListSystemTaskResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}system_tasks\0\u{2}b\u{1}pagination\0")
 
@@ -991,7 +991,7 @@ extension GloryApi_ListSystemTaskResponse: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension GloryApi_GetSystemTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetSystemTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetSystemTaskRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}system_task_id\0")
 
@@ -1030,7 +1030,7 @@ extension GloryApi_GetSystemTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension GloryApi_GetSystemTaskResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_GetSystemTaskResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetSystemTaskResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}system_task\0")
 
@@ -1069,7 +1069,7 @@ extension GloryApi_GetSystemTaskResponse: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension GloryApi_UpdateSystemTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_UpdateSystemTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UpdateSystemTaskRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}system_task\0")
 
@@ -1108,7 +1108,7 @@ extension GloryApi_UpdateSystemTaskRequest: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension GloryApi_UpdateSystemTaskResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_UpdateSystemTaskResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UpdateSystemTaskResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 
@@ -1142,7 +1142,7 @@ extension GloryApi_UpdateSystemTaskResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension GloryApi_DeleteSystemTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_DeleteSystemTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DeleteSystemTaskRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}system_task_id\0")
 
@@ -1181,7 +1181,7 @@ extension GloryApi_DeleteSystemTaskRequest: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension GloryApi_DeleteSystemTaskResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension GloryApi_DeleteSystemTaskResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DeleteSystemTaskResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0")
 

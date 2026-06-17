@@ -22,6 +22,8 @@ export interface Tenant {
   platform?: string;
   course_total_count?: number;
   courses?: Array<string>;
+  /** 学校账户有效期截止时间 */
+  expiry_date?: string;
 }
 
 export interface CreateTenantRequest {
