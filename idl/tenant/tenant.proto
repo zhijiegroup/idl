@@ -16,6 +16,7 @@ message Tenant {
   string platform = 11;
   int32 course_total_count = 12;
   repeated string courses = 13;
+  string expiry_date = 14; // 学校账户有效期截止时间
 }
 
 message CreateTenantRequest {
