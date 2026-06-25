@@ -12,6 +12,8 @@ message BaseResponse {
   sint32 status_code = 1;
   string status_message = 2;
   int64 entry_id = 3;
+  string status_lang_key = 4;  // 多语言翻译key，前端据此在前端语言包中查找对应语言的错误文案
+  string dynamic_params = 5;   // 动态插值参数(JSON字符串)，用于错误消息中的动态变量替换
 }
 
 // GeneralResponse is used for return early with only the BaseResponse
