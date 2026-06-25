@@ -1,10 +1,27 @@
 /* eslint-disable */
 // @ts-nocheck
+// 修改日期: 2026-06-25
+// 修改人: qiweizhe
+// 修改目的: 扩展 Language 请求头支持全部6种语言（中文、泰语、俄语、英语、印尼语、越南语）
+// 本文件作用: 为 web_client 生成代码提供公共工具函数，包括请求头构造、查询字符串序列化及响应处理
 import { getDefaultLocale } from '@/hooks/useChangeLocale';
+
+/**
+ * 根据前端当前语言设置，映射为后端可识别的 Language 请求头值
+ * 后端中间件通过该请求头判断返回哪种语言的错误信息
+ */
 const cur_lang = getDefaultLocale();
 let language = "zh";
 if (cur_lang === "th-TH") {
   language = "thai";
+} else if (cur_lang === "ru-RU") {
+  language = "ru";
+} else if (cur_lang === "en-US") {
+  language = "en";
+} else if (cur_lang === "id-ID") {
+  language = "id";
+} else if (cur_lang === "vi-VN") {
+  language = "vi";
 }
 export const headers = { "Content-Type": "application/json","Language": language };
 export const method = "GET";
