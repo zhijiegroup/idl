@@ -32,6 +32,12 @@ nonisolated struct Base_BaseResponse: Sendable {
 
   var entryID: Int64 = 0
 
+  /// 多语言翻译key，前端据此在前端语言包中查找对应语言的错误文案
+  var statusLangKey: String = String()
+
+  /// 动态插值参数(JSON字符串)，用于错误消息中的动态变量替换
+  var dynamicParams: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -139,7 +145,7 @@ fileprivate nonisolated let _protobuf_package = "base"
 
 nonisolated extension Base_BaseResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".BaseResponse"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}status_code\0\u{3}status_message\0\u{3}entry_id\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}status_code\0\u{3}status_message\0\u{3}entry_id\0\u{3}status_lang_key\0\u{3}dynamic_params\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -150,6 +156,8 @@ nonisolated extension Base_BaseResponse: SwiftProtobuf.Message, SwiftProtobuf._M
       case 1: try { try decoder.decodeSingularSInt32Field(value: &self.statusCode) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.statusMessage) }()
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.entryID) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.statusLangKey) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.dynamicParams) }()
       default: break
       }
     }
@@ -165,6 +173,12 @@ nonisolated extension Base_BaseResponse: SwiftProtobuf.Message, SwiftProtobuf._M
     if self.entryID != 0 {
       try visitor.visitSingularInt64Field(value: self.entryID, fieldNumber: 3)
     }
+    if !self.statusLangKey.isEmpty {
+      try visitor.visitSingularStringField(value: self.statusLangKey, fieldNumber: 4)
+    }
+    if !self.dynamicParams.isEmpty {
+      try visitor.visitSingularStringField(value: self.dynamicParams, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -172,6 +186,8 @@ nonisolated extension Base_BaseResponse: SwiftProtobuf.Message, SwiftProtobuf._M
     if lhs.statusCode != rhs.statusCode {return false}
     if lhs.statusMessage != rhs.statusMessage {return false}
     if lhs.entryID != rhs.entryID {return false}
+    if lhs.statusLangKey != rhs.statusLangKey {return false}
+    if lhs.dynamicParams != rhs.dynamicParams {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

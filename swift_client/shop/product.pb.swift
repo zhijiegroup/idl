@@ -513,45 +513,43 @@ nonisolated struct GloryApi_GetProductRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-nonisolated struct GloryApi_GetProductResponse: Sendable {
+nonisolated struct GloryApi_GetProductResponse: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {_baseResp ?? Base_BaseResponse()}
-    set {_baseResp = newValue}
+    get {_storage._baseResp ?? Base_BaseResponse()}
+    set {_uniqueStorage()._baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {self._baseResp != nil}
+  var hasBaseResp: Bool {_storage._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
-  mutating func clearBaseResp() {self._baseResp = nil}
+  mutating func clearBaseResp() {_uniqueStorage()._baseResp = nil}
 
   var productDetail: GloryApi_ProductWithValueAuthor {
-    get {_productDetail ?? GloryApi_ProductWithValueAuthor()}
-    set {_productDetail = newValue}
+    get {_storage._productDetail ?? GloryApi_ProductWithValueAuthor()}
+    set {_uniqueStorage()._productDetail = newValue}
   }
   /// Returns true if `productDetail` has been explicitly set.
-  var hasProductDetail: Bool {self._productDetail != nil}
+  var hasProductDetail: Bool {_storage._productDetail != nil}
   /// Clears the value of `productDetail`. Subsequent reads from it will return its default value.
-  mutating func clearProductDetail() {self._productDetail = nil}
+  mutating func clearProductDetail() {_uniqueStorage()._productDetail = nil}
 
   var latestApprovalLevel: GloryApi_ApprovalFlowLevel {
-    get {_latestApprovalLevel ?? GloryApi_ApprovalFlowLevel()}
-    set {_latestApprovalLevel = newValue}
+    get {_storage._latestApprovalLevel ?? GloryApi_ApprovalFlowLevel()}
+    set {_uniqueStorage()._latestApprovalLevel = newValue}
   }
   /// Returns true if `latestApprovalLevel` has been explicitly set.
-  var hasLatestApprovalLevel: Bool {self._latestApprovalLevel != nil}
+  var hasLatestApprovalLevel: Bool {_storage._latestApprovalLevel != nil}
   /// Clears the value of `latestApprovalLevel`. Subsequent reads from it will return its default value.
-  mutating func clearLatestApprovalLevel() {self._latestApprovalLevel = nil}
+  mutating func clearLatestApprovalLevel() {_uniqueStorage()._latestApprovalLevel = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _baseResp: Base_BaseResponse? = nil
-  fileprivate var _productDetail: GloryApi_ProductWithValueAuthor? = nil
-  fileprivate var _latestApprovalLevel: GloryApi_ApprovalFlowLevel? = nil
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 nonisolated struct GloryApi_UpdateProductRequest: Sendable {
@@ -1978,41 +1976,81 @@ nonisolated extension GloryApi_GetProductResponse: SwiftProtobuf.Message, SwiftP
   static let protoMessageName: String = _protobuf_package + ".GetProductResponse"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}product_detail\0\u{3}latest_approval_level\0")
 
+  fileprivate class _StorageClass {
+    var _baseResp: Base_BaseResponse? = nil
+    var _productDetail: GloryApi_ProductWithValueAuthor? = nil
+    var _latestApprovalLevel: GloryApi_ApprovalFlowLevel? = nil
+
+      // This property is used as the initial default value for new instances of the type.
+      // The type itself is protecting the reference to its storage via CoW semantics.
+      // This will force a copy to be made of this reference when the first mutation occurs;
+      // hence, it is safe to mark this as `nonisolated(unsafe)`.
+      static nonisolated(unsafe) let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _baseResp = source._baseResp
+      _productDetail = source._productDetail
+      _latestApprovalLevel = source._latestApprovalLevel
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeSingularMessageField(value: &self._productDetail) }()
-      case 3: try { try decoder.decodeSingularMessageField(value: &self._latestApprovalLevel) }()
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._baseResp) }()
+        case 2: try { try decoder.decodeSingularMessageField(value: &_storage._productDetail) }()
+        case 3: try { try decoder.decodeSingularMessageField(value: &_storage._latestApprovalLevel) }()
+        default: break
+        }
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseResp {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._productDetail {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
-    try { if let v = self._latestApprovalLevel {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      try { if let v = _storage._baseResp {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+      } }()
+      try { if let v = _storage._productDetail {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      } }()
+      try { if let v = _storage._latestApprovalLevel {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+      } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetProductResponse, rhs: GloryApi_GetProductResponse) -> Bool {
-    if lhs._baseResp != rhs._baseResp {return false}
-    if lhs._productDetail != rhs._productDetail {return false}
-    if lhs._latestApprovalLevel != rhs._latestApprovalLevel {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._baseResp != rhs_storage._baseResp {return false}
+        if _storage._productDetail != rhs_storage._productDetail {return false}
+        if _storage._latestApprovalLevel != rhs_storage._latestApprovalLevel {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

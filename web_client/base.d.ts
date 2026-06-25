@@ -10,6 +10,10 @@ export interface BaseResponse {
   status_code?: number;
   status_message?: string;
   entry_id?: string;
+  /** 多语言翻译key，前端据此在前端语言包中查找对应语言的错误文案 */
+  status_lang_key?: string;
+  /** 动态插值参数(JSON字符串)，用于错误消息中的动态变量替换 */
+  dynamic_params?: string;
 }
 
 /** GeneralResponse is used for return early with only the BaseResponse */

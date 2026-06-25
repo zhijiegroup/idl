@@ -20,6 +20,8 @@ const BaseResponse$json = {
     {'1': 'status_code', '3': 1, '4': 1, '5': 17, '10': 'statusCode'},
     {'1': 'status_message', '3': 2, '4': 1, '5': 9, '10': 'statusMessage'},
     {'1': 'entry_id', '3': 3, '4': 1, '5': 3, '10': 'entryId'},
+    {'1': 'status_lang_key', '3': 4, '4': 1, '5': 9, '10': 'statusLangKey'},
+    {'1': 'dynamic_params', '3': 5, '4': 1, '5': 9, '10': 'dynamicParams'},
   ],
 };
 
@@ -27,7 +29,8 @@ const BaseResponse$json = {
 final $typed_data.Uint8List baseResponseDescriptor = $convert.base64Decode(
     'CgxCYXNlUmVzcG9uc2USHwoLc3RhdHVzX2NvZGUYASABKBFSCnN0YXR1c0NvZGUSJQoOc3RhdH'
     'VzX21lc3NhZ2UYAiABKAlSDXN0YXR1c01lc3NhZ2USGQoIZW50cnlfaWQYAyABKANSB2VudHJ5'
-    'SWQ=');
+    'SWQSJgoPc3RhdHVzX2xhbmdfa2V5GAQgASgJUg1zdGF0dXNMYW5nS2V5EiUKDmR5bmFtaWNfcG'
+    'FyYW1zGAUgASgJUg1keW5hbWljUGFyYW1z');
 
 @$core.Deprecated('Use generalResponseDescriptor instead')
 const GeneralResponse$json = {

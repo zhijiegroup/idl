@@ -21,6 +21,8 @@ private static final long serialVersionUID = 0L;
   }
   private BaseResponse() {
     statusMessage = "";
+    statusLangKey = "";
+    dynamicParams = "";
   }
 
   @java.lang.Override
@@ -67,6 +69,18 @@ private static final long serialVersionUID = 0L;
           case 24: {
 
             entryId = input.readInt64();
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            statusLangKey = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            dynamicParams = s;
             break;
           }
           default: {
@@ -161,6 +175,98 @@ private static final long serialVersionUID = 0L;
     return entryId ;
   }
 
+  public static final int STATUS_LANG_KEY_FIELD_NUMBER = 4;
+  private volatile java.lang.Object statusLangKey ;
+  /**
+   * <pre>
+   * 多语言翻译key，前端据此在前端语言包中查找对应语言的错误文案
+   * </pre>
+   *
+   * <code>string status_lang_key = 4;</code>
+   * @return The statusLangKey.
+   */
+  @java.lang.Override
+  public java.lang.String getStatusLangKey() {
+    java.lang.Object ref = statusLangKey ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      statusLangKey = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 多语言翻译key，前端据此在前端语言包中查找对应语言的错误文案
+   * </pre>
+   *
+   * <code>string status_lang_key = 4;</code>
+   * @return The bytes for statusLangKey.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStatusLangKeyBytes() {
+    java.lang.Object ref = statusLangKey ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      statusLangKey = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DYNAMIC_PARAMS_FIELD_NUMBER = 5;
+  private volatile java.lang.Object dynamicParams ;
+  /**
+   * <pre>
+   * 动态插值参数(JSON字符串)，用于错误消息中的动态变量替换
+   * </pre>
+   *
+   * <code>string dynamic_params = 5;</code>
+   * @return The dynamicParams.
+   */
+  @java.lang.Override
+  public java.lang.String getDynamicParams() {
+    java.lang.Object ref = dynamicParams ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      dynamicParams = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 动态插值参数(JSON字符串)，用于错误消息中的动态变量替换
+   * </pre>
+   *
+   * <code>string dynamic_params = 5;</code>
+   * @return The bytes for dynamicParams.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDynamicParamsBytes() {
+    java.lang.Object ref = dynamicParams ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      dynamicParams = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -184,6 +290,12 @@ private static final long serialVersionUID = 0L;
     if (entryId != 0L) {
       output.writeInt64(3, entryId );
     }
+    if (!getStatusLangKeyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, statusLangKey );
+    }
+    if (!getDynamicParamsBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, dynamicParams );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -203,6 +315,12 @@ private static final long serialVersionUID = 0L;
     if (entryId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, entryId );
+    }
+    if (!getStatusLangKeyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, statusLangKey );
+    }
+    if (!getDynamicParamsBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, dynamicParams );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -225,6 +343,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getStatusMessage())) return false;
     if (getEntryId()
         != other.getEntryId()) return false;
+    if (!getStatusLangKey()
+        .equals(other.getStatusLangKey())) return false;
+    if (!getDynamicParams()
+        .equals(other.getDynamicParams())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -243,6 +365,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ENTRY_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getEntryId());
+    hash = (37 * hash) + STATUS_LANG_KEY_FIELD_NUMBER;
+    hash = (53 * hash) + getStatusLangKey().hashCode();
+    hash = (37 * hash) + DYNAMIC_PARAMS_FIELD_NUMBER;
+    hash = (53 * hash) + getDynamicParams().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -386,6 +512,10 @@ private static final long serialVersionUID = 0L;
 
       entryId = 0L;
 
+      statusLangKey = "";
+
+      dynamicParams = "";
+
       return this;
     }
 
@@ -415,6 +545,8 @@ private static final long serialVersionUID = 0L;
       result.statusCode = statusCode ;
       result.statusMessage = statusMessage ;
       result.entryId = entryId ;
+      result.statusLangKey = statusLangKey ;
+      result.dynamicParams = dynamicParams ;
       onBuilt();
       return result;
     }
@@ -472,6 +604,14 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getEntryId() != 0L) {
         setEntryId(other.getEntryId());
+      }
+      if (!other.getStatusLangKey().isEmpty()) {
+        statusLangKey = other.statusLangKey ;
+        onChanged();
+      }
+      if (!other.getDynamicParams().isEmpty()) {
+        dynamicParams = other.dynamicParams ;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -636,6 +776,198 @@ private static final long serialVersionUID = 0L;
     public Builder clearEntryId() {
       
       entryId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object statusLangKey = "";
+    /**
+     * <pre>
+     * 多语言翻译key，前端据此在前端语言包中查找对应语言的错误文案
+     * </pre>
+     *
+     * <code>string status_lang_key = 4;</code>
+     * @return The statusLangKey.
+     */
+    public java.lang.String getStatusLangKey() {
+      java.lang.Object ref = statusLangKey ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        statusLangKey = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 多语言翻译key，前端据此在前端语言包中查找对应语言的错误文案
+     * </pre>
+     *
+     * <code>string status_lang_key = 4;</code>
+     * @return The bytes for statusLangKey.
+     */
+    public com.google.protobuf.ByteString
+        getStatusLangKeyBytes() {
+      java.lang.Object ref = statusLangKey ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        statusLangKey = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 多语言翻译key，前端据此在前端语言包中查找对应语言的错误文案
+     * </pre>
+     *
+     * <code>string status_lang_key = 4;</code>
+     * @param value The statusLangKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusLangKey(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      statusLangKey = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 多语言翻译key，前端据此在前端语言包中查找对应语言的错误文案
+     * </pre>
+     *
+     * <code>string status_lang_key = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStatusLangKey() {
+      
+      statusLangKey = getDefaultInstance().getStatusLangKey();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 多语言翻译key，前端据此在前端语言包中查找对应语言的错误文案
+     * </pre>
+     *
+     * <code>string status_lang_key = 4;</code>
+     * @param value The bytes for statusLangKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusLangKeyBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      statusLangKey = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object dynamicParams = "";
+    /**
+     * <pre>
+     * 动态插值参数(JSON字符串)，用于错误消息中的动态变量替换
+     * </pre>
+     *
+     * <code>string dynamic_params = 5;</code>
+     * @return The dynamicParams.
+     */
+    public java.lang.String getDynamicParams() {
+      java.lang.Object ref = dynamicParams ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        dynamicParams = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 动态插值参数(JSON字符串)，用于错误消息中的动态变量替换
+     * </pre>
+     *
+     * <code>string dynamic_params = 5;</code>
+     * @return The bytes for dynamicParams.
+     */
+    public com.google.protobuf.ByteString
+        getDynamicParamsBytes() {
+      java.lang.Object ref = dynamicParams ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        dynamicParams = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 动态插值参数(JSON字符串)，用于错误消息中的动态变量替换
+     * </pre>
+     *
+     * <code>string dynamic_params = 5;</code>
+     * @param value The dynamicParams to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDynamicParams(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      dynamicParams = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 动态插值参数(JSON字符串)，用于错误消息中的动态变量替换
+     * </pre>
+     *
+     * <code>string dynamic_params = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDynamicParams() {
+      
+      dynamicParams = getDefaultInstance().getDynamicParams();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 动态插值参数(JSON字符串)，用于错误消息中的动态变量替换
+     * </pre>
+     *
+     * <code>string dynamic_params = 5;</code>
+     * @param value The bytes for dynamicParams to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDynamicParamsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      dynamicParams = value;
       onChanged();
       return this;
     }

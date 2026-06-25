@@ -20,6 +20,8 @@ class BaseResponse extends $pb.GeneratedMessage {
     $core.int? statusCode,
     $core.String? statusMessage,
     $fixnum.Int64? entryId,
+    $core.String? statusLangKey,
+    $core.String? dynamicParams,
   }) {
     final $result = create();
     if (statusCode != null) {
@@ -31,6 +33,12 @@ class BaseResponse extends $pb.GeneratedMessage {
     if (entryId != null) {
       $result.entryId = entryId;
     }
+    if (statusLangKey != null) {
+      $result.statusLangKey = statusLangKey;
+    }
+    if (dynamicParams != null) {
+      $result.dynamicParams = dynamicParams;
+    }
     return $result;
   }
   BaseResponse._() : super();
@@ -41,6 +49,8 @@ class BaseResponse extends $pb.GeneratedMessage {
     ..a<$core.int>(1, _omitFieldNames ? '' : 'statusCode', $pb.PbFieldType.OS3)
     ..aOS(2, _omitFieldNames ? '' : 'statusMessage')
     ..aInt64(3, _omitFieldNames ? '' : 'entryId')
+    ..aOS(4, _omitFieldNames ? '' : 'statusLangKey')
+    ..aOS(5, _omitFieldNames ? '' : 'dynamicParams')
     ..hasRequiredFields = false
   ;
 
@@ -91,6 +101,24 @@ class BaseResponse extends $pb.GeneratedMessage {
   $core.bool hasEntryId() => $_has(2);
   @$pb.TagNumber(3)
   void clearEntryId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get statusLangKey => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set statusLangKey($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasStatusLangKey() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatusLangKey() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get dynamicParams => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set dynamicParams($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasDynamicParams() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDynamicParams() => clearField(5);
 }
 
 /// GeneralResponse is used for return early with only the BaseResponse

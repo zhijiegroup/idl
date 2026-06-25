@@ -30,4 +30,44 @@ public interface BaseResponseOrBuilder extends
    * @return The entryId.
    */
   long getEntryId();
+
+  /**
+   * <pre>
+   * 多语言翻译key，前端据此在前端语言包中查找对应语言的错误文案
+   * </pre>
+   *
+   * <code>string status_lang_key = 4;</code>
+   * @return The statusLangKey.
+   */
+  java.lang.String getStatusLangKey();
+  /**
+   * <pre>
+   * 多语言翻译key，前端据此在前端语言包中查找对应语言的错误文案
+   * </pre>
+   *
+   * <code>string status_lang_key = 4;</code>
+   * @return The bytes for statusLangKey.
+   */
+  com.google.protobuf.ByteString
+      getStatusLangKeyBytes();
+
+  /**
+   * <pre>
+   * 动态插值参数(JSON字符串)，用于错误消息中的动态变量替换
+   * </pre>
+   *
+   * <code>string dynamic_params = 5;</code>
+   * @return The dynamicParams.
+   */
+  java.lang.String getDynamicParams();
+  /**
+   * <pre>
+   * 动态插值参数(JSON字符串)，用于错误消息中的动态变量替换
+   * </pre>
+   *
+   * <code>string dynamic_params = 5;</code>
+   * @return The bytes for dynamicParams.
+   */
+  com.google.protobuf.ByteString
+      getDynamicParamsBytes();
 }
