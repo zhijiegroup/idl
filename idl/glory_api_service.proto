@@ -52,11 +52,13 @@ import "course/module.proto";
 import "course/cmodule.proto";
 import "course/nmodule.proto";
 import "course/course.proto";
+import "course/progress_stat.proto";
 import "course/graph.proto";
 import "course/user_course.proto";
 import "course/teaching_plan.proto";
 import "course/edu_scheme.proto";
 import "course/job.proto";
+import "doc/doc.proto";
 import "app/app.proto";
 import "traffic/live_traffic.proto";
 import "role/role.proto";
@@ -947,6 +949,11 @@ service glory_api {
     option (api.post) = '/api/tenant/update_tenent_user_password';
   }
 
+  // 教师所辖班级列表
+  rpc ListTeacherClass(ListTeacherClassRequest) returns (ListTeacherClassResponse) {
+    option (api.post) = '/api/tenant/list_teacher_class';
+  }
+
   //tenant_config
   rpc UpdateTenantConfig(UpdateTenantConfigRequest) returns(UpdateTenantConfigResponse) {
     option (api.post) = '/api/tenant/update_tenant_config';
@@ -1302,6 +1309,38 @@ service glory_api {
     option (api.post) = '/api/course/list_my_course';
   }
 
+  // 课程收藏
+  // 收藏/取消收藏课节
+  rpc FavoriteLesson(FavoriteLessonRequest) returns (FavoriteLessonResponse) {
+    option (api.post) = '/api/course/favorite_lesson';
+  }
+
+  // 我的收藏课节列表
+  rpc ListMyFavoriteLesson(ListMyFavoriteLessonRequest) returns (ListMyFavoriteLessonResponse) {
+    option (api.post) = '/api/course/list_my_favorite_lesson';
+  }
+
+  // 学情分析
+  // 学情统计卡片
+  rpc ProgressStatOverview(ProgressStatOverviewRequest) returns (ProgressStatOverviewResponse) {
+    option (api.post) = '/api/course/progress_stat_overview';
+  }
+
+  // 班级/学生进度列表
+  rpc ListProgressClassStudent(ListProgressClassStudentRequest) returns (ListProgressClassStudentResponse) {
+    option (api.post) = '/api/course/list_progress_class_student';
+  }
+
+  // 班级课程进度详情
+  rpc ListClassCourseProgress(ListClassCourseProgressRequest) returns (ListClassCourseProgressResponse) {
+    option (api.post) = '/api/course/list_class_course_progress';
+  }
+
+  // 学生课节进度详情
+  rpc ListStudentLessonProgress(ListStudentLessonProgressRequest) returns (ListStudentLessonProgressResponse) {
+    option (api.post) = '/api/course/list_student_lesson_progress';
+  }
+
   // 教案管理
   rpc ListTeachingPlan(ListTeachingPlanRequest) returns (ListTeachingPlanResponse) {
     option (api.post) = '/api/course/list_teaching_plan';
@@ -1319,6 +1358,17 @@ service glory_api {
    // 上报老师授课课程进度
    rpc UpdateTeachingCourseProgress (UpdateTeachingCourseProgressRequest) returns (UpdateTeachingCourseProgressResponse) {
     option (api.post) = '/api/course/update_teaching_course_progress';
+  }
+
+  // 授课任务
+  // 在授课程列表
+  rpc ListTeachingTask(ListTeachingTaskRequest) returns (ListTeachingTaskResponse) {
+    option (api.post) = '/api/course/list_teaching_task';
+  }
+
+  // 加入授课
+  rpc CreateTeachingTask(CreateTeachingTaskRequest) returns (CreateTeachingTaskResponse) {
+    option (api.post) = '/api/course/create_teaching_task';
   }
 
   // 培养方案
@@ -1341,8 +1391,66 @@ service glory_api {
     option (api.post) = '/api/course/distribute_edu_scheme';
   }
     // 获取培养方案，但返回结果和获取模块化结果一样
-  rpc GetEduSchemeLikeCourse(GetEduSchemeLikeCourseRequest) returns (GetEduSchemeLikeCourseResponse) {
+    rpc GetEduSchemeLikeCourse(GetEduSchemeLikeCourseRequest) returns (GetEduSchemeLikeCourseResponse) {
       option (api.post) = '/api/course/get_edu_scheme_like_course';
+  }
+
+  // 文档
+  // 学校文档列表
+  rpc ListSchoolDoc(ListSchoolDocRequest) returns (ListSchoolDocResponse) {
+    option (api.post) = '/api/doc/list_school_doc';
+  }
+  // 新增学校文档
+  rpc CreateSchoolDoc(CreateSchoolDocRequest) returns (CreateSchoolDocResponse) {
+    option (api.post) = '/api/doc/create_school_doc';
+  }
+  // 编辑/替换学校文档
+  rpc UpdateSchoolDoc(UpdateSchoolDocRequest) returns (UpdateSchoolDocResponse) {
+    option (api.post) = '/api/doc/update_school_doc';
+  }
+  // 删除学校文档
+  rpc DeleteSchoolDoc(DeleteSchoolDocRequest) returns (DeleteSchoolDocResponse) {
+    option (api.post) = '/api/doc/delete_school_doc';
+  }
+  // 收藏/取消收藏学校文档
+  rpc FavoriteSchoolDoc(FavoriteSchoolDocRequest) returns (FavoriteSchoolDocResponse) {
+    option (api.post) = '/api/doc/favorite_school_doc';
+  }
+  // 新建我的文档文件夹
+  rpc CreateMyDocFolder(CreateMyDocFolderRequest) returns (CreateMyDocFolderResponse) {
+    option (api.post) = '/api/doc/create_my_doc_folder';
+  }
+  // 重命名我的文档文件夹(预留)
+  rpc RenameMyDocFolder(RenameMyDocFolderRequest) returns (RenameMyDocFolderResponse) {
+    option (api.post) = '/api/doc/rename_my_doc_folder';
+  }
+  // 删除我的文档文件夹(递归)
+  rpc DeleteMyDocFolder(DeleteMyDocFolderRequest) returns (DeleteMyDocFolderResponse) {
+    option (api.post) = '/api/doc/delete_my_doc_folder';
+  }
+  // 我的文档文件夹列表
+  rpc ListMyDocFolder(ListMyDocFolderRequest) returns (ListMyDocFolderResponse) {
+    option (api.get) = '/api/doc/list_my_doc_folder';
+  }
+  // 我的文档当前目录列表
+  rpc ListMyDoc(ListMyDocRequest) returns (ListMyDocResponse) {
+    option (api.post) = '/api/doc/list_my_doc';
+  }
+  // 移出收藏文档
+  rpc MoveOutMyDoc(MoveOutMyDocRequest) returns (MoveOutMyDocResponse) {
+    option (api.post) = '/api/doc/move_out_my_doc';
+  }
+  // 删除自上传文件
+  rpc DeleteMyDoc(DeleteMyDocRequest) returns (DeleteMyDocResponse) {
+    option (api.post) = '/api/doc/delete_my_doc';
+  }
+  // 获取下载地址
+  rpc DownloadMyDoc(DownloadMyDocRequest) returns (DownloadMyDocResponse) {
+    option (api.get) = '/api/doc/download_my_doc';
+  }
+  // 通用上传
+  rpc UploadFile(UploadFileRequest) returns (UploadFileResponse) {
+    option (api.post) = '/api/doc/upload_file';
   }
 
   // app下载

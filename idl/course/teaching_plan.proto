@@ -74,13 +74,71 @@ message DeleteTeachingPlanResponse {
 // 更新老师授课课程进度
 message UpdateTeachingCourseProgressRequest {
     base.BaseRequest base_request = 1;
-    int64 course_id = 2; // 课程ID
+    int64 course_id = 2; // 课程ID(自建课程可传 0)
     int64 chapter_resource_id = 3; // 当前课程资源ID
-    float chapter_resource_progress = 4; // 当前课程资源播放进度
-    float chapter_resource_duration = 5; // 当前课程资源总时长
+    float chapter_resource_progress = 4; // 当前课程资源播放进度（0-100）
+    float chapter_resource_duration = 5; // 当前课程资源总时长（毫秒）
+    int64 class_id = 6; // 授课班级ID；传值时按授课任务推进(current_lesson_no 取 MAX、只增不退)，不传时保持旧行为；新增字段
+    int32 current_lesson_no = 7; // 当前末级节点序号(1-based)；满进度自动结课，已结课任务拒绝推进；新增字段
+    float room_play_position = 8; // 房间播放点位（毫秒，视频内当前播放位置；可回退，落库取最新值）
   }
-  
+
   message UpdateTeachingCourseProgressResponse {
     base.BaseResponse base_resp = 1;
     int32 course_progress = 2; // 当前课程总进度
   }
+
+// 授课任务卡片(课程+班级维度)
+message TeachingTaskItem {
+    int64 task_id = 1;
+    int32 target_type = 2; // 授课任务来源：1.平台课程；2.自建课程
+    int64 course_id = 3; // target_type=1 时有效
+    int64 edu_scheme_id = 4; // target_type=2 时有效
+    string course_name = 5; // 课程名称
+    string course_cover_url = 6; // 封面(方案取首个来源课程封面，缺失用默认图)
+    string major_name = 7; // 专业名称
+    int64 class_id = 8; // 班级ID
+    string class_name = 9; // 班级名称
+    int32 current_lesson_no = 10; // 已授到的末级节点序号(1-based，0=未开始)
+    int32 total_lesson_no = 11; // 末级节点总数(快照)
+    int32 progress = 12; // 进度 0-100 = round(current/total*100)
+    string last_taught_at = 13; // 最近授课时间
+    int32 status = 14; // 任务状态：1.进行中；2.已结课(current>=total 自动置 2)
+}
+
+// 在授课程两个 Tab 的全量计数
+message TaskCounts {
+    int64 in_progress = 1; // 进行中总数(含 0%)
+    int64 finished = 2; // 已结课总数
+}
+
+// 在授课程列表(一任务一卡片，按 COALESCE(last_taught_at, created_at) DESC 排序)
+message ListTeachingTaskRequest {
+    base.BaseRequest base_request = 1;
+    int32 status = 2; // 任务状态：0.全部；1.进行中(默认，含 0%)；2.已结课
+    string major_code = 3; // 专业过滤(预留)
+    base.PaginationRequest pagination = 100; // 默认 size=12(三列×四行)
+}
+
+message ListTeachingTaskResponse {
+    base.BaseResponse base_resp = 1;
+    repeated TeachingTaskItem tasks = 2;
+    TaskCounts counts = 3;
+    base.PaginationResponse pagination = 100;
+}
+
+// 加入授课(分配班级)：一次可传多个班级，一班级一条任务；幂等，重复提交返回已存在任务
+message CreateTeachingTaskRequest {
+    base.BaseRequest base_request = 1;
+    int32 target_type = 2; // 授课任务来源：1.平台课程；2.自建课程
+    int64 course_id = 3; // target_type=1 时必填
+    int64 edu_scheme_id = 4; // target_type=2 时必填
+    repeated int64 class_ids = 5; // 授课班级，至少 1 个
+}
+
+message CreateTeachingTaskResponse {
+    base.BaseResponse base_resp = 1;
+    repeated int64 task_ids = 2; // 本次涉及的任务ID(新建+已存在)
+    int32 created_count = 3; // 新建数量
+    int32 existed_count = 4; // 已存在数量
+}

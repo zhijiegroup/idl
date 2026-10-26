@@ -19,9 +19,10 @@ message CourseResource {
   string resource_name = 2; // 课程资源名称
   int32 resource_type = 3; // 课程资源类型：1.教学视频；2.教学课件；3.课后习题；4.教案
   string resource_path = 5; // 课程资源OSS路径，用于教学视频和教学PPT
-  string resource_url = 6; // 课程资源URL
+  string resource_url = 6; // 课程资源URL；课程未购买(assigned=false)时仅第一个视频课节下发，其余置空
   string resource_content = 7; // 课程资源内容，用于课后习题和教案
-  repeated CourseResourceFile files = 8; // 课程资源类型为教学课件时的文件(PDF/PPT)列表
+  repeated CourseResourceFile files = 8; // 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组
+  string node_key = 9; // 课节稳定标识(= resource_id)，用于收藏与深链定位；新增字段
 }
 
 message CourseChapter {

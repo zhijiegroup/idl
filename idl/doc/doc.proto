@@ -1,0 +1,248 @@
+syntax = "proto3";
+package glory_api;
+option java_package = "com.zhijiejiaoyu.glory_api.doc";
+option java_multiple_files = true;
+
+import "base.proto";
+
+// ==================== 学校文档(政策文件 + 人才培养方案) ====================
+
+// 学校文档项
+message SchoolDocItem {
+  int64 doc_id = 1;
+  int32 doc_type = 2; // 文档类型：1.政策文件(平台维护)；2.人才培养方案(本校)
+  string doc_name = 3; // 名称
+  // —— 仅 doc_type=1 政策文件 ——
+  int32 level = 4; // 政策文件级别：1.全国级；2.省级；3.市级
+  string province = 5; // 省(编码)
+  string city = 6; // 市(编码)
+  string org = 7; // 发布机构
+  // —— 仅 doc_type=2 人才培养方案 ——
+  string major = 8; // 所属专业
+  string compile_org = 9; // 编制单位
+  string grade = 10; // 适用年级(如 2026)
+  // —— 公共 ——
+  string publish_date = 11; // 发布/上传日期
+  int64 file_size = 12; // 文件大小(字节)
+  string file_url = 13; // 签名后的访问URL(私有对象)
+  int64 page_count = 14; // PDF总页数
+  bool favorited = 15; // 当前用户是否已收藏
+  string created_at = 16; // 创建时间
+  int64 created_by = 17; // 上传人(教师仅可维护本人上传项)
+}
+
+// 学校文档列表(按发布日期倒序；政策文件全平台可读，人才培养方案本校可读；学生不可见)
+message ListSchoolDocRequest {
+  base.BaseRequest base_request = 1;
+  int32 doc_type = 2; // 文档类型：1.政策文件；2.人才培养方案
+  int32 level = 3; // 仅 doc_type=1：0.全部；1.全国级(省级/市级文件通过省市定位)
+  string province = 4; // 仅 doc_type=1：选省返回该省发布(含省内各市)的文件
+  string city = 5; // 仅 doc_type=1：需先选省
+  string major = 6; // 仅 doc_type=2：专业筛选
+  string grade = 7; // 仅 doc_type=2：年级筛选(如 2026)
+  string name = 8; // 名称模糊
+  base.PaginationRequest pagination = 100;
+}
+
+message ListSchoolDocResponse {
+  base.BaseResponse base_resp = 1;
+  repeated SchoolDocItem docs = 2;
+  base.PaginationResponse pagination = 100;
+}
+
+// 新增学校文档(doc_type=1 仅平台管理员；doc_type=2 学校管理员可写本校、教师可写本人)
+message CreateSchoolDocRequest {
+  base.BaseRequest base_request = 1;
+  int32 doc_type = 2; // 文档类型：1.政策文件；2.人才培养方案
+  string doc_name = 3; // 名称
+  int32 level = 4; // doc_type=1 必填：1.全国级；2.省级；3.市级
+  string province = 5; // level=2 需省；level=3 需省市
+  string city = 6; // level=3 必填
+  string org = 7; // doc_type=1 必填：发布机构
+  string major = 8; // doc_type=2 必填：专业
+  string grade = 9; // doc_type=2 必填：年级
+  string compile_org = 10; // doc_type=2 必填：编制单位
+  string publish_date = 11; // 发布/上传日期
+  string file_url = 12; // 私有对象地址(先上传)
+  int64 file_size = 13; // 文件大小(字节)
+  int64 page_count = 14; // PDF总页数
+}
+
+message CreateSchoolDocResponse {
+  base.BaseResponse base_resp = 1;
+  int64 doc_id = 2; // 新文档ID
+}
+
+// 编辑/替换学校文档(replace_file=true 时以新文件替换，按差值计算容量；替换后收藏记录自动指向最新版本)
+message UpdateSchoolDocRequest {
+  base.BaseRequest base_request = 1;
+  int64 doc_id = 2; // 文档ID
+  int32 doc_type = 3; // 文档类型：1.政策文件；2.人才培养方案
+  string doc_name = 4; // 名称
+  int32 level = 5; // 仅 doc_type=1：1.全国级；2.省级；3.市级
+  string province = 6; // 仅 doc_type=1
+  string city = 7; // 仅 doc_type=1
+  string org = 8; // 仅 doc_type=1：发布机构
+  string major = 9; // 仅 doc_type=2：专业
+  string grade = 10; // 仅 doc_type=2：年级
+  string compile_org = 11; // 仅 doc_type=2：编制单位
+  string publish_date = 12; // 发布/上传日期
+  string file_url = 13; // 私有对象地址(先上传)
+  int64 file_size = 14; // 文件大小(字节)
+  int64 page_count = 15; // PDF总页数
+  bool replace_file = 16; // true 时以新文件替换
+}
+
+message UpdateSchoolDocResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+// 删除学校文档(级联清除「我的文档」中的收藏记录)
+message DeleteSchoolDocRequest {
+  base.BaseRequest base_request = 1;
+  int64 doc_id = 2;
+}
+
+message DeleteSchoolDocResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+// 收藏/取消收藏学校文档(幂等；收藏即在「我的文档」生成来源记录，取消即移除)
+message FavoriteSchoolDocRequest {
+  base.BaseRequest base_request = 1;
+  int64 doc_id = 2;
+  bool favorite = 3; // true 收藏；false 取消
+}
+
+message FavoriteSchoolDocResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+// ==================== 我的文档(个人文件网盘，仅教师本人可见) ====================
+
+// 我的文档条目(文件夹 + 文件)
+message MyDocItem {
+  int64 id = 1; // 条目ID
+  int32 type = 2; // 条目类型：1.文件夹；2.文件
+  string name = 3; // 名称(同目录重名自动追加 -n)
+  int32 source = 4; // 来源：1.政策文件；2.人才培养方案；3.我的上传
+  string source_label = 5; // 分类文案(如「全国级」「省级·江苏省」「电子商务专业」)
+  int64 file_size = 6; // 文件大小(字节，文件夹为 0)
+  string file_type = 7; // 扩展名/MIME
+  string created_at = 8; // 时间
+  int64 ref_id = 9; // 文件夹→folder_id；收藏→doc_id；上传→自身 id
+  string jump_url = 10; // 收藏来源跳回原页面地址
+}
+
+// 新建文件夹(同级不可重名、不可为空)
+message CreateMyDocFolderRequest {
+  base.BaseRequest base_request = 1;
+  int64 parent_id = 2; // 父目录ID，0=根目录
+  string folder_name = 3; // 文件夹名称
+}
+
+message CreateMyDocFolderResponse {
+  base.BaseResponse base_resp = 1;
+  int64 folder_id = 2; // 新文件夹ID
+}
+
+// 重命名文件夹(预留，原型无入口)
+message RenameMyDocFolderRequest {
+  base.BaseRequest base_request = 1;
+  int64 folder_id = 2; // 文件夹ID
+  string folder_name = 3; // 新名称
+}
+
+message RenameMyDocFolderResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+// 删除文件夹(递归删除全部子层级，含自上传文件的 OSS 对象；命中收藏记录只解绑、不删源文档)
+message DeleteMyDocFolderRequest {
+  base.BaseRequest base_request = 1;
+  int64 folder_id = 2; // 文件夹ID
+}
+
+message DeleteMyDocFolderResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+// 文件夹列表
+message ListMyDocFolderRequest {
+  base.BaseRequest base_request = 1;
+  int64 parent_id = 2; // 父目录ID，0=根目录
+}
+
+message ListMyDocFolderResponse {
+  base.BaseResponse base_resp = 1;
+  repeated MyDocItem folders = 2; // type=1 的条目
+}
+
+// 当前目录列表(文件夹 + 文件)
+message ListMyDocRequest {
+  base.BaseRequest base_request = 1;
+  int64 parent_id = 2; // 目录ID，0=根目录
+  int32 source = 3; // 来源筛选：0.全部；1.政策文件；2.人才培养方案；3.我的上传
+  string name = 4; // 名称搜索(与来源筛选叠加，仅当前目录)
+  base.PaginationRequest pagination = 100; // 预留；当前目录一次性展示不分页
+}
+
+message ListMyDocResponse {
+  base.BaseResponse base_resp = 1;
+  repeated MyDocItem items = 2;
+}
+
+// 移出收藏文档(等价于取消源文档收藏，原页面星标同步取消)
+message MoveOutMyDocRequest {
+  base.BaseRequest base_request = 1;
+  int64 doc_id = 2; // 我的文档条目ID(source 为 1/2)
+}
+
+message MoveOutMyDocResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+// 删除自上传文件(同步删除 OSS 对象；对象不存在时仍删记录并记日志)
+message DeleteMyDocRequest {
+  base.BaseRequest base_request = 1;
+  int64 doc_id = 2; // 条目ID(source=3)
+}
+
+message DeleteMyDocResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+// 获取下载地址(签名 URL，5 分钟有效，Content-Disposition: attachment)
+message DownloadMyDocRequest {
+  base.BaseRequest base_request = 1;
+  int64 doc_id = 2; // 条目ID
+}
+
+message DownloadMyDocResponse {
+  base.BaseResponse base_resp = 1;
+  string download_url = 2; // 签名URL
+  string file_name = 3; // 原文件名
+  int32 expires_in = 4; // 有效秒数(300)
+}
+
+// ==================== 通用上传(我的文档与新建课程自定义资源共用) ====================
+
+// 上传成功的文件结果
+message UploadedFile {
+  string file_url = 1; // 文件地址
+  string file_name = 2; // 原文件名
+  int64 file_size = 3; // 文件大小(字节)
+  string file_type = 4; // 扩展名/MIME
+  int64 doc_id = 5; // 落入我的文档时返回；否则为空
+}
+
+// 通用上传(multipart/form-data；file_list 为多文件表单字段，不体现在 proto 字段中)
+message UploadFileRequest {
+  base.BaseRequest base_request = 1;
+  int64 parent_id = 2; // 传值→落我的文档对应目录并返回 doc_id；不传/0→仅返回文件地址
+}
+
+message UploadFileResponse {
+  base.BaseResponse base_resp = 1;
+  repeated UploadedFile files = 2; // 每个文件的结果
+}
