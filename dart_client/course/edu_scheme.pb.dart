@@ -19,6 +19,522 @@ import '../user/user.pb.dart' as $1;
 import 'course.pb.dart' as $3;
 import 'module.pb.dart' as $0;
 
+/// 课程体系三级结构：章节
+class SchemeChapter extends $pb.GeneratedMessage {
+  factory SchemeChapter({
+    $core.String? chapterName,
+    $core.int? originType,
+    $fixnum.Int64? originCourseId,
+    $fixnum.Int64? originChapterId,
+    $core.int? chapterIndex,
+    $core.Iterable<SchemeLesson>? lessons,
+  }) {
+    final $result = create();
+    if (chapterName != null) {
+      $result.chapterName = chapterName;
+    }
+    if (originType != null) {
+      $result.originType = originType;
+    }
+    if (originCourseId != null) {
+      $result.originCourseId = originCourseId;
+    }
+    if (originChapterId != null) {
+      $result.originChapterId = originChapterId;
+    }
+    if (chapterIndex != null) {
+      $result.chapterIndex = chapterIndex;
+    }
+    if (lessons != null) {
+      $result.lessons.addAll(lessons);
+    }
+    return $result;
+  }
+  SchemeChapter._() : super();
+  factory SchemeChapter.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SchemeChapter.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SchemeChapter', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'chapterName')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'originType', $pb.PbFieldType.O3)
+    ..aInt64(3, _omitFieldNames ? '' : 'originCourseId')
+    ..aInt64(4, _omitFieldNames ? '' : 'originChapterId')
+    ..a<$core.int>(5, _omitFieldNames ? '' : 'chapterIndex', $pb.PbFieldType.O3)
+    ..pc<SchemeLesson>(6, _omitFieldNames ? '' : 'lessons', $pb.PbFieldType.PM, subBuilder: SchemeLesson.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SchemeChapter clone() => SchemeChapter()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SchemeChapter copyWith(void Function(SchemeChapter) updates) => super.copyWith((message) => updates(message as SchemeChapter)) as SchemeChapter;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SchemeChapter create() => SchemeChapter._();
+  SchemeChapter createEmptyInstance() => create();
+  static $pb.PbList<SchemeChapter> createRepeated() => $pb.PbList<SchemeChapter>();
+  @$core.pragma('dart2js:noInline')
+  static SchemeChapter getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SchemeChapter>(create);
+  static SchemeChapter? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get chapterName => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set chapterName($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasChapterName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearChapterName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get originType => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set originType($core.int v) { $_setSignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasOriginType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOriginType() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get originCourseId => $_getI64(2);
+  @$pb.TagNumber(3)
+  set originCourseId($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasOriginCourseId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOriginCourseId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get originChapterId => $_getI64(3);
+  @$pb.TagNumber(4)
+  set originChapterId($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasOriginChapterId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOriginChapterId() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get chapterIndex => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set chapterIndex($core.int v) { $_setSignedInt32(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasChapterIndex() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearChapterIndex() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.List<SchemeLesson> get lessons => $_getList(5);
+}
+
+/// 课程体系三级结构：课节
+class SchemeLesson extends $pb.GeneratedMessage {
+  factory SchemeLesson({
+    $core.String? lessonName,
+    $core.int? nodeMode,
+    $core.int? originType,
+    $core.int? originCourseType,
+    $fixnum.Int64? originCourseId,
+    $fixnum.Int64? originChapterId,
+    $fixnum.Int64? originResourceId,
+    $core.double? hours,
+    $core.int? sort,
+    $core.Iterable<SchemeLessonItem>? items,
+    $core.Iterable<SchemeLessonResource>? resources,
+  }) {
+    final $result = create();
+    if (lessonName != null) {
+      $result.lessonName = lessonName;
+    }
+    if (nodeMode != null) {
+      $result.nodeMode = nodeMode;
+    }
+    if (originType != null) {
+      $result.originType = originType;
+    }
+    if (originCourseType != null) {
+      $result.originCourseType = originCourseType;
+    }
+    if (originCourseId != null) {
+      $result.originCourseId = originCourseId;
+    }
+    if (originChapterId != null) {
+      $result.originChapterId = originChapterId;
+    }
+    if (originResourceId != null) {
+      $result.originResourceId = originResourceId;
+    }
+    if (hours != null) {
+      $result.hours = hours;
+    }
+    if (sort != null) {
+      $result.sort = sort;
+    }
+    if (items != null) {
+      $result.items.addAll(items);
+    }
+    if (resources != null) {
+      $result.resources.addAll(resources);
+    }
+    return $result;
+  }
+  SchemeLesson._() : super();
+  factory SchemeLesson.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SchemeLesson.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SchemeLesson', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'lessonName')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'nodeMode', $pb.PbFieldType.O3)
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'originType', $pb.PbFieldType.O3)
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'originCourseType', $pb.PbFieldType.O3)
+    ..aInt64(5, _omitFieldNames ? '' : 'originCourseId')
+    ..aInt64(6, _omitFieldNames ? '' : 'originChapterId')
+    ..aInt64(7, _omitFieldNames ? '' : 'originResourceId')
+    ..a<$core.double>(8, _omitFieldNames ? '' : 'hours', $pb.PbFieldType.OF)
+    ..a<$core.int>(9, _omitFieldNames ? '' : 'sort', $pb.PbFieldType.O3)
+    ..pc<SchemeLessonItem>(10, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: SchemeLessonItem.create)
+    ..pc<SchemeLessonResource>(11, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: SchemeLessonResource.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SchemeLesson clone() => SchemeLesson()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SchemeLesson copyWith(void Function(SchemeLesson) updates) => super.copyWith((message) => updates(message as SchemeLesson)) as SchemeLesson;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SchemeLesson create() => SchemeLesson._();
+  SchemeLesson createEmptyInstance() => create();
+  static $pb.PbList<SchemeLesson> createRepeated() => $pb.PbList<SchemeLesson>();
+  @$core.pragma('dart2js:noInline')
+  static SchemeLesson getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SchemeLesson>(create);
+  static SchemeLesson? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get lessonName => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set lessonName($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasLessonName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLessonName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get nodeMode => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set nodeMode($core.int v) { $_setSignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasNodeMode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNodeMode() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get originType => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set originType($core.int v) { $_setSignedInt32(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasOriginType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOriginType() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get originCourseType => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set originCourseType($core.int v) { $_setSignedInt32(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasOriginCourseType() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOriginCourseType() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get originCourseId => $_getI64(4);
+  @$pb.TagNumber(5)
+  set originCourseId($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasOriginCourseId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearOriginCourseId() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get originChapterId => $_getI64(5);
+  @$pb.TagNumber(6)
+  set originChapterId($fixnum.Int64 v) { $_setInt64(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasOriginChapterId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearOriginChapterId() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get originResourceId => $_getI64(6);
+  @$pb.TagNumber(7)
+  set originResourceId($fixnum.Int64 v) { $_setInt64(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasOriginResourceId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearOriginResourceId() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.double get hours => $_getN(7);
+  @$pb.TagNumber(8)
+  set hours($core.double v) { $_setFloat(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasHours() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearHours() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get sort => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set sort($core.int v) { $_setSignedInt32(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasSort() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearSort() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.List<SchemeLessonItem> get items => $_getList(9);
+
+  @$pb.TagNumber(11)
+  $core.List<SchemeLessonResource> get resources => $_getList(10);
+}
+
+/// 课程体系三级结构：小节/任务(不可再嵌套)
+class SchemeLessonItem extends $pb.GeneratedMessage {
+  factory SchemeLessonItem({
+    $core.int? itemType,
+    $core.String? itemName,
+    $core.double? hours,
+    $core.int? sort,
+    $core.Iterable<SchemeLessonResource>? resources,
+  }) {
+    final $result = create();
+    if (itemType != null) {
+      $result.itemType = itemType;
+    }
+    if (itemName != null) {
+      $result.itemName = itemName;
+    }
+    if (hours != null) {
+      $result.hours = hours;
+    }
+    if (sort != null) {
+      $result.sort = sort;
+    }
+    if (resources != null) {
+      $result.resources.addAll(resources);
+    }
+    return $result;
+  }
+  SchemeLessonItem._() : super();
+  factory SchemeLessonItem.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SchemeLessonItem.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SchemeLessonItem', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'itemType', $pb.PbFieldType.O3)
+    ..aOS(2, _omitFieldNames ? '' : 'itemName')
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'hours', $pb.PbFieldType.OF)
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'sort', $pb.PbFieldType.O3)
+    ..pc<SchemeLessonResource>(5, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: SchemeLessonResource.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SchemeLessonItem clone() => SchemeLessonItem()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SchemeLessonItem copyWith(void Function(SchemeLessonItem) updates) => super.copyWith((message) => updates(message as SchemeLessonItem)) as SchemeLessonItem;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SchemeLessonItem create() => SchemeLessonItem._();
+  SchemeLessonItem createEmptyInstance() => create();
+  static $pb.PbList<SchemeLessonItem> createRepeated() => $pb.PbList<SchemeLessonItem>();
+  @$core.pragma('dart2js:noInline')
+  static SchemeLessonItem getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SchemeLessonItem>(create);
+  static SchemeLessonItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get itemType => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set itemType($core.int v) { $_setSignedInt32(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasItemType() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemType() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get itemName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set itemName($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasItemName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearItemName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get hours => $_getN(2);
+  @$pb.TagNumber(3)
+  set hours($core.double v) { $_setFloat(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasHours() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearHours() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get sort => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set sort($core.int v) { $_setSignedInt32(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasSort() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSort() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.List<SchemeLessonResource> get resources => $_getList(4);
+}
+
+/// 课程体系三级结构：课节或小节/任务挂载的资源
+class SchemeLessonResource extends $pb.GeneratedMessage {
+  factory SchemeLessonResource({
+    $core.int? resourceType,
+    $core.String? fileUrl,
+    $core.String? fileName,
+    $fixnum.Int64? fileSize,
+    $core.int? sort,
+    $fixnum.Int64? resourceId,
+  }) {
+    final $result = create();
+    if (resourceType != null) {
+      $result.resourceType = resourceType;
+    }
+    if (fileUrl != null) {
+      $result.fileUrl = fileUrl;
+    }
+    if (fileName != null) {
+      $result.fileName = fileName;
+    }
+    if (fileSize != null) {
+      $result.fileSize = fileSize;
+    }
+    if (sort != null) {
+      $result.sort = sort;
+    }
+    if (resourceId != null) {
+      $result.resourceId = resourceId;
+    }
+    return $result;
+  }
+  SchemeLessonResource._() : super();
+  factory SchemeLessonResource.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SchemeLessonResource.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SchemeLessonResource', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'resourceType', $pb.PbFieldType.O3)
+    ..aOS(2, _omitFieldNames ? '' : 'fileUrl')
+    ..aOS(3, _omitFieldNames ? '' : 'fileName')
+    ..aInt64(4, _omitFieldNames ? '' : 'fileSize')
+    ..a<$core.int>(5, _omitFieldNames ? '' : 'sort', $pb.PbFieldType.O3)
+    ..aInt64(6, _omitFieldNames ? '' : 'resourceId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SchemeLessonResource clone() => SchemeLessonResource()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SchemeLessonResource copyWith(void Function(SchemeLessonResource) updates) => super.copyWith((message) => updates(message as SchemeLessonResource)) as SchemeLessonResource;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SchemeLessonResource create() => SchemeLessonResource._();
+  SchemeLessonResource createEmptyInstance() => create();
+  static $pb.PbList<SchemeLessonResource> createRepeated() => $pb.PbList<SchemeLessonResource>();
+  @$core.pragma('dart2js:noInline')
+  static SchemeLessonResource getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SchemeLessonResource>(create);
+  static SchemeLessonResource? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get resourceType => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set resourceType($core.int v) { $_setSignedInt32(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasResourceType() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearResourceType() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get fileUrl => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set fileUrl($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasFileUrl() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearFileUrl() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get fileName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set fileName($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasFileName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFileName() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get fileSize => $_getI64(3);
+  @$pb.TagNumber(4)
+  set fileSize($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasFileSize() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearFileSize() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get sort => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set sort($core.int v) { $_setSignedInt32(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasSort() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSort() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get resourceId => $_getI64(5);
+  @$pb.TagNumber(6)
+  set resourceId($fixnum.Int64 v) { $_setInt64(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasResourceId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearResourceId() => clearField(6);
+}
+
 class EduScheme extends $pb.GeneratedMessage {
   factory EduScheme({
     $fixnum.Int64? eduSchemeId,
@@ -37,6 +553,7 @@ class EduScheme extends $pb.GeneratedMessage {
     $fixnum.Int64? createdBy,
     $core.Iterable<$0.CourseModule>? courseModules,
     $core.Iterable<$1.TenantDept>? classes,
+    $core.Iterable<SchemeChapter>? chapters,
   }) {
     final $result = create();
     if (eduSchemeId != null) {
@@ -87,6 +604,9 @@ class EduScheme extends $pb.GeneratedMessage {
     if (classes != null) {
       $result.classes.addAll(classes);
     }
+    if (chapters != null) {
+      $result.chapters.addAll(chapters);
+    }
     return $result;
   }
   EduScheme._() : super();
@@ -110,6 +630,7 @@ class EduScheme extends $pb.GeneratedMessage {
     ..aInt64(14, _omitFieldNames ? '' : 'createdBy')
     ..pc<$0.CourseModule>(15, _omitFieldNames ? '' : 'courseModules', $pb.PbFieldType.PM, subBuilder: $0.CourseModule.create)
     ..pc<$1.TenantDept>(16, _omitFieldNames ? '' : 'classes', $pb.PbFieldType.PM, subBuilder: $1.TenantDept.create)
+    ..pc<SchemeChapter>(17, _omitFieldNames ? '' : 'chapters', $pb.PbFieldType.PM, subBuilder: SchemeChapter.create)
     ..hasRequiredFields = false
   ;
 
@@ -265,6 +786,9 @@ class EduScheme extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(16)
   $core.List<$1.TenantDept> get classes => $_getList(15);
+
+  @$pb.TagNumber(17)
+  $core.List<SchemeChapter> get chapters => $_getList(16);
 }
 
 class CreateEduSchemeRequest extends $pb.GeneratedMessage {
@@ -281,6 +805,7 @@ class CreateEduSchemeRequest extends $pb.GeneratedMessage {
     $core.double? skillHours,
     $core.double? knowledgeHours,
     $core.Iterable<$0.CourseModule>? courseModules,
+    $core.Iterable<SchemeChapter>? chapters,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -319,6 +844,9 @@ class CreateEduSchemeRequest extends $pb.GeneratedMessage {
     if (courseModules != null) {
       $result.courseModules.addAll(courseModules);
     }
+    if (chapters != null) {
+      $result.chapters.addAll(chapters);
+    }
     return $result;
   }
   CreateEduSchemeRequest._() : super();
@@ -338,6 +866,7 @@ class CreateEduSchemeRequest extends $pb.GeneratedMessage {
     ..a<$core.double>(10, _omitFieldNames ? '' : 'skillHours', $pb.PbFieldType.OF)
     ..a<$core.double>(11, _omitFieldNames ? '' : 'knowledgeHours', $pb.PbFieldType.OF)
     ..pc<$0.CourseModule>(15, _omitFieldNames ? '' : 'courseModules', $pb.PbFieldType.PM, subBuilder: $0.CourseModule.create)
+    ..pc<SchemeChapter>(16, _omitFieldNames ? '' : 'chapters', $pb.PbFieldType.PM, subBuilder: SchemeChapter.create)
     ..hasRequiredFields = false
   ;
 
@@ -465,6 +994,9 @@ class CreateEduSchemeRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(15)
   $core.List<$0.CourseModule> get courseModules => $_getList(11);
+
+  @$pb.TagNumber(16)
+  $core.List<SchemeChapter> get chapters => $_getList(12);
 }
 
 class CreateEduSchemeResponse extends $pb.GeneratedMessage {
@@ -548,6 +1080,7 @@ class UpdateEduSchemeRequest extends $pb.GeneratedMessage {
     $core.double? skillHours,
     $core.double? knowledgeHours,
     $core.Iterable<$0.CourseModule>? courseModules,
+    $core.Iterable<SchemeChapter>? chapters,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -589,6 +1122,9 @@ class UpdateEduSchemeRequest extends $pb.GeneratedMessage {
     if (courseModules != null) {
       $result.courseModules.addAll(courseModules);
     }
+    if (chapters != null) {
+      $result.chapters.addAll(chapters);
+    }
     return $result;
   }
   UpdateEduSchemeRequest._() : super();
@@ -609,6 +1145,7 @@ class UpdateEduSchemeRequest extends $pb.GeneratedMessage {
     ..a<$core.double>(11, _omitFieldNames ? '' : 'skillHours', $pb.PbFieldType.OF)
     ..a<$core.double>(12, _omitFieldNames ? '' : 'knowledgeHours', $pb.PbFieldType.OF)
     ..pc<$0.CourseModule>(13, _omitFieldNames ? '' : 'courseModules', $pb.PbFieldType.PM, subBuilder: $0.CourseModule.create)
+    ..pc<SchemeChapter>(14, _omitFieldNames ? '' : 'chapters', $pb.PbFieldType.PM, subBuilder: SchemeChapter.create)
     ..hasRequiredFields = false
   ;
 
@@ -745,6 +1282,9 @@ class UpdateEduSchemeRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(13)
   $core.List<$0.CourseModule> get courseModules => $_getList(12);
+
+  @$pb.TagNumber(14)
+  $core.List<SchemeChapter> get chapters => $_getList(13);
 }
 
 class UpdateEduSchemeResponse extends $pb.GeneratedMessage {
@@ -799,6 +1339,7 @@ class UpdateEduSchemeResponse extends $pb.GeneratedMessage {
   $2.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
+/// 删除课程体系：级联删除班级分配关系与关联授课任务(含进度)
 class DeleteEduSchemeRequest extends $pb.GeneratedMessage {
   factory DeleteEduSchemeRequest({
     $2.BaseRequest? baseRequest,

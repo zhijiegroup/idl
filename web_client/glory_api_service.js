@@ -52,11 +52,13 @@ import * as modules from "./course/module";
 import * as cmodule from "./course/cmodule";
 import * as nmodule from "./course/nmodule";
 import * as course from "./course/course";
+import * as progress_stat from "./course/progress_stat";
 import * as graph from "./course/graph";
 import * as user_course from "./course/user_course";
 import * as teaching_plan from "./course/teaching_plan";
 import * as edu_scheme from "./course/edu_scheme";
 import * as job from "./course/job";
+import * as doc from "./doc/doc";
 import * as app from "./app/app";
 import * as live_traffic from "./traffic/live_traffic";
 import * as role from "./role/role";
@@ -116,11 +118,13 @@ export {
   cmodule,
   nmodule,
   course,
+  progress_stat,
   graph,
   user_course,
   teaching_plan,
   edu_scheme,
   job,
+  doc,
   app,
   live_traffic,
   role,
@@ -1988,6 +1992,14 @@ export class glory_api {
     );
   }
 
+  ListTeacherClass(request) {
+    const uri = `${this.uriPrefix}/api/tenant/list_teacher_class`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   UpdateTenantConfig(request) {
     const uri = `${this.uriPrefix}/api/tenant/update_tenant_config`;
     const body = JSONbigint.stringify(request);
@@ -2608,6 +2620,54 @@ export class glory_api {
     );
   }
 
+  FavoriteLesson(request) {
+    const uri = `${this.uriPrefix}/api/course/favorite_lesson`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListMyFavoriteLesson(request) {
+    const uri = `${this.uriPrefix}/api/course/list_my_favorite_lesson`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ProgressStatOverview(request) {
+    const uri = `${this.uriPrefix}/api/course/progress_stat_overview`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListProgressClassStudent(request) {
+    const uri = `${this.uriPrefix}/api/course/list_progress_class_student`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListClassCourseProgress(request) {
+    const uri = `${this.uriPrefix}/api/course/list_class_course_progress`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListStudentLessonProgress(request) {
+    const uri = `${this.uriPrefix}/api/course/list_student_lesson_progress`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   ListTeachingPlan(request) {
     const uri = `${this.uriPrefix}/api/course/list_teaching_plan`;
     const body = JSONbigint.stringify(request);
@@ -2642,6 +2702,22 @@ export class glory_api {
 
   UpdateTeachingCourseProgress(request) {
     const uri = `${this.uriPrefix}/api/course/update_teaching_course_progress`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListTeachingTask(request) {
+    const uri = `${this.uriPrefix}/api/course/list_teaching_task`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateTeachingTask(request) {
+    const uri = `${this.uriPrefix}/api/course/create_teaching_task`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
@@ -2696,6 +2772,114 @@ export class glory_api {
 
   GetEduSchemeLikeCourse(request) {
     const uri = `${this.uriPrefix}/api/course/get_edu_scheme_like_course`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListSchoolDoc(request) {
+    const uri = `${this.uriPrefix}/api/doc/list_school_doc`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateSchoolDoc(request) {
+    const uri = `${this.uriPrefix}/api/doc/create_school_doc`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UpdateSchoolDoc(request) {
+    const uri = `${this.uriPrefix}/api/doc/update_school_doc`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteSchoolDoc(request) {
+    const uri = `${this.uriPrefix}/api/doc/delete_school_doc`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  FavoriteSchoolDoc(request) {
+    const uri = `${this.uriPrefix}/api/doc/favorite_school_doc`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateMyDocFolder(request) {
+    const uri = `${this.uriPrefix}/api/doc/create_my_doc_folder`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  RenameMyDocFolder(request) {
+    const uri = `${this.uriPrefix}/api/doc/rename_my_doc_folder`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteMyDocFolder(request) {
+    const uri = `${this.uriPrefix}/api/doc/delete_my_doc_folder`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListMyDocFolder(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/doc/list_my_doc_folder${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  ListMyDoc(request) {
+    const uri = `${this.uriPrefix}/api/doc/list_my_doc`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  MoveOutMyDoc(request) {
+    const uri = `${this.uriPrefix}/api/doc/move_out_my_doc`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteMyDoc(request) {
+    const uri = `${this.uriPrefix}/api/doc/delete_my_doc`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DownloadMyDoc(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/doc/download_my_doc${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  UploadFile(request) {
+    const uri = `${this.uriPrefix}/api/doc/upload_file`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

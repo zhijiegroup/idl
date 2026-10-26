@@ -63,7 +63,7 @@ public interface ListCourseRequestOrBuilder extends
 
   /**
    * <pre>
-   * 专业代码
+   * 专业代码(EC 电子商务/DM 数字媒体/AM 汽车制造/ME 机电设备/GS 公共基础与素养)
    * </pre>
    *
    * <code>repeated string major = 4;</code>
@@ -73,7 +73,7 @@ public interface ListCourseRequestOrBuilder extends
       getMajorList();
   /**
    * <pre>
-   * 专业代码
+   * 专业代码(EC 电子商务/DM 数字媒体/AM 汽车制造/ME 机电设备/GS 公共基础与素养)
    * </pre>
    *
    * <code>repeated string major = 4;</code>
@@ -82,7 +82,7 @@ public interface ListCourseRequestOrBuilder extends
   int getMajorCount();
   /**
    * <pre>
-   * 专业代码
+   * 专业代码(EC 电子商务/DM 数字媒体/AM 汽车制造/ME 机电设备/GS 公共基础与素养)
    * </pre>
    *
    * <code>repeated string major = 4;</code>
@@ -92,7 +92,7 @@ public interface ListCourseRequestOrBuilder extends
   java.lang.String getMajor(int index);
   /**
    * <pre>
-   * 专业代码
+   * 专业代码(EC 电子商务/DM 数字媒体/AM 汽车制造/ME 机电设备/GS 公共基础与素养)
    * </pre>
    *
    * <code>repeated string major = 4;</code>
@@ -104,7 +104,7 @@ public interface ListCourseRequestOrBuilder extends
 
   /**
    * <pre>
-   * 1: 中职 2:高职 3: 中高职
+   * 课程层次(多选)：1: 中职 2: 高职专科 3: 职业本科 4: 职场
    * </pre>
    *
    * <code>repeated int32 level = 5;</code>
@@ -113,7 +113,7 @@ public interface ListCourseRequestOrBuilder extends
   java.util.List<java.lang.Integer> getLevelList();
   /**
    * <pre>
-   * 1: 中职 2:高职 3: 中高职
+   * 课程层次(多选)：1: 中职 2: 高职专科 3: 职业本科 4: 职场
    * </pre>
    *
    * <code>repeated int32 level = 5;</code>
@@ -122,7 +122,7 @@ public interface ListCourseRequestOrBuilder extends
   int getLevelCount();
   /**
    * <pre>
-   * 1: 中职 2:高职 3: 中高职
+   * 课程层次(多选)：1: 中职 2: 高职专科 3: 职业本科 4: 职场
    * </pre>
    *
    * <code>repeated int32 level = 5;</code>
@@ -243,7 +243,7 @@ public interface ListCourseRequestOrBuilder extends
 
   /**
    * <pre>
-   * 课程语言
+   * 课程语言(zh/thai，单选传单元素)
    * </pre>
    *
    * <code>repeated string language = 12;</code>
@@ -253,7 +253,7 @@ public interface ListCourseRequestOrBuilder extends
       getLanguageList();
   /**
    * <pre>
-   * 课程语言
+   * 课程语言(zh/thai，单选传单元素)
    * </pre>
    *
    * <code>repeated string language = 12;</code>
@@ -262,7 +262,7 @@ public interface ListCourseRequestOrBuilder extends
   int getLanguageCount();
   /**
    * <pre>
-   * 课程语言
+   * 课程语言(zh/thai，单选传单元素)
    * </pre>
    *
    * <code>repeated string language = 12;</code>
@@ -272,7 +272,7 @@ public interface ListCourseRequestOrBuilder extends
   java.lang.String getLanguage(int index);
   /**
    * <pre>
-   * 课程语言
+   * 课程语言(zh/thai，单选传单元素)
    * </pre>
    *
    * <code>repeated string language = 12;</code>
@@ -281,6 +281,55 @@ public interface ListCourseRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getLanguageBytes(int index);
+
+  /**
+   * <pre>
+   * 已购买置顶排序开关，默认true(已购买置顶+创建时间倒序)
+   * </pre>
+   *
+   * <code>bool purchased_first = 13;</code>
+   * @return The purchasedFirst.
+   */
+  boolean getPurchasedFirst();
+
+  /**
+   * <pre>
+   * 专业大类(单选)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+   * </pre>
+   *
+   * <code>int32 major_category = 14;</code>
+   * @return The majorCategory.
+   */
+  int getMajorCategory();
+
+  /**
+   * <pre>
+   * 课程属性(多选)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+   * </pre>
+   *
+   * <code>repeated int32 course_attribute = 15;</code>
+   * @return A list containing the courseAttribute.
+   */
+  java.util.List<java.lang.Integer> getCourseAttributeList();
+  /**
+   * <pre>
+   * 课程属性(多选)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+   * </pre>
+   *
+   * <code>repeated int32 course_attribute = 15;</code>
+   * @return The count of courseAttribute.
+   */
+  int getCourseAttributeCount();
+  /**
+   * <pre>
+   * 课程属性(多选)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+   * </pre>
+   *
+   * <code>repeated int32 course_attribute = 15;</code>
+   * @param index The index of the element to return.
+   * @return The courseAttribute at the given index.
+   */
+  int getCourseAttribute(int index);
 
   /**
    * <code>.base.PaginationRequest pagination = 100;</code>

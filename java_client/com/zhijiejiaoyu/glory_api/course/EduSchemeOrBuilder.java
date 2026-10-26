@@ -50,18 +50,30 @@ public interface EduSchemeOrBuilder extends
       getGoalBytes();
 
   /**
+   * <pre>
+   * 总学时 = 末级节点课时和(后端按树计算)
+   * </pre>
+   *
    * <code>double total_hours = 5;</code>
    * @return The totalHours.
    */
   double getTotalHours();
 
   /**
+   * <pre>
+   * 知识学时 = 来源课节课时和(后端按树计算)
+   * </pre>
+   *
    * <code>double knowledge_hours = 6;</code>
    * @return The knowledgeHours.
    */
   double getKnowledgeHours();
 
   /**
+   * <pre>
+   * 技能学时 = 自定义节点课时和(后端按树计算)
+   * </pre>
+   *
    * <code>double skill_hours = 7;</code>
    * @return The skillHours.
    */
@@ -153,7 +165,7 @@ public interface EduSchemeOrBuilder extends
 
   /**
    * <pre>
-   * 能力指标
+   * 能力指标(已废弃，保留字段号兼容；详情接口不再返回)
    * </pre>
    *
    * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -162,7 +174,7 @@ public interface EduSchemeOrBuilder extends
       getCourseModulesList();
   /**
    * <pre>
-   * 能力指标
+   * 能力指标(已废弃，保留字段号兼容；详情接口不再返回)
    * </pre>
    *
    * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -170,7 +182,7 @@ public interface EduSchemeOrBuilder extends
   com.zhijiejiaoyu.glory_api.course.CourseModule getCourseModules(int index);
   /**
    * <pre>
-   * 能力指标
+   * 能力指标(已废弃，保留字段号兼容；详情接口不再返回)
    * </pre>
    *
    * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -178,7 +190,7 @@ public interface EduSchemeOrBuilder extends
   int getCourseModulesCount();
   /**
    * <pre>
-   * 能力指标
+   * 能力指标(已废弃，保留字段号兼容；详情接口不再返回)
    * </pre>
    *
    * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -187,7 +199,7 @@ public interface EduSchemeOrBuilder extends
       getCourseModulesOrBuilderList();
   /**
    * <pre>
-   * 能力指标
+   * 能力指标(已废弃，保留字段号兼容；详情接口不再返回)
    * </pre>
    *
    * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -237,5 +249,49 @@ public interface EduSchemeOrBuilder extends
    * <code>repeated .glory_api.TenantDept classes = 16;</code>
    */
   com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getClassesOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * 三级课程结构(章节→课节→小节/任务+资源)；新增字段
+   * </pre>
+   *
+   * <code>repeated .glory_api.SchemeChapter chapters = 17;</code>
+   */
+  java.util.List<com.zhijiejiaoyu.glory_api.course.SchemeChapter> 
+      getChaptersList();
+  /**
+   * <pre>
+   * 三级课程结构(章节→课节→小节/任务+资源)；新增字段
+   * </pre>
+   *
+   * <code>repeated .glory_api.SchemeChapter chapters = 17;</code>
+   */
+  com.zhijiejiaoyu.glory_api.course.SchemeChapter getChapters(int index);
+  /**
+   * <pre>
+   * 三级课程结构(章节→课节→小节/任务+资源)；新增字段
+   * </pre>
+   *
+   * <code>repeated .glory_api.SchemeChapter chapters = 17;</code>
+   */
+  int getChaptersCount();
+  /**
+   * <pre>
+   * 三级课程结构(章节→课节→小节/任务+资源)；新增字段
+   * </pre>
+   *
+   * <code>repeated .glory_api.SchemeChapter chapters = 17;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.course.SchemeChapterOrBuilder> 
+      getChaptersOrBuilderList();
+  /**
+   * <pre>
+   * 三级课程结构(章节→课节→小节/任务+资源)；新增字段
+   * </pre>
+   *
+   * <code>repeated .glory_api.SchemeChapter chapters = 17;</code>
+   */
+  com.zhijiejiaoyu.glory_api.course.SchemeChapterOrBuilder getChaptersOrBuilder(
       int index);
 }

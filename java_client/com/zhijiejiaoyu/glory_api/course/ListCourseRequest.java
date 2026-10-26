@@ -27,6 +27,7 @@ private static final long serialVersionUID = 0L;
     courseIndustry = com.google.protobuf.LazyStringArrayList.EMPTY;
     key = "";
     language = com.google.protobuf.LazyStringArrayList.EMPTY;
+    courseAttribute = emptyIntList();
   }
 
   @java.lang.Override
@@ -184,6 +185,37 @@ private static final long serialVersionUID = 0L;
             language .add(s);
             break;
           }
+          case 104: {
+
+            purchasedFirst = input.readBool();
+            break;
+          }
+          case 112: {
+
+            majorCategory = input.readInt32();
+            break;
+          }
+          case 120: {
+            if (!((mutable_bitField0 & 0x00000040) != 0)) {
+              courseAttribute = newIntList();
+              mutable_bitField0_ |= 0x00000040;
+            }
+            courseAttribute .addInt(input.readInt32());
+            break;
+          }
+          case 122: {
+            int length = input.readRawVarint32();
+            int limit = input.pushLimit(length);
+            if (!((mutable_bitField0 & 0x00000040) != 0) && input.getBytesUntilLimit() > 0) {
+              courseAttribute = newIntList();
+              mutable_bitField0_ |= 0x00000040;
+            }
+            while (input.getBytesUntilLimit() > 0) {
+              courseAttribute .addInt(input.readInt32());
+            }
+            input.popLimit(limit);
+            break;
+          }
           case 802: {
             com.zhijiejiaoyu.base.PaginationRequest.Builder subBuilder = null;
             if (pagination != null) {
@@ -229,6 +261,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0 & 0x00000020) != 0)) {
         language = language .getUnmodifiableView();
+      }
+      if (((mutable_bitField0 & 0x00000040) != 0)) {
+        courseAttribute .makeImmutable(); // C
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -332,7 +367,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList major ;
   /**
    * <pre>
-   * 专业代码
+   * 专业代码(EC 电子商务/DM 数字媒体/AM 汽车制造/ME 机电设备/GS 公共基础与素养)
    * </pre>
    *
    * <code>repeated string major = 4;</code>
@@ -344,7 +379,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 专业代码
+   * 专业代码(EC 电子商务/DM 数字媒体/AM 汽车制造/ME 机电设备/GS 公共基础与素养)
    * </pre>
    *
    * <code>repeated string major = 4;</code>
@@ -355,7 +390,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 专业代码
+   * 专业代码(EC 电子商务/DM 数字媒体/AM 汽车制造/ME 机电设备/GS 公共基础与素养)
    * </pre>
    *
    * <code>repeated string major = 4;</code>
@@ -367,7 +402,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 专业代码
+   * 专业代码(EC 电子商务/DM 数字媒体/AM 汽车制造/ME 机电设备/GS 公共基础与素养)
    * </pre>
    *
    * <code>repeated string major = 4;</code>
@@ -383,7 +418,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Internal.IntList level ;
   /**
    * <pre>
-   * 1: 中职 2:高职 3: 中高职
+   * 课程层次(多选)：1: 中职 2: 高职专科 3: 职业本科 4: 职场
    * </pre>
    *
    * <code>repeated int32 level = 5;</code>
@@ -396,7 +431,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 1: 中职 2:高职 3: 中高职
+   * 课程层次(多选)：1: 中职 2: 高职专科 3: 职业本科 4: 职场
    * </pre>
    *
    * <code>repeated int32 level = 5;</code>
@@ -407,7 +442,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 1: 中职 2:高职 3: 中高职
+   * 课程层次(多选)：1: 中职 2: 高职专科 3: 职业本科 4: 职场
    * </pre>
    *
    * <code>repeated int32 level = 5;</code>
@@ -590,7 +625,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList language ;
   /**
    * <pre>
-   * 课程语言
+   * 课程语言(zh/thai，单选传单元素)
    * </pre>
    *
    * <code>repeated string language = 12;</code>
@@ -602,7 +637,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 课程语言
+   * 课程语言(zh/thai，单选传单元素)
    * </pre>
    *
    * <code>repeated string language = 12;</code>
@@ -613,7 +648,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 课程语言
+   * 课程语言(zh/thai，单选传单元素)
    * </pre>
    *
    * <code>repeated string language = 12;</code>
@@ -625,7 +660,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 课程语言
+   * 课程语言(zh/thai，单选传单元素)
    * </pre>
    *
    * <code>repeated string language = 12;</code>
@@ -636,6 +671,76 @@ private static final long serialVersionUID = 0L;
       getLanguageBytes(int index) {
     return language .getByteString(index);
   }
+
+  public static final int PURCHASED_FIRST_FIELD_NUMBER = 13;
+  private boolean purchasedFirst ;
+  /**
+   * <pre>
+   * 已购买置顶排序开关，默认true(已购买置顶+创建时间倒序)
+   * </pre>
+   *
+   * <code>bool purchased_first = 13;</code>
+   * @return The purchasedFirst.
+   */
+  @java.lang.Override
+  public boolean getPurchasedFirst() {
+    return purchasedFirst ;
+  }
+
+  public static final int MAJOR_CATEGORY_FIELD_NUMBER = 14;
+  private int majorCategory ;
+  /**
+   * <pre>
+   * 专业大类(单选)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+   * </pre>
+   *
+   * <code>int32 major_category = 14;</code>
+   * @return The majorCategory.
+   */
+  @java.lang.Override
+  public int getMajorCategory() {
+    return majorCategory ;
+  }
+
+  public static final int COURSE_ATTRIBUTE_FIELD_NUMBER = 15;
+  private com.google.protobuf.Internal.IntList courseAttribute ;
+  /**
+   * <pre>
+   * 课程属性(多选)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+   * </pre>
+   *
+   * <code>repeated int32 course_attribute = 15;</code>
+   * @return A list containing the courseAttribute.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer>
+      getCourseAttributeList() {
+    return courseAttribute ;
+  }
+  /**
+   * <pre>
+   * 课程属性(多选)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+   * </pre>
+   *
+   * <code>repeated int32 course_attribute = 15;</code>
+   * @return The count of courseAttribute.
+   */
+  public int getCourseAttributeCount() {
+    return courseAttribute .size();
+  }
+  /**
+   * <pre>
+   * 课程属性(多选)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+   * </pre>
+   *
+   * <code>repeated int32 course_attribute = 15;</code>
+   * @param index The index of the element to return.
+   * @return The courseAttribute at the given index.
+   */
+  public int getCourseAttribute(int index) {
+    return courseAttribute .getInt(index);
+  }
+  private int courseAttributeMemoizedSerializedSize = -1;
 
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
@@ -722,6 +827,19 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < language .size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, language .getRaw(i));
+    }
+    if (purchasedFirst != false) {
+      output.writeBool(13, purchasedFirst );
+    }
+    if (majorCategory != 0) {
+      output.writeInt32(14, majorCategory );
+    }
+    if (getCourseAttributeList().size() > 0) {
+      output.writeUInt32NoTag(122);
+      output.writeUInt32NoTag(courseAttributeMemoizedSerializedSize);
+    }
+    for (int i = 0; i < courseAttribute .size(); i++) {
+      output.writeInt32NoTag(courseAttribute .getInt(i));
     }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
@@ -820,6 +938,28 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getLanguageList().size();
     }
+    if (purchasedFirst != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(13, purchasedFirst );
+    }
+    if (majorCategory != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(14, majorCategory );
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < courseAttribute .size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeInt32SizeNoTag(courseAttribute .getInt(i));
+      }
+      size += dataSize;
+      if (!getCourseAttributeList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(dataSize);
+      }
+      courseAttributeMemoizedSerializedSize = dataSize;
+    }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(100, getPagination());
@@ -864,6 +1004,12 @@ private static final long serialVersionUID = 0L;
         != other.getAssigned()) return false;
     if (!getLanguageList()
         .equals(other.getLanguageList())) return false;
+    if (getPurchasedFirst()
+        != other.getPurchasedFirst()) return false;
+    if (getMajorCategory()
+        != other.getMajorCategory()) return false;
+    if (!getCourseAttributeList()
+        .equals(other.getCourseAttributeList())) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -917,6 +1063,15 @@ private static final long serialVersionUID = 0L;
     if (getLanguageCount() > 0) {
       hash = (37 * hash) + LANGUAGE_FIELD_NUMBER;
       hash = (53 * hash) + getLanguageList().hashCode();
+    }
+    hash = (37 * hash) + PURCHASED_FIRST_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getPurchasedFirst());
+    hash = (37 * hash) + MAJOR_CATEGORY_FIELD_NUMBER;
+    hash = (53 * hash) + getMajorCategory();
+    if (getCourseAttributeCount() > 0) {
+      hash = (37 * hash) + COURSE_ATTRIBUTE_FIELD_NUMBER;
+      hash = (53 * hash) + getCourseAttributeList().hashCode();
     }
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
@@ -1085,6 +1240,12 @@ private static final long serialVersionUID = 0L;
 
       language = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0 = (bitField0 & ~0x00000020);
+      purchasedFirst = false;
+
+      majorCategory = 0;
+
+      courseAttribute = emptyIntList();
+      bitField0 = (bitField0 & ~0x00000040);
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -1157,6 +1318,13 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0 & ~0x00000020);
       }
       result.language = language ;
+      result.purchasedFirst = purchasedFirst ;
+      result.majorCategory = majorCategory ;
+      if (((bitField0 & 0x00000040) != 0)) {
+        courseAttribute .makeImmutable();
+        bitField0 = (bitField0 & ~0x00000040);
+      }
+      result.courseAttribute = courseAttribute ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -1283,6 +1451,22 @@ private static final long serialVersionUID = 0L;
         } else {
           ensureLanguageIsMutable();
           language .addAll(other.language );
+        }
+        onChanged();
+      }
+      if (other.getPurchasedFirst() != false) {
+        setPurchasedFirst(other.getPurchasedFirst());
+      }
+      if (other.getMajorCategory() != 0) {
+        setMajorCategory(other.getMajorCategory());
+      }
+      if (!other.courseAttribute .isEmpty()) {
+        if (courseAttribute .isEmpty()) {
+          courseAttribute = other.courseAttribute ;
+          bitField0 = (bitField0 & ~0x00000040);
+        } else {
+          ensureCourseAttributeIsMutable();
+          courseAttribute .addAll(other.courseAttribute );
         }
         onChanged();
       }
@@ -1597,7 +1781,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 专业代码
+     * 专业代码(EC 电子商务/DM 数字媒体/AM 汽车制造/ME 机电设备/GS 公共基础与素养)
      * </pre>
      *
      * <code>repeated string major = 4;</code>
@@ -1609,7 +1793,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 专业代码
+     * 专业代码(EC 电子商务/DM 数字媒体/AM 汽车制造/ME 机电设备/GS 公共基础与素养)
      * </pre>
      *
      * <code>repeated string major = 4;</code>
@@ -1620,7 +1804,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 专业代码
+     * 专业代码(EC 电子商务/DM 数字媒体/AM 汽车制造/ME 机电设备/GS 公共基础与素养)
      * </pre>
      *
      * <code>repeated string major = 4;</code>
@@ -1632,7 +1816,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 专业代码
+     * 专业代码(EC 电子商务/DM 数字媒体/AM 汽车制造/ME 机电设备/GS 公共基础与素养)
      * </pre>
      *
      * <code>repeated string major = 4;</code>
@@ -1645,7 +1829,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 专业代码
+     * 专业代码(EC 电子商务/DM 数字媒体/AM 汽车制造/ME 机电设备/GS 公共基础与素养)
      * </pre>
      *
      * <code>repeated string major = 4;</code>
@@ -1665,7 +1849,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 专业代码
+     * 专业代码(EC 电子商务/DM 数字媒体/AM 汽车制造/ME 机电设备/GS 公共基础与素养)
      * </pre>
      *
      * <code>repeated string major = 4;</code>
@@ -1684,7 +1868,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 专业代码
+     * 专业代码(EC 电子商务/DM 数字媒体/AM 汽车制造/ME 机电设备/GS 公共基础与素养)
      * </pre>
      *
      * <code>repeated string major = 4;</code>
@@ -1701,7 +1885,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 专业代码
+     * 专业代码(EC 电子商务/DM 数字媒体/AM 汽车制造/ME 机电设备/GS 公共基础与素养)
      * </pre>
      *
      * <code>repeated string major = 4;</code>
@@ -1715,7 +1899,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 专业代码
+     * 专业代码(EC 电子商务/DM 数字媒体/AM 汽车制造/ME 机电设备/GS 公共基础与素养)
      * </pre>
      *
      * <code>repeated string major = 4;</code>
@@ -1743,7 +1927,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 1: 中职 2:高职 3: 中高职
+     * 课程层次(多选)：1: 中职 2: 高职专科 3: 职业本科 4: 职场
      * </pre>
      *
      * <code>repeated int32 level = 5;</code>
@@ -1756,7 +1940,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 1: 中职 2:高职 3: 中高职
+     * 课程层次(多选)：1: 中职 2: 高职专科 3: 职业本科 4: 职场
      * </pre>
      *
      * <code>repeated int32 level = 5;</code>
@@ -1767,7 +1951,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 1: 中职 2:高职 3: 中高职
+     * 课程层次(多选)：1: 中职 2: 高职专科 3: 职业本科 4: 职场
      * </pre>
      *
      * <code>repeated int32 level = 5;</code>
@@ -1779,7 +1963,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 1: 中职 2:高职 3: 中高职
+     * 课程层次(多选)：1: 中职 2: 高职专科 3: 职业本科 4: 职场
      * </pre>
      *
      * <code>repeated int32 level = 5;</code>
@@ -1796,7 +1980,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 1: 中职 2:高职 3: 中高职
+     * 课程层次(多选)：1: 中职 2: 高职专科 3: 职业本科 4: 职场
      * </pre>
      *
      * <code>repeated int32 level = 5;</code>
@@ -1811,7 +1995,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 1: 中职 2:高职 3: 中高职
+     * 课程层次(多选)：1: 中职 2: 高职专科 3: 职业本科 4: 职场
      * </pre>
      *
      * <code>repeated int32 level = 5;</code>
@@ -1828,7 +2012,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 1: 中职 2:高职 3: 中高职
+     * 课程层次(多选)：1: 中职 2: 高职专科 3: 职业本科 4: 职场
      * </pre>
      *
      * <code>repeated int32 level = 5;</code>
@@ -2285,7 +2469,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程语言
+     * 课程语言(zh/thai，单选传单元素)
      * </pre>
      *
      * <code>repeated string language = 12;</code>
@@ -2297,7 +2481,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程语言
+     * 课程语言(zh/thai，单选传单元素)
      * </pre>
      *
      * <code>repeated string language = 12;</code>
@@ -2308,7 +2492,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程语言
+     * 课程语言(zh/thai，单选传单元素)
      * </pre>
      *
      * <code>repeated string language = 12;</code>
@@ -2320,7 +2504,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程语言
+     * 课程语言(zh/thai，单选传单元素)
      * </pre>
      *
      * <code>repeated string language = 12;</code>
@@ -2333,7 +2517,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程语言
+     * 课程语言(zh/thai，单选传单元素)
      * </pre>
      *
      * <code>repeated string language = 12;</code>
@@ -2353,7 +2537,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程语言
+     * 课程语言(zh/thai，单选传单元素)
      * </pre>
      *
      * <code>repeated string language = 12;</code>
@@ -2372,7 +2556,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程语言
+     * 课程语言(zh/thai，单选传单元素)
      * </pre>
      *
      * <code>repeated string language = 12;</code>
@@ -2389,7 +2573,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程语言
+     * 课程语言(zh/thai，单选传单元素)
      * </pre>
      *
      * <code>repeated string language = 12;</code>
@@ -2403,7 +2587,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程语言
+     * 课程语言(zh/thai，单选传单元素)
      * </pre>
      *
      * <code>repeated string language = 12;</code>
@@ -2418,6 +2602,199 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureLanguageIsMutable();
       language .add(value);
+      onChanged();
+      return this;
+    }
+
+    private boolean purchasedFirst ;
+    /**
+     * <pre>
+     * 已购买置顶排序开关，默认true(已购买置顶+创建时间倒序)
+     * </pre>
+     *
+     * <code>bool purchased_first = 13;</code>
+     * @return The purchasedFirst.
+     */
+    @java.lang.Override
+    public boolean getPurchasedFirst() {
+      return purchasedFirst ;
+    }
+    /**
+     * <pre>
+     * 已购买置顶排序开关，默认true(已购买置顶+创建时间倒序)
+     * </pre>
+     *
+     * <code>bool purchased_first = 13;</code>
+     * @param value The purchasedFirst to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPurchasedFirst(boolean value) {
+      
+      purchasedFirst = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 已购买置顶排序开关，默认true(已购买置顶+创建时间倒序)
+     * </pre>
+     *
+     * <code>bool purchased_first = 13;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPurchasedFirst() {
+      
+      purchasedFirst = false;
+      onChanged();
+      return this;
+    }
+
+    private int majorCategory ;
+    /**
+     * <pre>
+     * 专业大类(单选)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+     * </pre>
+     *
+     * <code>int32 major_category = 14;</code>
+     * @return The majorCategory.
+     */
+    @java.lang.Override
+    public int getMajorCategory() {
+      return majorCategory ;
+    }
+    /**
+     * <pre>
+     * 专业大类(单选)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+     * </pre>
+     *
+     * <code>int32 major_category = 14;</code>
+     * @param value The majorCategory to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMajorCategory(int value) {
+      
+      majorCategory = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 专业大类(单选)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+     * </pre>
+     *
+     * <code>int32 major_category = 14;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMajorCategory() {
+      
+      majorCategory = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Internal.IntList courseAttribute = emptyIntList();
+    private void ensureCourseAttributeIsMutable() {
+      if (!((bitField0 & 0x00000040) != 0)) {
+        courseAttribute = mutableCopy(courseAttribute );
+        bitField0_ |= 0x00000040;
+       }
+    }
+    /**
+     * <pre>
+     * 课程属性(多选)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+     * </pre>
+     *
+     * <code>repeated int32 course_attribute = 15;</code>
+     * @return A list containing the courseAttribute.
+     */
+    public java.util.List<java.lang.Integer>
+        getCourseAttributeList() {
+      return ((bitField0 & 0x00000040) != 0) ?
+               java.util.Collections.unmodifiableList(courseAttribute ) : courseAttribute ;
+    }
+    /**
+     * <pre>
+     * 课程属性(多选)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+     * </pre>
+     *
+     * <code>repeated int32 course_attribute = 15;</code>
+     * @return The count of courseAttribute.
+     */
+    public int getCourseAttributeCount() {
+      return courseAttribute .size();
+    }
+    /**
+     * <pre>
+     * 课程属性(多选)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+     * </pre>
+     *
+     * <code>repeated int32 course_attribute = 15;</code>
+     * @param index The index of the element to return.
+     * @return The courseAttribute at the given index.
+     */
+    public int getCourseAttribute(int index) {
+      return courseAttribute .getInt(index);
+    }
+    /**
+     * <pre>
+     * 课程属性(多选)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+     * </pre>
+     *
+     * <code>repeated int32 course_attribute = 15;</code>
+     * @param index The index to set the value at.
+     * @param value The courseAttribute to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCourseAttribute(
+        int index, int value) {
+      ensureCourseAttributeIsMutable();
+      courseAttribute .setInt(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程属性(多选)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+     * </pre>
+     *
+     * <code>repeated int32 course_attribute = 15;</code>
+     * @param value The courseAttribute to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCourseAttribute(int value) {
+      ensureCourseAttributeIsMutable();
+      courseAttribute .addInt(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程属性(多选)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+     * </pre>
+     *
+     * <code>repeated int32 course_attribute = 15;</code>
+     * @param values The courseAttribute to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllCourseAttribute(
+        java.lang.Iterable<? extends java.lang.Integer> values) {
+      ensureCourseAttributeIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, courseAttribute );
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程属性(多选)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+     * </pre>
+     *
+     * <code>repeated int32 course_attribute = 15;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCourseAttribute() {
+      courseAttribute = emptyIntList();
+      bitField0 = (bitField0 & ~0x00000040);
       onChanged();
       return this;
     }

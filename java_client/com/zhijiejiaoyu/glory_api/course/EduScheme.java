@@ -26,6 +26,7 @@ private static final long serialVersionUID = 0L;
     courseGroupName = "";
     courseModules = java.util.Collections.emptyList();
     classes = java.util.Collections.emptyList();
+    chapters = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -155,6 +156,15 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.zhijiejiaoyu.glory_api.user.TenantDept.parser(), extensionRegistry));
             break;
           }
+          case 138: {
+            if (!((mutable_bitField0 & 0x00000004) != 0)) {
+              chapters = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.SchemeChapter>();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            chapters .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.course.SchemeChapter.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -175,6 +185,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0 & 0x00000002) != 0)) {
         classes = java.util.Collections.unmodifiableList(classes );
+      }
+      if (((mutable_bitField0 & 0x00000004) != 0)) {
+        chapters = java.util.Collections.unmodifiableList(chapters );
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -321,6 +334,10 @@ private static final long serialVersionUID = 0L;
   public static final int TOTAL_HOURS_FIELD_NUMBER = 5;
   private double totalHours ;
   /**
+   * <pre>
+   * 总学时 = 末级节点课时和(后端按树计算)
+   * </pre>
+   *
    * <code>double total_hours = 5;</code>
    * @return The totalHours.
    */
@@ -332,6 +349,10 @@ private static final long serialVersionUID = 0L;
   public static final int KNOWLEDGE_HOURS_FIELD_NUMBER = 6;
   private double knowledgeHours ;
   /**
+   * <pre>
+   * 知识学时 = 来源课节课时和(后端按树计算)
+   * </pre>
+   *
    * <code>double knowledge_hours = 6;</code>
    * @return The knowledgeHours.
    */
@@ -343,6 +364,10 @@ private static final long serialVersionUID = 0L;
   public static final int SKILL_HOURS_FIELD_NUMBER = 7;
   private double skillHours ;
   /**
+   * <pre>
+   * 技能学时 = 自定义节点课时和(后端按树计算)
+   * </pre>
+   *
    * <code>double skill_hours = 7;</code>
    * @return The skillHours.
    */
@@ -579,7 +604,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule> courseModules ;
   /**
    * <pre>
-   * 能力指标
+   * 能力指标(已废弃，保留字段号兼容；详情接口不再返回)
    * </pre>
    *
    * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -590,7 +615,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 能力指标
+   * 能力指标(已废弃，保留字段号兼容；详情接口不再返回)
    * </pre>
    *
    * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -602,7 +627,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 能力指标
+   * 能力指标(已废弃，保留字段号兼容；详情接口不再返回)
    * </pre>
    *
    * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -613,7 +638,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 能力指标
+   * 能力指标(已废弃，保留字段号兼容；详情接口不再返回)
    * </pre>
    *
    * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -624,7 +649,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 能力指标
+   * 能力指标(已废弃，保留字段号兼容；详情接口不再返回)
    * </pre>
    *
    * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -695,6 +720,66 @@ private static final long serialVersionUID = 0L;
     return classes .get(index);
   }
 
+  public static final int CHAPTERS_FIELD_NUMBER = 17;
+  private java.util.List<com.zhijiejiaoyu.glory_api.course.SchemeChapter> chapters ;
+  /**
+   * <pre>
+   * 三级课程结构(章节→课节→小节/任务+资源)；新增字段
+   * </pre>
+   *
+   * <code>repeated .glory_api.SchemeChapter chapters = 17;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.zhijiejiaoyu.glory_api.course.SchemeChapter> getChaptersList() {
+    return chapters ;
+  }
+  /**
+   * <pre>
+   * 三级课程结构(章节→课节→小节/任务+资源)；新增字段
+   * </pre>
+   *
+   * <code>repeated .glory_api.SchemeChapter chapters = 17;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.SchemeChapterOrBuilder> 
+      getChaptersOrBuilderList() {
+    return chapters ;
+  }
+  /**
+   * <pre>
+   * 三级课程结构(章节→课节→小节/任务+资源)；新增字段
+   * </pre>
+   *
+   * <code>repeated .glory_api.SchemeChapter chapters = 17;</code>
+   */
+  @java.lang.Override
+  public int getChaptersCount() {
+    return chapters .size();
+  }
+  /**
+   * <pre>
+   * 三级课程结构(章节→课节→小节/任务+资源)；新增字段
+   * </pre>
+   *
+   * <code>repeated .glory_api.SchemeChapter chapters = 17;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.SchemeChapter getChapters(int index) {
+    return chapters .get(index);
+  }
+  /**
+   * <pre>
+   * 三级课程结构(章节→课节→小节/任务+资源)；新增字段
+   * </pre>
+   *
+   * <code>repeated .glory_api.SchemeChapter chapters = 17;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.SchemeChapterOrBuilder getChaptersOrBuilder(
+      int index) {
+    return chapters .get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -756,6 +841,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < classes .size(); i++) {
       output.writeMessage(16, classes .get(i));
+    }
+    for (int i = 0; i < chapters .size(); i++) {
+      output.writeMessage(17, chapters .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -822,6 +910,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(16, classes .get(i));
     }
+    for (int i = 0; i < chapters .size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(17, chapters .get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -872,6 +964,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCourseModulesList())) return false;
     if (!getClassesList()
         .equals(other.getClassesList())) return false;
+    if (!getChaptersList()
+        .equals(other.getChaptersList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -924,6 +1018,10 @@ private static final long serialVersionUID = 0L;
     if (getClassesCount() > 0) {
       hash = (37 * hash) + CLASSES_FIELD_NUMBER;
       hash = (53 * hash) + getClassesList().hashCode();
+    }
+    if (getChaptersCount() > 0) {
+      hash = (37 * hash) + CHAPTERS_FIELD_NUMBER;
+      hash = (53 * hash) + getChaptersList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1055,6 +1153,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
         getCourseModulesFieldBuilder();
         getClassesFieldBuilder();
+        getChaptersFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1099,6 +1198,12 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0 & ~0x00000002);
       } else {
         classesBuilder .clear();
+      }
+      if (chaptersBuilder == null) {
+        chapters = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000004);
+      } else {
+        chaptersBuilder .clear();
       }
       return this;
     }
@@ -1158,6 +1263,15 @@ private static final long serialVersionUID = 0L;
         result.classes = classes ;
       } else {
         result.classes = classesBuilder .build();
+      }
+      if (chaptersBuilder == null) {
+        if (((bitField0 & 0x00000004) != 0)) {
+          chapters = java.util.Collections.unmodifiableList(chapters );
+          bitField0 = (bitField0 & ~0x00000004);
+        }
+        result.chapters = chapters ;
+      } else {
+        result.chapters = chaptersBuilder .build();
       }
       onBuilt();
       return result;
@@ -1306,6 +1420,32 @@ private static final long serialVersionUID = 0L;
                  getClassesFieldBuilder() : null;
           } else {
             classesBuilder .addAllMessages(other.classes );
+          }
+        }
+      }
+      if (chaptersBuilder == null) {
+        if (!other.chapters .isEmpty()) {
+          if (chapters .isEmpty()) {
+            chapters = other.chapters ;
+            bitField0 = (bitField0 & ~0x00000004);
+          } else {
+            ensureChaptersIsMutable();
+            chapters .addAll(other.chapters );
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.chapters .isEmpty()) {
+          if (chaptersBuilder .isEmpty()) {
+            chaptersBuilder .dispose();
+            chaptersBuilder = null;
+            chapters = other.chapters ;
+            bitField0 = (bitField0 & ~0x00000004);
+            chaptersBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getChaptersFieldBuilder() : null;
+          } else {
+            chaptersBuilder .addAllMessages(other.chapters );
           }
         }
       }
@@ -1600,6 +1740,10 @@ private static final long serialVersionUID = 0L;
 
     private double totalHours ;
     /**
+     * <pre>
+     * 总学时 = 末级节点课时和(后端按树计算)
+     * </pre>
+     *
      * <code>double total_hours = 5;</code>
      * @return The totalHours.
      */
@@ -1608,6 +1752,10 @@ private static final long serialVersionUID = 0L;
       return totalHours ;
     }
     /**
+     * <pre>
+     * 总学时 = 末级节点课时和(后端按树计算)
+     * </pre>
+     *
      * <code>double total_hours = 5;</code>
      * @param value The totalHours to set.
      * @return This builder for chaining.
@@ -1619,6 +1767,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 总学时 = 末级节点课时和(后端按树计算)
+     * </pre>
+     *
      * <code>double total_hours = 5;</code>
      * @return This builder for chaining.
      */
@@ -1631,6 +1783,10 @@ private static final long serialVersionUID = 0L;
 
     private double knowledgeHours ;
     /**
+     * <pre>
+     * 知识学时 = 来源课节课时和(后端按树计算)
+     * </pre>
+     *
      * <code>double knowledge_hours = 6;</code>
      * @return The knowledgeHours.
      */
@@ -1639,6 +1795,10 @@ private static final long serialVersionUID = 0L;
       return knowledgeHours ;
     }
     /**
+     * <pre>
+     * 知识学时 = 来源课节课时和(后端按树计算)
+     * </pre>
+     *
      * <code>double knowledge_hours = 6;</code>
      * @param value The knowledgeHours to set.
      * @return This builder for chaining.
@@ -1650,6 +1810,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 知识学时 = 来源课节课时和(后端按树计算)
+     * </pre>
+     *
      * <code>double knowledge_hours = 6;</code>
      * @return This builder for chaining.
      */
@@ -1662,6 +1826,10 @@ private static final long serialVersionUID = 0L;
 
     private double skillHours ;
     /**
+     * <pre>
+     * 技能学时 = 自定义节点课时和(后端按树计算)
+     * </pre>
+     *
      * <code>double skill_hours = 7;</code>
      * @return The skillHours.
      */
@@ -1670,6 +1838,10 @@ private static final long serialVersionUID = 0L;
       return skillHours ;
     }
     /**
+     * <pre>
+     * 技能学时 = 自定义节点课时和(后端按树计算)
+     * </pre>
+     *
      * <code>double skill_hours = 7;</code>
      * @param value The skillHours to set.
      * @return This builder for chaining.
@@ -1681,6 +1853,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 技能学时 = 自定义节点课时和(后端按树计算)
+     * </pre>
+     *
      * <code>double skill_hours = 7;</code>
      * @return This builder for chaining.
      */
@@ -2179,7 +2355,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * 能力指标
+     * 能力指标(已废弃，保留字段号兼容；详情接口不再返回)
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -2193,7 +2369,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标
+     * 能力指标(已废弃，保留字段号兼容；详情接口不再返回)
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -2207,7 +2383,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标
+     * 能力指标(已废弃，保留字段号兼容；详情接口不再返回)
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -2221,7 +2397,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标
+     * 能力指标(已废弃，保留字段号兼容；详情接口不再返回)
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -2242,7 +2418,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标
+     * 能力指标(已废弃，保留字段号兼容；详情接口不再返回)
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -2260,7 +2436,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标
+     * 能力指标(已废弃，保留字段号兼容；详情接口不再返回)
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -2280,7 +2456,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标
+     * 能力指标(已废弃，保留字段号兼容；详情接口不再返回)
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -2301,7 +2477,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标
+     * 能力指标(已废弃，保留字段号兼容；详情接口不再返回)
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -2319,7 +2495,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标
+     * 能力指标(已废弃，保留字段号兼容；详情接口不再返回)
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -2337,7 +2513,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标
+     * 能力指标(已废弃，保留字段号兼容；详情接口不再返回)
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -2356,7 +2532,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标
+     * 能力指标(已废弃，保留字段号兼容；详情接口不再返回)
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -2373,7 +2549,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标
+     * 能力指标(已废弃，保留字段号兼容；详情接口不再返回)
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -2390,7 +2566,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标
+     * 能力指标(已废弃，保留字段号兼容；详情接口不再返回)
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -2401,7 +2577,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标
+     * 能力指标(已废弃，保留字段号兼容；详情接口不再返回)
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -2415,7 +2591,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标
+     * 能力指标(已废弃，保留字段号兼容；详情接口不再返回)
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -2430,7 +2606,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标
+     * 能力指标(已废弃，保留字段号兼容；详情接口不再返回)
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -2441,7 +2617,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标
+     * 能力指标(已废弃，保留字段号兼容；详情接口不再返回)
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -2453,7 +2629,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标
+     * 能力指标(已废弃，保留字段号兼容；详情接口不再返回)
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -2787,6 +2963,318 @@ private static final long serialVersionUID = 0L;
         classes = null;
       }
       return classesBuilder ;
+    }
+
+    private java.util.List<com.zhijiejiaoyu.glory_api.course.SchemeChapter> chapters =
+      java.util.Collections.emptyList();
+    private void ensureChaptersIsMutable() {
+      if (!((bitField0 & 0x00000004) != 0)) {
+        chapters = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.SchemeChapter>(chapters );
+        bitField0_ |= 0x00000004;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.SchemeChapter, com.zhijiejiaoyu.glory_api.course.SchemeChapter.Builder, com.zhijiejiaoyu.glory_api.course.SchemeChapterOrBuilder> chaptersBuilder ;
+
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 17;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.course.SchemeChapter> getChaptersList() {
+      if (chaptersBuilder == null) {
+        return java.util.Collections.unmodifiableList(chapters );
+      } else {
+        return chaptersBuilder .getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 17;</code>
+     */
+    public int getChaptersCount() {
+      if (chaptersBuilder == null) {
+        return chapters .size();
+      } else {
+        return chaptersBuilder .getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 17;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.SchemeChapter getChapters(int index) {
+      if (chaptersBuilder == null) {
+        return chapters .get(index);
+      } else {
+        return chaptersBuilder .getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 17;</code>
+     */
+    public Builder setChapters(
+        int index, com.zhijiejiaoyu.glory_api.course.SchemeChapter value) {
+      if (chaptersBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureChaptersIsMutable();
+        chapters .set(index, value);
+        onChanged();
+      } else {
+        chaptersBuilder .setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 17;</code>
+     */
+    public Builder setChapters(
+        int index, com.zhijiejiaoyu.glory_api.course.SchemeChapter.Builder builderForValue) {
+      if (chaptersBuilder == null) {
+        ensureChaptersIsMutable();
+        chapters .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        chaptersBuilder .setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 17;</code>
+     */
+    public Builder addChapters(com.zhijiejiaoyu.glory_api.course.SchemeChapter value) {
+      if (chaptersBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureChaptersIsMutable();
+        chapters .add(value);
+        onChanged();
+      } else {
+        chaptersBuilder .addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 17;</code>
+     */
+    public Builder addChapters(
+        int index, com.zhijiejiaoyu.glory_api.course.SchemeChapter value) {
+      if (chaptersBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureChaptersIsMutable();
+        chapters .add(index, value);
+        onChanged();
+      } else {
+        chaptersBuilder .addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 17;</code>
+     */
+    public Builder addChapters(
+        com.zhijiejiaoyu.glory_api.course.SchemeChapter.Builder builderForValue) {
+      if (chaptersBuilder == null) {
+        ensureChaptersIsMutable();
+        chapters .add(builderForValue.build());
+        onChanged();
+      } else {
+        chaptersBuilder .addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 17;</code>
+     */
+    public Builder addChapters(
+        int index, com.zhijiejiaoyu.glory_api.course.SchemeChapter.Builder builderForValue) {
+      if (chaptersBuilder == null) {
+        ensureChaptersIsMutable();
+        chapters .add(index, builderForValue.build());
+        onChanged();
+      } else {
+        chaptersBuilder .addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 17;</code>
+     */
+    public Builder addAllChapters(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.course.SchemeChapter> values) {
+      if (chaptersBuilder == null) {
+        ensureChaptersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, chapters );
+        onChanged();
+      } else {
+        chaptersBuilder .addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 17;</code>
+     */
+    public Builder clearChapters() {
+      if (chaptersBuilder == null) {
+        chapters = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000004);
+        onChanged();
+      } else {
+        chaptersBuilder .clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 17;</code>
+     */
+    public Builder removeChapters(int index) {
+      if (chaptersBuilder == null) {
+        ensureChaptersIsMutable();
+        chapters .remove(index);
+        onChanged();
+      } else {
+        chaptersBuilder .remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 17;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.SchemeChapter.Builder getChaptersBuilder(
+        int index) {
+      return getChaptersFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 17;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.SchemeChapterOrBuilder getChaptersOrBuilder(
+        int index) {
+      if (chaptersBuilder == null) {
+        return chapters .get(index);  } else {
+        return chaptersBuilder .getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 17;</code>
+     */
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.SchemeChapterOrBuilder> 
+         getChaptersOrBuilderList() {
+      if (chaptersBuilder != null) {
+        return chaptersBuilder .getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(chapters );
+      }
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 17;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.SchemeChapter.Builder addChaptersBuilder() {
+      return getChaptersFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.course.SchemeChapter.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 17;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.SchemeChapter.Builder addChaptersBuilder(
+        int index) {
+      return getChaptersFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.course.SchemeChapter.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 17;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.course.SchemeChapter.Builder> 
+         getChaptersBuilderList() {
+      return getChaptersFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.SchemeChapter, com.zhijiejiaoyu.glory_api.course.SchemeChapter.Builder, com.zhijiejiaoyu.glory_api.course.SchemeChapterOrBuilder> 
+        getChaptersFieldBuilder() {
+      if (chaptersBuilder == null) {
+        chaptersBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.course.SchemeChapter, com.zhijiejiaoyu.glory_api.course.SchemeChapter.Builder, com.zhijiejiaoyu.glory_api.course.SchemeChapterOrBuilder>(
+                chapters ,
+                ((bitField0 & 0x00000004) != 0),
+                getParentForChildren(),
+                isClean());
+        chapters = null;
+      }
+      return chaptersBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

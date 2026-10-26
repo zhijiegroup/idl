@@ -13,6 +13,95 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use schemeChapterDescriptor instead')
+const SchemeChapter$json = {
+  '1': 'SchemeChapter',
+  '2': [
+    {'1': 'chapter_name', '3': 1, '4': 1, '5': 9, '10': 'chapterName'},
+    {'1': 'origin_type', '3': 2, '4': 1, '5': 5, '10': 'originType'},
+    {'1': 'origin_course_id', '3': 3, '4': 1, '5': 3, '10': 'originCourseId'},
+    {'1': 'origin_chapter_id', '3': 4, '4': 1, '5': 3, '10': 'originChapterId'},
+    {'1': 'chapter_index', '3': 5, '4': 1, '5': 5, '10': 'chapterIndex'},
+    {'1': 'lessons', '3': 6, '4': 3, '5': 11, '6': '.glory_api.SchemeLesson', '10': 'lessons'},
+  ],
+};
+
+/// Descriptor for `SchemeChapter`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List schemeChapterDescriptor = $convert.base64Decode(
+    'Cg1TY2hlbWVDaGFwdGVyEiEKDGNoYXB0ZXJfbmFtZRgBIAEoCVILY2hhcHRlck5hbWUSHwoLb3'
+    'JpZ2luX3R5cGUYAiABKAVSCm9yaWdpblR5cGUSKAoQb3JpZ2luX2NvdXJzZV9pZBgDIAEoA1IO'
+    'b3JpZ2luQ291cnNlSWQSKgoRb3JpZ2luX2NoYXB0ZXJfaWQYBCABKANSD29yaWdpbkNoYXB0ZX'
+    'JJZBIjCg1jaGFwdGVyX2luZGV4GAUgASgFUgxjaGFwdGVySW5kZXgSMQoHbGVzc29ucxgGIAMo'
+    'CzIXLmdsb3J5X2FwaS5TY2hlbWVMZXNzb25SB2xlc3NvbnM=');
+
+@$core.Deprecated('Use schemeLessonDescriptor instead')
+const SchemeLesson$json = {
+  '1': 'SchemeLesson',
+  '2': [
+    {'1': 'lesson_name', '3': 1, '4': 1, '5': 9, '10': 'lessonName'},
+    {'1': 'node_mode', '3': 2, '4': 1, '5': 5, '10': 'nodeMode'},
+    {'1': 'origin_type', '3': 3, '4': 1, '5': 5, '10': 'originType'},
+    {'1': 'origin_course_type', '3': 4, '4': 1, '5': 5, '10': 'originCourseType'},
+    {'1': 'origin_course_id', '3': 5, '4': 1, '5': 3, '10': 'originCourseId'},
+    {'1': 'origin_chapter_id', '3': 6, '4': 1, '5': 3, '10': 'originChapterId'},
+    {'1': 'origin_resource_id', '3': 7, '4': 1, '5': 3, '10': 'originResourceId'},
+    {'1': 'hours', '3': 8, '4': 1, '5': 2, '10': 'hours'},
+    {'1': 'sort', '3': 9, '4': 1, '5': 5, '10': 'sort'},
+    {'1': 'items', '3': 10, '4': 3, '5': 11, '6': '.glory_api.SchemeLessonItem', '10': 'items'},
+    {'1': 'resources', '3': 11, '4': 3, '5': 11, '6': '.glory_api.SchemeLessonResource', '10': 'resources'},
+  ],
+};
+
+/// Descriptor for `SchemeLesson`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List schemeLessonDescriptor = $convert.base64Decode(
+    'CgxTY2hlbWVMZXNzb24SHwoLbGVzc29uX25hbWUYASABKAlSCmxlc3Nvbk5hbWUSGwoJbm9kZV'
+    '9tb2RlGAIgASgFUghub2RlTW9kZRIfCgtvcmlnaW5fdHlwZRgDIAEoBVIKb3JpZ2luVHlwZRIs'
+    'ChJvcmlnaW5fY291cnNlX3R5cGUYBCABKAVSEG9yaWdpbkNvdXJzZVR5cGUSKAoQb3JpZ2luX2'
+    'NvdXJzZV9pZBgFIAEoA1IOb3JpZ2luQ291cnNlSWQSKgoRb3JpZ2luX2NoYXB0ZXJfaWQYBiAB'
+    'KANSD29yaWdpbkNoYXB0ZXJJZBIsChJvcmlnaW5fcmVzb3VyY2VfaWQYByABKANSEG9yaWdpbl'
+    'Jlc291cmNlSWQSFAoFaG91cnMYCCABKAJSBWhvdXJzEhIKBHNvcnQYCSABKAVSBHNvcnQSMQoF'
+    'aXRlbXMYCiADKAsyGy5nbG9yeV9hcGkuU2NoZW1lTGVzc29uSXRlbVIFaXRlbXMSPQoJcmVzb3'
+    'VyY2VzGAsgAygLMh8uZ2xvcnlfYXBpLlNjaGVtZUxlc3NvblJlc291cmNlUglyZXNvdXJjZXM=');
+
+@$core.Deprecated('Use schemeLessonItemDescriptor instead')
+const SchemeLessonItem$json = {
+  '1': 'SchemeLessonItem',
+  '2': [
+    {'1': 'item_type', '3': 1, '4': 1, '5': 5, '10': 'itemType'},
+    {'1': 'item_name', '3': 2, '4': 1, '5': 9, '10': 'itemName'},
+    {'1': 'hours', '3': 3, '4': 1, '5': 2, '10': 'hours'},
+    {'1': 'sort', '3': 4, '4': 1, '5': 5, '10': 'sort'},
+    {'1': 'resources', '3': 5, '4': 3, '5': 11, '6': '.glory_api.SchemeLessonResource', '10': 'resources'},
+  ],
+};
+
+/// Descriptor for `SchemeLessonItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List schemeLessonItemDescriptor = $convert.base64Decode(
+    'ChBTY2hlbWVMZXNzb25JdGVtEhsKCWl0ZW1fdHlwZRgBIAEoBVIIaXRlbVR5cGUSGwoJaXRlbV'
+    '9uYW1lGAIgASgJUghpdGVtTmFtZRIUCgVob3VycxgDIAEoAlIFaG91cnMSEgoEc29ydBgEIAEo'
+    'BVIEc29ydBI9CglyZXNvdXJjZXMYBSADKAsyHy5nbG9yeV9hcGkuU2NoZW1lTGVzc29uUmVzb3'
+    'VyY2VSCXJlc291cmNlcw==');
+
+@$core.Deprecated('Use schemeLessonResourceDescriptor instead')
+const SchemeLessonResource$json = {
+  '1': 'SchemeLessonResource',
+  '2': [
+    {'1': 'resource_type', '3': 1, '4': 1, '5': 5, '10': 'resourceType'},
+    {'1': 'file_url', '3': 2, '4': 1, '5': 9, '10': 'fileUrl'},
+    {'1': 'file_name', '3': 3, '4': 1, '5': 9, '10': 'fileName'},
+    {'1': 'file_size', '3': 4, '4': 1, '5': 3, '10': 'fileSize'},
+    {'1': 'sort', '3': 5, '4': 1, '5': 5, '10': 'sort'},
+    {'1': 'resource_id', '3': 6, '4': 1, '5': 3, '10': 'resourceId'},
+  ],
+};
+
+/// Descriptor for `SchemeLessonResource`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List schemeLessonResourceDescriptor = $convert.base64Decode(
+    'ChRTY2hlbWVMZXNzb25SZXNvdXJjZRIjCg1yZXNvdXJjZV90eXBlGAEgASgFUgxyZXNvdXJjZV'
+    'R5cGUSGQoIZmlsZV91cmwYAiABKAlSB2ZpbGVVcmwSGwoJZmlsZV9uYW1lGAMgASgJUghmaWxl'
+    'TmFtZRIbCglmaWxlX3NpemUYBCABKANSCGZpbGVTaXplEhIKBHNvcnQYBSABKAVSBHNvcnQSHw'
+    'oLcmVzb3VyY2VfaWQYBiABKANSCnJlc291cmNlSWQ=');
+
 @$core.Deprecated('Use eduSchemeDescriptor instead')
 const EduScheme$json = {
   '1': 'EduScheme',
@@ -33,6 +122,7 @@ const EduScheme$json = {
     {'1': 'created_by', '3': 14, '4': 1, '5': 3, '10': 'createdBy'},
     {'1': 'course_modules', '3': 15, '4': 3, '5': 11, '6': '.glory_api.CourseModule', '10': 'courseModules'},
     {'1': 'classes', '3': 16, '4': 3, '5': 11, '6': '.glory_api.TenantDept', '10': 'classes'},
+    {'1': 'chapters', '3': 17, '4': 3, '5': 11, '6': '.glory_api.SchemeChapter', '10': 'chapters'},
   ],
 };
 
@@ -49,7 +139,7 @@ final $typed_data.Uint8List eduSchemeDescriptor = $convert.base64Decode(
     'X2lkGA0gASgDUg1jb3Vyc2VHcm91cElkEh0KCmNyZWF0ZWRfYnkYDiABKANSCWNyZWF0ZWRCeR'
     'I+Cg5jb3Vyc2VfbW9kdWxlcxgPIAMoCzIXLmdsb3J5X2FwaS5Db3Vyc2VNb2R1bGVSDWNvdXJz'
     'ZU1vZHVsZXMSLwoHY2xhc3NlcxgQIAMoCzIVLmdsb3J5X2FwaS5UZW5hbnREZXB0UgdjbGFzc2'
-    'Vz');
+    'VzEjQKCGNoYXB0ZXJzGBEgAygLMhguZ2xvcnlfYXBpLlNjaGVtZUNoYXB0ZXJSCGNoYXB0ZXJz');
 
 @$core.Deprecated('Use createEduSchemeRequestDescriptor instead')
 const CreateEduSchemeRequest$json = {
@@ -67,6 +157,7 @@ const CreateEduSchemeRequest$json = {
     {'1': 'skill_hours', '3': 10, '4': 1, '5': 2, '10': 'skillHours'},
     {'1': 'knowledge_hours', '3': 11, '4': 1, '5': 2, '10': 'knowledgeHours'},
     {'1': 'course_modules', '3': 15, '4': 3, '5': 11, '6': '.glory_api.CourseModule', '10': 'courseModules'},
+    {'1': 'chapters', '3': 16, '4': 3, '5': 11, '6': '.glory_api.SchemeChapter', '10': 'chapters'},
   ],
 };
 
@@ -80,7 +171,8 @@ final $typed_data.Uint8List createEduSchemeRequestDescriptor = $convert.base64De
     'lSEWNoYXJhY3RlclN0YW5kYXJkEh0KCmdyb3VwX25hbWUYCSABKAlSCWdyb3VwTmFtZRIfCgtz'
     'a2lsbF9ob3VycxgKIAEoAlIKc2tpbGxIb3VycxInCg9rbm93bGVkZ2VfaG91cnMYCyABKAJSDm'
     'tub3dsZWRnZUhvdXJzEj4KDmNvdXJzZV9tb2R1bGVzGA8gAygLMhcuZ2xvcnlfYXBpLkNvdXJz'
-    'ZU1vZHVsZVINY291cnNlTW9kdWxlcw==');
+    'ZU1vZHVsZVINY291cnNlTW9kdWxlcxI0CghjaGFwdGVycxgQIAMoCzIYLmdsb3J5X2FwaS5TY2'
+    'hlbWVDaGFwdGVyUghjaGFwdGVycw==');
 
 @$core.Deprecated('Use createEduSchemeResponseDescriptor instead')
 const CreateEduSchemeResponse$json = {
@@ -113,6 +205,7 @@ const UpdateEduSchemeRequest$json = {
     {'1': 'skill_hours', '3': 11, '4': 1, '5': 2, '10': 'skillHours'},
     {'1': 'knowledge_hours', '3': 12, '4': 1, '5': 2, '10': 'knowledgeHours'},
     {'1': 'course_modules', '3': 13, '4': 3, '5': 11, '6': '.glory_api.CourseModule', '10': 'courseModules'},
+    {'1': 'chapters', '3': 14, '4': 3, '5': 11, '6': '.glory_api.SchemeChapter', '10': 'chapters'},
   ],
 };
 
@@ -127,7 +220,8 @@ final $typed_data.Uint8List updateEduSchemeRequestDescriptor = $convert.base64De
     'ZHVfc2NoZW1lX2lkGAogASgDUgtlZHVTY2hlbWVJZBIfCgtza2lsbF9ob3VycxgLIAEoAlIKc2'
     'tpbGxIb3VycxInCg9rbm93bGVkZ2VfaG91cnMYDCABKAJSDmtub3dsZWRnZUhvdXJzEj4KDmNv'
     'dXJzZV9tb2R1bGVzGA0gAygLMhcuZ2xvcnlfYXBpLkNvdXJzZU1vZHVsZVINY291cnNlTW9kdW'
-    'xlcw==');
+    'xlcxI0CghjaGFwdGVycxgOIAMoCzIYLmdsb3J5X2FwaS5TY2hlbWVDaGFwdGVyUghjaGFwdGVy'
+    'cw==');
 
 @$core.Deprecated('Use updateEduSchemeResponseDescriptor instead')
 const UpdateEduSchemeResponse$json = {

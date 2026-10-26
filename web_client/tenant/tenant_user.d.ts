@@ -100,3 +100,33 @@ export interface ListTenantStudentResponse {
   students?: Array<TenantUser>;
   pagination?: base.PaginationResponse;
 }
+
+/** 教师所辖班级项 */
+export interface TeacherClassItem {
+  class_id?: string;
+  class_name?: string;
+  /** 所属专业ID */
+  major_id?: string;
+  /** 专业名称 */
+  major_name?: string;
+  /** 专业代码 */
+  major_code?: string;
+  /** 学生数 */
+  student_num?: string;
+}
+
+/** 教师所辖班级列表(按教师所属专业展开班级) */
+export interface ListTeacherClassRequest {
+  base_request?: base.BaseRequest;
+  /** 专业过滤 */
+  major_code?: string;
+  /** 班级名称模糊(预留) */
+  name?: string;
+  /** 预留；一次加载全部班级 */
+  pagination?: base.PaginationRequest;
+}
+
+export interface ListTeacherClassResponse {
+  base_resp?: base.BaseResponse;
+  classes?: Array<TeacherClassItem>;
+}

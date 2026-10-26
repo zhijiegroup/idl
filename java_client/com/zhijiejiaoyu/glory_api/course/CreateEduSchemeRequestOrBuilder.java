@@ -23,11 +23,19 @@ public interface CreateEduSchemeRequestOrBuilder extends
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
   /**
+   * <pre>
+   * 课程名称(≤30字)
+   * </pre>
+   *
    * <code>string name = 2;</code>
    * @return The name.
    */
   java.lang.String getName();
   /**
+   * <pre>
+   * 课程名称(≤30字)
+   * </pre>
+   *
    * <code>string name = 2;</code>
    * @return The bytes for name.
    */
@@ -35,11 +43,19 @@ public interface CreateEduSchemeRequestOrBuilder extends
       getNameBytes();
 
   /**
+   * <pre>
+   * 专业代码
+   * </pre>
+   *
    * <code>string major = 3;</code>
    * @return The major.
    */
   java.lang.String getMajor();
   /**
+   * <pre>
+   * 专业代码
+   * </pre>
+   *
    * <code>string major = 3;</code>
    * @return The bytes for major.
    */
@@ -47,11 +63,19 @@ public interface CreateEduSchemeRequestOrBuilder extends
       getMajorBytes();
 
   /**
+   * <pre>
+   * 【废弃】不再使用，保留字段号兼容
+   * </pre>
+   *
    * <code>string goal = 4;</code>
    * @return The goal.
    */
   java.lang.String getGoal();
   /**
+   * <pre>
+   * 【废弃】不再使用，保留字段号兼容
+   * </pre>
+   *
    * <code>string goal = 4;</code>
    * @return The bytes for goal.
    */
@@ -59,17 +83,29 @@ public interface CreateEduSchemeRequestOrBuilder extends
       getGoalBytes();
 
   /**
+   * <pre>
+   * 【废弃】不再使用，保留字段号兼容
+   * </pre>
+   *
    * <code>int32 type = 5;</code>
    * @return The type.
    */
   int getType();
 
   /**
+   * <pre>
+   * 【废弃】不再使用，保留字段号兼容
+   * </pre>
+   *
    * <code>string knowledge_standard = 6;</code>
    * @return The knowledgeStandard.
    */
   java.lang.String getKnowledgeStandard();
   /**
+   * <pre>
+   * 【废弃】不再使用，保留字段号兼容
+   * </pre>
+   *
    * <code>string knowledge_standard = 6;</code>
    * @return The bytes for knowledgeStandard.
    */
@@ -77,11 +113,19 @@ public interface CreateEduSchemeRequestOrBuilder extends
       getKnowledgeStandardBytes();
 
   /**
+   * <pre>
+   * 【废弃】不再使用，保留字段号兼容
+   * </pre>
+   *
    * <code>string ability_standard = 7;</code>
    * @return The abilityStandard.
    */
   java.lang.String getAbilityStandard();
   /**
+   * <pre>
+   * 【废弃】不再使用，保留字段号兼容
+   * </pre>
+   *
    * <code>string ability_standard = 7;</code>
    * @return The bytes for abilityStandard.
    */
@@ -89,11 +133,19 @@ public interface CreateEduSchemeRequestOrBuilder extends
       getAbilityStandardBytes();
 
   /**
+   * <pre>
+   * 【废弃】不再使用，保留字段号兼容
+   * </pre>
+   *
    * <code>string character_standard = 8;</code>
    * @return The characterStandard.
    */
   java.lang.String getCharacterStandard();
   /**
+   * <pre>
+   * 【废弃】不再使用，保留字段号兼容
+   * </pre>
+   *
    * <code>string character_standard = 8;</code>
    * @return The bytes for characterStandard.
    */
@@ -101,11 +153,19 @@ public interface CreateEduSchemeRequestOrBuilder extends
       getCharacterStandardBytes();
 
   /**
+   * <pre>
+   * 【废弃】不再使用，保留字段号兼容
+   * </pre>
+   *
    * <code>string group_name = 9;</code>
    * @return The groupName.
    */
   java.lang.String getGroupName();
   /**
+   * <pre>
+   * 【废弃】不再使用，保留字段号兼容
+   * </pre>
+   *
    * <code>string group_name = 9;</code>
    * @return The bytes for groupName.
    */
@@ -113,12 +173,20 @@ public interface CreateEduSchemeRequestOrBuilder extends
       getGroupNameBytes();
 
   /**
+   * <pre>
+   * 【调整】由后端按三级结构计算写入，前端无需传
+   * </pre>
+   *
    * <code>float skill_hours = 10;</code>
    * @return The skillHours.
    */
   float getSkillHours();
 
   /**
+   * <pre>
+   * 【调整】由后端按三级结构计算写入，前端无需传
+   * </pre>
+   *
    * <code>float knowledge_hours = 11;</code>
    * @return The knowledgeHours.
    */
@@ -126,7 +194,7 @@ public interface CreateEduSchemeRequestOrBuilder extends
 
   /**
    * <pre>
-   * 能力指标或能力方向
+   * 【废弃】不再使用，保留字段号兼容
    * </pre>
    *
    * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -135,7 +203,7 @@ public interface CreateEduSchemeRequestOrBuilder extends
       getCourseModulesList();
   /**
    * <pre>
-   * 能力指标或能力方向
+   * 【废弃】不再使用，保留字段号兼容
    * </pre>
    *
    * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -143,7 +211,7 @@ public interface CreateEduSchemeRequestOrBuilder extends
   com.zhijiejiaoyu.glory_api.course.CourseModule getCourseModules(int index);
   /**
    * <pre>
-   * 能力指标或能力方向
+   * 【废弃】不再使用，保留字段号兼容
    * </pre>
    *
    * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -151,7 +219,7 @@ public interface CreateEduSchemeRequestOrBuilder extends
   int getCourseModulesCount();
   /**
    * <pre>
-   * 能力指标或能力方向
+   * 【废弃】不再使用，保留字段号兼容
    * </pre>
    *
    * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
@@ -160,11 +228,55 @@ public interface CreateEduSchemeRequestOrBuilder extends
       getCourseModulesOrBuilderList();
   /**
    * <pre>
-   * 能力指标或能力方向
+   * 【废弃】不再使用，保留字段号兼容
    * </pre>
    *
    * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
    */
   com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder getCourseModulesOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * 三级课程结构(章节→课节→小节/任务+资源)，全量覆盖保存；新增字段
+   * </pre>
+   *
+   * <code>repeated .glory_api.SchemeChapter chapters = 16;</code>
+   */
+  java.util.List<com.zhijiejiaoyu.glory_api.course.SchemeChapter> 
+      getChaptersList();
+  /**
+   * <pre>
+   * 三级课程结构(章节→课节→小节/任务+资源)，全量覆盖保存；新增字段
+   * </pre>
+   *
+   * <code>repeated .glory_api.SchemeChapter chapters = 16;</code>
+   */
+  com.zhijiejiaoyu.glory_api.course.SchemeChapter getChapters(int index);
+  /**
+   * <pre>
+   * 三级课程结构(章节→课节→小节/任务+资源)，全量覆盖保存；新增字段
+   * </pre>
+   *
+   * <code>repeated .glory_api.SchemeChapter chapters = 16;</code>
+   */
+  int getChaptersCount();
+  /**
+   * <pre>
+   * 三级课程结构(章节→课节→小节/任务+资源)，全量覆盖保存；新增字段
+   * </pre>
+   *
+   * <code>repeated .glory_api.SchemeChapter chapters = 16;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.course.SchemeChapterOrBuilder> 
+      getChaptersOrBuilderList();
+  /**
+   * <pre>
+   * 三级课程结构(章节→课节→小节/任务+资源)，全量覆盖保存；新增字段
+   * </pre>
+   *
+   * <code>repeated .glory_api.SchemeChapter chapters = 16;</code>
+   */
+  com.zhijiejiaoyu.glory_api.course.SchemeChapterOrBuilder getChaptersOrBuilder(
       int index);
 }

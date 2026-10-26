@@ -34,7 +34,7 @@ public interface UpdateCourseProgressRequestOrBuilder extends
 
   /**
    * <pre>
-   * 当前课程资源ID
+   * 当前课程资源ID；后台按 (user_id, course_id, resource_id=本字段) upsert 逐节进度记录
    * </pre>
    *
    * <code>int64 chapter_resource_id = 3;</code>
@@ -44,7 +44,7 @@ public interface UpdateCourseProgressRequestOrBuilder extends
 
   /**
    * <pre>
-   * 当前课程资源播放进度
+   * 当前课程资源播放进度（0-100）
    * </pre>
    *
    * <code>float chapter_resource_progress = 4;</code>
@@ -54,11 +54,21 @@ public interface UpdateCourseProgressRequestOrBuilder extends
 
   /**
    * <pre>
-   * 当前课程资源总时长
+   * 当前课程资源总时长（毫秒）
    * </pre>
    *
    * <code>float chapter_resource_duration = 5;</code>
    * @return The chapterResourceDuration.
    */
   float getChapterResourceDuration();
+
+  /**
+   * <pre>
+   * 房间播放点位（毫秒，视频内当前播放位置；可回退，落库取最新值）
+   * </pre>
+   *
+   * <code>float room_play_position = 6;</code>
+   * @return The roomPlayPosition.
+   */
+  float getRoomPlayPosition();
 }

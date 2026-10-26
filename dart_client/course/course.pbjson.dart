@@ -60,6 +60,8 @@ const Course$json = {
     {'1': 'created_at', '3': 18, '4': 1, '5': 9, '10': 'createdAt'},
     {'1': 'assigned', '3': 19, '4': 1, '5': 8, '10': 'assigned'},
     {'1': 'language', '3': 20, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'major_category', '3': 21, '4': 1, '5': 5, '10': 'majorCategory'},
+    {'1': 'course_attribute', '3': 22, '4': 1, '5': 5, '10': 'courseAttribute'},
   ],
 };
 
@@ -79,7 +81,9 @@ final $typed_data.Uint8List courseDescriptor = $convert.base64Decode(
     'NvdXJzZV90eXBlGA8gASgFUgpjb3Vyc2VUeXBlEiMKDWNvdXJzZV9tb2R1bGUYECABKAVSDGNv'
     'dXJzZU1vZHVsZRI+Cg5jb3Vyc2VfbW9kdWxlcxgRIAMoCzIXLmdsb3J5X2FwaS5Db3Vyc2VNb2'
     'R1bGVSDWNvdXJzZU1vZHVsZXMSHQoKY3JlYXRlZF9hdBgSIAEoCVIJY3JlYXRlZEF0EhoKCGFz'
-    'c2lnbmVkGBMgASgIUghhc3NpZ25lZBIaCghsYW5ndWFnZRgUIAEoCVIIbGFuZ3VhZ2U=');
+    'c2lnbmVkGBMgASgIUghhc3NpZ25lZBIaCghsYW5ndWFnZRgUIAEoCVIIbGFuZ3VhZ2USJQoObW'
+    'Fqb3JfY2F0ZWdvcnkYFSABKAVSDW1ham9yQ2F0ZWdvcnkSKQoQY291cnNlX2F0dHJpYnV0ZRgW'
+    'IAEoBVIPY291cnNlQXR0cmlidXRl');
 
 @$core.Deprecated('Use createCourseRequestDescriptor instead')
 const CreateCourseRequest$json = {
@@ -213,6 +217,9 @@ const ListCourseRequest$json = {
     {'1': 'key', '3': 10, '4': 1, '5': 9, '10': 'key'},
     {'1': 'assigned', '3': 11, '4': 1, '5': 8, '10': 'assigned'},
     {'1': 'language', '3': 12, '4': 3, '5': 9, '10': 'language'},
+    {'1': 'purchased_first', '3': 13, '4': 1, '5': 8, '10': 'purchasedFirst'},
+    {'1': 'major_category', '3': 14, '4': 1, '5': 5, '10': 'majorCategory'},
+    {'1': 'course_attribute', '3': 15, '4': 3, '5': 5, '10': 'courseAttribute'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -225,8 +232,11 @@ final $typed_data.Uint8List listCourseRequestDescriptor = $convert.base64Decode(
     'VtYWpvchgEIAMoCVIFbWFqb3ISFAoFbGV2ZWwYBSADKAVSBWxldmVsEh8KC2NvdXJzZV90eXBl'
     'GAYgAygFUgpjb3Vyc2VUeXBlEicKD2NvdXJzZV9pbmR1c3RyeRgHIAMoCVIOY291cnNlSW5kdX'
     'N0cnkSFgoGc2ltcGxlGAggASgIUgZzaW1wbGUSEAoDa2V5GAogASgJUgNrZXkSGgoIYXNzaWdu'
-    'ZWQYCyABKAhSCGFzc2lnbmVkEhoKCGxhbmd1YWdlGAwgAygJUghsYW5ndWFnZRI3CgpwYWdpbm'
-    'F0aW9uGGQgASgLMhcuYmFzZS5QYWdpbmF0aW9uUmVxdWVzdFIKcGFnaW5hdGlvbg==');
+    'ZWQYCyABKAhSCGFzc2lnbmVkEhoKCGxhbmd1YWdlGAwgAygJUghsYW5ndWFnZRInCg9wdXJjaG'
+    'FzZWRfZmlyc3QYDSABKAhSDnB1cmNoYXNlZEZpcnN0EiUKDm1ham9yX2NhdGVnb3J5GA4gASgF'
+    'Ug1tYWpvckNhdGVnb3J5EikKEGNvdXJzZV9hdHRyaWJ1dGUYDyADKAVSD2NvdXJzZUF0dHJpYn'
+    'V0ZRI3CgpwYWdpbmF0aW9uGGQgASgLMhcuYmFzZS5QYWdpbmF0aW9uUmVxdWVzdFIKcGFnaW5h'
+    'dGlvbg==');
 
 @$core.Deprecated('Use listCourseResponseDescriptor instead')
 const ListCourseResponse$json = {
@@ -346,6 +356,20 @@ final $typed_data.Uint8List courseTypeDescriptor = $convert.base64Decode(
     'CgpDb3Vyc2VUeXBlEhQKBWxhYmVsGAEgASgJUgVsYWJlbBIUCgV2YWx1ZRgCIAEoCVIFdmFsdW'
     'USMQoIY2hpbGRyZW4YAyADKAsyFS5nbG9yeV9hcGkuQ291cnNlVHlwZVIIY2hpbGRyZW4=');
 
+@$core.Deprecated('Use majorCategoryGroupDescriptor instead')
+const MajorCategoryGroup$json = {
+  '1': 'MajorCategoryGroup',
+  '2': [
+    {'1': 'major_category', '3': 1, '4': 1, '5': 5, '10': 'majorCategory'},
+    {'1': 'major', '3': 2, '4': 3, '5': 9, '10': 'major'},
+  ],
+};
+
+/// Descriptor for `MajorCategoryGroup`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List majorCategoryGroupDescriptor = $convert.base64Decode(
+    'ChJNYWpvckNhdGVnb3J5R3JvdXASJQoObWFqb3JfY2F0ZWdvcnkYASABKAVSDW1ham9yQ2F0ZW'
+    'dvcnkSFAoFbWFqb3IYAiADKAlSBW1ham9y');
+
 @$core.Deprecated('Use getCourseTypeTreeRequestDescriptor instead')
 const GetCourseTypeTreeRequest$json = {
   '1': 'GetCourseTypeTreeRequest',
@@ -398,6 +422,9 @@ const GetCourseTypeListResponse$json = {
     {'1': 'majors', '3': 4, '4': 3, '5': 11, '6': '.glory_api.CourseType', '10': 'majors'},
     {'1': 'industries', '3': 5, '4': 3, '5': 11, '6': '.glory_api.CourseType', '10': 'industries'},
     {'1': 'languages', '3': 6, '4': 3, '5': 11, '6': '.glory_api.CourseType', '10': 'languages'},
+    {'1': 'major_categories', '3': 7, '4': 3, '5': 11, '6': '.glory_api.CourseType', '10': 'majorCategories'},
+    {'1': 'course_attributes', '3': 8, '4': 3, '5': 11, '6': '.glory_api.CourseType', '10': 'courseAttributes'},
+    {'1': 'major_category_majors', '3': 9, '4': 3, '5': 11, '6': '.glory_api.MajorCategoryGroup', '10': 'majorCategoryMajors'},
   ],
 };
 
@@ -408,5 +435,9 @@ final $typed_data.Uint8List getCourseTypeListResponseDescriptor = $convert.base6
     'VHlwZVIGbGV2ZWxzEisKBXR5cGVzGAMgAygLMhUuZ2xvcnlfYXBpLkNvdXJzZVR5cGVSBXR5cG'
     'VzEi0KBm1ham9ycxgEIAMoCzIVLmdsb3J5X2FwaS5Db3Vyc2VUeXBlUgZtYWpvcnMSNQoKaW5k'
     'dXN0cmllcxgFIAMoCzIVLmdsb3J5X2FwaS5Db3Vyc2VUeXBlUgppbmR1c3RyaWVzEjMKCWxhbm'
-    'd1YWdlcxgGIAMoCzIVLmdsb3J5X2FwaS5Db3Vyc2VUeXBlUglsYW5ndWFnZXM=');
+    'd1YWdlcxgGIAMoCzIVLmdsb3J5X2FwaS5Db3Vyc2VUeXBlUglsYW5ndWFnZXMSQAoQbWFqb3Jf'
+    'Y2F0ZWdvcmllcxgHIAMoCzIVLmdsb3J5X2FwaS5Db3Vyc2VUeXBlUg9tYWpvckNhdGVnb3JpZX'
+    'MSQgoRY291cnNlX2F0dHJpYnV0ZXMYCCADKAsyFS5nbG9yeV9hcGkuQ291cnNlVHlwZVIQY291'
+    'cnNlQXR0cmlidXRlcxJRChVtYWpvcl9jYXRlZ29yeV9tYWpvcnMYCSADKAsyHS5nbG9yeV9hcG'
+    'kuTWFqb3JDYXRlZ29yeUdyb3VwUhNtYWpvckNhdGVnb3J5TWFqb3Jz');
 

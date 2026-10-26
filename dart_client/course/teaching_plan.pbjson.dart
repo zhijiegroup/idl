@@ -193,6 +193,9 @@ const UpdateTeachingCourseProgressRequest$json = {
     {'1': 'chapter_resource_id', '3': 3, '4': 1, '5': 3, '10': 'chapterResourceId'},
     {'1': 'chapter_resource_progress', '3': 4, '4': 1, '5': 2, '10': 'chapterResourceProgress'},
     {'1': 'chapter_resource_duration', '3': 5, '4': 1, '5': 2, '10': 'chapterResourceDuration'},
+    {'1': 'class_id', '3': 6, '4': 1, '5': 3, '10': 'classId'},
+    {'1': 'current_lesson_no', '3': 7, '4': 1, '5': 5, '10': 'currentLessonNo'},
+    {'1': 'room_play_position', '3': 8, '4': 1, '5': 2, '10': 'roomPlayPosition'},
   ],
 };
 
@@ -203,7 +206,9 @@ final $typed_data.Uint8List updateTeachingCourseProgressRequestDescriptor = $con
     'CGNvdXJzZUlkEi4KE2NoYXB0ZXJfcmVzb3VyY2VfaWQYAyABKANSEWNoYXB0ZXJSZXNvdXJjZU'
     'lkEjoKGWNoYXB0ZXJfcmVzb3VyY2VfcHJvZ3Jlc3MYBCABKAJSF2NoYXB0ZXJSZXNvdXJjZVBy'
     'b2dyZXNzEjoKGWNoYXB0ZXJfcmVzb3VyY2VfZHVyYXRpb24YBSABKAJSF2NoYXB0ZXJSZXNvdX'
-    'JjZUR1cmF0aW9u');
+    'JjZUR1cmF0aW9uEhkKCGNsYXNzX2lkGAYgASgDUgdjbGFzc0lkEioKEWN1cnJlbnRfbGVzc29u'
+    'X25vGAcgASgFUg9jdXJyZW50TGVzc29uTm8SLAoScm9vbV9wbGF5X3Bvc2l0aW9uGAggASgCUh'
+    'Byb29tUGxheVBvc2l0aW9u');
 
 @$core.Deprecated('Use updateTeachingCourseProgressResponseDescriptor instead')
 const UpdateTeachingCourseProgressResponse$json = {
@@ -219,4 +224,125 @@ final $typed_data.Uint8List updateTeachingCourseProgressResponseDescriptor = $co
     'CiRVcGRhdGVUZWFjaGluZ0NvdXJzZVByb2dyZXNzUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgAS'
     'gLMhIuYmFzZS5CYXNlUmVzcG9uc2VSCGJhc2VSZXNwEicKD2NvdXJzZV9wcm9ncmVzcxgCIAEo'
     'BVIOY291cnNlUHJvZ3Jlc3M=');
+
+@$core.Deprecated('Use teachingTaskItemDescriptor instead')
+const TeachingTaskItem$json = {
+  '1': 'TeachingTaskItem',
+  '2': [
+    {'1': 'task_id', '3': 1, '4': 1, '5': 3, '10': 'taskId'},
+    {'1': 'target_type', '3': 2, '4': 1, '5': 5, '10': 'targetType'},
+    {'1': 'course_id', '3': 3, '4': 1, '5': 3, '10': 'courseId'},
+    {'1': 'edu_scheme_id', '3': 4, '4': 1, '5': 3, '10': 'eduSchemeId'},
+    {'1': 'course_name', '3': 5, '4': 1, '5': 9, '10': 'courseName'},
+    {'1': 'course_cover_url', '3': 6, '4': 1, '5': 9, '10': 'courseCoverUrl'},
+    {'1': 'major_name', '3': 7, '4': 1, '5': 9, '10': 'majorName'},
+    {'1': 'class_id', '3': 8, '4': 1, '5': 3, '10': 'classId'},
+    {'1': 'class_name', '3': 9, '4': 1, '5': 9, '10': 'className'},
+    {'1': 'current_lesson_no', '3': 10, '4': 1, '5': 5, '10': 'currentLessonNo'},
+    {'1': 'total_lesson_no', '3': 11, '4': 1, '5': 5, '10': 'totalLessonNo'},
+    {'1': 'progress', '3': 12, '4': 1, '5': 5, '10': 'progress'},
+    {'1': 'last_taught_at', '3': 13, '4': 1, '5': 9, '10': 'lastTaughtAt'},
+    {'1': 'status', '3': 14, '4': 1, '5': 5, '10': 'status'},
+  ],
+};
+
+/// Descriptor for `TeachingTaskItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List teachingTaskItemDescriptor = $convert.base64Decode(
+    'ChBUZWFjaGluZ1Rhc2tJdGVtEhcKB3Rhc2tfaWQYASABKANSBnRhc2tJZBIfCgt0YXJnZXRfdH'
+    'lwZRgCIAEoBVIKdGFyZ2V0VHlwZRIbCgljb3Vyc2VfaWQYAyABKANSCGNvdXJzZUlkEiIKDWVk'
+    'dV9zY2hlbWVfaWQYBCABKANSC2VkdVNjaGVtZUlkEh8KC2NvdXJzZV9uYW1lGAUgASgJUgpjb3'
+    'Vyc2VOYW1lEigKEGNvdXJzZV9jb3Zlcl91cmwYBiABKAlSDmNvdXJzZUNvdmVyVXJsEh0KCm1h'
+    'am9yX25hbWUYByABKAlSCW1ham9yTmFtZRIZCghjbGFzc19pZBgIIAEoA1IHY2xhc3NJZBIdCg'
+    'pjbGFzc19uYW1lGAkgASgJUgljbGFzc05hbWUSKgoRY3VycmVudF9sZXNzb25fbm8YCiABKAVS'
+    'D2N1cnJlbnRMZXNzb25ObxImCg90b3RhbF9sZXNzb25fbm8YCyABKAVSDXRvdGFsTGVzc29uTm'
+    '8SGgoIcHJvZ3Jlc3MYDCABKAVSCHByb2dyZXNzEiQKDmxhc3RfdGF1Z2h0X2F0GA0gASgJUgxs'
+    'YXN0VGF1Z2h0QXQSFgoGc3RhdHVzGA4gASgFUgZzdGF0dXM=');
+
+@$core.Deprecated('Use taskCountsDescriptor instead')
+const TaskCounts$json = {
+  '1': 'TaskCounts',
+  '2': [
+    {'1': 'in_progress', '3': 1, '4': 1, '5': 3, '10': 'inProgress'},
+    {'1': 'finished', '3': 2, '4': 1, '5': 3, '10': 'finished'},
+  ],
+};
+
+/// Descriptor for `TaskCounts`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List taskCountsDescriptor = $convert.base64Decode(
+    'CgpUYXNrQ291bnRzEh8KC2luX3Byb2dyZXNzGAEgASgDUgppblByb2dyZXNzEhoKCGZpbmlzaG'
+    'VkGAIgASgDUghmaW5pc2hlZA==');
+
+@$core.Deprecated('Use listTeachingTaskRequestDescriptor instead')
+const ListTeachingTaskRequest$json = {
+  '1': 'ListTeachingTaskRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'status', '3': 2, '4': 1, '5': 5, '10': 'status'},
+    {'1': 'major_code', '3': 3, '4': 1, '5': 9, '10': 'majorCode'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `ListTeachingTaskRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listTeachingTaskRequestDescriptor = $convert.base64Decode(
+    'ChdMaXN0VGVhY2hpbmdUYXNrUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLk'
+    'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIWCgZzdGF0dXMYAiABKAVSBnN0YXR1cxIdCgptYWpv'
+    'cl9jb2RlGAMgASgJUgltYWpvckNvZGUSNwoKcGFnaW5hdGlvbhhkIAEoCzIXLmJhc2UuUGFnaW'
+    '5hdGlvblJlcXVlc3RSCnBhZ2luYXRpb24=');
+
+@$core.Deprecated('Use listTeachingTaskResponseDescriptor instead')
+const ListTeachingTaskResponse$json = {
+  '1': 'ListTeachingTaskResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'tasks', '3': 2, '4': 3, '5': 11, '6': '.glory_api.TeachingTaskItem', '10': 'tasks'},
+    {'1': 'counts', '3': 3, '4': 1, '5': 11, '6': '.glory_api.TaskCounts', '10': 'counts'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationResponse', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `ListTeachingTaskResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listTeachingTaskResponseDescriptor = $convert.base64Decode(
+    'ChhMaXN0VGVhY2hpbmdUYXNrUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYX'
+    'NlUmVzcG9uc2VSCGJhc2VSZXNwEjEKBXRhc2tzGAIgAygLMhsuZ2xvcnlfYXBpLlRlYWNoaW5n'
+    'VGFza0l0ZW1SBXRhc2tzEi0KBmNvdW50cxgDIAEoCzIVLmdsb3J5X2FwaS5UYXNrQ291bnRzUg'
+    'Zjb3VudHMSOAoKcGFnaW5hdGlvbhhkIAEoCzIYLmJhc2UuUGFnaW5hdGlvblJlc3BvbnNlUgpw'
+    'YWdpbmF0aW9u');
+
+@$core.Deprecated('Use createTeachingTaskRequestDescriptor instead')
+const CreateTeachingTaskRequest$json = {
+  '1': 'CreateTeachingTaskRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'target_type', '3': 2, '4': 1, '5': 5, '10': 'targetType'},
+    {'1': 'course_id', '3': 3, '4': 1, '5': 3, '10': 'courseId'},
+    {'1': 'edu_scheme_id', '3': 4, '4': 1, '5': 3, '10': 'eduSchemeId'},
+    {'1': 'class_ids', '3': 5, '4': 3, '5': 3, '10': 'classIds'},
+  ],
+};
+
+/// Descriptor for `CreateTeachingTaskRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createTeachingTaskRequestDescriptor = $convert.base64Decode(
+    'ChlDcmVhdGVUZWFjaGluZ1Rhc2tSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2'
+    'UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0Eh8KC3RhcmdldF90eXBlGAIgASgFUgp0YXJnZXRU'
+    'eXBlEhsKCWNvdXJzZV9pZBgDIAEoA1IIY291cnNlSWQSIgoNZWR1X3NjaGVtZV9pZBgEIAEoA1'
+    'ILZWR1U2NoZW1lSWQSGwoJY2xhc3NfaWRzGAUgAygDUghjbGFzc0lkcw==');
+
+@$core.Deprecated('Use createTeachingTaskResponseDescriptor instead')
+const CreateTeachingTaskResponse$json = {
+  '1': 'CreateTeachingTaskResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'task_ids', '3': 2, '4': 3, '5': 3, '10': 'taskIds'},
+    {'1': 'created_count', '3': 3, '4': 1, '5': 5, '10': 'createdCount'},
+    {'1': 'existed_count', '3': 4, '4': 1, '5': 5, '10': 'existedCount'},
+  ],
+};
+
+/// Descriptor for `CreateTeachingTaskResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createTeachingTaskResponseDescriptor = $convert.base64Decode(
+    'ChpDcmVhdGVUZWFjaGluZ1Rhc2tSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLk'
+    'Jhc2VSZXNwb25zZVIIYmFzZVJlc3ASGQoIdGFza19pZHMYAiADKANSB3Rhc2tJZHMSIwoNY3Jl'
+    'YXRlZF9jb3VudBgDIAEoBVIMY3JlYXRlZENvdW50EiMKDWV4aXN0ZWRfY291bnQYBCABKAVSDG'
+    'V4aXN0ZWRDb3VudA==');
 

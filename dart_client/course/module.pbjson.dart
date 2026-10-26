@@ -44,6 +44,7 @@ const CourseResource$json = {
     {'1': 'resource_url', '3': 6, '4': 1, '5': 9, '10': 'resourceUrl'},
     {'1': 'resource_content', '3': 7, '4': 1, '5': 9, '10': 'resourceContent'},
     {'1': 'files', '3': 8, '4': 3, '5': 11, '6': '.glory_api.CourseResourceFile', '10': 'files'},
+    {'1': 'node_key', '3': 9, '4': 1, '5': 9, '10': 'nodeKey'},
   ],
 };
 
@@ -54,7 +55,7 @@ final $typed_data.Uint8List courseResourceDescriptor = $convert.base64Decode(
     'cmVzb3VyY2VUeXBlEiMKDXJlc291cmNlX3BhdGgYBSABKAlSDHJlc291cmNlUGF0aBIhCgxyZX'
     'NvdXJjZV91cmwYBiABKAlSC3Jlc291cmNlVXJsEikKEHJlc291cmNlX2NvbnRlbnQYByABKAlS'
     'D3Jlc291cmNlQ29udGVudBIzCgVmaWxlcxgIIAMoCzIdLmdsb3J5X2FwaS5Db3Vyc2VSZXNvdX'
-    'JjZUZpbGVSBWZpbGVz');
+    'JjZUZpbGVSBWZpbGVzEhkKCG5vZGVfa2V5GAkgASgJUgdub2RlS2V5');
 
 @$core.Deprecated('Use courseChapterDescriptor instead')
 const CourseChapter$json = {

@@ -128,7 +128,7 @@ private static final long serialVersionUID = 0L;
   private int courseProgress ;
   /**
    * <pre>
-   * 当前课程总进度
+   * 当前课程总进度(基于逐节记录聚合)
    * </pre>
    *
    * <code>int32 course_progress = 2;</code>
@@ -593,7 +593,7 @@ private static final long serialVersionUID = 0L;
     private int courseProgress ;
     /**
      * <pre>
-     * 当前课程总进度
+     * 当前课程总进度(基于逐节记录聚合)
      * </pre>
      *
      * <code>int32 course_progress = 2;</code>
@@ -605,7 +605,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 当前课程总进度
+     * 当前课程总进度(基于逐节记录聚合)
      * </pre>
      *
      * <code>int32 course_progress = 2;</code>
@@ -620,7 +620,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 当前课程总进度
+     * 当前课程总进度(基于逐节记录聚合)
      * </pre>
      *
      * <code>int32 course_progress = 2;</code>

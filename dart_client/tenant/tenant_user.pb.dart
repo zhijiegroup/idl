@@ -1271,6 +1271,284 @@ class ListTenantStudentResponse extends $pb.GeneratedMessage {
   $1.PaginationResponse ensurePagination() => $_ensure(2);
 }
 
+/// 教师所辖班级项
+class TeacherClassItem extends $pb.GeneratedMessage {
+  factory TeacherClassItem({
+    $fixnum.Int64? classId,
+    $core.String? className,
+    $fixnum.Int64? majorId,
+    $core.String? majorName,
+    $core.String? majorCode,
+    $fixnum.Int64? studentNum,
+  }) {
+    final $result = create();
+    if (classId != null) {
+      $result.classId = classId;
+    }
+    if (className != null) {
+      $result.className = className;
+    }
+    if (majorId != null) {
+      $result.majorId = majorId;
+    }
+    if (majorName != null) {
+      $result.majorName = majorName;
+    }
+    if (majorCode != null) {
+      $result.majorCode = majorCode;
+    }
+    if (studentNum != null) {
+      $result.studentNum = studentNum;
+    }
+    return $result;
+  }
+  TeacherClassItem._() : super();
+  factory TeacherClassItem.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TeacherClassItem.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TeacherClassItem', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'classId')
+    ..aOS(2, _omitFieldNames ? '' : 'className')
+    ..aInt64(3, _omitFieldNames ? '' : 'majorId')
+    ..aOS(4, _omitFieldNames ? '' : 'majorName')
+    ..aOS(5, _omitFieldNames ? '' : 'majorCode')
+    ..aInt64(6, _omitFieldNames ? '' : 'studentNum')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TeacherClassItem clone() => TeacherClassItem()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TeacherClassItem copyWith(void Function(TeacherClassItem) updates) => super.copyWith((message) => updates(message as TeacherClassItem)) as TeacherClassItem;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TeacherClassItem create() => TeacherClassItem._();
+  TeacherClassItem createEmptyInstance() => create();
+  static $pb.PbList<TeacherClassItem> createRepeated() => $pb.PbList<TeacherClassItem>();
+  @$core.pragma('dart2js:noInline')
+  static TeacherClassItem getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TeacherClassItem>(create);
+  static TeacherClassItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get classId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set classId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasClassId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearClassId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get className => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set className($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasClassName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearClassName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get majorId => $_getI64(2);
+  @$pb.TagNumber(3)
+  set majorId($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasMajorId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMajorId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get majorName => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set majorName($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasMajorName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMajorName() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get majorCode => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set majorCode($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasMajorCode() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMajorCode() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get studentNum => $_getI64(5);
+  @$pb.TagNumber(6)
+  set studentNum($fixnum.Int64 v) { $_setInt64(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasStudentNum() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearStudentNum() => clearField(6);
+}
+
+/// 教师所辖班级列表(按教师所属专业展开班级)
+class ListTeacherClassRequest extends $pb.GeneratedMessage {
+  factory ListTeacherClassRequest({
+    $1.BaseRequest? baseRequest,
+    $core.String? majorCode,
+    $core.String? name,
+    $1.PaginationRequest? pagination,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (majorCode != null) {
+      $result.majorCode = majorCode;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
+    }
+    return $result;
+  }
+  ListTeacherClassRequest._() : super();
+  factory ListTeacherClassRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListTeacherClassRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListTeacherClassRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'majorCode')
+    ..aOS(3, _omitFieldNames ? '' : 'name')
+    ..aOM<$1.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListTeacherClassRequest clone() => ListTeacherClassRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListTeacherClassRequest copyWith(void Function(ListTeacherClassRequest) updates) => super.copyWith((message) => updates(message as ListTeacherClassRequest)) as ListTeacherClassRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListTeacherClassRequest create() => ListTeacherClassRequest._();
+  ListTeacherClassRequest createEmptyInstance() => create();
+  static $pb.PbList<ListTeacherClassRequest> createRepeated() => $pb.PbList<ListTeacherClassRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListTeacherClassRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListTeacherClassRequest>(create);
+  static ListTeacherClassRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $1.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get majorCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set majorCode($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasMajorCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMajorCode() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get name => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set name($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearName() => clearField(3);
+
+  @$pb.TagNumber(100)
+  $1.PaginationRequest get pagination => $_getN(3);
+  @$pb.TagNumber(100)
+  set pagination($1.PaginationRequest v) { setField(100, v); }
+  @$pb.TagNumber(100)
+  $core.bool hasPagination() => $_has(3);
+  @$pb.TagNumber(100)
+  void clearPagination() => clearField(100);
+  @$pb.TagNumber(100)
+  $1.PaginationRequest ensurePagination() => $_ensure(3);
+}
+
+class ListTeacherClassResponse extends $pb.GeneratedMessage {
+  factory ListTeacherClassResponse({
+    $1.BaseResponse? baseResp,
+    $core.Iterable<TeacherClassItem>? classes,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (classes != null) {
+      $result.classes.addAll(classes);
+    }
+    return $result;
+  }
+  ListTeacherClassResponse._() : super();
+  factory ListTeacherClassResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListTeacherClassResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListTeacherClassResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
+    ..pc<TeacherClassItem>(2, _omitFieldNames ? '' : 'classes', $pb.PbFieldType.PM, subBuilder: TeacherClassItem.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListTeacherClassResponse clone() => ListTeacherClassResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListTeacherClassResponse copyWith(void Function(ListTeacherClassResponse) updates) => super.copyWith((message) => updates(message as ListTeacherClassResponse)) as ListTeacherClassResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListTeacherClassResponse create() => ListTeacherClassResponse._();
+  ListTeacherClassResponse createEmptyInstance() => create();
+  static $pb.PbList<ListTeacherClassResponse> createRepeated() => $pb.PbList<ListTeacherClassResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListTeacherClassResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListTeacherClassResponse>(create);
+  static ListTeacherClassResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $1.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($1.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<TeacherClassItem> get classes => $_getList(1);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

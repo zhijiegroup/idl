@@ -135,6 +135,8 @@ class Course extends $pb.GeneratedMessage {
     $core.String? createdAt,
     $core.bool? assigned,
     $core.String? language,
+    $core.int? majorCategory,
+    $core.int? courseAttribute,
   }) {
     final $result = create();
     if (courseId != null) {
@@ -197,6 +199,12 @@ class Course extends $pb.GeneratedMessage {
     if (language != null) {
       $result.language = language;
     }
+    if (majorCategory != null) {
+      $result.majorCategory = majorCategory;
+    }
+    if (courseAttribute != null) {
+      $result.courseAttribute = courseAttribute;
+    }
     return $result;
   }
   Course._() : super();
@@ -224,6 +232,8 @@ class Course extends $pb.GeneratedMessage {
     ..aOS(18, _omitFieldNames ? '' : 'createdAt')
     ..aOB(19, _omitFieldNames ? '' : 'assigned')
     ..aOS(20, _omitFieldNames ? '' : 'language')
+    ..a<$core.int>(21, _omitFieldNames ? '' : 'majorCategory', $pb.PbFieldType.O3)
+    ..a<$core.int>(22, _omitFieldNames ? '' : 'courseAttribute', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -415,6 +425,24 @@ class Course extends $pb.GeneratedMessage {
   $core.bool hasLanguage() => $_has(19);
   @$pb.TagNumber(20)
   void clearLanguage() => clearField(20);
+
+  @$pb.TagNumber(21)
+  $core.int get majorCategory => $_getIZ(20);
+  @$pb.TagNumber(21)
+  set majorCategory($core.int v) { $_setSignedInt32(20, v); }
+  @$pb.TagNumber(21)
+  $core.bool hasMajorCategory() => $_has(20);
+  @$pb.TagNumber(21)
+  void clearMajorCategory() => clearField(21);
+
+  @$pb.TagNumber(22)
+  $core.int get courseAttribute => $_getIZ(21);
+  @$pb.TagNumber(22)
+  set courseAttribute($core.int v) { $_setSignedInt32(21, v); }
+  @$pb.TagNumber(22)
+  $core.bool hasCourseAttribute() => $_has(21);
+  @$pb.TagNumber(22)
+  void clearCourseAttribute() => clearField(22);
 }
 
 /// 创建模块化课程
@@ -983,6 +1011,9 @@ class ListCourseRequest extends $pb.GeneratedMessage {
     $core.String? key,
     $core.bool? assigned,
     $core.Iterable<$core.String>? language,
+    $core.bool? purchasedFirst,
+    $core.int? majorCategory,
+    $core.Iterable<$core.int>? courseAttribute,
     $1.PaginationRequest? pagination,
   }) {
     final $result = create();
@@ -1019,6 +1050,15 @@ class ListCourseRequest extends $pb.GeneratedMessage {
     if (language != null) {
       $result.language.addAll(language);
     }
+    if (purchasedFirst != null) {
+      $result.purchasedFirst = purchasedFirst;
+    }
+    if (majorCategory != null) {
+      $result.majorCategory = majorCategory;
+    }
+    if (courseAttribute != null) {
+      $result.courseAttribute.addAll(courseAttribute);
+    }
     if (pagination != null) {
       $result.pagination = pagination;
     }
@@ -1040,6 +1080,9 @@ class ListCourseRequest extends $pb.GeneratedMessage {
     ..aOS(10, _omitFieldNames ? '' : 'key')
     ..aOB(11, _omitFieldNames ? '' : 'assigned')
     ..pPS(12, _omitFieldNames ? '' : 'language')
+    ..aOB(13, _omitFieldNames ? '' : 'purchasedFirst')
+    ..a<$core.int>(14, _omitFieldNames ? '' : 'majorCategory', $pb.PbFieldType.O3)
+    ..p<$core.int>(15, _omitFieldNames ? '' : 'courseAttribute', $pb.PbFieldType.K3)
     ..aOM<$1.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -1130,16 +1173,37 @@ class ListCourseRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(12)
   $core.List<$core.String> get language => $_getList(10);
 
+  @$pb.TagNumber(13)
+  $core.bool get purchasedFirst => $_getBF(11);
+  @$pb.TagNumber(13)
+  set purchasedFirst($core.bool v) { $_setBool(11, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasPurchasedFirst() => $_has(11);
+  @$pb.TagNumber(13)
+  void clearPurchasedFirst() => clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.int get majorCategory => $_getIZ(12);
+  @$pb.TagNumber(14)
+  set majorCategory($core.int v) { $_setSignedInt32(12, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasMajorCategory() => $_has(12);
+  @$pb.TagNumber(14)
+  void clearMajorCategory() => clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.List<$core.int> get courseAttribute => $_getList(13);
+
   @$pb.TagNumber(100)
-  $1.PaginationRequest get pagination => $_getN(11);
+  $1.PaginationRequest get pagination => $_getN(14);
   @$pb.TagNumber(100)
   set pagination($1.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasPagination() => $_has(11);
+  $core.bool hasPagination() => $_has(14);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $1.PaginationRequest ensurePagination() => $_ensure(11);
+  $1.PaginationRequest ensurePagination() => $_ensure(14);
 }
 
 class ListCourseResponse extends $pb.GeneratedMessage {
@@ -1668,6 +1732,65 @@ class CourseType extends $pb.GeneratedMessage {
   $core.List<CourseType> get children => $_getList(2);
 }
 
+/// 专业大类与可选专业的映射
+class MajorCategoryGroup extends $pb.GeneratedMessage {
+  factory MajorCategoryGroup({
+    $core.int? majorCategory,
+    $core.Iterable<$core.String>? major,
+  }) {
+    final $result = create();
+    if (majorCategory != null) {
+      $result.majorCategory = majorCategory;
+    }
+    if (major != null) {
+      $result.major.addAll(major);
+    }
+    return $result;
+  }
+  MajorCategoryGroup._() : super();
+  factory MajorCategoryGroup.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MajorCategoryGroup.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MajorCategoryGroup', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'majorCategory', $pb.PbFieldType.O3)
+    ..pPS(2, _omitFieldNames ? '' : 'major')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  MajorCategoryGroup clone() => MajorCategoryGroup()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MajorCategoryGroup copyWith(void Function(MajorCategoryGroup) updates) => super.copyWith((message) => updates(message as MajorCategoryGroup)) as MajorCategoryGroup;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MajorCategoryGroup create() => MajorCategoryGroup._();
+  MajorCategoryGroup createEmptyInstance() => create();
+  static $pb.PbList<MajorCategoryGroup> createRepeated() => $pb.PbList<MajorCategoryGroup>();
+  @$core.pragma('dart2js:noInline')
+  static MajorCategoryGroup getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MajorCategoryGroup>(create);
+  static MajorCategoryGroup? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get majorCategory => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set majorCategory($core.int v) { $_setSignedInt32(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasMajorCategory() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMajorCategory() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<$core.String> get major => $_getList(1);
+}
+
 class GetCourseTypeTreeRequest extends $pb.GeneratedMessage {
   factory GetCourseTypeTreeRequest({
     $1.BaseRequest? baseRequest,
@@ -1854,6 +1977,9 @@ class GetCourseTypeListResponse extends $pb.GeneratedMessage {
     $core.Iterable<CourseType>? majors,
     $core.Iterable<CourseType>? industries,
     $core.Iterable<CourseType>? languages,
+    $core.Iterable<CourseType>? majorCategories,
+    $core.Iterable<CourseType>? courseAttributes,
+    $core.Iterable<MajorCategoryGroup>? majorCategoryMajors,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -1874,6 +2000,15 @@ class GetCourseTypeListResponse extends $pb.GeneratedMessage {
     if (languages != null) {
       $result.languages.addAll(languages);
     }
+    if (majorCategories != null) {
+      $result.majorCategories.addAll(majorCategories);
+    }
+    if (courseAttributes != null) {
+      $result.courseAttributes.addAll(courseAttributes);
+    }
+    if (majorCategoryMajors != null) {
+      $result.majorCategoryMajors.addAll(majorCategoryMajors);
+    }
     return $result;
   }
   GetCourseTypeListResponse._() : super();
@@ -1887,6 +2022,9 @@ class GetCourseTypeListResponse extends $pb.GeneratedMessage {
     ..pc<CourseType>(4, _omitFieldNames ? '' : 'majors', $pb.PbFieldType.PM, subBuilder: CourseType.create)
     ..pc<CourseType>(5, _omitFieldNames ? '' : 'industries', $pb.PbFieldType.PM, subBuilder: CourseType.create)
     ..pc<CourseType>(6, _omitFieldNames ? '' : 'languages', $pb.PbFieldType.PM, subBuilder: CourseType.create)
+    ..pc<CourseType>(7, _omitFieldNames ? '' : 'majorCategories', $pb.PbFieldType.PM, subBuilder: CourseType.create)
+    ..pc<CourseType>(8, _omitFieldNames ? '' : 'courseAttributes', $pb.PbFieldType.PM, subBuilder: CourseType.create)
+    ..pc<MajorCategoryGroup>(9, _omitFieldNames ? '' : 'majorCategoryMajors', $pb.PbFieldType.PM, subBuilder: MajorCategoryGroup.create)
     ..hasRequiredFields = false
   ;
 
@@ -1936,6 +2074,15 @@ class GetCourseTypeListResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(6)
   $core.List<CourseType> get languages => $_getList(5);
+
+  @$pb.TagNumber(7)
+  $core.List<CourseType> get majorCategories => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $core.List<CourseType> get courseAttributes => $_getList(7);
+
+  @$pb.TagNumber(9)
+  $core.List<MajorCategoryGroup> get majorCategoryMajors => $_getList(8);
 }
 
 

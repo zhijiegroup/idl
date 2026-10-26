@@ -438,6 +438,7 @@ class UpdateCourseProgressRequest extends $pb.GeneratedMessage {
     $fixnum.Int64? chapterResourceId,
     $core.double? chapterResourceProgress,
     $core.double? chapterResourceDuration,
+    $core.double? roomPlayPosition,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -455,6 +456,9 @@ class UpdateCourseProgressRequest extends $pb.GeneratedMessage {
     if (chapterResourceDuration != null) {
       $result.chapterResourceDuration = chapterResourceDuration;
     }
+    if (roomPlayPosition != null) {
+      $result.roomPlayPosition = roomPlayPosition;
+    }
     return $result;
   }
   UpdateCourseProgressRequest._() : super();
@@ -467,6 +471,7 @@ class UpdateCourseProgressRequest extends $pb.GeneratedMessage {
     ..aInt64(3, _omitFieldNames ? '' : 'chapterResourceId')
     ..a<$core.double>(4, _omitFieldNames ? '' : 'chapterResourceProgress', $pb.PbFieldType.OF)
     ..a<$core.double>(5, _omitFieldNames ? '' : 'chapterResourceDuration', $pb.PbFieldType.OF)
+    ..a<$core.double>(6, _omitFieldNames ? '' : 'roomPlayPosition', $pb.PbFieldType.OF)
     ..hasRequiredFields = false
   ;
 
@@ -537,6 +542,15 @@ class UpdateCourseProgressRequest extends $pb.GeneratedMessage {
   $core.bool hasChapterResourceDuration() => $_has(4);
   @$pb.TagNumber(5)
   void clearChapterResourceDuration() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.double get roomPlayPosition => $_getN(5);
+  @$pb.TagNumber(6)
+  set roomPlayPosition($core.double v) { $_setFloat(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasRoomPlayPosition() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearRoomPlayPosition() => clearField(6);
 }
 
 class UpdateCourseProgressResponse extends $pb.GeneratedMessage {
@@ -751,6 +765,433 @@ class ListMyCourseResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(2)
   $core.List<UserCourseSummary> get userCourses => $_getList(1);
+
+  @$pb.TagNumber(100)
+  $0.PaginationResponse get pagination => $_getN(2);
+  @$pb.TagNumber(100)
+  set pagination($0.PaginationResponse v) { setField(100, v); }
+  @$pb.TagNumber(100)
+  $core.bool hasPagination() => $_has(2);
+  @$pb.TagNumber(100)
+  void clearPagination() => clearField(100);
+  @$pb.TagNumber(100)
+  $0.PaginationResponse ensurePagination() => $_ensure(2);
+}
+
+/// 收藏课节卡片
+class FavoriteLessonItem extends $pb.GeneratedMessage {
+  factory FavoriteLessonItem({
+    $fixnum.Int64? courseId,
+    $core.String? courseName,
+    $core.String? courseCoverUrl,
+    $core.String? nodeKey,
+    $core.String? lessonName,
+    $core.String? chapterPath,
+    $core.String? createdAt,
+  }) {
+    final $result = create();
+    if (courseId != null) {
+      $result.courseId = courseId;
+    }
+    if (courseName != null) {
+      $result.courseName = courseName;
+    }
+    if (courseCoverUrl != null) {
+      $result.courseCoverUrl = courseCoverUrl;
+    }
+    if (nodeKey != null) {
+      $result.nodeKey = nodeKey;
+    }
+    if (lessonName != null) {
+      $result.lessonName = lessonName;
+    }
+    if (chapterPath != null) {
+      $result.chapterPath = chapterPath;
+    }
+    if (createdAt != null) {
+      $result.createdAt = createdAt;
+    }
+    return $result;
+  }
+  FavoriteLessonItem._() : super();
+  factory FavoriteLessonItem.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FavoriteLessonItem.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FavoriteLessonItem', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'courseId')
+    ..aOS(2, _omitFieldNames ? '' : 'courseName')
+    ..aOS(3, _omitFieldNames ? '' : 'courseCoverUrl')
+    ..aOS(4, _omitFieldNames ? '' : 'nodeKey')
+    ..aOS(5, _omitFieldNames ? '' : 'lessonName')
+    ..aOS(6, _omitFieldNames ? '' : 'chapterPath')
+    ..aOS(7, _omitFieldNames ? '' : 'createdAt')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  FavoriteLessonItem clone() => FavoriteLessonItem()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  FavoriteLessonItem copyWith(void Function(FavoriteLessonItem) updates) => super.copyWith((message) => updates(message as FavoriteLessonItem)) as FavoriteLessonItem;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FavoriteLessonItem create() => FavoriteLessonItem._();
+  FavoriteLessonItem createEmptyInstance() => create();
+  static $pb.PbList<FavoriteLessonItem> createRepeated() => $pb.PbList<FavoriteLessonItem>();
+  @$core.pragma('dart2js:noInline')
+  static FavoriteLessonItem getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FavoriteLessonItem>(create);
+  static FavoriteLessonItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get courseId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set courseId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasCourseId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCourseId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get courseName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set courseName($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCourseName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCourseName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get courseCoverUrl => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set courseCoverUrl($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasCourseCoverUrl() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCourseCoverUrl() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get nodeKey => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set nodeKey($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasNodeKey() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearNodeKey() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get lessonName => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set lessonName($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasLessonName() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLessonName() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get chapterPath => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set chapterPath($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasChapterPath() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearChapterPath() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get createdAt => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set createdAt($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasCreatedAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCreatedAt() => clearField(7);
+}
+
+/// 收藏/取消收藏课节(幂等，重复调用返回成功)
+class FavoriteLessonRequest extends $pb.GeneratedMessage {
+  factory FavoriteLessonRequest({
+    $0.BaseRequest? baseRequest,
+    $fixnum.Int64? courseId,
+    $core.String? nodeKey,
+    $core.bool? favorite,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (courseId != null) {
+      $result.courseId = courseId;
+    }
+    if (nodeKey != null) {
+      $result.nodeKey = nodeKey;
+    }
+    if (favorite != null) {
+      $result.favorite = favorite;
+    }
+    return $result;
+  }
+  FavoriteLessonRequest._() : super();
+  factory FavoriteLessonRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FavoriteLessonRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FavoriteLessonRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'courseId')
+    ..aOS(3, _omitFieldNames ? '' : 'nodeKey')
+    ..aOB(4, _omitFieldNames ? '' : 'favorite')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  FavoriteLessonRequest clone() => FavoriteLessonRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  FavoriteLessonRequest copyWith(void Function(FavoriteLessonRequest) updates) => super.copyWith((message) => updates(message as FavoriteLessonRequest)) as FavoriteLessonRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FavoriteLessonRequest create() => FavoriteLessonRequest._();
+  FavoriteLessonRequest createEmptyInstance() => create();
+  static $pb.PbList<FavoriteLessonRequest> createRepeated() => $pb.PbList<FavoriteLessonRequest>();
+  @$core.pragma('dart2js:noInline')
+  static FavoriteLessonRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FavoriteLessonRequest>(create);
+  static FavoriteLessonRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get courseId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set courseId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCourseId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCourseId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get nodeKey => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set nodeKey($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasNodeKey() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNodeKey() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get favorite => $_getBF(3);
+  @$pb.TagNumber(4)
+  set favorite($core.bool v) { $_setBool(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasFavorite() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearFavorite() => clearField(4);
+}
+
+class FavoriteLessonResponse extends $pb.GeneratedMessage {
+  factory FavoriteLessonResponse({
+    $0.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  FavoriteLessonResponse._() : super();
+  factory FavoriteLessonResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FavoriteLessonResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FavoriteLessonResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  FavoriteLessonResponse clone() => FavoriteLessonResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  FavoriteLessonResponse copyWith(void Function(FavoriteLessonResponse) updates) => super.copyWith((message) => updates(message as FavoriteLessonResponse)) as FavoriteLessonResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FavoriteLessonResponse create() => FavoriteLessonResponse._();
+  FavoriteLessonResponse createEmptyInstance() => create();
+  static $pb.PbList<FavoriteLessonResponse> createRepeated() => $pb.PbList<FavoriteLessonResponse>();
+  @$core.pragma('dart2js:noInline')
+  static FavoriteLessonResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FavoriteLessonResponse>(create);
+  static FavoriteLessonResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
+/// 我的收藏课节列表(按收藏时间倒序)
+class ListMyFavoriteLessonRequest extends $pb.GeneratedMessage {
+  factory ListMyFavoriteLessonRequest({
+    $0.BaseRequest? baseRequest,
+    $0.PaginationRequest? pagination,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
+    }
+    return $result;
+  }
+  ListMyFavoriteLessonRequest._() : super();
+  factory ListMyFavoriteLessonRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListMyFavoriteLessonRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyFavoriteLessonRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListMyFavoriteLessonRequest clone() => ListMyFavoriteLessonRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListMyFavoriteLessonRequest copyWith(void Function(ListMyFavoriteLessonRequest) updates) => super.copyWith((message) => updates(message as ListMyFavoriteLessonRequest)) as ListMyFavoriteLessonRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyFavoriteLessonRequest create() => ListMyFavoriteLessonRequest._();
+  ListMyFavoriteLessonRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMyFavoriteLessonRequest> createRepeated() => $pb.PbList<ListMyFavoriteLessonRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyFavoriteLessonRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyFavoriteLessonRequest>(create);
+  static ListMyFavoriteLessonRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(100)
+  $0.PaginationRequest get pagination => $_getN(1);
+  @$pb.TagNumber(100)
+  set pagination($0.PaginationRequest v) { setField(100, v); }
+  @$pb.TagNumber(100)
+  $core.bool hasPagination() => $_has(1);
+  @$pb.TagNumber(100)
+  void clearPagination() => clearField(100);
+  @$pb.TagNumber(100)
+  $0.PaginationRequest ensurePagination() => $_ensure(1);
+}
+
+class ListMyFavoriteLessonResponse extends $pb.GeneratedMessage {
+  factory ListMyFavoriteLessonResponse({
+    $0.BaseResponse? baseResp,
+    $core.Iterable<FavoriteLessonItem>? items,
+    $0.PaginationResponse? pagination,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (items != null) {
+      $result.items.addAll(items);
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
+    }
+    return $result;
+  }
+  ListMyFavoriteLessonResponse._() : super();
+  factory ListMyFavoriteLessonResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListMyFavoriteLessonResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyFavoriteLessonResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..pc<FavoriteLessonItem>(2, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: FavoriteLessonItem.create)
+    ..aOM<$0.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListMyFavoriteLessonResponse clone() => ListMyFavoriteLessonResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListMyFavoriteLessonResponse copyWith(void Function(ListMyFavoriteLessonResponse) updates) => super.copyWith((message) => updates(message as ListMyFavoriteLessonResponse)) as ListMyFavoriteLessonResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyFavoriteLessonResponse create() => ListMyFavoriteLessonResponse._();
+  ListMyFavoriteLessonResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMyFavoriteLessonResponse> createRepeated() => $pb.PbList<ListMyFavoriteLessonResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyFavoriteLessonResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyFavoriteLessonResponse>(create);
+  static ListMyFavoriteLessonResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<FavoriteLessonItem> get items => $_getList(1);
 
   @$pb.TagNumber(100)
   $0.PaginationResponse get pagination => $_getN(2);

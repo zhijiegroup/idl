@@ -4,6 +4,10 @@
 package com.zhijiejiaoyu.glory_api.course;
 
 /**
+ * <pre>
+ * 删除课程体系：级联删除班级分配关系与关联授课任务(含进度)
+ * </pre>
+ *
  * Protobuf type {@code glory_api.DeleteEduSchemeRequest}
  */
 public final class DeleteEduSchemeRequest extends
@@ -308,6 +312,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * 删除课程体系：级联删除班级分配关系与关联授课任务(含进度)
+   * </pre>
+   *
    * Protobuf type {@code glory_api.DeleteEduSchemeRequest}
    */
   public static final class Builder extends

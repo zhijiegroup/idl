@@ -115,7 +115,7 @@ nonisolated struct GloryApi_Course: @unchecked Sendable {
     set {_uniqueStorage()._courseClassification = newValue}
   }
 
-  /// 课程层次：1.中职；2.高职；3.中高职
+  /// 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
   var courseLevel: Int32 {
     get {_storage._courseLevel}
     set {_uniqueStorage()._courseLevel = newValue}
@@ -166,6 +166,18 @@ nonisolated struct GloryApi_Course: @unchecked Sendable {
   var language: String {
     get {_storage._language}
     set {_uniqueStorage()._language = newValue}
+  }
+
+  /// 专业大类：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+  var majorCategory: Int32 {
+    get {_storage._majorCategory}
+    set {_uniqueStorage()._majorCategory = newValue}
+  }
+
+  /// 课程属性：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+  var courseAttribute: Int32 {
+    get {_storage._courseAttribute}
+    set {_uniqueStorage()._courseAttribute = newValue}
   }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -391,65 +403,112 @@ nonisolated struct GloryApi_DeleteCourseResponse: Sendable {
 }
 
 /// 模块化课程列表
-nonisolated struct GloryApi_ListCourseRequest: Sendable {
+nonisolated struct GloryApi_ListCourseRequest: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {_baseRequest ?? Base_BaseRequest()}
-    set {_baseRequest = newValue}
+    get {_storage._baseRequest ?? Base_BaseRequest()}
+    set {_uniqueStorage()._baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {self._baseRequest != nil}
+  var hasBaseRequest: Bool {_storage._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
-  mutating func clearBaseRequest() {self._baseRequest = nil}
+  mutating func clearBaseRequest() {_uniqueStorage()._baseRequest = nil}
 
   /// 课程分类
-  var courseClassification: [Int32] = []
+  var courseClassification: [Int32] {
+    get {_storage._courseClassification}
+    set {_uniqueStorage()._courseClassification = newValue}
+  }
 
   /// 全部:0 模块化课程:1 非模块化课程:2 定制课程：3
-  var courseModule: Int32 = 0
+  var courseModule: Int32 {
+    get {_storage._courseModule}
+    set {_uniqueStorage()._courseModule = newValue}
+  }
 
-  /// 专业代码
-  var major: [String] = []
+  /// 专业代码(EC 电子商务/DM 数字媒体/AM 汽车制造/ME 机电设备/GS 公共基础与素养)
+  var major: [String] {
+    get {_storage._major}
+    set {_uniqueStorage()._major = newValue}
+  }
 
-  /// 1: 中职 2:高职 3: 中高职
-  var level: [Int32] = []
+  /// 课程层次(多选)：1: 中职 2: 高职专科 3: 职业本科 4: 职场
+  var level: [Int32] {
+    get {_storage._level}
+    set {_uniqueStorage()._level = newValue}
+  }
 
   /// 1: 专业核心课 2:名师公开课
-  var courseType: [Int32] = []
+  var courseType: [Int32] {
+    get {_storage._courseType}
+    set {_uniqueStorage()._courseType = newValue}
+  }
 
   /// 课程所属行业
-  var courseIndustry: [String] = []
+  var courseIndustry: [String] {
+    get {_storage._courseIndustry}
+    set {_uniqueStorage()._courseIndustry = newValue}
+  }
 
   /// 是否需要精简数据
-  var simple: Bool = false
+  var simple: Bool {
+    get {_storage._simple}
+    set {_uniqueStorage()._simple = newValue}
+  }
 
   /// 模糊查询字段
-  var key: String = String()
+  var key: String {
+    get {_storage._key}
+    set {_uniqueStorage()._key = newValue}
+  }
 
   /// 是否只查询已购买的课程
-  var assigned: Bool = false
+  var assigned: Bool {
+    get {_storage._assigned}
+    set {_uniqueStorage()._assigned = newValue}
+  }
 
-  /// 课程语言
-  var language: [String] = []
+  /// 课程语言(zh/thai，单选传单元素)
+  var language: [String] {
+    get {_storage._language}
+    set {_uniqueStorage()._language = newValue}
+  }
+
+  /// 已购买置顶排序开关，默认true(已购买置顶+创建时间倒序)
+  var purchasedFirst: Bool {
+    get {_storage._purchasedFirst}
+    set {_uniqueStorage()._purchasedFirst = newValue}
+  }
+
+  /// 专业大类(单选)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+  var majorCategory: Int32 {
+    get {_storage._majorCategory}
+    set {_uniqueStorage()._majorCategory = newValue}
+  }
+
+  /// 课程属性(多选)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+  var courseAttribute: [Int32] {
+    get {_storage._courseAttribute}
+    set {_uniqueStorage()._courseAttribute = newValue}
+  }
 
   var pagination: Base_PaginationRequest {
-    get {_pagination ?? Base_PaginationRequest()}
-    set {_pagination = newValue}
+    get {_storage._pagination ?? Base_PaginationRequest()}
+    set {_uniqueStorage()._pagination = newValue}
   }
   /// Returns true if `pagination` has been explicitly set.
-  var hasPagination: Bool {self._pagination != nil}
+  var hasPagination: Bool {_storage._pagination != nil}
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
-  mutating func clearPagination() {self._pagination = nil}
+  mutating func clearPagination() {_uniqueStorage()._pagination = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _baseRequest: Base_BaseRequest? = nil
-  fileprivate var _pagination: Base_PaginationRequest? = nil
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 nonisolated struct GloryApi_ListCourseResponse: Sendable {
@@ -639,6 +698,23 @@ nonisolated struct GloryApi_CourseType: Sendable {
   init() {}
 }
 
+/// 专业大类与可选专业的映射
+nonisolated struct GloryApi_MajorCategoryGroup: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  /// 专业大类：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+  var majorCategory: Int32 = 0
+
+  /// 该大类下可选的专业代码；GS 公共基础与素养不隶属任何大类且始终可选
+  var major: [String] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 nonisolated struct GloryApi_GetCourseTypeTreeRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -720,15 +796,26 @@ nonisolated struct GloryApi_GetCourseTypeListResponse: Sendable {
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
+  /// 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
   var levels: [GloryApi_CourseType] = []
 
   var types: [GloryApi_CourseType] = []
 
+  /// 专业(含 AM 汽车制造；GS 公共基础与素养)
   var majors: [GloryApi_CourseType] = []
 
   var industries: [GloryApi_CourseType] = []
 
   var languages: [GloryApi_CourseType] = []
+
+  /// 专业大类(5项)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+  var majorCategories: [GloryApi_CourseType] = []
+
+  /// 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+  var courseAttributes: [GloryApi_CourseType] = []
+
+  /// 专业大类与专业映射
+  var majorCategoryMajors: [GloryApi_MajorCategoryGroup] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -797,7 +884,7 @@ nonisolated extension GloryApi_Occupation: SwiftProtobuf.Message, SwiftProtobuf.
 
 nonisolated extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Course"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}course_id\0\u{3}course_name\0\u{3}course_organization\0\u{3}course_teacher_name\0\u{3}knowledge_hours\0\u{3}skill_hours\0\u{3}course_description\0\u{3}course_occupation\0\u{3}course_cover_path\0\u{3}course_cover_url\0\u{3}course_classification\0\u{3}course_level\0\u{3}course_major\0\u{3}course_industry\0\u{3}course_type\0\u{3}course_module\0\u{3}course_modules\0\u{3}created_at\0\u{1}assigned\0\u{1}language\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}course_id\0\u{3}course_name\0\u{3}course_organization\0\u{3}course_teacher_name\0\u{3}knowledge_hours\0\u{3}skill_hours\0\u{3}course_description\0\u{3}course_occupation\0\u{3}course_cover_path\0\u{3}course_cover_url\0\u{3}course_classification\0\u{3}course_level\0\u{3}course_major\0\u{3}course_industry\0\u{3}course_type\0\u{3}course_module\0\u{3}course_modules\0\u{3}created_at\0\u{1}assigned\0\u{1}language\0\u{3}major_category\0\u{3}course_attribute\0")
 
   fileprivate class _StorageClass {
     var _courseID: Int64 = 0
@@ -820,6 +907,8 @@ nonisolated extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._Mes
     var _createdAt: String = String()
     var _assigned: Bool = false
     var _language: String = String()
+    var _majorCategory: Int32 = 0
+    var _courseAttribute: Int32 = 0
 
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
@@ -850,6 +939,8 @@ nonisolated extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._Mes
       _createdAt = source._createdAt
       _assigned = source._assigned
       _language = source._language
+      _majorCategory = source._majorCategory
+      _courseAttribute = source._courseAttribute
     }
   }
 
@@ -888,6 +979,8 @@ nonisolated extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._Mes
         case 18: try { try decoder.decodeSingularStringField(value: &_storage._createdAt) }()
         case 19: try { try decoder.decodeSingularBoolField(value: &_storage._assigned) }()
         case 20: try { try decoder.decodeSingularStringField(value: &_storage._language) }()
+        case 21: try { try decoder.decodeSingularInt32Field(value: &_storage._majorCategory) }()
+        case 22: try { try decoder.decodeSingularInt32Field(value: &_storage._courseAttribute) }()
         default: break
         }
       }
@@ -956,6 +1049,12 @@ nonisolated extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._Mes
       if !_storage._language.isEmpty {
         try visitor.visitSingularStringField(value: _storage._language, fieldNumber: 20)
       }
+      if _storage._majorCategory != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._majorCategory, fieldNumber: 21)
+      }
+      if _storage._courseAttribute != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._courseAttribute, fieldNumber: 22)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -985,6 +1084,8 @@ nonisolated extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._Mes
         if _storage._createdAt != rhs_storage._createdAt {return false}
         if _storage._assigned != rhs_storage._assigned {return false}
         if _storage._language != rhs_storage._language {return false}
+        if _storage._majorCategory != rhs_storage._majorCategory {return false}
+        if _storage._courseAttribute != rhs_storage._courseAttribute {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -1313,88 +1414,167 @@ nonisolated extension GloryApi_DeleteCourseResponse: SwiftProtobuf.Message, Swif
 
 nonisolated extension GloryApi_ListCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListCourseRequest"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}course_classification\0\u{3}course_module\0\u{1}major\0\u{1}level\0\u{3}course_type\0\u{3}course_industry\0\u{1}simple\0\u{2}\u{2}key\0\u{1}assigned\0\u{1}language\0\u{2}X\u{1}pagination\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}course_classification\0\u{3}course_module\0\u{1}major\0\u{1}level\0\u{3}course_type\0\u{3}course_industry\0\u{1}simple\0\u{2}\u{2}key\0\u{1}assigned\0\u{1}language\0\u{3}purchased_first\0\u{3}major_category\0\u{3}course_attribute\0\u{2}U\u{1}pagination\0")
+
+  fileprivate class _StorageClass {
+    var _baseRequest: Base_BaseRequest? = nil
+    var _courseClassification: [Int32] = []
+    var _courseModule: Int32 = 0
+    var _major: [String] = []
+    var _level: [Int32] = []
+    var _courseType: [Int32] = []
+    var _courseIndustry: [String] = []
+    var _simple: Bool = false
+    var _key: String = String()
+    var _assigned: Bool = false
+    var _language: [String] = []
+    var _purchasedFirst: Bool = false
+    var _majorCategory: Int32 = 0
+    var _courseAttribute: [Int32] = []
+    var _pagination: Base_PaginationRequest? = nil
+
+      // This property is used as the initial default value for new instances of the type.
+      // The type itself is protecting the reference to its storage via CoW semantics.
+      // This will force a copy to be made of this reference when the first mutation occurs;
+      // hence, it is safe to mark this as `nonisolated(unsafe)`.
+      static nonisolated(unsafe) let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _baseRequest = source._baseRequest
+      _courseClassification = source._courseClassification
+      _courseModule = source._courseModule
+      _major = source._major
+      _level = source._level
+      _courseType = source._courseType
+      _courseIndustry = source._courseIndustry
+      _simple = source._simple
+      _key = source._key
+      _assigned = source._assigned
+      _language = source._language
+      _purchasedFirst = source._purchasedFirst
+      _majorCategory = source._majorCategory
+      _courseAttribute = source._courseAttribute
+      _pagination = source._pagination
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeRepeatedInt32Field(value: &self.courseClassification) }()
-      case 3: try { try decoder.decodeSingularInt32Field(value: &self.courseModule) }()
-      case 4: try { try decoder.decodeRepeatedStringField(value: &self.major) }()
-      case 5: try { try decoder.decodeRepeatedInt32Field(value: &self.level) }()
-      case 6: try { try decoder.decodeRepeatedInt32Field(value: &self.courseType) }()
-      case 7: try { try decoder.decodeRepeatedStringField(value: &self.courseIndustry) }()
-      case 8: try { try decoder.decodeSingularBoolField(value: &self.simple) }()
-      case 10: try { try decoder.decodeSingularStringField(value: &self.key) }()
-      case 11: try { try decoder.decodeSingularBoolField(value: &self.assigned) }()
-      case 12: try { try decoder.decodeRepeatedStringField(value: &self.language) }()
-      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._baseRequest) }()
+        case 2: try { try decoder.decodeRepeatedInt32Field(value: &_storage._courseClassification) }()
+        case 3: try { try decoder.decodeSingularInt32Field(value: &_storage._courseModule) }()
+        case 4: try { try decoder.decodeRepeatedStringField(value: &_storage._major) }()
+        case 5: try { try decoder.decodeRepeatedInt32Field(value: &_storage._level) }()
+        case 6: try { try decoder.decodeRepeatedInt32Field(value: &_storage._courseType) }()
+        case 7: try { try decoder.decodeRepeatedStringField(value: &_storage._courseIndustry) }()
+        case 8: try { try decoder.decodeSingularBoolField(value: &_storage._simple) }()
+        case 10: try { try decoder.decodeSingularStringField(value: &_storage._key) }()
+        case 11: try { try decoder.decodeSingularBoolField(value: &_storage._assigned) }()
+        case 12: try { try decoder.decodeRepeatedStringField(value: &_storage._language) }()
+        case 13: try { try decoder.decodeSingularBoolField(value: &_storage._purchasedFirst) }()
+        case 14: try { try decoder.decodeSingularInt32Field(value: &_storage._majorCategory) }()
+        case 15: try { try decoder.decodeRepeatedInt32Field(value: &_storage._courseAttribute) }()
+        case 100: try { try decoder.decodeSingularMessageField(value: &_storage._pagination) }()
+        default: break
+        }
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseRequest {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    if !self.courseClassification.isEmpty {
-      try visitor.visitPackedInt32Field(value: self.courseClassification, fieldNumber: 2)
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      try { if let v = _storage._baseRequest {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+      } }()
+      if !_storage._courseClassification.isEmpty {
+        try visitor.visitPackedInt32Field(value: _storage._courseClassification, fieldNumber: 2)
+      }
+      if _storage._courseModule != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._courseModule, fieldNumber: 3)
+      }
+      if !_storage._major.isEmpty {
+        try visitor.visitRepeatedStringField(value: _storage._major, fieldNumber: 4)
+      }
+      if !_storage._level.isEmpty {
+        try visitor.visitPackedInt32Field(value: _storage._level, fieldNumber: 5)
+      }
+      if !_storage._courseType.isEmpty {
+        try visitor.visitPackedInt32Field(value: _storage._courseType, fieldNumber: 6)
+      }
+      if !_storage._courseIndustry.isEmpty {
+        try visitor.visitRepeatedStringField(value: _storage._courseIndustry, fieldNumber: 7)
+      }
+      if _storage._simple != false {
+        try visitor.visitSingularBoolField(value: _storage._simple, fieldNumber: 8)
+      }
+      if !_storage._key.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._key, fieldNumber: 10)
+      }
+      if _storage._assigned != false {
+        try visitor.visitSingularBoolField(value: _storage._assigned, fieldNumber: 11)
+      }
+      if !_storage._language.isEmpty {
+        try visitor.visitRepeatedStringField(value: _storage._language, fieldNumber: 12)
+      }
+      if _storage._purchasedFirst != false {
+        try visitor.visitSingularBoolField(value: _storage._purchasedFirst, fieldNumber: 13)
+      }
+      if _storage._majorCategory != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._majorCategory, fieldNumber: 14)
+      }
+      if !_storage._courseAttribute.isEmpty {
+        try visitor.visitPackedInt32Field(value: _storage._courseAttribute, fieldNumber: 15)
+      }
+      try { if let v = _storage._pagination {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+      } }()
     }
-    if self.courseModule != 0 {
-      try visitor.visitSingularInt32Field(value: self.courseModule, fieldNumber: 3)
-    }
-    if !self.major.isEmpty {
-      try visitor.visitRepeatedStringField(value: self.major, fieldNumber: 4)
-    }
-    if !self.level.isEmpty {
-      try visitor.visitPackedInt32Field(value: self.level, fieldNumber: 5)
-    }
-    if !self.courseType.isEmpty {
-      try visitor.visitPackedInt32Field(value: self.courseType, fieldNumber: 6)
-    }
-    if !self.courseIndustry.isEmpty {
-      try visitor.visitRepeatedStringField(value: self.courseIndustry, fieldNumber: 7)
-    }
-    if self.simple != false {
-      try visitor.visitSingularBoolField(value: self.simple, fieldNumber: 8)
-    }
-    if !self.key.isEmpty {
-      try visitor.visitSingularStringField(value: self.key, fieldNumber: 10)
-    }
-    if self.assigned != false {
-      try visitor.visitSingularBoolField(value: self.assigned, fieldNumber: 11)
-    }
-    if !self.language.isEmpty {
-      try visitor.visitRepeatedStringField(value: self.language, fieldNumber: 12)
-    }
-    try { if let v = self._pagination {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
-    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_ListCourseRequest, rhs: GloryApi_ListCourseRequest) -> Bool {
-    if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs.courseClassification != rhs.courseClassification {return false}
-    if lhs.courseModule != rhs.courseModule {return false}
-    if lhs.major != rhs.major {return false}
-    if lhs.level != rhs.level {return false}
-    if lhs.courseType != rhs.courseType {return false}
-    if lhs.courseIndustry != rhs.courseIndustry {return false}
-    if lhs.simple != rhs.simple {return false}
-    if lhs.key != rhs.key {return false}
-    if lhs.assigned != rhs.assigned {return false}
-    if lhs.language != rhs.language {return false}
-    if lhs._pagination != rhs._pagination {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._baseRequest != rhs_storage._baseRequest {return false}
+        if _storage._courseClassification != rhs_storage._courseClassification {return false}
+        if _storage._courseModule != rhs_storage._courseModule {return false}
+        if _storage._major != rhs_storage._major {return false}
+        if _storage._level != rhs_storage._level {return false}
+        if _storage._courseType != rhs_storage._courseType {return false}
+        if _storage._courseIndustry != rhs_storage._courseIndustry {return false}
+        if _storage._simple != rhs_storage._simple {return false}
+        if _storage._key != rhs_storage._key {return false}
+        if _storage._assigned != rhs_storage._assigned {return false}
+        if _storage._language != rhs_storage._language {return false}
+        if _storage._purchasedFirst != rhs_storage._purchasedFirst {return false}
+        if _storage._majorCategory != rhs_storage._majorCategory {return false}
+        if _storage._courseAttribute != rhs_storage._courseAttribute {return false}
+        if _storage._pagination != rhs_storage._pagination {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1718,6 +1898,41 @@ nonisolated extension GloryApi_CourseType: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
+nonisolated extension GloryApi_MajorCategoryGroup: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".MajorCategoryGroup"
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}major_category\0\u{1}major\0")
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt32Field(value: &self.majorCategory) }()
+      case 2: try { try decoder.decodeRepeatedStringField(value: &self.major) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.majorCategory != 0 {
+      try visitor.visitSingularInt32Field(value: self.majorCategory, fieldNumber: 1)
+    }
+    if !self.major.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.major, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_MajorCategoryGroup, rhs: GloryApi_MajorCategoryGroup) -> Bool {
+    if lhs.majorCategory != rhs.majorCategory {return false}
+    if lhs.major != rhs.major {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
 nonisolated extension GloryApi_GetCourseTypeTreeRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetCourseTypeTreeRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0")
@@ -1832,7 +2047,7 @@ nonisolated extension GloryApi_GetCourseTypeListRequest: SwiftProtobuf.Message, 
 
 nonisolated extension GloryApi_GetCourseTypeListResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetCourseTypeListResponse"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{1}levels\0\u{1}types\0\u{1}majors\0\u{1}industries\0\u{1}languages\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{1}levels\0\u{1}types\0\u{1}majors\0\u{1}industries\0\u{1}languages\0\u{3}major_categories\0\u{3}course_attributes\0\u{3}major_category_majors\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1846,6 +2061,9 @@ nonisolated extension GloryApi_GetCourseTypeListResponse: SwiftProtobuf.Message,
       case 4: try { try decoder.decodeRepeatedMessageField(value: &self.majors) }()
       case 5: try { try decoder.decodeRepeatedMessageField(value: &self.industries) }()
       case 6: try { try decoder.decodeRepeatedMessageField(value: &self.languages) }()
+      case 7: try { try decoder.decodeRepeatedMessageField(value: &self.majorCategories) }()
+      case 8: try { try decoder.decodeRepeatedMessageField(value: &self.courseAttributes) }()
+      case 9: try { try decoder.decodeRepeatedMessageField(value: &self.majorCategoryMajors) }()
       default: break
       }
     }
@@ -1874,6 +2092,15 @@ nonisolated extension GloryApi_GetCourseTypeListResponse: SwiftProtobuf.Message,
     if !self.languages.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.languages, fieldNumber: 6)
     }
+    if !self.majorCategories.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.majorCategories, fieldNumber: 7)
+    }
+    if !self.courseAttributes.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.courseAttributes, fieldNumber: 8)
+    }
+    if !self.majorCategoryMajors.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.majorCategoryMajors, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1884,6 +2111,9 @@ nonisolated extension GloryApi_GetCourseTypeListResponse: SwiftProtobuf.Message,
     if lhs.majors != rhs.majors {return false}
     if lhs.industries != rhs.industries {return false}
     if lhs.languages != rhs.languages {return false}
+    if lhs.majorCategories != rhs.majorCategories {return false}
+    if lhs.courseAttributes != rhs.courseAttributes {return false}
+    if lhs.majorCategoryMajors != rhs.majorCategoryMajors {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

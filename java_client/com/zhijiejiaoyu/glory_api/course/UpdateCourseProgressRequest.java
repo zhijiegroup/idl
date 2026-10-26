@@ -85,6 +85,11 @@ private static final long serialVersionUID = 0L;
             chapterResourceDuration = input.readFloat();
             break;
           }
+          case 53: {
+
+            roomPlayPosition = input.readFloat();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -162,7 +167,7 @@ private static final long serialVersionUID = 0L;
   private long chapterResourceId ;
   /**
    * <pre>
-   * 当前课程资源ID
+   * 当前课程资源ID；后台按 (user_id, course_id, resource_id=本字段) upsert 逐节进度记录
    * </pre>
    *
    * <code>int64 chapter_resource_id = 3;</code>
@@ -177,7 +182,7 @@ private static final long serialVersionUID = 0L;
   private float chapterResourceProgress ;
   /**
    * <pre>
-   * 当前课程资源播放进度
+   * 当前课程资源播放进度（0-100）
    * </pre>
    *
    * <code>float chapter_resource_progress = 4;</code>
@@ -192,7 +197,7 @@ private static final long serialVersionUID = 0L;
   private float chapterResourceDuration ;
   /**
    * <pre>
-   * 当前课程资源总时长
+   * 当前课程资源总时长（毫秒）
    * </pre>
    *
    * <code>float chapter_resource_duration = 5;</code>
@@ -201,6 +206,21 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public float getChapterResourceDuration() {
     return chapterResourceDuration ;
+  }
+
+  public static final int ROOM_PLAY_POSITION_FIELD_NUMBER = 6;
+  private float roomPlayPosition ;
+  /**
+   * <pre>
+   * 房间播放点位（毫秒，视频内当前播放位置；可回退，落库取最新值）
+   * </pre>
+   *
+   * <code>float room_play_position = 6;</code>
+   * @return The roomPlayPosition.
+   */
+  @java.lang.Override
+  public float getRoomPlayPosition() {
+    return roomPlayPosition ;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -232,6 +252,9 @@ private static final long serialVersionUID = 0L;
     if (chapterResourceDuration != 0F) {
       output.writeFloat(5, chapterResourceDuration );
     }
+    if (roomPlayPosition != 0F) {
+      output.writeFloat(6, roomPlayPosition );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -260,6 +283,10 @@ private static final long serialVersionUID = 0L;
     if (chapterResourceDuration != 0F) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(5, chapterResourceDuration );
+    }
+    if (roomPlayPosition != 0F) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeFloatSize(6, roomPlayPosition );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -291,6 +318,9 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Float.floatToIntBits(getChapterResourceDuration())
         != java.lang.Float.floatToIntBits(
             other.getChapterResourceDuration())) return false;
+    if (java.lang.Float.floatToIntBits(getRoomPlayPosition())
+        != java.lang.Float.floatToIntBits(
+            other.getRoomPlayPosition())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -318,6 +348,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + CHAPTER_RESOURCE_DURATION_FIELD_NUMBER;
     hash = (53 * hash) + java.lang.Float.floatToIntBits(
         getChapterResourceDuration());
+    hash = (37 * hash) + ROOM_PLAY_POSITION_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getRoomPlayPosition());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -469,6 +502,8 @@ private static final long serialVersionUID = 0L;
 
       chapterResourceDuration = 0F;
 
+      roomPlayPosition = 0F;
+
       return this;
     }
 
@@ -504,6 +539,7 @@ private static final long serialVersionUID = 0L;
       result.chapterResourceId = chapterResourceId ;
       result.chapterResourceProgress = chapterResourceProgress ;
       result.chapterResourceDuration = chapterResourceDuration ;
+      result.roomPlayPosition = roomPlayPosition ;
       onBuilt();
       return result;
     }
@@ -566,6 +602,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getChapterResourceDuration() != 0F) {
         setChapterResourceDuration(other.getChapterResourceDuration());
+      }
+      if (other.getRoomPlayPosition() != 0F) {
+        setRoomPlayPosition(other.getRoomPlayPosition());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -761,7 +800,7 @@ private static final long serialVersionUID = 0L;
     private long chapterResourceId ;
     /**
      * <pre>
-     * 当前课程资源ID
+     * 当前课程资源ID；后台按 (user_id, course_id, resource_id=本字段) upsert 逐节进度记录
      * </pre>
      *
      * <code>int64 chapter_resource_id = 3;</code>
@@ -773,7 +812,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 当前课程资源ID
+     * 当前课程资源ID；后台按 (user_id, course_id, resource_id=本字段) upsert 逐节进度记录
      * </pre>
      *
      * <code>int64 chapter_resource_id = 3;</code>
@@ -788,7 +827,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 当前课程资源ID
+     * 当前课程资源ID；后台按 (user_id, course_id, resource_id=本字段) upsert 逐节进度记录
      * </pre>
      *
      * <code>int64 chapter_resource_id = 3;</code>
@@ -804,7 +843,7 @@ private static final long serialVersionUID = 0L;
     private float chapterResourceProgress ;
     /**
      * <pre>
-     * 当前课程资源播放进度
+     * 当前课程资源播放进度（0-100）
      * </pre>
      *
      * <code>float chapter_resource_progress = 4;</code>
@@ -816,7 +855,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 当前课程资源播放进度
+     * 当前课程资源播放进度（0-100）
      * </pre>
      *
      * <code>float chapter_resource_progress = 4;</code>
@@ -831,7 +870,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 当前课程资源播放进度
+     * 当前课程资源播放进度（0-100）
      * </pre>
      *
      * <code>float chapter_resource_progress = 4;</code>
@@ -847,7 +886,7 @@ private static final long serialVersionUID = 0L;
     private float chapterResourceDuration ;
     /**
      * <pre>
-     * 当前课程资源总时长
+     * 当前课程资源总时长（毫秒）
      * </pre>
      *
      * <code>float chapter_resource_duration = 5;</code>
@@ -859,7 +898,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 当前课程资源总时长
+     * 当前课程资源总时长（毫秒）
      * </pre>
      *
      * <code>float chapter_resource_duration = 5;</code>
@@ -874,7 +913,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 当前课程资源总时长
+     * 当前课程资源总时长（毫秒）
      * </pre>
      *
      * <code>float chapter_resource_duration = 5;</code>
@@ -883,6 +922,49 @@ private static final long serialVersionUID = 0L;
     public Builder clearChapterResourceDuration() {
       
       chapterResourceDuration = 0F;
+      onChanged();
+      return this;
+    }
+
+    private float roomPlayPosition ;
+    /**
+     * <pre>
+     * 房间播放点位（毫秒，视频内当前播放位置；可回退，落库取最新值）
+     * </pre>
+     *
+     * <code>float room_play_position = 6;</code>
+     * @return The roomPlayPosition.
+     */
+    @java.lang.Override
+    public float getRoomPlayPosition() {
+      return roomPlayPosition ;
+    }
+    /**
+     * <pre>
+     * 房间播放点位（毫秒，视频内当前播放位置；可回退，落库取最新值）
+     * </pre>
+     *
+     * <code>float room_play_position = 6;</code>
+     * @param value The roomPlayPosition to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoomPlayPosition(float value) {
+      
+      roomPlayPosition = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 房间播放点位（毫秒，视频内当前播放位置；可回退，落库取最新值）
+     * </pre>
+     *
+     * <code>float room_play_position = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRoomPlayPosition() {
+      
+      roomPlayPosition = 0F;
       onChanged();
       return this;
     }

@@ -16,6 +16,7 @@ export interface NmCourse {
   cover_url?: string;
   course_classification?: string;
   course_major?: string;
+  /** 课程层次：1.中职；2.高职专科；3.职业本科；4.职场 */
   course_level?: string;
   course_type?: string;
   course_industry?: string;
@@ -24,6 +25,10 @@ export interface NmCourse {
   chapters?: Array<NmChapter>;
   assigned?: boolean;
   language?: string;
+  /** 专业大类：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术；新增字段 */
+  major_category?: number;
+  /** 课程属性：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课；新增字段 */
+  course_attribute?: number;
 }
 
 export interface CreateNmCourseChapterResourceRequest {
@@ -82,8 +87,12 @@ export interface NmResource {
   resource_name?: string;
   resource_type?: string;
   resource_path?: string;
+  /** 课程未购买时仅第一节视频下发，其余置空 */
   resource_url?: string;
+  /** 文件类型(0:默认;1:PPT;2:PDF) */
   file_type?: string;
+  /** 课节稳定标识(= resource_id)，用于收藏与深链定位；新增字段 */
+  node_key?: string;
 }
 
 export interface CreateNmCourseResponse {

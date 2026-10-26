@@ -29,12 +29,14 @@ export interface CourseResource {
   resource_type?: number;
   /** 课程资源OSS路径，用于教学视频和教学PPT */
   resource_path?: string;
-  /** 课程资源URL */
+  /** 课程资源URL；课程未购买(assigned=false)时仅第一个视频课节下发，其余置空 */
   resource_url?: string;
   /** 课程资源内容，用于课后习题和教案 */
   resource_content?: string;
-  /** 课程资源类型为教学课件时的文件(PDF/PPT)列表 */
+  /** 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组 */
   files?: Array<CourseResourceFile>;
+  /** 课节稳定标识(= resource_id)，用于收藏与深链定位；新增字段 */
+  node_key?: string;
 }
 
 export interface CourseChapter {

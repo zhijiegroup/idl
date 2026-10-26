@@ -278,3 +278,56 @@ final $typed_data.Uint8List listTenantStudentResponseDescriptor = $convert.base6
     'bnRVc2VyUghzdHVkZW50cxI4CgpwYWdpbmF0aW9uGGQgASgLMhguYmFzZS5QYWdpbmF0aW9uUm'
     'VzcG9uc2VSCnBhZ2luYXRpb24=');
 
+@$core.Deprecated('Use teacherClassItemDescriptor instead')
+const TeacherClassItem$json = {
+  '1': 'TeacherClassItem',
+  '2': [
+    {'1': 'class_id', '3': 1, '4': 1, '5': 3, '10': 'classId'},
+    {'1': 'class_name', '3': 2, '4': 1, '5': 9, '10': 'className'},
+    {'1': 'major_id', '3': 3, '4': 1, '5': 3, '10': 'majorId'},
+    {'1': 'major_name', '3': 4, '4': 1, '5': 9, '10': 'majorName'},
+    {'1': 'major_code', '3': 5, '4': 1, '5': 9, '10': 'majorCode'},
+    {'1': 'student_num', '3': 6, '4': 1, '5': 3, '10': 'studentNum'},
+  ],
+};
+
+/// Descriptor for `TeacherClassItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List teacherClassItemDescriptor = $convert.base64Decode(
+    'ChBUZWFjaGVyQ2xhc3NJdGVtEhkKCGNsYXNzX2lkGAEgASgDUgdjbGFzc0lkEh0KCmNsYXNzX2'
+    '5hbWUYAiABKAlSCWNsYXNzTmFtZRIZCghtYWpvcl9pZBgDIAEoA1IHbWFqb3JJZBIdCgptYWpv'
+    'cl9uYW1lGAQgASgJUgltYWpvck5hbWUSHQoKbWFqb3JfY29kZRgFIAEoCVIJbWFqb3JDb2RlEh'
+    '8KC3N0dWRlbnRfbnVtGAYgASgDUgpzdHVkZW50TnVt');
+
+@$core.Deprecated('Use listTeacherClassRequestDescriptor instead')
+const ListTeacherClassRequest$json = {
+  '1': 'ListTeacherClassRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'major_code', '3': 2, '4': 1, '5': 9, '10': 'majorCode'},
+    {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `ListTeacherClassRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listTeacherClassRequestDescriptor = $convert.base64Decode(
+    'ChdMaXN0VGVhY2hlckNsYXNzUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLk'
+    'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIdCgptYWpvcl9jb2RlGAIgASgJUgltYWpvckNvZGUS'
+    'EgoEbmFtZRgDIAEoCVIEbmFtZRI3CgpwYWdpbmF0aW9uGGQgASgLMhcuYmFzZS5QYWdpbmF0aW'
+    '9uUmVxdWVzdFIKcGFnaW5hdGlvbg==');
+
+@$core.Deprecated('Use listTeacherClassResponseDescriptor instead')
+const ListTeacherClassResponse$json = {
+  '1': 'ListTeacherClassResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'classes', '3': 2, '4': 3, '5': 11, '6': '.glory_api.TeacherClassItem', '10': 'classes'},
+  ],
+};
+
+/// Descriptor for `ListTeacherClassResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listTeacherClassResponseDescriptor = $convert.base64Decode(
+    'ChhMaXN0VGVhY2hlckNsYXNzUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYX'
+    'NlUmVzcG9uc2VSCGJhc2VSZXNwEjUKB2NsYXNzZXMYAiADKAsyGy5nbG9yeV9hcGkuVGVhY2hl'
+    'ckNsYXNzSXRlbVIHY2xhc3Nlcw==');
+

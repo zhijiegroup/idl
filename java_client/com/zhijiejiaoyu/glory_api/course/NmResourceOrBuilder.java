@@ -44,11 +44,19 @@ public interface NmResourceOrBuilder extends
       getResourcePathBytes();
 
   /**
+   * <pre>
+   * 课程未购买时仅第一节视频下发，其余置空
+   * </pre>
+   *
    * <code>string resource_url = 5;</code>
    * @return The resourceUrl.
    */
   java.lang.String getResourceUrl();
   /**
+   * <pre>
+   * 课程未购买时仅第一节视频下发，其余置空
+   * </pre>
+   *
    * <code>string resource_url = 5;</code>
    * @return The bytes for resourceUrl.
    */
@@ -56,14 +64,42 @@ public interface NmResourceOrBuilder extends
       getResourceUrlBytes();
 
   /**
+   * <pre>
+   * 文件类型(0:默认;1:PPT;2:PDF)
+   * </pre>
+   *
    * <code>string file_type = 6;</code>
    * @return The fileType.
    */
   java.lang.String getFileType();
   /**
+   * <pre>
+   * 文件类型(0:默认;1:PPT;2:PDF)
+   * </pre>
+   *
    * <code>string file_type = 6;</code>
    * @return The bytes for fileType.
    */
   com.google.protobuf.ByteString
       getFileTypeBytes();
+
+  /**
+   * <pre>
+   * 课节稳定标识(= resource_id)，用于收藏与深链定位；新增字段
+   * </pre>
+   *
+   * <code>string node_key = 7;</code>
+   * @return The nodeKey.
+   */
+  java.lang.String getNodeKey();
+  /**
+   * <pre>
+   * 课节稳定标识(= resource_id)，用于收藏与深链定位；新增字段
+   * </pre>
+   *
+   * <code>string node_key = 7;</code>
+   * @return The bytes for nodeKey.
+   */
+  com.google.protobuf.ByteString
+      getNodeKeyBytes();
 }

@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
     resourceUrl = "";
     resourceContent = "";
     files = java.util.Collections.emptyList();
+    nodeKey = "";
   }
 
   @java.lang.Override
@@ -95,6 +96,12 @@ private static final long serialVersionUID = 0L;
             }
             files .add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.course.CourseResourceFile.parser(), extensionRegistry));
+            break;
+          }
+          case 74: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            nodeKey = s;
             break;
           }
           default: {
@@ -258,7 +265,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object resourceUrl ;
   /**
    * <pre>
-   * 课程资源URL
+   * 课程资源URL；课程未购买(assigned=false)时仅第一个视频课节下发，其余置空
    * </pre>
    *
    * <code>string resource_url = 6;</code>
@@ -279,7 +286,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 课程资源URL
+   * 课程资源URL；课程未购买(assigned=false)时仅第一个视频课节下发，其余置空
    * </pre>
    *
    * <code>string resource_url = 6;</code>
@@ -350,7 +357,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.zhijiejiaoyu.glory_api.course.CourseResourceFile> files ;
   /**
    * <pre>
-   * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+   * 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组
    * </pre>
    *
    * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
@@ -361,7 +368,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+   * 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组
    * </pre>
    *
    * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
@@ -373,7 +380,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+   * 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组
    * </pre>
    *
    * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
@@ -384,7 +391,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+   * 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组
    * </pre>
    *
    * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
@@ -395,7 +402,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+   * 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组
    * </pre>
    *
    * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
@@ -404,6 +411,52 @@ private static final long serialVersionUID = 0L;
   public com.zhijiejiaoyu.glory_api.course.CourseResourceFileOrBuilder getFilesOrBuilder(
       int index) {
     return files .get(index);
+  }
+
+  public static final int NODE_KEY_FIELD_NUMBER = 9;
+  private volatile java.lang.Object nodeKey ;
+  /**
+   * <pre>
+   * 课节稳定标识(= resource_id)，用于收藏与深链定位；新增字段
+   * </pre>
+   *
+   * <code>string node_key = 9;</code>
+   * @return The nodeKey.
+   */
+  @java.lang.Override
+  public java.lang.String getNodeKey() {
+    java.lang.Object ref = nodeKey ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nodeKey = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 课节稳定标识(= resource_id)，用于收藏与深链定位；新增字段
+   * </pre>
+   *
+   * <code>string node_key = 9;</code>
+   * @return The bytes for nodeKey.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNodeKeyBytes() {
+    java.lang.Object ref = nodeKey ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      nodeKey = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -441,6 +494,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < files .size(); i++) {
       output.writeMessage(8, files .get(i));
     }
+    if (!getNodeKeyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, nodeKey );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -474,6 +530,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, files .get(i));
     }
+    if (!getNodeKeyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, nodeKey );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -503,6 +562,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getResourceContent())) return false;
     if (!getFilesList()
         .equals(other.getFilesList())) return false;
+    if (!getNodeKey()
+        .equals(other.getNodeKey())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -531,6 +592,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + FILES_FIELD_NUMBER;
       hash = (53 * hash) + getFilesList().hashCode();
     }
+    hash = (37 * hash) + NODE_KEY_FIELD_NUMBER;
+    hash = (53 * hash) + getNodeKey().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -683,6 +746,8 @@ private static final long serialVersionUID = 0L;
       } else {
         filesBuilder .clear();
       }
+      nodeKey = "";
+
       return this;
     }
 
@@ -725,6 +790,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.files = filesBuilder .build();
       }
+      result.nodeKey = nodeKey ;
       onBuilt();
       return result;
     }
@@ -820,6 +886,10 @@ private static final long serialVersionUID = 0L;
             filesBuilder .addAllMessages(other.files );
           }
         }
+      }
+      if (!other.getNodeKey().isEmpty()) {
+        nodeKey = other.nodeKey ;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1132,7 +1202,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object resourceUrl = "";
     /**
      * <pre>
-     * 课程资源URL
+     * 课程资源URL；课程未购买(assigned=false)时仅第一个视频课节下发，其余置空
      * </pre>
      *
      * <code>string resource_url = 6;</code>
@@ -1152,7 +1222,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程资源URL
+     * 课程资源URL；课程未购买(assigned=false)时仅第一个视频课节下发，其余置空
      * </pre>
      *
      * <code>string resource_url = 6;</code>
@@ -1173,7 +1243,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程资源URL
+     * 课程资源URL；课程未购买(assigned=false)时仅第一个视频课节下发，其余置空
      * </pre>
      *
      * <code>string resource_url = 6;</code>
@@ -1192,7 +1262,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程资源URL
+     * 课程资源URL；课程未购买(assigned=false)时仅第一个视频课节下发，其余置空
      * </pre>
      *
      * <code>string resource_url = 6;</code>
@@ -1206,7 +1276,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程资源URL
+     * 课程资源URL；课程未购买(assigned=false)时仅第一个视频课节下发，其余置空
      * </pre>
      *
      * <code>string resource_url = 6;</code>
@@ -1335,7 +1405,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组
      * </pre>
      *
      * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
@@ -1349,7 +1419,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组
      * </pre>
      *
      * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
@@ -1363,7 +1433,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组
      * </pre>
      *
      * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
@@ -1377,7 +1447,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组
      * </pre>
      *
      * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
@@ -1398,7 +1468,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组
      * </pre>
      *
      * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
@@ -1416,7 +1486,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组
      * </pre>
      *
      * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
@@ -1436,7 +1506,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组
      * </pre>
      *
      * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
@@ -1457,7 +1527,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组
      * </pre>
      *
      * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
@@ -1475,7 +1545,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组
      * </pre>
      *
      * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
@@ -1493,7 +1563,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组
      * </pre>
      *
      * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
@@ -1512,7 +1582,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组
      * </pre>
      *
      * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
@@ -1529,7 +1599,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组
      * </pre>
      *
      * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
@@ -1546,7 +1616,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组
      * </pre>
      *
      * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
@@ -1557,7 +1627,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组
      * </pre>
      *
      * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
@@ -1571,7 +1641,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组
      * </pre>
      *
      * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
@@ -1586,7 +1656,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组
      * </pre>
      *
      * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
@@ -1597,7 +1667,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组
      * </pre>
      *
      * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
@@ -1609,7 +1679,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组
      * </pre>
      *
      * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
@@ -1631,6 +1701,102 @@ private static final long serialVersionUID = 0L;
         files = null;
       }
       return filesBuilder ;
+    }
+
+    private java.lang.Object nodeKey = "";
+    /**
+     * <pre>
+     * 课节稳定标识(= resource_id)，用于收藏与深链定位；新增字段
+     * </pre>
+     *
+     * <code>string node_key = 9;</code>
+     * @return The nodeKey.
+     */
+    public java.lang.String getNodeKey() {
+      java.lang.Object ref = nodeKey ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nodeKey = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 课节稳定标识(= resource_id)，用于收藏与深链定位；新增字段
+     * </pre>
+     *
+     * <code>string node_key = 9;</code>
+     * @return The bytes for nodeKey.
+     */
+    public com.google.protobuf.ByteString
+        getNodeKeyBytes() {
+      java.lang.Object ref = nodeKey ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nodeKey = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 课节稳定标识(= resource_id)，用于收藏与深链定位；新增字段
+     * </pre>
+     *
+     * <code>string node_key = 9;</code>
+     * @param value The nodeKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNodeKey(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      nodeKey = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 课节稳定标识(= resource_id)，用于收藏与深链定位；新增字段
+     * </pre>
+     *
+     * <code>string node_key = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNodeKey() {
+      
+      nodeKey = getDefaultInstance().getNodeKey();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 课节稳定标识(= resource_id)，用于收藏与深链定位；新增字段
+     * </pre>
+     *
+     * <code>string node_key = 9;</code>
+     * @param value The bytes for nodeKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNodeKeyBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      nodeKey = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

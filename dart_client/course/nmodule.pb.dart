@@ -36,6 +36,8 @@ class NmCourse extends $pb.GeneratedMessage {
     $core.Iterable<NmChapter>? chapters,
     $core.bool? assigned,
     $core.String? language,
+    $core.int? majorCategory,
+    $core.int? courseAttribute,
   }) {
     final $result = create();
     if (courseId != null) {
@@ -92,6 +94,12 @@ class NmCourse extends $pb.GeneratedMessage {
     if (language != null) {
       $result.language = language;
     }
+    if (majorCategory != null) {
+      $result.majorCategory = majorCategory;
+    }
+    if (courseAttribute != null) {
+      $result.courseAttribute = courseAttribute;
+    }
     return $result;
   }
   NmCourse._() : super();
@@ -117,6 +125,8 @@ class NmCourse extends $pb.GeneratedMessage {
     ..pc<NmChapter>(16, _omitFieldNames ? '' : 'chapters', $pb.PbFieldType.PM, subBuilder: NmChapter.create)
     ..aOB(17, _omitFieldNames ? '' : 'assigned')
     ..aOS(18, _omitFieldNames ? '' : 'language')
+    ..a<$core.int>(19, _omitFieldNames ? '' : 'majorCategory', $pb.PbFieldType.O3)
+    ..a<$core.int>(20, _omitFieldNames ? '' : 'courseAttribute', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -296,6 +306,24 @@ class NmCourse extends $pb.GeneratedMessage {
   $core.bool hasLanguage() => $_has(17);
   @$pb.TagNumber(18)
   void clearLanguage() => clearField(18);
+
+  @$pb.TagNumber(19)
+  $core.int get majorCategory => $_getIZ(18);
+  @$pb.TagNumber(19)
+  set majorCategory($core.int v) { $_setSignedInt32(18, v); }
+  @$pb.TagNumber(19)
+  $core.bool hasMajorCategory() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearMajorCategory() => clearField(19);
+
+  @$pb.TagNumber(20)
+  $core.int get courseAttribute => $_getIZ(19);
+  @$pb.TagNumber(20)
+  set courseAttribute($core.int v) { $_setSignedInt32(19, v); }
+  @$pb.TagNumber(20)
+  $core.bool hasCourseAttribute() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearCourseAttribute() => clearField(20);
 }
 
 class CreateNmCourseChapterResourceRequest extends $pb.GeneratedMessage {
@@ -948,6 +976,7 @@ class NmResource extends $pb.GeneratedMessage {
     $core.String? resourcePath,
     $core.String? resourceUrl,
     $core.String? fileType,
+    $core.String? nodeKey,
   }) {
     final $result = create();
     if (resourceId != null) {
@@ -968,6 +997,9 @@ class NmResource extends $pb.GeneratedMessage {
     if (fileType != null) {
       $result.fileType = fileType;
     }
+    if (nodeKey != null) {
+      $result.nodeKey = nodeKey;
+    }
     return $result;
   }
   NmResource._() : super();
@@ -981,6 +1013,7 @@ class NmResource extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'resourcePath')
     ..aOS(5, _omitFieldNames ? '' : 'resourceUrl')
     ..aOS(6, _omitFieldNames ? '' : 'fileType')
+    ..aOS(7, _omitFieldNames ? '' : 'nodeKey')
     ..hasRequiredFields = false
   ;
 
@@ -1058,6 +1091,15 @@ class NmResource extends $pb.GeneratedMessage {
   $core.bool hasFileType() => $_has(5);
   @$pb.TagNumber(6)
   void clearFileType() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get nodeKey => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set nodeKey($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasNodeKey() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearNodeKey() => clearField(7);
 }
 
 class CreateNmCourseResponse extends $pb.GeneratedMessage {

@@ -145,6 +145,7 @@ class CourseResource extends $pb.GeneratedMessage {
     $core.String? resourceUrl,
     $core.String? resourceContent,
     $core.Iterable<CourseResourceFile>? files,
+    $core.String? nodeKey,
   }) {
     final $result = create();
     if (resourceId != null) {
@@ -168,6 +169,9 @@ class CourseResource extends $pb.GeneratedMessage {
     if (files != null) {
       $result.files.addAll(files);
     }
+    if (nodeKey != null) {
+      $result.nodeKey = nodeKey;
+    }
     return $result;
   }
   CourseResource._() : super();
@@ -182,6 +186,7 @@ class CourseResource extends $pb.GeneratedMessage {
     ..aOS(6, _omitFieldNames ? '' : 'resourceUrl')
     ..aOS(7, _omitFieldNames ? '' : 'resourceContent')
     ..pc<CourseResourceFile>(8, _omitFieldNames ? '' : 'files', $pb.PbFieldType.PM, subBuilder: CourseResourceFile.create)
+    ..aOS(9, _omitFieldNames ? '' : 'nodeKey')
     ..hasRequiredFields = false
   ;
 
@@ -262,6 +267,15 @@ class CourseResource extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(8)
   $core.List<CourseResourceFile> get files => $_getList(6);
+
+  @$pb.TagNumber(9)
+  $core.String get nodeKey => $_getSZ(7);
+  @$pb.TagNumber(9)
+  set nodeKey($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasNodeKey() => $_has(7);
+  @$pb.TagNumber(9)
+  void clearNodeKey() => clearField(9);
 }
 
 class CourseChapter extends $pb.GeneratedMessage {

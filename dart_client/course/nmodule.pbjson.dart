@@ -35,6 +35,8 @@ const NmCourse$json = {
     {'1': 'chapters', '3': 16, '4': 3, '5': 11, '6': '.glory_api.NmChapter', '10': 'chapters'},
     {'1': 'assigned', '3': 17, '4': 1, '5': 8, '10': 'assigned'},
     {'1': 'language', '3': 18, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'major_category', '3': 19, '4': 1, '5': 5, '10': 'majorCategory'},
+    {'1': 'course_attribute', '3': 20, '4': 1, '5': 5, '10': 'courseAttribute'},
   ],
 };
 
@@ -52,7 +54,8 @@ final $typed_data.Uint8List nmCourseDescriptor = $convert.base64Decode(
     'lSDmNvdXJzZUluZHVzdHJ5EiEKDGNvdXJzZV9ob3VycxgOIAEoAVILY291cnNlSG91cnMSIwoN'
     'Y291cnNlX21vZHVsZRgPIAEoA1IMY291cnNlTW9kdWxlEjAKCGNoYXB0ZXJzGBAgAygLMhQuZ2'
     'xvcnlfYXBpLk5tQ2hhcHRlclIIY2hhcHRlcnMSGgoIYXNzaWduZWQYESABKAhSCGFzc2lnbmVk'
-    'EhoKCGxhbmd1YWdlGBIgASgJUghsYW5ndWFnZQ==');
+    'EhoKCGxhbmd1YWdlGBIgASgJUghsYW5ndWFnZRIlCg5tYWpvcl9jYXRlZ29yeRgTIAEoBVINbW'
+    'Fqb3JDYXRlZ29yeRIpChBjb3Vyc2VfYXR0cmlidXRlGBQgASgFUg9jb3Vyc2VBdHRyaWJ1dGU=');
 
 @$core.Deprecated('Use createNmCourseChapterResourceRequestDescriptor instead')
 const CreateNmCourseChapterResourceRequest$json = {
@@ -184,6 +187,7 @@ const NmResource$json = {
     {'1': 'resource_path', '3': 4, '4': 1, '5': 9, '10': 'resourcePath'},
     {'1': 'resource_url', '3': 5, '4': 1, '5': 9, '10': 'resourceUrl'},
     {'1': 'file_type', '3': 6, '4': 1, '5': 9, '10': 'fileType'},
+    {'1': 'node_key', '3': 7, '4': 1, '5': 9, '10': 'nodeKey'},
   ],
 };
 
@@ -192,7 +196,8 @@ final $typed_data.Uint8List nmResourceDescriptor = $convert.base64Decode(
     'CgpObVJlc291cmNlEh8KC3Jlc291cmNlX2lkGAEgASgDUgpyZXNvdXJjZUlkEiMKDXJlc291cm'
     'NlX25hbWUYAiABKAlSDHJlc291cmNlTmFtZRIjCg1yZXNvdXJjZV90eXBlGAMgASgDUgxyZXNv'
     'dXJjZVR5cGUSIwoNcmVzb3VyY2VfcGF0aBgEIAEoCVIMcmVzb3VyY2VQYXRoEiEKDHJlc291cm'
-    'NlX3VybBgFIAEoCVILcmVzb3VyY2VVcmwSGwoJZmlsZV90eXBlGAYgASgJUghmaWxlVHlwZQ==');
+    'NlX3VybBgFIAEoCVILcmVzb3VyY2VVcmwSGwoJZmlsZV90eXBlGAYgASgJUghmaWxlVHlwZRIZ'
+    'Cghub2RlX2tleRgHIAEoCVIHbm9kZUtleQ==');
 
 @$core.Deprecated('Use createNmCourseResponseDescriptor instead')
 const CreateNmCourseResponse$json = {

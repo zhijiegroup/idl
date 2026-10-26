@@ -75,6 +75,7 @@ nonisolated struct GloryApi_NmCourse: @unchecked Sendable {
     set {_uniqueStorage()._courseMajor = newValue}
   }
 
+  /// 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
   var courseLevel: Int64 {
     get {_storage._courseLevel}
     set {_uniqueStorage()._courseLevel = newValue}
@@ -113,6 +114,18 @@ nonisolated struct GloryApi_NmCourse: @unchecked Sendable {
   var language: String {
     get {_storage._language}
     set {_uniqueStorage()._language = newValue}
+  }
+
+  /// 专业大类：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术；新增字段
+  var majorCategory: Int32 {
+    get {_storage._majorCategory}
+    set {_uniqueStorage()._majorCategory = newValue}
+  }
+
+  /// 课程属性：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课；新增字段
+  var courseAttribute: Int32 {
+    get {_storage._courseAttribute}
+    set {_uniqueStorage()._courseAttribute = newValue}
   }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -304,9 +317,14 @@ nonisolated struct GloryApi_NmResource: Sendable {
 
   var resourcePath: String = String()
 
+  /// 课程未购买时仅第一节视频下发，其余置空
   var resourceURL: String = String()
 
+  /// 文件类型(0:默认;1:PPT;2:PDF)
   var fileType: String = String()
+
+  /// 课节稳定标识(= resource_id)，用于收藏与深链定位；新增字段
+  var nodeKey: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -584,7 +602,7 @@ fileprivate nonisolated let _protobuf_package = "glory_api"
 
 nonisolated extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".NmCourse"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}course_id\0\u{3}course_name\0\u{3}course_organization\0\u{3}course_teacher_name\0\u{3}skill_hours\0\u{3}knowledge_hours\0\u{3}course_description\0\u{3}cover_url\0\u{3}course_classification\0\u{3}course_major\0\u{3}course_level\0\u{3}course_type\0\u{3}course_industry\0\u{3}course_hours\0\u{3}course_module\0\u{1}chapters\0\u{1}assigned\0\u{1}language\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}course_id\0\u{3}course_name\0\u{3}course_organization\0\u{3}course_teacher_name\0\u{3}skill_hours\0\u{3}knowledge_hours\0\u{3}course_description\0\u{3}cover_url\0\u{3}course_classification\0\u{3}course_major\0\u{3}course_level\0\u{3}course_type\0\u{3}course_industry\0\u{3}course_hours\0\u{3}course_module\0\u{1}chapters\0\u{1}assigned\0\u{1}language\0\u{3}major_category\0\u{3}course_attribute\0")
 
   fileprivate class _StorageClass {
     var _courseID: Int64 = 0
@@ -605,6 +623,8 @@ nonisolated extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._M
     var _chapters: [GloryApi_NmChapter] = []
     var _assigned: Bool = false
     var _language: String = String()
+    var _majorCategory: Int32 = 0
+    var _courseAttribute: Int32 = 0
 
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
@@ -633,6 +653,8 @@ nonisolated extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._M
       _chapters = source._chapters
       _assigned = source._assigned
       _language = source._language
+      _majorCategory = source._majorCategory
+      _courseAttribute = source._courseAttribute
     }
   }
 
@@ -669,6 +691,8 @@ nonisolated extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._M
         case 16: try { try decoder.decodeRepeatedMessageField(value: &_storage._chapters) }()
         case 17: try { try decoder.decodeSingularBoolField(value: &_storage._assigned) }()
         case 18: try { try decoder.decodeSingularStringField(value: &_storage._language) }()
+        case 19: try { try decoder.decodeSingularInt32Field(value: &_storage._majorCategory) }()
+        case 20: try { try decoder.decodeSingularInt32Field(value: &_storage._courseAttribute) }()
         default: break
         }
       }
@@ -731,6 +755,12 @@ nonisolated extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._M
       if !_storage._language.isEmpty {
         try visitor.visitSingularStringField(value: _storage._language, fieldNumber: 18)
       }
+      if _storage._majorCategory != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._majorCategory, fieldNumber: 19)
+      }
+      if _storage._courseAttribute != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._courseAttribute, fieldNumber: 20)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -758,6 +788,8 @@ nonisolated extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._M
         if _storage._chapters != rhs_storage._chapters {return false}
         if _storage._assigned != rhs_storage._assigned {return false}
         if _storage._language != rhs_storage._language {return false}
+        if _storage._majorCategory != rhs_storage._majorCategory {return false}
+        if _storage._courseAttribute != rhs_storage._courseAttribute {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -1094,7 +1126,7 @@ nonisolated extension GloryApi_NmChapter: SwiftProtobuf.Message, SwiftProtobuf._
 
 nonisolated extension GloryApi_NmResource: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".NmResource"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}resource_id\0\u{3}resource_name\0\u{3}resource_type\0\u{3}resource_path\0\u{3}resource_url\0\u{3}file_type\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}resource_id\0\u{3}resource_name\0\u{3}resource_type\0\u{3}resource_path\0\u{3}resource_url\0\u{3}file_type\0\u{3}node_key\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1108,6 +1140,7 @@ nonisolated extension GloryApi_NmResource: SwiftProtobuf.Message, SwiftProtobuf.
       case 4: try { try decoder.decodeSingularStringField(value: &self.resourcePath) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.resourceURL) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.fileType) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.nodeKey) }()
       default: break
       }
     }
@@ -1132,6 +1165,9 @@ nonisolated extension GloryApi_NmResource: SwiftProtobuf.Message, SwiftProtobuf.
     if !self.fileType.isEmpty {
       try visitor.visitSingularStringField(value: self.fileType, fieldNumber: 6)
     }
+    if !self.nodeKey.isEmpty {
+      try visitor.visitSingularStringField(value: self.nodeKey, fieldNumber: 7)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1142,6 +1178,7 @@ nonisolated extension GloryApi_NmResource: SwiftProtobuf.Message, SwiftProtobuf.
     if lhs.resourcePath != rhs.resourcePath {return false}
     if lhs.resourceURL != rhs.resourceURL {return false}
     if lhs.fileType != rhs.fileType {return false}
+    if lhs.nodeKey != rhs.nodeKey {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

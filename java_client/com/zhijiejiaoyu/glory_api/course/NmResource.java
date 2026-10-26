@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     resourcePath = "";
     resourceUrl = "";
     fileType = "";
+    nodeKey = "";
   }
 
   @java.lang.Override
@@ -84,6 +85,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             fileType = s;
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            nodeKey = s;
             break;
           }
           default: {
@@ -219,6 +226,10 @@ private static final long serialVersionUID = 0L;
   public static final int RESOURCE_URL_FIELD_NUMBER = 5;
   private volatile java.lang.Object resourceUrl ;
   /**
+   * <pre>
+   * 课程未购买时仅第一节视频下发，其余置空
+   * </pre>
+   *
    * <code>string resource_url = 5;</code>
    * @return The resourceUrl.
    */
@@ -236,6 +247,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 课程未购买时仅第一节视频下发，其余置空
+   * </pre>
+   *
    * <code>string resource_url = 5;</code>
    * @return The bytes for resourceUrl.
    */
@@ -257,6 +272,10 @@ private static final long serialVersionUID = 0L;
   public static final int FILE_TYPE_FIELD_NUMBER = 6;
   private volatile java.lang.Object fileType ;
   /**
+   * <pre>
+   * 文件类型(0:默认;1:PPT;2:PDF)
+   * </pre>
+   *
    * <code>string file_type = 6;</code>
    * @return The fileType.
    */
@@ -274,6 +293,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 文件类型(0:默认;1:PPT;2:PDF)
+   * </pre>
+   *
    * <code>string file_type = 6;</code>
    * @return The bytes for fileType.
    */
@@ -286,6 +309,52 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       fileType = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NODE_KEY_FIELD_NUMBER = 7;
+  private volatile java.lang.Object nodeKey ;
+  /**
+   * <pre>
+   * 课节稳定标识(= resource_id)，用于收藏与深链定位；新增字段
+   * </pre>
+   *
+   * <code>string node_key = 7;</code>
+   * @return The nodeKey.
+   */
+  @java.lang.Override
+  public java.lang.String getNodeKey() {
+    java.lang.Object ref = nodeKey ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nodeKey = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 课节稳定标识(= resource_id)，用于收藏与深链定位；新增字段
+   * </pre>
+   *
+   * <code>string node_key = 7;</code>
+   * @return The bytes for nodeKey.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNodeKeyBytes() {
+    java.lang.Object ref = nodeKey ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      nodeKey = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -324,6 +393,9 @@ private static final long serialVersionUID = 0L;
     if (!getFileTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, fileType );
     }
+    if (!getNodeKeyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, nodeKey );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -353,6 +425,9 @@ private static final long serialVersionUID = 0L;
     if (!getFileTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, fileType );
     }
+    if (!getNodeKeyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, nodeKey );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -380,6 +455,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getResourceUrl())) return false;
     if (!getFileType()
         .equals(other.getFileType())) return false;
+    if (!getNodeKey()
+        .equals(other.getNodeKey())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -405,6 +482,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getResourceUrl().hashCode();
     hash = (37 * hash) + FILE_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getFileType().hashCode();
+    hash = (37 * hash) + NODE_KEY_FIELD_NUMBER;
+    hash = (53 * hash) + getNodeKey().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -550,6 +629,8 @@ private static final long serialVersionUID = 0L;
 
       fileType = "";
 
+      nodeKey = "";
+
       return this;
     }
 
@@ -582,6 +663,7 @@ private static final long serialVersionUID = 0L;
       result.resourcePath = resourcePath ;
       result.resourceUrl = resourceUrl ;
       result.fileType = fileType ;
+      result.nodeKey = nodeKey ;
       onBuilt();
       return result;
     }
@@ -650,6 +732,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getFileType().isEmpty()) {
         fileType = other.fileType ;
+        onChanged();
+      }
+      if (!other.getNodeKey().isEmpty()) {
+        nodeKey = other.nodeKey ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -897,6 +983,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object resourceUrl = "";
     /**
+     * <pre>
+     * 课程未购买时仅第一节视频下发，其余置空
+     * </pre>
+     *
      * <code>string resource_url = 5;</code>
      * @return The resourceUrl.
      */
@@ -913,6 +1003,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 课程未购买时仅第一节视频下发，其余置空
+     * </pre>
+     *
      * <code>string resource_url = 5;</code>
      * @return The bytes for resourceUrl.
      */
@@ -930,6 +1024,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 课程未购买时仅第一节视频下发，其余置空
+     * </pre>
+     *
      * <code>string resource_url = 5;</code>
      * @param value The resourceUrl to set.
      * @return This builder for chaining.
@@ -945,6 +1043,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 课程未购买时仅第一节视频下发，其余置空
+     * </pre>
+     *
      * <code>string resource_url = 5;</code>
      * @return This builder for chaining.
      */
@@ -955,6 +1057,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 课程未购买时仅第一节视频下发，其余置空
+     * </pre>
+     *
      * <code>string resource_url = 5;</code>
      * @param value The bytes for resourceUrl to set.
      * @return This builder for chaining.
@@ -973,6 +1079,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object fileType = "";
     /**
+     * <pre>
+     * 文件类型(0:默认;1:PPT;2:PDF)
+     * </pre>
+     *
      * <code>string file_type = 6;</code>
      * @return The fileType.
      */
@@ -989,6 +1099,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 文件类型(0:默认;1:PPT;2:PDF)
+     * </pre>
+     *
      * <code>string file_type = 6;</code>
      * @return The bytes for fileType.
      */
@@ -1006,6 +1120,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 文件类型(0:默认;1:PPT;2:PDF)
+     * </pre>
+     *
      * <code>string file_type = 6;</code>
      * @param value The fileType to set.
      * @return This builder for chaining.
@@ -1021,6 +1139,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 文件类型(0:默认;1:PPT;2:PDF)
+     * </pre>
+     *
      * <code>string file_type = 6;</code>
      * @return This builder for chaining.
      */
@@ -1031,6 +1153,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 文件类型(0:默认;1:PPT;2:PDF)
+     * </pre>
+     *
      * <code>string file_type = 6;</code>
      * @param value The bytes for fileType to set.
      * @return This builder for chaining.
@@ -1043,6 +1169,102 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       fileType = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object nodeKey = "";
+    /**
+     * <pre>
+     * 课节稳定标识(= resource_id)，用于收藏与深链定位；新增字段
+     * </pre>
+     *
+     * <code>string node_key = 7;</code>
+     * @return The nodeKey.
+     */
+    public java.lang.String getNodeKey() {
+      java.lang.Object ref = nodeKey ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nodeKey = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 课节稳定标识(= resource_id)，用于收藏与深链定位；新增字段
+     * </pre>
+     *
+     * <code>string node_key = 7;</code>
+     * @return The bytes for nodeKey.
+     */
+    public com.google.protobuf.ByteString
+        getNodeKeyBytes() {
+      java.lang.Object ref = nodeKey ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nodeKey = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 课节稳定标识(= resource_id)，用于收藏与深链定位；新增字段
+     * </pre>
+     *
+     * <code>string node_key = 7;</code>
+     * @param value The nodeKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNodeKey(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      nodeKey = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 课节稳定标识(= resource_id)，用于收藏与深链定位；新增字段
+     * </pre>
+     *
+     * <code>string node_key = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNodeKey() {
+      
+      nodeKey = getDefaultInstance().getNodeKey();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 课节稳定标识(= resource_id)，用于收藏与深链定位；新增字段
+     * </pre>
+     *
+     * <code>string node_key = 7;</code>
+     * @param value The bytes for nodeKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNodeKeyBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      nodeKey = value;
       onChanged();
       return this;
     }

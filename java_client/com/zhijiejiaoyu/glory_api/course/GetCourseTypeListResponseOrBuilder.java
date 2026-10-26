@@ -23,24 +23,44 @@ public interface GetCourseTypeListResponseOrBuilder extends
   com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder();
 
   /**
+   * <pre>
+   * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+   * </pre>
+   *
    * <code>repeated .glory_api.CourseType levels = 2;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.course.CourseType> 
       getLevelsList();
   /**
+   * <pre>
+   * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+   * </pre>
+   *
    * <code>repeated .glory_api.CourseType levels = 2;</code>
    */
   com.zhijiejiaoyu.glory_api.course.CourseType getLevels(int index);
   /**
+   * <pre>
+   * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+   * </pre>
+   *
    * <code>repeated .glory_api.CourseType levels = 2;</code>
    */
   int getLevelsCount();
   /**
+   * <pre>
+   * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+   * </pre>
+   *
    * <code>repeated .glory_api.CourseType levels = 2;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder> 
       getLevelsOrBuilderList();
   /**
+   * <pre>
+   * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+   * </pre>
+   *
    * <code>repeated .glory_api.CourseType levels = 2;</code>
    */
   com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder getLevelsOrBuilder(
@@ -71,24 +91,44 @@ public interface GetCourseTypeListResponseOrBuilder extends
       int index);
 
   /**
+   * <pre>
+   * 专业(含 AM 汽车制造；GS 公共基础与素养)
+   * </pre>
+   *
    * <code>repeated .glory_api.CourseType majors = 4;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.course.CourseType> 
       getMajorsList();
   /**
+   * <pre>
+   * 专业(含 AM 汽车制造；GS 公共基础与素养)
+   * </pre>
+   *
    * <code>repeated .glory_api.CourseType majors = 4;</code>
    */
   com.zhijiejiaoyu.glory_api.course.CourseType getMajors(int index);
   /**
+   * <pre>
+   * 专业(含 AM 汽车制造；GS 公共基础与素养)
+   * </pre>
+   *
    * <code>repeated .glory_api.CourseType majors = 4;</code>
    */
   int getMajorsCount();
   /**
+   * <pre>
+   * 专业(含 AM 汽车制造；GS 公共基础与素养)
+   * </pre>
+   *
    * <code>repeated .glory_api.CourseType majors = 4;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder> 
       getMajorsOrBuilderList();
   /**
+   * <pre>
+   * 专业(含 AM 汽车制造；GS 公共基础与素养)
+   * </pre>
+   *
    * <code>repeated .glory_api.CourseType majors = 4;</code>
    */
   com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder getMajorsOrBuilder(
@@ -140,5 +180,137 @@ public interface GetCourseTypeListResponseOrBuilder extends
    * <code>repeated .glory_api.CourseType languages = 6;</code>
    */
   com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder getLanguagesOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * 专业大类(5项)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseType major_categories = 7;</code>
+   */
+  java.util.List<com.zhijiejiaoyu.glory_api.course.CourseType> 
+      getMajorCategoriesList();
+  /**
+   * <pre>
+   * 专业大类(5项)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseType major_categories = 7;</code>
+   */
+  com.zhijiejiaoyu.glory_api.course.CourseType getMajorCategories(int index);
+  /**
+   * <pre>
+   * 专业大类(5项)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseType major_categories = 7;</code>
+   */
+  int getMajorCategoriesCount();
+  /**
+   * <pre>
+   * 专业大类(5项)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseType major_categories = 7;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder> 
+      getMajorCategoriesOrBuilderList();
+  /**
+   * <pre>
+   * 专业大类(5项)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseType major_categories = 7;</code>
+   */
+  com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder getMajorCategoriesOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
+   */
+  java.util.List<com.zhijiejiaoyu.glory_api.course.CourseType> 
+      getCourseAttributesList();
+  /**
+   * <pre>
+   * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
+   */
+  com.zhijiejiaoyu.glory_api.course.CourseType getCourseAttributes(int index);
+  /**
+   * <pre>
+   * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
+   */
+  int getCourseAttributesCount();
+  /**
+   * <pre>
+   * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder> 
+      getCourseAttributesOrBuilderList();
+  /**
+   * <pre>
+   * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
+   */
+  com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder getCourseAttributesOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * 专业大类与专业映射
+   * </pre>
+   *
+   * <code>repeated .glory_api.MajorCategoryGroup major_category_majors = 9;</code>
+   */
+  java.util.List<com.zhijiejiaoyu.glory_api.course.MajorCategoryGroup> 
+      getMajorCategoryMajorsList();
+  /**
+   * <pre>
+   * 专业大类与专业映射
+   * </pre>
+   *
+   * <code>repeated .glory_api.MajorCategoryGroup major_category_majors = 9;</code>
+   */
+  com.zhijiejiaoyu.glory_api.course.MajorCategoryGroup getMajorCategoryMajors(int index);
+  /**
+   * <pre>
+   * 专业大类与专业映射
+   * </pre>
+   *
+   * <code>repeated .glory_api.MajorCategoryGroup major_category_majors = 9;</code>
+   */
+  int getMajorCategoryMajorsCount();
+  /**
+   * <pre>
+   * 专业大类与专业映射
+   * </pre>
+   *
+   * <code>repeated .glory_api.MajorCategoryGroup major_category_majors = 9;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.course.MajorCategoryGroupOrBuilder> 
+      getMajorCategoryMajorsOrBuilderList();
+  /**
+   * <pre>
+   * 专业大类与专业映射
+   * </pre>
+   *
+   * <code>repeated .glory_api.MajorCategoryGroup major_category_majors = 9;</code>
+   */
+  com.zhijiejiaoyu.glory_api.course.MajorCategoryGroupOrBuilder getMajorCategoryMajorsOrBuilder(
       int index);
 }

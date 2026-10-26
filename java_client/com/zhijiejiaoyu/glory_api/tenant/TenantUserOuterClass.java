@@ -94,6 +94,21 @@ public final class TenantUserOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_ListTenantStudentResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_TeacherClassItem_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_TeacherClassItem_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListTeacherClassRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListTeacherClassRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListTeacherClassResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListTeacherClassResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -154,8 +169,18 @@ public final class TenantUserOuterClass {
       "tResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
       "Response\022\'\n\010students\030\002 \003(\0132\025.glory_api.T" +
       "enantUser\022,\n\npagination\030d \001(\0132\030.base.Pag" +
-      "inationResponseB%\n!com.zhijiejiaoyu.glor" +
-      "y_api.tenantP\001b\006proto3"
+      "inationResponse\"\207\001\n\020TeacherClassItem\022\020\n\010" +
+      "class_id\030\001 \001(\003\022\022\n\nclass_name\030\002 \001(\t\022\020\n\010ma" +
+      "jor_id\030\003 \001(\003\022\022\n\nmajor_name\030\004 \001(\t\022\022\n\nmajo" +
+      "r_code\030\005 \001(\t\022\023\n\013student_num\030\006 \001(\003\"\221\001\n\027Li" +
+      "stTeacherClassRequest\022\'\n\014base_request\030\001 " +
+      "\001(\0132\021.base.BaseRequest\022\022\n\nmajor_code\030\002 \001" +
+      "(\t\022\014\n\004name\030\003 \001(\t\022+\n\npagination\030d \001(\0132\027.b" +
+      "ase.PaginationRequest\"o\n\030ListTeacherClas" +
+      "sResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
+      "Response\022,\n\007classes\030\002 \003(\0132\033.glory_api.Te" +
+      "acherClassItemB%\n!com.zhijiejiaoyu.glory" +
+      "_api.tenantP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -259,6 +284,24 @@ public final class TenantUserOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListTenantStudentResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Students", "Pagination", });
+    internal_static_glory_api_TeacherClassItem_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_glory_api_TeacherClassItem_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_TeacherClassItem_descriptor,
+        new java.lang.String[] { "ClassId", "ClassName", "MajorId", "MajorName", "MajorCode", "StudentNum", });
+    internal_static_glory_api_ListTeacherClassRequest_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_glory_api_ListTeacherClassRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListTeacherClassRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "MajorCode", "Name", "Pagination", });
+    internal_static_glory_api_ListTeacherClassResponse_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_glory_api_ListTeacherClassResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListTeacherClassResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "Classes", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
     com.zhijiejiaoyu.glory_api.user.UserOuterClass.getDescriptor();
   }

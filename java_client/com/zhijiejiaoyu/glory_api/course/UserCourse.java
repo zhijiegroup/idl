@@ -59,6 +59,31 @@ public final class UserCourse {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_ListMyCourseResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_FavoriteLessonItem_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_FavoriteLessonItem_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_FavoriteLessonRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_FavoriteLessonRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_FavoriteLessonResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_FavoriteLessonResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListMyFavoriteLessonRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListMyFavoriteLessonRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListMyFavoriteLessonResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListMyFavoriteLessonResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -83,22 +108,39 @@ public final class UserCourse {
       "\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequest" +
       "\022\021\n\tcourse_id\030\002 \001(\003\"?\n\026DeleteMyCourseRes" +
       "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
-      "onse\"\274\001\n\033UpdateCourseProgressRequest\022\'\n\014" +
+      "onse\"\330\001\n\033UpdateCourseProgressRequest\022\'\n\014" +
       "base_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n" +
       "\tcourse_id\030\002 \001(\003\022\033\n\023chapter_resource_id\030" +
       "\003 \001(\003\022!\n\031chapter_resource_progress\030\004 \001(\002" +
-      "\022!\n\031chapter_resource_duration\030\005 \001(\002\"^\n\034U" +
-      "pdateCourseProgressResponse\022%\n\tbase_resp" +
-      "\030\001 \001(\0132\022.base.BaseResponse\022\027\n\017course_pro" +
-      "gress\030\002 \001(\005\"\201\001\n\023ListMyCourseRequest\022\'\n\014b" +
-      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022\024\n\014" +
-      "course_state\030\002 \001(\005\022+\n\npagination\030d \001(\0132\027" +
-      ".base.PaginationRequest\"\237\001\n\024ListMyCourse" +
-      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
-      "esponse\0222\n\014user_courses\030\002 \003(\0132\034.glory_ap" +
-      "i.UserCourseSummary\022,\n\npagination\030d \001(\0132" +
-      "\030.base.PaginationResponseB%\n!com.zhijiej" +
-      "iaoyu.glory_api.courseP\001b\006proto3"
+      "\022!\n\031chapter_resource_duration\030\005 \001(\002\022\032\n\022r" +
+      "oom_play_position\030\006 \001(\002\"^\n\034UpdateCourseP" +
+      "rogressResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponse\022\027\n\017course_progress\030\002 \001(\005\"" +
+      "\201\001\n\023ListMyCourseRequest\022\'\n\014base_request\030" +
+      "\001 \001(\0132\021.base.BaseRequest\022\024\n\014course_state" +
+      "\030\002 \001(\005\022+\n\npagination\030d \001(\0132\027.base.Pagina" +
+      "tionRequest\"\237\001\n\024ListMyCourseResponse\022%\n\t" +
+      "base_resp\030\001 \001(\0132\022.base.BaseResponse\0222\n\014u" +
+      "ser_courses\030\002 \003(\0132\034.glory_api.UserCourse" +
+      "Summary\022,\n\npagination\030d \001(\0132\030.base.Pagin" +
+      "ationResponse\"\247\001\n\022FavoriteLessonItem\022\021\n\t" +
+      "course_id\030\001 \001(\003\022\023\n\013course_name\030\002 \001(\t\022\030\n\020" +
+      "course_cover_url\030\003 \001(\t\022\020\n\010node_key\030\004 \001(\t" +
+      "\022\023\n\013lesson_name\030\005 \001(\t\022\024\n\014chapter_path\030\006 " +
+      "\001(\t\022\022\n\ncreated_at\030\007 \001(\t\"w\n\025FavoriteLesso" +
+      "nRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
+      "seRequest\022\021\n\tcourse_id\030\002 \001(\003\022\020\n\010node_key" +
+      "\030\003 \001(\t\022\020\n\010favorite\030\004 \001(\010\"?\n\026FavoriteLess" +
+      "onResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
+      "eResponse\"s\n\033ListMyFavoriteLessonRequest" +
+      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
+      "t\022+\n\npagination\030d \001(\0132\027.base.PaginationR" +
+      "equest\"\241\001\n\034ListMyFavoriteLessonResponse\022" +
+      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022," +
+      "\n\005items\030\002 \003(\0132\035.glory_api.FavoriteLesson" +
+      "Item\022,\n\npagination\030d \001(\0132\030.base.Paginati" +
+      "onResponseB%\n!com.zhijiejiaoyu.glory_api" +
+      ".courseP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -140,7 +182,7 @@ public final class UserCourse {
     internal_static_glory_api_UpdateCourseProgressRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateCourseProgressRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "CourseId", "ChapterResourceId", "ChapterResourceProgress", "ChapterResourceDuration", });
+        new java.lang.String[] { "BaseRequest", "CourseId", "ChapterResourceId", "ChapterResourceProgress", "ChapterResourceDuration", "RoomPlayPosition", });
     internal_static_glory_api_UpdateCourseProgressResponse_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_glory_api_UpdateCourseProgressResponse_fieldAccessorTable = new
@@ -159,6 +201,36 @@ public final class UserCourse {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListMyCourseResponse_descriptor,
         new java.lang.String[] { "BaseResp", "UserCourses", "Pagination", });
+    internal_static_glory_api_FavoriteLessonItem_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_glory_api_FavoriteLessonItem_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_FavoriteLessonItem_descriptor,
+        new java.lang.String[] { "CourseId", "CourseName", "CourseCoverUrl", "NodeKey", "LessonName", "ChapterPath", "CreatedAt", });
+    internal_static_glory_api_FavoriteLessonRequest_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_glory_api_FavoriteLessonRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_FavoriteLessonRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "CourseId", "NodeKey", "Favorite", });
+    internal_static_glory_api_FavoriteLessonResponse_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_glory_api_FavoriteLessonResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_FavoriteLessonResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_ListMyFavoriteLessonRequest_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_glory_api_ListMyFavoriteLessonRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListMyFavoriteLessonRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "Pagination", });
+    internal_static_glory_api_ListMyFavoriteLessonResponse_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_glory_api_ListMyFavoriteLessonResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListMyFavoriteLessonResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "Items", "Pagination", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }
 

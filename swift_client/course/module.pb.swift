@@ -65,14 +65,17 @@ nonisolated struct GloryApi_CourseResource: Sendable {
   /// 课程资源OSS路径，用于教学视频和教学PPT
   var resourcePath: String = String()
 
-  /// 课程资源URL
+  /// 课程资源URL；课程未购买(assigned=false)时仅第一个视频课节下发，其余置空
   var resourceURL: String = String()
 
   /// 课程资源内容，用于课后习题和教案
   var resourceContent: String = String()
 
-  /// 课程资源类型为教学课件时的文件(PDF/PPT)列表
+  /// 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组
   var files: [GloryApi_CourseResourceFile] = []
+
+  /// 课节稳定标识(= resource_id)，用于收藏与深链定位；新增字段
+  var nodeKey: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -588,7 +591,7 @@ nonisolated extension GloryApi_CourseResourceFile: SwiftProtobuf.Message, SwiftP
 
 nonisolated extension GloryApi_CourseResource: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CourseResource"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}resource_id\0\u{3}resource_name\0\u{3}resource_type\0\u{4}\u{2}resource_path\0\u{3}resource_url\0\u{3}resource_content\0\u{1}files\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}resource_id\0\u{3}resource_name\0\u{3}resource_type\0\u{4}\u{2}resource_path\0\u{3}resource_url\0\u{3}resource_content\0\u{1}files\0\u{3}node_key\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -603,6 +606,7 @@ nonisolated extension GloryApi_CourseResource: SwiftProtobuf.Message, SwiftProto
       case 6: try { try decoder.decodeSingularStringField(value: &self.resourceURL) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.resourceContent) }()
       case 8: try { try decoder.decodeRepeatedMessageField(value: &self.files) }()
+      case 9: try { try decoder.decodeSingularStringField(value: &self.nodeKey) }()
       default: break
       }
     }
@@ -630,6 +634,9 @@ nonisolated extension GloryApi_CourseResource: SwiftProtobuf.Message, SwiftProto
     if !self.files.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.files, fieldNumber: 8)
     }
+    if !self.nodeKey.isEmpty {
+      try visitor.visitSingularStringField(value: self.nodeKey, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -641,6 +648,7 @@ nonisolated extension GloryApi_CourseResource: SwiftProtobuf.Message, SwiftProto
     if lhs.resourceURL != rhs.resourceURL {return false}
     if lhs.resourceContent != rhs.resourceContent {return false}
     if lhs.files != rhs.files {return false}
+    if lhs.nodeKey != rhs.nodeKey {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

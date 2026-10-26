@@ -50,11 +50,13 @@ import * as modules from "./course/module";
 import * as cmodule from "./course/cmodule";
 import * as nmodule from "./course/nmodule";
 import * as course from "./course/course";
+import * as progress_stat from "./course/progress_stat";
 import * as graph from "./course/graph";
 import * as user_course from "./course/user_course";
 import * as teaching_plan from "./course/teaching_plan";
 import * as edu_scheme from "./course/edu_scheme";
 import * as job from "./course/job";
+import * as doc from "./doc/doc";
 import * as app from "./app/app";
 import * as live_traffic from "./traffic/live_traffic";
 import * as role from "./role/role";
@@ -114,11 +116,13 @@ export {
   cmodule,
   nmodule,
   course,
+  progress_stat,
   graph,
   user_course,
   teaching_plan,
   edu_scheme,
   job,
+  doc,
   app,
   live_traffic,
   role,
@@ -1094,6 +1098,11 @@ CreateLivePlanProduct create live plan product */
     request: tenant_user.UpdateTenantUserPasswordRequest
   ): Promise<tenant_user.UpdateTenantUserPasswordResponse>;
 
+  /** 教师所辖班级列表 */
+  ListTeacherClass(
+    request: tenant_user.ListTeacherClassRequest
+  ): Promise<tenant_user.ListTeacherClassResponse>;
+
   /** tenant_config */
   UpdateTenantConfig(
     request: tenant_config.UpdateTenantConfigRequest
@@ -1479,6 +1488,38 @@ CreateLivePlanProduct create live plan product */
     request: user_course.ListMyCourseRequest
   ): Promise<user_course.ListMyCourseResponse>;
 
+  /** 课程收藏
+收藏/取消收藏课节 */
+  FavoriteLesson(
+    request: user_course.FavoriteLessonRequest
+  ): Promise<user_course.FavoriteLessonResponse>;
+
+  /** 我的收藏课节列表 */
+  ListMyFavoriteLesson(
+    request: user_course.ListMyFavoriteLessonRequest
+  ): Promise<user_course.ListMyFavoriteLessonResponse>;
+
+  /** 学情分析
+学情统计卡片 */
+  ProgressStatOverview(
+    request: progress_stat.ProgressStatOverviewRequest
+  ): Promise<progress_stat.ProgressStatOverviewResponse>;
+
+  /** 班级/学生进度列表 */
+  ListProgressClassStudent(
+    request: progress_stat.ListProgressClassStudentRequest
+  ): Promise<progress_stat.ListProgressClassStudentResponse>;
+
+  /** 班级课程进度详情 */
+  ListClassCourseProgress(
+    request: progress_stat.ListClassCourseProgressRequest
+  ): Promise<progress_stat.ListClassCourseProgressResponse>;
+
+  /** 学生课节进度详情 */
+  ListStudentLessonProgress(
+    request: progress_stat.ListStudentLessonProgressRequest
+  ): Promise<progress_stat.ListStudentLessonProgressResponse>;
+
   /** 教案管理 */
   ListTeachingPlan(
     request: teaching_plan.ListTeachingPlanRequest
@@ -1500,6 +1541,17 @@ CreateLivePlanProduct create live plan product */
   UpdateTeachingCourseProgress(
     request: teaching_plan.UpdateTeachingCourseProgressRequest
   ): Promise<teaching_plan.UpdateTeachingCourseProgressResponse>;
+
+  /** 授课任务
+在授课程列表 */
+  ListTeachingTask(
+    request: teaching_plan.ListTeachingTaskRequest
+  ): Promise<teaching_plan.ListTeachingTaskResponse>;
+
+  /** 加入授课 */
+  CreateTeachingTask(
+    request: teaching_plan.CreateTeachingTaskRequest
+  ): Promise<teaching_plan.CreateTeachingTaskResponse>;
 
   /** 培养方案 */
   CreateEduScheme(
@@ -1530,6 +1582,73 @@ CreateLivePlanProduct create live plan product */
   GetEduSchemeLikeCourse(
     request: edu_scheme.GetEduSchemeLikeCourseRequest
   ): Promise<edu_scheme.GetEduSchemeLikeCourseResponse>;
+
+  /** 文档
+学校文档列表 */
+  ListSchoolDoc(
+    request: doc.ListSchoolDocRequest
+  ): Promise<doc.ListSchoolDocResponse>;
+
+  /** 新增学校文档 */
+  CreateSchoolDoc(
+    request: doc.CreateSchoolDocRequest
+  ): Promise<doc.CreateSchoolDocResponse>;
+
+  /** 编辑/替换学校文档 */
+  UpdateSchoolDoc(
+    request: doc.UpdateSchoolDocRequest
+  ): Promise<doc.UpdateSchoolDocResponse>;
+
+  /** 删除学校文档 */
+  DeleteSchoolDoc(
+    request: doc.DeleteSchoolDocRequest
+  ): Promise<doc.DeleteSchoolDocResponse>;
+
+  /** 收藏/取消收藏学校文档 */
+  FavoriteSchoolDoc(
+    request: doc.FavoriteSchoolDocRequest
+  ): Promise<doc.FavoriteSchoolDocResponse>;
+
+  /** 新建我的文档文件夹 */
+  CreateMyDocFolder(
+    request: doc.CreateMyDocFolderRequest
+  ): Promise<doc.CreateMyDocFolderResponse>;
+
+  /** 重命名我的文档文件夹(预留) */
+  RenameMyDocFolder(
+    request: doc.RenameMyDocFolderRequest
+  ): Promise<doc.RenameMyDocFolderResponse>;
+
+  /** 删除我的文档文件夹(递归) */
+  DeleteMyDocFolder(
+    request: doc.DeleteMyDocFolderRequest
+  ): Promise<doc.DeleteMyDocFolderResponse>;
+
+  /** 我的文档文件夹列表 */
+  ListMyDocFolder(
+    request: doc.ListMyDocFolderRequest
+  ): Promise<doc.ListMyDocFolderResponse>;
+
+  /** 我的文档当前目录列表 */
+  ListMyDoc(request: doc.ListMyDocRequest): Promise<doc.ListMyDocResponse>;
+
+  /** 移出收藏文档 */
+  MoveOutMyDoc(
+    request: doc.MoveOutMyDocRequest
+  ): Promise<doc.MoveOutMyDocResponse>;
+
+  /** 删除自上传文件 */
+  DeleteMyDoc(
+    request: doc.DeleteMyDocRequest
+  ): Promise<doc.DeleteMyDocResponse>;
+
+  /** 获取下载地址 */
+  DownloadMyDoc(
+    request: doc.DownloadMyDocRequest
+  ): Promise<doc.DownloadMyDocResponse>;
+
+  /** 通用上传 */
+  UploadFile(request: doc.UploadFileRequest): Promise<doc.UploadFileResponse>;
 
   /** app下载 */
   GetAndroidQRcode(

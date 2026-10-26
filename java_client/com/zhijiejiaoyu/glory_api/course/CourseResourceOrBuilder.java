@@ -69,7 +69,7 @@ public interface CourseResourceOrBuilder extends
 
   /**
    * <pre>
-   * 课程资源URL
+   * 课程资源URL；课程未购买(assigned=false)时仅第一个视频课节下发，其余置空
    * </pre>
    *
    * <code>string resource_url = 6;</code>
@@ -78,7 +78,7 @@ public interface CourseResourceOrBuilder extends
   java.lang.String getResourceUrl();
   /**
    * <pre>
-   * 课程资源URL
+   * 课程资源URL；课程未购买(assigned=false)时仅第一个视频课节下发，其余置空
    * </pre>
    *
    * <code>string resource_url = 6;</code>
@@ -109,7 +109,7 @@ public interface CourseResourceOrBuilder extends
 
   /**
    * <pre>
-   * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+   * 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组
    * </pre>
    *
    * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
@@ -118,7 +118,7 @@ public interface CourseResourceOrBuilder extends
       getFilesList();
   /**
    * <pre>
-   * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+   * 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组
    * </pre>
    *
    * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
@@ -126,7 +126,7 @@ public interface CourseResourceOrBuilder extends
   com.zhijiejiaoyu.glory_api.course.CourseResourceFile getFiles(int index);
   /**
    * <pre>
-   * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+   * 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组
    * </pre>
    *
    * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
@@ -134,7 +134,7 @@ public interface CourseResourceOrBuilder extends
   int getFilesCount();
   /**
    * <pre>
-   * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+   * 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组
    * </pre>
    *
    * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
@@ -143,11 +143,31 @@ public interface CourseResourceOrBuilder extends
       getFilesOrBuilderList();
   /**
    * <pre>
-   * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+   * 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组
    * </pre>
    *
    * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
    */
   com.zhijiejiaoyu.glory_api.course.CourseResourceFileOrBuilder getFilesOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 课节稳定标识(= resource_id)，用于收藏与深链定位；新增字段
+   * </pre>
+   *
+   * <code>string node_key = 9;</code>
+   * @return The nodeKey.
+   */
+  java.lang.String getNodeKey();
+  /**
+   * <pre>
+   * 课节稳定标识(= resource_id)，用于收藏与深链定位；新增字段
+   * </pre>
+   *
+   * <code>string node_key = 9;</code>
+   * @return The bytes for nodeKey.
+   */
+  com.google.protobuf.ByteString
+      getNodeKeyBytes();
 }

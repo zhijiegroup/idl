@@ -24,7 +24,7 @@ public interface UpdateCourseProgressResponseOrBuilder extends
 
   /**
    * <pre>
-   * 当前课程总进度
+   * 当前课程总进度(基于逐节记录聚合)
    * </pre>
    *
    * <code>int32 course_progress = 2;</code>

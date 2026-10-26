@@ -24,7 +24,7 @@ public interface UpdateTeachingCourseProgressRequestOrBuilder extends
 
   /**
    * <pre>
-   * 课程ID
+   * 课程ID(自建课程可传 0)
    * </pre>
    *
    * <code>int64 course_id = 2;</code>
@@ -44,7 +44,7 @@ public interface UpdateTeachingCourseProgressRequestOrBuilder extends
 
   /**
    * <pre>
-   * 当前课程资源播放进度
+   * 当前课程资源播放进度（0-100）
    * </pre>
    *
    * <code>float chapter_resource_progress = 4;</code>
@@ -54,11 +54,41 @@ public interface UpdateTeachingCourseProgressRequestOrBuilder extends
 
   /**
    * <pre>
-   * 当前课程资源总时长
+   * 当前课程资源总时长（毫秒）
    * </pre>
    *
    * <code>float chapter_resource_duration = 5;</code>
    * @return The chapterResourceDuration.
    */
   float getChapterResourceDuration();
+
+  /**
+   * <pre>
+   * 授课班级ID；传值时按授课任务推进(current_lesson_no 取 MAX、只增不退)，不传时保持旧行为；新增字段
+   * </pre>
+   *
+   * <code>int64 class_id = 6;</code>
+   * @return The classId.
+   */
+  long getClassId();
+
+  /**
+   * <pre>
+   * 当前末级节点序号(1-based)；满进度自动结课，已结课任务拒绝推进；新增字段
+   * </pre>
+   *
+   * <code>int32 current_lesson_no = 7;</code>
+   * @return The currentLessonNo.
+   */
+  int getCurrentLessonNo();
+
+  /**
+   * <pre>
+   * 房间播放点位（毫秒，视频内当前播放位置；可回退，落库取最新值）
+   * </pre>
+   *
+   * <code>float room_play_position = 8;</code>
+   * @return The roomPlayPosition.
+   */
+  float getRoomPlayPosition();
 }

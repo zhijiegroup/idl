@@ -104,6 +104,7 @@ const UpdateCourseProgressRequest$json = {
     {'1': 'chapter_resource_id', '3': 3, '4': 1, '5': 3, '10': 'chapterResourceId'},
     {'1': 'chapter_resource_progress', '3': 4, '4': 1, '5': 2, '10': 'chapterResourceProgress'},
     {'1': 'chapter_resource_duration', '3': 5, '4': 1, '5': 2, '10': 'chapterResourceDuration'},
+    {'1': 'room_play_position', '3': 6, '4': 1, '5': 2, '10': 'roomPlayPosition'},
   ],
 };
 
@@ -114,7 +115,7 @@ final $typed_data.Uint8List updateCourseProgressRequestDescriptor = $convert.bas
     'ZBIuChNjaGFwdGVyX3Jlc291cmNlX2lkGAMgASgDUhFjaGFwdGVyUmVzb3VyY2VJZBI6ChljaG'
     'FwdGVyX3Jlc291cmNlX3Byb2dyZXNzGAQgASgCUhdjaGFwdGVyUmVzb3VyY2VQcm9ncmVzcxI6'
     'ChljaGFwdGVyX3Jlc291cmNlX2R1cmF0aW9uGAUgASgCUhdjaGFwdGVyUmVzb3VyY2VEdXJhdG'
-    'lvbg==');
+    'lvbhIsChJyb29tX3BsYXlfcG9zaXRpb24YBiABKAJSEHJvb21QbGF5UG9zaXRpb24=');
 
 @$core.Deprecated('Use updateCourseProgressResponseDescriptor instead')
 const UpdateCourseProgressResponse$json = {
@@ -164,4 +165,88 @@ final $typed_data.Uint8List listMyCourseResponseDescriptor = $convert.base64Deco
     'Nwb25zZVIIYmFzZVJlc3ASPwoMdXNlcl9jb3Vyc2VzGAIgAygLMhwuZ2xvcnlfYXBpLlVzZXJD'
     'b3Vyc2VTdW1tYXJ5Ugt1c2VyQ291cnNlcxI4CgpwYWdpbmF0aW9uGGQgASgLMhguYmFzZS5QYW'
     'dpbmF0aW9uUmVzcG9uc2VSCnBhZ2luYXRpb24=');
+
+@$core.Deprecated('Use favoriteLessonItemDescriptor instead')
+const FavoriteLessonItem$json = {
+  '1': 'FavoriteLessonItem',
+  '2': [
+    {'1': 'course_id', '3': 1, '4': 1, '5': 3, '10': 'courseId'},
+    {'1': 'course_name', '3': 2, '4': 1, '5': 9, '10': 'courseName'},
+    {'1': 'course_cover_url', '3': 3, '4': 1, '5': 9, '10': 'courseCoverUrl'},
+    {'1': 'node_key', '3': 4, '4': 1, '5': 9, '10': 'nodeKey'},
+    {'1': 'lesson_name', '3': 5, '4': 1, '5': 9, '10': 'lessonName'},
+    {'1': 'chapter_path', '3': 6, '4': 1, '5': 9, '10': 'chapterPath'},
+    {'1': 'created_at', '3': 7, '4': 1, '5': 9, '10': 'createdAt'},
+  ],
+};
+
+/// Descriptor for `FavoriteLessonItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List favoriteLessonItemDescriptor = $convert.base64Decode(
+    'ChJGYXZvcml0ZUxlc3Nvbkl0ZW0SGwoJY291cnNlX2lkGAEgASgDUghjb3Vyc2VJZBIfCgtjb3'
+    'Vyc2VfbmFtZRgCIAEoCVIKY291cnNlTmFtZRIoChBjb3Vyc2VfY292ZXJfdXJsGAMgASgJUg5j'
+    'b3Vyc2VDb3ZlclVybBIZCghub2RlX2tleRgEIAEoCVIHbm9kZUtleRIfCgtsZXNzb25fbmFtZR'
+    'gFIAEoCVIKbGVzc29uTmFtZRIhCgxjaGFwdGVyX3BhdGgYBiABKAlSC2NoYXB0ZXJQYXRoEh0K'
+    'CmNyZWF0ZWRfYXQYByABKAlSCWNyZWF0ZWRBdA==');
+
+@$core.Deprecated('Use favoriteLessonRequestDescriptor instead')
+const FavoriteLessonRequest$json = {
+  '1': 'FavoriteLessonRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'course_id', '3': 2, '4': 1, '5': 3, '10': 'courseId'},
+    {'1': 'node_key', '3': 3, '4': 1, '5': 9, '10': 'nodeKey'},
+    {'1': 'favorite', '3': 4, '4': 1, '5': 8, '10': 'favorite'},
+  ],
+};
+
+/// Descriptor for `FavoriteLessonRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List favoriteLessonRequestDescriptor = $convert.base64Decode(
+    'ChVGYXZvcml0ZUxlc3NvblJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS5CYX'
+    'NlUmVxdWVzdFILYmFzZVJlcXVlc3QSGwoJY291cnNlX2lkGAIgASgDUghjb3Vyc2VJZBIZCghu'
+    'b2RlX2tleRgDIAEoCVIHbm9kZUtleRIaCghmYXZvcml0ZRgEIAEoCFIIZmF2b3JpdGU=');
+
+@$core.Deprecated('Use favoriteLessonResponseDescriptor instead')
+const FavoriteLessonResponse$json = {
+  '1': 'FavoriteLessonResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `FavoriteLessonResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List favoriteLessonResponseDescriptor = $convert.base64Decode(
+    'ChZGYXZvcml0ZUxlc3NvblJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQmFzZV'
+    'Jlc3BvbnNlUghiYXNlUmVzcA==');
+
+@$core.Deprecated('Use listMyFavoriteLessonRequestDescriptor instead')
+const ListMyFavoriteLessonRequest$json = {
+  '1': 'ListMyFavoriteLessonRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `ListMyFavoriteLessonRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyFavoriteLessonRequestDescriptor = $convert.base64Decode(
+    'ChtMaXN0TXlGYXZvcml0ZUxlc3NvblJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYm'
+    'FzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSNwoKcGFnaW5hdGlvbhhkIAEoCzIXLmJhc2Uu'
+    'UGFnaW5hdGlvblJlcXVlc3RSCnBhZ2luYXRpb24=');
+
+@$core.Deprecated('Use listMyFavoriteLessonResponseDescriptor instead')
+const ListMyFavoriteLessonResponse$json = {
+  '1': 'ListMyFavoriteLessonResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'items', '3': 2, '4': 3, '5': 11, '6': '.glory_api.FavoriteLessonItem', '10': 'items'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationResponse', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `ListMyFavoriteLessonResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyFavoriteLessonResponseDescriptor = $convert.base64Decode(
+    'ChxMaXN0TXlGYXZvcml0ZUxlc3NvblJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2'
+    'UuQmFzZVJlc3BvbnNlUghiYXNlUmVzcBIzCgVpdGVtcxgCIAMoCzIdLmdsb3J5X2FwaS5GYXZv'
+    'cml0ZUxlc3Nvbkl0ZW1SBWl0ZW1zEjgKCnBhZ2luYXRpb24YZCABKAsyGC5iYXNlLlBhZ2luYX'
+    'Rpb25SZXNwb25zZVIKcGFnaW5hdGlvbg==');
 

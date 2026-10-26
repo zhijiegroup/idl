@@ -160,6 +160,16 @@ private static final long serialVersionUID = 0L;
             language = s;
             break;
           }
+          case 152: {
+
+            majorCategory = input.readInt32();
+            break;
+          }
+          case 160: {
+
+            courseAttribute = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -470,6 +480,10 @@ private static final long serialVersionUID = 0L;
   public static final int COURSE_LEVEL_FIELD_NUMBER = 11;
   private long courseLevel ;
   /**
+   * <pre>
+   * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+   * </pre>
+   *
    * <code>int64 course_level = 11;</code>
    * @return The courseLevel.
    */
@@ -638,6 +652,36 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int MAJOR_CATEGORY_FIELD_NUMBER = 19;
+  private int majorCategory ;
+  /**
+   * <pre>
+   * 专业大类：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术；新增字段
+   * </pre>
+   *
+   * <code>int32 major_category = 19;</code>
+   * @return The majorCategory.
+   */
+  @java.lang.Override
+  public int getMajorCategory() {
+    return majorCategory ;
+  }
+
+  public static final int COURSE_ATTRIBUTE_FIELD_NUMBER = 20;
+  private int courseAttribute ;
+  /**
+   * <pre>
+   * 课程属性：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课；新增字段
+   * </pre>
+   *
+   * <code>int32 course_attribute = 20;</code>
+   * @return The courseAttribute.
+   */
+  @java.lang.Override
+  public int getCourseAttribute() {
+    return courseAttribute ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -705,6 +749,12 @@ private static final long serialVersionUID = 0L;
     }
     if (!getLanguageBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, language );
+    }
+    if (majorCategory != 0) {
+      output.writeInt32(19, majorCategory );
+    }
+    if (courseAttribute != 0) {
+      output.writeInt32(20, courseAttribute );
     }
     unknownFields.writeTo(output);
   }
@@ -779,6 +829,14 @@ private static final long serialVersionUID = 0L;
     if (!getLanguageBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, language );
     }
+    if (majorCategory != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(19, majorCategory );
+    }
+    if (courseAttribute != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(20, courseAttribute );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -833,6 +891,10 @@ private static final long serialVersionUID = 0L;
         != other.getAssigned()) return false;
     if (!getLanguage()
         .equals(other.getLanguage())) return false;
+    if (getMajorCategory()
+        != other.getMajorCategory()) return false;
+    if (getCourseAttribute()
+        != other.getCourseAttribute()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -891,6 +953,10 @@ private static final long serialVersionUID = 0L;
         getAssigned());
     hash = (37 * hash) + LANGUAGE_FIELD_NUMBER;
     hash = (53 * hash) + getLanguage().hashCode();
+    hash = (37 * hash) + MAJOR_CATEGORY_FIELD_NUMBER;
+    hash = (53 * hash) + getMajorCategory();
+    hash = (37 * hash) + COURSE_ATTRIBUTE_FIELD_NUMBER;
+    hash = (53 * hash) + getCourseAttribute();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1065,6 +1131,10 @@ private static final long serialVersionUID = 0L;
 
       language = "";
 
+      majorCategory = 0;
+
+      courseAttribute = 0;
+
       return this;
     }
 
@@ -1118,6 +1188,8 @@ private static final long serialVersionUID = 0L;
       }
       result.assigned = assigned ;
       result.language = language ;
+      result.majorCategory = majorCategory ;
+      result.courseAttribute = courseAttribute ;
       onBuilt();
       return result;
     }
@@ -1250,6 +1322,12 @@ private static final long serialVersionUID = 0L;
       if (!other.getLanguage().isEmpty()) {
         language = other.language ;
         onChanged();
+      }
+      if (other.getMajorCategory() != 0) {
+        setMajorCategory(other.getMajorCategory());
+      }
+      if (other.getCourseAttribute() != 0) {
+        setCourseAttribute(other.getCourseAttribute());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1863,6 +1941,10 @@ private static final long serialVersionUID = 0L;
 
     private long courseLevel ;
     /**
+     * <pre>
+     * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+     * </pre>
+     *
      * <code>int64 course_level = 11;</code>
      * @return The courseLevel.
      */
@@ -1871,6 +1953,10 @@ private static final long serialVersionUID = 0L;
       return courseLevel ;
     }
     /**
+     * <pre>
+     * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+     * </pre>
+     *
      * <code>int64 course_level = 11;</code>
      * @param value The courseLevel to set.
      * @return This builder for chaining.
@@ -1882,6 +1968,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+     * </pre>
+     *
      * <code>int64 course_level = 11;</code>
      * @return This builder for chaining.
      */
@@ -2404,6 +2494,92 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       language = value;
+      onChanged();
+      return this;
+    }
+
+    private int majorCategory ;
+    /**
+     * <pre>
+     * 专业大类：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术；新增字段
+     * </pre>
+     *
+     * <code>int32 major_category = 19;</code>
+     * @return The majorCategory.
+     */
+    @java.lang.Override
+    public int getMajorCategory() {
+      return majorCategory ;
+    }
+    /**
+     * <pre>
+     * 专业大类：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术；新增字段
+     * </pre>
+     *
+     * <code>int32 major_category = 19;</code>
+     * @param value The majorCategory to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMajorCategory(int value) {
+      
+      majorCategory = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 专业大类：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术；新增字段
+     * </pre>
+     *
+     * <code>int32 major_category = 19;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMajorCategory() {
+      
+      majorCategory = 0;
+      onChanged();
+      return this;
+    }
+
+    private int courseAttribute ;
+    /**
+     * <pre>
+     * 课程属性：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课；新增字段
+     * </pre>
+     *
+     * <code>int32 course_attribute = 20;</code>
+     * @return The courseAttribute.
+     */
+    @java.lang.Override
+    public int getCourseAttribute() {
+      return courseAttribute ;
+    }
+    /**
+     * <pre>
+     * 课程属性：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课；新增字段
+     * </pre>
+     *
+     * <code>int32 course_attribute = 20;</code>
+     * @param value The courseAttribute to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCourseAttribute(int value) {
+      
+      courseAttribute = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程属性：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课；新增字段
+     * </pre>
+     *
+     * <code>int32 course_attribute = 20;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCourseAttribute() {
+      
+      courseAttribute = 0;
       onChanged();
       return this;
     }

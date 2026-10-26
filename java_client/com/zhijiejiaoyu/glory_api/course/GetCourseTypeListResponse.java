@@ -21,6 +21,9 @@ private static final long serialVersionUID = 0L;
     majors = java.util.Collections.emptyList();
     industries = java.util.Collections.emptyList();
     languages = java.util.Collections.emptyList();
+    majorCategories = java.util.Collections.emptyList();
+    courseAttributes = java.util.Collections.emptyList();
+    majorCategoryMajors = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -112,6 +115,33 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.zhijiejiaoyu.glory_api.course.CourseType.parser(), extensionRegistry));
             break;
           }
+          case 58: {
+            if (!((mutable_bitField0 & 0x00000020) != 0)) {
+              majorCategories = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.CourseType>();
+              mutable_bitField0_ |= 0x00000020;
+            }
+            majorCategories .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.course.CourseType.parser(), extensionRegistry));
+            break;
+          }
+          case 66: {
+            if (!((mutable_bitField0 & 0x00000040) != 0)) {
+              courseAttributes = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.CourseType>();
+              mutable_bitField0_ |= 0x00000040;
+            }
+            courseAttributes .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.course.CourseType.parser(), extensionRegistry));
+            break;
+          }
+          case 74: {
+            if (!((mutable_bitField0 & 0x00000080) != 0)) {
+              majorCategoryMajors = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.MajorCategoryGroup>();
+              mutable_bitField0_ |= 0x00000080;
+            }
+            majorCategoryMajors .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.course.MajorCategoryGroup.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -141,6 +171,15 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0 & 0x00000010) != 0)) {
         languages = java.util.Collections.unmodifiableList(languages );
+      }
+      if (((mutable_bitField0 & 0x00000020) != 0)) {
+        majorCategories = java.util.Collections.unmodifiableList(majorCategories );
+      }
+      if (((mutable_bitField0 & 0x00000040) != 0)) {
+        courseAttributes = java.util.Collections.unmodifiableList(courseAttributes );
+      }
+      if (((mutable_bitField0 & 0x00000080) != 0)) {
+        majorCategoryMajors = java.util.Collections.unmodifiableList(majorCategoryMajors );
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -188,6 +227,10 @@ private static final long serialVersionUID = 0L;
   public static final int LEVELS_FIELD_NUMBER = 2;
   private java.util.List<com.zhijiejiaoyu.glory_api.course.CourseType> levels ;
   /**
+   * <pre>
+   * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+   * </pre>
+   *
    * <code>repeated .glory_api.CourseType levels = 2;</code>
    */
   @java.lang.Override
@@ -195,6 +238,10 @@ private static final long serialVersionUID = 0L;
     return levels ;
   }
   /**
+   * <pre>
+   * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+   * </pre>
+   *
    * <code>repeated .glory_api.CourseType levels = 2;</code>
    */
   @java.lang.Override
@@ -203,6 +250,10 @@ private static final long serialVersionUID = 0L;
     return levels ;
   }
   /**
+   * <pre>
+   * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+   * </pre>
+   *
    * <code>repeated .glory_api.CourseType levels = 2;</code>
    */
   @java.lang.Override
@@ -210,6 +261,10 @@ private static final long serialVersionUID = 0L;
     return levels .size();
   }
   /**
+   * <pre>
+   * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+   * </pre>
+   *
    * <code>repeated .glory_api.CourseType levels = 2;</code>
    */
   @java.lang.Override
@@ -217,6 +272,10 @@ private static final long serialVersionUID = 0L;
     return levels .get(index);
   }
   /**
+   * <pre>
+   * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+   * </pre>
+   *
    * <code>repeated .glory_api.CourseType levels = 2;</code>
    */
   @java.lang.Override
@@ -268,6 +327,10 @@ private static final long serialVersionUID = 0L;
   public static final int MAJORS_FIELD_NUMBER = 4;
   private java.util.List<com.zhijiejiaoyu.glory_api.course.CourseType> majors ;
   /**
+   * <pre>
+   * 专业(含 AM 汽车制造；GS 公共基础与素养)
+   * </pre>
+   *
    * <code>repeated .glory_api.CourseType majors = 4;</code>
    */
   @java.lang.Override
@@ -275,6 +338,10 @@ private static final long serialVersionUID = 0L;
     return majors ;
   }
   /**
+   * <pre>
+   * 专业(含 AM 汽车制造；GS 公共基础与素养)
+   * </pre>
+   *
    * <code>repeated .glory_api.CourseType majors = 4;</code>
    */
   @java.lang.Override
@@ -283,6 +350,10 @@ private static final long serialVersionUID = 0L;
     return majors ;
   }
   /**
+   * <pre>
+   * 专业(含 AM 汽车制造；GS 公共基础与素养)
+   * </pre>
+   *
    * <code>repeated .glory_api.CourseType majors = 4;</code>
    */
   @java.lang.Override
@@ -290,6 +361,10 @@ private static final long serialVersionUID = 0L;
     return majors .size();
   }
   /**
+   * <pre>
+   * 专业(含 AM 汽车制造；GS 公共基础与素养)
+   * </pre>
+   *
    * <code>repeated .glory_api.CourseType majors = 4;</code>
    */
   @java.lang.Override
@@ -297,6 +372,10 @@ private static final long serialVersionUID = 0L;
     return majors .get(index);
   }
   /**
+   * <pre>
+   * 专业(含 AM 汽车制造；GS 公共基础与素养)
+   * </pre>
+   *
    * <code>repeated .glory_api.CourseType majors = 4;</code>
    */
   @java.lang.Override
@@ -385,6 +464,186 @@ private static final long serialVersionUID = 0L;
     return languages .get(index);
   }
 
+  public static final int MAJOR_CATEGORIES_FIELD_NUMBER = 7;
+  private java.util.List<com.zhijiejiaoyu.glory_api.course.CourseType> majorCategories ;
+  /**
+   * <pre>
+   * 专业大类(5项)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseType major_categories = 7;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseType> getMajorCategoriesList() {
+    return majorCategories ;
+  }
+  /**
+   * <pre>
+   * 专业大类(5项)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseType major_categories = 7;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder> 
+      getMajorCategoriesOrBuilderList() {
+    return majorCategories ;
+  }
+  /**
+   * <pre>
+   * 专业大类(5项)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseType major_categories = 7;</code>
+   */
+  @java.lang.Override
+  public int getMajorCategoriesCount() {
+    return majorCategories .size();
+  }
+  /**
+   * <pre>
+   * 专业大类(5项)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseType major_categories = 7;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.CourseType getMajorCategories(int index) {
+    return majorCategories .get(index);
+  }
+  /**
+   * <pre>
+   * 专业大类(5项)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseType major_categories = 7;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder getMajorCategoriesOrBuilder(
+      int index) {
+    return majorCategories .get(index);
+  }
+
+  public static final int COURSE_ATTRIBUTES_FIELD_NUMBER = 8;
+  private java.util.List<com.zhijiejiaoyu.glory_api.course.CourseType> courseAttributes ;
+  /**
+   * <pre>
+   * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseType> getCourseAttributesList() {
+    return courseAttributes ;
+  }
+  /**
+   * <pre>
+   * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder> 
+      getCourseAttributesOrBuilderList() {
+    return courseAttributes ;
+  }
+  /**
+   * <pre>
+   * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
+   */
+  @java.lang.Override
+  public int getCourseAttributesCount() {
+    return courseAttributes .size();
+  }
+  /**
+   * <pre>
+   * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.CourseType getCourseAttributes(int index) {
+    return courseAttributes .get(index);
+  }
+  /**
+   * <pre>
+   * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder getCourseAttributesOrBuilder(
+      int index) {
+    return courseAttributes .get(index);
+  }
+
+  public static final int MAJOR_CATEGORY_MAJORS_FIELD_NUMBER = 9;
+  private java.util.List<com.zhijiejiaoyu.glory_api.course.MajorCategoryGroup> majorCategoryMajors ;
+  /**
+   * <pre>
+   * 专业大类与专业映射
+   * </pre>
+   *
+   * <code>repeated .glory_api.MajorCategoryGroup major_category_majors = 9;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.zhijiejiaoyu.glory_api.course.MajorCategoryGroup> getMajorCategoryMajorsList() {
+    return majorCategoryMajors ;
+  }
+  /**
+   * <pre>
+   * 专业大类与专业映射
+   * </pre>
+   *
+   * <code>repeated .glory_api.MajorCategoryGroup major_category_majors = 9;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.MajorCategoryGroupOrBuilder> 
+      getMajorCategoryMajorsOrBuilderList() {
+    return majorCategoryMajors ;
+  }
+  /**
+   * <pre>
+   * 专业大类与专业映射
+   * </pre>
+   *
+   * <code>repeated .glory_api.MajorCategoryGroup major_category_majors = 9;</code>
+   */
+  @java.lang.Override
+  public int getMajorCategoryMajorsCount() {
+    return majorCategoryMajors .size();
+  }
+  /**
+   * <pre>
+   * 专业大类与专业映射
+   * </pre>
+   *
+   * <code>repeated .glory_api.MajorCategoryGroup major_category_majors = 9;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.MajorCategoryGroup getMajorCategoryMajors(int index) {
+    return majorCategoryMajors .get(index);
+  }
+  /**
+   * <pre>
+   * 专业大类与专业映射
+   * </pre>
+   *
+   * <code>repeated .glory_api.MajorCategoryGroup major_category_majors = 9;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.MajorCategoryGroupOrBuilder getMajorCategoryMajorsOrBuilder(
+      int index) {
+    return majorCategoryMajors .get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -416,6 +675,15 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < languages .size(); i++) {
       output.writeMessage(6, languages .get(i));
+    }
+    for (int i = 0; i < majorCategories .size(); i++) {
+      output.writeMessage(7, majorCategories .get(i));
+    }
+    for (int i = 0; i < courseAttributes .size(); i++) {
+      output.writeMessage(8, courseAttributes .get(i));
+    }
+    for (int i = 0; i < majorCategoryMajors .size(); i++) {
+      output.writeMessage(9, majorCategoryMajors .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -450,6 +718,18 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, languages .get(i));
     }
+    for (int i = 0; i < majorCategories .size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, majorCategories .get(i));
+    }
+    for (int i = 0; i < courseAttributes .size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, courseAttributes .get(i));
+    }
+    for (int i = 0; i < majorCategoryMajors .size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, majorCategoryMajors .get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -480,6 +760,12 @@ private static final long serialVersionUID = 0L;
         .equals(other.getIndustriesList())) return false;
     if (!getLanguagesList()
         .equals(other.getLanguagesList())) return false;
+    if (!getMajorCategoriesList()
+        .equals(other.getMajorCategoriesList())) return false;
+    if (!getCourseAttributesList()
+        .equals(other.getCourseAttributesList())) return false;
+    if (!getMajorCategoryMajorsList()
+        .equals(other.getMajorCategoryMajorsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -514,6 +800,18 @@ private static final long serialVersionUID = 0L;
     if (getLanguagesCount() > 0) {
       hash = (37 * hash) + LANGUAGES_FIELD_NUMBER;
       hash = (53 * hash) + getLanguagesList().hashCode();
+    }
+    if (getMajorCategoriesCount() > 0) {
+      hash = (37 * hash) + MAJOR_CATEGORIES_FIELD_NUMBER;
+      hash = (53 * hash) + getMajorCategoriesList().hashCode();
+    }
+    if (getCourseAttributesCount() > 0) {
+      hash = (37 * hash) + COURSE_ATTRIBUTES_FIELD_NUMBER;
+      hash = (53 * hash) + getCourseAttributesList().hashCode();
+    }
+    if (getMajorCategoryMajorsCount() > 0) {
+      hash = (37 * hash) + MAJOR_CATEGORY_MAJORS_FIELD_NUMBER;
+      hash = (53 * hash) + getMajorCategoryMajorsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -648,6 +946,9 @@ private static final long serialVersionUID = 0L;
         getMajorsFieldBuilder();
         getIndustriesFieldBuilder();
         getLanguagesFieldBuilder();
+        getMajorCategoriesFieldBuilder();
+        getCourseAttributesFieldBuilder();
+        getMajorCategoryMajorsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -688,6 +989,24 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0 & ~0x00000010);
       } else {
         languagesBuilder .clear();
+      }
+      if (majorCategoriesBuilder == null) {
+        majorCategories = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000020);
+      } else {
+        majorCategoriesBuilder .clear();
+      }
+      if (courseAttributesBuilder == null) {
+        courseAttributes = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000040);
+      } else {
+        courseAttributesBuilder .clear();
+      }
+      if (majorCategoryMajorsBuilder == null) {
+        majorCategoryMajors = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000080);
+      } else {
+        majorCategoryMajorsBuilder .clear();
       }
       return this;
     }
@@ -765,6 +1084,33 @@ private static final long serialVersionUID = 0L;
         result.languages = languages ;
       } else {
         result.languages = languagesBuilder .build();
+      }
+      if (majorCategoriesBuilder == null) {
+        if (((bitField0 & 0x00000020) != 0)) {
+          majorCategories = java.util.Collections.unmodifiableList(majorCategories );
+          bitField0 = (bitField0 & ~0x00000020);
+        }
+        result.majorCategories = majorCategories ;
+      } else {
+        result.majorCategories = majorCategoriesBuilder .build();
+      }
+      if (courseAttributesBuilder == null) {
+        if (((bitField0 & 0x00000040) != 0)) {
+          courseAttributes = java.util.Collections.unmodifiableList(courseAttributes );
+          bitField0 = (bitField0 & ~0x00000040);
+        }
+        result.courseAttributes = courseAttributes ;
+      } else {
+        result.courseAttributes = courseAttributesBuilder .build();
+      }
+      if (majorCategoryMajorsBuilder == null) {
+        if (((bitField0 & 0x00000080) != 0)) {
+          majorCategoryMajors = java.util.Collections.unmodifiableList(majorCategoryMajors );
+          bitField0 = (bitField0 & ~0x00000080);
+        }
+        result.majorCategoryMajors = majorCategoryMajors ;
+      } else {
+        result.majorCategoryMajors = majorCategoryMajorsBuilder .build();
       }
       onBuilt();
       return result;
@@ -947,6 +1293,84 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
+      if (majorCategoriesBuilder == null) {
+        if (!other.majorCategories .isEmpty()) {
+          if (majorCategories .isEmpty()) {
+            majorCategories = other.majorCategories ;
+            bitField0 = (bitField0 & ~0x00000020);
+          } else {
+            ensureMajorCategoriesIsMutable();
+            majorCategories .addAll(other.majorCategories );
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.majorCategories .isEmpty()) {
+          if (majorCategoriesBuilder .isEmpty()) {
+            majorCategoriesBuilder .dispose();
+            majorCategoriesBuilder = null;
+            majorCategories = other.majorCategories ;
+            bitField0 = (bitField0 & ~0x00000020);
+            majorCategoriesBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getMajorCategoriesFieldBuilder() : null;
+          } else {
+            majorCategoriesBuilder .addAllMessages(other.majorCategories );
+          }
+        }
+      }
+      if (courseAttributesBuilder == null) {
+        if (!other.courseAttributes .isEmpty()) {
+          if (courseAttributes .isEmpty()) {
+            courseAttributes = other.courseAttributes ;
+            bitField0 = (bitField0 & ~0x00000040);
+          } else {
+            ensureCourseAttributesIsMutable();
+            courseAttributes .addAll(other.courseAttributes );
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.courseAttributes .isEmpty()) {
+          if (courseAttributesBuilder .isEmpty()) {
+            courseAttributesBuilder .dispose();
+            courseAttributesBuilder = null;
+            courseAttributes = other.courseAttributes ;
+            bitField0 = (bitField0 & ~0x00000040);
+            courseAttributesBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getCourseAttributesFieldBuilder() : null;
+          } else {
+            courseAttributesBuilder .addAllMessages(other.courseAttributes );
+          }
+        }
+      }
+      if (majorCategoryMajorsBuilder == null) {
+        if (!other.majorCategoryMajors .isEmpty()) {
+          if (majorCategoryMajors .isEmpty()) {
+            majorCategoryMajors = other.majorCategoryMajors ;
+            bitField0 = (bitField0 & ~0x00000080);
+          } else {
+            ensureMajorCategoryMajorsIsMutable();
+            majorCategoryMajors .addAll(other.majorCategoryMajors );
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.majorCategoryMajors .isEmpty()) {
+          if (majorCategoryMajorsBuilder .isEmpty()) {
+            majorCategoryMajorsBuilder .dispose();
+            majorCategoryMajorsBuilder = null;
+            majorCategoryMajors = other.majorCategoryMajors ;
+            bitField0 = (bitField0 & ~0x00000080);
+            majorCategoryMajorsBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getMajorCategoryMajorsFieldBuilder() : null;
+          } else {
+            majorCategoryMajorsBuilder .addAllMessages(other.majorCategoryMajors );
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1109,6 +1533,10 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.course.CourseType, com.zhijiejiaoyu.glory_api.course.CourseType.Builder, com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder> levelsBuilder ;
 
     /**
+     * <pre>
+     * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType levels = 2;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseType> getLevelsList() {
@@ -1119,6 +1547,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType levels = 2;</code>
      */
     public int getLevelsCount() {
@@ -1129,6 +1561,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType levels = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseType getLevels(int index) {
@@ -1139,6 +1575,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType levels = 2;</code>
      */
     public Builder setLevels(
@@ -1156,6 +1596,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType levels = 2;</code>
      */
     public Builder setLevels(
@@ -1170,6 +1614,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType levels = 2;</code>
      */
     public Builder addLevels(com.zhijiejiaoyu.glory_api.course.CourseType value) {
@@ -1186,6 +1634,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType levels = 2;</code>
      */
     public Builder addLevels(
@@ -1203,6 +1655,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType levels = 2;</code>
      */
     public Builder addLevels(
@@ -1217,6 +1673,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType levels = 2;</code>
      */
     public Builder addLevels(
@@ -1231,6 +1691,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType levels = 2;</code>
      */
     public Builder addAllLevels(
@@ -1246,6 +1710,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType levels = 2;</code>
      */
     public Builder clearLevels() {
@@ -1259,6 +1727,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType levels = 2;</code>
      */
     public Builder removeLevels(int index) {
@@ -1272,6 +1744,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType levels = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseType.Builder getLevelsBuilder(
@@ -1279,6 +1755,10 @@ private static final long serialVersionUID = 0L;
       return getLevelsFieldBuilder().getBuilder(index);
     }
     /**
+     * <pre>
+     * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType levels = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder getLevelsOrBuilder(
@@ -1289,6 +1769,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType levels = 2;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder> 
@@ -1300,6 +1784,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType levels = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseType.Builder addLevelsBuilder() {
@@ -1307,6 +1795,10 @@ private static final long serialVersionUID = 0L;
           com.zhijiejiaoyu.glory_api.course.CourseType.getDefaultInstance());
     }
     /**
+     * <pre>
+     * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType levels = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseType.Builder addLevelsBuilder(
@@ -1315,6 +1807,10 @@ private static final long serialVersionUID = 0L;
           index, com.zhijiejiaoyu.glory_api.course.CourseType.getDefaultInstance());
     }
     /**
+     * <pre>
+     * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType levels = 2;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseType.Builder> 
@@ -1589,6 +2085,10 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.course.CourseType, com.zhijiejiaoyu.glory_api.course.CourseType.Builder, com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder> majorsBuilder ;
 
     /**
+     * <pre>
+     * 专业(含 AM 汽车制造；GS 公共基础与素养)
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType majors = 4;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseType> getMajorsList() {
@@ -1599,6 +2099,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 专业(含 AM 汽车制造；GS 公共基础与素养)
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType majors = 4;</code>
      */
     public int getMajorsCount() {
@@ -1609,6 +2113,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 专业(含 AM 汽车制造；GS 公共基础与素养)
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType majors = 4;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseType getMajors(int index) {
@@ -1619,6 +2127,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 专业(含 AM 汽车制造；GS 公共基础与素养)
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType majors = 4;</code>
      */
     public Builder setMajors(
@@ -1636,6 +2148,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 专业(含 AM 汽车制造；GS 公共基础与素养)
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType majors = 4;</code>
      */
     public Builder setMajors(
@@ -1650,6 +2166,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 专业(含 AM 汽车制造；GS 公共基础与素养)
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType majors = 4;</code>
      */
     public Builder addMajors(com.zhijiejiaoyu.glory_api.course.CourseType value) {
@@ -1666,6 +2186,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 专业(含 AM 汽车制造；GS 公共基础与素养)
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType majors = 4;</code>
      */
     public Builder addMajors(
@@ -1683,6 +2207,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 专业(含 AM 汽车制造；GS 公共基础与素养)
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType majors = 4;</code>
      */
     public Builder addMajors(
@@ -1697,6 +2225,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 专业(含 AM 汽车制造；GS 公共基础与素养)
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType majors = 4;</code>
      */
     public Builder addMajors(
@@ -1711,6 +2243,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 专业(含 AM 汽车制造；GS 公共基础与素养)
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType majors = 4;</code>
      */
     public Builder addAllMajors(
@@ -1726,6 +2262,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 专业(含 AM 汽车制造；GS 公共基础与素养)
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType majors = 4;</code>
      */
     public Builder clearMajors() {
@@ -1739,6 +2279,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 专业(含 AM 汽车制造；GS 公共基础与素养)
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType majors = 4;</code>
      */
     public Builder removeMajors(int index) {
@@ -1752,6 +2296,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 专业(含 AM 汽车制造；GS 公共基础与素养)
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType majors = 4;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseType.Builder getMajorsBuilder(
@@ -1759,6 +2307,10 @@ private static final long serialVersionUID = 0L;
       return getMajorsFieldBuilder().getBuilder(index);
     }
     /**
+     * <pre>
+     * 专业(含 AM 汽车制造；GS 公共基础与素养)
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType majors = 4;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder getMajorsOrBuilder(
@@ -1769,6 +2321,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 专业(含 AM 汽车制造；GS 公共基础与素养)
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType majors = 4;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder> 
@@ -1780,6 +2336,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 专业(含 AM 汽车制造；GS 公共基础与素养)
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType majors = 4;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseType.Builder addMajorsBuilder() {
@@ -1787,6 +2347,10 @@ private static final long serialVersionUID = 0L;
           com.zhijiejiaoyu.glory_api.course.CourseType.getDefaultInstance());
     }
     /**
+     * <pre>
+     * 专业(含 AM 汽车制造；GS 公共基础与素养)
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType majors = 4;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseType.Builder addMajorsBuilder(
@@ -1795,6 +2359,10 @@ private static final long serialVersionUID = 0L;
           index, com.zhijiejiaoyu.glory_api.course.CourseType.getDefaultInstance());
     }
     /**
+     * <pre>
+     * 专业(含 AM 汽车制造；GS 公共基础与素养)
+     * </pre>
+     *
      * <code>repeated .glory_api.CourseType majors = 4;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseType.Builder> 
@@ -2294,6 +2862,942 @@ private static final long serialVersionUID = 0L;
         languages = null;
       }
       return languagesBuilder ;
+    }
+
+    private java.util.List<com.zhijiejiaoyu.glory_api.course.CourseType> majorCategories =
+      java.util.Collections.emptyList();
+    private void ensureMajorCategoriesIsMutable() {
+      if (!((bitField0 & 0x00000020) != 0)) {
+        majorCategories = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.CourseType>(majorCategories );
+        bitField0_ |= 0x00000020;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.CourseType, com.zhijiejiaoyu.glory_api.course.CourseType.Builder, com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder> majorCategoriesBuilder ;
+
+    /**
+     * <pre>
+     * 专业大类(5项)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType major_categories = 7;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseType> getMajorCategoriesList() {
+      if (majorCategoriesBuilder == null) {
+        return java.util.Collections.unmodifiableList(majorCategories );
+      } else {
+        return majorCategoriesBuilder .getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 专业大类(5项)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType major_categories = 7;</code>
+     */
+    public int getMajorCategoriesCount() {
+      if (majorCategoriesBuilder == null) {
+        return majorCategories .size();
+      } else {
+        return majorCategoriesBuilder .getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 专业大类(5项)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType major_categories = 7;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseType getMajorCategories(int index) {
+      if (majorCategoriesBuilder == null) {
+        return majorCategories .get(index);
+      } else {
+        return majorCategoriesBuilder .getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 专业大类(5项)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType major_categories = 7;</code>
+     */
+    public Builder setMajorCategories(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseType value) {
+      if (majorCategoriesBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMajorCategoriesIsMutable();
+        majorCategories .set(index, value);
+        onChanged();
+      } else {
+        majorCategoriesBuilder .setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 专业大类(5项)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType major_categories = 7;</code>
+     */
+    public Builder setMajorCategories(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseType.Builder builderForValue) {
+      if (majorCategoriesBuilder == null) {
+        ensureMajorCategoriesIsMutable();
+        majorCategories .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        majorCategoriesBuilder .setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 专业大类(5项)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType major_categories = 7;</code>
+     */
+    public Builder addMajorCategories(com.zhijiejiaoyu.glory_api.course.CourseType value) {
+      if (majorCategoriesBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMajorCategoriesIsMutable();
+        majorCategories .add(value);
+        onChanged();
+      } else {
+        majorCategoriesBuilder .addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 专业大类(5项)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType major_categories = 7;</code>
+     */
+    public Builder addMajorCategories(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseType value) {
+      if (majorCategoriesBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMajorCategoriesIsMutable();
+        majorCategories .add(index, value);
+        onChanged();
+      } else {
+        majorCategoriesBuilder .addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 专业大类(5项)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType major_categories = 7;</code>
+     */
+    public Builder addMajorCategories(
+        com.zhijiejiaoyu.glory_api.course.CourseType.Builder builderForValue) {
+      if (majorCategoriesBuilder == null) {
+        ensureMajorCategoriesIsMutable();
+        majorCategories .add(builderForValue.build());
+        onChanged();
+      } else {
+        majorCategoriesBuilder .addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 专业大类(5项)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType major_categories = 7;</code>
+     */
+    public Builder addMajorCategories(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseType.Builder builderForValue) {
+      if (majorCategoriesBuilder == null) {
+        ensureMajorCategoriesIsMutable();
+        majorCategories .add(index, builderForValue.build());
+        onChanged();
+      } else {
+        majorCategoriesBuilder .addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 专业大类(5项)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType major_categories = 7;</code>
+     */
+    public Builder addAllMajorCategories(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.course.CourseType> values) {
+      if (majorCategoriesBuilder == null) {
+        ensureMajorCategoriesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, majorCategories );
+        onChanged();
+      } else {
+        majorCategoriesBuilder .addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 专业大类(5项)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType major_categories = 7;</code>
+     */
+    public Builder clearMajorCategories() {
+      if (majorCategoriesBuilder == null) {
+        majorCategories = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000020);
+        onChanged();
+      } else {
+        majorCategoriesBuilder .clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 专业大类(5项)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType major_categories = 7;</code>
+     */
+    public Builder removeMajorCategories(int index) {
+      if (majorCategoriesBuilder == null) {
+        ensureMajorCategoriesIsMutable();
+        majorCategories .remove(index);
+        onChanged();
+      } else {
+        majorCategoriesBuilder .remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 专业大类(5项)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType major_categories = 7;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseType.Builder getMajorCategoriesBuilder(
+        int index) {
+      return getMajorCategoriesFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 专业大类(5项)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType major_categories = 7;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder getMajorCategoriesOrBuilder(
+        int index) {
+      if (majorCategoriesBuilder == null) {
+        return majorCategories .get(index);  } else {
+        return majorCategoriesBuilder .getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 专业大类(5项)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType major_categories = 7;</code>
+     */
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder> 
+         getMajorCategoriesOrBuilderList() {
+      if (majorCategoriesBuilder != null) {
+        return majorCategoriesBuilder .getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(majorCategories );
+      }
+    }
+    /**
+     * <pre>
+     * 专业大类(5项)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType major_categories = 7;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseType.Builder addMajorCategoriesBuilder() {
+      return getMajorCategoriesFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.course.CourseType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 专业大类(5项)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType major_categories = 7;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseType.Builder addMajorCategoriesBuilder(
+        int index) {
+      return getMajorCategoriesFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.course.CourseType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 专业大类(5项)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType major_categories = 7;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseType.Builder> 
+         getMajorCategoriesBuilderList() {
+      return getMajorCategoriesFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.CourseType, com.zhijiejiaoyu.glory_api.course.CourseType.Builder, com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder> 
+        getMajorCategoriesFieldBuilder() {
+      if (majorCategoriesBuilder == null) {
+        majorCategoriesBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.course.CourseType, com.zhijiejiaoyu.glory_api.course.CourseType.Builder, com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder>(
+                majorCategories ,
+                ((bitField0 & 0x00000020) != 0),
+                getParentForChildren(),
+                isClean());
+        majorCategories = null;
+      }
+      return majorCategoriesBuilder ;
+    }
+
+    private java.util.List<com.zhijiejiaoyu.glory_api.course.CourseType> courseAttributes =
+      java.util.Collections.emptyList();
+    private void ensureCourseAttributesIsMutable() {
+      if (!((bitField0 & 0x00000040) != 0)) {
+        courseAttributes = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.CourseType>(courseAttributes );
+        bitField0_ |= 0x00000040;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.CourseType, com.zhijiejiaoyu.glory_api.course.CourseType.Builder, com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder> courseAttributesBuilder ;
+
+    /**
+     * <pre>
+     * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseType> getCourseAttributesList() {
+      if (courseAttributesBuilder == null) {
+        return java.util.Collections.unmodifiableList(courseAttributes );
+      } else {
+        return courseAttributesBuilder .getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
+     */
+    public int getCourseAttributesCount() {
+      if (courseAttributesBuilder == null) {
+        return courseAttributes .size();
+      } else {
+        return courseAttributesBuilder .getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseType getCourseAttributes(int index) {
+      if (courseAttributesBuilder == null) {
+        return courseAttributes .get(index);
+      } else {
+        return courseAttributesBuilder .getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
+     */
+    public Builder setCourseAttributes(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseType value) {
+      if (courseAttributesBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCourseAttributesIsMutable();
+        courseAttributes .set(index, value);
+        onChanged();
+      } else {
+        courseAttributesBuilder .setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
+     */
+    public Builder setCourseAttributes(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseType.Builder builderForValue) {
+      if (courseAttributesBuilder == null) {
+        ensureCourseAttributesIsMutable();
+        courseAttributes .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        courseAttributesBuilder .setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
+     */
+    public Builder addCourseAttributes(com.zhijiejiaoyu.glory_api.course.CourseType value) {
+      if (courseAttributesBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCourseAttributesIsMutable();
+        courseAttributes .add(value);
+        onChanged();
+      } else {
+        courseAttributesBuilder .addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
+     */
+    public Builder addCourseAttributes(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseType value) {
+      if (courseAttributesBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCourseAttributesIsMutable();
+        courseAttributes .add(index, value);
+        onChanged();
+      } else {
+        courseAttributesBuilder .addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
+     */
+    public Builder addCourseAttributes(
+        com.zhijiejiaoyu.glory_api.course.CourseType.Builder builderForValue) {
+      if (courseAttributesBuilder == null) {
+        ensureCourseAttributesIsMutable();
+        courseAttributes .add(builderForValue.build());
+        onChanged();
+      } else {
+        courseAttributesBuilder .addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
+     */
+    public Builder addCourseAttributes(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseType.Builder builderForValue) {
+      if (courseAttributesBuilder == null) {
+        ensureCourseAttributesIsMutable();
+        courseAttributes .add(index, builderForValue.build());
+        onChanged();
+      } else {
+        courseAttributesBuilder .addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
+     */
+    public Builder addAllCourseAttributes(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.course.CourseType> values) {
+      if (courseAttributesBuilder == null) {
+        ensureCourseAttributesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, courseAttributes );
+        onChanged();
+      } else {
+        courseAttributesBuilder .addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
+     */
+    public Builder clearCourseAttributes() {
+      if (courseAttributesBuilder == null) {
+        courseAttributes = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000040);
+        onChanged();
+      } else {
+        courseAttributesBuilder .clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
+     */
+    public Builder removeCourseAttributes(int index) {
+      if (courseAttributesBuilder == null) {
+        ensureCourseAttributesIsMutable();
+        courseAttributes .remove(index);
+        onChanged();
+      } else {
+        courseAttributesBuilder .remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseType.Builder getCourseAttributesBuilder(
+        int index) {
+      return getCourseAttributesFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder getCourseAttributesOrBuilder(
+        int index) {
+      if (courseAttributesBuilder == null) {
+        return courseAttributes .get(index);  } else {
+        return courseAttributesBuilder .getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
+     */
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder> 
+         getCourseAttributesOrBuilderList() {
+      if (courseAttributesBuilder != null) {
+        return courseAttributesBuilder .getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(courseAttributes );
+      }
+    }
+    /**
+     * <pre>
+     * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseType.Builder addCourseAttributesBuilder() {
+      return getCourseAttributesFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.course.CourseType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseType.Builder addCourseAttributesBuilder(
+        int index) {
+      return getCourseAttributesFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.course.CourseType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseType.Builder> 
+         getCourseAttributesBuilderList() {
+      return getCourseAttributesFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.CourseType, com.zhijiejiaoyu.glory_api.course.CourseType.Builder, com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder> 
+        getCourseAttributesFieldBuilder() {
+      if (courseAttributesBuilder == null) {
+        courseAttributesBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.course.CourseType, com.zhijiejiaoyu.glory_api.course.CourseType.Builder, com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder>(
+                courseAttributes ,
+                ((bitField0 & 0x00000040) != 0),
+                getParentForChildren(),
+                isClean());
+        courseAttributes = null;
+      }
+      return courseAttributesBuilder ;
+    }
+
+    private java.util.List<com.zhijiejiaoyu.glory_api.course.MajorCategoryGroup> majorCategoryMajors =
+      java.util.Collections.emptyList();
+    private void ensureMajorCategoryMajorsIsMutable() {
+      if (!((bitField0 & 0x00000080) != 0)) {
+        majorCategoryMajors = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.MajorCategoryGroup>(majorCategoryMajors );
+        bitField0_ |= 0x00000080;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.MajorCategoryGroup, com.zhijiejiaoyu.glory_api.course.MajorCategoryGroup.Builder, com.zhijiejiaoyu.glory_api.course.MajorCategoryGroupOrBuilder> majorCategoryMajorsBuilder ;
+
+    /**
+     * <pre>
+     * 专业大类与专业映射
+     * </pre>
+     *
+     * <code>repeated .glory_api.MajorCategoryGroup major_category_majors = 9;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.course.MajorCategoryGroup> getMajorCategoryMajorsList() {
+      if (majorCategoryMajorsBuilder == null) {
+        return java.util.Collections.unmodifiableList(majorCategoryMajors );
+      } else {
+        return majorCategoryMajorsBuilder .getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 专业大类与专业映射
+     * </pre>
+     *
+     * <code>repeated .glory_api.MajorCategoryGroup major_category_majors = 9;</code>
+     */
+    public int getMajorCategoryMajorsCount() {
+      if (majorCategoryMajorsBuilder == null) {
+        return majorCategoryMajors .size();
+      } else {
+        return majorCategoryMajorsBuilder .getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 专业大类与专业映射
+     * </pre>
+     *
+     * <code>repeated .glory_api.MajorCategoryGroup major_category_majors = 9;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.MajorCategoryGroup getMajorCategoryMajors(int index) {
+      if (majorCategoryMajorsBuilder == null) {
+        return majorCategoryMajors .get(index);
+      } else {
+        return majorCategoryMajorsBuilder .getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 专业大类与专业映射
+     * </pre>
+     *
+     * <code>repeated .glory_api.MajorCategoryGroup major_category_majors = 9;</code>
+     */
+    public Builder setMajorCategoryMajors(
+        int index, com.zhijiejiaoyu.glory_api.course.MajorCategoryGroup value) {
+      if (majorCategoryMajorsBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMajorCategoryMajorsIsMutable();
+        majorCategoryMajors .set(index, value);
+        onChanged();
+      } else {
+        majorCategoryMajorsBuilder .setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 专业大类与专业映射
+     * </pre>
+     *
+     * <code>repeated .glory_api.MajorCategoryGroup major_category_majors = 9;</code>
+     */
+    public Builder setMajorCategoryMajors(
+        int index, com.zhijiejiaoyu.glory_api.course.MajorCategoryGroup.Builder builderForValue) {
+      if (majorCategoryMajorsBuilder == null) {
+        ensureMajorCategoryMajorsIsMutable();
+        majorCategoryMajors .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        majorCategoryMajorsBuilder .setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 专业大类与专业映射
+     * </pre>
+     *
+     * <code>repeated .glory_api.MajorCategoryGroup major_category_majors = 9;</code>
+     */
+    public Builder addMajorCategoryMajors(com.zhijiejiaoyu.glory_api.course.MajorCategoryGroup value) {
+      if (majorCategoryMajorsBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMajorCategoryMajorsIsMutable();
+        majorCategoryMajors .add(value);
+        onChanged();
+      } else {
+        majorCategoryMajorsBuilder .addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 专业大类与专业映射
+     * </pre>
+     *
+     * <code>repeated .glory_api.MajorCategoryGroup major_category_majors = 9;</code>
+     */
+    public Builder addMajorCategoryMajors(
+        int index, com.zhijiejiaoyu.glory_api.course.MajorCategoryGroup value) {
+      if (majorCategoryMajorsBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMajorCategoryMajorsIsMutable();
+        majorCategoryMajors .add(index, value);
+        onChanged();
+      } else {
+        majorCategoryMajorsBuilder .addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 专业大类与专业映射
+     * </pre>
+     *
+     * <code>repeated .glory_api.MajorCategoryGroup major_category_majors = 9;</code>
+     */
+    public Builder addMajorCategoryMajors(
+        com.zhijiejiaoyu.glory_api.course.MajorCategoryGroup.Builder builderForValue) {
+      if (majorCategoryMajorsBuilder == null) {
+        ensureMajorCategoryMajorsIsMutable();
+        majorCategoryMajors .add(builderForValue.build());
+        onChanged();
+      } else {
+        majorCategoryMajorsBuilder .addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 专业大类与专业映射
+     * </pre>
+     *
+     * <code>repeated .glory_api.MajorCategoryGroup major_category_majors = 9;</code>
+     */
+    public Builder addMajorCategoryMajors(
+        int index, com.zhijiejiaoyu.glory_api.course.MajorCategoryGroup.Builder builderForValue) {
+      if (majorCategoryMajorsBuilder == null) {
+        ensureMajorCategoryMajorsIsMutable();
+        majorCategoryMajors .add(index, builderForValue.build());
+        onChanged();
+      } else {
+        majorCategoryMajorsBuilder .addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 专业大类与专业映射
+     * </pre>
+     *
+     * <code>repeated .glory_api.MajorCategoryGroup major_category_majors = 9;</code>
+     */
+    public Builder addAllMajorCategoryMajors(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.course.MajorCategoryGroup> values) {
+      if (majorCategoryMajorsBuilder == null) {
+        ensureMajorCategoryMajorsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, majorCategoryMajors );
+        onChanged();
+      } else {
+        majorCategoryMajorsBuilder .addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 专业大类与专业映射
+     * </pre>
+     *
+     * <code>repeated .glory_api.MajorCategoryGroup major_category_majors = 9;</code>
+     */
+    public Builder clearMajorCategoryMajors() {
+      if (majorCategoryMajorsBuilder == null) {
+        majorCategoryMajors = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000080);
+        onChanged();
+      } else {
+        majorCategoryMajorsBuilder .clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 专业大类与专业映射
+     * </pre>
+     *
+     * <code>repeated .glory_api.MajorCategoryGroup major_category_majors = 9;</code>
+     */
+    public Builder removeMajorCategoryMajors(int index) {
+      if (majorCategoryMajorsBuilder == null) {
+        ensureMajorCategoryMajorsIsMutable();
+        majorCategoryMajors .remove(index);
+        onChanged();
+      } else {
+        majorCategoryMajorsBuilder .remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 专业大类与专业映射
+     * </pre>
+     *
+     * <code>repeated .glory_api.MajorCategoryGroup major_category_majors = 9;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.MajorCategoryGroup.Builder getMajorCategoryMajorsBuilder(
+        int index) {
+      return getMajorCategoryMajorsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 专业大类与专业映射
+     * </pre>
+     *
+     * <code>repeated .glory_api.MajorCategoryGroup major_category_majors = 9;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.MajorCategoryGroupOrBuilder getMajorCategoryMajorsOrBuilder(
+        int index) {
+      if (majorCategoryMajorsBuilder == null) {
+        return majorCategoryMajors .get(index);  } else {
+        return majorCategoryMajorsBuilder .getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 专业大类与专业映射
+     * </pre>
+     *
+     * <code>repeated .glory_api.MajorCategoryGroup major_category_majors = 9;</code>
+     */
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.MajorCategoryGroupOrBuilder> 
+         getMajorCategoryMajorsOrBuilderList() {
+      if (majorCategoryMajorsBuilder != null) {
+        return majorCategoryMajorsBuilder .getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(majorCategoryMajors );
+      }
+    }
+    /**
+     * <pre>
+     * 专业大类与专业映射
+     * </pre>
+     *
+     * <code>repeated .glory_api.MajorCategoryGroup major_category_majors = 9;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.MajorCategoryGroup.Builder addMajorCategoryMajorsBuilder() {
+      return getMajorCategoryMajorsFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.course.MajorCategoryGroup.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 专业大类与专业映射
+     * </pre>
+     *
+     * <code>repeated .glory_api.MajorCategoryGroup major_category_majors = 9;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.MajorCategoryGroup.Builder addMajorCategoryMajorsBuilder(
+        int index) {
+      return getMajorCategoryMajorsFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.course.MajorCategoryGroup.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 专业大类与专业映射
+     * </pre>
+     *
+     * <code>repeated .glory_api.MajorCategoryGroup major_category_majors = 9;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.course.MajorCategoryGroup.Builder> 
+         getMajorCategoryMajorsBuilderList() {
+      return getMajorCategoryMajorsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.MajorCategoryGroup, com.zhijiejiaoyu.glory_api.course.MajorCategoryGroup.Builder, com.zhijiejiaoyu.glory_api.course.MajorCategoryGroupOrBuilder> 
+        getMajorCategoryMajorsFieldBuilder() {
+      if (majorCategoryMajorsBuilder == null) {
+        majorCategoryMajorsBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.course.MajorCategoryGroup, com.zhijiejiaoyu.glory_api.course.MajorCategoryGroup.Builder, com.zhijiejiaoyu.glory_api.course.MajorCategoryGroupOrBuilder>(
+                majorCategoryMajors ,
+                ((bitField0 & 0x00000080) != 0),
+                getParentForChildren(),
+                isClean());
+        majorCategoryMajors = null;
+      }
+      return majorCategoryMajorsBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

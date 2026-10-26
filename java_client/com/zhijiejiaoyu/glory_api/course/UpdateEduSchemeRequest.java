@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     characterStandard = "";
     groupName = "";
     courseModules = java.util.Collections.emptyList();
+    chapters = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -141,6 +142,15 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.zhijiejiaoyu.glory_api.course.CourseModule.parser(), extensionRegistry));
             break;
           }
+          case 114: {
+            if (!((mutable_bitField0 & 0x00000002) != 0)) {
+              chapters = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.SchemeChapter>();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            chapters .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.course.SchemeChapter.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -158,6 +168,9 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0 & 0x00000001) != 0)) {
         courseModules = java.util.Collections.unmodifiableList(courseModules );
+      }
+      if (((mutable_bitField0 & 0x00000002) != 0)) {
+        chapters = java.util.Collections.unmodifiableList(chapters );
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -205,6 +218,10 @@ private static final long serialVersionUID = 0L;
   public static final int NAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object name ;
   /**
+   * <pre>
+   * 课程名称(≤30字)
+   * </pre>
+   *
    * <code>string name = 2;</code>
    * @return The name.
    */
@@ -222,6 +239,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 课程名称(≤30字)
+   * </pre>
+   *
    * <code>string name = 2;</code>
    * @return The bytes for name.
    */
@@ -243,6 +264,10 @@ private static final long serialVersionUID = 0L;
   public static final int MAJOR_FIELD_NUMBER = 3;
   private volatile java.lang.Object major ;
   /**
+   * <pre>
+   * 专业代码
+   * </pre>
+   *
    * <code>string major = 3;</code>
    * @return The major.
    */
@@ -260,6 +285,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 专业代码
+   * </pre>
+   *
    * <code>string major = 3;</code>
    * @return The bytes for major.
    */
@@ -281,6 +310,10 @@ private static final long serialVersionUID = 0L;
   public static final int GOAL_FIELD_NUMBER = 4;
   private volatile java.lang.Object goal ;
   /**
+   * <pre>
+   * 【废弃】不再使用，保留字段号兼容
+   * </pre>
+   *
    * <code>string goal = 4;</code>
    * @return The goal.
    */
@@ -298,6 +331,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 【废弃】不再使用，保留字段号兼容
+   * </pre>
+   *
    * <code>string goal = 4;</code>
    * @return The bytes for goal.
    */
@@ -319,6 +356,10 @@ private static final long serialVersionUID = 0L;
   public static final int TYPE_FIELD_NUMBER = 5;
   private int type ;
   /**
+   * <pre>
+   * 【废弃】不再使用，保留字段号兼容
+   * </pre>
+   *
    * <code>int32 type = 5;</code>
    * @return The type.
    */
@@ -330,6 +371,10 @@ private static final long serialVersionUID = 0L;
   public static final int KNOWLEDGE_STANDARD_FIELD_NUMBER = 6;
   private volatile java.lang.Object knowledgeStandard ;
   /**
+   * <pre>
+   * 【废弃】不再使用，保留字段号兼容
+   * </pre>
+   *
    * <code>string knowledge_standard = 6;</code>
    * @return The knowledgeStandard.
    */
@@ -347,6 +392,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 【废弃】不再使用，保留字段号兼容
+   * </pre>
+   *
    * <code>string knowledge_standard = 6;</code>
    * @return The bytes for knowledgeStandard.
    */
@@ -368,6 +417,10 @@ private static final long serialVersionUID = 0L;
   public static final int ABILITY_STANDARD_FIELD_NUMBER = 7;
   private volatile java.lang.Object abilityStandard ;
   /**
+   * <pre>
+   * 【废弃】不再使用，保留字段号兼容
+   * </pre>
+   *
    * <code>string ability_standard = 7;</code>
    * @return The abilityStandard.
    */
@@ -385,6 +438,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 【废弃】不再使用，保留字段号兼容
+   * </pre>
+   *
    * <code>string ability_standard = 7;</code>
    * @return The bytes for abilityStandard.
    */
@@ -406,6 +463,10 @@ private static final long serialVersionUID = 0L;
   public static final int CHARACTER_STANDARD_FIELD_NUMBER = 8;
   private volatile java.lang.Object characterStandard ;
   /**
+   * <pre>
+   * 【废弃】不再使用，保留字段号兼容
+   * </pre>
+   *
    * <code>string character_standard = 8;</code>
    * @return The characterStandard.
    */
@@ -423,6 +484,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 【废弃】不再使用，保留字段号兼容
+   * </pre>
+   *
    * <code>string character_standard = 8;</code>
    * @return The bytes for characterStandard.
    */
@@ -444,6 +509,10 @@ private static final long serialVersionUID = 0L;
   public static final int GROUP_NAME_FIELD_NUMBER = 9;
   private volatile java.lang.Object groupName ;
   /**
+   * <pre>
+   * 【废弃】不再使用，保留字段号兼容
+   * </pre>
+   *
    * <code>string group_name = 9;</code>
    * @return The groupName.
    */
@@ -461,6 +530,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 【废弃】不再使用，保留字段号兼容
+   * </pre>
+   *
    * <code>string group_name = 9;</code>
    * @return The bytes for groupName.
    */
@@ -493,6 +566,10 @@ private static final long serialVersionUID = 0L;
   public static final int SKILL_HOURS_FIELD_NUMBER = 11;
   private float skillHours ;
   /**
+   * <pre>
+   * 【调整】由后端按三级结构计算写入，前端无需传
+   * </pre>
+   *
    * <code>float skill_hours = 11;</code>
    * @return The skillHours.
    */
@@ -504,6 +581,10 @@ private static final long serialVersionUID = 0L;
   public static final int KNOWLEDGE_HOURS_FIELD_NUMBER = 12;
   private float knowledgeHours ;
   /**
+   * <pre>
+   * 【调整】由后端按三级结构计算写入，前端无需传
+   * </pre>
+   *
    * <code>float knowledge_hours = 12;</code>
    * @return The knowledgeHours.
    */
@@ -516,7 +597,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule> courseModules ;
   /**
    * <pre>
-   * 能力指标或能力方向
+   * 【废弃】不再使用，保留字段号兼容
    * </pre>
    *
    * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
@@ -527,7 +608,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 能力指标或能力方向
+   * 【废弃】不再使用，保留字段号兼容
    * </pre>
    *
    * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
@@ -539,7 +620,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 能力指标或能力方向
+   * 【废弃】不再使用，保留字段号兼容
    * </pre>
    *
    * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
@@ -550,7 +631,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 能力指标或能力方向
+   * 【废弃】不再使用，保留字段号兼容
    * </pre>
    *
    * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
@@ -561,7 +642,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 能力指标或能力方向
+   * 【废弃】不再使用，保留字段号兼容
    * </pre>
    *
    * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
@@ -570,6 +651,66 @@ private static final long serialVersionUID = 0L;
   public com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder getCourseModulesOrBuilder(
       int index) {
     return courseModules .get(index);
+  }
+
+  public static final int CHAPTERS_FIELD_NUMBER = 14;
+  private java.util.List<com.zhijiejiaoyu.glory_api.course.SchemeChapter> chapters ;
+  /**
+   * <pre>
+   * 三级课程结构(章节→课节→小节/任务+资源)，覆盖本人原方案全量保存；新增字段
+   * </pre>
+   *
+   * <code>repeated .glory_api.SchemeChapter chapters = 14;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.zhijiejiaoyu.glory_api.course.SchemeChapter> getChaptersList() {
+    return chapters ;
+  }
+  /**
+   * <pre>
+   * 三级课程结构(章节→课节→小节/任务+资源)，覆盖本人原方案全量保存；新增字段
+   * </pre>
+   *
+   * <code>repeated .glory_api.SchemeChapter chapters = 14;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.SchemeChapterOrBuilder> 
+      getChaptersOrBuilderList() {
+    return chapters ;
+  }
+  /**
+   * <pre>
+   * 三级课程结构(章节→课节→小节/任务+资源)，覆盖本人原方案全量保存；新增字段
+   * </pre>
+   *
+   * <code>repeated .glory_api.SchemeChapter chapters = 14;</code>
+   */
+  @java.lang.Override
+  public int getChaptersCount() {
+    return chapters .size();
+  }
+  /**
+   * <pre>
+   * 三级课程结构(章节→课节→小节/任务+资源)，覆盖本人原方案全量保存；新增字段
+   * </pre>
+   *
+   * <code>repeated .glory_api.SchemeChapter chapters = 14;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.SchemeChapter getChapters(int index) {
+    return chapters .get(index);
+  }
+  /**
+   * <pre>
+   * 三级课程结构(章节→课节→小节/任务+资源)，覆盖本人原方案全量保存；新增字段
+   * </pre>
+   *
+   * <code>repeated .glory_api.SchemeChapter chapters = 14;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.SchemeChapterOrBuilder getChaptersOrBuilder(
+      int index) {
+    return chapters .get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -625,6 +766,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < courseModules .size(); i++) {
       output.writeMessage(13, courseModules .get(i));
     }
+    for (int i = 0; i < chapters .size(); i++) {
+      output.writeMessage(14, chapters .get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -679,6 +823,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, courseModules .get(i));
     }
+    for (int i = 0; i < chapters .size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(14, chapters .get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -725,6 +873,8 @@ private static final long serialVersionUID = 0L;
             other.getKnowledgeHours())) return false;
     if (!getCourseModulesList()
         .equals(other.getCourseModulesList())) return false;
+    if (!getChaptersList()
+        .equals(other.getChaptersList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -768,6 +918,10 @@ private static final long serialVersionUID = 0L;
     if (getCourseModulesCount() > 0) {
       hash = (37 * hash) + COURSE_MODULES_FIELD_NUMBER;
       hash = (53 * hash) + getCourseModulesList().hashCode();
+    }
+    if (getChaptersCount() > 0) {
+      hash = (37 * hash) + CHAPTERS_FIELD_NUMBER;
+      hash = (53 * hash) + getChaptersList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -898,6 +1052,7 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getCourseModulesFieldBuilder();
+        getChaptersFieldBuilder();
       }
     }
     @java.lang.Override
@@ -936,6 +1091,12 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0 & ~0x00000001);
       } else {
         courseModulesBuilder .clear();
+      }
+      if (chaptersBuilder == null) {
+        chapters = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000002);
+      } else {
+        chaptersBuilder .clear();
       }
       return this;
     }
@@ -988,6 +1149,15 @@ private static final long serialVersionUID = 0L;
         result.courseModules = courseModules ;
       } else {
         result.courseModules = courseModulesBuilder .build();
+      }
+      if (chaptersBuilder == null) {
+        if (((bitField0 & 0x00000002) != 0)) {
+          chapters = java.util.Collections.unmodifiableList(chapters );
+          bitField0 = (bitField0 & ~0x00000002);
+        }
+        result.chapters = chapters ;
+      } else {
+        result.chapters = chaptersBuilder .build();
       }
       onBuilt();
       return result;
@@ -1103,6 +1273,32 @@ private static final long serialVersionUID = 0L;
                  getCourseModulesFieldBuilder() : null;
           } else {
             courseModulesBuilder .addAllMessages(other.courseModules );
+          }
+        }
+      }
+      if (chaptersBuilder == null) {
+        if (!other.chapters .isEmpty()) {
+          if (chapters .isEmpty()) {
+            chapters = other.chapters ;
+            bitField0 = (bitField0 & ~0x00000002);
+          } else {
+            ensureChaptersIsMutable();
+            chapters .addAll(other.chapters );
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.chapters .isEmpty()) {
+          if (chaptersBuilder .isEmpty()) {
+            chaptersBuilder .dispose();
+            chaptersBuilder = null;
+            chapters = other.chapters ;
+            bitField0 = (bitField0 & ~0x00000002);
+            chaptersBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getChaptersFieldBuilder() : null;
+          } else {
+            chaptersBuilder .addAllMessages(other.chapters );
           }
         }
       }
@@ -1257,6 +1453,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object name = "";
     /**
+     * <pre>
+     * 课程名称(≤30字)
+     * </pre>
+     *
      * <code>string name = 2;</code>
      * @return The name.
      */
@@ -1273,6 +1473,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 课程名称(≤30字)
+     * </pre>
+     *
      * <code>string name = 2;</code>
      * @return The bytes for name.
      */
@@ -1290,6 +1494,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 课程名称(≤30字)
+     * </pre>
+     *
      * <code>string name = 2;</code>
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1305,6 +1513,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 课程名称(≤30字)
+     * </pre>
+     *
      * <code>string name = 2;</code>
      * @return This builder for chaining.
      */
@@ -1315,6 +1527,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 课程名称(≤30字)
+     * </pre>
+     *
      * <code>string name = 2;</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1333,6 +1549,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object major = "";
     /**
+     * <pre>
+     * 专业代码
+     * </pre>
+     *
      * <code>string major = 3;</code>
      * @return The major.
      */
@@ -1349,6 +1569,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 专业代码
+     * </pre>
+     *
      * <code>string major = 3;</code>
      * @return The bytes for major.
      */
@@ -1366,6 +1590,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 专业代码
+     * </pre>
+     *
      * <code>string major = 3;</code>
      * @param value The major to set.
      * @return This builder for chaining.
@@ -1381,6 +1609,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 专业代码
+     * </pre>
+     *
      * <code>string major = 3;</code>
      * @return This builder for chaining.
      */
@@ -1391,6 +1623,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 专业代码
+     * </pre>
+     *
      * <code>string major = 3;</code>
      * @param value The bytes for major to set.
      * @return This builder for chaining.
@@ -1409,6 +1645,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object goal = "";
     /**
+     * <pre>
+     * 【废弃】不再使用，保留字段号兼容
+     * </pre>
+     *
      * <code>string goal = 4;</code>
      * @return The goal.
      */
@@ -1425,6 +1665,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 【废弃】不再使用，保留字段号兼容
+     * </pre>
+     *
      * <code>string goal = 4;</code>
      * @return The bytes for goal.
      */
@@ -1442,6 +1686,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 【废弃】不再使用，保留字段号兼容
+     * </pre>
+     *
      * <code>string goal = 4;</code>
      * @param value The goal to set.
      * @return This builder for chaining.
@@ -1457,6 +1705,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 【废弃】不再使用，保留字段号兼容
+     * </pre>
+     *
      * <code>string goal = 4;</code>
      * @return This builder for chaining.
      */
@@ -1467,6 +1719,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 【废弃】不再使用，保留字段号兼容
+     * </pre>
+     *
      * <code>string goal = 4;</code>
      * @param value The bytes for goal to set.
      * @return This builder for chaining.
@@ -1485,6 +1741,10 @@ private static final long serialVersionUID = 0L;
 
     private int type ;
     /**
+     * <pre>
+     * 【废弃】不再使用，保留字段号兼容
+     * </pre>
+     *
      * <code>int32 type = 5;</code>
      * @return The type.
      */
@@ -1493,6 +1753,10 @@ private static final long serialVersionUID = 0L;
       return type ;
     }
     /**
+     * <pre>
+     * 【废弃】不再使用，保留字段号兼容
+     * </pre>
+     *
      * <code>int32 type = 5;</code>
      * @param value The type to set.
      * @return This builder for chaining.
@@ -1504,6 +1768,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 【废弃】不再使用，保留字段号兼容
+     * </pre>
+     *
      * <code>int32 type = 5;</code>
      * @return This builder for chaining.
      */
@@ -1516,6 +1784,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object knowledgeStandard = "";
     /**
+     * <pre>
+     * 【废弃】不再使用，保留字段号兼容
+     * </pre>
+     *
      * <code>string knowledge_standard = 6;</code>
      * @return The knowledgeStandard.
      */
@@ -1532,6 +1804,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 【废弃】不再使用，保留字段号兼容
+     * </pre>
+     *
      * <code>string knowledge_standard = 6;</code>
      * @return The bytes for knowledgeStandard.
      */
@@ -1549,6 +1825,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 【废弃】不再使用，保留字段号兼容
+     * </pre>
+     *
      * <code>string knowledge_standard = 6;</code>
      * @param value The knowledgeStandard to set.
      * @return This builder for chaining.
@@ -1564,6 +1844,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 【废弃】不再使用，保留字段号兼容
+     * </pre>
+     *
      * <code>string knowledge_standard = 6;</code>
      * @return This builder for chaining.
      */
@@ -1574,6 +1858,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 【废弃】不再使用，保留字段号兼容
+     * </pre>
+     *
      * <code>string knowledge_standard = 6;</code>
      * @param value The bytes for knowledgeStandard to set.
      * @return This builder for chaining.
@@ -1592,6 +1880,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object abilityStandard = "";
     /**
+     * <pre>
+     * 【废弃】不再使用，保留字段号兼容
+     * </pre>
+     *
      * <code>string ability_standard = 7;</code>
      * @return The abilityStandard.
      */
@@ -1608,6 +1900,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 【废弃】不再使用，保留字段号兼容
+     * </pre>
+     *
      * <code>string ability_standard = 7;</code>
      * @return The bytes for abilityStandard.
      */
@@ -1625,6 +1921,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 【废弃】不再使用，保留字段号兼容
+     * </pre>
+     *
      * <code>string ability_standard = 7;</code>
      * @param value The abilityStandard to set.
      * @return This builder for chaining.
@@ -1640,6 +1940,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 【废弃】不再使用，保留字段号兼容
+     * </pre>
+     *
      * <code>string ability_standard = 7;</code>
      * @return This builder for chaining.
      */
@@ -1650,6 +1954,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 【废弃】不再使用，保留字段号兼容
+     * </pre>
+     *
      * <code>string ability_standard = 7;</code>
      * @param value The bytes for abilityStandard to set.
      * @return This builder for chaining.
@@ -1668,6 +1976,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object characterStandard = "";
     /**
+     * <pre>
+     * 【废弃】不再使用，保留字段号兼容
+     * </pre>
+     *
      * <code>string character_standard = 8;</code>
      * @return The characterStandard.
      */
@@ -1684,6 +1996,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 【废弃】不再使用，保留字段号兼容
+     * </pre>
+     *
      * <code>string character_standard = 8;</code>
      * @return The bytes for characterStandard.
      */
@@ -1701,6 +2017,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 【废弃】不再使用，保留字段号兼容
+     * </pre>
+     *
      * <code>string character_standard = 8;</code>
      * @param value The characterStandard to set.
      * @return This builder for chaining.
@@ -1716,6 +2036,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 【废弃】不再使用，保留字段号兼容
+     * </pre>
+     *
      * <code>string character_standard = 8;</code>
      * @return This builder for chaining.
      */
@@ -1726,6 +2050,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 【废弃】不再使用，保留字段号兼容
+     * </pre>
+     *
      * <code>string character_standard = 8;</code>
      * @param value The bytes for characterStandard to set.
      * @return This builder for chaining.
@@ -1744,6 +2072,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object groupName = "";
     /**
+     * <pre>
+     * 【废弃】不再使用，保留字段号兼容
+     * </pre>
+     *
      * <code>string group_name = 9;</code>
      * @return The groupName.
      */
@@ -1760,6 +2092,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 【废弃】不再使用，保留字段号兼容
+     * </pre>
+     *
      * <code>string group_name = 9;</code>
      * @return The bytes for groupName.
      */
@@ -1777,6 +2113,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 【废弃】不再使用，保留字段号兼容
+     * </pre>
+     *
      * <code>string group_name = 9;</code>
      * @param value The groupName to set.
      * @return This builder for chaining.
@@ -1792,6 +2132,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 【废弃】不再使用，保留字段号兼容
+     * </pre>
+     *
      * <code>string group_name = 9;</code>
      * @return This builder for chaining.
      */
@@ -1802,6 +2146,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 【废弃】不再使用，保留字段号兼容
+     * </pre>
+     *
      * <code>string group_name = 9;</code>
      * @param value The bytes for groupName to set.
      * @return This builder for chaining.
@@ -1851,6 +2199,10 @@ private static final long serialVersionUID = 0L;
 
     private float skillHours ;
     /**
+     * <pre>
+     * 【调整】由后端按三级结构计算写入，前端无需传
+     * </pre>
+     *
      * <code>float skill_hours = 11;</code>
      * @return The skillHours.
      */
@@ -1859,6 +2211,10 @@ private static final long serialVersionUID = 0L;
       return skillHours ;
     }
     /**
+     * <pre>
+     * 【调整】由后端按三级结构计算写入，前端无需传
+     * </pre>
+     *
      * <code>float skill_hours = 11;</code>
      * @param value The skillHours to set.
      * @return This builder for chaining.
@@ -1870,6 +2226,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 【调整】由后端按三级结构计算写入，前端无需传
+     * </pre>
+     *
      * <code>float skill_hours = 11;</code>
      * @return This builder for chaining.
      */
@@ -1882,6 +2242,10 @@ private static final long serialVersionUID = 0L;
 
     private float knowledgeHours ;
     /**
+     * <pre>
+     * 【调整】由后端按三级结构计算写入，前端无需传
+     * </pre>
+     *
      * <code>float knowledge_hours = 12;</code>
      * @return The knowledgeHours.
      */
@@ -1890,6 +2254,10 @@ private static final long serialVersionUID = 0L;
       return knowledgeHours ;
     }
     /**
+     * <pre>
+     * 【调整】由后端按三级结构计算写入，前端无需传
+     * </pre>
+     *
      * <code>float knowledge_hours = 12;</code>
      * @param value The knowledgeHours to set.
      * @return This builder for chaining.
@@ -1901,6 +2269,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 【调整】由后端按三级结构计算写入，前端无需传
+     * </pre>
+     *
      * <code>float knowledge_hours = 12;</code>
      * @return This builder for chaining.
      */
@@ -1925,7 +2297,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * 能力指标或能力方向
+     * 【废弃】不再使用，保留字段号兼容
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
@@ -1939,7 +2311,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标或能力方向
+     * 【废弃】不再使用，保留字段号兼容
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
@@ -1953,7 +2325,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标或能力方向
+     * 【废弃】不再使用，保留字段号兼容
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
@@ -1967,7 +2339,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标或能力方向
+     * 【废弃】不再使用，保留字段号兼容
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
@@ -1988,7 +2360,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标或能力方向
+     * 【废弃】不再使用，保留字段号兼容
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
@@ -2006,7 +2378,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标或能力方向
+     * 【废弃】不再使用，保留字段号兼容
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
@@ -2026,7 +2398,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标或能力方向
+     * 【废弃】不再使用，保留字段号兼容
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
@@ -2047,7 +2419,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标或能力方向
+     * 【废弃】不再使用，保留字段号兼容
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
@@ -2065,7 +2437,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标或能力方向
+     * 【废弃】不再使用，保留字段号兼容
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
@@ -2083,7 +2455,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标或能力方向
+     * 【废弃】不再使用，保留字段号兼容
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
@@ -2102,7 +2474,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标或能力方向
+     * 【废弃】不再使用，保留字段号兼容
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
@@ -2119,7 +2491,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标或能力方向
+     * 【废弃】不再使用，保留字段号兼容
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
@@ -2136,7 +2508,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标或能力方向
+     * 【废弃】不再使用，保留字段号兼容
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
@@ -2147,7 +2519,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标或能力方向
+     * 【废弃】不再使用，保留字段号兼容
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
@@ -2161,7 +2533,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标或能力方向
+     * 【废弃】不再使用，保留字段号兼容
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
@@ -2176,7 +2548,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标或能力方向
+     * 【废弃】不再使用，保留字段号兼容
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
@@ -2187,7 +2559,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标或能力方向
+     * 【废弃】不再使用，保留字段号兼容
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
@@ -2199,7 +2571,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 能力指标或能力方向
+     * 【废弃】不再使用，保留字段号兼容
      * </pre>
      *
      * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
@@ -2221,6 +2593,318 @@ private static final long serialVersionUID = 0L;
         courseModules = null;
       }
       return courseModulesBuilder ;
+    }
+
+    private java.util.List<com.zhijiejiaoyu.glory_api.course.SchemeChapter> chapters =
+      java.util.Collections.emptyList();
+    private void ensureChaptersIsMutable() {
+      if (!((bitField0 & 0x00000002) != 0)) {
+        chapters = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.SchemeChapter>(chapters );
+        bitField0_ |= 0x00000002;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.SchemeChapter, com.zhijiejiaoyu.glory_api.course.SchemeChapter.Builder, com.zhijiejiaoyu.glory_api.course.SchemeChapterOrBuilder> chaptersBuilder ;
+
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)，覆盖本人原方案全量保存；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 14;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.course.SchemeChapter> getChaptersList() {
+      if (chaptersBuilder == null) {
+        return java.util.Collections.unmodifiableList(chapters );
+      } else {
+        return chaptersBuilder .getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)，覆盖本人原方案全量保存；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 14;</code>
+     */
+    public int getChaptersCount() {
+      if (chaptersBuilder == null) {
+        return chapters .size();
+      } else {
+        return chaptersBuilder .getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)，覆盖本人原方案全量保存；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 14;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.SchemeChapter getChapters(int index) {
+      if (chaptersBuilder == null) {
+        return chapters .get(index);
+      } else {
+        return chaptersBuilder .getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)，覆盖本人原方案全量保存；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 14;</code>
+     */
+    public Builder setChapters(
+        int index, com.zhijiejiaoyu.glory_api.course.SchemeChapter value) {
+      if (chaptersBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureChaptersIsMutable();
+        chapters .set(index, value);
+        onChanged();
+      } else {
+        chaptersBuilder .setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)，覆盖本人原方案全量保存；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 14;</code>
+     */
+    public Builder setChapters(
+        int index, com.zhijiejiaoyu.glory_api.course.SchemeChapter.Builder builderForValue) {
+      if (chaptersBuilder == null) {
+        ensureChaptersIsMutable();
+        chapters .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        chaptersBuilder .setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)，覆盖本人原方案全量保存；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 14;</code>
+     */
+    public Builder addChapters(com.zhijiejiaoyu.glory_api.course.SchemeChapter value) {
+      if (chaptersBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureChaptersIsMutable();
+        chapters .add(value);
+        onChanged();
+      } else {
+        chaptersBuilder .addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)，覆盖本人原方案全量保存；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 14;</code>
+     */
+    public Builder addChapters(
+        int index, com.zhijiejiaoyu.glory_api.course.SchemeChapter value) {
+      if (chaptersBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureChaptersIsMutable();
+        chapters .add(index, value);
+        onChanged();
+      } else {
+        chaptersBuilder .addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)，覆盖本人原方案全量保存；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 14;</code>
+     */
+    public Builder addChapters(
+        com.zhijiejiaoyu.glory_api.course.SchemeChapter.Builder builderForValue) {
+      if (chaptersBuilder == null) {
+        ensureChaptersIsMutable();
+        chapters .add(builderForValue.build());
+        onChanged();
+      } else {
+        chaptersBuilder .addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)，覆盖本人原方案全量保存；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 14;</code>
+     */
+    public Builder addChapters(
+        int index, com.zhijiejiaoyu.glory_api.course.SchemeChapter.Builder builderForValue) {
+      if (chaptersBuilder == null) {
+        ensureChaptersIsMutable();
+        chapters .add(index, builderForValue.build());
+        onChanged();
+      } else {
+        chaptersBuilder .addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)，覆盖本人原方案全量保存；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 14;</code>
+     */
+    public Builder addAllChapters(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.course.SchemeChapter> values) {
+      if (chaptersBuilder == null) {
+        ensureChaptersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, chapters );
+        onChanged();
+      } else {
+        chaptersBuilder .addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)，覆盖本人原方案全量保存；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 14;</code>
+     */
+    public Builder clearChapters() {
+      if (chaptersBuilder == null) {
+        chapters = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000002);
+        onChanged();
+      } else {
+        chaptersBuilder .clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)，覆盖本人原方案全量保存；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 14;</code>
+     */
+    public Builder removeChapters(int index) {
+      if (chaptersBuilder == null) {
+        ensureChaptersIsMutable();
+        chapters .remove(index);
+        onChanged();
+      } else {
+        chaptersBuilder .remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)，覆盖本人原方案全量保存；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 14;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.SchemeChapter.Builder getChaptersBuilder(
+        int index) {
+      return getChaptersFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)，覆盖本人原方案全量保存；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 14;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.SchemeChapterOrBuilder getChaptersOrBuilder(
+        int index) {
+      if (chaptersBuilder == null) {
+        return chapters .get(index);  } else {
+        return chaptersBuilder .getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)，覆盖本人原方案全量保存；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 14;</code>
+     */
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.SchemeChapterOrBuilder> 
+         getChaptersOrBuilderList() {
+      if (chaptersBuilder != null) {
+        return chaptersBuilder .getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(chapters );
+      }
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)，覆盖本人原方案全量保存；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 14;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.SchemeChapter.Builder addChaptersBuilder() {
+      return getChaptersFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.course.SchemeChapter.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)，覆盖本人原方案全量保存；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 14;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.SchemeChapter.Builder addChaptersBuilder(
+        int index) {
+      return getChaptersFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.course.SchemeChapter.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 三级课程结构(章节→课节→小节/任务+资源)，覆盖本人原方案全量保存；新增字段
+     * </pre>
+     *
+     * <code>repeated .glory_api.SchemeChapter chapters = 14;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.course.SchemeChapter.Builder> 
+         getChaptersBuilderList() {
+      return getChaptersFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.SchemeChapter, com.zhijiejiaoyu.glory_api.course.SchemeChapter.Builder, com.zhijiejiaoyu.glory_api.course.SchemeChapterOrBuilder> 
+        getChaptersFieldBuilder() {
+      if (chaptersBuilder == null) {
+        chaptersBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.course.SchemeChapter, com.zhijiejiaoyu.glory_api.course.SchemeChapter.Builder, com.zhijiejiaoyu.glory_api.course.SchemeChapterOrBuilder>(
+                chapters ,
+                ((bitField0 & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        chapters = null;
+      }
+      return chaptersBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -213,7 +213,7 @@ public interface CourseOrBuilder extends
 
   /**
    * <pre>
-   * 课程层次：1.中职；2.高职；3.中高职
+   * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
    * </pre>
    *
    * <code>int32 course_level = 12;</code>
@@ -370,4 +370,24 @@ public interface CourseOrBuilder extends
    */
   com.google.protobuf.ByteString
       getLanguageBytes();
+
+  /**
+   * <pre>
+   * 专业大类：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
+   * </pre>
+   *
+   * <code>int32 major_category = 21;</code>
+   * @return The majorCategory.
+   */
+  int getMajorCategory();
+
+  /**
+   * <pre>
+   * 课程属性：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+   * </pre>
+   *
+   * <code>int32 course_attribute = 22;</code>
+   * @return The courseAttribute.
+   */
+  int getCourseAttribute();
 }

@@ -74,6 +74,36 @@ public final class TeachingPlanOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_UpdateTeachingCourseProgressResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_TeachingTaskItem_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_TeachingTaskItem_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_TaskCounts_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_TaskCounts_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListTeachingTaskRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListTeachingTaskRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListTeachingTaskResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListTeachingTaskResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_CreateTeachingTaskRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_CreateTeachingTaskRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_CreateTeachingTaskResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_CreateTeachingTaskResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -117,16 +147,43 @@ public final class TeachingPlanOuterClass {
       "eachingPlanRequest\022\'\n\014base_request\030\001 \001(\013" +
       "2\021.base.BaseRequest\022\030\n\020teaching_plan_id\030" +
       "\002 \001(\003\"C\n\032DeleteTeachingPlanResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\"\304\001\n#U" +
+      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\"\215\002\n#U" +
       "pdateTeachingCourseProgressRequest\022\'\n\014ba" +
       "se_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tc" +
       "ourse_id\030\002 \001(\003\022\033\n\023chapter_resource_id\030\003 " +
       "\001(\003\022!\n\031chapter_resource_progress\030\004 \001(\002\022!" +
-      "\n\031chapter_resource_duration\030\005 \001(\002\"f\n$Upd" +
-      "ateTeachingCourseProgressResponse\022%\n\tbas" +
-      "e_resp\030\001 \001(\0132\022.base.BaseResponse\022\027\n\017cour" +
-      "se_progress\030\002 \001(\005B%\n!com.zhijiejiaoyu.gl" +
-      "ory_api.courseP\001b\006proto3"
+      "\n\031chapter_resource_duration\030\005 \001(\002\022\020\n\010cla" +
+      "ss_id\030\006 \001(\003\022\031\n\021current_lesson_no\030\007 \001(\005\022\032" +
+      "\n\022room_play_position\030\010 \001(\002\"f\n$UpdateTeac" +
+      "hingCourseProgressResponse\022%\n\tbase_resp\030" +
+      "\001 \001(\0132\022.base.BaseResponse\022\027\n\017course_prog" +
+      "ress\030\002 \001(\005\"\271\002\n\020TeachingTaskItem\022\017\n\007task_" +
+      "id\030\001 \001(\003\022\023\n\013target_type\030\002 \001(\005\022\021\n\tcourse_" +
+      "id\030\003 \001(\003\022\025\n\redu_scheme_id\030\004 \001(\003\022\023\n\013cours" +
+      "e_name\030\005 \001(\t\022\030\n\020course_cover_url\030\006 \001(\t\022\022" +
+      "\n\nmajor_name\030\007 \001(\t\022\020\n\010class_id\030\010 \001(\003\022\022\n\n" +
+      "class_name\030\t \001(\t\022\031\n\021current_lesson_no\030\n " +
+      "\001(\005\022\027\n\017total_lesson_no\030\013 \001(\005\022\020\n\010progress" +
+      "\030\014 \001(\005\022\026\n\016last_taught_at\030\r \001(\t\022\016\n\006status" +
+      "\030\016 \001(\005\"3\n\nTaskCounts\022\023\n\013in_progress\030\001 \001(" +
+      "\003\022\020\n\010finished\030\002 \001(\003\"\223\001\n\027ListTeachingTask" +
+      "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
+      "eRequest\022\016\n\006status\030\002 \001(\005\022\022\n\nmajor_code\030\003" +
+      " \001(\t\022+\n\npagination\030d \001(\0132\027.base.Paginati" +
+      "onRequest\"\302\001\n\030ListTeachingTaskResponse\022%" +
+      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022*\n" +
+      "\005tasks\030\002 \003(\0132\033.glory_api.TeachingTaskIte" +
+      "m\022%\n\006counts\030\003 \001(\0132\025.glory_api.TaskCounts" +
+      "\022,\n\npagination\030d \001(\0132\030.base.PaginationRe" +
+      "sponse\"\226\001\n\031CreateTeachingTaskRequest\022\'\n\014" +
+      "base_request\030\001 \001(\0132\021.base.BaseRequest\022\023\n" +
+      "\013target_type\030\002 \001(\005\022\021\n\tcourse_id\030\003 \001(\003\022\025\n" +
+      "\redu_scheme_id\030\004 \001(\003\022\021\n\tclass_ids\030\005 \003(\003\"" +
+      "\203\001\n\032CreateTeachingTaskResponse\022%\n\tbase_r" +
+      "esp\030\001 \001(\0132\022.base.BaseResponse\022\020\n\010task_id" +
+      "s\030\002 \003(\003\022\025\n\rcreated_count\030\003 \001(\005\022\025\n\rexiste" +
+      "d_count\030\004 \001(\005B%\n!com.zhijiejiaoyu.glory_" +
+      "api.courseP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -199,13 +256,49 @@ public final class TeachingPlanOuterClass {
     internal_static_glory_api_UpdateTeachingCourseProgressRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateTeachingCourseProgressRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "CourseId", "ChapterResourceId", "ChapterResourceProgress", "ChapterResourceDuration", });
+        new java.lang.String[] { "BaseRequest", "CourseId", "ChapterResourceId", "ChapterResourceProgress", "ChapterResourceDuration", "ClassId", "CurrentLessonNo", "RoomPlayPosition", });
     internal_static_glory_api_UpdateTeachingCourseProgressResponse_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_glory_api_UpdateTeachingCourseProgressResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateTeachingCourseProgressResponse_descriptor,
         new java.lang.String[] { "BaseResp", "CourseProgress", });
+    internal_static_glory_api_TeachingTaskItem_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_glory_api_TeachingTaskItem_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_TeachingTaskItem_descriptor,
+        new java.lang.String[] { "TaskId", "TargetType", "CourseId", "EduSchemeId", "CourseName", "CourseCoverUrl", "MajorName", "ClassId", "ClassName", "CurrentLessonNo", "TotalLessonNo", "Progress", "LastTaughtAt", "Status", });
+    internal_static_glory_api_TaskCounts_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_glory_api_TaskCounts_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_TaskCounts_descriptor,
+        new java.lang.String[] { "InProgress", "Finished", });
+    internal_static_glory_api_ListTeachingTaskRequest_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_glory_api_ListTeachingTaskRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListTeachingTaskRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "Status", "MajorCode", "Pagination", });
+    internal_static_glory_api_ListTeachingTaskResponse_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_glory_api_ListTeachingTaskResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListTeachingTaskResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "Tasks", "Counts", "Pagination", });
+    internal_static_glory_api_CreateTeachingTaskRequest_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_glory_api_CreateTeachingTaskRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_CreateTeachingTaskRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "TargetType", "CourseId", "EduSchemeId", "ClassIds", });
+    internal_static_glory_api_CreateTeachingTaskResponse_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_glory_api_CreateTeachingTaskResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_CreateTeachingTaskResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "TaskIds", "CreatedCount", "ExistedCount", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
     com.zhijiejiaoyu.glory_api.course.Module.getDescriptor();
   }

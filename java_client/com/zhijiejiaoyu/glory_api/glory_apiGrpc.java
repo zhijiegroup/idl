@@ -7486,6 +7486,37 @@ public final class glory_apiGrpc {
     return getUpdateTenantUserPasswordMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.ListTeacherClassRequest,
+      com.zhijiejiaoyu.glory_api.tenant.ListTeacherClassResponse> getListTeacherClassMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListTeacherClass",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.ListTeacherClassRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.ListTeacherClassResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.ListTeacherClassRequest,
+      com.zhijiejiaoyu.glory_api.tenant.ListTeacherClassResponse> getListTeacherClassMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.ListTeacherClassRequest, com.zhijiejiaoyu.glory_api.tenant.ListTeacherClassResponse> getListTeacherClassMethod;
+    if ((getListTeacherClassMethod = glory_apiGrpc.getListTeacherClassMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListTeacherClassMethod = glory_apiGrpc.getListTeacherClassMethod) == null) {
+          glory_apiGrpc.getListTeacherClassMethod = getListTeacherClassMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.ListTeacherClassRequest, com.zhijiejiaoyu.glory_api.tenant.ListTeacherClassResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListTeacherClass"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.ListTeacherClassRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.ListTeacherClassResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListTeacherClass"))
+              .build();
+        }
+      }
+    }
+    return getListTeacherClassMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.UpdateTenantConfigRequest,
       com.zhijiejiaoyu.glory_api.tenant.UpdateTenantConfigResponse> getUpdateTenantConfigMethod;
 
@@ -9966,6 +9997,192 @@ public final class glory_apiGrpc {
     return getListMyCourseMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.FavoriteLessonRequest,
+      com.zhijiejiaoyu.glory_api.course.FavoriteLessonResponse> getFavoriteLessonMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FavoriteLesson",
+      requestType = com.zhijiejiaoyu.glory_api.course.FavoriteLessonRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.FavoriteLessonResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.FavoriteLessonRequest,
+      com.zhijiejiaoyu.glory_api.course.FavoriteLessonResponse> getFavoriteLessonMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.FavoriteLessonRequest, com.zhijiejiaoyu.glory_api.course.FavoriteLessonResponse> getFavoriteLessonMethod;
+    if ((getFavoriteLessonMethod = glory_apiGrpc.getFavoriteLessonMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getFavoriteLessonMethod = glory_apiGrpc.getFavoriteLessonMethod) == null) {
+          glory_apiGrpc.getFavoriteLessonMethod = getFavoriteLessonMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.FavoriteLessonRequest, com.zhijiejiaoyu.glory_api.course.FavoriteLessonResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FavoriteLesson"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.FavoriteLessonRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.FavoriteLessonResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("FavoriteLesson"))
+              .build();
+        }
+      }
+    }
+    return getFavoriteLessonMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListMyFavoriteLessonRequest,
+      com.zhijiejiaoyu.glory_api.course.ListMyFavoriteLessonResponse> getListMyFavoriteLessonMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMyFavoriteLesson",
+      requestType = com.zhijiejiaoyu.glory_api.course.ListMyFavoriteLessonRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.ListMyFavoriteLessonResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListMyFavoriteLessonRequest,
+      com.zhijiejiaoyu.glory_api.course.ListMyFavoriteLessonResponse> getListMyFavoriteLessonMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListMyFavoriteLessonRequest, com.zhijiejiaoyu.glory_api.course.ListMyFavoriteLessonResponse> getListMyFavoriteLessonMethod;
+    if ((getListMyFavoriteLessonMethod = glory_apiGrpc.getListMyFavoriteLessonMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListMyFavoriteLessonMethod = glory_apiGrpc.getListMyFavoriteLessonMethod) == null) {
+          glory_apiGrpc.getListMyFavoriteLessonMethod = getListMyFavoriteLessonMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.ListMyFavoriteLessonRequest, com.zhijiejiaoyu.glory_api.course.ListMyFavoriteLessonResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMyFavoriteLesson"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.ListMyFavoriteLessonRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.ListMyFavoriteLessonResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListMyFavoriteLesson"))
+              .build();
+        }
+      }
+    }
+    return getListMyFavoriteLessonMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ProgressStatOverviewRequest,
+      com.zhijiejiaoyu.glory_api.course.ProgressStatOverviewResponse> getProgressStatOverviewMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ProgressStatOverview",
+      requestType = com.zhijiejiaoyu.glory_api.course.ProgressStatOverviewRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.ProgressStatOverviewResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ProgressStatOverviewRequest,
+      com.zhijiejiaoyu.glory_api.course.ProgressStatOverviewResponse> getProgressStatOverviewMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ProgressStatOverviewRequest, com.zhijiejiaoyu.glory_api.course.ProgressStatOverviewResponse> getProgressStatOverviewMethod;
+    if ((getProgressStatOverviewMethod = glory_apiGrpc.getProgressStatOverviewMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getProgressStatOverviewMethod = glory_apiGrpc.getProgressStatOverviewMethod) == null) {
+          glory_apiGrpc.getProgressStatOverviewMethod = getProgressStatOverviewMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.ProgressStatOverviewRequest, com.zhijiejiaoyu.glory_api.course.ProgressStatOverviewResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ProgressStatOverview"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.ProgressStatOverviewRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.ProgressStatOverviewResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ProgressStatOverview"))
+              .build();
+        }
+      }
+    }
+    return getProgressStatOverviewMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListProgressClassStudentRequest,
+      com.zhijiejiaoyu.glory_api.course.ListProgressClassStudentResponse> getListProgressClassStudentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListProgressClassStudent",
+      requestType = com.zhijiejiaoyu.glory_api.course.ListProgressClassStudentRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.ListProgressClassStudentResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListProgressClassStudentRequest,
+      com.zhijiejiaoyu.glory_api.course.ListProgressClassStudentResponse> getListProgressClassStudentMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListProgressClassStudentRequest, com.zhijiejiaoyu.glory_api.course.ListProgressClassStudentResponse> getListProgressClassStudentMethod;
+    if ((getListProgressClassStudentMethod = glory_apiGrpc.getListProgressClassStudentMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListProgressClassStudentMethod = glory_apiGrpc.getListProgressClassStudentMethod) == null) {
+          glory_apiGrpc.getListProgressClassStudentMethod = getListProgressClassStudentMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.ListProgressClassStudentRequest, com.zhijiejiaoyu.glory_api.course.ListProgressClassStudentResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListProgressClassStudent"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.ListProgressClassStudentRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.ListProgressClassStudentResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListProgressClassStudent"))
+              .build();
+        }
+      }
+    }
+    return getListProgressClassStudentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListClassCourseProgressRequest,
+      com.zhijiejiaoyu.glory_api.course.ListClassCourseProgressResponse> getListClassCourseProgressMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListClassCourseProgress",
+      requestType = com.zhijiejiaoyu.glory_api.course.ListClassCourseProgressRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.ListClassCourseProgressResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListClassCourseProgressRequest,
+      com.zhijiejiaoyu.glory_api.course.ListClassCourseProgressResponse> getListClassCourseProgressMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListClassCourseProgressRequest, com.zhijiejiaoyu.glory_api.course.ListClassCourseProgressResponse> getListClassCourseProgressMethod;
+    if ((getListClassCourseProgressMethod = glory_apiGrpc.getListClassCourseProgressMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListClassCourseProgressMethod = glory_apiGrpc.getListClassCourseProgressMethod) == null) {
+          glory_apiGrpc.getListClassCourseProgressMethod = getListClassCourseProgressMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.ListClassCourseProgressRequest, com.zhijiejiaoyu.glory_api.course.ListClassCourseProgressResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListClassCourseProgress"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.ListClassCourseProgressRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.ListClassCourseProgressResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListClassCourseProgress"))
+              .build();
+        }
+      }
+    }
+    return getListClassCourseProgressMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListStudentLessonProgressRequest,
+      com.zhijiejiaoyu.glory_api.course.ListStudentLessonProgressResponse> getListStudentLessonProgressMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListStudentLessonProgress",
+      requestType = com.zhijiejiaoyu.glory_api.course.ListStudentLessonProgressRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.ListStudentLessonProgressResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListStudentLessonProgressRequest,
+      com.zhijiejiaoyu.glory_api.course.ListStudentLessonProgressResponse> getListStudentLessonProgressMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListStudentLessonProgressRequest, com.zhijiejiaoyu.glory_api.course.ListStudentLessonProgressResponse> getListStudentLessonProgressMethod;
+    if ((getListStudentLessonProgressMethod = glory_apiGrpc.getListStudentLessonProgressMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListStudentLessonProgressMethod = glory_apiGrpc.getListStudentLessonProgressMethod) == null) {
+          glory_apiGrpc.getListStudentLessonProgressMethod = getListStudentLessonProgressMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.ListStudentLessonProgressRequest, com.zhijiejiaoyu.glory_api.course.ListStudentLessonProgressResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListStudentLessonProgress"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.ListStudentLessonProgressRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.ListStudentLessonProgressResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListStudentLessonProgress"))
+              .build();
+        }
+      }
+    }
+    return getListStudentLessonProgressMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListTeachingPlanRequest,
       com.zhijiejiaoyu.glory_api.course.ListTeachingPlanResponse> getListTeachingPlanMethod;
 
@@ -10119,6 +10336,68 @@ public final class glory_apiGrpc {
       }
     }
     return getUpdateTeachingCourseProgressMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListTeachingTaskRequest,
+      com.zhijiejiaoyu.glory_api.course.ListTeachingTaskResponse> getListTeachingTaskMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListTeachingTask",
+      requestType = com.zhijiejiaoyu.glory_api.course.ListTeachingTaskRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.ListTeachingTaskResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListTeachingTaskRequest,
+      com.zhijiejiaoyu.glory_api.course.ListTeachingTaskResponse> getListTeachingTaskMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListTeachingTaskRequest, com.zhijiejiaoyu.glory_api.course.ListTeachingTaskResponse> getListTeachingTaskMethod;
+    if ((getListTeachingTaskMethod = glory_apiGrpc.getListTeachingTaskMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListTeachingTaskMethod = glory_apiGrpc.getListTeachingTaskMethod) == null) {
+          glory_apiGrpc.getListTeachingTaskMethod = getListTeachingTaskMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.ListTeachingTaskRequest, com.zhijiejiaoyu.glory_api.course.ListTeachingTaskResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListTeachingTask"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.ListTeachingTaskRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.ListTeachingTaskResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListTeachingTask"))
+              .build();
+        }
+      }
+    }
+    return getListTeachingTaskMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.CreateTeachingTaskRequest,
+      com.zhijiejiaoyu.glory_api.course.CreateTeachingTaskResponse> getCreateTeachingTaskMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateTeachingTask",
+      requestType = com.zhijiejiaoyu.glory_api.course.CreateTeachingTaskRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.CreateTeachingTaskResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.CreateTeachingTaskRequest,
+      com.zhijiejiaoyu.glory_api.course.CreateTeachingTaskResponse> getCreateTeachingTaskMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.CreateTeachingTaskRequest, com.zhijiejiaoyu.glory_api.course.CreateTeachingTaskResponse> getCreateTeachingTaskMethod;
+    if ((getCreateTeachingTaskMethod = glory_apiGrpc.getCreateTeachingTaskMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateTeachingTaskMethod = glory_apiGrpc.getCreateTeachingTaskMethod) == null) {
+          glory_apiGrpc.getCreateTeachingTaskMethod = getCreateTeachingTaskMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.CreateTeachingTaskRequest, com.zhijiejiaoyu.glory_api.course.CreateTeachingTaskResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateTeachingTask"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.CreateTeachingTaskRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.CreateTeachingTaskResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateTeachingTask"))
+              .build();
+        }
+      }
+    }
+    return getCreateTeachingTaskMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.CreateEduSchemeRequest,
@@ -10336,6 +10615,440 @@ public final class glory_apiGrpc {
       }
     }
     return getGetEduSchemeLikeCourseMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.ListSchoolDocRequest,
+      com.zhijiejiaoyu.glory_api.doc.ListSchoolDocResponse> getListSchoolDocMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSchoolDoc",
+      requestType = com.zhijiejiaoyu.glory_api.doc.ListSchoolDocRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.doc.ListSchoolDocResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.ListSchoolDocRequest,
+      com.zhijiejiaoyu.glory_api.doc.ListSchoolDocResponse> getListSchoolDocMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.ListSchoolDocRequest, com.zhijiejiaoyu.glory_api.doc.ListSchoolDocResponse> getListSchoolDocMethod;
+    if ((getListSchoolDocMethod = glory_apiGrpc.getListSchoolDocMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListSchoolDocMethod = glory_apiGrpc.getListSchoolDocMethod) == null) {
+          glory_apiGrpc.getListSchoolDocMethod = getListSchoolDocMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.doc.ListSchoolDocRequest, com.zhijiejiaoyu.glory_api.doc.ListSchoolDocResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListSchoolDoc"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.doc.ListSchoolDocRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.doc.ListSchoolDocResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListSchoolDoc"))
+              .build();
+        }
+      }
+    }
+    return getListSchoolDocMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.CreateSchoolDocRequest,
+      com.zhijiejiaoyu.glory_api.doc.CreateSchoolDocResponse> getCreateSchoolDocMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateSchoolDoc",
+      requestType = com.zhijiejiaoyu.glory_api.doc.CreateSchoolDocRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.doc.CreateSchoolDocResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.CreateSchoolDocRequest,
+      com.zhijiejiaoyu.glory_api.doc.CreateSchoolDocResponse> getCreateSchoolDocMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.CreateSchoolDocRequest, com.zhijiejiaoyu.glory_api.doc.CreateSchoolDocResponse> getCreateSchoolDocMethod;
+    if ((getCreateSchoolDocMethod = glory_apiGrpc.getCreateSchoolDocMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateSchoolDocMethod = glory_apiGrpc.getCreateSchoolDocMethod) == null) {
+          glory_apiGrpc.getCreateSchoolDocMethod = getCreateSchoolDocMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.doc.CreateSchoolDocRequest, com.zhijiejiaoyu.glory_api.doc.CreateSchoolDocResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateSchoolDoc"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.doc.CreateSchoolDocRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.doc.CreateSchoolDocResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateSchoolDoc"))
+              .build();
+        }
+      }
+    }
+    return getCreateSchoolDocMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.UpdateSchoolDocRequest,
+      com.zhijiejiaoyu.glory_api.doc.UpdateSchoolDocResponse> getUpdateSchoolDocMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateSchoolDoc",
+      requestType = com.zhijiejiaoyu.glory_api.doc.UpdateSchoolDocRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.doc.UpdateSchoolDocResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.UpdateSchoolDocRequest,
+      com.zhijiejiaoyu.glory_api.doc.UpdateSchoolDocResponse> getUpdateSchoolDocMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.UpdateSchoolDocRequest, com.zhijiejiaoyu.glory_api.doc.UpdateSchoolDocResponse> getUpdateSchoolDocMethod;
+    if ((getUpdateSchoolDocMethod = glory_apiGrpc.getUpdateSchoolDocMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateSchoolDocMethod = glory_apiGrpc.getUpdateSchoolDocMethod) == null) {
+          glory_apiGrpc.getUpdateSchoolDocMethod = getUpdateSchoolDocMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.doc.UpdateSchoolDocRequest, com.zhijiejiaoyu.glory_api.doc.UpdateSchoolDocResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateSchoolDoc"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.doc.UpdateSchoolDocRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.doc.UpdateSchoolDocResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateSchoolDoc"))
+              .build();
+        }
+      }
+    }
+    return getUpdateSchoolDocMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.DeleteSchoolDocRequest,
+      com.zhijiejiaoyu.glory_api.doc.DeleteSchoolDocResponse> getDeleteSchoolDocMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteSchoolDoc",
+      requestType = com.zhijiejiaoyu.glory_api.doc.DeleteSchoolDocRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.doc.DeleteSchoolDocResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.DeleteSchoolDocRequest,
+      com.zhijiejiaoyu.glory_api.doc.DeleteSchoolDocResponse> getDeleteSchoolDocMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.DeleteSchoolDocRequest, com.zhijiejiaoyu.glory_api.doc.DeleteSchoolDocResponse> getDeleteSchoolDocMethod;
+    if ((getDeleteSchoolDocMethod = glory_apiGrpc.getDeleteSchoolDocMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteSchoolDocMethod = glory_apiGrpc.getDeleteSchoolDocMethod) == null) {
+          glory_apiGrpc.getDeleteSchoolDocMethod = getDeleteSchoolDocMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.doc.DeleteSchoolDocRequest, com.zhijiejiaoyu.glory_api.doc.DeleteSchoolDocResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteSchoolDoc"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.doc.DeleteSchoolDocRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.doc.DeleteSchoolDocResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteSchoolDoc"))
+              .build();
+        }
+      }
+    }
+    return getDeleteSchoolDocMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.FavoriteSchoolDocRequest,
+      com.zhijiejiaoyu.glory_api.doc.FavoriteSchoolDocResponse> getFavoriteSchoolDocMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FavoriteSchoolDoc",
+      requestType = com.zhijiejiaoyu.glory_api.doc.FavoriteSchoolDocRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.doc.FavoriteSchoolDocResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.FavoriteSchoolDocRequest,
+      com.zhijiejiaoyu.glory_api.doc.FavoriteSchoolDocResponse> getFavoriteSchoolDocMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.FavoriteSchoolDocRequest, com.zhijiejiaoyu.glory_api.doc.FavoriteSchoolDocResponse> getFavoriteSchoolDocMethod;
+    if ((getFavoriteSchoolDocMethod = glory_apiGrpc.getFavoriteSchoolDocMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getFavoriteSchoolDocMethod = glory_apiGrpc.getFavoriteSchoolDocMethod) == null) {
+          glory_apiGrpc.getFavoriteSchoolDocMethod = getFavoriteSchoolDocMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.doc.FavoriteSchoolDocRequest, com.zhijiejiaoyu.glory_api.doc.FavoriteSchoolDocResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FavoriteSchoolDoc"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.doc.FavoriteSchoolDocRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.doc.FavoriteSchoolDocResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("FavoriteSchoolDoc"))
+              .build();
+        }
+      }
+    }
+    return getFavoriteSchoolDocMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.CreateMyDocFolderRequest,
+      com.zhijiejiaoyu.glory_api.doc.CreateMyDocFolderResponse> getCreateMyDocFolderMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateMyDocFolder",
+      requestType = com.zhijiejiaoyu.glory_api.doc.CreateMyDocFolderRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.doc.CreateMyDocFolderResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.CreateMyDocFolderRequest,
+      com.zhijiejiaoyu.glory_api.doc.CreateMyDocFolderResponse> getCreateMyDocFolderMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.CreateMyDocFolderRequest, com.zhijiejiaoyu.glory_api.doc.CreateMyDocFolderResponse> getCreateMyDocFolderMethod;
+    if ((getCreateMyDocFolderMethod = glory_apiGrpc.getCreateMyDocFolderMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateMyDocFolderMethod = glory_apiGrpc.getCreateMyDocFolderMethod) == null) {
+          glory_apiGrpc.getCreateMyDocFolderMethod = getCreateMyDocFolderMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.doc.CreateMyDocFolderRequest, com.zhijiejiaoyu.glory_api.doc.CreateMyDocFolderResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateMyDocFolder"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.doc.CreateMyDocFolderRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.doc.CreateMyDocFolderResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateMyDocFolder"))
+              .build();
+        }
+      }
+    }
+    return getCreateMyDocFolderMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.RenameMyDocFolderRequest,
+      com.zhijiejiaoyu.glory_api.doc.RenameMyDocFolderResponse> getRenameMyDocFolderMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RenameMyDocFolder",
+      requestType = com.zhijiejiaoyu.glory_api.doc.RenameMyDocFolderRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.doc.RenameMyDocFolderResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.RenameMyDocFolderRequest,
+      com.zhijiejiaoyu.glory_api.doc.RenameMyDocFolderResponse> getRenameMyDocFolderMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.RenameMyDocFolderRequest, com.zhijiejiaoyu.glory_api.doc.RenameMyDocFolderResponse> getRenameMyDocFolderMethod;
+    if ((getRenameMyDocFolderMethod = glory_apiGrpc.getRenameMyDocFolderMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getRenameMyDocFolderMethod = glory_apiGrpc.getRenameMyDocFolderMethod) == null) {
+          glory_apiGrpc.getRenameMyDocFolderMethod = getRenameMyDocFolderMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.doc.RenameMyDocFolderRequest, com.zhijiejiaoyu.glory_api.doc.RenameMyDocFolderResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RenameMyDocFolder"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.doc.RenameMyDocFolderRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.doc.RenameMyDocFolderResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("RenameMyDocFolder"))
+              .build();
+        }
+      }
+    }
+    return getRenameMyDocFolderMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.DeleteMyDocFolderRequest,
+      com.zhijiejiaoyu.glory_api.doc.DeleteMyDocFolderResponse> getDeleteMyDocFolderMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteMyDocFolder",
+      requestType = com.zhijiejiaoyu.glory_api.doc.DeleteMyDocFolderRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.doc.DeleteMyDocFolderResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.DeleteMyDocFolderRequest,
+      com.zhijiejiaoyu.glory_api.doc.DeleteMyDocFolderResponse> getDeleteMyDocFolderMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.DeleteMyDocFolderRequest, com.zhijiejiaoyu.glory_api.doc.DeleteMyDocFolderResponse> getDeleteMyDocFolderMethod;
+    if ((getDeleteMyDocFolderMethod = glory_apiGrpc.getDeleteMyDocFolderMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteMyDocFolderMethod = glory_apiGrpc.getDeleteMyDocFolderMethod) == null) {
+          glory_apiGrpc.getDeleteMyDocFolderMethod = getDeleteMyDocFolderMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.doc.DeleteMyDocFolderRequest, com.zhijiejiaoyu.glory_api.doc.DeleteMyDocFolderResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteMyDocFolder"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.doc.DeleteMyDocFolderRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.doc.DeleteMyDocFolderResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteMyDocFolder"))
+              .build();
+        }
+      }
+    }
+    return getDeleteMyDocFolderMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.ListMyDocFolderRequest,
+      com.zhijiejiaoyu.glory_api.doc.ListMyDocFolderResponse> getListMyDocFolderMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMyDocFolder",
+      requestType = com.zhijiejiaoyu.glory_api.doc.ListMyDocFolderRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.doc.ListMyDocFolderResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.ListMyDocFolderRequest,
+      com.zhijiejiaoyu.glory_api.doc.ListMyDocFolderResponse> getListMyDocFolderMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.ListMyDocFolderRequest, com.zhijiejiaoyu.glory_api.doc.ListMyDocFolderResponse> getListMyDocFolderMethod;
+    if ((getListMyDocFolderMethod = glory_apiGrpc.getListMyDocFolderMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListMyDocFolderMethod = glory_apiGrpc.getListMyDocFolderMethod) == null) {
+          glory_apiGrpc.getListMyDocFolderMethod = getListMyDocFolderMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.doc.ListMyDocFolderRequest, com.zhijiejiaoyu.glory_api.doc.ListMyDocFolderResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMyDocFolder"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.doc.ListMyDocFolderRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.doc.ListMyDocFolderResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListMyDocFolder"))
+              .build();
+        }
+      }
+    }
+    return getListMyDocFolderMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.ListMyDocRequest,
+      com.zhijiejiaoyu.glory_api.doc.ListMyDocResponse> getListMyDocMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMyDoc",
+      requestType = com.zhijiejiaoyu.glory_api.doc.ListMyDocRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.doc.ListMyDocResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.ListMyDocRequest,
+      com.zhijiejiaoyu.glory_api.doc.ListMyDocResponse> getListMyDocMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.ListMyDocRequest, com.zhijiejiaoyu.glory_api.doc.ListMyDocResponse> getListMyDocMethod;
+    if ((getListMyDocMethod = glory_apiGrpc.getListMyDocMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListMyDocMethod = glory_apiGrpc.getListMyDocMethod) == null) {
+          glory_apiGrpc.getListMyDocMethod = getListMyDocMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.doc.ListMyDocRequest, com.zhijiejiaoyu.glory_api.doc.ListMyDocResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMyDoc"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.doc.ListMyDocRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.doc.ListMyDocResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListMyDoc"))
+              .build();
+        }
+      }
+    }
+    return getListMyDocMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.MoveOutMyDocRequest,
+      com.zhijiejiaoyu.glory_api.doc.MoveOutMyDocResponse> getMoveOutMyDocMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "MoveOutMyDoc",
+      requestType = com.zhijiejiaoyu.glory_api.doc.MoveOutMyDocRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.doc.MoveOutMyDocResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.MoveOutMyDocRequest,
+      com.zhijiejiaoyu.glory_api.doc.MoveOutMyDocResponse> getMoveOutMyDocMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.MoveOutMyDocRequest, com.zhijiejiaoyu.glory_api.doc.MoveOutMyDocResponse> getMoveOutMyDocMethod;
+    if ((getMoveOutMyDocMethod = glory_apiGrpc.getMoveOutMyDocMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getMoveOutMyDocMethod = glory_apiGrpc.getMoveOutMyDocMethod) == null) {
+          glory_apiGrpc.getMoveOutMyDocMethod = getMoveOutMyDocMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.doc.MoveOutMyDocRequest, com.zhijiejiaoyu.glory_api.doc.MoveOutMyDocResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MoveOutMyDoc"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.doc.MoveOutMyDocRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.doc.MoveOutMyDocResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("MoveOutMyDoc"))
+              .build();
+        }
+      }
+    }
+    return getMoveOutMyDocMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.DeleteMyDocRequest,
+      com.zhijiejiaoyu.glory_api.doc.DeleteMyDocResponse> getDeleteMyDocMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteMyDoc",
+      requestType = com.zhijiejiaoyu.glory_api.doc.DeleteMyDocRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.doc.DeleteMyDocResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.DeleteMyDocRequest,
+      com.zhijiejiaoyu.glory_api.doc.DeleteMyDocResponse> getDeleteMyDocMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.DeleteMyDocRequest, com.zhijiejiaoyu.glory_api.doc.DeleteMyDocResponse> getDeleteMyDocMethod;
+    if ((getDeleteMyDocMethod = glory_apiGrpc.getDeleteMyDocMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteMyDocMethod = glory_apiGrpc.getDeleteMyDocMethod) == null) {
+          glory_apiGrpc.getDeleteMyDocMethod = getDeleteMyDocMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.doc.DeleteMyDocRequest, com.zhijiejiaoyu.glory_api.doc.DeleteMyDocResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteMyDoc"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.doc.DeleteMyDocRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.doc.DeleteMyDocResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteMyDoc"))
+              .build();
+        }
+      }
+    }
+    return getDeleteMyDocMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.DownloadMyDocRequest,
+      com.zhijiejiaoyu.glory_api.doc.DownloadMyDocResponse> getDownloadMyDocMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DownloadMyDoc",
+      requestType = com.zhijiejiaoyu.glory_api.doc.DownloadMyDocRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.doc.DownloadMyDocResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.DownloadMyDocRequest,
+      com.zhijiejiaoyu.glory_api.doc.DownloadMyDocResponse> getDownloadMyDocMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.DownloadMyDocRequest, com.zhijiejiaoyu.glory_api.doc.DownloadMyDocResponse> getDownloadMyDocMethod;
+    if ((getDownloadMyDocMethod = glory_apiGrpc.getDownloadMyDocMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDownloadMyDocMethod = glory_apiGrpc.getDownloadMyDocMethod) == null) {
+          glory_apiGrpc.getDownloadMyDocMethod = getDownloadMyDocMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.doc.DownloadMyDocRequest, com.zhijiejiaoyu.glory_api.doc.DownloadMyDocResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DownloadMyDoc"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.doc.DownloadMyDocRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.doc.DownloadMyDocResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DownloadMyDoc"))
+              .build();
+        }
+      }
+    }
+    return getDownloadMyDocMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.UploadFileRequest,
+      com.zhijiejiaoyu.glory_api.doc.UploadFileResponse> getUploadFileMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UploadFile",
+      requestType = com.zhijiejiaoyu.glory_api.doc.UploadFileRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.doc.UploadFileResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.UploadFileRequest,
+      com.zhijiejiaoyu.glory_api.doc.UploadFileResponse> getUploadFileMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.doc.UploadFileRequest, com.zhijiejiaoyu.glory_api.doc.UploadFileResponse> getUploadFileMethod;
+    if ((getUploadFileMethod = glory_apiGrpc.getUploadFileMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUploadFileMethod = glory_apiGrpc.getUploadFileMethod) == null) {
+          glory_apiGrpc.getUploadFileMethod = getUploadFileMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.doc.UploadFileRequest, com.zhijiejiaoyu.glory_api.doc.UploadFileResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UploadFile"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.doc.UploadFileRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.doc.UploadFileResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UploadFile"))
+              .build();
+        }
+      }
+    }
+    return getUploadFileMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeRequest,
@@ -16083,6 +16796,16 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 教师所辖班级列表
+     * </pre>
+     */
+    default void listTeacherClass(com.zhijiejiaoyu.glory_api.tenant.ListTeacherClassRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.ListTeacherClassResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListTeacherClassMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      *tenant_config
      * </pre>
      */
@@ -16826,6 +17549,68 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 课程收藏
+     * 收藏/取消收藏课节
+     * </pre>
+     */
+    default void favoriteLesson(com.zhijiejiaoyu.glory_api.course.FavoriteLessonRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.FavoriteLessonResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFavoriteLessonMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 我的收藏课节列表
+     * </pre>
+     */
+    default void listMyFavoriteLesson(com.zhijiejiaoyu.glory_api.course.ListMyFavoriteLessonRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListMyFavoriteLessonResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListMyFavoriteLessonMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 学情分析
+     * 学情统计卡片
+     * </pre>
+     */
+    default void progressStatOverview(com.zhijiejiaoyu.glory_api.course.ProgressStatOverviewRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ProgressStatOverviewResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getProgressStatOverviewMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 班级/学生进度列表
+     * </pre>
+     */
+    default void listProgressClassStudent(com.zhijiejiaoyu.glory_api.course.ListProgressClassStudentRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListProgressClassStudentResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListProgressClassStudentMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 班级课程进度详情
+     * </pre>
+     */
+    default void listClassCourseProgress(com.zhijiejiaoyu.glory_api.course.ListClassCourseProgressRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListClassCourseProgressResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListClassCourseProgressMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 学生课节进度详情
+     * </pre>
+     */
+    default void listStudentLessonProgress(com.zhijiejiaoyu.glory_api.course.ListStudentLessonProgressRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListStudentLessonProgressResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListStudentLessonProgressMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * 教案管理
      * </pre>
      */
@@ -16863,6 +17648,27 @@ public final class glory_apiGrpc {
     default void updateTeachingCourseProgress(com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateTeachingCourseProgressMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 授课任务
+     * 在授课程列表
+     * </pre>
+     */
+    default void listTeachingTask(com.zhijiejiaoyu.glory_api.course.ListTeachingTaskRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListTeachingTaskResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListTeachingTaskMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 加入授课
+     * </pre>
+     */
+    default void createTeachingTask(com.zhijiejiaoyu.glory_api.course.CreateTeachingTaskRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.CreateTeachingTaskResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateTeachingTaskMethod(), responseObserver);
     }
 
     /**
@@ -16918,6 +17724,147 @@ public final class glory_apiGrpc {
     default void getEduSchemeLikeCourse(com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetEduSchemeLikeCourseMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 文档
+     * 学校文档列表
+     * </pre>
+     */
+    default void listSchoolDoc(com.zhijiejiaoyu.glory_api.doc.ListSchoolDocRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.ListSchoolDocResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListSchoolDocMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 新增学校文档
+     * </pre>
+     */
+    default void createSchoolDoc(com.zhijiejiaoyu.glory_api.doc.CreateSchoolDocRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.CreateSchoolDocResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateSchoolDocMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 编辑/替换学校文档
+     * </pre>
+     */
+    default void updateSchoolDoc(com.zhijiejiaoyu.glory_api.doc.UpdateSchoolDocRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.UpdateSchoolDocResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateSchoolDocMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 删除学校文档
+     * </pre>
+     */
+    default void deleteSchoolDoc(com.zhijiejiaoyu.glory_api.doc.DeleteSchoolDocRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.DeleteSchoolDocResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteSchoolDocMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 收藏/取消收藏学校文档
+     * </pre>
+     */
+    default void favoriteSchoolDoc(com.zhijiejiaoyu.glory_api.doc.FavoriteSchoolDocRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.FavoriteSchoolDocResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFavoriteSchoolDocMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 新建我的文档文件夹
+     * </pre>
+     */
+    default void createMyDocFolder(com.zhijiejiaoyu.glory_api.doc.CreateMyDocFolderRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.CreateMyDocFolderResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateMyDocFolderMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 重命名我的文档文件夹(预留)
+     * </pre>
+     */
+    default void renameMyDocFolder(com.zhijiejiaoyu.glory_api.doc.RenameMyDocFolderRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.RenameMyDocFolderResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRenameMyDocFolderMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 删除我的文档文件夹(递归)
+     * </pre>
+     */
+    default void deleteMyDocFolder(com.zhijiejiaoyu.glory_api.doc.DeleteMyDocFolderRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.DeleteMyDocFolderResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteMyDocFolderMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 我的文档文件夹列表
+     * </pre>
+     */
+    default void listMyDocFolder(com.zhijiejiaoyu.glory_api.doc.ListMyDocFolderRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.ListMyDocFolderResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListMyDocFolderMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 我的文档当前目录列表
+     * </pre>
+     */
+    default void listMyDoc(com.zhijiejiaoyu.glory_api.doc.ListMyDocRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.ListMyDocResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListMyDocMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 移出收藏文档
+     * </pre>
+     */
+    default void moveOutMyDoc(com.zhijiejiaoyu.glory_api.doc.MoveOutMyDocRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.MoveOutMyDocResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMoveOutMyDocMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 删除自上传文件
+     * </pre>
+     */
+    default void deleteMyDoc(com.zhijiejiaoyu.glory_api.doc.DeleteMyDocRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.DeleteMyDocResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteMyDocMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 获取下载地址
+     * </pre>
+     */
+    default void downloadMyDoc(com.zhijiejiaoyu.glory_api.doc.DownloadMyDocRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.DownloadMyDocResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDownloadMyDocMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 通用上传
+     * </pre>
+     */
+    default void uploadFile(com.zhijiejiaoyu.glory_api.doc.UploadFileRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.UploadFileResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUploadFileMethod(), responseObserver);
     }
 
     /**
@@ -20016,6 +20963,17 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 教师所辖班级列表
+     * </pre>
+     */
+    public void listTeacherClass(com.zhijiejiaoyu.glory_api.tenant.ListTeacherClassRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.ListTeacherClassResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListTeacherClassMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      *tenant_config
      * </pre>
      */
@@ -20839,6 +21797,74 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 课程收藏
+     * 收藏/取消收藏课节
+     * </pre>
+     */
+    public void favoriteLesson(com.zhijiejiaoyu.glory_api.course.FavoriteLessonRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.FavoriteLessonResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFavoriteLessonMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 我的收藏课节列表
+     * </pre>
+     */
+    public void listMyFavoriteLesson(com.zhijiejiaoyu.glory_api.course.ListMyFavoriteLessonRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListMyFavoriteLessonResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMyFavoriteLessonMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 学情分析
+     * 学情统计卡片
+     * </pre>
+     */
+    public void progressStatOverview(com.zhijiejiaoyu.glory_api.course.ProgressStatOverviewRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ProgressStatOverviewResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getProgressStatOverviewMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 班级/学生进度列表
+     * </pre>
+     */
+    public void listProgressClassStudent(com.zhijiejiaoyu.glory_api.course.ListProgressClassStudentRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListProgressClassStudentResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListProgressClassStudentMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 班级课程进度详情
+     * </pre>
+     */
+    public void listClassCourseProgress(com.zhijiejiaoyu.glory_api.course.ListClassCourseProgressRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListClassCourseProgressResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListClassCourseProgressMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 学生课节进度详情
+     * </pre>
+     */
+    public void listStudentLessonProgress(com.zhijiejiaoyu.glory_api.course.ListStudentLessonProgressRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListStudentLessonProgressResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListStudentLessonProgressMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * 教案管理
      * </pre>
      */
@@ -20881,6 +21907,29 @@ public final class glory_apiGrpc {
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateTeachingCourseProgressMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 授课任务
+     * 在授课程列表
+     * </pre>
+     */
+    public void listTeachingTask(com.zhijiejiaoyu.glory_api.course.ListTeachingTaskRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListTeachingTaskResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListTeachingTaskMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 加入授课
+     * </pre>
+     */
+    public void createTeachingTask(com.zhijiejiaoyu.glory_api.course.CreateTeachingTaskRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.CreateTeachingTaskResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateTeachingTaskMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -20943,6 +21992,161 @@ public final class glory_apiGrpc {
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetEduSchemeLikeCourseMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 文档
+     * 学校文档列表
+     * </pre>
+     */
+    public void listSchoolDoc(com.zhijiejiaoyu.glory_api.doc.ListSchoolDocRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.ListSchoolDocResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListSchoolDocMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 新增学校文档
+     * </pre>
+     */
+    public void createSchoolDoc(com.zhijiejiaoyu.glory_api.doc.CreateSchoolDocRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.CreateSchoolDocResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateSchoolDocMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 编辑/替换学校文档
+     * </pre>
+     */
+    public void updateSchoolDoc(com.zhijiejiaoyu.glory_api.doc.UpdateSchoolDocRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.UpdateSchoolDocResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateSchoolDocMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 删除学校文档
+     * </pre>
+     */
+    public void deleteSchoolDoc(com.zhijiejiaoyu.glory_api.doc.DeleteSchoolDocRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.DeleteSchoolDocResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteSchoolDocMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 收藏/取消收藏学校文档
+     * </pre>
+     */
+    public void favoriteSchoolDoc(com.zhijiejiaoyu.glory_api.doc.FavoriteSchoolDocRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.FavoriteSchoolDocResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFavoriteSchoolDocMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 新建我的文档文件夹
+     * </pre>
+     */
+    public void createMyDocFolder(com.zhijiejiaoyu.glory_api.doc.CreateMyDocFolderRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.CreateMyDocFolderResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateMyDocFolderMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 重命名我的文档文件夹(预留)
+     * </pre>
+     */
+    public void renameMyDocFolder(com.zhijiejiaoyu.glory_api.doc.RenameMyDocFolderRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.RenameMyDocFolderResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRenameMyDocFolderMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 删除我的文档文件夹(递归)
+     * </pre>
+     */
+    public void deleteMyDocFolder(com.zhijiejiaoyu.glory_api.doc.DeleteMyDocFolderRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.DeleteMyDocFolderResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteMyDocFolderMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 我的文档文件夹列表
+     * </pre>
+     */
+    public void listMyDocFolder(com.zhijiejiaoyu.glory_api.doc.ListMyDocFolderRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.ListMyDocFolderResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMyDocFolderMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 我的文档当前目录列表
+     * </pre>
+     */
+    public void listMyDoc(com.zhijiejiaoyu.glory_api.doc.ListMyDocRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.ListMyDocResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMyDocMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 移出收藏文档
+     * </pre>
+     */
+    public void moveOutMyDoc(com.zhijiejiaoyu.glory_api.doc.MoveOutMyDocRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.MoveOutMyDocResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getMoveOutMyDocMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 删除自上传文件
+     * </pre>
+     */
+    public void deleteMyDoc(com.zhijiejiaoyu.glory_api.doc.DeleteMyDocRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.DeleteMyDocResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteMyDocMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 获取下载地址
+     * </pre>
+     */
+    public void downloadMyDoc(com.zhijiejiaoyu.glory_api.doc.DownloadMyDocRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.DownloadMyDocResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDownloadMyDocMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 通用上传
+     * </pre>
+     */
+    public void uploadFile(com.zhijiejiaoyu.glory_api.doc.UploadFileRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.UploadFileResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUploadFileMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -23913,6 +25117,16 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 教师所辖班级列表
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.ListTeacherClassResponse listTeacherClass(com.zhijiejiaoyu.glory_api.tenant.ListTeacherClassRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTeacherClassMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      *tenant_config
      * </pre>
      */
@@ -24656,6 +25870,68 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 课程收藏
+     * 收藏/取消收藏课节
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.course.FavoriteLessonResponse favoriteLesson(com.zhijiejiaoyu.glory_api.course.FavoriteLessonRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFavoriteLessonMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 我的收藏课节列表
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.course.ListMyFavoriteLessonResponse listMyFavoriteLesson(com.zhijiejiaoyu.glory_api.course.ListMyFavoriteLessonRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMyFavoriteLessonMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 学情分析
+     * 学情统计卡片
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.course.ProgressStatOverviewResponse progressStatOverview(com.zhijiejiaoyu.glory_api.course.ProgressStatOverviewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getProgressStatOverviewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 班级/学生进度列表
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.course.ListProgressClassStudentResponse listProgressClassStudent(com.zhijiejiaoyu.glory_api.course.ListProgressClassStudentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListProgressClassStudentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 班级课程进度详情
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.course.ListClassCourseProgressResponse listClassCourseProgress(com.zhijiejiaoyu.glory_api.course.ListClassCourseProgressRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListClassCourseProgressMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 学生课节进度详情
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.course.ListStudentLessonProgressResponse listStudentLessonProgress(com.zhijiejiaoyu.glory_api.course.ListStudentLessonProgressRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListStudentLessonProgressMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * 教案管理
      * </pre>
      */
@@ -24693,6 +25969,27 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressResponse updateTeachingCourseProgress(com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateTeachingCourseProgressMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 授课任务
+     * 在授课程列表
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.course.ListTeachingTaskResponse listTeachingTask(com.zhijiejiaoyu.glory_api.course.ListTeachingTaskRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTeachingTaskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 加入授课
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CreateTeachingTaskResponse createTeachingTask(com.zhijiejiaoyu.glory_api.course.CreateTeachingTaskRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTeachingTaskMethod(), getCallOptions(), request);
     }
 
     /**
@@ -24748,6 +26045,147 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseResponse getEduSchemeLikeCourse(com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetEduSchemeLikeCourseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 文档
+     * 学校文档列表
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.doc.ListSchoolDocResponse listSchoolDoc(com.zhijiejiaoyu.glory_api.doc.ListSchoolDocRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSchoolDocMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 新增学校文档
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.doc.CreateSchoolDocResponse createSchoolDoc(com.zhijiejiaoyu.glory_api.doc.CreateSchoolDocRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSchoolDocMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 编辑/替换学校文档
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.doc.UpdateSchoolDocResponse updateSchoolDoc(com.zhijiejiaoyu.glory_api.doc.UpdateSchoolDocRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSchoolDocMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 删除学校文档
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.doc.DeleteSchoolDocResponse deleteSchoolDoc(com.zhijiejiaoyu.glory_api.doc.DeleteSchoolDocRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSchoolDocMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 收藏/取消收藏学校文档
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.doc.FavoriteSchoolDocResponse favoriteSchoolDoc(com.zhijiejiaoyu.glory_api.doc.FavoriteSchoolDocRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFavoriteSchoolDocMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 新建我的文档文件夹
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.doc.CreateMyDocFolderResponse createMyDocFolder(com.zhijiejiaoyu.glory_api.doc.CreateMyDocFolderRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateMyDocFolderMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 重命名我的文档文件夹(预留)
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.doc.RenameMyDocFolderResponse renameMyDocFolder(com.zhijiejiaoyu.glory_api.doc.RenameMyDocFolderRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRenameMyDocFolderMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 删除我的文档文件夹(递归)
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.doc.DeleteMyDocFolderResponse deleteMyDocFolder(com.zhijiejiaoyu.glory_api.doc.DeleteMyDocFolderRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteMyDocFolderMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 我的文档文件夹列表
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.doc.ListMyDocFolderResponse listMyDocFolder(com.zhijiejiaoyu.glory_api.doc.ListMyDocFolderRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMyDocFolderMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 我的文档当前目录列表
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.doc.ListMyDocResponse listMyDoc(com.zhijiejiaoyu.glory_api.doc.ListMyDocRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMyDocMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 移出收藏文档
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.doc.MoveOutMyDocResponse moveOutMyDoc(com.zhijiejiaoyu.glory_api.doc.MoveOutMyDocRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getMoveOutMyDocMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 删除自上传文件
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.doc.DeleteMyDocResponse deleteMyDoc(com.zhijiejiaoyu.glory_api.doc.DeleteMyDocRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteMyDocMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 获取下载地址
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.doc.DownloadMyDocResponse downloadMyDoc(com.zhijiejiaoyu.glory_api.doc.DownloadMyDocRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDownloadMyDocMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 通用上传
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.doc.UploadFileResponse uploadFile(com.zhijiejiaoyu.glory_api.doc.UploadFileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUploadFileMethod(), getCallOptions(), request);
     }
 
     /**
@@ -27835,6 +29273,17 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 教师所辖班级列表
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.ListTeacherClassResponse> listTeacherClass(
+        com.zhijiejiaoyu.glory_api.tenant.ListTeacherClassRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListTeacherClassMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      *tenant_config
      * </pre>
      */
@@ -28658,6 +30107,74 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 课程收藏
+     * 收藏/取消收藏课节
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.FavoriteLessonResponse> favoriteLesson(
+        com.zhijiejiaoyu.glory_api.course.FavoriteLessonRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFavoriteLessonMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 我的收藏课节列表
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.ListMyFavoriteLessonResponse> listMyFavoriteLesson(
+        com.zhijiejiaoyu.glory_api.course.ListMyFavoriteLessonRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMyFavoriteLessonMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 学情分析
+     * 学情统计卡片
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.ProgressStatOverviewResponse> progressStatOverview(
+        com.zhijiejiaoyu.glory_api.course.ProgressStatOverviewRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getProgressStatOverviewMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 班级/学生进度列表
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.ListProgressClassStudentResponse> listProgressClassStudent(
+        com.zhijiejiaoyu.glory_api.course.ListProgressClassStudentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListProgressClassStudentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 班级课程进度详情
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.ListClassCourseProgressResponse> listClassCourseProgress(
+        com.zhijiejiaoyu.glory_api.course.ListClassCourseProgressRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListClassCourseProgressMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 学生课节进度详情
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.ListStudentLessonProgressResponse> listStudentLessonProgress(
+        com.zhijiejiaoyu.glory_api.course.ListStudentLessonProgressRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListStudentLessonProgressMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * 教案管理
      * </pre>
      */
@@ -28700,6 +30217,29 @@ public final class glory_apiGrpc {
         com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateTeachingCourseProgressMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 授课任务
+     * 在授课程列表
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.ListTeachingTaskResponse> listTeachingTask(
+        com.zhijiejiaoyu.glory_api.course.ListTeachingTaskRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListTeachingTaskMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 加入授课
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.CreateTeachingTaskResponse> createTeachingTask(
+        com.zhijiejiaoyu.glory_api.course.CreateTeachingTaskRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateTeachingTaskMethod(), getCallOptions()), request);
     }
 
     /**
@@ -28762,6 +30302,161 @@ public final class glory_apiGrpc {
         com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetEduSchemeLikeCourseMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 文档
+     * 学校文档列表
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.doc.ListSchoolDocResponse> listSchoolDoc(
+        com.zhijiejiaoyu.glory_api.doc.ListSchoolDocRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListSchoolDocMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 新增学校文档
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.doc.CreateSchoolDocResponse> createSchoolDoc(
+        com.zhijiejiaoyu.glory_api.doc.CreateSchoolDocRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateSchoolDocMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 编辑/替换学校文档
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.doc.UpdateSchoolDocResponse> updateSchoolDoc(
+        com.zhijiejiaoyu.glory_api.doc.UpdateSchoolDocRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateSchoolDocMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 删除学校文档
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.doc.DeleteSchoolDocResponse> deleteSchoolDoc(
+        com.zhijiejiaoyu.glory_api.doc.DeleteSchoolDocRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteSchoolDocMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 收藏/取消收藏学校文档
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.doc.FavoriteSchoolDocResponse> favoriteSchoolDoc(
+        com.zhijiejiaoyu.glory_api.doc.FavoriteSchoolDocRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFavoriteSchoolDocMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 新建我的文档文件夹
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.doc.CreateMyDocFolderResponse> createMyDocFolder(
+        com.zhijiejiaoyu.glory_api.doc.CreateMyDocFolderRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateMyDocFolderMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 重命名我的文档文件夹(预留)
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.doc.RenameMyDocFolderResponse> renameMyDocFolder(
+        com.zhijiejiaoyu.glory_api.doc.RenameMyDocFolderRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRenameMyDocFolderMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 删除我的文档文件夹(递归)
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.doc.DeleteMyDocFolderResponse> deleteMyDocFolder(
+        com.zhijiejiaoyu.glory_api.doc.DeleteMyDocFolderRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteMyDocFolderMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 我的文档文件夹列表
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.doc.ListMyDocFolderResponse> listMyDocFolder(
+        com.zhijiejiaoyu.glory_api.doc.ListMyDocFolderRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMyDocFolderMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 我的文档当前目录列表
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.doc.ListMyDocResponse> listMyDoc(
+        com.zhijiejiaoyu.glory_api.doc.ListMyDocRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMyDocMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 移出收藏文档
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.doc.MoveOutMyDocResponse> moveOutMyDoc(
+        com.zhijiejiaoyu.glory_api.doc.MoveOutMyDocRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getMoveOutMyDocMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 删除自上传文件
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.doc.DeleteMyDocResponse> deleteMyDoc(
+        com.zhijiejiaoyu.glory_api.doc.DeleteMyDocRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteMyDocMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 获取下载地址
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.doc.DownloadMyDocResponse> downloadMyDoc(
+        com.zhijiejiaoyu.glory_api.doc.DownloadMyDocRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDownloadMyDocMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 通用上传
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.doc.UploadFileResponse> uploadFile(
+        com.zhijiejiaoyu.glory_api.doc.UploadFileRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUploadFileMethod(), getCallOptions()), request);
     }
 
     /**
@@ -30104,222 +31799,245 @@ public final class glory_apiGrpc {
   private static final int METHODID_LIST_TENANT_USER = 238;
   private static final int METHODID_LIST_TENANT_STUDENT = 239;
   private static final int METHODID_UPDATE_TENANT_USER_PASSWORD = 240;
-  private static final int METHODID_UPDATE_TENANT_CONFIG = 241;
-  private static final int METHODID_LIST_TENANT_CONFIG = 242;
-  private static final int METHODID_CREATE_SHORT_VIDEO = 243;
-  private static final int METHODID_STAGE_SHORT_VIDEO = 244;
-  private static final int METHODID_LIST_MY_SHORT_VIDEO = 245;
-  private static final int METHODID_LIST_MY_STAGE_VIDEO = 246;
-  private static final int METHODID_LIST_MY_LIKE_VIDEO = 247;
-  private static final int METHODID_LIST_MY_FAVORITE_VIDEO = 248;
-  private static final int METHODID_GET_SHORT_VIDEO = 249;
-  private static final int METHODID_UPDATE_SHORT_VIDEO = 250;
-  private static final int METHODID_DELETE_SHORT_VIDEO = 251;
-  private static final int METHODID_GET_STAGE_VIDEO = 252;
-  private static final int METHODID_DELETE_STAGE_VIDEO = 253;
-  private static final int METHODID_UPDATE_STAGE_VIDEO = 254;
-  private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 255;
-  private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 256;
-  private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 257;
-  private static final int METHODID_LIST_SHORT_VIDEO = 258;
-  private static final int METHODID_LIKE_SHORT_VIDEO = 259;
-  private static final int METHODID_FAVORITE_SHORT_VIDEO = 260;
-  private static final int METHODID_CREATE_SHORT_VIDEO_COMMENT = 261;
-  private static final int METHODID_DELETE_SHORT_VIDEO_COMMENT = 262;
-  private static final int METHODID_LIST_SHORT_VIDEO_COMMENT = 263;
-  private static final int METHODID_TEACHER_LIST_STUDENT_SHORT_VIDEO = 264;
-  private static final int METHODID_CREATE_COUPON = 265;
-  private static final int METHODID_LIST_COUPON = 266;
-  private static final int METHODID_COUPON_DETAIL = 267;
-  private static final int METHODID_UPDATE_COUPON = 268;
-  private static final int METHODID_DELETE_COUPON = 269;
-  private static final int METHODID_ABOLISH_COUPON = 270;
-  private static final int METHODID_UPDATE_COUPON_DISTRIBUTION_STATUS = 271;
-  private static final int METHODID_CLAIM_COUPON = 272;
-  private static final int METHODID_LIST_MY_COUPON = 273;
-  private static final int METHODID_CREATE_ACTIVITY = 274;
-  private static final int METHODID_LIST_ACTIVITY = 275;
-  private static final int METHODID_ACTIVITY_DETAIL = 276;
-  private static final int METHODID_UPDATE_ACTIVITY = 277;
-  private static final int METHODID_DELETE_ACTIVITY = 278;
-  private static final int METHODID_DISABLE_ACTIVITY = 279;
-  private static final int METHODID_GET_COUPON_AND_INTRODUCING_PRODUCT = 280;
-  private static final int METHODID_CREATE_COURSE_MATERIAL_BOX = 281;
-  private static final int METHODID_UPDATE_COURSE_MATERIAL_BOX = 282;
-  private static final int METHODID_LIST_COURSE_MATERIAL_BOX = 283;
-  private static final int METHODID_DELETE_COURSE_MATERIAL_BOX = 284;
-  private static final int METHODID_UPLOAD_COURSE_MATERIAL = 285;
-  private static final int METHODID_LIST_COURSE_MATERIAL = 286;
-  private static final int METHODID_DELETE_COURSE_MATERIAL = 287;
-  private static final int METHODID_GET_COURSE_TYPE_TREE = 288;
-  private static final int METHODID_GET_COURSE_TYPE_LIST = 289;
-  private static final int METHODID_GET_COURSE_MODULE_CODE = 290;
-  private static final int METHODID_GET_COURSE_CHAPTER_CODE = 291;
-  private static final int METHODID_CREATE_COURSE_MODULE = 292;
-  private static final int METHODID_GET_COURSE_MODULE = 293;
-  private static final int METHODID_UPDATE_COURSE_MODULE = 294;
-  private static final int METHODID_DELETE_COURSE_MODULE = 295;
-  private static final int METHODID_LIST_COURSE_MODULE = 296;
-  private static final int METHODID_LIST_LATEST_COURSE = 297;
-  private static final int METHODID_LIST_HOTTEST_COURSE = 298;
-  private static final int METHODID_CREATE_CM_COURSE = 299;
-  private static final int METHODID_PREVIEW_CM_COURSE = 300;
-  private static final int METHODID_CREATE_NM_COURSE_RESOURCE = 301;
-  private static final int METHODID_CREATE_NM_COURSE_CHAPTER = 302;
-  private static final int METHODID_CREATE_NM_COURSE = 303;
-  private static final int METHODID_UPDATE_NM_COURSE = 304;
-  private static final int METHODID_LIST_NM_COURSE = 305;
-  private static final int METHODID_NM_COURSE_DETAIL = 306;
-  private static final int METHODID_DELETE_NM_COURSE = 307;
-  private static final int METHODID_CREATE_COURSE = 308;
-  private static final int METHODID_GET_COURSE = 309;
-  private static final int METHODID_UPDATE_COURSE = 310;
-  private static final int METHODID_DELETE_COURSE = 311;
-  private static final int METHODID_LIST_COURSE = 312;
-  private static final int METHODID_CREATE_KNOWLEDGE_GRAPH = 313;
-  private static final int METHODID_GET_KNOWLEDGE_GRAPH = 314;
-  private static final int METHODID_GET_KNOWLEDGE_GRAPH_NODE = 315;
-  private static final int METHODID_GET_COURSE_IDS = 316;
-  private static final int METHODID_ENROLL_COURSE = 317;
-  private static final int METHODID_DELETE_MY_COURSE = 318;
-  private static final int METHODID_UPDATE_COURSE_PROGRESS = 319;
-  private static final int METHODID_LIST_MY_COURSE = 320;
-  private static final int METHODID_LIST_TEACHING_PLAN = 321;
-  private static final int METHODID_CREATE_TEACHING_PLAN = 322;
-  private static final int METHODID_UPDATE_TEACHING_PLAN = 323;
-  private static final int METHODID_DELETE_TEACHING_PLAN = 324;
-  private static final int METHODID_UPDATE_TEACHING_COURSE_PROGRESS = 325;
-  private static final int METHODID_CREATE_EDU_SCHEME = 326;
-  private static final int METHODID_UPDATE_EDU_SCHEME = 327;
-  private static final int METHODID_LIST_EDU_SCHEME = 328;
-  private static final int METHODID_EDU_SCHEME_DETAIL = 329;
-  private static final int METHODID_DELETE_EDU_SCHEME = 330;
-  private static final int METHODID_DISTRIBUTE_EDU_SCHEME = 331;
-  private static final int METHODID_GET_EDU_SCHEME_LIKE_COURSE = 332;
-  private static final int METHODID_GET_ANDROID_QRCODE = 333;
-  private static final int METHODID_CREATE_JOB = 334;
-  private static final int METHODID_UPDATE_JOB = 335;
-  private static final int METHODID_DELETE_JOB = 336;
-  private static final int METHODID_LIST_JOB = 337;
-  private static final int METHODID_GET_SCHOO_LIVE_CHART = 338;
-  private static final int METHODID_LIST_SCHOO_LIVE_TRAFFIC = 339;
-  private static final int METHODID_GET_LIVE_ALL_TRAFFIC = 340;
-  private static final int METHODID_GET_SCHOO_LIVE_TRAFFIC = 341;
-  private static final int METHODID_LIST_TENANT_TRAFFIC_CONFIG = 342;
-  private static final int METHODID_UPDATE_TENANT_TRAFFIC_CONFIG = 343;
-  private static final int METHODID_LIST_TRAFFIC_WARNING = 344;
-  private static final int METHODID_DELETE_TRAFFIC_WARNING = 345;
-  private static final int METHODID_CREATE_LIVE_CONTROL = 346;
-  private static final int METHODID_UPDATE_LIVE_CONTROL = 347;
-  private static final int METHODID_LIST_LIVE_CONTROL = 348;
-  private static final int METHODID_DELETE_LIVE_CONTROL = 349;
-  private static final int METHODID_CREATE_QUICK_EVALUATION_STANDARD = 350;
-  private static final int METHODID_UPDATE_QUICK_EVALUATION_STANDARD = 351;
-  private static final int METHODID_DELETE_QUICK_EVALUATION_STANDARD = 352;
-  private static final int METHODID_LIST_QUICK_EVALUATION_STANDARD = 353;
-  private static final int METHODID_GET_LIVE_REPLAY = 354;
-  private static final int METHODID_CREATE_QUICK_EVALUATION_REPORT = 355;
-  private static final int METHODID_LIST_QUICK_EVALUATION_REPORT = 356;
-  private static final int METHODID_GET_QUICK_EVALUATION_REPORT = 357;
-  private static final int METHODID_GET_QUICK_EVALUATION_TOTAL_REPORT = 358;
-  private static final int METHODID_DELETE_QUICK_EVALUATION_REPORT = 359;
-  private static final int METHODID_GET_QUICK_EVALUATION_DETAIL = 360;
-  private static final int METHODID_GET_TENANT_TRAFFIC_TOTAL_REPORT = 361;
-  private static final int METHODID_CREATE_VERSION_LOG = 362;
-  private static final int METHODID_UPDATE_VERSION_LOG = 363;
-  private static final int METHODID_LIST_VERSION_LOG = 364;
-  private static final int METHODID_DELETE_VERSION_LOG = 365;
-  private static final int METHODID_GET_LATEST_VERSION = 366;
-  private static final int METHODID_GET_TASK_CONFIG = 367;
-  private static final int METHODID_CREATE_SYSTEM_TASK = 368;
-  private static final int METHODID_LIST_SYSTEM_TASK = 369;
-  private static final int METHODID_GET_SYSTEM_TASK = 370;
-  private static final int METHODID_UPDATE_SYSTEM_TASK = 371;
-  private static final int METHODID_DELETE_SYSTEM_TASK = 372;
-  private static final int METHODID_CREATE_TEACHER_TASK_TEMPLATE = 373;
-  private static final int METHODID_UPDATE_TEACHER_TASK_TEMPLATE = 374;
-  private static final int METHODID_LIST_TEACHER_TASK_TEMPLATE = 375;
-  private static final int METHODID_GET_TEACHER_TASK_TEMPLATE = 376;
-  private static final int METHODID_DELETE_TEACHER_TASK_TEMPLATE = 377;
-  private static final int METHODID_CREATE_TEACHER_TASK = 378;
-  private static final int METHODID_UPDATE_TEACHER_TASK = 379;
-  private static final int METHODID_LIST_TEACHER_TASK = 380;
-  private static final int METHODID_GET_TEACHER_TASK = 381;
-  private static final int METHODID_GET_TEACHER_TASK_PROGRESS = 382;
-  private static final int METHODID_DELETE_TEACHER_TASK = 383;
-  private static final int METHODID_TEACHER_TASK_STATS = 384;
-  private static final int METHODID_TEACHER_TASK_STUDENTS = 385;
-  private static final int METHODID_COUNT_CLASS_SUBMIT = 386;
-  private static final int METHODID_COUNT_CLASS_SUBMIT_LIST = 387;
-  private static final int METHODID_COUNT_POSITIVE_LIST = 388;
-  private static final int METHODID_COUNT_POTENTIAL_LIST = 389;
-  private static final int METHODID_COUNT_SUBMIT_LIST = 390;
-  private static final int METHODID_COUNT_CLASS_PASS = 391;
-  private static final int METHODID_COUNT_CLASS_PASS_LIST = 392;
-  private static final int METHODID_COUNT_SUPER_STUDENT_LIST = 393;
-  private static final int METHODID_COUNT_LAGGING_STUDENT_LIST = 394;
-  private static final int METHODID_COUNT_PASS_LIST = 395;
-  private static final int METHODID_COUNT_HISTORY_TASK = 396;
-  private static final int METHODID_LIST_STUDENT_TASK = 397;
-  private static final int METHODID_SUBMIT_STUDENT_TASK = 398;
-  private static final int METHODID_GET_STUDENT_TASK = 399;
-  private static final int METHODID_TEACHER_LIST_STUDENT_TASK = 400;
-  private static final int METHODID_TEACHER_EVALUATE_STUDENT_TASK = 401;
-  private static final int METHODID_STUDENT_TASK_STATS = 402;
-  private static final int METHODID_STUDENT_TASK_EVALUATE_STATS = 403;
-  private static final int METHODID_START_STUDENT_TASK_TIME = 404;
-  private static final int METHODID_DOWNLOAD_TEACHER_TASK = 405;
-  private static final int METHODID_LIST_NOTIFICATION = 406;
-  private static final int METHODID_COUNT_NOTIFICATION = 407;
-  private static final int METHODID_READ_NOTIFICATION = 408;
-  private static final int METHODID_TEST_NOTIFICATION = 409;
-  private static final int METHODID_DELETE_NOTIFICATION = 410;
-  private static final int METHODID_LIST_USER_MAJOR_AND_CLASS = 411;
-  private static final int METHODID_GET_AGGREGATION_LIVE_URL = 412;
-  private static final int METHODID_GET_LIVE_BOARD_DATA = 413;
-  private static final int METHODID_GET_LIVE_BOARD_COMMENTS = 414;
-  private static final int METHODID_LIST_BOARD_LIVING_USER = 415;
-  private static final int METHODID_CLOSE_CASTER = 416;
-  private static final int METHODID_CREATE_ARTICLE_CREATION = 417;
-  private static final int METHODID_CREATE_MODIFIED_ARTICLE_CREATION = 418;
-  private static final int METHODID_GET_ARTICLE_DETAIL = 419;
-  private static final int METHODID_LIST_MY_ARTICLE_CREATION = 420;
-  private static final int METHODID_CREATE_ARTICLE_CREATION_DRAFT = 421;
-  private static final int METHODID_LIST_MY_DRAFT_ARTICLE_CREATION = 422;
-  private static final int METHODID_DRAFT_ARTICLE_CREATION_DETAIL = 423;
-  private static final int METHODID_DELETE_DRAFT_ARTICLE_CREATION = 424;
-  private static final int METHODID_ARTICLE_CREATION_STATISTICS = 425;
-  private static final int METHODID_GET_EXAMPLE_ARTICLE = 426;
-  private static final int METHODID_GET_EVALUATION_STANDARD = 427;
-  private static final int METHODID_CREATE_EVALUATION_CONFIG = 428;
-  private static final int METHODID_LIST_EVALUATION_CONFIG = 429;
-  private static final int METHODID_BATCH_EVALUATE_ARTICLE_CREATION = 430;
-  private static final int METHODID_LIST_STUDENT_ARTICLE_CREATION = 431;
-  private static final int METHODID_STUDENT_ARTICLE_CREATION_EVALUATION_DETAIL = 432;
-  private static final int METHODID_CORRECT_SENTENCE = 433;
-  private static final int METHODID_GEN_ARTICLE_AI_EVALUATION = 434;
-  private static final int METHODID_GET_ARTICLE_AI_EVALUATION = 435;
-  private static final int METHODID_ARTICLE_AI_CHAT = 436;
-  private static final int METHODID_GET_CHAT_CONFIG = 437;
-  private static final int METHODID_UPDATE_MODEL_PRICE = 438;
-  private static final int METHODID_UPDATE_ARTICLE_CREATION_TENANT_COURSE = 439;
-  private static final int METHODID_GET_ARTICLE_CREATION_TENANT = 440;
-  private static final int METHODID_LIST_ARTICLE_CREATION_TENANT = 441;
-  private static final int METHODID_LIST_ARTICLE_CREATION_TENANT_COST = 442;
-  private static final int METHODID_GET_ARTICLE_CREATION_TENANT_COST = 443;
-  private static final int METHODID_GET_SUB_TOPIC_AI_RESULT = 444;
-  private static final int METHODID_CALC_ARTICLE_CREATION_TENANT = 445;
-  private static final int METHODID_INIT_ARTICLE_CREATION_TENANT = 446;
-  private static final int METHODID_CREATE_DIGITAL_VIDEO = 447;
-  private static final int METHODID_LIST_DIGITAL_VIDEO = 448;
-  private static final int METHODID_GET_DIGITAL_VIDEO = 449;
-  private static final int METHODID_LIST_DIGITAL_CODE = 450;
-  private static final int METHODID_DELETE_DIGITAL_VIDEO = 451;
-  private static final int METHODID_LIST_DIGITAL_AVATAR = 452;
-  private static final int METHODID_SUBMIT_APPROVAL_FLOW = 453;
-  private static final int METHODID_APPROVE_FLOW = 454;
-  private static final int METHODID_LIST_APPROVAL_FLOW = 455;
-  private static final int METHODID_GET_APPROVAL_FLOW_DETAIL = 456;
+  private static final int METHODID_LIST_TEACHER_CLASS = 241;
+  private static final int METHODID_UPDATE_TENANT_CONFIG = 242;
+  private static final int METHODID_LIST_TENANT_CONFIG = 243;
+  private static final int METHODID_CREATE_SHORT_VIDEO = 244;
+  private static final int METHODID_STAGE_SHORT_VIDEO = 245;
+  private static final int METHODID_LIST_MY_SHORT_VIDEO = 246;
+  private static final int METHODID_LIST_MY_STAGE_VIDEO = 247;
+  private static final int METHODID_LIST_MY_LIKE_VIDEO = 248;
+  private static final int METHODID_LIST_MY_FAVORITE_VIDEO = 249;
+  private static final int METHODID_GET_SHORT_VIDEO = 250;
+  private static final int METHODID_UPDATE_SHORT_VIDEO = 251;
+  private static final int METHODID_DELETE_SHORT_VIDEO = 252;
+  private static final int METHODID_GET_STAGE_VIDEO = 253;
+  private static final int METHODID_DELETE_STAGE_VIDEO = 254;
+  private static final int METHODID_UPDATE_STAGE_VIDEO = 255;
+  private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 256;
+  private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 257;
+  private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 258;
+  private static final int METHODID_LIST_SHORT_VIDEO = 259;
+  private static final int METHODID_LIKE_SHORT_VIDEO = 260;
+  private static final int METHODID_FAVORITE_SHORT_VIDEO = 261;
+  private static final int METHODID_CREATE_SHORT_VIDEO_COMMENT = 262;
+  private static final int METHODID_DELETE_SHORT_VIDEO_COMMENT = 263;
+  private static final int METHODID_LIST_SHORT_VIDEO_COMMENT = 264;
+  private static final int METHODID_TEACHER_LIST_STUDENT_SHORT_VIDEO = 265;
+  private static final int METHODID_CREATE_COUPON = 266;
+  private static final int METHODID_LIST_COUPON = 267;
+  private static final int METHODID_COUPON_DETAIL = 268;
+  private static final int METHODID_UPDATE_COUPON = 269;
+  private static final int METHODID_DELETE_COUPON = 270;
+  private static final int METHODID_ABOLISH_COUPON = 271;
+  private static final int METHODID_UPDATE_COUPON_DISTRIBUTION_STATUS = 272;
+  private static final int METHODID_CLAIM_COUPON = 273;
+  private static final int METHODID_LIST_MY_COUPON = 274;
+  private static final int METHODID_CREATE_ACTIVITY = 275;
+  private static final int METHODID_LIST_ACTIVITY = 276;
+  private static final int METHODID_ACTIVITY_DETAIL = 277;
+  private static final int METHODID_UPDATE_ACTIVITY = 278;
+  private static final int METHODID_DELETE_ACTIVITY = 279;
+  private static final int METHODID_DISABLE_ACTIVITY = 280;
+  private static final int METHODID_GET_COUPON_AND_INTRODUCING_PRODUCT = 281;
+  private static final int METHODID_CREATE_COURSE_MATERIAL_BOX = 282;
+  private static final int METHODID_UPDATE_COURSE_MATERIAL_BOX = 283;
+  private static final int METHODID_LIST_COURSE_MATERIAL_BOX = 284;
+  private static final int METHODID_DELETE_COURSE_MATERIAL_BOX = 285;
+  private static final int METHODID_UPLOAD_COURSE_MATERIAL = 286;
+  private static final int METHODID_LIST_COURSE_MATERIAL = 287;
+  private static final int METHODID_DELETE_COURSE_MATERIAL = 288;
+  private static final int METHODID_GET_COURSE_TYPE_TREE = 289;
+  private static final int METHODID_GET_COURSE_TYPE_LIST = 290;
+  private static final int METHODID_GET_COURSE_MODULE_CODE = 291;
+  private static final int METHODID_GET_COURSE_CHAPTER_CODE = 292;
+  private static final int METHODID_CREATE_COURSE_MODULE = 293;
+  private static final int METHODID_GET_COURSE_MODULE = 294;
+  private static final int METHODID_UPDATE_COURSE_MODULE = 295;
+  private static final int METHODID_DELETE_COURSE_MODULE = 296;
+  private static final int METHODID_LIST_COURSE_MODULE = 297;
+  private static final int METHODID_LIST_LATEST_COURSE = 298;
+  private static final int METHODID_LIST_HOTTEST_COURSE = 299;
+  private static final int METHODID_CREATE_CM_COURSE = 300;
+  private static final int METHODID_PREVIEW_CM_COURSE = 301;
+  private static final int METHODID_CREATE_NM_COURSE_RESOURCE = 302;
+  private static final int METHODID_CREATE_NM_COURSE_CHAPTER = 303;
+  private static final int METHODID_CREATE_NM_COURSE = 304;
+  private static final int METHODID_UPDATE_NM_COURSE = 305;
+  private static final int METHODID_LIST_NM_COURSE = 306;
+  private static final int METHODID_NM_COURSE_DETAIL = 307;
+  private static final int METHODID_DELETE_NM_COURSE = 308;
+  private static final int METHODID_CREATE_COURSE = 309;
+  private static final int METHODID_GET_COURSE = 310;
+  private static final int METHODID_UPDATE_COURSE = 311;
+  private static final int METHODID_DELETE_COURSE = 312;
+  private static final int METHODID_LIST_COURSE = 313;
+  private static final int METHODID_CREATE_KNOWLEDGE_GRAPH = 314;
+  private static final int METHODID_GET_KNOWLEDGE_GRAPH = 315;
+  private static final int METHODID_GET_KNOWLEDGE_GRAPH_NODE = 316;
+  private static final int METHODID_GET_COURSE_IDS = 317;
+  private static final int METHODID_ENROLL_COURSE = 318;
+  private static final int METHODID_DELETE_MY_COURSE = 319;
+  private static final int METHODID_UPDATE_COURSE_PROGRESS = 320;
+  private static final int METHODID_LIST_MY_COURSE = 321;
+  private static final int METHODID_FAVORITE_LESSON = 322;
+  private static final int METHODID_LIST_MY_FAVORITE_LESSON = 323;
+  private static final int METHODID_PROGRESS_STAT_OVERVIEW = 324;
+  private static final int METHODID_LIST_PROGRESS_CLASS_STUDENT = 325;
+  private static final int METHODID_LIST_CLASS_COURSE_PROGRESS = 326;
+  private static final int METHODID_LIST_STUDENT_LESSON_PROGRESS = 327;
+  private static final int METHODID_LIST_TEACHING_PLAN = 328;
+  private static final int METHODID_CREATE_TEACHING_PLAN = 329;
+  private static final int METHODID_UPDATE_TEACHING_PLAN = 330;
+  private static final int METHODID_DELETE_TEACHING_PLAN = 331;
+  private static final int METHODID_UPDATE_TEACHING_COURSE_PROGRESS = 332;
+  private static final int METHODID_LIST_TEACHING_TASK = 333;
+  private static final int METHODID_CREATE_TEACHING_TASK = 334;
+  private static final int METHODID_CREATE_EDU_SCHEME = 335;
+  private static final int METHODID_UPDATE_EDU_SCHEME = 336;
+  private static final int METHODID_LIST_EDU_SCHEME = 337;
+  private static final int METHODID_EDU_SCHEME_DETAIL = 338;
+  private static final int METHODID_DELETE_EDU_SCHEME = 339;
+  private static final int METHODID_DISTRIBUTE_EDU_SCHEME = 340;
+  private static final int METHODID_GET_EDU_SCHEME_LIKE_COURSE = 341;
+  private static final int METHODID_LIST_SCHOOL_DOC = 342;
+  private static final int METHODID_CREATE_SCHOOL_DOC = 343;
+  private static final int METHODID_UPDATE_SCHOOL_DOC = 344;
+  private static final int METHODID_DELETE_SCHOOL_DOC = 345;
+  private static final int METHODID_FAVORITE_SCHOOL_DOC = 346;
+  private static final int METHODID_CREATE_MY_DOC_FOLDER = 347;
+  private static final int METHODID_RENAME_MY_DOC_FOLDER = 348;
+  private static final int METHODID_DELETE_MY_DOC_FOLDER = 349;
+  private static final int METHODID_LIST_MY_DOC_FOLDER = 350;
+  private static final int METHODID_LIST_MY_DOC = 351;
+  private static final int METHODID_MOVE_OUT_MY_DOC = 352;
+  private static final int METHODID_DELETE_MY_DOC = 353;
+  private static final int METHODID_DOWNLOAD_MY_DOC = 354;
+  private static final int METHODID_UPLOAD_FILE = 355;
+  private static final int METHODID_GET_ANDROID_QRCODE = 356;
+  private static final int METHODID_CREATE_JOB = 357;
+  private static final int METHODID_UPDATE_JOB = 358;
+  private static final int METHODID_DELETE_JOB = 359;
+  private static final int METHODID_LIST_JOB = 360;
+  private static final int METHODID_GET_SCHOO_LIVE_CHART = 361;
+  private static final int METHODID_LIST_SCHOO_LIVE_TRAFFIC = 362;
+  private static final int METHODID_GET_LIVE_ALL_TRAFFIC = 363;
+  private static final int METHODID_GET_SCHOO_LIVE_TRAFFIC = 364;
+  private static final int METHODID_LIST_TENANT_TRAFFIC_CONFIG = 365;
+  private static final int METHODID_UPDATE_TENANT_TRAFFIC_CONFIG = 366;
+  private static final int METHODID_LIST_TRAFFIC_WARNING = 367;
+  private static final int METHODID_DELETE_TRAFFIC_WARNING = 368;
+  private static final int METHODID_CREATE_LIVE_CONTROL = 369;
+  private static final int METHODID_UPDATE_LIVE_CONTROL = 370;
+  private static final int METHODID_LIST_LIVE_CONTROL = 371;
+  private static final int METHODID_DELETE_LIVE_CONTROL = 372;
+  private static final int METHODID_CREATE_QUICK_EVALUATION_STANDARD = 373;
+  private static final int METHODID_UPDATE_QUICK_EVALUATION_STANDARD = 374;
+  private static final int METHODID_DELETE_QUICK_EVALUATION_STANDARD = 375;
+  private static final int METHODID_LIST_QUICK_EVALUATION_STANDARD = 376;
+  private static final int METHODID_GET_LIVE_REPLAY = 377;
+  private static final int METHODID_CREATE_QUICK_EVALUATION_REPORT = 378;
+  private static final int METHODID_LIST_QUICK_EVALUATION_REPORT = 379;
+  private static final int METHODID_GET_QUICK_EVALUATION_REPORT = 380;
+  private static final int METHODID_GET_QUICK_EVALUATION_TOTAL_REPORT = 381;
+  private static final int METHODID_DELETE_QUICK_EVALUATION_REPORT = 382;
+  private static final int METHODID_GET_QUICK_EVALUATION_DETAIL = 383;
+  private static final int METHODID_GET_TENANT_TRAFFIC_TOTAL_REPORT = 384;
+  private static final int METHODID_CREATE_VERSION_LOG = 385;
+  private static final int METHODID_UPDATE_VERSION_LOG = 386;
+  private static final int METHODID_LIST_VERSION_LOG = 387;
+  private static final int METHODID_DELETE_VERSION_LOG = 388;
+  private static final int METHODID_GET_LATEST_VERSION = 389;
+  private static final int METHODID_GET_TASK_CONFIG = 390;
+  private static final int METHODID_CREATE_SYSTEM_TASK = 391;
+  private static final int METHODID_LIST_SYSTEM_TASK = 392;
+  private static final int METHODID_GET_SYSTEM_TASK = 393;
+  private static final int METHODID_UPDATE_SYSTEM_TASK = 394;
+  private static final int METHODID_DELETE_SYSTEM_TASK = 395;
+  private static final int METHODID_CREATE_TEACHER_TASK_TEMPLATE = 396;
+  private static final int METHODID_UPDATE_TEACHER_TASK_TEMPLATE = 397;
+  private static final int METHODID_LIST_TEACHER_TASK_TEMPLATE = 398;
+  private static final int METHODID_GET_TEACHER_TASK_TEMPLATE = 399;
+  private static final int METHODID_DELETE_TEACHER_TASK_TEMPLATE = 400;
+  private static final int METHODID_CREATE_TEACHER_TASK = 401;
+  private static final int METHODID_UPDATE_TEACHER_TASK = 402;
+  private static final int METHODID_LIST_TEACHER_TASK = 403;
+  private static final int METHODID_GET_TEACHER_TASK = 404;
+  private static final int METHODID_GET_TEACHER_TASK_PROGRESS = 405;
+  private static final int METHODID_DELETE_TEACHER_TASK = 406;
+  private static final int METHODID_TEACHER_TASK_STATS = 407;
+  private static final int METHODID_TEACHER_TASK_STUDENTS = 408;
+  private static final int METHODID_COUNT_CLASS_SUBMIT = 409;
+  private static final int METHODID_COUNT_CLASS_SUBMIT_LIST = 410;
+  private static final int METHODID_COUNT_POSITIVE_LIST = 411;
+  private static final int METHODID_COUNT_POTENTIAL_LIST = 412;
+  private static final int METHODID_COUNT_SUBMIT_LIST = 413;
+  private static final int METHODID_COUNT_CLASS_PASS = 414;
+  private static final int METHODID_COUNT_CLASS_PASS_LIST = 415;
+  private static final int METHODID_COUNT_SUPER_STUDENT_LIST = 416;
+  private static final int METHODID_COUNT_LAGGING_STUDENT_LIST = 417;
+  private static final int METHODID_COUNT_PASS_LIST = 418;
+  private static final int METHODID_COUNT_HISTORY_TASK = 419;
+  private static final int METHODID_LIST_STUDENT_TASK = 420;
+  private static final int METHODID_SUBMIT_STUDENT_TASK = 421;
+  private static final int METHODID_GET_STUDENT_TASK = 422;
+  private static final int METHODID_TEACHER_LIST_STUDENT_TASK = 423;
+  private static final int METHODID_TEACHER_EVALUATE_STUDENT_TASK = 424;
+  private static final int METHODID_STUDENT_TASK_STATS = 425;
+  private static final int METHODID_STUDENT_TASK_EVALUATE_STATS = 426;
+  private static final int METHODID_START_STUDENT_TASK_TIME = 427;
+  private static final int METHODID_DOWNLOAD_TEACHER_TASK = 428;
+  private static final int METHODID_LIST_NOTIFICATION = 429;
+  private static final int METHODID_COUNT_NOTIFICATION = 430;
+  private static final int METHODID_READ_NOTIFICATION = 431;
+  private static final int METHODID_TEST_NOTIFICATION = 432;
+  private static final int METHODID_DELETE_NOTIFICATION = 433;
+  private static final int METHODID_LIST_USER_MAJOR_AND_CLASS = 434;
+  private static final int METHODID_GET_AGGREGATION_LIVE_URL = 435;
+  private static final int METHODID_GET_LIVE_BOARD_DATA = 436;
+  private static final int METHODID_GET_LIVE_BOARD_COMMENTS = 437;
+  private static final int METHODID_LIST_BOARD_LIVING_USER = 438;
+  private static final int METHODID_CLOSE_CASTER = 439;
+  private static final int METHODID_CREATE_ARTICLE_CREATION = 440;
+  private static final int METHODID_CREATE_MODIFIED_ARTICLE_CREATION = 441;
+  private static final int METHODID_GET_ARTICLE_DETAIL = 442;
+  private static final int METHODID_LIST_MY_ARTICLE_CREATION = 443;
+  private static final int METHODID_CREATE_ARTICLE_CREATION_DRAFT = 444;
+  private static final int METHODID_LIST_MY_DRAFT_ARTICLE_CREATION = 445;
+  private static final int METHODID_DRAFT_ARTICLE_CREATION_DETAIL = 446;
+  private static final int METHODID_DELETE_DRAFT_ARTICLE_CREATION = 447;
+  private static final int METHODID_ARTICLE_CREATION_STATISTICS = 448;
+  private static final int METHODID_GET_EXAMPLE_ARTICLE = 449;
+  private static final int METHODID_GET_EVALUATION_STANDARD = 450;
+  private static final int METHODID_CREATE_EVALUATION_CONFIG = 451;
+  private static final int METHODID_LIST_EVALUATION_CONFIG = 452;
+  private static final int METHODID_BATCH_EVALUATE_ARTICLE_CREATION = 453;
+  private static final int METHODID_LIST_STUDENT_ARTICLE_CREATION = 454;
+  private static final int METHODID_STUDENT_ARTICLE_CREATION_EVALUATION_DETAIL = 455;
+  private static final int METHODID_CORRECT_SENTENCE = 456;
+  private static final int METHODID_GEN_ARTICLE_AI_EVALUATION = 457;
+  private static final int METHODID_GET_ARTICLE_AI_EVALUATION = 458;
+  private static final int METHODID_ARTICLE_AI_CHAT = 459;
+  private static final int METHODID_GET_CHAT_CONFIG = 460;
+  private static final int METHODID_UPDATE_MODEL_PRICE = 461;
+  private static final int METHODID_UPDATE_ARTICLE_CREATION_TENANT_COURSE = 462;
+  private static final int METHODID_GET_ARTICLE_CREATION_TENANT = 463;
+  private static final int METHODID_LIST_ARTICLE_CREATION_TENANT = 464;
+  private static final int METHODID_LIST_ARTICLE_CREATION_TENANT_COST = 465;
+  private static final int METHODID_GET_ARTICLE_CREATION_TENANT_COST = 466;
+  private static final int METHODID_GET_SUB_TOPIC_AI_RESULT = 467;
+  private static final int METHODID_CALC_ARTICLE_CREATION_TENANT = 468;
+  private static final int METHODID_INIT_ARTICLE_CREATION_TENANT = 469;
+  private static final int METHODID_CREATE_DIGITAL_VIDEO = 470;
+  private static final int METHODID_LIST_DIGITAL_VIDEO = 471;
+  private static final int METHODID_GET_DIGITAL_VIDEO = 472;
+  private static final int METHODID_LIST_DIGITAL_CODE = 473;
+  private static final int METHODID_DELETE_DIGITAL_VIDEO = 474;
+  private static final int METHODID_LIST_DIGITAL_AVATAR = 475;
+  private static final int METHODID_SUBMIT_APPROVAL_FLOW = 476;
+  private static final int METHODID_APPROVE_FLOW = 477;
+  private static final int METHODID_LIST_APPROVAL_FLOW = 478;
+  private static final int METHODID_GET_APPROVAL_FLOW_DETAIL = 479;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -31302,6 +33020,10 @@ public final class glory_apiGrpc {
           serviceImpl.updateTenantUserPassword((com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse>) responseObserver);
           break;
+        case METHODID_LIST_TEACHER_CLASS:
+          serviceImpl.listTeacherClass((com.zhijiejiaoyu.glory_api.tenant.ListTeacherClassRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.ListTeacherClassResponse>) responseObserver);
+          break;
         case METHODID_UPDATE_TENANT_CONFIG:
           serviceImpl.updateTenantConfig((com.zhijiejiaoyu.glory_api.tenant.UpdateTenantConfigRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.UpdateTenantConfigResponse>) responseObserver);
@@ -31622,6 +33344,30 @@ public final class glory_apiGrpc {
           serviceImpl.listMyCourse((com.zhijiejiaoyu.glory_api.course.ListMyCourseRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListMyCourseResponse>) responseObserver);
           break;
+        case METHODID_FAVORITE_LESSON:
+          serviceImpl.favoriteLesson((com.zhijiejiaoyu.glory_api.course.FavoriteLessonRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.FavoriteLessonResponse>) responseObserver);
+          break;
+        case METHODID_LIST_MY_FAVORITE_LESSON:
+          serviceImpl.listMyFavoriteLesson((com.zhijiejiaoyu.glory_api.course.ListMyFavoriteLessonRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListMyFavoriteLessonResponse>) responseObserver);
+          break;
+        case METHODID_PROGRESS_STAT_OVERVIEW:
+          serviceImpl.progressStatOverview((com.zhijiejiaoyu.glory_api.course.ProgressStatOverviewRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ProgressStatOverviewResponse>) responseObserver);
+          break;
+        case METHODID_LIST_PROGRESS_CLASS_STUDENT:
+          serviceImpl.listProgressClassStudent((com.zhijiejiaoyu.glory_api.course.ListProgressClassStudentRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListProgressClassStudentResponse>) responseObserver);
+          break;
+        case METHODID_LIST_CLASS_COURSE_PROGRESS:
+          serviceImpl.listClassCourseProgress((com.zhijiejiaoyu.glory_api.course.ListClassCourseProgressRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListClassCourseProgressResponse>) responseObserver);
+          break;
+        case METHODID_LIST_STUDENT_LESSON_PROGRESS:
+          serviceImpl.listStudentLessonProgress((com.zhijiejiaoyu.glory_api.course.ListStudentLessonProgressRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListStudentLessonProgressResponse>) responseObserver);
+          break;
         case METHODID_LIST_TEACHING_PLAN:
           serviceImpl.listTeachingPlan((com.zhijiejiaoyu.glory_api.course.ListTeachingPlanRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListTeachingPlanResponse>) responseObserver);
@@ -31641,6 +33387,14 @@ public final class glory_apiGrpc {
         case METHODID_UPDATE_TEACHING_COURSE_PROGRESS:
           serviceImpl.updateTeachingCourseProgress((com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressResponse>) responseObserver);
+          break;
+        case METHODID_LIST_TEACHING_TASK:
+          serviceImpl.listTeachingTask((com.zhijiejiaoyu.glory_api.course.ListTeachingTaskRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListTeachingTaskResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_TEACHING_TASK:
+          serviceImpl.createTeachingTask((com.zhijiejiaoyu.glory_api.course.CreateTeachingTaskRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.CreateTeachingTaskResponse>) responseObserver);
           break;
         case METHODID_CREATE_EDU_SCHEME:
           serviceImpl.createEduScheme((com.zhijiejiaoyu.glory_api.course.CreateEduSchemeRequest) request,
@@ -31669,6 +33423,62 @@ public final class glory_apiGrpc {
         case METHODID_GET_EDU_SCHEME_LIKE_COURSE:
           serviceImpl.getEduSchemeLikeCourse((com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseResponse>) responseObserver);
+          break;
+        case METHODID_LIST_SCHOOL_DOC:
+          serviceImpl.listSchoolDoc((com.zhijiejiaoyu.glory_api.doc.ListSchoolDocRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.ListSchoolDocResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_SCHOOL_DOC:
+          serviceImpl.createSchoolDoc((com.zhijiejiaoyu.glory_api.doc.CreateSchoolDocRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.CreateSchoolDocResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_SCHOOL_DOC:
+          serviceImpl.updateSchoolDoc((com.zhijiejiaoyu.glory_api.doc.UpdateSchoolDocRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.UpdateSchoolDocResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_SCHOOL_DOC:
+          serviceImpl.deleteSchoolDoc((com.zhijiejiaoyu.glory_api.doc.DeleteSchoolDocRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.DeleteSchoolDocResponse>) responseObserver);
+          break;
+        case METHODID_FAVORITE_SCHOOL_DOC:
+          serviceImpl.favoriteSchoolDoc((com.zhijiejiaoyu.glory_api.doc.FavoriteSchoolDocRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.FavoriteSchoolDocResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_MY_DOC_FOLDER:
+          serviceImpl.createMyDocFolder((com.zhijiejiaoyu.glory_api.doc.CreateMyDocFolderRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.CreateMyDocFolderResponse>) responseObserver);
+          break;
+        case METHODID_RENAME_MY_DOC_FOLDER:
+          serviceImpl.renameMyDocFolder((com.zhijiejiaoyu.glory_api.doc.RenameMyDocFolderRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.RenameMyDocFolderResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_MY_DOC_FOLDER:
+          serviceImpl.deleteMyDocFolder((com.zhijiejiaoyu.glory_api.doc.DeleteMyDocFolderRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.DeleteMyDocFolderResponse>) responseObserver);
+          break;
+        case METHODID_LIST_MY_DOC_FOLDER:
+          serviceImpl.listMyDocFolder((com.zhijiejiaoyu.glory_api.doc.ListMyDocFolderRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.ListMyDocFolderResponse>) responseObserver);
+          break;
+        case METHODID_LIST_MY_DOC:
+          serviceImpl.listMyDoc((com.zhijiejiaoyu.glory_api.doc.ListMyDocRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.ListMyDocResponse>) responseObserver);
+          break;
+        case METHODID_MOVE_OUT_MY_DOC:
+          serviceImpl.moveOutMyDoc((com.zhijiejiaoyu.glory_api.doc.MoveOutMyDocRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.MoveOutMyDocResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_MY_DOC:
+          serviceImpl.deleteMyDoc((com.zhijiejiaoyu.glory_api.doc.DeleteMyDocRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.DeleteMyDocResponse>) responseObserver);
+          break;
+        case METHODID_DOWNLOAD_MY_DOC:
+          serviceImpl.downloadMyDoc((com.zhijiejiaoyu.glory_api.doc.DownloadMyDocRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.DownloadMyDocResponse>) responseObserver);
+          break;
+        case METHODID_UPLOAD_FILE:
+          serviceImpl.uploadFile((com.zhijiejiaoyu.glory_api.doc.UploadFileRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.doc.UploadFileResponse>) responseObserver);
           break;
         case METHODID_GET_ANDROID_QRCODE:
           serviceImpl.getAndroidQRcode((com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeRequest) request,
@@ -33872,6 +35682,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.tenant.UpdateTenantUserPasswordResponse>(
                 service, METHODID_UPDATE_TENANT_USER_PASSWORD)))
         .addMethod(
+          getListTeacherClassMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.ListTeacherClassRequest,
+              com.zhijiejiaoyu.glory_api.tenant.ListTeacherClassResponse>(
+                service, METHODID_LIST_TEACHER_CLASS)))
+        .addMethod(
           getUpdateTenantConfigMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -34432,6 +36249,48 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.course.ListMyCourseResponse>(
                 service, METHODID_LIST_MY_COURSE)))
         .addMethod(
+          getFavoriteLessonMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.FavoriteLessonRequest,
+              com.zhijiejiaoyu.glory_api.course.FavoriteLessonResponse>(
+                service, METHODID_FAVORITE_LESSON)))
+        .addMethod(
+          getListMyFavoriteLessonMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.ListMyFavoriteLessonRequest,
+              com.zhijiejiaoyu.glory_api.course.ListMyFavoriteLessonResponse>(
+                service, METHODID_LIST_MY_FAVORITE_LESSON)))
+        .addMethod(
+          getProgressStatOverviewMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.ProgressStatOverviewRequest,
+              com.zhijiejiaoyu.glory_api.course.ProgressStatOverviewResponse>(
+                service, METHODID_PROGRESS_STAT_OVERVIEW)))
+        .addMethod(
+          getListProgressClassStudentMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.ListProgressClassStudentRequest,
+              com.zhijiejiaoyu.glory_api.course.ListProgressClassStudentResponse>(
+                service, METHODID_LIST_PROGRESS_CLASS_STUDENT)))
+        .addMethod(
+          getListClassCourseProgressMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.ListClassCourseProgressRequest,
+              com.zhijiejiaoyu.glory_api.course.ListClassCourseProgressResponse>(
+                service, METHODID_LIST_CLASS_COURSE_PROGRESS)))
+        .addMethod(
+          getListStudentLessonProgressMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.ListStudentLessonProgressRequest,
+              com.zhijiejiaoyu.glory_api.course.ListStudentLessonProgressResponse>(
+                service, METHODID_LIST_STUDENT_LESSON_PROGRESS)))
+        .addMethod(
           getListTeachingPlanMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -34466,6 +36325,20 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressRequest,
               com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressResponse>(
                 service, METHODID_UPDATE_TEACHING_COURSE_PROGRESS)))
+        .addMethod(
+          getListTeachingTaskMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.ListTeachingTaskRequest,
+              com.zhijiejiaoyu.glory_api.course.ListTeachingTaskResponse>(
+                service, METHODID_LIST_TEACHING_TASK)))
+        .addMethod(
+          getCreateTeachingTaskMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.CreateTeachingTaskRequest,
+              com.zhijiejiaoyu.glory_api.course.CreateTeachingTaskResponse>(
+                service, METHODID_CREATE_TEACHING_TASK)))
         .addMethod(
           getCreateEduSchemeMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -34515,6 +36388,104 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseRequest,
               com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseResponse>(
                 service, METHODID_GET_EDU_SCHEME_LIKE_COURSE)))
+        .addMethod(
+          getListSchoolDocMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.doc.ListSchoolDocRequest,
+              com.zhijiejiaoyu.glory_api.doc.ListSchoolDocResponse>(
+                service, METHODID_LIST_SCHOOL_DOC)))
+        .addMethod(
+          getCreateSchoolDocMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.doc.CreateSchoolDocRequest,
+              com.zhijiejiaoyu.glory_api.doc.CreateSchoolDocResponse>(
+                service, METHODID_CREATE_SCHOOL_DOC)))
+        .addMethod(
+          getUpdateSchoolDocMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.doc.UpdateSchoolDocRequest,
+              com.zhijiejiaoyu.glory_api.doc.UpdateSchoolDocResponse>(
+                service, METHODID_UPDATE_SCHOOL_DOC)))
+        .addMethod(
+          getDeleteSchoolDocMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.doc.DeleteSchoolDocRequest,
+              com.zhijiejiaoyu.glory_api.doc.DeleteSchoolDocResponse>(
+                service, METHODID_DELETE_SCHOOL_DOC)))
+        .addMethod(
+          getFavoriteSchoolDocMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.doc.FavoriteSchoolDocRequest,
+              com.zhijiejiaoyu.glory_api.doc.FavoriteSchoolDocResponse>(
+                service, METHODID_FAVORITE_SCHOOL_DOC)))
+        .addMethod(
+          getCreateMyDocFolderMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.doc.CreateMyDocFolderRequest,
+              com.zhijiejiaoyu.glory_api.doc.CreateMyDocFolderResponse>(
+                service, METHODID_CREATE_MY_DOC_FOLDER)))
+        .addMethod(
+          getRenameMyDocFolderMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.doc.RenameMyDocFolderRequest,
+              com.zhijiejiaoyu.glory_api.doc.RenameMyDocFolderResponse>(
+                service, METHODID_RENAME_MY_DOC_FOLDER)))
+        .addMethod(
+          getDeleteMyDocFolderMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.doc.DeleteMyDocFolderRequest,
+              com.zhijiejiaoyu.glory_api.doc.DeleteMyDocFolderResponse>(
+                service, METHODID_DELETE_MY_DOC_FOLDER)))
+        .addMethod(
+          getListMyDocFolderMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.doc.ListMyDocFolderRequest,
+              com.zhijiejiaoyu.glory_api.doc.ListMyDocFolderResponse>(
+                service, METHODID_LIST_MY_DOC_FOLDER)))
+        .addMethod(
+          getListMyDocMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.doc.ListMyDocRequest,
+              com.zhijiejiaoyu.glory_api.doc.ListMyDocResponse>(
+                service, METHODID_LIST_MY_DOC)))
+        .addMethod(
+          getMoveOutMyDocMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.doc.MoveOutMyDocRequest,
+              com.zhijiejiaoyu.glory_api.doc.MoveOutMyDocResponse>(
+                service, METHODID_MOVE_OUT_MY_DOC)))
+        .addMethod(
+          getDeleteMyDocMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.doc.DeleteMyDocRequest,
+              com.zhijiejiaoyu.glory_api.doc.DeleteMyDocResponse>(
+                service, METHODID_DELETE_MY_DOC)))
+        .addMethod(
+          getDownloadMyDocMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.doc.DownloadMyDocRequest,
+              com.zhijiejiaoyu.glory_api.doc.DownloadMyDocResponse>(
+                service, METHODID_DOWNLOAD_MY_DOC)))
+        .addMethod(
+          getUploadFileMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.doc.UploadFileRequest,
+              com.zhijiejiaoyu.glory_api.doc.UploadFileResponse>(
+                service, METHODID_UPLOAD_FILE)))
         .addMethod(
           getGetAndroidQRcodeMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -35672,6 +37643,7 @@ public final class glory_apiGrpc {
               .addMethod(getListTenantUserMethod())
               .addMethod(getListTenantStudentMethod())
               .addMethod(getUpdateTenantUserPasswordMethod())
+              .addMethod(getListTeacherClassMethod())
               .addMethod(getUpdateTenantConfigMethod())
               .addMethod(getListTenantConfigMethod())
               .addMethod(getCreateShortVideoMethod())
@@ -35752,11 +37724,19 @@ public final class glory_apiGrpc {
               .addMethod(getDeleteMyCourseMethod())
               .addMethod(getUpdateCourseProgressMethod())
               .addMethod(getListMyCourseMethod())
+              .addMethod(getFavoriteLessonMethod())
+              .addMethod(getListMyFavoriteLessonMethod())
+              .addMethod(getProgressStatOverviewMethod())
+              .addMethod(getListProgressClassStudentMethod())
+              .addMethod(getListClassCourseProgressMethod())
+              .addMethod(getListStudentLessonProgressMethod())
               .addMethod(getListTeachingPlanMethod())
               .addMethod(getCreateTeachingPlanMethod())
               .addMethod(getUpdateTeachingPlanMethod())
               .addMethod(getDeleteTeachingPlanMethod())
               .addMethod(getUpdateTeachingCourseProgressMethod())
+              .addMethod(getListTeachingTaskMethod())
+              .addMethod(getCreateTeachingTaskMethod())
               .addMethod(getCreateEduSchemeMethod())
               .addMethod(getUpdateEduSchemeMethod())
               .addMethod(getListEduSchemeMethod())
@@ -35764,6 +37744,20 @@ public final class glory_apiGrpc {
               .addMethod(getDeleteEduSchemeMethod())
               .addMethod(getDistributeEduSchemeMethod())
               .addMethod(getGetEduSchemeLikeCourseMethod())
+              .addMethod(getListSchoolDocMethod())
+              .addMethod(getCreateSchoolDocMethod())
+              .addMethod(getUpdateSchoolDocMethod())
+              .addMethod(getDeleteSchoolDocMethod())
+              .addMethod(getFavoriteSchoolDocMethod())
+              .addMethod(getCreateMyDocFolderMethod())
+              .addMethod(getRenameMyDocFolderMethod())
+              .addMethod(getDeleteMyDocFolderMethod())
+              .addMethod(getListMyDocFolderMethod())
+              .addMethod(getListMyDocMethod())
+              .addMethod(getMoveOutMyDocMethod())
+              .addMethod(getDeleteMyDocMethod())
+              .addMethod(getDownloadMyDocMethod())
+              .addMethod(getUploadFileMethod())
               .addMethod(getGetAndroidQRcodeMethod())
               .addMethod(getCreateJobMethod())
               .addMethod(getUpdateJobMethod())
