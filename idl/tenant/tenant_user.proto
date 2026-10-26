@@ -100,3 +100,26 @@ message ListTenantStudentResponse {
     repeated TenantUser students = 2;
     base.PaginationResponse pagination = 100;
 }
+
+// 教师所辖班级项
+message TeacherClassItem {
+    int64 class_id = 1;
+    string class_name = 2;
+    int64 major_id = 3; // 所属专业ID
+    string major_name = 4; // 专业名称
+    string major_code = 5; // 专业代码
+    int64 student_num = 6; // 学生数
+}
+
+// 教师所辖班级列表(按教师所属专业展开班级)
+message ListTeacherClassRequest {
+    base.BaseRequest base_request = 1;
+    string major_code = 2; // 专业过滤
+    string name = 3; // 班级名称模糊(预留)
+    base.PaginationRequest pagination = 100; // 预留；一次加载全部班级
+}
+
+message ListTeacherClassResponse {
+    base.BaseResponse base_resp = 1;
+    repeated TeacherClassItem classes = 2;
+}

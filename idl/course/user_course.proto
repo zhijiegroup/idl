@@ -42,14 +42,15 @@ message DeleteMyCourseResponse {
 message UpdateCourseProgressRequest {
   base.BaseRequest base_request = 1;
   int64 course_id = 2; // 课程ID
-  int64 chapter_resource_id = 3; // 当前课程资源ID
-  float chapter_resource_progress = 4; // 当前课程资源播放进度
-  float chapter_resource_duration = 5; // 当前课程资源总时长
+  int64 chapter_resource_id = 3; // 当前课程资源ID；后台按 (user_id, course_id, resource_id=本字段) upsert 逐节进度记录
+  float chapter_resource_progress = 4; // 当前课程资源播放进度（0-100）
+  float chapter_resource_duration = 5; // 当前课程资源总时长（毫秒）
+  float room_play_position = 6; // 房间播放点位（毫秒，视频内当前播放位置；可回退，落库取最新值）
 }
 
 message UpdateCourseProgressResponse {
   base.BaseResponse base_resp = 1;
-  int32 course_progress = 2; // 当前课程总进度
+  int32 course_progress = 2; // 当前课程总进度(基于逐节记录聚合)
 }
 
 // 我的课程列表
@@ -62,5 +63,40 @@ message ListMyCourseRequest {
 message ListMyCourseResponse {
   base.BaseResponse base_resp = 1;
   repeated UserCourseSummary user_courses = 2;
+  base.PaginationResponse pagination = 100;
+}
+
+// 收藏课节卡片
+message FavoriteLessonItem {
+  int64 course_id = 1; // 课程ID
+  string course_name = 2; // 课程名称
+  string course_cover_url = 3; // 课程封面
+  string node_key = 4; // 课节稳定标识，用于跳转定位
+  string lesson_name = 5; // 收藏课节名称
+  string chapter_path = 6; // 多级路径(章节/小节/任务)
+  string created_at = 7; // 收藏时间
+}
+
+// 收藏/取消收藏课节(幂等，重复调用返回成功)
+message FavoriteLessonRequest {
+  base.BaseRequest base_request = 1;
+  int64 course_id = 2; // 课程ID
+  string node_key = 3; // 课节稳定标识(= 资源ID)
+  bool favorite = 4; // true 收藏；false 取消
+}
+
+message FavoriteLessonResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+// 我的收藏课节列表(按收藏时间倒序)
+message ListMyFavoriteLessonRequest {
+  base.BaseRequest base_request = 1;
+  base.PaginationRequest pagination = 100;
+}
+
+message ListMyFavoriteLessonResponse {
+  base.BaseResponse base_resp = 1;
+  repeated FavoriteLessonItem items = 2;
   base.PaginationResponse pagination = 100;
 }

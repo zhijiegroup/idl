@@ -8,14 +8,58 @@ import "course/module.proto";
 import "course/course.proto";
 import "user/user.proto";
 
+// 课程体系三级结构：章节
+message SchemeChapter {
+    string chapter_name = 1; // 章节名称(自定义)
+    int32 origin_type = 2; // 章节来源：1.来源课程章节；2.自定义
+    int64 origin_course_id = 3; // 来源课程ID(origin_type=1 时填写)
+    int64 origin_chapter_id = 4; // 原章节ID(origin_type=1 时填写)
+    int32 chapter_index = 5; // 顺序(从 1 开始)
+    repeated SchemeLesson lessons = 6; // 课节列表
+}
+
+// 课程体系三级结构：课节
+message SchemeLesson {
+    string lesson_name = 1; // 课节名称(自定义)
+    int32 node_mode = 2; // 课节形态：1.直接挂资源；2.含小节或任务(二者互斥)
+    int32 origin_type = 3; // 课节来源：1.来源课节；2.自定义
+    int32 origin_course_type = 4; // 来源课程类型：1.模块化(course_resource)；2.非模块化(nm_course_resource)
+    int64 origin_course_id = 5; // 来源课程ID(origin_type=1 时填写)
+    int64 origin_chapter_id = 6; // 来源章节ID(origin_type=1 时填写)
+    int64 origin_resource_id = 7; // 来源课节资源ID(origin_type=1 时填写)
+    float hours = 8; // 课时
+    int32 sort = 9; // 顺序
+    repeated SchemeLessonItem items = 10; // 小节/任务列表(node_mode=2 时必填，来源课节固定 node_mode=1 不可加下级)
+    repeated SchemeLessonResource resources = 11; // 课节直挂资源(node_mode=1 时可用)
+}
+
+// 课程体系三级结构：小节/任务(不可再嵌套)
+message SchemeLessonItem {
+    int32 item_type = 1; // 下级节点类型：1.小节；2.任务
+    string item_name = 2; // 名称(自定义)
+    float hours = 3; // 课时
+    int32 sort = 4; // 顺序
+    repeated SchemeLessonResource resources = 5; // 资源列表
+}
+
+// 课程体系三级结构：课节或小节/任务挂载的资源
+message SchemeLessonResource {
+    int32 resource_type = 1; // 资源类型：1.视频；2.课件
+    string file_url = 2; // OSS 地址(私有，展示时签名)
+    string file_name = 3; // 原文件名
+    int64 file_size = 4; // 文件大小(字节)
+    int32 sort = 5; // 顺序
+    int64 resource_id = 6; // 资源稳定标识；平台来源课节为课程资源ID，自定义资源为 scheme_lesson_resource_id
+}
+
 message EduScheme {
     int64 edu_scheme_id = 1;
     string name = 2;
     string major = 3;
     string goal = 4;
-    double total_hours = 5;
-    double knowledge_hours = 6;
-    double skill_hours = 7;
+    double total_hours = 5; // 总学时 = 末级节点课时和(后端按树计算)
+    double knowledge_hours = 6; // 知识学时 = 来源课节课时和(后端按树计算)
+    double skill_hours = 7; // 技能学时 = 自定义节点课时和(后端按树计算)
     string created_at = 8;
     string knowledge_standard = 9;
     string ability_standard = 10;
@@ -23,23 +67,25 @@ message EduScheme {
     string course_group_name = 12; // 能力方向名称
     int64 course_group_id = 13; // 能力方向ID
     int64 created_by = 14;
-    repeated CourseModule course_modules = 15;  // 能力指标
+    repeated CourseModule course_modules = 15;  // 能力指标(已废弃，保留字段号兼容；详情接口不再返回)
     repeated TenantDept classes = 16; // 应用班级
+    repeated SchemeChapter chapters = 17; // 三级课程结构(章节→课节→小节/任务+资源)；新增字段
 }
 
 message CreateEduSchemeRequest {
     base.BaseRequest base_request = 1;
-    string name = 2;
-    string major = 3;
-    string goal = 4;
-    int32 type = 5;
-    string knowledge_standard = 6;
-    string ability_standard = 7;
-    string character_standard = 8;
-    string group_name = 9;
-    float skill_hours = 10;
-    float knowledge_hours = 11;
-    repeated CourseModule course_modules = 15; // 能力指标或能力方向
+    string name = 2; // 课程名称(≤30字)
+    string major = 3; // 专业代码
+    string goal = 4; // 【废弃】不再使用，保留字段号兼容
+    int32 type = 5; // 【废弃】不再使用，保留字段号兼容
+    string knowledge_standard = 6; // 【废弃】不再使用，保留字段号兼容
+    string ability_standard = 7; // 【废弃】不再使用，保留字段号兼容
+    string character_standard = 8; // 【废弃】不再使用，保留字段号兼容
+    string group_name = 9; // 【废弃】不再使用，保留字段号兼容
+    float skill_hours = 10; // 【调整】由后端按三级结构计算写入，前端无需传
+    float knowledge_hours = 11; // 【调整】由后端按三级结构计算写入，前端无需传
+    repeated CourseModule course_modules = 15; // 【废弃】不再使用，保留字段号兼容
+    repeated SchemeChapter chapters = 16; // 三级课程结构(章节→课节→小节/任务+资源)，全量覆盖保存；新增字段
 }
 
 message CreateEduSchemeResponse {
@@ -49,24 +95,26 @@ message CreateEduSchemeResponse {
 
 message UpdateEduSchemeRequest {
     base.BaseRequest base_request = 1;
-    string name = 2;
-    string major = 3;
-    string goal = 4;
-    int32 type = 5;
-    string knowledge_standard = 6;
-    string ability_standard = 7;
-    string character_standard = 8;
-    string group_name = 9;
+    string name = 2; // 课程名称(≤30字)
+    string major = 3; // 专业代码
+    string goal = 4; // 【废弃】不再使用，保留字段号兼容
+    int32 type = 5; // 【废弃】不再使用，保留字段号兼容
+    string knowledge_standard = 6; // 【废弃】不再使用，保留字段号兼容
+    string ability_standard = 7; // 【废弃】不再使用，保留字段号兼容
+    string character_standard = 8; // 【废弃】不再使用，保留字段号兼容
+    string group_name = 9; // 【废弃】不再使用，保留字段号兼容
     int64 edu_scheme_id = 10;
-    float skill_hours = 11;
-    float knowledge_hours = 12;
-    repeated CourseModule course_modules = 13; // 能力指标或能力方向
+    float skill_hours = 11; // 【调整】由后端按三级结构计算写入，前端无需传
+    float knowledge_hours = 12; // 【调整】由后端按三级结构计算写入，前端无需传
+    repeated CourseModule course_modules = 13; // 【废弃】不再使用，保留字段号兼容
+    repeated SchemeChapter chapters = 14; // 三级课程结构(章节→课节→小节/任务+资源)，覆盖本人原方案全量保存；新增字段
 }
 
 message UpdateEduSchemeResponse {
     base.BaseResponse base_resp = 1;
 }
 
+// 删除课程体系：级联删除班级分配关系与关联授课任务(含进度)
 message DeleteEduSchemeRequest {
     base.BaseRequest base_request = 1;
     int64 edu_scheme_id = 2;

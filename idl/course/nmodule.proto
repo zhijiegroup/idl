@@ -16,7 +16,7 @@ message NmCourse {
     string cover_url = 8;
     int64 course_classification = 9;
     string course_major = 10;
-    int64 course_level = 11;
+    int64 course_level = 11; // 课程层次：1.中职；2.高职专科；3.职业本科；4.职场
     int64 course_type = 12;
     string course_industry = 13;
     double course_hours = 14;
@@ -24,6 +24,8 @@ message NmCourse {
     repeated NmChapter chapters = 16;
     bool assigned = 17;
     string language = 18;
+    int32 major_category = 19; // 专业大类：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术；新增字段
+    int32 course_attribute = 20; // 课程属性：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课；新增字段
 }
 
 message CreateNmCourseChapterResourceRequest {
@@ -80,8 +82,9 @@ message NmResource {
     string resource_name = 2;
     int64 resource_type = 3;
     string resource_path = 4;
-    string resource_url = 5;
-    string file_type = 6;
+    string resource_url = 5; // 课程未购买时仅第一节视频下发，其余置空
+    string file_type = 6; // 文件类型(0:默认;1:PPT;2:PDF)
+    string node_key = 7; // 课节稳定标识(= resource_id)，用于收藏与深链定位；新增字段
 }
 
 message CreateNmCourseResponse {

@@ -1,0 +1,135 @@
+syntax = "proto3";
+package glory_api;
+option java_package = "com.zhijiejiaoyu.glory_api.course";
+option java_multiple_files = true;
+
+import "base.proto";
+
+// 学情统计卡片项
+message ProgressStatItem {
+  int64 id = 1; // dimension=1 时为专业ID；dimension=2 时为课程ID
+  string name = 2; // 名称
+  string code = 3; // 编码
+  int64 done_count = 4; // 已完成人数
+  int64 undone_count = 5; // 未完成人数
+  int64 total_count = 6; // 总人数
+  int32 rate = 7; // 完成率 0-100
+}
+
+// 学情统计卡片(读预计算快照，每 10 分钟重算)
+message ProgressStatOverviewRequest {
+  base.BaseRequest base_request = 1;
+  int32 dimension = 2; // 统计维度：1.按专业；2.按课程
+  repeated int64 course_ids = 3; // dimension=2 时可限定课程
+  string major_code = 4; // 限定专业
+}
+
+message ProgressStatOverviewResponse {
+  base.BaseResponse base_resp = 1;
+  repeated ProgressStatItem items = 2;
+}
+
+// 班级行(学情分析左侧列表)
+message ProgressClassItem {
+  int64 class_id = 1;
+  string class_name = 2;
+  int64 done_count = 3; // 已完成人数
+  int64 undone_count = 4; // 未完成人数
+  int64 total_count = 5; // 总人数
+  int32 rate = 6; // 完成率 0-100
+}
+
+// 学生行(展开班级时返回)
+message ProgressStudentItem {
+  int64 student_id = 1;
+  string student_name = 2;
+  int64 done_count = 3; // 已完成课程数
+  int64 undone_count = 4; // 未完成课程数
+  int64 total_count = 5; // 总课程数
+  int32 progress = 6; // 按课程维度时的该课程进度 0-100
+}
+
+// 班级/学生进度列表
+message ListProgressClassStudentRequest {
+  base.BaseRequest base_request = 1;
+  int32 dimension = 2; // 统计维度：1.按专业；2.按课程
+  string major_code = 3; // 专业
+  int64 course_id = 4; // dimension=2 时必填
+  int64 class_id = 5; // 传入则同时返回该班学生
+  string name = 6; // 学生姓名模糊(预留)
+  base.PaginationRequest pagination = 100; // 预留；左侧列表一次加载不分页
+}
+
+message ListProgressClassStudentResponse {
+  base.BaseResponse base_resp = 1;
+  repeated ProgressClassItem classes = 2;
+  repeated ProgressStudentItem students = 3; // 仅当请求传 class_id 时返回
+}
+
+// 学生各课程进度项
+message StudentCourseProgressItem {
+  int64 course_id = 1;
+  string course_name = 2;
+  int32 progress = 3; // 进度 0-100
+  int32 state = 4; // 课程状态：1.进行中；2.已完成
+}
+
+// 学生课程进度(班级课程进度详情)
+message StudentCourseProgress {
+  int64 student_id = 1;
+  string student_name = 2;
+  int32 avg_progress = 3; // 平均进度 0-100
+  repeated StudentCourseProgressItem courses = 4; // 各课程进度
+}
+
+// 班级课程进度详情
+message ListClassCourseProgressRequest {
+  base.BaseRequest base_request = 1;
+  int64 class_id = 2; // 班级，必填
+  int64 course_id = 3; // 按课程维度时必填
+}
+
+message ListClassCourseProgressResponse {
+  base.BaseResponse base_resp = 1;
+  repeated StudentCourseProgress students = 2;
+}
+
+// 学生课节进度项
+message LessonProgressItem {
+  int64 resource_id = 1;
+  string resource_name = 2;
+  int32 resource_type = 3; // 课程资源类型：1.教学视频；2.教学课件；3.课后习题；4.教案
+  int32 progress = 4; // 本节进度 0-100
+  int64 duration = 5; // 总时长(毫秒)
+  int64 watched_duration = 6; // 已观看时长(毫秒)
+  int32 state = 7; // 状态：1.进行中；2.已完成
+  string updated_at = 8; // 更新时间
+}
+
+// 章节→课节两级进度
+message LessonChapterProgress {
+  int64 chapter_id = 1;
+  string chapter_name = 2;
+  repeated LessonProgressItem lessons = 3;
+}
+
+// 课程课节进度
+message CourseLessonProgress {
+  int64 course_id = 1;
+  string course_name = 2;
+  int32 progress = 3; // 课程总进度 0-100
+  repeated LessonChapterProgress chapters = 4;
+}
+
+// 学生课节进度详情(历史数据缺失时按整体进度回退折算)
+message ListStudentLessonProgressRequest {
+  base.BaseRequest base_request = 1;
+  int64 student_id = 2; // 学生，必填
+  int64 course_id = 3; // 课程，必填
+  int64 class_id = 4; // 班级
+}
+
+message ListStudentLessonProgressResponse {
+  base.BaseResponse base_resp = 1;
+  CourseLessonProgress course = 2;
+}
