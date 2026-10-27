@@ -53,6 +53,7 @@ import "course/cmodule.proto";
 import "course/nmodule.proto";
 import "course/course.proto";
 import "course/progress_stat.proto";
+import "course/progress_report.proto";
 import "course/graph.proto";
 import "course/user_course.proto";
 import "course/teaching_plan.proto";
@@ -1300,8 +1301,15 @@ service glory_api {
   }
   
   // 上报课程进度
+  // 将废弃：请改用统一进度上报 ReportCourseProgress（teaching=false）；保留兼容存量客户端
   rpc UpdateCourseProgress (UpdateCourseProgressRequest) returns (UpdateCourseProgressResponse) {
     option (api.post) = '/api/course/update_course_progress';
+    option deprecated = true;
+  }
+
+  // 统一进度上报（teaching=false=学生逐节进度；teaching=true=老师授课进度）
+  rpc ReportCourseProgress (ReportCourseProgressRequest) returns (ReportCourseProgressResponse) {
+    option (api.post) = '/api/course/report_course_progress';
   }
 
   // 我的课程列表
@@ -1356,8 +1364,10 @@ service glory_api {
   }
 
    // 上报老师授课课程进度
+   // 将废弃：请改用统一进度上报 ReportCourseProgress（teaching=true）；保留兼容存量客户端
    rpc UpdateTeachingCourseProgress (UpdateTeachingCourseProgressRequest) returns (UpdateTeachingCourseProgressResponse) {
     option (api.post) = '/api/course/update_teaching_course_progress';
+    option deprecated = true;
   }
 
   // 授课任务

@@ -39,7 +39,9 @@ message DeleteMyCourseResponse {
 }
 
 // 更新课程进度
+// 将废弃：请改用统一进度上报 ReportCourseProgress（teaching=false）；本接口保留兼容存量客户端
 message UpdateCourseProgressRequest {
+  option deprecated = true;
   base.BaseRequest base_request = 1;
   int64 course_id = 2; // 课程ID
   int64 chapter_resource_id = 3; // 当前课程资源ID；后台按 (user_id, course_id, resource_id=本字段) upsert 逐节进度记录
@@ -49,6 +51,7 @@ message UpdateCourseProgressRequest {
 }
 
 message UpdateCourseProgressResponse {
+  option deprecated = true;
   base.BaseResponse base_resp = 1;
   int32 course_progress = 2; // 当前课程总进度(基于逐节记录聚合)
 }
