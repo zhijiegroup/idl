@@ -192,10 +192,10 @@ const UpdateTeachingCourseProgressRequest$json = {
     {'1': 'course_id', '3': 2, '4': 1, '5': 3, '10': 'courseId'},
     {'1': 'chapter_resource_id', '3': 3, '4': 1, '5': 3, '10': 'chapterResourceId'},
     {'1': 'chapter_resource_progress', '3': 4, '4': 1, '5': 2, '10': 'chapterResourceProgress'},
-    {'1': 'chapter_resource_duration', '3': 5, '4': 1, '5': 2, '10': 'chapterResourceDuration'},
+    {'1': 'chapter_resource_duration', '3': 5, '4': 1, '5': 3, '10': 'chapterResourceDuration'},
     {'1': 'class_id', '3': 6, '4': 1, '5': 3, '10': 'classId'},
     {'1': 'current_lesson_no', '3': 7, '4': 1, '5': 5, '10': 'currentLessonNo'},
-    {'1': 'room_play_position', '3': 8, '4': 1, '5': 2, '10': 'roomPlayPosition'},
+    {'1': 'resource_play_position', '3': 8, '4': 1, '5': 3, '10': 'resourcePlayPosition'},
   ],
 };
 
@@ -205,10 +205,10 @@ final $typed_data.Uint8List updateTeachingCourseProgressRequestDescriptor = $con
     'ABKAsyES5iYXNlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIbCgljb3Vyc2VfaWQYAiABKANS'
     'CGNvdXJzZUlkEi4KE2NoYXB0ZXJfcmVzb3VyY2VfaWQYAyABKANSEWNoYXB0ZXJSZXNvdXJjZU'
     'lkEjoKGWNoYXB0ZXJfcmVzb3VyY2VfcHJvZ3Jlc3MYBCABKAJSF2NoYXB0ZXJSZXNvdXJjZVBy'
-    'b2dyZXNzEjoKGWNoYXB0ZXJfcmVzb3VyY2VfZHVyYXRpb24YBSABKAJSF2NoYXB0ZXJSZXNvdX'
+    'b2dyZXNzEjoKGWNoYXB0ZXJfcmVzb3VyY2VfZHVyYXRpb24YBSABKANSF2NoYXB0ZXJSZXNvdX'
     'JjZUR1cmF0aW9uEhkKCGNsYXNzX2lkGAYgASgDUgdjbGFzc0lkEioKEWN1cnJlbnRfbGVzc29u'
-    'X25vGAcgASgFUg9jdXJyZW50TGVzc29uTm8SLAoScm9vbV9wbGF5X3Bvc2l0aW9uGAggASgCUh'
-    'Byb29tUGxheVBvc2l0aW9u');
+    'X25vGAcgASgFUg9jdXJyZW50TGVzc29uTm8SNAoWcmVzb3VyY2VfcGxheV9wb3NpdGlvbhgIIA'
+    'EoA1IUcmVzb3VyY2VQbGF5UG9zaXRpb24=');
 
 @$core.Deprecated('Use updateTeachingCourseProgressResponseDescriptor instead')
 const UpdateTeachingCourseProgressResponse$json = {

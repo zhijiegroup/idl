@@ -54,21 +54,21 @@ public interface UpdateCourseProgressRequestOrBuilder extends
 
   /**
    * <pre>
-   * 当前课程资源总时长（毫秒）
+   * 当前课程资源总时长（整数，毫秒）
    * </pre>
    *
-   * <code>float chapter_resource_duration = 5;</code>
+   * <code>int64 chapter_resource_duration = 5;</code>
    * @return The chapterResourceDuration.
    */
-  float getChapterResourceDuration();
+  long getChapterResourceDuration();
 
   /**
    * <pre>
-   * 房间播放点位（毫秒，视频内当前播放位置；可回退，落库取最新值）
+   * 资源播放点位（整数，毫秒，视频内当前播放位置；必填；可回退，落库取最新值）
    * </pre>
    *
-   * <code>float room_play_position = 6;</code>
-   * @return The roomPlayPosition.
+   * <code>int64 resource_play_position = 6;</code>
+   * @return The resourcePlayPosition.
    */
-  float getRoomPlayPosition();
+  long getResourcePlayPosition();
 }

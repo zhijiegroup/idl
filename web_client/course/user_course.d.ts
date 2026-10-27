@@ -59,10 +59,10 @@ export interface UpdateCourseProgressRequest {
   chapter_resource_id?: string;
   /** 当前课程资源播放进度（0-100） */
   chapter_resource_progress?: number;
-  /** 当前课程资源总时长（毫秒） */
-  chapter_resource_duration?: number;
-  /** 房间播放点位（毫秒，视频内当前播放位置；可回退，落库取最新值） */
-  room_play_position?: number;
+  /** 当前课程资源总时长（整数，毫秒） */
+  chapter_resource_duration?: string;
+  /** 资源播放点位（整数，毫秒，视频内当前播放位置；必填；可回退，落库取最新值） */
+  resource_play_position?: string;
 }
 
 export interface UpdateCourseProgressResponse {

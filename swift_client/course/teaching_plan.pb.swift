@@ -302,8 +302,8 @@ nonisolated struct GloryApi_UpdateTeachingCourseProgressRequest: Sendable {
   /// 当前课程资源播放进度（0-100）
   var chapterResourceProgress: Float = 0
 
-  /// 当前课程资源总时长（毫秒）
-  var chapterResourceDuration: Float = 0
+  /// 当前课程资源总时长（整数，毫秒）
+  var chapterResourceDuration: Int64 = 0
 
   /// 授课班级ID；传值时按授课任务推进(current_lesson_no 取 MAX、只增不退)，不传时保持旧行为；新增字段
   var classID: Int64 = 0
@@ -311,8 +311,8 @@ nonisolated struct GloryApi_UpdateTeachingCourseProgressRequest: Sendable {
   /// 当前末级节点序号(1-based)；满进度自动结课，已结课任务拒绝推进；新增字段
   var currentLessonNo: Int32 = 0
 
-  /// 房间播放点位（毫秒，视频内当前播放位置；可回退，落库取最新值）
-  var roomPlayPosition: Float = 0
+  /// 资源播放点位（整数，毫秒，视频内当前播放位置；必填；可回退，落库取最新值）
+  var resourcePlayPosition: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1023,7 +1023,7 @@ nonisolated extension GloryApi_DeleteTeachingPlanResponse: SwiftProtobuf.Message
 
 nonisolated extension GloryApi_UpdateTeachingCourseProgressRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UpdateTeachingCourseProgressRequest"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}course_id\0\u{3}chapter_resource_id\0\u{3}chapter_resource_progress\0\u{3}chapter_resource_duration\0\u{3}class_id\0\u{3}current_lesson_no\0\u{3}room_play_position\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}course_id\0\u{3}chapter_resource_id\0\u{3}chapter_resource_progress\0\u{3}chapter_resource_duration\0\u{3}class_id\0\u{3}current_lesson_no\0\u{3}resource_play_position\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1035,10 +1035,10 @@ nonisolated extension GloryApi_UpdateTeachingCourseProgressRequest: SwiftProtobu
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.courseID) }()
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.chapterResourceID) }()
       case 4: try { try decoder.decodeSingularFloatField(value: &self.chapterResourceProgress) }()
-      case 5: try { try decoder.decodeSingularFloatField(value: &self.chapterResourceDuration) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.chapterResourceDuration) }()
       case 6: try { try decoder.decodeSingularInt64Field(value: &self.classID) }()
       case 7: try { try decoder.decodeSingularInt32Field(value: &self.currentLessonNo) }()
-      case 8: try { try decoder.decodeSingularFloatField(value: &self.roomPlayPosition) }()
+      case 8: try { try decoder.decodeSingularInt64Field(value: &self.resourcePlayPosition) }()
       default: break
       }
     }
@@ -1061,8 +1061,8 @@ nonisolated extension GloryApi_UpdateTeachingCourseProgressRequest: SwiftProtobu
     if self.chapterResourceProgress.bitPattern != 0 {
       try visitor.visitSingularFloatField(value: self.chapterResourceProgress, fieldNumber: 4)
     }
-    if self.chapterResourceDuration.bitPattern != 0 {
-      try visitor.visitSingularFloatField(value: self.chapterResourceDuration, fieldNumber: 5)
+    if self.chapterResourceDuration != 0 {
+      try visitor.visitSingularInt64Field(value: self.chapterResourceDuration, fieldNumber: 5)
     }
     if self.classID != 0 {
       try visitor.visitSingularInt64Field(value: self.classID, fieldNumber: 6)
@@ -1070,8 +1070,8 @@ nonisolated extension GloryApi_UpdateTeachingCourseProgressRequest: SwiftProtobu
     if self.currentLessonNo != 0 {
       try visitor.visitSingularInt32Field(value: self.currentLessonNo, fieldNumber: 7)
     }
-    if self.roomPlayPosition.bitPattern != 0 {
-      try visitor.visitSingularFloatField(value: self.roomPlayPosition, fieldNumber: 8)
+    if self.resourcePlayPosition != 0 {
+      try visitor.visitSingularInt64Field(value: self.resourcePlayPosition, fieldNumber: 8)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1084,7 +1084,7 @@ nonisolated extension GloryApi_UpdateTeachingCourseProgressRequest: SwiftProtobu
     if lhs.chapterResourceDuration != rhs.chapterResourceDuration {return false}
     if lhs.classID != rhs.classID {return false}
     if lhs.currentLessonNo != rhs.currentLessonNo {return false}
-    if lhs.roomPlayPosition != rhs.roomPlayPosition {return false}
+    if lhs.resourcePlayPosition != rhs.resourcePlayPosition {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

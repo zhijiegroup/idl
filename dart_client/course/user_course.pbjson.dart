@@ -103,8 +103,8 @@ const UpdateCourseProgressRequest$json = {
     {'1': 'course_id', '3': 2, '4': 1, '5': 3, '10': 'courseId'},
     {'1': 'chapter_resource_id', '3': 3, '4': 1, '5': 3, '10': 'chapterResourceId'},
     {'1': 'chapter_resource_progress', '3': 4, '4': 1, '5': 2, '10': 'chapterResourceProgress'},
-    {'1': 'chapter_resource_duration', '3': 5, '4': 1, '5': 2, '10': 'chapterResourceDuration'},
-    {'1': 'room_play_position', '3': 6, '4': 1, '5': 2, '10': 'roomPlayPosition'},
+    {'1': 'chapter_resource_duration', '3': 5, '4': 1, '5': 3, '10': 'chapterResourceDuration'},
+    {'1': 'resource_play_position', '3': 6, '4': 1, '5': 3, '10': 'resourcePlayPosition'},
   ],
 };
 
@@ -114,8 +114,9 @@ final $typed_data.Uint8List updateCourseProgressRequestDescriptor = $convert.bas
     'FzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSGwoJY291cnNlX2lkGAIgASgDUghjb3Vyc2VJ'
     'ZBIuChNjaGFwdGVyX3Jlc291cmNlX2lkGAMgASgDUhFjaGFwdGVyUmVzb3VyY2VJZBI6ChljaG'
     'FwdGVyX3Jlc291cmNlX3Byb2dyZXNzGAQgASgCUhdjaGFwdGVyUmVzb3VyY2VQcm9ncmVzcxI6'
-    'ChljaGFwdGVyX3Jlc291cmNlX2R1cmF0aW9uGAUgASgCUhdjaGFwdGVyUmVzb3VyY2VEdXJhdG'
-    'lvbhIsChJyb29tX3BsYXlfcG9zaXRpb24YBiABKAJSEHJvb21QbGF5UG9zaXRpb24=');
+    'ChljaGFwdGVyX3Jlc291cmNlX2R1cmF0aW9uGAUgASgDUhdjaGFwdGVyUmVzb3VyY2VEdXJhdG'
+    'lvbhI0ChZyZXNvdXJjZV9wbGF5X3Bvc2l0aW9uGAYgASgDUhRyZXNvdXJjZVBsYXlQb3NpdGlv'
+    'bg==');
 
 @$core.Deprecated('Use updateCourseProgressResponseDescriptor instead')
 const UpdateCourseProgressResponse$json = {

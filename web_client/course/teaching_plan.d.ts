@@ -80,14 +80,14 @@ export interface UpdateTeachingCourseProgressRequest {
   chapter_resource_id?: string;
   /** 当前课程资源播放进度（0-100） */
   chapter_resource_progress?: number;
-  /** 当前课程资源总时长（毫秒） */
-  chapter_resource_duration?: number;
+  /** 当前课程资源总时长（整数，毫秒） */
+  chapter_resource_duration?: string;
   /** 授课班级ID；传值时按授课任务推进(current_lesson_no 取 MAX、只增不退)，不传时保持旧行为；新增字段 */
   class_id?: string;
   /** 当前末级节点序号(1-based)；满进度自动结课，已结课任务拒绝推进；新增字段 */
   current_lesson_no?: number;
-  /** 房间播放点位（毫秒，视频内当前播放位置；可回退，落库取最新值） */
-  room_play_position?: number;
+  /** 资源播放点位（整数，毫秒，视频内当前播放位置；必填；可回退，落库取最新值） */
+  resource_play_position?: string;
 }
 
 export interface UpdateTeachingCourseProgressResponse {

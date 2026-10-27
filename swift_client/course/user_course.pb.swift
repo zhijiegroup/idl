@@ -176,11 +176,11 @@ nonisolated struct GloryApi_UpdateCourseProgressRequest: Sendable {
   /// 当前课程资源播放进度（0-100）
   var chapterResourceProgress: Float = 0
 
-  /// 当前课程资源总时长（毫秒）
-  var chapterResourceDuration: Float = 0
+  /// 当前课程资源总时长（整数，毫秒）
+  var chapterResourceDuration: Int64 = 0
 
-  /// 房间播放点位（毫秒，视频内当前播放位置；可回退，落库取最新值）
-  var roomPlayPosition: Float = 0
+  /// 资源播放点位（整数，毫秒，视频内当前播放位置；必填；可回退，落库取最新值）
+  var resourcePlayPosition: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -657,7 +657,7 @@ nonisolated extension GloryApi_DeleteMyCourseResponse: SwiftProtobuf.Message, Sw
 
 nonisolated extension GloryApi_UpdateCourseProgressRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UpdateCourseProgressRequest"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}course_id\0\u{3}chapter_resource_id\0\u{3}chapter_resource_progress\0\u{3}chapter_resource_duration\0\u{3}room_play_position\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}course_id\0\u{3}chapter_resource_id\0\u{3}chapter_resource_progress\0\u{3}chapter_resource_duration\0\u{3}resource_play_position\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -669,8 +669,8 @@ nonisolated extension GloryApi_UpdateCourseProgressRequest: SwiftProtobuf.Messag
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.courseID) }()
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.chapterResourceID) }()
       case 4: try { try decoder.decodeSingularFloatField(value: &self.chapterResourceProgress) }()
-      case 5: try { try decoder.decodeSingularFloatField(value: &self.chapterResourceDuration) }()
-      case 6: try { try decoder.decodeSingularFloatField(value: &self.roomPlayPosition) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.chapterResourceDuration) }()
+      case 6: try { try decoder.decodeSingularInt64Field(value: &self.resourcePlayPosition) }()
       default: break
       }
     }
@@ -693,11 +693,11 @@ nonisolated extension GloryApi_UpdateCourseProgressRequest: SwiftProtobuf.Messag
     if self.chapterResourceProgress.bitPattern != 0 {
       try visitor.visitSingularFloatField(value: self.chapterResourceProgress, fieldNumber: 4)
     }
-    if self.chapterResourceDuration.bitPattern != 0 {
-      try visitor.visitSingularFloatField(value: self.chapterResourceDuration, fieldNumber: 5)
+    if self.chapterResourceDuration != 0 {
+      try visitor.visitSingularInt64Field(value: self.chapterResourceDuration, fieldNumber: 5)
     }
-    if self.roomPlayPosition.bitPattern != 0 {
-      try visitor.visitSingularFloatField(value: self.roomPlayPosition, fieldNumber: 6)
+    if self.resourcePlayPosition != 0 {
+      try visitor.visitSingularInt64Field(value: self.resourcePlayPosition, fieldNumber: 6)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -708,7 +708,7 @@ nonisolated extension GloryApi_UpdateCourseProgressRequest: SwiftProtobuf.Messag
     if lhs.chapterResourceID != rhs.chapterResourceID {return false}
     if lhs.chapterResourceProgress != rhs.chapterResourceProgress {return false}
     if lhs.chapterResourceDuration != rhs.chapterResourceDuration {return false}
-    if lhs.roomPlayPosition != rhs.roomPlayPosition {return false}
+    if lhs.resourcePlayPosition != rhs.resourcePlayPosition {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -437,8 +437,8 @@ class UpdateCourseProgressRequest extends $pb.GeneratedMessage {
     $fixnum.Int64? courseId,
     $fixnum.Int64? chapterResourceId,
     $core.double? chapterResourceProgress,
-    $core.double? chapterResourceDuration,
-    $core.double? roomPlayPosition,
+    $fixnum.Int64? chapterResourceDuration,
+    $fixnum.Int64? resourcePlayPosition,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -456,8 +456,8 @@ class UpdateCourseProgressRequest extends $pb.GeneratedMessage {
     if (chapterResourceDuration != null) {
       $result.chapterResourceDuration = chapterResourceDuration;
     }
-    if (roomPlayPosition != null) {
-      $result.roomPlayPosition = roomPlayPosition;
+    if (resourcePlayPosition != null) {
+      $result.resourcePlayPosition = resourcePlayPosition;
     }
     return $result;
   }
@@ -470,8 +470,8 @@ class UpdateCourseProgressRequest extends $pb.GeneratedMessage {
     ..aInt64(2, _omitFieldNames ? '' : 'courseId')
     ..aInt64(3, _omitFieldNames ? '' : 'chapterResourceId')
     ..a<$core.double>(4, _omitFieldNames ? '' : 'chapterResourceProgress', $pb.PbFieldType.OF)
-    ..a<$core.double>(5, _omitFieldNames ? '' : 'chapterResourceDuration', $pb.PbFieldType.OF)
-    ..a<$core.double>(6, _omitFieldNames ? '' : 'roomPlayPosition', $pb.PbFieldType.OF)
+    ..aInt64(5, _omitFieldNames ? '' : 'chapterResourceDuration')
+    ..aInt64(6, _omitFieldNames ? '' : 'resourcePlayPosition')
     ..hasRequiredFields = false
   ;
 
@@ -535,22 +535,22 @@ class UpdateCourseProgressRequest extends $pb.GeneratedMessage {
   void clearChapterResourceProgress() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.double get chapterResourceDuration => $_getN(4);
+  $fixnum.Int64 get chapterResourceDuration => $_getI64(4);
   @$pb.TagNumber(5)
-  set chapterResourceDuration($core.double v) { $_setFloat(4, v); }
+  set chapterResourceDuration($fixnum.Int64 v) { $_setInt64(4, v); }
   @$pb.TagNumber(5)
   $core.bool hasChapterResourceDuration() => $_has(4);
   @$pb.TagNumber(5)
   void clearChapterResourceDuration() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.double get roomPlayPosition => $_getN(5);
+  $fixnum.Int64 get resourcePlayPosition => $_getI64(5);
   @$pb.TagNumber(6)
-  set roomPlayPosition($core.double v) { $_setFloat(5, v); }
+  set resourcePlayPosition($fixnum.Int64 v) { $_setInt64(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasRoomPlayPosition() => $_has(5);
+  $core.bool hasResourcePlayPosition() => $_has(5);
   @$pb.TagNumber(6)
-  void clearRoomPlayPosition() => clearField(6);
+  void clearResourcePlayPosition() => clearField(6);
 }
 
 class UpdateCourseProgressResponse extends $pb.GeneratedMessage {
