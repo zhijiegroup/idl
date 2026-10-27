@@ -106,6 +106,7 @@ const UpdateCourseProgressRequest$json = {
     {'1': 'chapter_resource_duration', '3': 5, '4': 1, '5': 3, '10': 'chapterResourceDuration'},
     {'1': 'resource_play_position', '3': 6, '4': 1, '5': 3, '10': 'resourcePlayPosition'},
   ],
+  '7': {'3': true},
 };
 
 /// Descriptor for `UpdateCourseProgressRequest`. Decode as a `google.protobuf.DescriptorProto`.
@@ -116,7 +117,7 @@ final $typed_data.Uint8List updateCourseProgressRequestDescriptor = $convert.bas
     'FwdGVyX3Jlc291cmNlX3Byb2dyZXNzGAQgASgCUhdjaGFwdGVyUmVzb3VyY2VQcm9ncmVzcxI6'
     'ChljaGFwdGVyX3Jlc291cmNlX2R1cmF0aW9uGAUgASgDUhdjaGFwdGVyUmVzb3VyY2VEdXJhdG'
     'lvbhI0ChZyZXNvdXJjZV9wbGF5X3Bvc2l0aW9uGAYgASgDUhRyZXNvdXJjZVBsYXlQb3NpdGlv'
-    'bg==');
+    'bjoCGAE=');
 
 @$core.Deprecated('Use updateCourseProgressResponseDescriptor instead')
 const UpdateCourseProgressResponse$json = {
@@ -125,13 +126,14 @@ const UpdateCourseProgressResponse$json = {
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
     {'1': 'course_progress', '3': 2, '4': 1, '5': 5, '10': 'courseProgress'},
   ],
+  '7': {'3': true},
 };
 
 /// Descriptor for `UpdateCourseProgressResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updateCourseProgressResponseDescriptor = $convert.base64Decode(
     'ChxVcGRhdGVDb3Vyc2VQcm9ncmVzc1Jlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2'
     'UuQmFzZVJlc3BvbnNlUghiYXNlUmVzcBInCg9jb3Vyc2VfcHJvZ3Jlc3MYAiABKAVSDmNvdXJz'
-    'ZVByb2dyZXNz');
+    'ZVByb2dyZXNzOgIYAQ==');
 
 @$core.Deprecated('Use listMyCourseRequestDescriptor instead')
 const ListMyCourseRequest$json = {

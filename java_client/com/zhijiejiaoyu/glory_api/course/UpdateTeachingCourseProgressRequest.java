@@ -6,11 +6,12 @@ package com.zhijiejiaoyu.glory_api.course;
 /**
  * <pre>
  * 更新老师授课课程进度
+ * 将废弃：请改用统一进度上报 ReportCourseProgress（teaching=true）；本接口保留兼容存量客户端
  * </pre>
  *
  * Protobuf type {@code glory_api.UpdateTeachingCourseProgressRequest}
  */
-public final class UpdateTeachingCourseProgressRequest extends
+@java.lang.Deprecated public final class UpdateTeachingCourseProgressRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:glory_api.UpdateTeachingCourseProgressRequest)
     UpdateTeachingCourseProgressRequestOrBuilder {
@@ -510,6 +511,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * 更新老师授课课程进度
+   * 将废弃：请改用统一进度上报 ReportCourseProgress（teaching=true）；本接口保留兼容存量客户端
    * </pre>
    *
    * Protobuf type {@code glory_api.UpdateTeachingCourseProgressRequest}

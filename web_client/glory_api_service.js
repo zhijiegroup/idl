@@ -53,6 +53,7 @@ import * as cmodule from "./course/cmodule";
 import * as nmodule from "./course/nmodule";
 import * as course from "./course/course";
 import * as progress_stat from "./course/progress_stat";
+import * as progress_report from "./course/progress_report";
 import * as graph from "./course/graph";
 import * as user_course from "./course/user_course";
 import * as teaching_plan from "./course/teaching_plan";
@@ -119,6 +120,7 @@ export {
   nmodule,
   course,
   progress_stat,
+  progress_report,
   graph,
   user_course,
   teaching_plan,
@@ -2606,6 +2608,14 @@ export class glory_api {
 
   UpdateCourseProgress(request) {
     const uri = `${this.uriPrefix}/api/course/update_course_progress`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ReportCourseProgress(request) {
+    const uri = `${this.uriPrefix}/api/course/report_course_progress`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

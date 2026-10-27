@@ -108,39 +108,39 @@ public final class UserCourse {
       "\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequest" +
       "\022\021\n\tcourse_id\030\002 \001(\003\"?\n\026DeleteMyCourseRes" +
       "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
-      "onse\"\334\001\n\033UpdateCourseProgressRequest\022\'\n\014" +
+      "onse\"\340\001\n\033UpdateCourseProgressRequest\022\'\n\014" +
       "base_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n" +
       "\tcourse_id\030\002 \001(\003\022\033\n\023chapter_resource_id\030" +
       "\003 \001(\003\022!\n\031chapter_resource_progress\030\004 \001(\002" +
       "\022!\n\031chapter_resource_duration\030\005 \001(\003\022\036\n\026r" +
-      "esource_play_position\030\006 \001(\003\"^\n\034UpdateCou" +
-      "rseProgressResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
-      ".base.BaseResponse\022\027\n\017course_progress\030\002 " +
-      "\001(\005\"\201\001\n\023ListMyCourseRequest\022\'\n\014base_requ" +
-      "est\030\001 \001(\0132\021.base.BaseRequest\022\024\n\014course_s" +
-      "tate\030\002 \001(\005\022+\n\npagination\030d \001(\0132\027.base.Pa" +
-      "ginationRequest\"\237\001\n\024ListMyCourseResponse" +
-      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022" +
-      "2\n\014user_courses\030\002 \003(\0132\034.glory_api.UserCo" +
-      "urseSummary\022,\n\npagination\030d \001(\0132\030.base.P" +
-      "aginationResponse\"\247\001\n\022FavoriteLessonItem" +
-      "\022\021\n\tcourse_id\030\001 \001(\003\022\023\n\013course_name\030\002 \001(\t" +
-      "\022\030\n\020course_cover_url\030\003 \001(\t\022\020\n\010node_key\030\004" +
-      " \001(\t\022\023\n\013lesson_name\030\005 \001(\t\022\024\n\014chapter_pat" +
-      "h\030\006 \001(\t\022\022\n\ncreated_at\030\007 \001(\t\"w\n\025FavoriteL" +
+      "esource_play_position\030\006 \001(\003:\002\030\001\"b\n\034Updat" +
+      "eCourseProgressResponse\022%\n\tbase_resp\030\001 \001" +
+      "(\0132\022.base.BaseResponse\022\027\n\017course_progres" +
+      "s\030\002 \001(\005:\002\030\001\"\201\001\n\023ListMyCourseRequest\022\'\n\014b" +
+      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022\024\n\014" +
+      "course_state\030\002 \001(\005\022+\n\npagination\030d \001(\0132\027" +
+      ".base.PaginationRequest\"\237\001\n\024ListMyCourse" +
+      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
+      "esponse\0222\n\014user_courses\030\002 \003(\0132\034.glory_ap" +
+      "i.UserCourseSummary\022,\n\npagination\030d \001(\0132" +
+      "\030.base.PaginationResponse\"\247\001\n\022FavoriteLe" +
+      "ssonItem\022\021\n\tcourse_id\030\001 \001(\003\022\023\n\013course_na" +
+      "me\030\002 \001(\t\022\030\n\020course_cover_url\030\003 \001(\t\022\020\n\010no" +
+      "de_key\030\004 \001(\t\022\023\n\013lesson_name\030\005 \001(\t\022\024\n\014cha" +
+      "pter_path\030\006 \001(\t\022\022\n\ncreated_at\030\007 \001(\t\"w\n\025F" +
+      "avoriteLessonRequest\022\'\n\014base_request\030\001 \001" +
+      "(\0132\021.base.BaseRequest\022\021\n\tcourse_id\030\002 \001(\003" +
+      "\022\020\n\010node_key\030\003 \001(\t\022\020\n\010favorite\030\004 \001(\010\"?\n\026" +
+      "FavoriteLessonResponse\022%\n\tbase_resp\030\001 \001(" +
+      "\0132\022.base.BaseResponse\"s\n\033ListMyFavoriteL" +
       "essonRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
-      "e.BaseRequest\022\021\n\tcourse_id\030\002 \001(\003\022\020\n\010node" +
-      "_key\030\003 \001(\t\022\020\n\010favorite\030\004 \001(\010\"?\n\026Favorite" +
-      "LessonResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
-      ".BaseResponse\"s\n\033ListMyFavoriteLessonReq" +
-      "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
-      "quest\022+\n\npagination\030d \001(\0132\027.base.Paginat" +
-      "ionRequest\"\241\001\n\034ListMyFavoriteLessonRespo" +
-      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
-      "se\022,\n\005items\030\002 \003(\0132\035.glory_api.FavoriteLe" +
-      "ssonItem\022,\n\npagination\030d \001(\0132\030.base.Pagi" +
-      "nationResponseB%\n!com.zhijiejiaoyu.glory" +
-      "_api.courseP\001b\006proto3"
+      "e.BaseRequest\022+\n\npagination\030d \001(\0132\027.base" +
+      ".PaginationRequest\"\241\001\n\034ListMyFavoriteLes" +
+      "sonResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
+      "seResponse\022,\n\005items\030\002 \003(\0132\035.glory_api.Fa" +
+      "voriteLessonItem\022,\n\npagination\030d \001(\0132\030.b" +
+      "ase.PaginationResponseB%\n!com.zhijiejiao" +
+      "yu.glory_api.courseP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -875,6 +875,7 @@ class DeleteTeachingPlanResponse extends $pb.GeneratedMessage {
 }
 
 /// 更新老师授课课程进度
+/// 将废弃：请改用统一进度上报 ReportCourseProgress（teaching=true）；本接口保留兼容存量客户端
 class UpdateTeachingCourseProgressRequest extends $pb.GeneratedMessage {
   factory UpdateTeachingCourseProgressRequest({
     $0.BaseRequest? baseRequest,

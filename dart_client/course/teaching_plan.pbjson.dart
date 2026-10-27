@@ -197,6 +197,7 @@ const UpdateTeachingCourseProgressRequest$json = {
     {'1': 'current_lesson_no', '3': 7, '4': 1, '5': 5, '10': 'currentLessonNo'},
     {'1': 'resource_play_position', '3': 8, '4': 1, '5': 3, '10': 'resourcePlayPosition'},
   ],
+  '7': {'3': true},
 };
 
 /// Descriptor for `UpdateTeachingCourseProgressRequest`. Decode as a `google.protobuf.DescriptorProto`.
@@ -208,7 +209,7 @@ final $typed_data.Uint8List updateTeachingCourseProgressRequestDescriptor = $con
     'b2dyZXNzEjoKGWNoYXB0ZXJfcmVzb3VyY2VfZHVyYXRpb24YBSABKANSF2NoYXB0ZXJSZXNvdX'
     'JjZUR1cmF0aW9uEhkKCGNsYXNzX2lkGAYgASgDUgdjbGFzc0lkEioKEWN1cnJlbnRfbGVzc29u'
     'X25vGAcgASgFUg9jdXJyZW50TGVzc29uTm8SNAoWcmVzb3VyY2VfcGxheV9wb3NpdGlvbhgIIA'
-    'EoA1IUcmVzb3VyY2VQbGF5UG9zaXRpb24=');
+    'EoA1IUcmVzb3VyY2VQbGF5UG9zaXRpb246AhgB');
 
 @$core.Deprecated('Use updateTeachingCourseProgressResponseDescriptor instead')
 const UpdateTeachingCourseProgressResponse$json = {
@@ -217,13 +218,14 @@ const UpdateTeachingCourseProgressResponse$json = {
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
     {'1': 'course_progress', '3': 2, '4': 1, '5': 5, '10': 'courseProgress'},
   ],
+  '7': {'3': true},
 };
 
 /// Descriptor for `UpdateTeachingCourseProgressResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updateTeachingCourseProgressResponseDescriptor = $convert.base64Decode(
     'CiRVcGRhdGVUZWFjaGluZ0NvdXJzZVByb2dyZXNzUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgAS'
     'gLMhIuYmFzZS5CYXNlUmVzcG9uc2VSCGJhc2VSZXNwEicKD2NvdXJzZV9wcm9ncmVzcxgCIAEo'
-    'BVIOY291cnNlUHJvZ3Jlc3M=');
+    'BVIOY291cnNlUHJvZ3Jlc3M6AhgB');
 
 @$core.Deprecated('Use teachingTaskItemDescriptor instead')
 const TeachingTaskItem$json = {

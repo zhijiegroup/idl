@@ -3,7 +3,7 @@
 
 package com.zhijiejiaoyu.glory_api.course;
 
-public interface UpdateCourseProgressRequestOrBuilder extends
+@java.lang.Deprecated public interface UpdateCourseProgressRequestOrBuilder extends
     // @@protoc_insertion_point(interface_extends:glory_api.UpdateCourseProgressRequest)
     com.google.protobuf.MessageOrBuilder {
 

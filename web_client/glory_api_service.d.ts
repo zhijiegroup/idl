@@ -51,6 +51,7 @@ import * as cmodule from "./course/cmodule";
 import * as nmodule from "./course/nmodule";
 import * as course from "./course/course";
 import * as progress_stat from "./course/progress_stat";
+import * as progress_report from "./course/progress_report";
 import * as graph from "./course/graph";
 import * as user_course from "./course/user_course";
 import * as teaching_plan from "./course/teaching_plan";
@@ -117,6 +118,7 @@ export {
   nmodule,
   course,
   progress_stat,
+  progress_report,
   graph,
   user_course,
   teaching_plan,
@@ -1478,10 +1480,16 @@ CreateLivePlanProduct create live plan product */
     request: user_course.DeleteMyCourseRequest
   ): Promise<user_course.DeleteMyCourseResponse>;
 
-  /** 上报课程进度 */
+  /** 上报课程进度
+将废弃：请改用统一进度上报 ReportCourseProgress（teaching=false）；保留兼容存量客户端 */
   UpdateCourseProgress(
     request: user_course.UpdateCourseProgressRequest
   ): Promise<user_course.UpdateCourseProgressResponse>;
+
+  /** 统一进度上报（teaching=false=学生逐节进度；teaching=true=老师授课进度） */
+  ReportCourseProgress(
+    request: progress_report.ReportCourseProgressRequest
+  ): Promise<progress_report.ReportCourseProgressResponse>;
 
   /** 我的课程列表 */
   ListMyCourse(
@@ -1537,7 +1545,8 @@ CreateLivePlanProduct create live plan product */
     request: teaching_plan.DeleteTeachingPlanRequest
   ): Promise<teaching_plan.DeleteTeachingPlanResponse>;
 
-  /** 上报老师授课课程进度 */
+  /** 上报老师授课课程进度
+将废弃：请改用统一进度上报 ReportCourseProgress（teaching=true）；保留兼容存量客户端 */
   UpdateTeachingCourseProgress(
     request: teaching_plan.UpdateTeachingCourseProgressRequest
   ): Promise<teaching_plan.UpdateTeachingCourseProgressResponse>;

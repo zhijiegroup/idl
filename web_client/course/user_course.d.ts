@@ -50,7 +50,8 @@ export interface DeleteMyCourseResponse {
   base_resp?: base.BaseResponse;
 }
 
-/** 更新课程进度 */
+/** 更新课程进度
+将废弃：请改用统一进度上报 ReportCourseProgress（teaching=false）；本接口保留兼容存量客户端 */
 export interface UpdateCourseProgressRequest {
   base_request?: base.BaseRequest;
   /** 课程ID */

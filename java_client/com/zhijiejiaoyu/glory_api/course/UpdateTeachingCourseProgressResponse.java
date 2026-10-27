@@ -6,7 +6,7 @@ package com.zhijiejiaoyu.glory_api.course;
 /**
  * Protobuf type {@code glory_api.UpdateTeachingCourseProgressResponse}
  */
-public final class UpdateTeachingCourseProgressResponse extends
+@java.lang.Deprecated public final class UpdateTeachingCourseProgressResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:glory_api.UpdateTeachingCourseProgressResponse)
     UpdateTeachingCourseProgressResponseOrBuilder {

@@ -153,6 +153,9 @@ nonisolated struct GloryApi_DeleteMyCourseResponse: Sendable {
 }
 
 /// 更新课程进度
+/// 将废弃：请改用统一进度上报 ReportCourseProgress（teaching=false）；本接口保留兼容存量客户端
+///
+/// NOTE: This message was marked as deprecated in the .proto file.
 nonisolated struct GloryApi_UpdateCourseProgressRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -189,6 +192,7 @@ nonisolated struct GloryApi_UpdateCourseProgressRequest: Sendable {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
+/// NOTE: This message was marked as deprecated in the .proto file.
 nonisolated struct GloryApi_UpdateCourseProgressResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
