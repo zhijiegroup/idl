@@ -977,6 +977,7 @@ class NmResource extends $pb.GeneratedMessage {
     $core.String? resourceUrl,
     $core.String? fileType,
     $core.String? nodeKey,
+    $core.bool? isFavorite,
   }) {
     final $result = create();
     if (resourceId != null) {
@@ -1000,6 +1001,9 @@ class NmResource extends $pb.GeneratedMessage {
     if (nodeKey != null) {
       $result.nodeKey = nodeKey;
     }
+    if (isFavorite != null) {
+      $result.isFavorite = isFavorite;
+    }
     return $result;
   }
   NmResource._() : super();
@@ -1014,6 +1018,7 @@ class NmResource extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'resourceUrl')
     ..aOS(6, _omitFieldNames ? '' : 'fileType')
     ..aOS(7, _omitFieldNames ? '' : 'nodeKey')
+    ..aOB(8, _omitFieldNames ? '' : 'isFavorite')
     ..hasRequiredFields = false
   ;
 
@@ -1100,6 +1105,15 @@ class NmResource extends $pb.GeneratedMessage {
   $core.bool hasNodeKey() => $_has(6);
   @$pb.TagNumber(7)
   void clearNodeKey() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get isFavorite => $_getBF(7);
+  @$pb.TagNumber(8)
+  set isFavorite($core.bool v) { $_setBool(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasIsFavorite() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearIsFavorite() => clearField(8);
 }
 
 class CreateNmCourseResponse extends $pb.GeneratedMessage {

@@ -326,6 +326,9 @@ nonisolated struct GloryApi_NmResource: Sendable {
   /// 课节稳定标识(= resource_id)，用于收藏与深链定位；新增字段
   var nodeKey: String = String()
 
+  /// 当前用户是否已收藏该课节；新增字段
+  var isFavorite: Bool = false
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1126,7 +1129,7 @@ nonisolated extension GloryApi_NmChapter: SwiftProtobuf.Message, SwiftProtobuf._
 
 nonisolated extension GloryApi_NmResource: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".NmResource"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}resource_id\0\u{3}resource_name\0\u{3}resource_type\0\u{3}resource_path\0\u{3}resource_url\0\u{3}file_type\0\u{3}node_key\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}resource_id\0\u{3}resource_name\0\u{3}resource_type\0\u{3}resource_path\0\u{3}resource_url\0\u{3}file_type\0\u{3}node_key\0\u{3}is_favorite\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1141,6 +1144,7 @@ nonisolated extension GloryApi_NmResource: SwiftProtobuf.Message, SwiftProtobuf.
       case 5: try { try decoder.decodeSingularStringField(value: &self.resourceURL) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.fileType) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.nodeKey) }()
+      case 8: try { try decoder.decodeSingularBoolField(value: &self.isFavorite) }()
       default: break
       }
     }
@@ -1168,6 +1172,9 @@ nonisolated extension GloryApi_NmResource: SwiftProtobuf.Message, SwiftProtobuf.
     if !self.nodeKey.isEmpty {
       try visitor.visitSingularStringField(value: self.nodeKey, fieldNumber: 7)
     }
+    if self.isFavorite != false {
+      try visitor.visitSingularBoolField(value: self.isFavorite, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1179,6 +1186,7 @@ nonisolated extension GloryApi_NmResource: SwiftProtobuf.Message, SwiftProtobuf.
     if lhs.resourceURL != rhs.resourceURL {return false}
     if lhs.fileType != rhs.fileType {return false}
     if lhs.nodeKey != rhs.nodeKey {return false}
+    if lhs.isFavorite != rhs.isFavorite {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
