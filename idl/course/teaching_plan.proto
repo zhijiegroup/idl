@@ -77,10 +77,10 @@ message UpdateTeachingCourseProgressRequest {
     int64 course_id = 2; // 课程ID(自建课程可传 0)
     int64 chapter_resource_id = 3; // 当前课程资源ID
     float chapter_resource_progress = 4; // 当前课程资源播放进度（0-100）
-    float chapter_resource_duration = 5; // 当前课程资源总时长（毫秒）
+    int64 chapter_resource_duration = 5; // 当前课程资源总时长（整数，毫秒）
     int64 class_id = 6; // 授课班级ID；传值时按授课任务推进(current_lesson_no 取 MAX、只增不退)，不传时保持旧行为；新增字段
     int32 current_lesson_no = 7; // 当前末级节点序号(1-based)；满进度自动结课，已结课任务拒绝推进；新增字段
-    float room_play_position = 8; // 房间播放点位（毫秒，视频内当前播放位置；可回退，落库取最新值）
+    int64 resource_play_position = 8; // 资源播放点位（整数，毫秒，视频内当前播放位置；必填；可回退，落库取最新值）
   }
 
   message UpdateTeachingCourseProgressResponse {
