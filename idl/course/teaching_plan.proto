@@ -72,7 +72,9 @@ message DeleteTeachingPlanResponse {
 }
 
 // 更新老师授课课程进度
+// 将废弃：请改用统一进度上报 ReportCourseProgress（teaching=true）；本接口保留兼容存量客户端
 message UpdateTeachingCourseProgressRequest {
+    option deprecated = true;
     base.BaseRequest base_request = 1;
     int64 course_id = 2; // 课程ID(自建课程可传 0)
     int64 chapter_resource_id = 3; // 当前课程资源ID
@@ -84,6 +86,7 @@ message UpdateTeachingCourseProgressRequest {
   }
 
   message UpdateTeachingCourseProgressResponse {
+    option deprecated = true;
     base.BaseResponse base_resp = 1;
     int32 course_progress = 2; // 当前课程总进度
   }

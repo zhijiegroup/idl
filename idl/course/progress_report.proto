@@ -1,0 +1,27 @@
+syntax = "proto3";
+package glory_api;
+option java_package = "com.zhijiejiaoyu.glory_api.course";
+option java_multiple_files = true;
+
+import "base.proto";
+
+// 统一进度上报：以 teaching 标志位合并「学生逐节进度上报」与「老师授课进度上报」。
+// 原 UpdateCourseProgress / UpdateTeachingCourseProgress 保留并标记废弃，由本接口逐步替代：
+//   teaching=false 等价原 UpdateCourseProgress（学生逐节进度，逐资源 upsert + 课程总进度聚合）；
+//   teaching=true  等价原 UpdateTeachingCourseProgress（授课进度，class_id>0 走授课任务，缺省走旧授课路径）。
+message ReportCourseProgressRequest {
+  base.BaseRequest base_request = 1;
+  bool teaching = 2; // 上报类型标志：false=学生逐节进度上报；true=老师授课进度上报
+  int64 course_id = 3; // 课程ID（teaching=true 且自建课程时可传 0）
+  int64 chapter_resource_id = 4; // 当前课程资源ID
+  float chapter_resource_progress = 5; // 当前课程资源播放进度（0-100）
+  int64 chapter_resource_duration = 6; // 当前课程资源总时长（整数，毫秒）
+  int64 resource_play_position = 7; // 资源播放点位（整数，毫秒，视频内当前播放位置；必填；可回退，落库取最新值）
+  int64 class_id = 8; // 授课班级ID；仅 teaching=true：传值时按授课任务推进(current_lesson_no 取 MAX、只增不退)，不传时保持旧行为
+  int32 current_lesson_no = 9; // 当前末级节点序号(1-based)；仅 teaching=true：满进度自动结课，已结课任务拒绝推进
+}
+
+message ReportCourseProgressResponse {
+  base.BaseResponse base_resp = 1;
+  int32 course_progress = 2; // 当前课程总进度
+}
