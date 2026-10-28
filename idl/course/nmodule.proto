@@ -86,6 +86,7 @@ message NmResource {
     string file_type = 6; // 文件类型(0:默认;1:PPT;2:PDF)
     string node_key = 7; // 课节稳定标识(= resource_id)，用于收藏与深链定位；新增字段
     bool is_favorite = 8; // 当前用户是否已收藏该课节；新增字段
+    int64 resource_play_position = 9; // 资源播放点位（整数毫秒，视频内当前播放位置；取当前用户最近一次上报值，用于续播）；新增字段
 }
 
 message CreateNmCourseResponse {
