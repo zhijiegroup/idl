@@ -23,6 +23,7 @@ message CourseResource {
   string resource_content = 7; // 课程资源内容，用于课后习题和教案
   repeated CourseResourceFile files = 8; // 课程资源类型为教学课件时的文件(PDF/PPT)列表；课程未购买时返回空数组
   string node_key = 9; // 课节稳定标识(= resource_id)，用于收藏与深链定位；新增字段
+  bool is_favorite = 10; // 当前用户是否已收藏该课节；新增字段
 }
 
 message CourseChapter {
