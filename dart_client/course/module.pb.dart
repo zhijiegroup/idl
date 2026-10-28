@@ -147,6 +147,7 @@ class CourseResource extends $pb.GeneratedMessage {
     $core.Iterable<CourseResourceFile>? files,
     $core.String? nodeKey,
     $core.bool? isFavorite,
+    $fixnum.Int64? resourcePlayPosition,
   }) {
     final $result = create();
     if (resourceId != null) {
@@ -176,6 +177,9 @@ class CourseResource extends $pb.GeneratedMessage {
     if (isFavorite != null) {
       $result.isFavorite = isFavorite;
     }
+    if (resourcePlayPosition != null) {
+      $result.resourcePlayPosition = resourcePlayPosition;
+    }
     return $result;
   }
   CourseResource._() : super();
@@ -192,6 +196,7 @@ class CourseResource extends $pb.GeneratedMessage {
     ..pc<CourseResourceFile>(8, _omitFieldNames ? '' : 'files', $pb.PbFieldType.PM, subBuilder: CourseResourceFile.create)
     ..aOS(9, _omitFieldNames ? '' : 'nodeKey')
     ..aOB(10, _omitFieldNames ? '' : 'isFavorite')
+    ..aInt64(11, _omitFieldNames ? '' : 'resourcePlayPosition')
     ..hasRequiredFields = false
   ;
 
@@ -290,6 +295,15 @@ class CourseResource extends $pb.GeneratedMessage {
   $core.bool hasIsFavorite() => $_has(8);
   @$pb.TagNumber(10)
   void clearIsFavorite() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $fixnum.Int64 get resourcePlayPosition => $_getI64(9);
+  @$pb.TagNumber(11)
+  set resourcePlayPosition($fixnum.Int64 v) { $_setInt64(9, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasResourcePlayPosition() => $_has(9);
+  @$pb.TagNumber(11)
+  void clearResourcePlayPosition() => clearField(11);
 }
 
 class CourseChapter extends $pb.GeneratedMessage {

@@ -329,6 +329,9 @@ nonisolated struct GloryApi_NmResource: Sendable {
   /// 当前用户是否已收藏该课节；新增字段
   var isFavorite: Bool = false
 
+  /// 资源播放点位（整数毫秒，视频内当前播放位置；取当前用户最近一次上报值，用于续播）；新增字段
+  var resourcePlayPosition: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1129,7 +1132,7 @@ nonisolated extension GloryApi_NmChapter: SwiftProtobuf.Message, SwiftProtobuf._
 
 nonisolated extension GloryApi_NmResource: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".NmResource"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}resource_id\0\u{3}resource_name\0\u{3}resource_type\0\u{3}resource_path\0\u{3}resource_url\0\u{3}file_type\0\u{3}node_key\0\u{3}is_favorite\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}resource_id\0\u{3}resource_name\0\u{3}resource_type\0\u{3}resource_path\0\u{3}resource_url\0\u{3}file_type\0\u{3}node_key\0\u{3}is_favorite\0\u{3}resource_play_position\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1145,6 +1148,7 @@ nonisolated extension GloryApi_NmResource: SwiftProtobuf.Message, SwiftProtobuf.
       case 6: try { try decoder.decodeSingularStringField(value: &self.fileType) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.nodeKey) }()
       case 8: try { try decoder.decodeSingularBoolField(value: &self.isFavorite) }()
+      case 9: try { try decoder.decodeSingularInt64Field(value: &self.resourcePlayPosition) }()
       default: break
       }
     }
@@ -1175,6 +1179,9 @@ nonisolated extension GloryApi_NmResource: SwiftProtobuf.Message, SwiftProtobuf.
     if self.isFavorite != false {
       try visitor.visitSingularBoolField(value: self.isFavorite, fieldNumber: 8)
     }
+    if self.resourcePlayPosition != 0 {
+      try visitor.visitSingularInt64Field(value: self.resourcePlayPosition, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1187,6 +1194,7 @@ nonisolated extension GloryApi_NmResource: SwiftProtobuf.Message, SwiftProtobuf.
     if lhs.fileType != rhs.fileType {return false}
     if lhs.nodeKey != rhs.nodeKey {return false}
     if lhs.isFavorite != rhs.isFavorite {return false}
+    if lhs.resourcePlayPosition != rhs.resourcePlayPosition {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

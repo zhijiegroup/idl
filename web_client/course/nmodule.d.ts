@@ -95,6 +95,8 @@ export interface NmResource {
   node_key?: string;
   /** 当前用户是否已收藏该课节；新增字段 */
   is_favorite?: boolean;
+  /** 资源播放点位（整数毫秒，视频内当前播放位置；取当前用户最近一次上报值，用于续播）；新增字段 */
+  resource_play_position?: string;
 }
 
 export interface CreateNmCourseResponse {

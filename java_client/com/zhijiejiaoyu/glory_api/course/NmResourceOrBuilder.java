@@ -112,4 +112,14 @@ public interface NmResourceOrBuilder extends
    * @return The isFavorite.
    */
   boolean getIsFavorite();
+
+  /**
+   * <pre>
+   * 资源播放点位（整数毫秒，视频内当前播放位置；取当前用户最近一次上报值，用于续播）；新增字段
+   * </pre>
+   *
+   * <code>int64 resource_play_position = 9;</code>
+   * @return The resourcePlayPosition.
+   */
+  long getResourcePlayPosition();
 }

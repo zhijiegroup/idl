@@ -978,6 +978,7 @@ class NmResource extends $pb.GeneratedMessage {
     $core.String? fileType,
     $core.String? nodeKey,
     $core.bool? isFavorite,
+    $fixnum.Int64? resourcePlayPosition,
   }) {
     final $result = create();
     if (resourceId != null) {
@@ -1004,6 +1005,9 @@ class NmResource extends $pb.GeneratedMessage {
     if (isFavorite != null) {
       $result.isFavorite = isFavorite;
     }
+    if (resourcePlayPosition != null) {
+      $result.resourcePlayPosition = resourcePlayPosition;
+    }
     return $result;
   }
   NmResource._() : super();
@@ -1019,6 +1023,7 @@ class NmResource extends $pb.GeneratedMessage {
     ..aOS(6, _omitFieldNames ? '' : 'fileType')
     ..aOS(7, _omitFieldNames ? '' : 'nodeKey')
     ..aOB(8, _omitFieldNames ? '' : 'isFavorite')
+    ..aInt64(9, _omitFieldNames ? '' : 'resourcePlayPosition')
     ..hasRequiredFields = false
   ;
 
@@ -1114,6 +1119,15 @@ class NmResource extends $pb.GeneratedMessage {
   $core.bool hasIsFavorite() => $_has(7);
   @$pb.TagNumber(8)
   void clearIsFavorite() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $fixnum.Int64 get resourcePlayPosition => $_getI64(8);
+  @$pb.TagNumber(9)
+  set resourcePlayPosition($fixnum.Int64 v) { $_setInt64(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasResourcePlayPosition() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearResourcePlayPosition() => clearField(9);
 }
 
 class CreateNmCourseResponse extends $pb.GeneratedMessage {

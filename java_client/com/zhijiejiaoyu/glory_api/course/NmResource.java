@@ -98,6 +98,11 @@ private static final long serialVersionUID = 0L;
             isFavorite = input.readBool();
             break;
           }
+          case 72: {
+
+            resourcePlayPosition = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -381,6 +386,21 @@ private static final long serialVersionUID = 0L;
     return isFavorite ;
   }
 
+  public static final int RESOURCE_PLAY_POSITION_FIELD_NUMBER = 9;
+  private long resourcePlayPosition ;
+  /**
+   * <pre>
+   * 资源播放点位（整数毫秒，视频内当前播放位置；取当前用户最近一次上报值，用于续播）；新增字段
+   * </pre>
+   *
+   * <code>int64 resource_play_position = 9;</code>
+   * @return The resourcePlayPosition.
+   */
+  @java.lang.Override
+  public long getResourcePlayPosition() {
+    return resourcePlayPosition ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -419,6 +439,9 @@ private static final long serialVersionUID = 0L;
     if (isFavorite != false) {
       output.writeBool(8, isFavorite );
     }
+    if (resourcePlayPosition != 0L) {
+      output.writeInt64(9, resourcePlayPosition );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -455,6 +478,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(8, isFavorite );
     }
+    if (resourcePlayPosition != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(9, resourcePlayPosition );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -486,6 +513,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getNodeKey())) return false;
     if (getIsFavorite()
         != other.getIsFavorite()) return false;
+    if (getResourcePlayPosition()
+        != other.getResourcePlayPosition()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -516,6 +545,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + IS_FAVORITE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getIsFavorite());
+    hash = (37 * hash) + RESOURCE_PLAY_POSITION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getResourcePlayPosition());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -665,6 +697,8 @@ private static final long serialVersionUID = 0L;
 
       isFavorite = false;
 
+      resourcePlayPosition = 0L;
+
       return this;
     }
 
@@ -699,6 +733,7 @@ private static final long serialVersionUID = 0L;
       result.fileType = fileType ;
       result.nodeKey = nodeKey ;
       result.isFavorite = isFavorite ;
+      result.resourcePlayPosition = resourcePlayPosition ;
       onBuilt();
       return result;
     }
@@ -775,6 +810,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getIsFavorite() != false) {
         setIsFavorite(other.getIsFavorite());
+      }
+      if (other.getResourcePlayPosition() != 0L) {
+        setResourcePlayPosition(other.getResourcePlayPosition());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1346,6 +1384,49 @@ private static final long serialVersionUID = 0L;
     public Builder clearIsFavorite() {
       
       isFavorite = false;
+      onChanged();
+      return this;
+    }
+
+    private long resourcePlayPosition ;
+    /**
+     * <pre>
+     * 资源播放点位（整数毫秒，视频内当前播放位置；取当前用户最近一次上报值，用于续播）；新增字段
+     * </pre>
+     *
+     * <code>int64 resource_play_position = 9;</code>
+     * @return The resourcePlayPosition.
+     */
+    @java.lang.Override
+    public long getResourcePlayPosition() {
+      return resourcePlayPosition ;
+    }
+    /**
+     * <pre>
+     * 资源播放点位（整数毫秒，视频内当前播放位置；取当前用户最近一次上报值，用于续播）；新增字段
+     * </pre>
+     *
+     * <code>int64 resource_play_position = 9;</code>
+     * @param value The resourcePlayPosition to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourcePlayPosition(long value) {
+      
+      resourcePlayPosition = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 资源播放点位（整数毫秒，视频内当前播放位置；取当前用户最近一次上报值，用于续播）；新增字段
+     * </pre>
+     *
+     * <code>int64 resource_play_position = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearResourcePlayPosition() {
+      
+      resourcePlayPosition = 0L;
       onChanged();
       return this;
     }

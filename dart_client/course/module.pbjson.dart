@@ -46,6 +46,7 @@ const CourseResource$json = {
     {'1': 'files', '3': 8, '4': 3, '5': 11, '6': '.glory_api.CourseResourceFile', '10': 'files'},
     {'1': 'node_key', '3': 9, '4': 1, '5': 9, '10': 'nodeKey'},
     {'1': 'is_favorite', '3': 10, '4': 1, '5': 8, '10': 'isFavorite'},
+    {'1': 'resource_play_position', '3': 11, '4': 1, '5': 3, '10': 'resourcePlayPosition'},
   ],
 };
 
@@ -57,7 +58,8 @@ final $typed_data.Uint8List courseResourceDescriptor = $convert.base64Decode(
     'NvdXJjZV91cmwYBiABKAlSC3Jlc291cmNlVXJsEikKEHJlc291cmNlX2NvbnRlbnQYByABKAlS'
     'D3Jlc291cmNlQ29udGVudBIzCgVmaWxlcxgIIAMoCzIdLmdsb3J5X2FwaS5Db3Vyc2VSZXNvdX'
     'JjZUZpbGVSBWZpbGVzEhkKCG5vZGVfa2V5GAkgASgJUgdub2RlS2V5Eh8KC2lzX2Zhdm9yaXRl'
-    'GAogASgIUgppc0Zhdm9yaXRl');
+    'GAogASgIUgppc0Zhdm9yaXRlEjQKFnJlc291cmNlX3BsYXlfcG9zaXRpb24YCyABKANSFHJlc2'
+    '91cmNlUGxheVBvc2l0aW9u');
 
 @$core.Deprecated('Use courseChapterDescriptor instead')
 const CourseChapter$json = {
