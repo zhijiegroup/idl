@@ -146,6 +146,7 @@ class CourseResource extends $pb.GeneratedMessage {
     $core.String? resourceContent,
     $core.Iterable<CourseResourceFile>? files,
     $core.String? nodeKey,
+    $core.bool? isFavorite,
   }) {
     final $result = create();
     if (resourceId != null) {
@@ -172,6 +173,9 @@ class CourseResource extends $pb.GeneratedMessage {
     if (nodeKey != null) {
       $result.nodeKey = nodeKey;
     }
+    if (isFavorite != null) {
+      $result.isFavorite = isFavorite;
+    }
     return $result;
   }
   CourseResource._() : super();
@@ -187,6 +191,7 @@ class CourseResource extends $pb.GeneratedMessage {
     ..aOS(7, _omitFieldNames ? '' : 'resourceContent')
     ..pc<CourseResourceFile>(8, _omitFieldNames ? '' : 'files', $pb.PbFieldType.PM, subBuilder: CourseResourceFile.create)
     ..aOS(9, _omitFieldNames ? '' : 'nodeKey')
+    ..aOB(10, _omitFieldNames ? '' : 'isFavorite')
     ..hasRequiredFields = false
   ;
 
@@ -276,6 +281,15 @@ class CourseResource extends $pb.GeneratedMessage {
   $core.bool hasNodeKey() => $_has(7);
   @$pb.TagNumber(9)
   void clearNodeKey() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get isFavorite => $_getBF(8);
+  @$pb.TagNumber(10)
+  set isFavorite($core.bool v) { $_setBool(8, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasIsFavorite() => $_has(8);
+  @$pb.TagNumber(10)
+  void clearIsFavorite() => clearField(10);
 }
 
 class CourseChapter extends $pb.GeneratedMessage {

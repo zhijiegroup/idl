@@ -170,4 +170,14 @@ public interface CourseResourceOrBuilder extends
    */
   com.google.protobuf.ByteString
       getNodeKeyBytes();
+
+  /**
+   * <pre>
+   * 当前用户是否已收藏该课节；新增字段
+   * </pre>
+   *
+   * <code>bool is_favorite = 10;</code>
+   * @return The isFavorite.
+   */
+  boolean getIsFavorite();
 }

@@ -77,6 +77,9 @@ nonisolated struct GloryApi_CourseResource: Sendable {
   /// 课节稳定标识(= resource_id)，用于收藏与深链定位；新增字段
   var nodeKey: String = String()
 
+  /// 当前用户是否已收藏该课节；新增字段
+  var isFavorite: Bool = false
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -591,7 +594,7 @@ nonisolated extension GloryApi_CourseResourceFile: SwiftProtobuf.Message, SwiftP
 
 nonisolated extension GloryApi_CourseResource: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CourseResource"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}resource_id\0\u{3}resource_name\0\u{3}resource_type\0\u{4}\u{2}resource_path\0\u{3}resource_url\0\u{3}resource_content\0\u{1}files\0\u{3}node_key\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}resource_id\0\u{3}resource_name\0\u{3}resource_type\0\u{4}\u{2}resource_path\0\u{3}resource_url\0\u{3}resource_content\0\u{1}files\0\u{3}node_key\0\u{3}is_favorite\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -607,6 +610,7 @@ nonisolated extension GloryApi_CourseResource: SwiftProtobuf.Message, SwiftProto
       case 7: try { try decoder.decodeSingularStringField(value: &self.resourceContent) }()
       case 8: try { try decoder.decodeRepeatedMessageField(value: &self.files) }()
       case 9: try { try decoder.decodeSingularStringField(value: &self.nodeKey) }()
+      case 10: try { try decoder.decodeSingularBoolField(value: &self.isFavorite) }()
       default: break
       }
     }
@@ -637,6 +641,9 @@ nonisolated extension GloryApi_CourseResource: SwiftProtobuf.Message, SwiftProto
     if !self.nodeKey.isEmpty {
       try visitor.visitSingularStringField(value: self.nodeKey, fieldNumber: 9)
     }
+    if self.isFavorite != false {
+      try visitor.visitSingularBoolField(value: self.isFavorite, fieldNumber: 10)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -649,6 +656,7 @@ nonisolated extension GloryApi_CourseResource: SwiftProtobuf.Message, SwiftProto
     if lhs.resourceContent != rhs.resourceContent {return false}
     if lhs.files != rhs.files {return false}
     if lhs.nodeKey != rhs.nodeKey {return false}
+    if lhs.isFavorite != rhs.isFavorite {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

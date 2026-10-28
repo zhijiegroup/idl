@@ -37,6 +37,8 @@ export interface CourseResource {
   files?: Array<CourseResourceFile>;
   /** 课节稳定标识(= resource_id)，用于收藏与深链定位；新增字段 */
   node_key?: string;
+  /** 当前用户是否已收藏该课节；新增字段 */
+  is_favorite?: boolean;
 }
 
 export interface CourseChapter {

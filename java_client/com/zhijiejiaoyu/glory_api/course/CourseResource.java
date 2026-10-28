@@ -104,6 +104,11 @@ private static final long serialVersionUID = 0L;
             nodeKey = s;
             break;
           }
+          case 80: {
+
+            isFavorite = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -459,6 +464,21 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int IS_FAVORITE_FIELD_NUMBER = 10;
+  private boolean isFavorite ;
+  /**
+   * <pre>
+   * 当前用户是否已收藏该课节；新增字段
+   * </pre>
+   *
+   * <code>bool is_favorite = 10;</code>
+   * @return The isFavorite.
+   */
+  @java.lang.Override
+  public boolean getIsFavorite() {
+    return isFavorite ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -497,6 +517,9 @@ private static final long serialVersionUID = 0L;
     if (!getNodeKeyBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, nodeKey );
     }
+    if (isFavorite != false) {
+      output.writeBool(10, isFavorite );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -533,6 +556,10 @@ private static final long serialVersionUID = 0L;
     if (!getNodeKeyBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, nodeKey );
     }
+    if (isFavorite != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(10, isFavorite );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -564,6 +591,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getFilesList())) return false;
     if (!getNodeKey()
         .equals(other.getNodeKey())) return false;
+    if (getIsFavorite()
+        != other.getIsFavorite()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -594,6 +623,9 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + NODE_KEY_FIELD_NUMBER;
     hash = (53 * hash) + getNodeKey().hashCode();
+    hash = (37 * hash) + IS_FAVORITE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsFavorite());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -748,6 +780,8 @@ private static final long serialVersionUID = 0L;
       }
       nodeKey = "";
 
+      isFavorite = false;
+
       return this;
     }
 
@@ -791,6 +825,7 @@ private static final long serialVersionUID = 0L;
         result.files = filesBuilder .build();
       }
       result.nodeKey = nodeKey ;
+      result.isFavorite = isFavorite ;
       onBuilt();
       return result;
     }
@@ -890,6 +925,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getNodeKey().isEmpty()) {
         nodeKey = other.nodeKey ;
         onChanged();
+      }
+      if (other.getIsFavorite() != false) {
+        setIsFavorite(other.getIsFavorite());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1795,6 +1833,49 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       nodeKey = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean isFavorite ;
+    /**
+     * <pre>
+     * 当前用户是否已收藏该课节；新增字段
+     * </pre>
+     *
+     * <code>bool is_favorite = 10;</code>
+     * @return The isFavorite.
+     */
+    @java.lang.Override
+    public boolean getIsFavorite() {
+      return isFavorite ;
+    }
+    /**
+     * <pre>
+     * 当前用户是否已收藏该课节；新增字段
+     * </pre>
+     *
+     * <code>bool is_favorite = 10;</code>
+     * @param value The isFavorite to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsFavorite(boolean value) {
+      
+      isFavorite = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 当前用户是否已收藏该课节；新增字段
+     * </pre>
+     *
+     * <code>bool is_favorite = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsFavorite() {
+      
+      isFavorite = false;
       onChanged();
       return this;
     }
