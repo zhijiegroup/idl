@@ -3,7 +3,8 @@
 // @ts-nocheck
 
 import * as base from "../base";
-export { base };
+import * as modules from "./module";
+export { base, modules };
 
 export interface NmCourse {
   course_id?: string;
@@ -138,6 +139,8 @@ export interface NmCourseDetailResponse {
   course?: NmCourse;
   is_joined?: boolean;
   course_progress?: number;
+  /** 课程上次观看定位信息（章/节/资源/播放点位；无观看记录时为空）；新增字段 */
+  last_play?: modules.CourseLastPlay;
 }
 
 export interface ListNmCourseRequest {

@@ -653,6 +653,7 @@ class GetCourseResponse extends $pb.GeneratedMessage {
     Course? course,
     $core.bool? isJoined,
     $core.int? courseProgress,
+    $0.CourseLastPlay? lastPlay,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -667,6 +668,9 @@ class GetCourseResponse extends $pb.GeneratedMessage {
     if (courseProgress != null) {
       $result.courseProgress = courseProgress;
     }
+    if (lastPlay != null) {
+      $result.lastPlay = lastPlay;
+    }
     return $result;
   }
   GetCourseResponse._() : super();
@@ -678,6 +682,7 @@ class GetCourseResponse extends $pb.GeneratedMessage {
     ..aOM<Course>(2, _omitFieldNames ? '' : 'course', subBuilder: Course.create)
     ..aOB(3, _omitFieldNames ? '' : 'isJoined')
     ..a<$core.int>(4, _omitFieldNames ? '' : 'courseProgress', $pb.PbFieldType.O3)
+    ..aOM<$0.CourseLastPlay>(5, _omitFieldNames ? '' : 'lastPlay', subBuilder: $0.CourseLastPlay.create)
     ..hasRequiredFields = false
   ;
 
@@ -741,6 +746,17 @@ class GetCourseResponse extends $pb.GeneratedMessage {
   $core.bool hasCourseProgress() => $_has(3);
   @$pb.TagNumber(4)
   void clearCourseProgress() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $0.CourseLastPlay get lastPlay => $_getN(4);
+  @$pb.TagNumber(5)
+  set lastPlay($0.CourseLastPlay v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasLastPlay() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLastPlay() => clearField(5);
+  @$pb.TagNumber(5)
+  $0.CourseLastPlay ensureLastPlay() => $_ensure(4);
 }
 
 /// 更新模块化课程

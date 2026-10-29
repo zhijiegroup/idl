@@ -289,6 +289,7 @@ const NmCourseDetailResponse$json = {
     {'1': 'course', '3': 2, '4': 1, '5': 11, '6': '.glory_api.NmCourse', '10': 'course'},
     {'1': 'is_joined', '3': 4, '4': 1, '5': 8, '10': 'isJoined'},
     {'1': 'course_progress', '3': 3, '4': 1, '5': 5, '10': 'courseProgress'},
+    {'1': 'last_play', '3': 5, '4': 1, '5': 11, '6': '.glory_api.CourseLastPlay', '10': 'lastPlay'},
   ],
 };
 
@@ -297,7 +298,8 @@ final $typed_data.Uint8List nmCourseDetailResponseDescriptor = $convert.base64De
     'ChZObUNvdXJzZURldGFpbFJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQmFzZV'
     'Jlc3BvbnNlUghiYXNlUmVzcBIrCgZjb3Vyc2UYAiABKAsyEy5nbG9yeV9hcGkuTm1Db3Vyc2VS'
     'BmNvdXJzZRIbCglpc19qb2luZWQYBCABKAhSCGlzSm9pbmVkEicKD2NvdXJzZV9wcm9ncmVzcx'
-    'gDIAEoBVIOY291cnNlUHJvZ3Jlc3M=');
+    'gDIAEoBVIOY291cnNlUHJvZ3Jlc3MSNgoJbGFzdF9wbGF5GAUgASgLMhkuZ2xvcnlfYXBpLkNv'
+    'dXJzZUxhc3RQbGF5UghsYXN0UGxheQ==');
 
 @$core.Deprecated('Use listNmCourseRequestDescriptor instead')
 const ListNmCourseRequest$json = {

@@ -598,6 +598,114 @@ class CourseModule extends $pb.GeneratedMessage {
   void clearAssigned() => clearField(12);
 }
 
+/// 课程上次观看定位信息（用户维度，取当前用户在该课程下最近一条逐节进度记录）；
+/// 无观看记录时课程详情接口不下发该字段
+class CourseLastPlay extends $pb.GeneratedMessage {
+  factory CourseLastPlay({
+    $fixnum.Int64? resourceId,
+    $fixnum.Int64? chapterId,
+    $fixnum.Int64? parentChapterId,
+    $fixnum.Int64? moduleId,
+    $fixnum.Int64? playPosition,
+  }) {
+    final $result = create();
+    if (resourceId != null) {
+      $result.resourceId = resourceId;
+    }
+    if (chapterId != null) {
+      $result.chapterId = chapterId;
+    }
+    if (parentChapterId != null) {
+      $result.parentChapterId = parentChapterId;
+    }
+    if (moduleId != null) {
+      $result.moduleId = moduleId;
+    }
+    if (playPosition != null) {
+      $result.playPosition = playPosition;
+    }
+    return $result;
+  }
+  CourseLastPlay._() : super();
+  factory CourseLastPlay.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CourseLastPlay.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CourseLastPlay', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'resourceId')
+    ..aInt64(2, _omitFieldNames ? '' : 'chapterId')
+    ..aInt64(3, _omitFieldNames ? '' : 'parentChapterId')
+    ..aInt64(4, _omitFieldNames ? '' : 'moduleId')
+    ..aInt64(5, _omitFieldNames ? '' : 'playPosition')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CourseLastPlay clone() => CourseLastPlay()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CourseLastPlay copyWith(void Function(CourseLastPlay) updates) => super.copyWith((message) => updates(message as CourseLastPlay)) as CourseLastPlay;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CourseLastPlay create() => CourseLastPlay._();
+  CourseLastPlay createEmptyInstance() => create();
+  static $pb.PbList<CourseLastPlay> createRepeated() => $pb.PbList<CourseLastPlay>();
+  @$core.pragma('dart2js:noInline')
+  static CourseLastPlay getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CourseLastPlay>(create);
+  static CourseLastPlay? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get resourceId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set resourceId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasResourceId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearResourceId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get chapterId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set chapterId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasChapterId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearChapterId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get parentChapterId => $_getI64(2);
+  @$pb.TagNumber(3)
+  set parentChapterId($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasParentChapterId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearParentChapterId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get moduleId => $_getI64(3);
+  @$pb.TagNumber(4)
+  set moduleId($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasModuleId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearModuleId() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get playPosition => $_getI64(4);
+  @$pb.TagNumber(5)
+  set playPosition($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasPlayPosition() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPlayPosition() => clearField(5);
+}
+
 /// 获取能力指标编码
 class GetCourseModuleCodeRequest extends $pb.GeneratedMessage {
   factory GetCourseModuleCodeRequest({

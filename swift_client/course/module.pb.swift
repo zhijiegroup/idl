@@ -157,6 +157,33 @@ nonisolated struct GloryApi_CourseModule: Sendable {
   init() {}
 }
 
+/// 课程上次观看定位信息（用户维度，取当前用户在该课程下最近一条逐节进度记录）；
+/// 无观看记录时课程详情接口不下发该字段
+nonisolated struct GloryApi_CourseLastPlay: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  /// 最近观看的课节资源ID（模块化=course_resource，非模块化=nm_course_chapter_resource）
+  var resourceID: Int64 = 0
+
+  /// 资源所在章节ID：模块化=课程内容ID（CourseChapter.chapter_id，即"节"）；非模块化=叶子章节ID（NmChapter.chapter_id）
+  var chapterID: Int64 = 0
+
+  /// 非模块化二级章节结构中的父章ID（即"章"）；模块化课程或无父章时为 0
+  var parentChapterID: Int64 = 0
+
+  /// 模块化课程资源所在能力指标ID（即"章"）；非模块化为 0
+  var moduleID: Int64 = 0
+
+  /// 播放点位（整数毫秒，视频内当前播放位置，用于续播）
+  var playPosition: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 /// 获取能力指标编码
 nonisolated struct GloryApi_GetCourseModuleCodeRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
@@ -800,6 +827,56 @@ nonisolated extension GloryApi_CourseModule: SwiftProtobuf.Message, SwiftProtobu
     if lhs.childModules != rhs.childModules {return false}
     if lhs.createdAt != rhs.createdAt {return false}
     if lhs.assigned != rhs.assigned {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+nonisolated extension GloryApi_CourseLastPlay: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".CourseLastPlay"
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}resource_id\0\u{3}chapter_id\0\u{3}parent_chapter_id\0\u{3}module_id\0\u{3}play_position\0")
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.resourceID) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.chapterID) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.parentChapterID) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.moduleID) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.playPosition) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.resourceID != 0 {
+      try visitor.visitSingularInt64Field(value: self.resourceID, fieldNumber: 1)
+    }
+    if self.chapterID != 0 {
+      try visitor.visitSingularInt64Field(value: self.chapterID, fieldNumber: 2)
+    }
+    if self.parentChapterID != 0 {
+      try visitor.visitSingularInt64Field(value: self.parentChapterID, fieldNumber: 3)
+    }
+    if self.moduleID != 0 {
+      try visitor.visitSingularInt64Field(value: self.moduleID, fieldNumber: 4)
+    }
+    if self.playPosition != 0 {
+      try visitor.visitSingularInt64Field(value: self.playPosition, fieldNumber: 5)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_CourseLastPlay, rhs: GloryApi_CourseLastPlay) -> Bool {
+    if lhs.resourceID != rhs.resourceID {return false}
+    if lhs.chapterID != rhs.chapterID {return false}
+    if lhs.parentChapterID != rhs.parentChapterID {return false}
+    if lhs.moduleID != rhs.moduleID {return false}
+    if lhs.playPosition != rhs.playPosition {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

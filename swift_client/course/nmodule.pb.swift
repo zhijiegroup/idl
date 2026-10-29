@@ -482,12 +482,23 @@ nonisolated struct GloryApi_NmCourseDetailResponse: Sendable {
 
   var courseProgress: Int32 = 0
 
+  /// 课程上次观看定位信息（章/节/资源/播放点位；无观看记录时为空）；新增字段
+  var lastPlay: GloryApi_CourseLastPlay {
+    get {_lastPlay ?? GloryApi_CourseLastPlay()}
+    set {_lastPlay = newValue}
+  }
+  /// Returns true if `lastPlay` has been explicitly set.
+  var hasLastPlay: Bool {self._lastPlay != nil}
+  /// Clears the value of `lastPlay`. Subsequent reads from it will return its default value.
+  mutating func clearLastPlay() {self._lastPlay = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
   fileprivate var _course: GloryApi_NmCourse? = nil
+  fileprivate var _lastPlay: GloryApi_CourseLastPlay? = nil
 }
 
 nonisolated struct GloryApi_ListNmCourseRequest: Sendable {
@@ -1418,7 +1429,7 @@ nonisolated extension GloryApi_NmCourseDetailRequest: SwiftProtobuf.Message, Swi
 
 nonisolated extension GloryApi_NmCourseDetailResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".NmCourseDetailResponse"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{1}course\0\u{3}course_progress\0\u{3}is_joined\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{1}course\0\u{3}course_progress\0\u{3}is_joined\0\u{3}last_play\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1430,6 +1441,7 @@ nonisolated extension GloryApi_NmCourseDetailResponse: SwiftProtobuf.Message, Sw
       case 2: try { try decoder.decodeSingularMessageField(value: &self._course) }()
       case 3: try { try decoder.decodeSingularInt32Field(value: &self.courseProgress) }()
       case 4: try { try decoder.decodeSingularBoolField(value: &self.isJoined) }()
+      case 5: try { try decoder.decodeSingularMessageField(value: &self._lastPlay) }()
       default: break
       }
     }
@@ -1452,6 +1464,9 @@ nonisolated extension GloryApi_NmCourseDetailResponse: SwiftProtobuf.Message, Sw
     if self.isJoined != false {
       try visitor.visitSingularBoolField(value: self.isJoined, fieldNumber: 4)
     }
+    try { if let v = self._lastPlay {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1460,6 +1475,7 @@ nonisolated extension GloryApi_NmCourseDetailResponse: SwiftProtobuf.Message, Sw
     if lhs._course != rhs._course {return false}
     if lhs.isJoined != rhs.isJoined {return false}
     if lhs.courseProgress != rhs.courseProgress {return false}
+    if lhs._lastPlay != rhs._lastPlay {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

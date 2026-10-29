@@ -82,6 +82,8 @@ export interface GetCourseResponse {
   course?: Course;
   is_joined?: boolean;
   course_progress?: number;
+  /** 课程上次观看定位信息（章/节/资源/播放点位；无观看记录时为空）；新增字段 */
+  last_play?: modules.CourseLastPlay;
 }
 
 /** 更新模块化课程 */

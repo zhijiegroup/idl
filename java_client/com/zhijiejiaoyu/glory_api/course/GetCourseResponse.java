@@ -84,6 +84,19 @@ private static final long serialVersionUID = 0L;
             courseProgress = input.readInt32();
             break;
           }
+          case 42: {
+            com.zhijiejiaoyu.glory_api.course.CourseLastPlay.Builder subBuilder = null;
+            if (lastPlay != null) {
+              subBuilder = lastPlay .toBuilder();
+            }
+            lastPlay = input.readMessage(com.zhijiejiaoyu.glory_api.course.CourseLastPlay.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(lastPlay );
+              lastPlay = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -190,6 +203,44 @@ private static final long serialVersionUID = 0L;
     return courseProgress ;
   }
 
+  public static final int LAST_PLAY_FIELD_NUMBER = 5;
+  private com.zhijiejiaoyu.glory_api.course.CourseLastPlay lastPlay ;
+  /**
+   * <pre>
+   * 课程上次观看定位信息（章/节/资源/播放点位；无观看记录时为空）；新增字段
+   * </pre>
+   *
+   * <code>.glory_api.CourseLastPlay last_play = 5;</code>
+   * @return Whether the lastPlay field is set.
+   */
+  @java.lang.Override
+  public boolean hasLastPlay() {
+    return lastPlay != null;
+  }
+  /**
+   * <pre>
+   * 课程上次观看定位信息（章/节/资源/播放点位；无观看记录时为空）；新增字段
+   * </pre>
+   *
+   * <code>.glory_api.CourseLastPlay last_play = 5;</code>
+   * @return The lastPlay.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.CourseLastPlay getLastPlay() {
+    return lastPlay == null ? com.zhijiejiaoyu.glory_api.course.CourseLastPlay.getDefaultInstance() : lastPlay ;
+  }
+  /**
+   * <pre>
+   * 课程上次观看定位信息（章/节/资源/播放点位；无观看记录时为空）；新增字段
+   * </pre>
+   *
+   * <code>.glory_api.CourseLastPlay last_play = 5;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.CourseLastPlayOrBuilder getLastPlayOrBuilder() {
+    return getLastPlay();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -216,6 +267,9 @@ private static final long serialVersionUID = 0L;
     if (courseProgress != 0) {
       output.writeInt32(4, courseProgress );
     }
+    if (lastPlay != null) {
+      output.writeMessage(5, getLastPlay());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -240,6 +294,10 @@ private static final long serialVersionUID = 0L;
     if (courseProgress != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(4, courseProgress );
+    }
+    if (lastPlay != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getLastPlay());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -270,6 +328,11 @@ private static final long serialVersionUID = 0L;
         != other.getIsJoined()) return false;
     if (getCourseProgress()
         != other.getCourseProgress()) return false;
+    if (hasLastPlay() != other.hasLastPlay()) return false;
+    if (hasLastPlay()) {
+      if (!getLastPlay()
+          .equals(other.getLastPlay())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -294,6 +357,10 @@ private static final long serialVersionUID = 0L;
         getIsJoined());
     hash = (37 * hash) + COURSE_PROGRESS_FIELD_NUMBER;
     hash = (53 * hash) + getCourseProgress();
+    if (hasLastPlay()) {
+      hash = (37 * hash) + LAST_PLAY_FIELD_NUMBER;
+      hash = (53 * hash) + getLastPlay().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -443,6 +510,12 @@ private static final long serialVersionUID = 0L;
 
       courseProgress = 0;
 
+      if (lastPlayBuilder == null) {
+        lastPlay = null;
+      } else {
+        lastPlay = null;
+        lastPlayBuilder = null;
+      }
       return this;
     }
 
@@ -481,6 +554,11 @@ private static final long serialVersionUID = 0L;
       }
       result.isJoined = isJoined ;
       result.courseProgress = courseProgress ;
+      if (lastPlayBuilder == null) {
+        result.lastPlay = lastPlay ;
+      } else {
+        result.lastPlay = lastPlayBuilder .build();
+      }
       onBuilt();
       return result;
     }
@@ -540,6 +618,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getCourseProgress() != 0) {
         setCourseProgress(other.getCourseProgress());
+      }
+      if (other.hasLastPlay()) {
+        mergeLastPlay(other.getLastPlay());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -868,6 +949,161 @@ private static final long serialVersionUID = 0L;
       courseProgress = 0;
       onChanged();
       return this;
+    }
+
+    private com.zhijiejiaoyu.glory_api.course.CourseLastPlay lastPlay ;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.CourseLastPlay, com.zhijiejiaoyu.glory_api.course.CourseLastPlay.Builder, com.zhijiejiaoyu.glory_api.course.CourseLastPlayOrBuilder> lastPlayBuilder ;
+    /**
+     * <pre>
+     * 课程上次观看定位信息（章/节/资源/播放点位；无观看记录时为空）；新增字段
+     * </pre>
+     *
+     * <code>.glory_api.CourseLastPlay last_play = 5;</code>
+     * @return Whether the lastPlay field is set.
+     */
+    public boolean hasLastPlay() {
+      return lastPlayBuilder != null || lastPlay != null;
+    }
+    /**
+     * <pre>
+     * 课程上次观看定位信息（章/节/资源/播放点位；无观看记录时为空）；新增字段
+     * </pre>
+     *
+     * <code>.glory_api.CourseLastPlay last_play = 5;</code>
+     * @return The lastPlay.
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseLastPlay getLastPlay() {
+      if (lastPlayBuilder == null) {
+        return lastPlay == null ? com.zhijiejiaoyu.glory_api.course.CourseLastPlay.getDefaultInstance() : lastPlay ;
+      } else {
+        return lastPlayBuilder .getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 课程上次观看定位信息（章/节/资源/播放点位；无观看记录时为空）；新增字段
+     * </pre>
+     *
+     * <code>.glory_api.CourseLastPlay last_play = 5;</code>
+     */
+    public Builder setLastPlay(com.zhijiejiaoyu.glory_api.course.CourseLastPlay value) {
+      if (lastPlayBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        lastPlay = value;
+        onChanged();
+      } else {
+        lastPlayBuilder .setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程上次观看定位信息（章/节/资源/播放点位；无观看记录时为空）；新增字段
+     * </pre>
+     *
+     * <code>.glory_api.CourseLastPlay last_play = 5;</code>
+     */
+    public Builder setLastPlay(
+        com.zhijiejiaoyu.glory_api.course.CourseLastPlay.Builder builderForValue) {
+      if (lastPlayBuilder == null) {
+        lastPlay = builderForValue.build();
+        onChanged();
+      } else {
+        lastPlayBuilder .setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程上次观看定位信息（章/节/资源/播放点位；无观看记录时为空）；新增字段
+     * </pre>
+     *
+     * <code>.glory_api.CourseLastPlay last_play = 5;</code>
+     */
+    public Builder mergeLastPlay(com.zhijiejiaoyu.glory_api.course.CourseLastPlay value) {
+      if (lastPlayBuilder == null) {
+        if (lastPlay != null) {
+          lastPlay =
+            com.zhijiejiaoyu.glory_api.course.CourseLastPlay.newBuilder(lastPlay ).mergeFrom(value).buildPartial();
+        } else {
+          lastPlay = value;
+        }
+        onChanged();
+      } else {
+        lastPlayBuilder .mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程上次观看定位信息（章/节/资源/播放点位；无观看记录时为空）；新增字段
+     * </pre>
+     *
+     * <code>.glory_api.CourseLastPlay last_play = 5;</code>
+     */
+    public Builder clearLastPlay() {
+      if (lastPlayBuilder == null) {
+        lastPlay = null;
+        onChanged();
+      } else {
+        lastPlay = null;
+        lastPlayBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程上次观看定位信息（章/节/资源/播放点位；无观看记录时为空）；新增字段
+     * </pre>
+     *
+     * <code>.glory_api.CourseLastPlay last_play = 5;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseLastPlay.Builder getLastPlayBuilder() {
+      
+      onChanged();
+      return getLastPlayFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 课程上次观看定位信息（章/节/资源/播放点位；无观看记录时为空）；新增字段
+     * </pre>
+     *
+     * <code>.glory_api.CourseLastPlay last_play = 5;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseLastPlayOrBuilder getLastPlayOrBuilder() {
+      if (lastPlayBuilder != null) {
+        return lastPlayBuilder .getMessageOrBuilder();
+      } else {
+        return lastPlay == null ?
+            com.zhijiejiaoyu.glory_api.course.CourseLastPlay.getDefaultInstance() : lastPlay ;
+      }
+    }
+    /**
+     * <pre>
+     * 课程上次观看定位信息（章/节/资源/播放点位；无观看记录时为空）；新增字段
+     * </pre>
+     *
+     * <code>.glory_api.CourseLastPlay last_play = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.CourseLastPlay, com.zhijiejiaoyu.glory_api.course.CourseLastPlay.Builder, com.zhijiejiaoyu.glory_api.course.CourseLastPlayOrBuilder> 
+        getLastPlayFieldBuilder() {
+      if (lastPlayBuilder == null) {
+        lastPlayBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.course.CourseLastPlay, com.zhijiejiaoyu.glory_api.course.CourseLastPlay.Builder, com.zhijiejiaoyu.glory_api.course.CourseLastPlayOrBuilder>(
+                getLastPlay(),
+                getParentForChildren(),
+                isClean());
+        lastPlay = null;
+      }
+      return lastPlayBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

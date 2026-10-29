@@ -15,6 +15,7 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../base.pb.dart' as $0;
+import 'module.pb.dart' as $1;
 
 class NmCourse extends $pb.GeneratedMessage {
   factory NmCourse({
@@ -1562,6 +1563,7 @@ class NmCourseDetailResponse extends $pb.GeneratedMessage {
     NmCourse? course,
     $core.int? courseProgress,
     $core.bool? isJoined,
+    $1.CourseLastPlay? lastPlay,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -1576,6 +1578,9 @@ class NmCourseDetailResponse extends $pb.GeneratedMessage {
     if (isJoined != null) {
       $result.isJoined = isJoined;
     }
+    if (lastPlay != null) {
+      $result.lastPlay = lastPlay;
+    }
     return $result;
   }
   NmCourseDetailResponse._() : super();
@@ -1587,6 +1592,7 @@ class NmCourseDetailResponse extends $pb.GeneratedMessage {
     ..aOM<NmCourse>(2, _omitFieldNames ? '' : 'course', subBuilder: NmCourse.create)
     ..a<$core.int>(3, _omitFieldNames ? '' : 'courseProgress', $pb.PbFieldType.O3)
     ..aOB(4, _omitFieldNames ? '' : 'isJoined')
+    ..aOM<$1.CourseLastPlay>(5, _omitFieldNames ? '' : 'lastPlay', subBuilder: $1.CourseLastPlay.create)
     ..hasRequiredFields = false
   ;
 
@@ -1650,6 +1656,17 @@ class NmCourseDetailResponse extends $pb.GeneratedMessage {
   $core.bool hasIsJoined() => $_has(3);
   @$pb.TagNumber(4)
   void clearIsJoined() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $1.CourseLastPlay get lastPlay => $_getN(4);
+  @$pb.TagNumber(5)
+  set lastPlay($1.CourseLastPlay v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasLastPlay() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLastPlay() => clearField(5);
+  @$pb.TagNumber(5)
+  $1.CourseLastPlay ensureLastPlay() => $_ensure(4);
 }
 
 class ListNmCourseRequest extends $pb.GeneratedMessage {

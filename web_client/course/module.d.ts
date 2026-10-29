@@ -81,6 +81,21 @@ export interface CourseModule {
   assigned?: boolean;
 }
 
+/** 课程上次观看定位信息（用户维度，取当前用户在该课程下最近一条逐节进度记录）；
+无观看记录时课程详情接口不下发该字段 */
+export interface CourseLastPlay {
+  /** 最近观看的课节资源ID（模块化=course_resource，非模块化=nm_course_chapter_resource） */
+  resource_id?: string;
+  /** 资源所在章节ID：模块化=课程内容ID（CourseChapter.chapter_id，即"节"）；非模块化=叶子章节ID（NmChapter.chapter_id） */
+  chapter_id?: string;
+  /** 非模块化二级章节结构中的父章ID（即"章"）；模块化课程或无父章时为 0 */
+  parent_chapter_id?: string;
+  /** 模块化课程资源所在能力指标ID（即"章"）；非模块化为 0 */
+  module_id?: string;
+  /** 播放点位（整数毫秒，视频内当前播放位置，用于续播） */
+  play_position?: string;
+}
+
 /** 获取能力指标编码 */
 export interface GetCourseModuleCodeRequest {
   base_request?: base.BaseRequest;

@@ -48,4 +48,31 @@ public interface GetCourseResponseOrBuilder extends
    * @return The courseProgress.
    */
   int getCourseProgress();
+
+  /**
+   * <pre>
+   * 课程上次观看定位信息（章/节/资源/播放点位；无观看记录时为空）；新增字段
+   * </pre>
+   *
+   * <code>.glory_api.CourseLastPlay last_play = 5;</code>
+   * @return Whether the lastPlay field is set.
+   */
+  boolean hasLastPlay();
+  /**
+   * <pre>
+   * 课程上次观看定位信息（章/节/资源/播放点位；无观看记录时为空）；新增字段
+   * </pre>
+   *
+   * <code>.glory_api.CourseLastPlay last_play = 5;</code>
+   * @return The lastPlay.
+   */
+  com.zhijiejiaoyu.glory_api.course.CourseLastPlay getLastPlay();
+  /**
+   * <pre>
+   * 课程上次观看定位信息（章/节/资源/播放点位；无观看记录时为空）；新增字段
+   * </pre>
+   *
+   * <code>.glory_api.CourseLastPlay last_play = 5;</code>
+   */
+  com.zhijiejiaoyu.glory_api.course.CourseLastPlayOrBuilder getLastPlayOrBuilder();
 }

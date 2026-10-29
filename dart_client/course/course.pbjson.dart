@@ -136,6 +136,7 @@ const GetCourseResponse$json = {
     {'1': 'course', '3': 2, '4': 1, '5': 11, '6': '.glory_api.Course', '10': 'course'},
     {'1': 'is_joined', '3': 3, '4': 1, '5': 8, '10': 'isJoined'},
     {'1': 'course_progress', '3': 4, '4': 1, '5': 5, '10': 'courseProgress'},
+    {'1': 'last_play', '3': 5, '4': 1, '5': 11, '6': '.glory_api.CourseLastPlay', '10': 'lastPlay'},
   ],
 };
 
@@ -144,7 +145,8 @@ final $typed_data.Uint8List getCourseResponseDescriptor = $convert.base64Decode(
     'ChFHZXRDb3Vyc2VSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLkJhc2VSZXNwb2'
     '5zZVIIYmFzZVJlc3ASKQoGY291cnNlGAIgASgLMhEuZ2xvcnlfYXBpLkNvdXJzZVIGY291cnNl'
     'EhsKCWlzX2pvaW5lZBgDIAEoCFIIaXNKb2luZWQSJwoPY291cnNlX3Byb2dyZXNzGAQgASgFUg'
-    '5jb3Vyc2VQcm9ncmVzcw==');
+    '5jb3Vyc2VQcm9ncmVzcxI2CglsYXN0X3BsYXkYBSABKAsyGS5nbG9yeV9hcGkuQ291cnNlTGFz'
+    'dFBsYXlSCGxhc3RQbGF5');
 
 @$core.Deprecated('Use updateCourseRequestDescriptor instead')
 const UpdateCourseRequest$json = {

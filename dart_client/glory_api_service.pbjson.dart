@@ -1366,6 +1366,7 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.NmCourse': $44.NmCourse$json,
   '.glory_api.NmCourseDetailRequest': $44.NmCourseDetailRequest$json,
   '.glory_api.NmCourseDetailResponse': $44.NmCourseDetailResponse$json,
+  '.glory_api.CourseLastPlay': $42.CourseLastPlay$json,
   '.glory_api.DeleteNmCourseRequest': $44.DeleteNmCourseRequest$json,
   '.glory_api.DeleteNmCourseResponse': $44.DeleteNmCourseResponse$json,
   '.glory_api.CreateCourseRequest': $41.CreateCourseRequest$json,

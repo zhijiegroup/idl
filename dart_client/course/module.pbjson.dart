@@ -112,6 +112,25 @@ final $typed_data.Uint8List courseModuleDescriptor = $convert.base64Decode(
     '5nbG9yeV9hcGkuQ291cnNlTW9kdWxlUgxjaGlsZE1vZHVsZXMSHQoKY3JlYXRlZF9hdBgLIAEo'
     'CVIJY3JlYXRlZEF0EhoKCGFzc2lnbmVkGAwgASgIUghhc3NpZ25lZA==');
 
+@$core.Deprecated('Use courseLastPlayDescriptor instead')
+const CourseLastPlay$json = {
+  '1': 'CourseLastPlay',
+  '2': [
+    {'1': 'resource_id', '3': 1, '4': 1, '5': 3, '10': 'resourceId'},
+    {'1': 'chapter_id', '3': 2, '4': 1, '5': 3, '10': 'chapterId'},
+    {'1': 'parent_chapter_id', '3': 3, '4': 1, '5': 3, '10': 'parentChapterId'},
+    {'1': 'module_id', '3': 4, '4': 1, '5': 3, '10': 'moduleId'},
+    {'1': 'play_position', '3': 5, '4': 1, '5': 3, '10': 'playPosition'},
+  ],
+};
+
+/// Descriptor for `CourseLastPlay`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List courseLastPlayDescriptor = $convert.base64Decode(
+    'Cg5Db3Vyc2VMYXN0UGxheRIfCgtyZXNvdXJjZV9pZBgBIAEoA1IKcmVzb3VyY2VJZBIdCgpjaG'
+    'FwdGVyX2lkGAIgASgDUgljaGFwdGVySWQSKgoRcGFyZW50X2NoYXB0ZXJfaWQYAyABKANSD3Bh'
+    'cmVudENoYXB0ZXJJZBIbCgltb2R1bGVfaWQYBCABKANSCG1vZHVsZUlkEiMKDXBsYXlfcG9zaX'
+    'Rpb24YBSABKANSDHBsYXlQb3NpdGlvbg==');
+
 @$core.Deprecated('Use getCourseModuleCodeRequestDescriptor instead')
 const GetCourseModuleCodeRequest$json = {
   '1': 'GetCourseModuleCodeRequest',

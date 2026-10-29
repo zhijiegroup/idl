@@ -2,4 +2,5 @@
 // @ts-nocheck
 
 import * as base from "../base";
-export { base };
+import * as modules from "./module";
+export { base, modules };
