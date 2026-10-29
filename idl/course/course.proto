@@ -62,6 +62,7 @@ message GetCourseResponse {
   Course course = 2;
   bool is_joined = 3;
   int32 course_progress = 4;
+  CourseLastPlay last_play = 5; // 课程上次观看定位信息（章/节/资源/播放点位；无观看记录时为空）；新增字段
 }
 
 // 更新模块化课程

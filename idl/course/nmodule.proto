@@ -4,6 +4,7 @@ option java_package = "com.zhijiejiaoyu.glory_api.course";
 option java_multiple_files = true;
 
 import "base.proto";
+import "course/module.proto";
 
 message NmCourse {
     int64 course_id = 1;
@@ -126,6 +127,7 @@ message NmCourseDetailResponse {
     NmCourse course = 2;
     bool is_joined = 4;
     int32 course_progress = 3;
+    CourseLastPlay last_play = 5; // 课程上次观看定位信息（章/节/资源/播放点位；无观看记录时为空）；新增字段
 }
 
 message ListNmCourseRequest {
