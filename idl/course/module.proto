@@ -50,6 +50,16 @@ message CourseModule {
   bool assigned = 12;
 }
 
+// 课程上次观看定位信息（用户维度，取当前用户在该课程下最近一条逐节进度记录）；
+// 无观看记录时课程详情接口不下发该字段
+message CourseLastPlay {
+  int64 resource_id = 1; // 最近观看的课节资源ID（模块化=course_resource，非模块化=nm_course_chapter_resource）
+  int64 chapter_id = 2; // 资源所在章节ID：模块化=课程内容ID（CourseChapter.chapter_id，即"节"）；非模块化=叶子章节ID（NmChapter.chapter_id）
+  int64 parent_chapter_id = 3; // 非模块化二级章节结构中的父章ID（即"章"）；模块化课程或无父章时为 0
+  int64 module_id = 4; // 模块化课程资源所在能力指标ID（即"章"）；非模块化为 0
+  int64 play_position = 5; // 播放点位（整数毫秒，视频内当前播放位置，用于续播）
+}
+
 // 获取能力指标编码
 message GetCourseModuleCodeRequest {
   base.BaseRequest base_request = 1;
