@@ -118,6 +118,20 @@ message FavoriteSchoolDocResponse {
   base.BaseResponse base_resp = 1;
 }
 
+// 我收藏的学校文档列表(APP 端政策文件/人才培养方案收藏列表；按收藏时间倒序分页；学生不可见)
+message ListMyFavoriteSchoolDocRequest {
+  base.BaseRequest base_request = 1;
+  int32 doc_type = 2; // 文档类型：1.政策文件；2.人才培养方案
+  string name = 3; // 名称模糊(按收藏行名称匹配)
+  base.PaginationRequest pagination = 100;
+}
+
+message ListMyFavoriteSchoolDocResponse {
+  base.BaseResponse base_resp = 1;
+  repeated SchoolDocItem docs = 2; // favorited 恒为 true；file_url 为签名后的预览URL
+  base.PaginationResponse pagination = 100;
+}
+
 // ==================== 我的文档(个人文件网盘，仅教师本人可见) ====================
 
 // 我的文档条目(文件夹 + 文件)
