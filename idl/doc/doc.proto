@@ -35,9 +35,9 @@ message SchoolDocItem {
 message ListSchoolDocRequest {
   base.BaseRequest base_request = 1;
   int32 doc_type = 2; // 文档类型：1.政策文件；2.人才培养方案
-  int32 level = 3; // 仅 doc_type=1：0.全部；1.全国级(省级/市级文件通过省市定位)
-  string province = 4; // 仅 doc_type=1：选省返回该省发布(含省内各市)的文件
-  string city = 5; // 仅 doc_type=1：需先选省
+  int32 level = 3; // 仅 doc_type=1：0.全部；1.全国级(下拉框「国家级」选项；省级文件按省码筛选)
+  string province = 4; // 仅 doc_type=1：省级国标码(下拉框省级选项传值；该省 level=2/3 文件均归入展示)
+  string city = 5; // 【已废弃·前端不再使用】市级筛选随级别下拉框化下线，字段保留兼容存量
   string major = 6; // 仅 doc_type=2：专业筛选
   string grade = 7; // 仅 doc_type=2：年级筛选(如 2026)
   string name = 8; // 名称模糊
@@ -55,9 +55,9 @@ message CreateSchoolDocRequest {
   base.BaseRequest base_request = 1;
   int32 doc_type = 2; // 文档类型：1.政策文件；2.人才培养方案
   string doc_name = 3; // 名称
-  int32 level = 4; // doc_type=1 必填：1.全国级；2.省级；3.市级
-  string province = 5; // level=2 需省；level=3 需省市
-  string city = 6; // level=3 必填
+  int32 level = 4; // doc_type=1 必填：1.全国级；2.省级(3.市级已废弃，禁止新建)
+  string province = 5; // level=2 需省级国标码；level=3 已废弃
+  string city = 6; // 【已废弃】level=3 专用，禁止新建市级文件；字段保留兼容存量
   string org = 7; // doc_type=1 必填：发布机构
   string major = 8; // doc_type=2 必填：专业
   string grade = 9; // doc_type=2 必填：年级
@@ -79,9 +79,9 @@ message UpdateSchoolDocRequest {
   int64 doc_id = 2; // 文档ID
   int32 doc_type = 3; // 文档类型：1.政策文件；2.人才培养方案
   string doc_name = 4; // 名称
-  int32 level = 5; // 仅 doc_type=1：1.全国级；2.省级；3.市级
-  string province = 6; // 仅 doc_type=1
-  string city = 7; // 仅 doc_type=1
+  int32 level = 5; // 仅 doc_type=1：1.全国级；2.省级(3.市级已废弃，禁止编辑为市级)
+  string province = 6; // 仅 doc_type=1：level=2 需省级国标码
+  string city = 7; // 【已废弃】level=3 专用；字段保留兼容存量
   string org = 8; // 仅 doc_type=1：发布机构
   string major = 9; // 仅 doc_type=2：专业
   string grade = 10; // 仅 doc_type=2：年级
@@ -256,6 +256,22 @@ message ListRegionRequest {
 message ListRegionResponse {
   base.BaseResponse base_resp = 1;
   repeated RegionItem regions = 2; // 按国标码升序；港澳台无地级市层级(传其省码返回空)
+}
+
+// 有政策文件的省清单(政策文件级别下拉框动态省级选项；仅含有文件的省)
+message ListPolicyDocProvinceRequest {
+  base.BaseRequest base_request = 1;
+}
+
+message PolicyProvinceItem {
+  string code = 1; // 省级国标行政区划码(如 370000)
+  string name = 2; // 省级行政区划标准名称(如 山东省)
+  int64 doc_count = 3; // 该省政策文件数(level=2/3 均按省归入统计)
+}
+
+message ListPolicyDocProvinceResponse {
+  base.BaseResponse base_resp = 1;
+  repeated PolicyProvinceItem provinces = 2; // 按文件数降序，同数按国标码升序；无文件返回空
 }
 
 // ==================== 通用上传(我的文档与新建课程自定义资源共用) ====================
