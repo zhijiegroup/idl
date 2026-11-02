@@ -1426,6 +1426,10 @@ service glory_api {
   rpc FavoriteSchoolDoc(FavoriteSchoolDocRequest) returns (FavoriteSchoolDocResponse) {
     option (api.post) = '/api/doc/favorite_school_doc';
   }
+  // 我收藏的学校文档列表(APP 端收藏列表)
+  rpc ListMyFavoriteSchoolDoc(ListMyFavoriteSchoolDocRequest) returns (ListMyFavoriteSchoolDocResponse) {
+    option (api.post) = '/api/doc/list_my_favorite_school_doc';
+  }
   // 新建我的文档文件夹
   rpc CreateMyDocFolder(CreateMyDocFolderRequest) returns (CreateMyDocFolderResponse) {
     option (api.post) = '/api/doc/create_my_doc_folder';
