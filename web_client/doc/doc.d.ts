@@ -169,6 +169,23 @@ export interface FavoriteSchoolDocResponse {
   base_resp?: base.BaseResponse;
 }
 
+/** 我收藏的学校文档列表(APP 端政策文件/人才培养方案收藏列表；按收藏时间倒序分页；学生不可见) */
+export interface ListMyFavoriteSchoolDocRequest {
+  base_request?: base.BaseRequest;
+  /** 文档类型：1.政策文件；2.人才培养方案 */
+  doc_type?: number;
+  /** 名称模糊(按收藏行名称匹配) */
+  name?: string;
+  pagination?: base.PaginationRequest;
+}
+
+export interface ListMyFavoriteSchoolDocResponse {
+  base_resp?: base.BaseResponse;
+  /** favorited 恒为 true；file_url 为签名后的预览URL */
+  docs?: Array<SchoolDocItem>;
+  pagination?: base.PaginationResponse;
+}
+
 /** 我的文档条目(文件夹 + 文件) */
 export interface MyDocItem {
   /** 条目ID */

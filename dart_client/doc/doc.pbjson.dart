@@ -241,6 +241,41 @@ final $typed_data.Uint8List favoriteSchoolDocResponseDescriptor = $convert.base6
     'ChlGYXZvcml0ZVNjaG9vbERvY1Jlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQm'
     'FzZVJlc3BvbnNlUghiYXNlUmVzcA==');
 
+@$core.Deprecated('Use listMyFavoriteSchoolDocRequestDescriptor instead')
+const ListMyFavoriteSchoolDocRequest$json = {
+  '1': 'ListMyFavoriteSchoolDocRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'doc_type', '3': 2, '4': 1, '5': 5, '10': 'docType'},
+    {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `ListMyFavoriteSchoolDocRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyFavoriteSchoolDocRequestDescriptor = $convert.base64Decode(
+    'Ch5MaXN0TXlGYXZvcml0ZVNjaG9vbERvY1JlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMh'
+    'EuYmFzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSGQoIZG9jX3R5cGUYAiABKAVSB2RvY1R5'
+    'cGUSEgoEbmFtZRgDIAEoCVIEbmFtZRI3CgpwYWdpbmF0aW9uGGQgASgLMhcuYmFzZS5QYWdpbm'
+    'F0aW9uUmVxdWVzdFIKcGFnaW5hdGlvbg==');
+
+@$core.Deprecated('Use listMyFavoriteSchoolDocResponseDescriptor instead')
+const ListMyFavoriteSchoolDocResponse$json = {
+  '1': 'ListMyFavoriteSchoolDocResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'docs', '3': 2, '4': 3, '5': 11, '6': '.glory_api.SchoolDocItem', '10': 'docs'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationResponse', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `ListMyFavoriteSchoolDocResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyFavoriteSchoolDocResponseDescriptor = $convert.base64Decode(
+    'Ch9MaXN0TXlGYXZvcml0ZVNjaG9vbERvY1Jlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLm'
+    'Jhc2UuQmFzZVJlc3BvbnNlUghiYXNlUmVzcBIsCgRkb2NzGAIgAygLMhguZ2xvcnlfYXBpLlNj'
+    'aG9vbERvY0l0ZW1SBGRvY3MSOAoKcGFnaW5hdGlvbhhkIAEoCzIYLmJhc2UuUGFnaW5hdGlvbl'
+    'Jlc3BvbnNlUgpwYWdpbmF0aW9u');
+
 @$core.Deprecated('Use myDocItemDescriptor instead')
 const MyDocItem$json = {
   '1': 'MyDocItem',

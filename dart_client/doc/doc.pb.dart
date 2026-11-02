@@ -1405,6 +1405,179 @@ class FavoriteSchoolDocResponse extends $pb.GeneratedMessage {
   $0.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
+/// 我收藏的学校文档列表(APP 端政策文件/人才培养方案收藏列表；按收藏时间倒序分页；学生不可见)
+class ListMyFavoriteSchoolDocRequest extends $pb.GeneratedMessage {
+  factory ListMyFavoriteSchoolDocRequest({
+    $0.BaseRequest? baseRequest,
+    $core.int? docType,
+    $core.String? name,
+    $0.PaginationRequest? pagination,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (docType != null) {
+      $result.docType = docType;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
+    }
+    return $result;
+  }
+  ListMyFavoriteSchoolDocRequest._() : super();
+  factory ListMyFavoriteSchoolDocRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListMyFavoriteSchoolDocRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyFavoriteSchoolDocRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'docType', $pb.PbFieldType.O3)
+    ..aOS(3, _omitFieldNames ? '' : 'name')
+    ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListMyFavoriteSchoolDocRequest clone() => ListMyFavoriteSchoolDocRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListMyFavoriteSchoolDocRequest copyWith(void Function(ListMyFavoriteSchoolDocRequest) updates) => super.copyWith((message) => updates(message as ListMyFavoriteSchoolDocRequest)) as ListMyFavoriteSchoolDocRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyFavoriteSchoolDocRequest create() => ListMyFavoriteSchoolDocRequest._();
+  ListMyFavoriteSchoolDocRequest createEmptyInstance() => create();
+  static $pb.PbList<ListMyFavoriteSchoolDocRequest> createRepeated() => $pb.PbList<ListMyFavoriteSchoolDocRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyFavoriteSchoolDocRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyFavoriteSchoolDocRequest>(create);
+  static ListMyFavoriteSchoolDocRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.int get docType => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set docType($core.int v) { $_setSignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasDocType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDocType() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get name => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set name($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearName() => clearField(3);
+
+  @$pb.TagNumber(100)
+  $0.PaginationRequest get pagination => $_getN(3);
+  @$pb.TagNumber(100)
+  set pagination($0.PaginationRequest v) { setField(100, v); }
+  @$pb.TagNumber(100)
+  $core.bool hasPagination() => $_has(3);
+  @$pb.TagNumber(100)
+  void clearPagination() => clearField(100);
+  @$pb.TagNumber(100)
+  $0.PaginationRequest ensurePagination() => $_ensure(3);
+}
+
+class ListMyFavoriteSchoolDocResponse extends $pb.GeneratedMessage {
+  factory ListMyFavoriteSchoolDocResponse({
+    $0.BaseResponse? baseResp,
+    $core.Iterable<SchoolDocItem>? docs,
+    $0.PaginationResponse? pagination,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (docs != null) {
+      $result.docs.addAll(docs);
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
+    }
+    return $result;
+  }
+  ListMyFavoriteSchoolDocResponse._() : super();
+  factory ListMyFavoriteSchoolDocResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListMyFavoriteSchoolDocResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyFavoriteSchoolDocResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..pc<SchoolDocItem>(2, _omitFieldNames ? '' : 'docs', $pb.PbFieldType.PM, subBuilder: SchoolDocItem.create)
+    ..aOM<$0.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListMyFavoriteSchoolDocResponse clone() => ListMyFavoriteSchoolDocResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListMyFavoriteSchoolDocResponse copyWith(void Function(ListMyFavoriteSchoolDocResponse) updates) => super.copyWith((message) => updates(message as ListMyFavoriteSchoolDocResponse)) as ListMyFavoriteSchoolDocResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyFavoriteSchoolDocResponse create() => ListMyFavoriteSchoolDocResponse._();
+  ListMyFavoriteSchoolDocResponse createEmptyInstance() => create();
+  static $pb.PbList<ListMyFavoriteSchoolDocResponse> createRepeated() => $pb.PbList<ListMyFavoriteSchoolDocResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListMyFavoriteSchoolDocResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyFavoriteSchoolDocResponse>(create);
+  static ListMyFavoriteSchoolDocResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<SchoolDocItem> get docs => $_getList(1);
+
+  @$pb.TagNumber(100)
+  $0.PaginationResponse get pagination => $_getN(2);
+  @$pb.TagNumber(100)
+  set pagination($0.PaginationResponse v) { setField(100, v); }
+  @$pb.TagNumber(100)
+  $core.bool hasPagination() => $_has(2);
+  @$pb.TagNumber(100)
+  void clearPagination() => clearField(100);
+  @$pb.TagNumber(100)
+  $0.PaginationResponse ensurePagination() => $_ensure(2);
+}
+
 /// 我的文档条目(文件夹 + 文件)
 class MyDocItem extends $pb.GeneratedMessage {
   factory MyDocItem({

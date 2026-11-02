@@ -1618,6 +1618,11 @@ CreateLivePlanProduct create live plan product */
     request: doc.FavoriteSchoolDocRequest
   ): Promise<doc.FavoriteSchoolDocResponse>;
 
+  /** 我收藏的学校文档列表(APP 端收藏列表) */
+  ListMyFavoriteSchoolDoc(
+    request: doc.ListMyFavoriteSchoolDocRequest
+  ): Promise<doc.ListMyFavoriteSchoolDocResponse>;
+
   /** 新建我的文档文件夹 */
   CreateMyDocFolder(
     request: doc.CreateMyDocFolderRequest
