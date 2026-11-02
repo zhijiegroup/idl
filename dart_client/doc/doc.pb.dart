@@ -3043,6 +3043,197 @@ class ListRegionResponse extends $pb.GeneratedMessage {
   $core.List<RegionItem> get regions => $_getList(1);
 }
 
+/// 有政策文件的省清单(政策文件级别下拉框动态省级选项；仅含有文件的省)
+class ListPolicyDocProvinceRequest extends $pb.GeneratedMessage {
+  factory ListPolicyDocProvinceRequest({
+    $0.BaseRequest? baseRequest,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    return $result;
+  }
+  ListPolicyDocProvinceRequest._() : super();
+  factory ListPolicyDocProvinceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListPolicyDocProvinceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPolicyDocProvinceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListPolicyDocProvinceRequest clone() => ListPolicyDocProvinceRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListPolicyDocProvinceRequest copyWith(void Function(ListPolicyDocProvinceRequest) updates) => super.copyWith((message) => updates(message as ListPolicyDocProvinceRequest)) as ListPolicyDocProvinceRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListPolicyDocProvinceRequest create() => ListPolicyDocProvinceRequest._();
+  ListPolicyDocProvinceRequest createEmptyInstance() => create();
+  static $pb.PbList<ListPolicyDocProvinceRequest> createRepeated() => $pb.PbList<ListPolicyDocProvinceRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListPolicyDocProvinceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListPolicyDocProvinceRequest>(create);
+  static ListPolicyDocProvinceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+}
+
+class PolicyProvinceItem extends $pb.GeneratedMessage {
+  factory PolicyProvinceItem({
+    $core.String? code,
+    $core.String? name,
+    $fixnum.Int64? docCount,
+  }) {
+    final $result = create();
+    if (code != null) {
+      $result.code = code;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (docCount != null) {
+      $result.docCount = docCount;
+    }
+    return $result;
+  }
+  PolicyProvinceItem._() : super();
+  factory PolicyProvinceItem.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PolicyProvinceItem.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PolicyProvinceItem', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'code')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aInt64(3, _omitFieldNames ? '' : 'docCount')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PolicyProvinceItem clone() => PolicyProvinceItem()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PolicyProvinceItem copyWith(void Function(PolicyProvinceItem) updates) => super.copyWith((message) => updates(message as PolicyProvinceItem)) as PolicyProvinceItem;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PolicyProvinceItem create() => PolicyProvinceItem._();
+  PolicyProvinceItem createEmptyInstance() => create();
+  static $pb.PbList<PolicyProvinceItem> createRepeated() => $pb.PbList<PolicyProvinceItem>();
+  @$core.pragma('dart2js:noInline')
+  static PolicyProvinceItem getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PolicyProvinceItem>(create);
+  static PolicyProvinceItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get code => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set code($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCode() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get docCount => $_getI64(2);
+  @$pb.TagNumber(3)
+  set docCount($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDocCount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDocCount() => clearField(3);
+}
+
+class ListPolicyDocProvinceResponse extends $pb.GeneratedMessage {
+  factory ListPolicyDocProvinceResponse({
+    $0.BaseResponse? baseResp,
+    $core.Iterable<PolicyProvinceItem>? provinces,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (provinces != null) {
+      $result.provinces.addAll(provinces);
+    }
+    return $result;
+  }
+  ListPolicyDocProvinceResponse._() : super();
+  factory ListPolicyDocProvinceResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListPolicyDocProvinceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPolicyDocProvinceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..pc<PolicyProvinceItem>(2, _omitFieldNames ? '' : 'provinces', $pb.PbFieldType.PM, subBuilder: PolicyProvinceItem.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListPolicyDocProvinceResponse clone() => ListPolicyDocProvinceResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListPolicyDocProvinceResponse copyWith(void Function(ListPolicyDocProvinceResponse) updates) => super.copyWith((message) => updates(message as ListPolicyDocProvinceResponse)) as ListPolicyDocProvinceResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListPolicyDocProvinceResponse create() => ListPolicyDocProvinceResponse._();
+  ListPolicyDocProvinceResponse createEmptyInstance() => create();
+  static $pb.PbList<ListPolicyDocProvinceResponse> createRepeated() => $pb.PbList<ListPolicyDocProvinceResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListPolicyDocProvinceResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListPolicyDocProvinceResponse>(create);
+  static ListPolicyDocProvinceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<PolicyProvinceItem> get provinces => $_getList(1);
+}
+
 /// 上传成功的文件结果
 class UploadedFile extends $pb.GeneratedMessage {
   factory UploadedFile({

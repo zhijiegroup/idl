@@ -50,11 +50,11 @@ export interface ListSchoolDocRequest {
   base_request?: base.BaseRequest;
   /** 文档类型：1.政策文件；2.人才培养方案 */
   doc_type?: number;
-  /** 仅 doc_type=1：0.全部；1.全国级(省级/市级文件通过省市定位) */
+  /** 仅 doc_type=1：0.全部；1.全国级(下拉框「国家级」选项；省级文件按省码筛选) */
   level?: number;
-  /** 仅 doc_type=1：选省返回该省发布(含省内各市)的文件 */
+  /** 仅 doc_type=1：省级国标码(下拉框省级选项传值；该省 level=2/3 文件均归入展示) */
   province?: string;
-  /** 仅 doc_type=1：需先选省 */
+  /** 【已废弃·前端不再使用】市级筛选随级别下拉框化下线，字段保留兼容存量 */
   city?: string;
   /** 仅 doc_type=2：专业筛选 */
   major?: string;
@@ -78,11 +78,11 @@ export interface CreateSchoolDocRequest {
   doc_type?: number;
   /** 名称 */
   doc_name?: string;
-  /** doc_type=1 必填：1.全国级；2.省级；3.市级 */
+  /** doc_type=1 必填：1.全国级；2.省级(3.市级已废弃，禁止新建) */
   level?: number;
-  /** level=2 需省；level=3 需省市 */
+  /** level=2 需省级国标码；level=3 已废弃 */
   province?: string;
-  /** level=3 必填 */
+  /** 【已废弃】level=3 专用，禁止新建市级文件；字段保留兼容存量 */
   city?: string;
   /** doc_type=1 必填：发布机构 */
   org?: string;
@@ -117,11 +117,11 @@ export interface UpdateSchoolDocRequest {
   doc_type?: number;
   /** 名称 */
   doc_name?: string;
-  /** 仅 doc_type=1：1.全国级；2.省级；3.市级 */
+  /** 仅 doc_type=1：1.全国级；2.省级(3.市级已废弃，禁止编辑为市级) */
   level?: number;
-  /** 仅 doc_type=1 */
+  /** 仅 doc_type=1：level=2 需省级国标码 */
   province?: string;
-  /** 仅 doc_type=1 */
+  /** 【已废弃】level=3 专用；字段保留兼容存量 */
   city?: string;
   /** 仅 doc_type=1：发布机构 */
   org?: string;
@@ -338,6 +338,26 @@ export interface ListRegionResponse {
   base_resp?: base.BaseResponse;
   /** 按国标码升序；港澳台无地级市层级(传其省码返回空) */
   regions?: Array<RegionItem>;
+}
+
+/** 有政策文件的省清单(政策文件级别下拉框动态省级选项；仅含有文件的省) */
+export interface ListPolicyDocProvinceRequest {
+  base_request?: base.BaseRequest;
+}
+
+export interface PolicyProvinceItem {
+  /** 省级国标行政区划码(如 370000) */
+  code?: string;
+  /** 省级行政区划标准名称(如 山东省) */
+  name?: string;
+  /** 该省政策文件数(level=2/3 均按省归入统计) */
+  doc_count?: string;
+}
+
+export interface ListPolicyDocProvinceResponse {
+  base_resp?: base.BaseResponse;
+  /** 按文件数降序，同数按国标码升序；无文件返回空 */
+  provinces?: Array<PolicyProvinceItem>;
 }
 
 /** 上传成功的文件结果 */

@@ -578,6 +578,49 @@ final $typed_data.Uint8List listRegionResponseDescriptor = $convert.base64Decode
     '9uc2VSCGJhc2VSZXNwEi8KB3JlZ2lvbnMYAiADKAsyFS5nbG9yeV9hcGkuUmVnaW9uSXRlbVIH'
     'cmVnaW9ucw==');
 
+@$core.Deprecated('Use listPolicyDocProvinceRequestDescriptor instead')
+const ListPolicyDocProvinceRequest$json = {
+  '1': 'ListPolicyDocProvinceRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+  ],
+};
+
+/// Descriptor for `ListPolicyDocProvinceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listPolicyDocProvinceRequestDescriptor = $convert.base64Decode(
+    'ChxMaXN0UG9saWN5RG9jUHJvdmluY2VSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLm'
+    'Jhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0');
+
+@$core.Deprecated('Use policyProvinceItemDescriptor instead')
+const PolicyProvinceItem$json = {
+  '1': 'PolicyProvinceItem',
+  '2': [
+    {'1': 'code', '3': 1, '4': 1, '5': 9, '10': 'code'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'doc_count', '3': 3, '4': 1, '5': 3, '10': 'docCount'},
+  ],
+};
+
+/// Descriptor for `PolicyProvinceItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List policyProvinceItemDescriptor = $convert.base64Decode(
+    'ChJQb2xpY3lQcm92aW5jZUl0ZW0SEgoEY29kZRgBIAEoCVIEY29kZRISCgRuYW1lGAIgASgJUg'
+    'RuYW1lEhsKCWRvY19jb3VudBgDIAEoA1IIZG9jQ291bnQ=');
+
+@$core.Deprecated('Use listPolicyDocProvinceResponseDescriptor instead')
+const ListPolicyDocProvinceResponse$json = {
+  '1': 'ListPolicyDocProvinceResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'provinces', '3': 2, '4': 3, '5': 11, '6': '.glory_api.PolicyProvinceItem', '10': 'provinces'},
+  ],
+};
+
+/// Descriptor for `ListPolicyDocProvinceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listPolicyDocProvinceResponseDescriptor = $convert.base64Decode(
+    'Ch1MaXN0UG9saWN5RG9jUHJvdmluY2VSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYX'
+    'NlLkJhc2VSZXNwb25zZVIIYmFzZVJlc3ASOwoJcHJvdmluY2VzGAIgAygLMh0uZ2xvcnlfYXBp'
+    'LlBvbGljeVByb3ZpbmNlSXRlbVIJcHJvdmluY2Vz');
+
 @$core.Deprecated('Use uploadedFileDescriptor instead')
 const UploadedFile$json = {
   '1': 'UploadedFile',

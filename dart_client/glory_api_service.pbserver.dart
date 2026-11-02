@@ -435,6 +435,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$51.FavoriteSchoolDocResponse> favoriteSchoolDoc($pb.ServerContext ctx, $51.FavoriteSchoolDocRequest request);
   $async.Future<$51.ListMyFavoriteSchoolDocResponse> listMyFavoriteSchoolDoc($pb.ServerContext ctx, $51.ListMyFavoriteSchoolDocRequest request);
   $async.Future<$51.ListRegionResponse> listRegion($pb.ServerContext ctx, $51.ListRegionRequest request);
+  $async.Future<$51.ListPolicyDocProvinceResponse> listPolicyDocProvince($pb.ServerContext ctx, $51.ListPolicyDocProvinceRequest request);
   $async.Future<$51.CreateMyDocFolderResponse> createMyDocFolder($pb.ServerContext ctx, $51.CreateMyDocFolderRequest request);
   $async.Future<$51.RenameMyDocFolderResponse> renameMyDocFolder($pb.ServerContext ctx, $51.RenameMyDocFolderRequest request);
   $async.Future<$51.DeleteMyDocFolderResponse> deleteMyDocFolder($pb.ServerContext ctx, $51.DeleteMyDocFolderRequest request);
@@ -921,6 +922,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'FavoriteSchoolDoc': return $51.FavoriteSchoolDocRequest();
       case 'ListMyFavoriteSchoolDoc': return $51.ListMyFavoriteSchoolDocRequest();
       case 'ListRegion': return $51.ListRegionRequest();
+      case 'ListPolicyDocProvince': return $51.ListPolicyDocProvinceRequest();
       case 'CreateMyDocFolder': return $51.CreateMyDocFolderRequest();
       case 'RenameMyDocFolder': return $51.RenameMyDocFolderRequest();
       case 'DeleteMyDocFolder': return $51.DeleteMyDocFolderRequest();
@@ -1410,6 +1412,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'FavoriteSchoolDoc': return this.favoriteSchoolDoc(ctx, request as $51.FavoriteSchoolDocRequest);
       case 'ListMyFavoriteSchoolDoc': return this.listMyFavoriteSchoolDoc(ctx, request as $51.ListMyFavoriteSchoolDocRequest);
       case 'ListRegion': return this.listRegion(ctx, request as $51.ListRegionRequest);
+      case 'ListPolicyDocProvince': return this.listPolicyDocProvince(ctx, request as $51.ListPolicyDocProvinceRequest);
       case 'CreateMyDocFolder': return this.createMyDocFolder(ctx, request as $51.CreateMyDocFolderRequest);
       case 'RenameMyDocFolder': return this.renameMyDocFolder(ctx, request as $51.RenameMyDocFolderRequest);
       case 'DeleteMyDocFolder': return this.deleteMyDocFolder(ctx, request as $51.DeleteMyDocFolderRequest);

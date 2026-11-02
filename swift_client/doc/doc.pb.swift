@@ -152,13 +152,13 @@ nonisolated struct GloryApi_ListSchoolDocRequest: Sendable {
   /// 文档类型：1.政策文件；2.人才培养方案
   var docType: Int32 = 0
 
-  /// 仅 doc_type=1：0.全部；1.全国级(省级/市级文件通过省市定位)
+  /// 仅 doc_type=1：0.全部；1.全国级(下拉框「国家级」选项；省级文件按省码筛选)
   var level: Int32 = 0
 
-  /// 仅 doc_type=1：选省返回该省发布(含省内各市)的文件
+  /// 仅 doc_type=1：省级国标码(下拉框省级选项传值；该省 level=2/3 文件均归入展示)
   var province: String = String()
 
-  /// 仅 doc_type=1：需先选省
+  /// 【已废弃·前端不再使用】市级筛选随级别下拉框化下线，字段保留兼容存量
   var city: String = String()
 
   /// 仅 doc_type=2：专业筛选
@@ -241,13 +241,13 @@ nonisolated struct GloryApi_CreateSchoolDocRequest: Sendable {
   /// 名称
   var docName: String = String()
 
-  /// doc_type=1 必填：1.全国级；2.省级；3.市级
+  /// doc_type=1 必填：1.全国级；2.省级(3.市级已废弃，禁止新建)
   var level: Int32 = 0
 
-  /// level=2 需省；level=3 需省市
+  /// level=2 需省级国标码；level=3 已废弃
   var province: String = String()
 
-  /// level=3 必填
+  /// 【已废弃】level=3 专用，禁止新建市级文件；字段保留兼容存量
   var city: String = String()
 
   /// doc_type=1 必填：发布机构
@@ -329,13 +329,13 @@ nonisolated struct GloryApi_UpdateSchoolDocRequest: Sendable {
   /// 名称
   var docName: String = String()
 
-  /// 仅 doc_type=1：1.全国级；2.省级；3.市级
+  /// 仅 doc_type=1：1.全国级；2.省级(3.市级已废弃，禁止编辑为市级)
   var level: Int32 = 0
 
-  /// 仅 doc_type=1
+  /// 仅 doc_type=1：level=2 需省级国标码
   var province: String = String()
 
-  /// 仅 doc_type=1
+  /// 【已废弃】level=3 专用；字段保留兼容存量
   var city: String = String()
 
   /// 仅 doc_type=1：发布机构
@@ -1065,6 +1065,71 @@ nonisolated struct GloryApi_ListRegionResponse: Sendable {
 
   /// 按国标码升序；港澳台无地级市层级(传其省码返回空)
   var regions: [GloryApi_RegionItem] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
+/// 有政策文件的省清单(政策文件级别下拉框动态省级选项；仅含有文件的省)
+nonisolated struct GloryApi_ListPolicyDocProvinceRequest: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {_baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+nonisolated struct GloryApi_PolicyProvinceItem: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  /// 省级国标行政区划码(如 370000)
+  var code: String = String()
+
+  /// 省级行政区划标准名称(如 山东省)
+  var name: String = String()
+
+  /// 该省政策文件数(level=2/3 均按省归入统计)
+  var docCount: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+nonisolated struct GloryApi_ListPolicyDocProvinceResponse: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {_baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  /// 按文件数降序，同数按国标码升序；无文件返回空
+  var provinces: [GloryApi_PolicyProvinceItem] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -2795,6 +2860,119 @@ nonisolated extension GloryApi_ListRegionResponse: SwiftProtobuf.Message, SwiftP
   static func ==(lhs: GloryApi_ListRegionResponse, rhs: GloryApi_ListRegionResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.regions != rhs.regions {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+nonisolated extension GloryApi_ListPolicyDocProvinceRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListPolicyDocProvinceRequest"
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0")
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ListPolicyDocProvinceRequest, rhs: GloryApi_ListPolicyDocProvinceRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+nonisolated extension GloryApi_PolicyProvinceItem: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".PolicyProvinceItem"
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}code\0\u{1}name\0\u{3}doc_count\0")
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.code) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.name) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.docCount) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.code.isEmpty {
+      try visitor.visitSingularStringField(value: self.code, fieldNumber: 1)
+    }
+    if !self.name.isEmpty {
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 2)
+    }
+    if self.docCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.docCount, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_PolicyProvinceItem, rhs: GloryApi_PolicyProvinceItem) -> Bool {
+    if lhs.code != rhs.code {return false}
+    if lhs.name != rhs.name {return false}
+    if lhs.docCount != rhs.docCount {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+nonisolated extension GloryApi_ListPolicyDocProvinceResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListPolicyDocProvinceResponse"
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{1}provinces\0")
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.provinces) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.provinces.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.provinces, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ListPolicyDocProvinceResponse, rhs: GloryApi_ListPolicyDocProvinceResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.provinces != rhs.provinces {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

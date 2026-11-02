@@ -2844,6 +2844,14 @@ export class glory_api {
     );
   }
 
+  ListPolicyDocProvince(request) {
+    const uri = `${this.uriPrefix}/api/doc/list_policy_doc_province`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CreateMyDocFolder(request) {
     const uri = `${this.uriPrefix}/api/doc/create_my_doc_folder`;
     const body = JSONbigint.stringify(request);

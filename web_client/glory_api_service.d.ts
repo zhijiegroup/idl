@@ -1626,6 +1626,11 @@ CreateLivePlanProduct create live plan product */
   /** 省市行政区划字典(GB/T 2260，政策文件省市联动) */
   ListRegion(request: doc.ListRegionRequest): Promise<doc.ListRegionResponse>;
 
+  /** 有政策文件的省清单(级别下拉框动态省级选项) */
+  ListPolicyDocProvince(
+    request: doc.ListPolicyDocProvinceRequest
+  ): Promise<doc.ListPolicyDocProvinceResponse>;
+
   /** 新建我的文档文件夹 */
   CreateMyDocFolder(
     request: doc.CreateMyDocFolderRequest

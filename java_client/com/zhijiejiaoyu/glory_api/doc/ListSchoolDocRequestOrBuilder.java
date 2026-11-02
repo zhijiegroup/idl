@@ -34,7 +34,7 @@ public interface ListSchoolDocRequestOrBuilder extends
 
   /**
    * <pre>
-   * 仅 doc_type=1：0.全部；1.全国级(省级/市级文件通过省市定位)
+   * 仅 doc_type=1：0.全部；1.全国级(下拉框「国家级」选项；省级文件按省码筛选)
    * </pre>
    *
    * <code>int32 level = 3;</code>
@@ -44,7 +44,7 @@ public interface ListSchoolDocRequestOrBuilder extends
 
   /**
    * <pre>
-   * 仅 doc_type=1：选省返回该省发布(含省内各市)的文件
+   * 仅 doc_type=1：省级国标码(下拉框省级选项传值；该省 level=2/3 文件均归入展示)
    * </pre>
    *
    * <code>string province = 4;</code>
@@ -53,7 +53,7 @@ public interface ListSchoolDocRequestOrBuilder extends
   java.lang.String getProvince();
   /**
    * <pre>
-   * 仅 doc_type=1：选省返回该省发布(含省内各市)的文件
+   * 仅 doc_type=1：省级国标码(下拉框省级选项传值；该省 level=2/3 文件均归入展示)
    * </pre>
    *
    * <code>string province = 4;</code>
@@ -64,7 +64,7 @@ public interface ListSchoolDocRequestOrBuilder extends
 
   /**
    * <pre>
-   * 仅 doc_type=1：需先选省
+   * 【已废弃·前端不再使用】市级筛选随级别下拉框化下线，字段保留兼容存量
    * </pre>
    *
    * <code>string city = 5;</code>
@@ -73,7 +73,7 @@ public interface ListSchoolDocRequestOrBuilder extends
   java.lang.String getCity();
   /**
    * <pre>
-   * 仅 doc_type=1：需先选省
+   * 【已废弃·前端不再使用】市级筛选随级别下拉框化下线，字段保留兼容存量
    * </pre>
    *
    * <code>string city = 5;</code>

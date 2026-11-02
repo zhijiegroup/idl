@@ -271,7 +271,7 @@ private static final long serialVersionUID = 0L;
   private int level ;
   /**
    * <pre>
-   * doc_type=1 必填：1.全国级；2.省级；3.市级
+   * doc_type=1 必填：1.全国级；2.省级(3.市级已废弃，禁止新建)
    * </pre>
    *
    * <code>int32 level = 4;</code>
@@ -286,7 +286,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object province ;
   /**
    * <pre>
-   * level=2 需省；level=3 需省市
+   * level=2 需省级国标码；level=3 已废弃
    * </pre>
    *
    * <code>string province = 5;</code>
@@ -307,7 +307,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * level=2 需省；level=3 需省市
+   * level=2 需省级国标码；level=3 已废弃
    * </pre>
    *
    * <code>string province = 5;</code>
@@ -332,7 +332,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object city ;
   /**
    * <pre>
-   * level=3 必填
+   * 【已废弃】level=3 专用，禁止新建市级文件；字段保留兼容存量
    * </pre>
    *
    * <code>string city = 6;</code>
@@ -353,7 +353,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * level=3 必填
+   * 【已废弃】level=3 专用，禁止新建市级文件；字段保留兼容存量
    * </pre>
    *
    * <code>string city = 6;</code>
@@ -1483,7 +1483,7 @@ private static final long serialVersionUID = 0L;
     private int level ;
     /**
      * <pre>
-     * doc_type=1 必填：1.全国级；2.省级；3.市级
+     * doc_type=1 必填：1.全国级；2.省级(3.市级已废弃，禁止新建)
      * </pre>
      *
      * <code>int32 level = 4;</code>
@@ -1495,7 +1495,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * doc_type=1 必填：1.全国级；2.省级；3.市级
+     * doc_type=1 必填：1.全国级；2.省级(3.市级已废弃，禁止新建)
      * </pre>
      *
      * <code>int32 level = 4;</code>
@@ -1510,7 +1510,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * doc_type=1 必填：1.全国级；2.省级；3.市级
+     * doc_type=1 必填：1.全国级；2.省级(3.市级已废弃，禁止新建)
      * </pre>
      *
      * <code>int32 level = 4;</code>
@@ -1526,7 +1526,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object province = "";
     /**
      * <pre>
-     * level=2 需省；level=3 需省市
+     * level=2 需省级国标码；level=3 已废弃
      * </pre>
      *
      * <code>string province = 5;</code>
@@ -1546,7 +1546,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * level=2 需省；level=3 需省市
+     * level=2 需省级国标码；level=3 已废弃
      * </pre>
      *
      * <code>string province = 5;</code>
@@ -1567,7 +1567,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * level=2 需省；level=3 需省市
+     * level=2 需省级国标码；level=3 已废弃
      * </pre>
      *
      * <code>string province = 5;</code>
@@ -1586,7 +1586,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * level=2 需省；level=3 需省市
+     * level=2 需省级国标码；level=3 已废弃
      * </pre>
      *
      * <code>string province = 5;</code>
@@ -1600,7 +1600,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * level=2 需省；level=3 需省市
+     * level=2 需省级国标码；level=3 已废弃
      * </pre>
      *
      * <code>string province = 5;</code>
@@ -1622,7 +1622,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object city = "";
     /**
      * <pre>
-     * level=3 必填
+     * 【已废弃】level=3 专用，禁止新建市级文件；字段保留兼容存量
      * </pre>
      *
      * <code>string city = 6;</code>
@@ -1642,7 +1642,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * level=3 必填
+     * 【已废弃】level=3 专用，禁止新建市级文件；字段保留兼容存量
      * </pre>
      *
      * <code>string city = 6;</code>
@@ -1663,7 +1663,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * level=3 必填
+     * 【已废弃】level=3 专用，禁止新建市级文件；字段保留兼容存量
      * </pre>
      *
      * <code>string city = 6;</code>
@@ -1682,7 +1682,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * level=3 必填
+     * 【已废弃】level=3 专用，禁止新建市级文件；字段保留兼容存量
      * </pre>
      *
      * <code>string city = 6;</code>
@@ -1696,7 +1696,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * level=3 必填
+     * 【已废弃】level=3 专用，禁止新建市级文件；字段保留兼容存量
      * </pre>
      *
      * <code>string city = 6;</code>

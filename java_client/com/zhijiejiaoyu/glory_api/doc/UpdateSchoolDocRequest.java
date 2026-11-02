@@ -296,7 +296,7 @@ private static final long serialVersionUID = 0L;
   private int level ;
   /**
    * <pre>
-   * 仅 doc_type=1：1.全国级；2.省级；3.市级
+   * 仅 doc_type=1：1.全国级；2.省级(3.市级已废弃，禁止编辑为市级)
    * </pre>
    *
    * <code>int32 level = 5;</code>
@@ -311,7 +311,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object province ;
   /**
    * <pre>
-   * 仅 doc_type=1
+   * 仅 doc_type=1：level=2 需省级国标码
    * </pre>
    *
    * <code>string province = 6;</code>
@@ -332,7 +332,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 仅 doc_type=1
+   * 仅 doc_type=1：level=2 需省级国标码
    * </pre>
    *
    * <code>string province = 6;</code>
@@ -357,7 +357,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object city ;
   /**
    * <pre>
-   * 仅 doc_type=1
+   * 【已废弃】level=3 专用；字段保留兼容存量
    * </pre>
    *
    * <code>string city = 7;</code>
@@ -378,7 +378,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 仅 doc_type=1
+   * 【已废弃】level=3 专用；字段保留兼容存量
    * </pre>
    *
    * <code>string city = 7;</code>
@@ -1602,7 +1602,7 @@ private static final long serialVersionUID = 0L;
     private int level ;
     /**
      * <pre>
-     * 仅 doc_type=1：1.全国级；2.省级；3.市级
+     * 仅 doc_type=1：1.全国级；2.省级(3.市级已废弃，禁止编辑为市级)
      * </pre>
      *
      * <code>int32 level = 5;</code>
@@ -1614,7 +1614,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 仅 doc_type=1：1.全国级；2.省级；3.市级
+     * 仅 doc_type=1：1.全国级；2.省级(3.市级已废弃，禁止编辑为市级)
      * </pre>
      *
      * <code>int32 level = 5;</code>
@@ -1629,7 +1629,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 仅 doc_type=1：1.全国级；2.省级；3.市级
+     * 仅 doc_type=1：1.全国级；2.省级(3.市级已废弃，禁止编辑为市级)
      * </pre>
      *
      * <code>int32 level = 5;</code>
@@ -1645,7 +1645,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object province = "";
     /**
      * <pre>
-     * 仅 doc_type=1
+     * 仅 doc_type=1：level=2 需省级国标码
      * </pre>
      *
      * <code>string province = 6;</code>
@@ -1665,7 +1665,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 仅 doc_type=1
+     * 仅 doc_type=1：level=2 需省级国标码
      * </pre>
      *
      * <code>string province = 6;</code>
@@ -1686,7 +1686,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 仅 doc_type=1
+     * 仅 doc_type=1：level=2 需省级国标码
      * </pre>
      *
      * <code>string province = 6;</code>
@@ -1705,7 +1705,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 仅 doc_type=1
+     * 仅 doc_type=1：level=2 需省级国标码
      * </pre>
      *
      * <code>string province = 6;</code>
@@ -1719,7 +1719,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 仅 doc_type=1
+     * 仅 doc_type=1：level=2 需省级国标码
      * </pre>
      *
      * <code>string province = 6;</code>
@@ -1741,7 +1741,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object city = "";
     /**
      * <pre>
-     * 仅 doc_type=1
+     * 【已废弃】level=3 专用；字段保留兼容存量
      * </pre>
      *
      * <code>string city = 7;</code>
@@ -1761,7 +1761,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 仅 doc_type=1
+     * 【已废弃】level=3 专用；字段保留兼容存量
      * </pre>
      *
      * <code>string city = 7;</code>
@@ -1782,7 +1782,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 仅 doc_type=1
+     * 【已废弃】level=3 专用；字段保留兼容存量
      * </pre>
      *
      * <code>string city = 7;</code>
@@ -1801,7 +1801,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 仅 doc_type=1
+     * 【已废弃】level=3 专用；字段保留兼容存量
      * </pre>
      *
      * <code>string city = 7;</code>
@@ -1815,7 +1815,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 仅 doc_type=1
+     * 【已废弃】level=3 专用；字段保留兼容存量
      * </pre>
      *
      * <code>string city = 7;</code>
