@@ -239,6 +239,25 @@ message DownloadMyDocResponse {
   int32 expires_in = 4; // 有效秒数(300)
 }
 
+// ==================== 省市行政区划字典(GB/T 2260，政策文件省市联动) ====================
+
+// 行政区划项(省级 / 地级市)
+message RegionItem {
+  string code = 1; // 国标行政区划码(6 位)：省级如 110000；地级市如 320100；直辖市市级单条为市辖区码(如 110100)
+  string name = 2; // 行政区划标准名称(直辖市市级显示市名，如「北京市」)
+}
+
+// 省市联动字典(parent_code 空=省级列表；传省码=该省地级市列表)
+message ListRegionRequest {
+  base.BaseRequest base_request = 1;
+  string parent_code = 2; // 父级码：空/不传=省级列表(34 条)；省级码(如 370000)=该省地级市列表
+}
+
+message ListRegionResponse {
+  base.BaseResponse base_resp = 1;
+  repeated RegionItem regions = 2; // 按国标码升序；港澳台无地级市层级(传其省码返回空)
+}
+
 // ==================== 通用上传(我的文档与新建课程自定义资源共用) ====================
 
 // 上传成功的文件结果

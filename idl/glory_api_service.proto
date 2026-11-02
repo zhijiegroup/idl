@@ -1430,6 +1430,10 @@ service glory_api {
   rpc ListMyFavoriteSchoolDoc(ListMyFavoriteSchoolDocRequest) returns (ListMyFavoriteSchoolDocResponse) {
     option (api.post) = '/api/doc/list_my_favorite_school_doc';
   }
+  // 省市行政区划字典(GB/T 2260，政策文件省市联动)
+  rpc ListRegion(ListRegionRequest) returns (ListRegionResponse) {
+    option (api.post) = '/api/doc/list_region';
+  }
   // 新建我的文档文件夹
   rpc CreateMyDocFolder(CreateMyDocFolderRequest) returns (CreateMyDocFolderResponse) {
     option (api.post) = '/api/doc/create_my_doc_folder';
