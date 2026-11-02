@@ -1131,6 +1131,9 @@ class glory_apiApi {
   $async.Future<$51.ListMyFavoriteSchoolDocResponse> listMyFavoriteSchoolDoc($pb.ClientContext? ctx, $51.ListMyFavoriteSchoolDocRequest request) =>
     _client.invoke<$51.ListMyFavoriteSchoolDocResponse>(ctx, 'glory_api', 'ListMyFavoriteSchoolDoc', request, $51.ListMyFavoriteSchoolDocResponse())
   ;
+  $async.Future<$51.ListRegionResponse> listRegion($pb.ClientContext? ctx, $51.ListRegionRequest request) =>
+    _client.invoke<$51.ListRegionResponse>(ctx, 'glory_api', 'ListRegion', request, $51.ListRegionResponse())
+  ;
   $async.Future<$51.CreateMyDocFolderResponse> createMyDocFolder($pb.ClientContext? ctx, $51.CreateMyDocFolderRequest request) =>
     _client.invoke<$51.CreateMyDocFolderResponse>(ctx, 'glory_api', 'CreateMyDocFolder', request, $51.CreateMyDocFolderResponse())
   ;

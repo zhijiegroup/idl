@@ -2851,6 +2851,198 @@ class DownloadMyDocResponse extends $pb.GeneratedMessage {
   void clearExpiresIn() => clearField(4);
 }
 
+/// 行政区划项(省级 / 地级市)
+class RegionItem extends $pb.GeneratedMessage {
+  factory RegionItem({
+    $core.String? code,
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (code != null) {
+      $result.code = code;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
+  RegionItem._() : super();
+  factory RegionItem.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RegionItem.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegionItem', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'code')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RegionItem clone() => RegionItem()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RegionItem copyWith(void Function(RegionItem) updates) => super.copyWith((message) => updates(message as RegionItem)) as RegionItem;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RegionItem create() => RegionItem._();
+  RegionItem createEmptyInstance() => create();
+  static $pb.PbList<RegionItem> createRepeated() => $pb.PbList<RegionItem>();
+  @$core.pragma('dart2js:noInline')
+  static RegionItem getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RegionItem>(create);
+  static RegionItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get code => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set code($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCode() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+}
+
+/// 省市联动字典(parent_code 空=省级列表；传省码=该省地级市列表)
+class ListRegionRequest extends $pb.GeneratedMessage {
+  factory ListRegionRequest({
+    $0.BaseRequest? baseRequest,
+    $core.String? parentCode,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (parentCode != null) {
+      $result.parentCode = parentCode;
+    }
+    return $result;
+  }
+  ListRegionRequest._() : super();
+  factory ListRegionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListRegionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListRegionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'parentCode')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListRegionRequest clone() => ListRegionRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListRegionRequest copyWith(void Function(ListRegionRequest) updates) => super.copyWith((message) => updates(message as ListRegionRequest)) as ListRegionRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListRegionRequest create() => ListRegionRequest._();
+  ListRegionRequest createEmptyInstance() => create();
+  static $pb.PbList<ListRegionRequest> createRepeated() => $pb.PbList<ListRegionRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListRegionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListRegionRequest>(create);
+  static ListRegionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get parentCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set parentCode($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasParentCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearParentCode() => clearField(2);
+}
+
+class ListRegionResponse extends $pb.GeneratedMessage {
+  factory ListRegionResponse({
+    $0.BaseResponse? baseResp,
+    $core.Iterable<RegionItem>? regions,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (regions != null) {
+      $result.regions.addAll(regions);
+    }
+    return $result;
+  }
+  ListRegionResponse._() : super();
+  factory ListRegionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListRegionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListRegionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..pc<RegionItem>(2, _omitFieldNames ? '' : 'regions', $pb.PbFieldType.PM, subBuilder: RegionItem.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListRegionResponse clone() => ListRegionResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListRegionResponse copyWith(void Function(ListRegionResponse) updates) => super.copyWith((message) => updates(message as ListRegionResponse)) as ListRegionResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListRegionResponse create() => ListRegionResponse._();
+  ListRegionResponse createEmptyInstance() => create();
+  static $pb.PbList<ListRegionResponse> createRepeated() => $pb.PbList<ListRegionResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListRegionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListRegionResponse>(create);
+  static ListRegionResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<RegionItem> get regions => $_getList(1);
+}
+
 /// 上传成功的文件结果
 class UploadedFile extends $pb.GeneratedMessage {
   factory UploadedFile({

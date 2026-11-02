@@ -536,6 +536,48 @@ final $typed_data.Uint8List downloadMyDocResponseDescriptor = $convert.base64Dec
     'ZmlsZV9uYW1lGAMgASgJUghmaWxlTmFtZRIdCgpleHBpcmVzX2luGAQgASgFUglleHBpcmVzSW'
     '4=');
 
+@$core.Deprecated('Use regionItemDescriptor instead')
+const RegionItem$json = {
+  '1': 'RegionItem',
+  '2': [
+    {'1': 'code', '3': 1, '4': 1, '5': 9, '10': 'code'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+  ],
+};
+
+/// Descriptor for `RegionItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List regionItemDescriptor = $convert.base64Decode(
+    'CgpSZWdpb25JdGVtEhIKBGNvZGUYASABKAlSBGNvZGUSEgoEbmFtZRgCIAEoCVIEbmFtZQ==');
+
+@$core.Deprecated('Use listRegionRequestDescriptor instead')
+const ListRegionRequest$json = {
+  '1': 'ListRegionRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'parent_code', '3': 2, '4': 1, '5': 9, '10': 'parentCode'},
+  ],
+};
+
+/// Descriptor for `ListRegionRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listRegionRequestDescriptor = $convert.base64Decode(
+    'ChFMaXN0UmVnaW9uUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLkJhc2VSZX'
+    'F1ZXN0UgtiYXNlUmVxdWVzdBIfCgtwYXJlbnRfY29kZRgCIAEoCVIKcGFyZW50Q29kZQ==');
+
+@$core.Deprecated('Use listRegionResponseDescriptor instead')
+const ListRegionResponse$json = {
+  '1': 'ListRegionResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'regions', '3': 2, '4': 3, '5': 11, '6': '.glory_api.RegionItem', '10': 'regions'},
+  ],
+};
+
+/// Descriptor for `ListRegionResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listRegionResponseDescriptor = $convert.base64Decode(
+    'ChJMaXN0UmVnaW9uUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYXNlUmVzcG'
+    '9uc2VSCGJhc2VSZXNwEi8KB3JlZ2lvbnMYAiADKAsyFS5nbG9yeV9hcGkuUmVnaW9uSXRlbVIH'
+    'cmVnaW9ucw==');
+
 @$core.Deprecated('Use uploadedFileDescriptor instead')
 const UploadedFile$json = {
   '1': 'UploadedFile',

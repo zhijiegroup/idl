@@ -165,6 +165,21 @@ public final class Doc {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_DownloadMyDocResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_RegionItem_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_RegionItem_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListRegionRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListRegionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListRegionResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListRegionResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_UploadedFile_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -282,15 +297,21 @@ public final class Doc {
       "st\022\016\n\006doc_id\030\002 \001(\003\"{\n\025DownloadMyDocRespo" +
       "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
       "se\022\024\n\014download_url\030\002 \001(\t\022\021\n\tfile_name\030\003 " +
-      "\001(\t\022\022\n\nexpires_in\030\004 \001(\005\"i\n\014UploadedFile\022" +
-      "\020\n\010file_url\030\001 \001(\t\022\021\n\tfile_name\030\002 \001(\t\022\021\n\t" +
-      "file_size\030\003 \001(\003\022\021\n\tfile_type\030\004 \001(\t\022\016\n\006do" +
-      "c_id\030\005 \001(\003\"O\n\021UploadFileRequest\022\'\n\014base_" +
-      "request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tpare" +
-      "nt_id\030\002 \001(\003\"c\n\022UploadFileResponse\022%\n\tbas" +
-      "e_resp\030\001 \001(\0132\022.base.BaseResponse\022&\n\005file" +
-      "s\030\002 \003(\0132\027.glory_api.UploadedFileB\"\n\036com." +
-      "zhijiejiaoyu.glory_api.docP\001b\006proto3"
+      "\001(\t\022\022\n\nexpires_in\030\004 \001(\005\"(\n\nRegionItem\022\014\n" +
+      "\004code\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"Q\n\021ListRegionR" +
+      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
+      "Request\022\023\n\013parent_code\030\002 \001(\t\"c\n\022ListRegi" +
+      "onResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
+      "eResponse\022&\n\007regions\030\002 \003(\0132\025.glory_api.R" +
+      "egionItem\"i\n\014UploadedFile\022\020\n\010file_url\030\001 " +
+      "\001(\t\022\021\n\tfile_name\030\002 \001(\t\022\021\n\tfile_size\030\003 \001(" +
+      "\003\022\021\n\tfile_type\030\004 \001(\t\022\016\n\006doc_id\030\005 \001(\003\"O\n\021" +
+      "UploadFileRequest\022\'\n\014base_request\030\001 \001(\0132" +
+      "\021.base.BaseRequest\022\021\n\tparent_id\030\002 \001(\003\"c\n" +
+      "\022UploadFileResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
+      ".base.BaseResponse\022&\n\005files\030\002 \003(\0132\027.glor" +
+      "y_api.UploadedFileB\"\n\036com.zhijiejiaoyu.g" +
+      "lory_api.docP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -477,20 +498,38 @@ public final class Doc {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DownloadMyDocResponse_descriptor,
         new java.lang.String[] { "BaseResp", "DownloadUrl", "FileName", "ExpiresIn", });
-    internal_static_glory_api_UploadedFile_descriptor =
+    internal_static_glory_api_RegionItem_descriptor =
       getDescriptor().getMessageTypes().get(30);
+    internal_static_glory_api_RegionItem_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_RegionItem_descriptor,
+        new java.lang.String[] { "Code", "Name", });
+    internal_static_glory_api_ListRegionRequest_descriptor =
+      getDescriptor().getMessageTypes().get(31);
+    internal_static_glory_api_ListRegionRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListRegionRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "ParentCode", });
+    internal_static_glory_api_ListRegionResponse_descriptor =
+      getDescriptor().getMessageTypes().get(32);
+    internal_static_glory_api_ListRegionResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListRegionResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "Regions", });
+    internal_static_glory_api_UploadedFile_descriptor =
+      getDescriptor().getMessageTypes().get(33);
     internal_static_glory_api_UploadedFile_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UploadedFile_descriptor,
         new java.lang.String[] { "FileUrl", "FileName", "FileSize", "FileType", "DocId", });
     internal_static_glory_api_UploadFileRequest_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_glory_api_UploadFileRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UploadFileRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ParentId", });
     internal_static_glory_api_UploadFileResponse_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(35);
     internal_static_glory_api_UploadFileResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UploadFileResponse_descriptor,

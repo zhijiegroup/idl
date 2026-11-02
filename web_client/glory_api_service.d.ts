@@ -1623,6 +1623,9 @@ CreateLivePlanProduct create live plan product */
     request: doc.ListMyFavoriteSchoolDocRequest
   ): Promise<doc.ListMyFavoriteSchoolDocResponse>;
 
+  /** 省市行政区划字典(GB/T 2260，政策文件省市联动) */
+  ListRegion(request: doc.ListRegionRequest): Promise<doc.ListRegionResponse>;
+
   /** 新建我的文档文件夹 */
   CreateMyDocFolder(
     request: doc.CreateMyDocFolderRequest

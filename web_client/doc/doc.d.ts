@@ -319,6 +319,27 @@ export interface DownloadMyDocResponse {
   expires_in?: number;
 }
 
+/** 行政区划项(省级 / 地级市) */
+export interface RegionItem {
+  /** 国标行政区划码(6 位)：省级如 110000；地级市如 320100；直辖市市级单条为市辖区码(如 110100) */
+  code?: string;
+  /** 行政区划标准名称(直辖市市级显示市名，如「北京市」) */
+  name?: string;
+}
+
+/** 省市联动字典(parent_code 空=省级列表；传省码=该省地级市列表) */
+export interface ListRegionRequest {
+  base_request?: base.BaseRequest;
+  /** 父级码：空/不传=省级列表(34 条)；省级码(如 370000)=该省地级市列表 */
+  parent_code?: string;
+}
+
+export interface ListRegionResponse {
+  base_resp?: base.BaseResponse;
+  /** 按国标码升序；港澳台无地级市层级(传其省码返回空) */
+  regions?: Array<RegionItem>;
+}
+
 /** 上传成功的文件结果 */
 export interface UploadedFile {
   /** 文件地址 */
