@@ -110,6 +110,11 @@ private static final long serialVersionUID = 0L;
             name = s;
             break;
           }
+          case 72: {
+
+            docCategory = input.readInt32();
+            break;
+          }
           case 802: {
             com.zhijiejiaoyu.base.PaginationRequest.Builder subBuilder = null;
             if (pagination != null) {
@@ -441,6 +446,21 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int DOC_CATEGORY_FIELD_NUMBER = 9;
+  private int docCategory ;
+  /**
+   * <pre>
+   * 仅 doc_type=1：分类筛选 0.全部(不传/0)；1.技工教育；2.职业教育
+   * </pre>
+   *
+   * <code>int32 doc_category = 9;</code>
+   * @return The docCategory.
+   */
+  @java.lang.Override
+  public int getDocCategory() {
+    return docCategory ;
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
   /**
@@ -505,6 +525,9 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, name );
     }
+    if (docCategory != 0) {
+      output.writeInt32(9, docCategory );
+    }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
@@ -544,6 +567,10 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, name );
     }
+    if (docCategory != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(9, docCategory );
+    }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(100, getPagination());
@@ -582,6 +609,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getGrade())) return false;
     if (!getName()
         .equals(other.getName())) return false;
+    if (getDocCategory()
+        != other.getDocCategory()) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -616,6 +645,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getGrade().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + DOC_CATEGORY_FIELD_NUMBER;
+    hash = (53 * hash) + getDocCategory();
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -777,6 +808,8 @@ private static final long serialVersionUID = 0L;
 
       name = "";
 
+      docCategory = 0;
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -821,6 +854,7 @@ private static final long serialVersionUID = 0L;
       result.major = major ;
       result.grade = grade ;
       result.name = name ;
+      result.docCategory = docCategory ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -902,6 +936,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getName().isEmpty()) {
         name = other.name ;
         onChanged();
+      }
+      if (other.getDocCategory() != 0) {
+        setDocCategory(other.getDocCategory());
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -1616,6 +1653,49 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       name = value;
+      onChanged();
+      return this;
+    }
+
+    private int docCategory ;
+    /**
+     * <pre>
+     * 仅 doc_type=1：分类筛选 0.全部(不传/0)；1.技工教育；2.职业教育
+     * </pre>
+     *
+     * <code>int32 doc_category = 9;</code>
+     * @return The docCategory.
+     */
+    @java.lang.Override
+    public int getDocCategory() {
+      return docCategory ;
+    }
+    /**
+     * <pre>
+     * 仅 doc_type=1：分类筛选 0.全部(不传/0)；1.技工教育；2.职业教育
+     * </pre>
+     *
+     * <code>int32 doc_category = 9;</code>
+     * @param value The docCategory to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDocCategory(int value) {
+      
+      docCategory = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 仅 doc_type=1：分类筛选 0.全部(不传/0)；1.技工教育；2.职业教育
+     * </pre>
+     *
+     * <code>int32 doc_category = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDocCategory() {
+      
+      docCategory = 0;
       onChanged();
       return this;
     }

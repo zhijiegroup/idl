@@ -13,15 +13,17 @@ export interface SchoolDocItem {
   /** 名称
 —— 仅 doc_type=1 政策文件 —— */
   doc_name?: string;
-  /** 政策文件级别：1.全国级；2.省级；3.市级 */
+  /** 政策文件级别：1.全国级；2.省级；3.市级(废弃) */
   level?: number;
   /** 省(编码) */
   province?: string;
-  /** 市(编码) */
+  /** 市(编码，已废弃) */
   city?: string;
-  /** 发布机构
-—— 仅 doc_type=2 人才培养方案 —— */
+  /** 发布机构 */
   org?: string;
+  /** 政策文件分类：0.未分类(存量)；1.技工教育；2.职业教育
+—— 仅 doc_type=2 人才培养方案 —— */
+  doc_category?: number;
   /** 所属专业 */
   major?: string;
   /** 编制单位 */
@@ -62,6 +64,8 @@ export interface ListSchoolDocRequest {
   grade?: string;
   /** 名称模糊 */
   name?: string;
+  /** 仅 doc_type=1：分类筛选 0.全部(不传/0)；1.技工教育；2.职业教育 */
+  doc_category?: number;
   pagination?: base.PaginationRequest;
 }
 
@@ -100,6 +104,8 @@ export interface CreateSchoolDocRequest {
   file_size?: string;
   /** PDF总页数 */
   page_count?: string;
+  /** 仅 doc_type=1：分类 0.未分类(可选/不传)；1.技工教育；2.职业教育 */
+  doc_category?: number;
 }
 
 export interface CreateSchoolDocResponse {
@@ -141,6 +147,8 @@ export interface UpdateSchoolDocRequest {
   page_count?: string;
   /** true 时以新文件替换 */
   replace_file?: boolean;
+  /** 仅 doc_type=1：分类 0.未分类；1.技工教育；2.职业教育 */
+  doc_category?: number;
 }
 
 export interface UpdateSchoolDocResponse {

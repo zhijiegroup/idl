@@ -24,6 +24,7 @@ const SchoolDocItem$json = {
     {'1': 'province', '3': 5, '4': 1, '5': 9, '10': 'province'},
     {'1': 'city', '3': 6, '4': 1, '5': 9, '10': 'city'},
     {'1': 'org', '3': 7, '4': 1, '5': 9, '10': 'org'},
+    {'1': 'doc_category', '3': 18, '4': 1, '5': 5, '10': 'docCategory'},
     {'1': 'major', '3': 8, '4': 1, '5': 9, '10': 'major'},
     {'1': 'compile_org', '3': 9, '4': 1, '5': 9, '10': 'compileOrg'},
     {'1': 'grade', '3': 10, '4': 1, '5': 9, '10': 'grade'},
@@ -42,12 +43,13 @@ final $typed_data.Uint8List schoolDocItemDescriptor = $convert.base64Decode(
     'Cg1TY2hvb2xEb2NJdGVtEhUKBmRvY19pZBgBIAEoA1IFZG9jSWQSGQoIZG9jX3R5cGUYAiABKA'
     'VSB2RvY1R5cGUSGQoIZG9jX25hbWUYAyABKAlSB2RvY05hbWUSFAoFbGV2ZWwYBCABKAVSBWxl'
     'dmVsEhoKCHByb3ZpbmNlGAUgASgJUghwcm92aW5jZRISCgRjaXR5GAYgASgJUgRjaXR5EhAKA2'
-    '9yZxgHIAEoCVIDb3JnEhQKBW1ham9yGAggASgJUgVtYWpvchIfCgtjb21waWxlX29yZxgJIAEo'
-    'CVIKY29tcGlsZU9yZxIUCgVncmFkZRgKIAEoCVIFZ3JhZGUSIQoMcHVibGlzaF9kYXRlGAsgAS'
-    'gJUgtwdWJsaXNoRGF0ZRIbCglmaWxlX3NpemUYDCABKANSCGZpbGVTaXplEhkKCGZpbGVfdXJs'
-    'GA0gASgJUgdmaWxlVXJsEh0KCnBhZ2VfY291bnQYDiABKANSCXBhZ2VDb3VudBIcCglmYXZvcm'
-    'l0ZWQYDyABKAhSCWZhdm9yaXRlZBIdCgpjcmVhdGVkX2F0GBAgASgJUgljcmVhdGVkQXQSHQoK'
-    'Y3JlYXRlZF9ieRgRIAEoA1IJY3JlYXRlZEJ5');
+    '9yZxgHIAEoCVIDb3JnEiEKDGRvY19jYXRlZ29yeRgSIAEoBVILZG9jQ2F0ZWdvcnkSFAoFbWFq'
+    'b3IYCCABKAlSBW1ham9yEh8KC2NvbXBpbGVfb3JnGAkgASgJUgpjb21waWxlT3JnEhQKBWdyYW'
+    'RlGAogASgJUgVncmFkZRIhCgxwdWJsaXNoX2RhdGUYCyABKAlSC3B1Ymxpc2hEYXRlEhsKCWZp'
+    'bGVfc2l6ZRgMIAEoA1IIZmlsZVNpemUSGQoIZmlsZV91cmwYDSABKAlSB2ZpbGVVcmwSHQoKcG'
+    'FnZV9jb3VudBgOIAEoA1IJcGFnZUNvdW50EhwKCWZhdm9yaXRlZBgPIAEoCFIJZmF2b3JpdGVk'
+    'Eh0KCmNyZWF0ZWRfYXQYECABKAlSCWNyZWF0ZWRBdBIdCgpjcmVhdGVkX2J5GBEgASgDUgljcm'
+    'VhdGVkQnk=');
 
 @$core.Deprecated('Use listSchoolDocRequestDescriptor instead')
 const ListSchoolDocRequest$json = {
@@ -61,6 +63,7 @@ const ListSchoolDocRequest$json = {
     {'1': 'major', '3': 6, '4': 1, '5': 9, '10': 'major'},
     {'1': 'grade', '3': 7, '4': 1, '5': 9, '10': 'grade'},
     {'1': 'name', '3': 8, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'doc_category', '3': 9, '4': 1, '5': 5, '10': 'docCategory'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -71,8 +74,8 @@ final $typed_data.Uint8List listSchoolDocRequestDescriptor = $convert.base64Deco
     'VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIZCghkb2NfdHlwZRgCIAEoBVIHZG9jVHlwZRIUCgVsZXZl'
     'bBgDIAEoBVIFbGV2ZWwSGgoIcHJvdmluY2UYBCABKAlSCHByb3ZpbmNlEhIKBGNpdHkYBSABKA'
     'lSBGNpdHkSFAoFbWFqb3IYBiABKAlSBW1ham9yEhQKBWdyYWRlGAcgASgJUgVncmFkZRISCgRu'
-    'YW1lGAggASgJUgRuYW1lEjcKCnBhZ2luYXRpb24YZCABKAsyFy5iYXNlLlBhZ2luYXRpb25SZX'
-    'F1ZXN0UgpwYWdpbmF0aW9u');
+    'YW1lGAggASgJUgRuYW1lEiEKDGRvY19jYXRlZ29yeRgJIAEoBVILZG9jQ2F0ZWdvcnkSNwoKcG'
+    'FnaW5hdGlvbhhkIAEoCzIXLmJhc2UuUGFnaW5hdGlvblJlcXVlc3RSCnBhZ2luYXRpb24=');
 
 @$core.Deprecated('Use listSchoolDocResponseDescriptor instead')
 const ListSchoolDocResponse$json = {
@@ -109,6 +112,7 @@ const CreateSchoolDocRequest$json = {
     {'1': 'file_url', '3': 12, '4': 1, '5': 9, '10': 'fileUrl'},
     {'1': 'file_size', '3': 13, '4': 1, '5': 3, '10': 'fileSize'},
     {'1': 'page_count', '3': 14, '4': 1, '5': 3, '10': 'pageCount'},
+    {'1': 'doc_category', '3': 15, '4': 1, '5': 5, '10': 'docCategory'},
   ],
 };
 
@@ -121,7 +125,8 @@ final $typed_data.Uint8List createSchoolDocRequestDescriptor = $convert.base64De
     'CgVtYWpvchgIIAEoCVIFbWFqb3ISFAoFZ3JhZGUYCSABKAlSBWdyYWRlEh8KC2NvbXBpbGVfb3'
     'JnGAogASgJUgpjb21waWxlT3JnEiEKDHB1Ymxpc2hfZGF0ZRgLIAEoCVILcHVibGlzaERhdGUS'
     'GQoIZmlsZV91cmwYDCABKAlSB2ZpbGVVcmwSGwoJZmlsZV9zaXplGA0gASgDUghmaWxlU2l6ZR'
-    'IdCgpwYWdlX2NvdW50GA4gASgDUglwYWdlQ291bnQ=');
+    'IdCgpwYWdlX2NvdW50GA4gASgDUglwYWdlQ291bnQSIQoMZG9jX2NhdGVnb3J5GA8gASgFUgtk'
+    'b2NDYXRlZ29yeQ==');
 
 @$core.Deprecated('Use createSchoolDocResponseDescriptor instead')
 const CreateSchoolDocResponse$json = {
@@ -157,6 +162,7 @@ const UpdateSchoolDocRequest$json = {
     {'1': 'file_size', '3': 14, '4': 1, '5': 3, '10': 'fileSize'},
     {'1': 'page_count', '3': 15, '4': 1, '5': 3, '10': 'pageCount'},
     {'1': 'replace_file', '3': 16, '4': 1, '5': 8, '10': 'replaceFile'},
+    {'1': 'doc_category', '3': 17, '4': 1, '5': 5, '10': 'docCategory'},
   ],
 };
 
@@ -170,7 +176,8 @@ final $typed_data.Uint8List updateSchoolDocRequestDescriptor = $convert.base64De
     'EoCVIFZ3JhZGUSHwoLY29tcGlsZV9vcmcYCyABKAlSCmNvbXBpbGVPcmcSIQoMcHVibGlzaF9k'
     'YXRlGAwgASgJUgtwdWJsaXNoRGF0ZRIZCghmaWxlX3VybBgNIAEoCVIHZmlsZVVybBIbCglmaW'
     'xlX3NpemUYDiABKANSCGZpbGVTaXplEh0KCnBhZ2VfY291bnQYDyABKANSCXBhZ2VDb3VudBIh'
-    'CgxyZXBsYWNlX2ZpbGUYECABKAhSC3JlcGxhY2VGaWxl');
+    'CgxyZXBsYWNlX2ZpbGUYECABKAhSC3JlcGxhY2VGaWxlEiEKDGRvY19jYXRlZ29yeRgRIAEoBV'
+    'ILZG9jQ2F0ZWdvcnk=');
 
 @$core.Deprecated('Use updateSchoolDocResponseDescriptor instead')
 const UpdateSchoolDocResponse$json = {

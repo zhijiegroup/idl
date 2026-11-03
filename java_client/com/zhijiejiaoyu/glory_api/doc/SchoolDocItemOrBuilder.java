@@ -75,7 +75,7 @@ public interface SchoolDocItemOrBuilder extends
 
   /**
    * <pre>
-   * 市(编码)
+   * 市(编码，已废弃)
    * </pre>
    *
    * <code>string city = 6;</code>
@@ -84,7 +84,7 @@ public interface SchoolDocItemOrBuilder extends
   java.lang.String getCity();
   /**
    * <pre>
-   * 市(编码)
+   * 市(编码，已废弃)
    * </pre>
    *
    * <code>string city = 6;</code>
@@ -112,6 +112,16 @@ public interface SchoolDocItemOrBuilder extends
    */
   com.google.protobuf.ByteString
       getOrgBytes();
+
+  /**
+   * <pre>
+   * 政策文件分类：0.未分类(存量)；1.技工教育；2.职业教育
+   * </pre>
+   *
+   * <code>int32 doc_category = 18;</code>
+   * @return The docCategory.
+   */
+  int getDocCategory();
 
   /**
    * <pre>

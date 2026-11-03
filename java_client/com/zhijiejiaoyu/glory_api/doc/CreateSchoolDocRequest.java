@@ -148,6 +148,11 @@ private static final long serialVersionUID = 0L;
             pageCount = input.readInt64();
             break;
           }
+          case 120: {
+
+            docCategory = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -680,6 +685,21 @@ private static final long serialVersionUID = 0L;
     return pageCount ;
   }
 
+  public static final int DOC_CATEGORY_FIELD_NUMBER = 15;
+  private int docCategory ;
+  /**
+   * <pre>
+   * 仅 doc_type=1：分类 0.未分类(可选/不传)；1.技工教育；2.职业教育
+   * </pre>
+   *
+   * <code>int32 doc_category = 15;</code>
+   * @return The docCategory.
+   */
+  @java.lang.Override
+  public int getDocCategory() {
+    return docCategory ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -735,6 +755,9 @@ private static final long serialVersionUID = 0L;
     }
     if (pageCount != 0L) {
       output.writeInt64(14, pageCount );
+    }
+    if (docCategory != 0) {
+      output.writeInt32(15, docCategory );
     }
     unknownFields.writeTo(output);
   }
@@ -792,6 +815,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(14, pageCount );
     }
+    if (docCategory != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(15, docCategory );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -838,6 +865,8 @@ private static final long serialVersionUID = 0L;
         != other.getFileSize()) return false;
     if (getPageCount()
         != other.getPageCount()) return false;
+    if (getDocCategory()
+        != other.getDocCategory()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -881,6 +910,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + PAGE_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getPageCount());
+    hash = (37 * hash) + DOC_CATEGORY_FIELD_NUMBER;
+    hash = (53 * hash) + getDocCategory();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1050,6 +1081,8 @@ private static final long serialVersionUID = 0L;
 
       pageCount = 0L;
 
+      docCategory = 0;
+
       return this;
     }
 
@@ -1094,6 +1127,7 @@ private static final long serialVersionUID = 0L;
       result.fileUrl = fileUrl ;
       result.fileSize = fileSize ;
       result.pageCount = pageCount ;
+      result.docCategory = docCategory ;
       onBuilt();
       return result;
     }
@@ -1192,6 +1226,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getPageCount() != 0L) {
         setPageCount(other.getPageCount());
+      }
+      if (other.getDocCategory() != 0) {
+        setDocCategory(other.getDocCategory());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2373,6 +2410,49 @@ private static final long serialVersionUID = 0L;
     public Builder clearPageCount() {
       
       pageCount = 0L;
+      onChanged();
+      return this;
+    }
+
+    private int docCategory ;
+    /**
+     * <pre>
+     * 仅 doc_type=1：分类 0.未分类(可选/不传)；1.技工教育；2.职业教育
+     * </pre>
+     *
+     * <code>int32 doc_category = 15;</code>
+     * @return The docCategory.
+     */
+    @java.lang.Override
+    public int getDocCategory() {
+      return docCategory ;
+    }
+    /**
+     * <pre>
+     * 仅 doc_type=1：分类 0.未分类(可选/不传)；1.技工教育；2.职业教育
+     * </pre>
+     *
+     * <code>int32 doc_category = 15;</code>
+     * @param value The docCategory to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDocCategory(int value) {
+      
+      docCategory = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 仅 doc_type=1：分类 0.未分类(可选/不传)；1.技工教育；2.职业教育
+     * </pre>
+     *
+     * <code>int32 doc_category = 15;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDocCategory() {
+      
+      docCategory = 0;
       onChanged();
       return this;
     }

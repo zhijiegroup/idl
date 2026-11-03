@@ -157,6 +157,11 @@ private static final long serialVersionUID = 0L;
             createdBy = input.readInt64();
             break;
           }
+          case 144: {
+
+            docCategory = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -326,7 +331,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object city ;
   /**
    * <pre>
-   * 市(编码)
+   * 市(编码，已废弃)
    * </pre>
    *
    * <code>string city = 6;</code>
@@ -347,7 +352,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 市(编码)
+   * 市(编码，已废弃)
    * </pre>
    *
    * <code>string city = 6;</code>
@@ -412,6 +417,21 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int DOC_CATEGORY_FIELD_NUMBER = 18;
+  private int docCategory ;
+  /**
+   * <pre>
+   * 政策文件分类：0.未分类(存量)；1.技工教育；2.职业教育
+   * </pre>
+   *
+   * <code>int32 doc_category = 18;</code>
+   * @return The docCategory.
+   */
+  @java.lang.Override
+  public int getDocCategory() {
+    return docCategory ;
   }
 
   public static final int MAJOR_FIELD_NUMBER = 8;
@@ -815,6 +835,9 @@ private static final long serialVersionUID = 0L;
     if (createdBy != 0L) {
       output.writeInt64(17, createdBy );
     }
+    if (docCategory != 0) {
+      output.writeInt32(18, docCategory );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -882,6 +905,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(17, createdBy );
     }
+    if (docCategory != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(18, docCategory );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -911,6 +938,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCity())) return false;
     if (!getOrg()
         .equals(other.getOrg())) return false;
+    if (getDocCategory()
+        != other.getDocCategory()) return false;
     if (!getMajor()
         .equals(other.getMajor())) return false;
     if (!getCompileOrg()
@@ -957,6 +986,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCity().hashCode();
     hash = (37 * hash) + ORG_FIELD_NUMBER;
     hash = (53 * hash) + getOrg().hashCode();
+    hash = (37 * hash) + DOC_CATEGORY_FIELD_NUMBER;
+    hash = (53 * hash) + getDocCategory();
     hash = (37 * hash) + MAJOR_FIELD_NUMBER;
     hash = (53 * hash) + getMajor().hashCode();
     hash = (37 * hash) + COMPILE_ORG_FIELD_NUMBER;
@@ -1132,6 +1163,8 @@ private static final long serialVersionUID = 0L;
 
       org = "";
 
+      docCategory = 0;
+
       major = "";
 
       compileOrg = "";
@@ -1185,6 +1218,7 @@ private static final long serialVersionUID = 0L;
       result.province = province ;
       result.city = city ;
       result.org = org ;
+      result.docCategory = docCategory ;
       result.major = major ;
       result.compileOrg = compileOrg ;
       result.grade = grade ;
@@ -1267,6 +1301,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getOrg().isEmpty()) {
         org = other.org ;
         onChanged();
+      }
+      if (other.getDocCategory() != 0) {
+        setDocCategory(other.getDocCategory());
       }
       if (!other.getMajor().isEmpty()) {
         major = other.major ;
@@ -1645,7 +1682,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object city = "";
     /**
      * <pre>
-     * 市(编码)
+     * 市(编码，已废弃)
      * </pre>
      *
      * <code>string city = 6;</code>
@@ -1665,7 +1702,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 市(编码)
+     * 市(编码，已废弃)
      * </pre>
      *
      * <code>string city = 6;</code>
@@ -1686,7 +1723,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 市(编码)
+     * 市(编码，已废弃)
      * </pre>
      *
      * <code>string city = 6;</code>
@@ -1705,7 +1742,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 市(编码)
+     * 市(编码，已废弃)
      * </pre>
      *
      * <code>string city = 6;</code>
@@ -1719,7 +1756,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 市(编码)
+     * 市(编码，已废弃)
      * </pre>
      *
      * <code>string city = 6;</code>
@@ -1830,6 +1867,49 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       org = value;
+      onChanged();
+      return this;
+    }
+
+    private int docCategory ;
+    /**
+     * <pre>
+     * 政策文件分类：0.未分类(存量)；1.技工教育；2.职业教育
+     * </pre>
+     *
+     * <code>int32 doc_category = 18;</code>
+     * @return The docCategory.
+     */
+    @java.lang.Override
+    public int getDocCategory() {
+      return docCategory ;
+    }
+    /**
+     * <pre>
+     * 政策文件分类：0.未分类(存量)；1.技工教育；2.职业教育
+     * </pre>
+     *
+     * <code>int32 doc_category = 18;</code>
+     * @param value The docCategory to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDocCategory(int value) {
+      
+      docCategory = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 政策文件分类：0.未分类(存量)；1.技工教育；2.职业教育
+     * </pre>
+     *
+     * <code>int32 doc_category = 18;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDocCategory() {
+      
+      docCategory = 0;
       onChanged();
       return this;
     }

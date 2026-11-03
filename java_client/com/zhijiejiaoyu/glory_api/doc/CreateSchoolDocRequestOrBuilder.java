@@ -241,4 +241,14 @@ public interface CreateSchoolDocRequestOrBuilder extends
    * @return The pageCount.
    */
   long getPageCount();
+
+  /**
+   * <pre>
+   * 仅 doc_type=1：分类 0.未分类(可选/不传)；1.技工教育；2.职业教育
+   * </pre>
+   *
+   * <code>int32 doc_category = 15;</code>
+   * @return The docCategory.
+   */
+  int getDocCategory();
 }

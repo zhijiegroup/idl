@@ -36,6 +36,7 @@ class SchoolDocItem extends $pb.GeneratedMessage {
     $core.bool? favorited,
     $core.String? createdAt,
     $fixnum.Int64? createdBy,
+    $core.int? docCategory,
   }) {
     final $result = create();
     if (docId != null) {
@@ -89,6 +90,9 @@ class SchoolDocItem extends $pb.GeneratedMessage {
     if (createdBy != null) {
       $result.createdBy = createdBy;
     }
+    if (docCategory != null) {
+      $result.docCategory = docCategory;
+    }
     return $result;
   }
   SchoolDocItem._() : super();
@@ -113,6 +117,7 @@ class SchoolDocItem extends $pb.GeneratedMessage {
     ..aOB(15, _omitFieldNames ? '' : 'favorited')
     ..aOS(16, _omitFieldNames ? '' : 'createdAt')
     ..aInt64(17, _omitFieldNames ? '' : 'createdBy')
+    ..a<$core.int>(18, _omitFieldNames ? '' : 'docCategory', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -292,6 +297,15 @@ class SchoolDocItem extends $pb.GeneratedMessage {
   $core.bool hasCreatedBy() => $_has(16);
   @$pb.TagNumber(17)
   void clearCreatedBy() => clearField(17);
+
+  @$pb.TagNumber(18)
+  $core.int get docCategory => $_getIZ(17);
+  @$pb.TagNumber(18)
+  set docCategory($core.int v) { $_setSignedInt32(17, v); }
+  @$pb.TagNumber(18)
+  $core.bool hasDocCategory() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearDocCategory() => clearField(18);
 }
 
 /// 学校文档列表(按发布日期倒序；政策文件全平台可读，人才培养方案本校可读；学生不可见)
@@ -305,6 +319,7 @@ class ListSchoolDocRequest extends $pb.GeneratedMessage {
     $core.String? major,
     $core.String? grade,
     $core.String? name,
+    $core.int? docCategory,
     $0.PaginationRequest? pagination,
   }) {
     final $result = create();
@@ -332,6 +347,9 @@ class ListSchoolDocRequest extends $pb.GeneratedMessage {
     if (name != null) {
       $result.name = name;
     }
+    if (docCategory != null) {
+      $result.docCategory = docCategory;
+    }
     if (pagination != null) {
       $result.pagination = pagination;
     }
@@ -350,6 +368,7 @@ class ListSchoolDocRequest extends $pb.GeneratedMessage {
     ..aOS(6, _omitFieldNames ? '' : 'major')
     ..aOS(7, _omitFieldNames ? '' : 'grade')
     ..aOS(8, _omitFieldNames ? '' : 'name')
+    ..a<$core.int>(9, _omitFieldNames ? '' : 'docCategory', $pb.PbFieldType.O3)
     ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -449,16 +468,25 @@ class ListSchoolDocRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   void clearName() => clearField(8);
 
+  @$pb.TagNumber(9)
+  $core.int get docCategory => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set docCategory($core.int v) { $_setSignedInt32(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasDocCategory() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearDocCategory() => clearField(9);
+
   @$pb.TagNumber(100)
-  $0.PaginationRequest get pagination => $_getN(8);
+  $0.PaginationRequest get pagination => $_getN(9);
   @$pb.TagNumber(100)
   set pagination($0.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasPagination() => $_has(8);
+  $core.bool hasPagination() => $_has(9);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationRequest ensurePagination() => $_ensure(8);
+  $0.PaginationRequest ensurePagination() => $_ensure(9);
 }
 
 class ListSchoolDocResponse extends $pb.GeneratedMessage {
@@ -554,6 +582,7 @@ class CreateSchoolDocRequest extends $pb.GeneratedMessage {
     $core.String? fileUrl,
     $fixnum.Int64? fileSize,
     $fixnum.Int64? pageCount,
+    $core.int? docCategory,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -598,6 +627,9 @@ class CreateSchoolDocRequest extends $pb.GeneratedMessage {
     if (pageCount != null) {
       $result.pageCount = pageCount;
     }
+    if (docCategory != null) {
+      $result.docCategory = docCategory;
+    }
     return $result;
   }
   CreateSchoolDocRequest._() : super();
@@ -619,6 +651,7 @@ class CreateSchoolDocRequest extends $pb.GeneratedMessage {
     ..aOS(12, _omitFieldNames ? '' : 'fileUrl')
     ..aInt64(13, _omitFieldNames ? '' : 'fileSize')
     ..aInt64(14, _omitFieldNames ? '' : 'pageCount')
+    ..a<$core.int>(15, _omitFieldNames ? '' : 'docCategory', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -770,6 +803,15 @@ class CreateSchoolDocRequest extends $pb.GeneratedMessage {
   $core.bool hasPageCount() => $_has(13);
   @$pb.TagNumber(14)
   void clearPageCount() => clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.int get docCategory => $_getIZ(14);
+  @$pb.TagNumber(15)
+  set docCategory($core.int v) { $_setSignedInt32(14, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasDocCategory() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearDocCategory() => clearField(15);
 }
 
 class CreateSchoolDocResponse extends $pb.GeneratedMessage {
@@ -857,6 +899,7 @@ class UpdateSchoolDocRequest extends $pb.GeneratedMessage {
     $fixnum.Int64? fileSize,
     $fixnum.Int64? pageCount,
     $core.bool? replaceFile,
+    $core.int? docCategory,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -907,6 +950,9 @@ class UpdateSchoolDocRequest extends $pb.GeneratedMessage {
     if (replaceFile != null) {
       $result.replaceFile = replaceFile;
     }
+    if (docCategory != null) {
+      $result.docCategory = docCategory;
+    }
     return $result;
   }
   UpdateSchoolDocRequest._() : super();
@@ -930,6 +976,7 @@ class UpdateSchoolDocRequest extends $pb.GeneratedMessage {
     ..aInt64(14, _omitFieldNames ? '' : 'fileSize')
     ..aInt64(15, _omitFieldNames ? '' : 'pageCount')
     ..aOB(16, _omitFieldNames ? '' : 'replaceFile')
+    ..a<$core.int>(17, _omitFieldNames ? '' : 'docCategory', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -1099,6 +1146,15 @@ class UpdateSchoolDocRequest extends $pb.GeneratedMessage {
   $core.bool hasReplaceFile() => $_has(15);
   @$pb.TagNumber(16)
   void clearReplaceFile() => clearField(16);
+
+  @$pb.TagNumber(17)
+  $core.int get docCategory => $_getIZ(16);
+  @$pb.TagNumber(17)
+  set docCategory($core.int v) { $_setSignedInt32(16, v); }
+  @$pb.TagNumber(17)
+  $core.bool hasDocCategory() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearDocCategory() => clearField(17);
 }
 
 class UpdateSchoolDocResponse extends $pb.GeneratedMessage {

@@ -143,6 +143,16 @@ public interface ListSchoolDocRequestOrBuilder extends
       getNameBytes();
 
   /**
+   * <pre>
+   * 仅 doc_type=1：分类筛选 0.全部(不传/0)；1.技工教育；2.职业教育
+   * </pre>
+   *
+   * <code>int32 doc_category = 9;</code>
+   * @return The docCategory.
+   */
+  int getDocCategory();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

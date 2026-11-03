@@ -55,7 +55,7 @@ nonisolated struct GloryApi_SchoolDocItem: @unchecked Sendable {
     set {_uniqueStorage()._province = newValue}
   }
 
-  /// 市(编码)
+  /// 市(编码，已废弃)
   var city: String {
     get {_storage._city}
     set {_uniqueStorage()._city = newValue}
@@ -65,6 +65,12 @@ nonisolated struct GloryApi_SchoolDocItem: @unchecked Sendable {
   var org: String {
     get {_storage._org}
     set {_uniqueStorage()._org = newValue}
+  }
+
+  /// 政策文件分类：0.未分类(存量)；1.技工教育；2.职业教育
+  var docCategory: Int32 {
+    get {_storage._docCategory}
+    set {_uniqueStorage()._docCategory = newValue}
   }
 
   /// —— 仅 doc_type=2 人才培养方案 ——
@@ -170,6 +176,9 @@ nonisolated struct GloryApi_ListSchoolDocRequest: Sendable {
   /// 名称模糊
   var name: String = String()
 
+  /// 仅 doc_type=1：分类筛选 0.全部(不传/0)；1.技工教育；2.职业教育
+  var docCategory: Int32 = 0
+
   var pagination: Base_PaginationRequest {
     get {_pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
@@ -274,6 +283,9 @@ nonisolated struct GloryApi_CreateSchoolDocRequest: Sendable {
   /// PDF总页数
   var pageCount: Int64 = 0
 
+  /// 仅 doc_type=1：分类 0.未分类(可选/不传)；1.技工教育；2.职业教育
+  var docCategory: Int32 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -306,70 +318,121 @@ nonisolated struct GloryApi_CreateSchoolDocResponse: Sendable {
 }
 
 /// 编辑/替换学校文档(replace_file=true 时以新文件替换，按差值计算容量；替换后收藏记录自动指向最新版本)
-nonisolated struct GloryApi_UpdateSchoolDocRequest: Sendable {
+nonisolated struct GloryApi_UpdateSchoolDocRequest: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {_baseRequest ?? Base_BaseRequest()}
-    set {_baseRequest = newValue}
+    get {_storage._baseRequest ?? Base_BaseRequest()}
+    set {_uniqueStorage()._baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {self._baseRequest != nil}
+  var hasBaseRequest: Bool {_storage._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
-  mutating func clearBaseRequest() {self._baseRequest = nil}
+  mutating func clearBaseRequest() {_uniqueStorage()._baseRequest = nil}
 
   /// 文档ID
-  var docID: Int64 = 0
+  var docID: Int64 {
+    get {_storage._docID}
+    set {_uniqueStorage()._docID = newValue}
+  }
 
   /// 文档类型：1.政策文件；2.人才培养方案
-  var docType: Int32 = 0
+  var docType: Int32 {
+    get {_storage._docType}
+    set {_uniqueStorage()._docType = newValue}
+  }
 
   /// 名称
-  var docName: String = String()
+  var docName: String {
+    get {_storage._docName}
+    set {_uniqueStorage()._docName = newValue}
+  }
 
   /// 仅 doc_type=1：1.全国级；2.省级(3.市级已废弃，禁止编辑为市级)
-  var level: Int32 = 0
+  var level: Int32 {
+    get {_storage._level}
+    set {_uniqueStorage()._level = newValue}
+  }
 
   /// 仅 doc_type=1：level=2 需省级国标码
-  var province: String = String()
+  var province: String {
+    get {_storage._province}
+    set {_uniqueStorage()._province = newValue}
+  }
 
   /// 【已废弃】level=3 专用；字段保留兼容存量
-  var city: String = String()
+  var city: String {
+    get {_storage._city}
+    set {_uniqueStorage()._city = newValue}
+  }
 
   /// 仅 doc_type=1：发布机构
-  var org: String = String()
+  var org: String {
+    get {_storage._org}
+    set {_uniqueStorage()._org = newValue}
+  }
 
   /// 仅 doc_type=2：专业
-  var major: String = String()
+  var major: String {
+    get {_storage._major}
+    set {_uniqueStorage()._major = newValue}
+  }
 
   /// 仅 doc_type=2：年级
-  var grade: String = String()
+  var grade: String {
+    get {_storage._grade}
+    set {_uniqueStorage()._grade = newValue}
+  }
 
   /// 仅 doc_type=2：编制单位
-  var compileOrg: String = String()
+  var compileOrg: String {
+    get {_storage._compileOrg}
+    set {_uniqueStorage()._compileOrg = newValue}
+  }
 
   /// 发布/上传日期
-  var publishDate: String = String()
+  var publishDate: String {
+    get {_storage._publishDate}
+    set {_uniqueStorage()._publishDate = newValue}
+  }
 
   /// 私有对象地址(先上传)
-  var fileURL: String = String()
+  var fileURL: String {
+    get {_storage._fileURL}
+    set {_uniqueStorage()._fileURL = newValue}
+  }
 
   /// 文件大小(字节)
-  var fileSize: Int64 = 0
+  var fileSize: Int64 {
+    get {_storage._fileSize}
+    set {_uniqueStorage()._fileSize = newValue}
+  }
 
   /// PDF总页数
-  var pageCount: Int64 = 0
+  var pageCount: Int64 {
+    get {_storage._pageCount}
+    set {_uniqueStorage()._pageCount = newValue}
+  }
 
   /// true 时以新文件替换
-  var replaceFile: Bool = false
+  var replaceFile: Bool {
+    get {_storage._replaceFile}
+    set {_uniqueStorage()._replaceFile = newValue}
+  }
+
+  /// 仅 doc_type=1：分类 0.未分类；1.技工教育；2.职业教育
+  var docCategory: Int32 {
+    get {_storage._docCategory}
+    set {_uniqueStorage()._docCategory = newValue}
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _baseRequest: Base_BaseRequest? = nil
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 nonisolated struct GloryApi_UpdateSchoolDocResponse: Sendable {
@@ -1219,7 +1282,7 @@ fileprivate nonisolated let _protobuf_package = "glory_api"
 
 nonisolated extension GloryApi_SchoolDocItem: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".SchoolDocItem"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}doc_id\0\u{3}doc_type\0\u{3}doc_name\0\u{1}level\0\u{1}province\0\u{1}city\0\u{1}org\0\u{1}major\0\u{3}compile_org\0\u{1}grade\0\u{3}publish_date\0\u{3}file_size\0\u{3}file_url\0\u{3}page_count\0\u{1}favorited\0\u{3}created_at\0\u{3}created_by\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}doc_id\0\u{3}doc_type\0\u{3}doc_name\0\u{1}level\0\u{1}province\0\u{1}city\0\u{1}org\0\u{1}major\0\u{3}compile_org\0\u{1}grade\0\u{3}publish_date\0\u{3}file_size\0\u{3}file_url\0\u{3}page_count\0\u{1}favorited\0\u{3}created_at\0\u{3}created_by\0\u{3}doc_category\0")
 
   fileprivate class _StorageClass {
     var _docID: Int64 = 0
@@ -1229,6 +1292,7 @@ nonisolated extension GloryApi_SchoolDocItem: SwiftProtobuf.Message, SwiftProtob
     var _province: String = String()
     var _city: String = String()
     var _org: String = String()
+    var _docCategory: Int32 = 0
     var _major: String = String()
     var _compileOrg: String = String()
     var _grade: String = String()
@@ -1256,6 +1320,7 @@ nonisolated extension GloryApi_SchoolDocItem: SwiftProtobuf.Message, SwiftProtob
       _province = source._province
       _city = source._city
       _org = source._org
+      _docCategory = source._docCategory
       _major = source._major
       _compileOrg = source._compileOrg
       _grade = source._grade
@@ -1301,6 +1366,7 @@ nonisolated extension GloryApi_SchoolDocItem: SwiftProtobuf.Message, SwiftProtob
         case 15: try { try decoder.decodeSingularBoolField(value: &_storage._favorited) }()
         case 16: try { try decoder.decodeSingularStringField(value: &_storage._createdAt) }()
         case 17: try { try decoder.decodeSingularInt64Field(value: &_storage._createdBy) }()
+        case 18: try { try decoder.decodeSingularInt32Field(value: &_storage._docCategory) }()
         default: break
         }
       }
@@ -1360,6 +1426,9 @@ nonisolated extension GloryApi_SchoolDocItem: SwiftProtobuf.Message, SwiftProtob
       if _storage._createdBy != 0 {
         try visitor.visitSingularInt64Field(value: _storage._createdBy, fieldNumber: 17)
       }
+      if _storage._docCategory != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._docCategory, fieldNumber: 18)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1376,6 +1445,7 @@ nonisolated extension GloryApi_SchoolDocItem: SwiftProtobuf.Message, SwiftProtob
         if _storage._province != rhs_storage._province {return false}
         if _storage._city != rhs_storage._city {return false}
         if _storage._org != rhs_storage._org {return false}
+        if _storage._docCategory != rhs_storage._docCategory {return false}
         if _storage._major != rhs_storage._major {return false}
         if _storage._compileOrg != rhs_storage._compileOrg {return false}
         if _storage._grade != rhs_storage._grade {return false}
@@ -1397,7 +1467,7 @@ nonisolated extension GloryApi_SchoolDocItem: SwiftProtobuf.Message, SwiftProtob
 
 nonisolated extension GloryApi_ListSchoolDocRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListSchoolDocRequest"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}doc_type\0\u{1}level\0\u{1}province\0\u{1}city\0\u{1}major\0\u{1}grade\0\u{1}name\0\u{2}\\\u{1}pagination\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}doc_type\0\u{1}level\0\u{1}province\0\u{1}city\0\u{1}major\0\u{1}grade\0\u{1}name\0\u{3}doc_category\0\u{2}[\u{1}pagination\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1413,6 +1483,7 @@ nonisolated extension GloryApi_ListSchoolDocRequest: SwiftProtobuf.Message, Swif
       case 6: try { try decoder.decodeSingularStringField(value: &self.major) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.grade) }()
       case 8: try { try decoder.decodeSingularStringField(value: &self.name) }()
+      case 9: try { try decoder.decodeSingularInt32Field(value: &self.docCategory) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -1448,6 +1519,9 @@ nonisolated extension GloryApi_ListSchoolDocRequest: SwiftProtobuf.Message, Swif
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 8)
     }
+    if self.docCategory != 0 {
+      try visitor.visitSingularInt32Field(value: self.docCategory, fieldNumber: 9)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -1463,6 +1537,7 @@ nonisolated extension GloryApi_ListSchoolDocRequest: SwiftProtobuf.Message, Swif
     if lhs.major != rhs.major {return false}
     if lhs.grade != rhs.grade {return false}
     if lhs.name != rhs.name {return false}
+    if lhs.docCategory != rhs.docCategory {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -1515,7 +1590,7 @@ nonisolated extension GloryApi_ListSchoolDocResponse: SwiftProtobuf.Message, Swi
 
 nonisolated extension GloryApi_CreateSchoolDocRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CreateSchoolDocRequest"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}doc_type\0\u{3}doc_name\0\u{1}level\0\u{1}province\0\u{1}city\0\u{1}org\0\u{1}major\0\u{1}grade\0\u{3}compile_org\0\u{3}publish_date\0\u{3}file_url\0\u{3}file_size\0\u{3}page_count\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}doc_type\0\u{3}doc_name\0\u{1}level\0\u{1}province\0\u{1}city\0\u{1}org\0\u{1}major\0\u{1}grade\0\u{3}compile_org\0\u{3}publish_date\0\u{3}file_url\0\u{3}file_size\0\u{3}page_count\0\u{3}doc_category\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1537,6 +1612,7 @@ nonisolated extension GloryApi_CreateSchoolDocRequest: SwiftProtobuf.Message, Sw
       case 12: try { try decoder.decodeSingularStringField(value: &self.fileURL) }()
       case 13: try { try decoder.decodeSingularInt64Field(value: &self.fileSize) }()
       case 14: try { try decoder.decodeSingularInt64Field(value: &self.pageCount) }()
+      case 15: try { try decoder.decodeSingularInt32Field(value: &self.docCategory) }()
       default: break
       }
     }
@@ -1589,6 +1665,9 @@ nonisolated extension GloryApi_CreateSchoolDocRequest: SwiftProtobuf.Message, Sw
     if self.pageCount != 0 {
       try visitor.visitSingularInt64Field(value: self.pageCount, fieldNumber: 14)
     }
+    if self.docCategory != 0 {
+      try visitor.visitSingularInt32Field(value: self.docCategory, fieldNumber: 15)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1607,6 +1686,7 @@ nonisolated extension GloryApi_CreateSchoolDocRequest: SwiftProtobuf.Message, Sw
     if lhs.fileURL != rhs.fileURL {return false}
     if lhs.fileSize != rhs.fileSize {return false}
     if lhs.pageCount != rhs.pageCount {return false}
+    if lhs.docCategory != rhs.docCategory {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1653,108 +1733,181 @@ nonisolated extension GloryApi_CreateSchoolDocResponse: SwiftProtobuf.Message, S
 
 nonisolated extension GloryApi_UpdateSchoolDocRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UpdateSchoolDocRequest"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}doc_id\0\u{3}doc_type\0\u{3}doc_name\0\u{1}level\0\u{1}province\0\u{1}city\0\u{1}org\0\u{1}major\0\u{1}grade\0\u{3}compile_org\0\u{3}publish_date\0\u{3}file_url\0\u{3}file_size\0\u{3}page_count\0\u{3}replace_file\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}doc_id\0\u{3}doc_type\0\u{3}doc_name\0\u{1}level\0\u{1}province\0\u{1}city\0\u{1}org\0\u{1}major\0\u{1}grade\0\u{3}compile_org\0\u{3}publish_date\0\u{3}file_url\0\u{3}file_size\0\u{3}page_count\0\u{3}replace_file\0\u{3}doc_category\0")
+
+  fileprivate class _StorageClass {
+    var _baseRequest: Base_BaseRequest? = nil
+    var _docID: Int64 = 0
+    var _docType: Int32 = 0
+    var _docName: String = String()
+    var _level: Int32 = 0
+    var _province: String = String()
+    var _city: String = String()
+    var _org: String = String()
+    var _major: String = String()
+    var _grade: String = String()
+    var _compileOrg: String = String()
+    var _publishDate: String = String()
+    var _fileURL: String = String()
+    var _fileSize: Int64 = 0
+    var _pageCount: Int64 = 0
+    var _replaceFile: Bool = false
+    var _docCategory: Int32 = 0
+
+      // This property is used as the initial default value for new instances of the type.
+      // The type itself is protecting the reference to its storage via CoW semantics.
+      // This will force a copy to be made of this reference when the first mutation occurs;
+      // hence, it is safe to mark this as `nonisolated(unsafe)`.
+      static nonisolated(unsafe) let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _baseRequest = source._baseRequest
+      _docID = source._docID
+      _docType = source._docType
+      _docName = source._docName
+      _level = source._level
+      _province = source._province
+      _city = source._city
+      _org = source._org
+      _major = source._major
+      _grade = source._grade
+      _compileOrg = source._compileOrg
+      _publishDate = source._publishDate
+      _fileURL = source._fileURL
+      _fileSize = source._fileSize
+      _pageCount = source._pageCount
+      _replaceFile = source._replaceFile
+      _docCategory = source._docCategory
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.docID) }()
-      case 3: try { try decoder.decodeSingularInt32Field(value: &self.docType) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.docName) }()
-      case 5: try { try decoder.decodeSingularInt32Field(value: &self.level) }()
-      case 6: try { try decoder.decodeSingularStringField(value: &self.province) }()
-      case 7: try { try decoder.decodeSingularStringField(value: &self.city) }()
-      case 8: try { try decoder.decodeSingularStringField(value: &self.org) }()
-      case 9: try { try decoder.decodeSingularStringField(value: &self.major) }()
-      case 10: try { try decoder.decodeSingularStringField(value: &self.grade) }()
-      case 11: try { try decoder.decodeSingularStringField(value: &self.compileOrg) }()
-      case 12: try { try decoder.decodeSingularStringField(value: &self.publishDate) }()
-      case 13: try { try decoder.decodeSingularStringField(value: &self.fileURL) }()
-      case 14: try { try decoder.decodeSingularInt64Field(value: &self.fileSize) }()
-      case 15: try { try decoder.decodeSingularInt64Field(value: &self.pageCount) }()
-      case 16: try { try decoder.decodeSingularBoolField(value: &self.replaceFile) }()
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._baseRequest) }()
+        case 2: try { try decoder.decodeSingularInt64Field(value: &_storage._docID) }()
+        case 3: try { try decoder.decodeSingularInt32Field(value: &_storage._docType) }()
+        case 4: try { try decoder.decodeSingularStringField(value: &_storage._docName) }()
+        case 5: try { try decoder.decodeSingularInt32Field(value: &_storage._level) }()
+        case 6: try { try decoder.decodeSingularStringField(value: &_storage._province) }()
+        case 7: try { try decoder.decodeSingularStringField(value: &_storage._city) }()
+        case 8: try { try decoder.decodeSingularStringField(value: &_storage._org) }()
+        case 9: try { try decoder.decodeSingularStringField(value: &_storage._major) }()
+        case 10: try { try decoder.decodeSingularStringField(value: &_storage._grade) }()
+        case 11: try { try decoder.decodeSingularStringField(value: &_storage._compileOrg) }()
+        case 12: try { try decoder.decodeSingularStringField(value: &_storage._publishDate) }()
+        case 13: try { try decoder.decodeSingularStringField(value: &_storage._fileURL) }()
+        case 14: try { try decoder.decodeSingularInt64Field(value: &_storage._fileSize) }()
+        case 15: try { try decoder.decodeSingularInt64Field(value: &_storage._pageCount) }()
+        case 16: try { try decoder.decodeSingularBoolField(value: &_storage._replaceFile) }()
+        case 17: try { try decoder.decodeSingularInt32Field(value: &_storage._docCategory) }()
+        default: break
+        }
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseRequest {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    if self.docID != 0 {
-      try visitor.visitSingularInt64Field(value: self.docID, fieldNumber: 2)
-    }
-    if self.docType != 0 {
-      try visitor.visitSingularInt32Field(value: self.docType, fieldNumber: 3)
-    }
-    if !self.docName.isEmpty {
-      try visitor.visitSingularStringField(value: self.docName, fieldNumber: 4)
-    }
-    if self.level != 0 {
-      try visitor.visitSingularInt32Field(value: self.level, fieldNumber: 5)
-    }
-    if !self.province.isEmpty {
-      try visitor.visitSingularStringField(value: self.province, fieldNumber: 6)
-    }
-    if !self.city.isEmpty {
-      try visitor.visitSingularStringField(value: self.city, fieldNumber: 7)
-    }
-    if !self.org.isEmpty {
-      try visitor.visitSingularStringField(value: self.org, fieldNumber: 8)
-    }
-    if !self.major.isEmpty {
-      try visitor.visitSingularStringField(value: self.major, fieldNumber: 9)
-    }
-    if !self.grade.isEmpty {
-      try visitor.visitSingularStringField(value: self.grade, fieldNumber: 10)
-    }
-    if !self.compileOrg.isEmpty {
-      try visitor.visitSingularStringField(value: self.compileOrg, fieldNumber: 11)
-    }
-    if !self.publishDate.isEmpty {
-      try visitor.visitSingularStringField(value: self.publishDate, fieldNumber: 12)
-    }
-    if !self.fileURL.isEmpty {
-      try visitor.visitSingularStringField(value: self.fileURL, fieldNumber: 13)
-    }
-    if self.fileSize != 0 {
-      try visitor.visitSingularInt64Field(value: self.fileSize, fieldNumber: 14)
-    }
-    if self.pageCount != 0 {
-      try visitor.visitSingularInt64Field(value: self.pageCount, fieldNumber: 15)
-    }
-    if self.replaceFile != false {
-      try visitor.visitSingularBoolField(value: self.replaceFile, fieldNumber: 16)
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      try { if let v = _storage._baseRequest {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+      } }()
+      if _storage._docID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._docID, fieldNumber: 2)
+      }
+      if _storage._docType != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._docType, fieldNumber: 3)
+      }
+      if !_storage._docName.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._docName, fieldNumber: 4)
+      }
+      if _storage._level != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._level, fieldNumber: 5)
+      }
+      if !_storage._province.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._province, fieldNumber: 6)
+      }
+      if !_storage._city.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._city, fieldNumber: 7)
+      }
+      if !_storage._org.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._org, fieldNumber: 8)
+      }
+      if !_storage._major.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._major, fieldNumber: 9)
+      }
+      if !_storage._grade.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._grade, fieldNumber: 10)
+      }
+      if !_storage._compileOrg.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._compileOrg, fieldNumber: 11)
+      }
+      if !_storage._publishDate.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._publishDate, fieldNumber: 12)
+      }
+      if !_storage._fileURL.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._fileURL, fieldNumber: 13)
+      }
+      if _storage._fileSize != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._fileSize, fieldNumber: 14)
+      }
+      if _storage._pageCount != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._pageCount, fieldNumber: 15)
+      }
+      if _storage._replaceFile != false {
+        try visitor.visitSingularBoolField(value: _storage._replaceFile, fieldNumber: 16)
+      }
+      if _storage._docCategory != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._docCategory, fieldNumber: 17)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_UpdateSchoolDocRequest, rhs: GloryApi_UpdateSchoolDocRequest) -> Bool {
-    if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs.docID != rhs.docID {return false}
-    if lhs.docType != rhs.docType {return false}
-    if lhs.docName != rhs.docName {return false}
-    if lhs.level != rhs.level {return false}
-    if lhs.province != rhs.province {return false}
-    if lhs.city != rhs.city {return false}
-    if lhs.org != rhs.org {return false}
-    if lhs.major != rhs.major {return false}
-    if lhs.grade != rhs.grade {return false}
-    if lhs.compileOrg != rhs.compileOrg {return false}
-    if lhs.publishDate != rhs.publishDate {return false}
-    if lhs.fileURL != rhs.fileURL {return false}
-    if lhs.fileSize != rhs.fileSize {return false}
-    if lhs.pageCount != rhs.pageCount {return false}
-    if lhs.replaceFile != rhs.replaceFile {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._baseRequest != rhs_storage._baseRequest {return false}
+        if _storage._docID != rhs_storage._docID {return false}
+        if _storage._docType != rhs_storage._docType {return false}
+        if _storage._docName != rhs_storage._docName {return false}
+        if _storage._level != rhs_storage._level {return false}
+        if _storage._province != rhs_storage._province {return false}
+        if _storage._city != rhs_storage._city {return false}
+        if _storage._org != rhs_storage._org {return false}
+        if _storage._major != rhs_storage._major {return false}
+        if _storage._grade != rhs_storage._grade {return false}
+        if _storage._compileOrg != rhs_storage._compileOrg {return false}
+        if _storage._publishDate != rhs_storage._publishDate {return false}
+        if _storage._fileURL != rhs_storage._fileURL {return false}
+        if _storage._fileSize != rhs_storage._fileSize {return false}
+        if _storage._pageCount != rhs_storage._pageCount {return false}
+        if _storage._replaceFile != rhs_storage._replaceFile {return false}
+        if _storage._docCategory != rhs_storage._docCategory {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
