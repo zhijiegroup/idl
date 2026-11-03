@@ -13,10 +13,11 @@ message SchoolDocItem {
   int32 doc_type = 2; // 文档类型：1.政策文件(平台维护)；2.人才培养方案(本校)
   string doc_name = 3; // 名称
   // —— 仅 doc_type=1 政策文件 ——
-  int32 level = 4; // 政策文件级别：1.全国级；2.省级；3.市级
+  int32 level = 4; // 政策文件级别：1.全国级；2.省级；3.市级(废弃)
   string province = 5; // 省(编码)
-  string city = 6; // 市(编码)
+  string city = 6; // 市(编码，已废弃)
   string org = 7; // 发布机构
+  int32 doc_category = 18; // 政策文件分类：0.未分类(存量)；1.技工教育；2.职业教育
   // —— 仅 doc_type=2 人才培养方案 ——
   string major = 8; // 所属专业
   string compile_org = 9; // 编制单位
@@ -41,6 +42,7 @@ message ListSchoolDocRequest {
   string major = 6; // 仅 doc_type=2：专业筛选
   string grade = 7; // 仅 doc_type=2：年级筛选(如 2026)
   string name = 8; // 名称模糊
+  int32 doc_category = 9; // 仅 doc_type=1：分类筛选 0.全部(不传/0)；1.技工教育；2.职业教育
   base.PaginationRequest pagination = 100;
 }
 
@@ -66,6 +68,7 @@ message CreateSchoolDocRequest {
   string file_url = 12; // 私有对象地址(先上传)
   int64 file_size = 13; // 文件大小(字节)
   int64 page_count = 14; // PDF总页数
+  int32 doc_category = 15; // 仅 doc_type=1：分类 0.未分类(可选/不传)；1.技工教育；2.职业教育
 }
 
 message CreateSchoolDocResponse {
@@ -91,6 +94,7 @@ message UpdateSchoolDocRequest {
   int64 file_size = 14; // 文件大小(字节)
   int64 page_count = 15; // PDF总页数
   bool replace_file = 16; // true 时以新文件替换
+  int32 doc_category = 17; // 仅 doc_type=1：分类 0.未分类；1.技工教育；2.职业教育
 }
 
 message UpdateSchoolDocResponse {
