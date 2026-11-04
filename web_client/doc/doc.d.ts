@@ -64,8 +64,10 @@ export interface ListSchoolDocRequest {
   grade?: string;
   /** 名称模糊 */
   name?: string;
-  /** 仅 doc_type=1：分类筛选 0.全部(不传/0)；1.技工教育；2.职业教育 */
+  /** 仅 doc_type=1：分类筛选 0.全部(不传/0)；1.技工教育；2.职业教育【单选·存量兼容】 */
   doc_category?: number;
+  /** 仅 doc_type=1：分类多选筛选(并集；元素 1.技工教育 2.职业教育，非法值 400；含 0 或空=全部；非空时优先于 doc_category) */
+  doc_categories?: Array<number>;
   pagination?: base.PaginationRequest;
 }
 

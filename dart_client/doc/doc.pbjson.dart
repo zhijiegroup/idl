@@ -64,6 +64,7 @@ const ListSchoolDocRequest$json = {
     {'1': 'grade', '3': 7, '4': 1, '5': 9, '10': 'grade'},
     {'1': 'name', '3': 8, '4': 1, '5': 9, '10': 'name'},
     {'1': 'doc_category', '3': 9, '4': 1, '5': 5, '10': 'docCategory'},
+    {'1': 'doc_categories', '3': 10, '4': 3, '5': 5, '10': 'docCategories'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -74,8 +75,9 @@ final $typed_data.Uint8List listSchoolDocRequestDescriptor = $convert.base64Deco
     'VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIZCghkb2NfdHlwZRgCIAEoBVIHZG9jVHlwZRIUCgVsZXZl'
     'bBgDIAEoBVIFbGV2ZWwSGgoIcHJvdmluY2UYBCABKAlSCHByb3ZpbmNlEhIKBGNpdHkYBSABKA'
     'lSBGNpdHkSFAoFbWFqb3IYBiABKAlSBW1ham9yEhQKBWdyYWRlGAcgASgJUgVncmFkZRISCgRu'
-    'YW1lGAggASgJUgRuYW1lEiEKDGRvY19jYXRlZ29yeRgJIAEoBVILZG9jQ2F0ZWdvcnkSNwoKcG'
-    'FnaW5hdGlvbhhkIAEoCzIXLmJhc2UuUGFnaW5hdGlvblJlcXVlc3RSCnBhZ2luYXRpb24=');
+    'YW1lGAggASgJUgRuYW1lEiEKDGRvY19jYXRlZ29yeRgJIAEoBVILZG9jQ2F0ZWdvcnkSJQoOZG'
+    '9jX2NhdGVnb3JpZXMYCiADKAVSDWRvY0NhdGVnb3JpZXMSNwoKcGFnaW5hdGlvbhhkIAEoCzIX'
+    'LmJhc2UuUGFnaW5hdGlvblJlcXVlc3RSCnBhZ2luYXRpb24=');
 
 @$core.Deprecated('Use listSchoolDocResponseDescriptor instead')
 const ListSchoolDocResponse$json = {

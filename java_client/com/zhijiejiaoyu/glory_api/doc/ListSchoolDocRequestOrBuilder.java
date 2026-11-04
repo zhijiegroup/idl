@@ -144,13 +144,42 @@ public interface ListSchoolDocRequestOrBuilder extends
 
   /**
    * <pre>
-   * 仅 doc_type=1：分类筛选 0.全部(不传/0)；1.技工教育；2.职业教育
+   * 仅 doc_type=1：分类筛选 0.全部(不传/0)；1.技工教育；2.职业教育【单选·存量兼容】
    * </pre>
    *
    * <code>int32 doc_category = 9;</code>
    * @return The docCategory.
    */
   int getDocCategory();
+
+  /**
+   * <pre>
+   * 仅 doc_type=1：分类多选筛选(并集；元素 1.技工教育 2.职业教育，非法值 400；含 0 或空=全部；非空时优先于 doc_category)
+   * </pre>
+   *
+   * <code>repeated int32 doc_categories = 10;</code>
+   * @return A list containing the docCategories.
+   */
+  java.util.List<java.lang.Integer> getDocCategoriesList();
+  /**
+   * <pre>
+   * 仅 doc_type=1：分类多选筛选(并集；元素 1.技工教育 2.职业教育，非法值 400；含 0 或空=全部；非空时优先于 doc_category)
+   * </pre>
+   *
+   * <code>repeated int32 doc_categories = 10;</code>
+   * @return The count of docCategories.
+   */
+  int getDocCategoriesCount();
+  /**
+   * <pre>
+   * 仅 doc_type=1：分类多选筛选(并集；元素 1.技工教育 2.职业教育，非法值 400；含 0 或空=全部；非空时优先于 doc_category)
+   * </pre>
+   *
+   * <code>repeated int32 doc_categories = 10;</code>
+   * @param index The index of the element to return.
+   * @return The docCategories at the given index.
+   */
+  int getDocCategories(int index);
 
   /**
    * <code>.base.PaginationRequest pagination = 100;</code>

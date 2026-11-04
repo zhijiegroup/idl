@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
     major = "";
     grade = "";
     name = "";
+    docCategories = emptyIntList();
   }
 
   @java.lang.Override
@@ -47,6 +48,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -115,6 +117,27 @@ private static final long serialVersionUID = 0L;
             docCategory = input.readInt32();
             break;
           }
+          case 80: {
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              docCategories = newIntList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            docCategories .addInt(input.readInt32());
+            break;
+          }
+          case 82: {
+            int length = input.readRawVarint32();
+            int limit = input.pushLimit(length);
+            if (!((mutable_bitField0 & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+              docCategories = newIntList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            while (input.getBytesUntilLimit() > 0) {
+              docCategories .addInt(input.readInt32());
+            }
+            input.popLimit(limit);
+            break;
+          }
           case 802: {
             com.zhijiejiaoyu.base.PaginationRequest.Builder subBuilder = null;
             if (pagination != null) {
@@ -143,6 +166,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0 & 0x00000001) != 0)) {
+        docCategories .makeImmutable(); // C
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -450,7 +476,7 @@ private static final long serialVersionUID = 0L;
   private int docCategory ;
   /**
    * <pre>
-   * 仅 doc_type=1：分类筛选 0.全部(不传/0)；1.技工教育；2.职业教育
+   * 仅 doc_type=1：分类筛选 0.全部(不传/0)；1.技工教育；2.职业教育【单选·存量兼容】
    * </pre>
    *
    * <code>int32 doc_category = 9;</code>
@@ -460,6 +486,46 @@ private static final long serialVersionUID = 0L;
   public int getDocCategory() {
     return docCategory ;
   }
+
+  public static final int DOC_CATEGORIES_FIELD_NUMBER = 10;
+  private com.google.protobuf.Internal.IntList docCategories ;
+  /**
+   * <pre>
+   * 仅 doc_type=1：分类多选筛选(并集；元素 1.技工教育 2.职业教育，非法值 400；含 0 或空=全部；非空时优先于 doc_category)
+   * </pre>
+   *
+   * <code>repeated int32 doc_categories = 10;</code>
+   * @return A list containing the docCategories.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer>
+      getDocCategoriesList() {
+    return docCategories ;
+  }
+  /**
+   * <pre>
+   * 仅 doc_type=1：分类多选筛选(并集；元素 1.技工教育 2.职业教育，非法值 400；含 0 或空=全部；非空时优先于 doc_category)
+   * </pre>
+   *
+   * <code>repeated int32 doc_categories = 10;</code>
+   * @return The count of docCategories.
+   */
+  public int getDocCategoriesCount() {
+    return docCategories .size();
+  }
+  /**
+   * <pre>
+   * 仅 doc_type=1：分类多选筛选(并集；元素 1.技工教育 2.职业教育，非法值 400；含 0 或空=全部；非空时优先于 doc_category)
+   * </pre>
+   *
+   * <code>repeated int32 doc_categories = 10;</code>
+   * @param index The index of the element to return.
+   * @return The docCategories at the given index.
+   */
+  public int getDocCategories(int index) {
+    return docCategories .getInt(index);
+  }
+  private int docCategoriesMemoizedSerializedSize = -1;
 
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
@@ -501,6 +567,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    getSerializedSize();
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
@@ -527,6 +594,13 @@ private static final long serialVersionUID = 0L;
     }
     if (docCategory != 0) {
       output.writeInt32(9, docCategory );
+    }
+    if (getDocCategoriesList().size() > 0) {
+      output.writeUInt32NoTag(82);
+      output.writeUInt32NoTag(docCategoriesMemoizedSerializedSize);
+    }
+    for (int i = 0; i < docCategories .size(); i++) {
+      output.writeInt32NoTag(docCategories .getInt(i));
     }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
@@ -571,6 +645,20 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(9, docCategory );
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < docCategories .size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeInt32SizeNoTag(docCategories .getInt(i));
+      }
+      size += dataSize;
+      if (!getDocCategoriesList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(dataSize);
+      }
+      docCategoriesMemoizedSerializedSize = dataSize;
+    }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(100, getPagination());
@@ -611,6 +699,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getName())) return false;
     if (getDocCategory()
         != other.getDocCategory()) return false;
+    if (!getDocCategoriesList()
+        .equals(other.getDocCategoriesList())) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -647,6 +737,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + DOC_CATEGORY_FIELD_NUMBER;
     hash = (53 * hash) + getDocCategory();
+    if (getDocCategoriesCount() > 0) {
+      hash = (37 * hash) + DOC_CATEGORIES_FIELD_NUMBER;
+      hash = (53 * hash) + getDocCategoriesList().hashCode();
+    }
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -810,6 +904,8 @@ private static final long serialVersionUID = 0L;
 
       docCategory = 0;
 
+      docCategories = emptyIntList();
+      bitField0 = (bitField0 & ~0x00000001);
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -842,6 +938,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.doc.ListSchoolDocRequest buildPartial() {
       com.zhijiejiaoyu.glory_api.doc.ListSchoolDocRequest result = new com.zhijiejiaoyu.glory_api.doc.ListSchoolDocRequest(this);
+      int from_bitField0 = bitField0 ;
       if (baseRequestBuilder == null) {
         result.baseRequest = baseRequest ;
       } else {
@@ -855,6 +952,11 @@ private static final long serialVersionUID = 0L;
       result.grade = grade ;
       result.name = name ;
       result.docCategory = docCategory ;
+      if (((bitField0 & 0x00000001) != 0)) {
+        docCategories .makeImmutable();
+        bitField0 = (bitField0 & ~0x00000001);
+      }
+      result.docCategories = docCategories ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -940,6 +1042,16 @@ private static final long serialVersionUID = 0L;
       if (other.getDocCategory() != 0) {
         setDocCategory(other.getDocCategory());
       }
+      if (!other.docCategories .isEmpty()) {
+        if (docCategories .isEmpty()) {
+          docCategories = other.docCategories ;
+          bitField0 = (bitField0 & ~0x00000001);
+        } else {
+          ensureDocCategoriesIsMutable();
+          docCategories .addAll(other.docCategories );
+        }
+        onChanged();
+      }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
       }
@@ -971,6 +1083,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0 ;
 
     private com.zhijiejiaoyu.base.BaseRequest baseRequest ;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1660,7 +1773,7 @@ private static final long serialVersionUID = 0L;
     private int docCategory ;
     /**
      * <pre>
-     * 仅 doc_type=1：分类筛选 0.全部(不传/0)；1.技工教育；2.职业教育
+     * 仅 doc_type=1：分类筛选 0.全部(不传/0)；1.技工教育；2.职业教育【单选·存量兼容】
      * </pre>
      *
      * <code>int32 doc_category = 9;</code>
@@ -1672,7 +1785,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 仅 doc_type=1：分类筛选 0.全部(不传/0)；1.技工教育；2.职业教育
+     * 仅 doc_type=1：分类筛选 0.全部(不传/0)；1.技工教育；2.职业教育【单选·存量兼容】
      * </pre>
      *
      * <code>int32 doc_category = 9;</code>
@@ -1687,7 +1800,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 仅 doc_type=1：分类筛选 0.全部(不传/0)；1.技工教育；2.职业教育
+     * 仅 doc_type=1：分类筛选 0.全部(不传/0)；1.技工教育；2.职业教育【单选·存量兼容】
      * </pre>
      *
      * <code>int32 doc_category = 9;</code>
@@ -1696,6 +1809,113 @@ private static final long serialVersionUID = 0L;
     public Builder clearDocCategory() {
       
       docCategory = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Internal.IntList docCategories = emptyIntList();
+    private void ensureDocCategoriesIsMutable() {
+      if (!((bitField0 & 0x00000001) != 0)) {
+        docCategories = mutableCopy(docCategories );
+        bitField0_ |= 0x00000001;
+       }
+    }
+    /**
+     * <pre>
+     * 仅 doc_type=1：分类多选筛选(并集；元素 1.技工教育 2.职业教育，非法值 400；含 0 或空=全部；非空时优先于 doc_category)
+     * </pre>
+     *
+     * <code>repeated int32 doc_categories = 10;</code>
+     * @return A list containing the docCategories.
+     */
+    public java.util.List<java.lang.Integer>
+        getDocCategoriesList() {
+      return ((bitField0 & 0x00000001) != 0) ?
+               java.util.Collections.unmodifiableList(docCategories ) : docCategories ;
+    }
+    /**
+     * <pre>
+     * 仅 doc_type=1：分类多选筛选(并集；元素 1.技工教育 2.职业教育，非法值 400；含 0 或空=全部；非空时优先于 doc_category)
+     * </pre>
+     *
+     * <code>repeated int32 doc_categories = 10;</code>
+     * @return The count of docCategories.
+     */
+    public int getDocCategoriesCount() {
+      return docCategories .size();
+    }
+    /**
+     * <pre>
+     * 仅 doc_type=1：分类多选筛选(并集；元素 1.技工教育 2.职业教育，非法值 400；含 0 或空=全部；非空时优先于 doc_category)
+     * </pre>
+     *
+     * <code>repeated int32 doc_categories = 10;</code>
+     * @param index The index of the element to return.
+     * @return The docCategories at the given index.
+     */
+    public int getDocCategories(int index) {
+      return docCategories .getInt(index);
+    }
+    /**
+     * <pre>
+     * 仅 doc_type=1：分类多选筛选(并集；元素 1.技工教育 2.职业教育，非法值 400；含 0 或空=全部；非空时优先于 doc_category)
+     * </pre>
+     *
+     * <code>repeated int32 doc_categories = 10;</code>
+     * @param index The index to set the value at.
+     * @param value The docCategories to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDocCategories(
+        int index, int value) {
+      ensureDocCategoriesIsMutable();
+      docCategories .setInt(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 仅 doc_type=1：分类多选筛选(并集；元素 1.技工教育 2.职业教育，非法值 400；含 0 或空=全部；非空时优先于 doc_category)
+     * </pre>
+     *
+     * <code>repeated int32 doc_categories = 10;</code>
+     * @param value The docCategories to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDocCategories(int value) {
+      ensureDocCategoriesIsMutable();
+      docCategories .addInt(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 仅 doc_type=1：分类多选筛选(并集；元素 1.技工教育 2.职业教育，非法值 400；含 0 或空=全部；非空时优先于 doc_category)
+     * </pre>
+     *
+     * <code>repeated int32 doc_categories = 10;</code>
+     * @param values The docCategories to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllDocCategories(
+        java.lang.Iterable<? extends java.lang.Integer> values) {
+      ensureDocCategoriesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, docCategories );
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 仅 doc_type=1：分类多选筛选(并集；元素 1.技工教育 2.职业教育，非法值 400；含 0 或空=全部；非空时优先于 doc_category)
+     * </pre>
+     *
+     * <code>repeated int32 doc_categories = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDocCategories() {
+      docCategories = emptyIntList();
+      bitField0 = (bitField0 & ~0x00000001);
       onChanged();
       return this;
     }
