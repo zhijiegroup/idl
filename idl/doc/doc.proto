@@ -42,7 +42,8 @@ message ListSchoolDocRequest {
   string major = 6; // 仅 doc_type=2：专业筛选
   string grade = 7; // 仅 doc_type=2：年级筛选(如 2026)
   string name = 8; // 名称模糊
-  int32 doc_category = 9; // 仅 doc_type=1：分类筛选 0.全部(不传/0)；1.技工教育；2.职业教育
+  int32 doc_category = 9; // 仅 doc_type=1：分类筛选 0.全部(不传/0)；1.技工教育；2.职业教育【单选·存量兼容】
+  repeated int32 doc_categories = 10; // 仅 doc_type=1：分类多选筛选(并集；元素 1.技工教育 2.职业教育，非法值 400；含 0 或空=全部；非空时优先于 doc_category)
   base.PaginationRequest pagination = 100;
 }
 
