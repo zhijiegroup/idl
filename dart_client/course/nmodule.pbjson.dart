@@ -140,6 +140,7 @@ const CreateNmCourseRequest$json = {
     {'1': 'course_industry', '3': 12, '4': 1, '5': 9, '10': 'courseIndustry'},
     {'1': 'chapters', '3': 13, '4': 3, '5': 11, '6': '.glory_api.NmChapter', '10': 'chapters'},
     {'1': 'language', '3': 14, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'course_attribute', '3': 15, '4': 1, '5': 5, '10': 'courseAttribute'},
   ],
 };
 
@@ -155,7 +156,8 @@ final $typed_data.Uint8List createNmCourseRequestDescriptor = $convert.base64Dec
     'wYCSABKANSC2NvdXJzZUxldmVsEiEKDGNvdXJzZV9tYWpvchgKIAEoCVILY291cnNlTWFqb3IS'
     'HwoLY291cnNlX3R5cGUYCyABKANSCmNvdXJzZVR5cGUSJwoPY291cnNlX2luZHVzdHJ5GAwgAS'
     'gJUg5jb3Vyc2VJbmR1c3RyeRIwCghjaGFwdGVycxgNIAMoCzIULmdsb3J5X2FwaS5ObUNoYXB0'
-    'ZXJSCGNoYXB0ZXJzEhoKCGxhbmd1YWdlGA4gASgJUghsYW5ndWFnZQ==');
+    'ZXJSCGNoYXB0ZXJzEhoKCGxhbmd1YWdlGA4gASgJUghsYW5ndWFnZRIpChBjb3Vyc2VfYXR0cm'
+    'lidXRlGA8gASgFUg9jb3Vyc2VBdHRyaWJ1dGU=');
 
 @$core.Deprecated('Use nmChapterDescriptor instead')
 const NmChapter$json = {
@@ -236,6 +238,7 @@ const UpdateNmCourseRequest$json = {
     {'1': 'chapters', '3': 13, '4': 3, '5': 11, '6': '.glory_api.NmChapter', '10': 'chapters'},
     {'1': 'course_id', '3': 14, '4': 1, '5': 3, '10': 'courseId'},
     {'1': 'language', '3': 15, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'course_attribute', '3': 16, '4': 1, '5': 5, '10': 'courseAttribute'},
   ],
 };
 
@@ -252,7 +255,8 @@ final $typed_data.Uint8List updateNmCourseRequestDescriptor = $convert.base64Dec
     'HwoLY291cnNlX3R5cGUYCyABKANSCmNvdXJzZVR5cGUSJwoPY291cnNlX2luZHVzdHJ5GAwgAS'
     'gJUg5jb3Vyc2VJbmR1c3RyeRIwCghjaGFwdGVycxgNIAMoCzIULmdsb3J5X2FwaS5ObUNoYXB0'
     'ZXJSCGNoYXB0ZXJzEhsKCWNvdXJzZV9pZBgOIAEoA1IIY291cnNlSWQSGgoIbGFuZ3VhZ2UYDy'
-    'ABKAlSCGxhbmd1YWdl');
+    'ABKAlSCGxhbmd1YWdlEikKEGNvdXJzZV9hdHRyaWJ1dGUYECABKAVSD2NvdXJzZUF0dHJpYnV0'
+    'ZQ==');
 
 @$core.Deprecated('Use updateNmCourseResponseDescriptor instead')
 const UpdateNmCourseResponse$json = {

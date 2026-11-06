@@ -263,7 +263,7 @@ nonisolated struct GloryApi_CreateNmCourseRequest: Sendable {
 
   var courseClassification: Int64 = 0
 
-  /// 课程层次：1.中职 2.高职 3.中高职
+  /// 课程层次：1.中职；2.高职专科；3.职业本科；4.职场(与课程中心 course.proto 口径对齐)
   var courseLevel: Int64 = 0
 
   var courseMajor: String = String()
@@ -276,6 +276,9 @@ nonisolated struct GloryApi_CreateNmCourseRequest: Sendable {
   var chapters: [GloryApi_NmChapter] = []
 
   var language: String = String()
+
+  /// 课程属性：0.未设置；1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课；新增字段(仅 course_classification=1 学校课程适用)
+  var courseAttribute: Int32 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -388,7 +391,7 @@ nonisolated struct GloryApi_UpdateNmCourseRequest: Sendable {
 
   var courseClassification: Int64 = 0
 
-  /// 课程层次：1.中职 2.高职 3.中高职
+  /// 课程层次：1.中职；2.高职专科；3.职业本科；4.职场(与课程中心 course.proto 口径对齐)
   var courseLevel: Int64 = 0
 
   var courseMajor: String = String()
@@ -403,6 +406,9 @@ nonisolated struct GloryApi_UpdateNmCourseRequest: Sendable {
   var courseID: Int64 = 0
 
   var language: String = String()
+
+  /// 课程属性：0.未设置；1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课；新增字段(仅 course_classification=1 学校课程适用)
+  var courseAttribute: Int32 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -994,7 +1000,7 @@ nonisolated extension GloryApi_CreateNmCourseChapterResponse: SwiftProtobuf.Mess
 
 nonisolated extension GloryApi_CreateNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CreateNmCourseRequest"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}course_name\0\u{3}course_organization\0\u{3}teacher_name\0\u{3}course_hours\0\u{3}course_description\0\u{3}course_cover_path\0\u{3}course_classification\0\u{3}course_level\0\u{3}course_major\0\u{3}course_type\0\u{3}course_industry\0\u{1}chapters\0\u{1}language\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}course_name\0\u{3}course_organization\0\u{3}teacher_name\0\u{3}course_hours\0\u{3}course_description\0\u{3}course_cover_path\0\u{3}course_classification\0\u{3}course_level\0\u{3}course_major\0\u{3}course_type\0\u{3}course_industry\0\u{1}chapters\0\u{1}language\0\u{3}course_attribute\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1016,6 +1022,7 @@ nonisolated extension GloryApi_CreateNmCourseRequest: SwiftProtobuf.Message, Swi
       case 12: try { try decoder.decodeSingularStringField(value: &self.courseIndustry) }()
       case 13: try { try decoder.decodeRepeatedMessageField(value: &self.chapters) }()
       case 14: try { try decoder.decodeSingularStringField(value: &self.language) }()
+      case 15: try { try decoder.decodeSingularInt32Field(value: &self.courseAttribute) }()
       default: break
       }
     }
@@ -1068,6 +1075,9 @@ nonisolated extension GloryApi_CreateNmCourseRequest: SwiftProtobuf.Message, Swi
     if !self.language.isEmpty {
       try visitor.visitSingularStringField(value: self.language, fieldNumber: 14)
     }
+    if self.courseAttribute != 0 {
+      try visitor.visitSingularInt32Field(value: self.courseAttribute, fieldNumber: 15)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1086,6 +1096,7 @@ nonisolated extension GloryApi_CreateNmCourseRequest: SwiftProtobuf.Message, Swi
     if lhs.courseIndustry != rhs.courseIndustry {return false}
     if lhs.chapters != rhs.chapters {return false}
     if lhs.language != rhs.language {return false}
+    if lhs.courseAttribute != rhs.courseAttribute {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1252,7 +1263,7 @@ nonisolated extension GloryApi_CreateNmCourseResponse: SwiftProtobuf.Message, Sw
 
 nonisolated extension GloryApi_UpdateNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UpdateNmCourseRequest"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}course_name\0\u{3}course_organization\0\u{3}teacher_name\0\u{3}course_hours\0\u{3}course_description\0\u{3}course_cover_path\0\u{3}course_classification\0\u{3}course_level\0\u{3}course_major\0\u{3}course_type\0\u{3}course_industry\0\u{1}chapters\0\u{3}course_id\0\u{1}language\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}course_name\0\u{3}course_organization\0\u{3}teacher_name\0\u{3}course_hours\0\u{3}course_description\0\u{3}course_cover_path\0\u{3}course_classification\0\u{3}course_level\0\u{3}course_major\0\u{3}course_type\0\u{3}course_industry\0\u{1}chapters\0\u{3}course_id\0\u{1}language\0\u{3}course_attribute\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1275,6 +1286,7 @@ nonisolated extension GloryApi_UpdateNmCourseRequest: SwiftProtobuf.Message, Swi
       case 13: try { try decoder.decodeRepeatedMessageField(value: &self.chapters) }()
       case 14: try { try decoder.decodeSingularInt64Field(value: &self.courseID) }()
       case 15: try { try decoder.decodeSingularStringField(value: &self.language) }()
+      case 16: try { try decoder.decodeSingularInt32Field(value: &self.courseAttribute) }()
       default: break
       }
     }
@@ -1330,6 +1342,9 @@ nonisolated extension GloryApi_UpdateNmCourseRequest: SwiftProtobuf.Message, Swi
     if !self.language.isEmpty {
       try visitor.visitSingularStringField(value: self.language, fieldNumber: 15)
     }
+    if self.courseAttribute != 0 {
+      try visitor.visitSingularInt32Field(value: self.courseAttribute, fieldNumber: 16)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1349,6 +1364,7 @@ nonisolated extension GloryApi_UpdateNmCourseRequest: SwiftProtobuf.Message, Swi
     if lhs.chapters != rhs.chapters {return false}
     if lhs.courseID != rhs.courseID {return false}
     if lhs.language != rhs.language {return false}
+    if lhs.courseAttribute != rhs.courseAttribute {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

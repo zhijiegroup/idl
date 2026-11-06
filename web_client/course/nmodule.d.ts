@@ -65,7 +65,7 @@ export interface CreateNmCourseRequest {
   course_description?: string;
   course_cover_path?: string;
   course_classification?: string;
-  /** 课程层次：1.中职 2.高职 3.中高职 */
+  /** 课程层次：1.中职；2.高职专科；3.职业本科；4.职场(与课程中心 course.proto 口径对齐) */
   course_level?: string;
   course_major?: string;
   /** 课程类型：1:核心课程 2:名师公开课 */
@@ -73,6 +73,8 @@ export interface CreateNmCourseRequest {
   course_industry?: string;
   chapters?: Array<NmChapter>;
   language?: string;
+  /** 课程属性：0.未设置；1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课；新增字段(仅 course_classification=1 学校课程适用) */
+  course_attribute?: number;
 }
 
 export interface NmChapter {
@@ -114,7 +116,7 @@ export interface UpdateNmCourseRequest {
   course_description?: string;
   course_cover_path?: string;
   course_classification?: string;
-  /** 课程层次：1.中职 2.高职 3.中高职 */
+  /** 课程层次：1.中职；2.高职专科；3.职业本科；4.职场(与课程中心 course.proto 口径对齐) */
   course_level?: string;
   course_major?: string;
   /** 课程类型：1:核心课程 2:名师公开课 */
@@ -123,6 +125,8 @@ export interface UpdateNmCourseRequest {
   chapters?: Array<NmChapter>;
   course_id?: string;
   language?: string;
+  /** 课程属性：0.未设置；1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课；新增字段(仅 course_classification=1 学校课程适用) */
+  course_attribute?: number;
 }
 
 export interface UpdateNmCourseResponse {

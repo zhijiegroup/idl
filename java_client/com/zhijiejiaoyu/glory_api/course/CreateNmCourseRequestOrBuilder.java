@@ -96,7 +96,7 @@ public interface CreateNmCourseRequestOrBuilder extends
 
   /**
    * <pre>
-   * 课程层次：1.中职 2.高职 3.中高职
+   * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场(与课程中心 course.proto 口径对齐)
    * </pre>
    *
    * <code>int64 course_level = 9;</code>
@@ -173,4 +173,14 @@ public interface CreateNmCourseRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getLanguageBytes();
+
+  /**
+   * <pre>
+   * 课程属性：0.未设置；1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课；新增字段(仅 course_classification=1 学校课程适用)
+   * </pre>
+   *
+   * <code>int32 course_attribute = 15;</code>
+   * @return The courseAttribute.
+   */
+  int getCourseAttribute();
 }

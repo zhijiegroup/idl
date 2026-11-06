@@ -153,6 +153,11 @@ private static final long serialVersionUID = 0L;
             language = s;
             break;
           }
+          case 128: {
+
+            courseAttribute = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -430,7 +435,7 @@ private static final long serialVersionUID = 0L;
   private long courseLevel ;
   /**
    * <pre>
-   * 课程层次：1.中职 2.高职 3.中高职
+   * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场(与课程中心 course.proto 口径对齐)
    * </pre>
    *
    * <code>int64 course_level = 9;</code>
@@ -621,6 +626,21 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int COURSE_ATTRIBUTE_FIELD_NUMBER = 16;
+  private int courseAttribute ;
+  /**
+   * <pre>
+   * 课程属性：0.未设置；1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课；新增字段(仅 course_classification=1 学校课程适用)
+   * </pre>
+   *
+   * <code>int32 course_attribute = 16;</code>
+   * @return The courseAttribute.
+   */
+  @java.lang.Override
+  public int getCourseAttribute() {
+    return courseAttribute ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -679,6 +699,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getLanguageBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, language );
+    }
+    if (courseAttribute != 0) {
+      output.writeInt32(16, courseAttribute );
     }
     unknownFields.writeTo(output);
   }
@@ -741,6 +764,10 @@ private static final long serialVersionUID = 0L;
     if (!getLanguageBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, language );
     }
+    if (courseAttribute != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(16, courseAttribute );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -790,6 +817,8 @@ private static final long serialVersionUID = 0L;
         != other.getCourseId()) return false;
     if (!getLanguage()
         .equals(other.getLanguage())) return false;
+    if (getCourseAttribute()
+        != other.getCourseAttribute()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -840,6 +869,8 @@ private static final long serialVersionUID = 0L;
         getCourseId());
     hash = (37 * hash) + LANGUAGE_FIELD_NUMBER;
     hash = (53 * hash) + getLanguage().hashCode();
+    hash = (37 * hash) + COURSE_ATTRIBUTE_FIELD_NUMBER;
+    hash = (53 * hash) + getCourseAttribute();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1012,6 +1043,8 @@ private static final long serialVersionUID = 0L;
 
       language = "";
 
+      courseAttribute = 0;
+
       return this;
     }
 
@@ -1066,6 +1099,7 @@ private static final long serialVersionUID = 0L;
       }
       result.courseId = courseId ;
       result.language = language ;
+      result.courseAttribute = courseAttribute ;
       onBuilt();
       return result;
     }
@@ -1189,6 +1223,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getLanguage().isEmpty()) {
         language = other.language ;
         onChanged();
+      }
+      if (other.getCourseAttribute() != 0) {
+        setCourseAttribute(other.getCourseAttribute());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1784,7 +1821,7 @@ private static final long serialVersionUID = 0L;
     private long courseLevel ;
     /**
      * <pre>
-     * 课程层次：1.中职 2.高职 3.中高职
+     * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场(与课程中心 course.proto 口径对齐)
      * </pre>
      *
      * <code>int64 course_level = 9;</code>
@@ -1796,7 +1833,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程层次：1.中职 2.高职 3.中高职
+     * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场(与课程中心 course.proto 口径对齐)
      * </pre>
      *
      * <code>int64 course_level = 9;</code>
@@ -1811,7 +1848,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课程层次：1.中职 2.高职 3.中高职
+     * 课程层次：1.中职；2.高职专科；3.职业本科；4.职场(与课程中心 course.proto 口径对齐)
      * </pre>
      *
      * <code>int64 course_level = 9;</code>
@@ -2362,6 +2399,49 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       language = value;
+      onChanged();
+      return this;
+    }
+
+    private int courseAttribute ;
+    /**
+     * <pre>
+     * 课程属性：0.未设置；1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课；新增字段(仅 course_classification=1 学校课程适用)
+     * </pre>
+     *
+     * <code>int32 course_attribute = 16;</code>
+     * @return The courseAttribute.
+     */
+    @java.lang.Override
+    public int getCourseAttribute() {
+      return courseAttribute ;
+    }
+    /**
+     * <pre>
+     * 课程属性：0.未设置；1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课；新增字段(仅 course_classification=1 学校课程适用)
+     * </pre>
+     *
+     * <code>int32 course_attribute = 16;</code>
+     * @param value The courseAttribute to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCourseAttribute(int value) {
+      
+      courseAttribute = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程属性：0.未设置；1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课；新增字段(仅 course_classification=1 学校课程适用)
+     * </pre>
+     *
+     * <code>int32 course_attribute = 16;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCourseAttribute() {
+      
+      courseAttribute = 0;
       onChanged();
       return this;
     }
