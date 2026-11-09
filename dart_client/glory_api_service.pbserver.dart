@@ -421,6 +421,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$49.UpdateTeachingCourseProgressResponse> updateTeachingCourseProgress($pb.ServerContext ctx, $49.UpdateTeachingCourseProgressRequest request);
   $async.Future<$49.ListTeachingTaskResponse> listTeachingTask($pb.ServerContext ctx, $49.ListTeachingTaskRequest request);
   $async.Future<$49.CreateTeachingTaskResponse> createTeachingTask($pb.ServerContext ctx, $49.CreateTeachingTaskRequest request);
+  $async.Future<$49.DeleteTeachingTaskResponse> deleteTeachingTask($pb.ServerContext ctx, $49.DeleteTeachingTaskRequest request);
   $async.Future<$50.CreateEduSchemeResponse> createEduScheme($pb.ServerContext ctx, $50.CreateEduSchemeRequest request);
   $async.Future<$50.UpdateEduSchemeResponse> updateEduScheme($pb.ServerContext ctx, $50.UpdateEduSchemeRequest request);
   $async.Future<$50.ListEduSchemeResponse> listEduScheme($pb.ServerContext ctx, $50.ListEduSchemeRequest request);
@@ -908,6 +909,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'UpdateTeachingCourseProgress': return $49.UpdateTeachingCourseProgressRequest();
       case 'ListTeachingTask': return $49.ListTeachingTaskRequest();
       case 'CreateTeachingTask': return $49.CreateTeachingTaskRequest();
+      case 'DeleteTeachingTask': return $49.DeleteTeachingTaskRequest();
       case 'CreateEduScheme': return $50.CreateEduSchemeRequest();
       case 'UpdateEduScheme': return $50.UpdateEduSchemeRequest();
       case 'ListEduScheme': return $50.ListEduSchemeRequest();
@@ -1398,6 +1400,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'UpdateTeachingCourseProgress': return this.updateTeachingCourseProgress(ctx, request as $49.UpdateTeachingCourseProgressRequest);
       case 'ListTeachingTask': return this.listTeachingTask(ctx, request as $49.ListTeachingTaskRequest);
       case 'CreateTeachingTask': return this.createTeachingTask(ctx, request as $49.CreateTeachingTaskRequest);
+      case 'DeleteTeachingTask': return this.deleteTeachingTask(ctx, request as $49.DeleteTeachingTaskRequest);
       case 'CreateEduScheme': return this.createEduScheme(ctx, request as $50.CreateEduSchemeRequest);
       case 'UpdateEduScheme': return this.updateEduScheme(ctx, request as $50.UpdateEduSchemeRequest);
       case 'ListEduScheme': return this.listEduScheme(ctx, request as $50.ListEduSchemeRequest);

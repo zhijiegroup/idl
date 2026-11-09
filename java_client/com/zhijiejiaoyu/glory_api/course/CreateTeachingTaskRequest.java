@@ -103,6 +103,11 @@ private static final long serialVersionUID = 0L;
             input.popLimit(limit);
             break;
           }
+          case 48: {
+
+            restartProgress = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -249,6 +254,21 @@ private static final long serialVersionUID = 0L;
   }
   private int classIdsMemoizedSerializedSize = -1;
 
+  public static final int RESTART_PROGRESS_FIELD_NUMBER = 6;
+  private boolean restartProgress ;
+  /**
+   * <pre>
+   * 所选班级存在已取消(软删除)任务时：true 进度清零重新开始；false(默认零值，不传兼容原接口) 恢复原进度
+   * </pre>
+   *
+   * <code>bool restart_progress = 6;</code>
+   * @return The restartProgress.
+   */
+  @java.lang.Override
+  public boolean getRestartProgress() {
+    return restartProgress ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -282,6 +302,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < classIds .size(); i++) {
       output.writeInt64NoTag(classIds .getLong(i));
+    }
+    if (restartProgress != false) {
+      output.writeBool(6, restartProgress );
     }
     unknownFields.writeTo(output);
   }
@@ -322,6 +345,10 @@ private static final long serialVersionUID = 0L;
       }
       classIdsMemoizedSerializedSize = dataSize;
     }
+    if (restartProgress != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(6, restartProgress );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -350,6 +377,8 @@ private static final long serialVersionUID = 0L;
         != other.getEduSchemeId()) return false;
     if (!getClassIdsList()
         .equals(other.getClassIdsList())) return false;
+    if (getRestartProgress()
+        != other.getRestartProgress()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -377,6 +406,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + CLASS_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getClassIdsList().hashCode();
     }
+    hash = (37 * hash) + RESTART_PROGRESS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getRestartProgress());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -528,6 +560,8 @@ private static final long serialVersionUID = 0L;
 
       classIds = emptyLongList();
       bitField0 = (bitField0 & ~0x00000001);
+      restartProgress = false;
+
       return this;
     }
 
@@ -568,6 +602,7 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0 & ~0x00000001);
       }
       result.classIds = classIds ;
+      result.restartProgress = restartProgress ;
       onBuilt();
       return result;
     }
@@ -637,6 +672,9 @@ private static final long serialVersionUID = 0L;
           classIds .addAll(other.classIds );
         }
         onChanged();
+      }
+      if (other.getRestartProgress() != false) {
+        setRestartProgress(other.getRestartProgress());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1019,6 +1057,49 @@ private static final long serialVersionUID = 0L;
     public Builder clearClassIds() {
       classIds = emptyLongList();
       bitField0 = (bitField0 & ~0x00000001);
+      onChanged();
+      return this;
+    }
+
+    private boolean restartProgress ;
+    /**
+     * <pre>
+     * 所选班级存在已取消(软删除)任务时：true 进度清零重新开始；false(默认零值，不传兼容原接口) 恢复原进度
+     * </pre>
+     *
+     * <code>bool restart_progress = 6;</code>
+     * @return The restartProgress.
+     */
+    @java.lang.Override
+    public boolean getRestartProgress() {
+      return restartProgress ;
+    }
+    /**
+     * <pre>
+     * 所选班级存在已取消(软删除)任务时：true 进度清零重新开始；false(默认零值，不传兼容原接口) 恢复原进度
+     * </pre>
+     *
+     * <code>bool restart_progress = 6;</code>
+     * @param value The restartProgress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRestartProgress(boolean value) {
+      
+      restartProgress = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 所选班级存在已取消(软删除)任务时：true 进度清零重新开始；false(默认零值，不传兼容原接口) 恢复原进度
+     * </pre>
+     *
+     * <code>bool restart_progress = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRestartProgress() {
+      
+      restartProgress = false;
       onChanged();
       return this;
     }

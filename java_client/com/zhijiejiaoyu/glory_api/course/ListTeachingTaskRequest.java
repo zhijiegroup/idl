@@ -152,7 +152,7 @@ private static final long serialVersionUID = 0L;
   private int status ;
   /**
    * <pre>
-   * 任务状态：0.全部；1.进行中(默认，含 0%)；2.已结课
+   * 任务状态：0.全部(未取消)；1.进行中(默认，含 0%)；2.已结课；3.已取消(软删除任务，供再次加入授课时识别历史进度)
    * </pre>
    *
    * <code>int32 status = 2;</code>
@@ -752,7 +752,7 @@ private static final long serialVersionUID = 0L;
     private int status ;
     /**
      * <pre>
-     * 任务状态：0.全部；1.进行中(默认，含 0%)；2.已结课
+     * 任务状态：0.全部(未取消)；1.进行中(默认，含 0%)；2.已结课；3.已取消(软删除任务，供再次加入授课时识别历史进度)
      * </pre>
      *
      * <code>int32 status = 2;</code>
@@ -764,7 +764,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 任务状态：0.全部；1.进行中(默认，含 0%)；2.已结课
+     * 任务状态：0.全部(未取消)；1.进行中(默认，含 0%)；2.已结课；3.已取消(软删除任务，供再次加入授课时识别历史进度)
      * </pre>
      *
      * <code>int32 status = 2;</code>
@@ -779,7 +779,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 任务状态：0.全部；1.进行中(默认，含 0%)；2.已结课
+     * 任务状态：0.全部(未取消)；1.进行中(默认，含 0%)；2.已结课；3.已取消(软删除任务，供再次加入授课时识别历史进度)
      * </pre>
      *
      * <code>int32 status = 2;</code>

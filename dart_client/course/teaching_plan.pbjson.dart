@@ -320,6 +320,7 @@ const CreateTeachingTaskRequest$json = {
     {'1': 'course_id', '3': 3, '4': 1, '5': 3, '10': 'courseId'},
     {'1': 'edu_scheme_id', '3': 4, '4': 1, '5': 3, '10': 'eduSchemeId'},
     {'1': 'class_ids', '3': 5, '4': 3, '5': 3, '10': 'classIds'},
+    {'1': 'restart_progress', '3': 6, '4': 1, '5': 8, '10': 'restartProgress'},
   ],
 };
 
@@ -328,7 +329,8 @@ final $typed_data.Uint8List createTeachingTaskRequestDescriptor = $convert.base6
     'ChlDcmVhdGVUZWFjaGluZ1Rhc2tSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2'
     'UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0Eh8KC3RhcmdldF90eXBlGAIgASgFUgp0YXJnZXRU'
     'eXBlEhsKCWNvdXJzZV9pZBgDIAEoA1IIY291cnNlSWQSIgoNZWR1X3NjaGVtZV9pZBgEIAEoA1'
-    'ILZWR1U2NoZW1lSWQSGwoJY2xhc3NfaWRzGAUgAygDUghjbGFzc0lkcw==');
+    'ILZWR1U2NoZW1lSWQSGwoJY2xhc3NfaWRzGAUgAygDUghjbGFzc0lkcxIpChByZXN0YXJ0X3By'
+    'b2dyZXNzGAYgASgIUg9yZXN0YXJ0UHJvZ3Jlc3M=');
 
 @$core.Deprecated('Use createTeachingTaskResponseDescriptor instead')
 const CreateTeachingTaskResponse$json = {
@@ -347,4 +349,31 @@ final $typed_data.Uint8List createTeachingTaskResponseDescriptor = $convert.base
     'Jhc2VSZXNwb25zZVIIYmFzZVJlc3ASGQoIdGFza19pZHMYAiADKANSB3Rhc2tJZHMSIwoNY3Jl'
     'YXRlZF9jb3VudBgDIAEoBVIMY3JlYXRlZENvdW50EiMKDWV4aXN0ZWRfY291bnQYBCABKAVSDG'
     'V4aXN0ZWRDb3VudA==');
+
+@$core.Deprecated('Use deleteTeachingTaskRequestDescriptor instead')
+const DeleteTeachingTaskRequest$json = {
+  '1': 'DeleteTeachingTaskRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'task_id', '3': 2, '4': 1, '5': 3, '10': 'taskId'},
+  ],
+};
+
+/// Descriptor for `DeleteTeachingTaskRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteTeachingTaskRequestDescriptor = $convert.base64Decode(
+    'ChlEZWxldGVUZWFjaGluZ1Rhc2tSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2'
+    'UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhcKB3Rhc2tfaWQYAiABKANSBnRhc2tJZA==');
+
+@$core.Deprecated('Use deleteTeachingTaskResponseDescriptor instead')
+const DeleteTeachingTaskResponse$json = {
+  '1': 'DeleteTeachingTaskResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `DeleteTeachingTaskResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteTeachingTaskResponseDescriptor = $convert.base64Decode(
+    'ChpEZWxldGVUZWFjaGluZ1Rhc2tSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLk'
+    'Jhc2VSZXNwb25zZVIIYmFzZVJlc3A=');
 

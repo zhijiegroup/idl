@@ -1587,6 +1587,7 @@ class CreateTeachingTaskRequest extends $pb.GeneratedMessage {
     $fixnum.Int64? courseId,
     $fixnum.Int64? eduSchemeId,
     $core.Iterable<$fixnum.Int64>? classIds,
+    $core.bool? restartProgress,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -1604,6 +1605,9 @@ class CreateTeachingTaskRequest extends $pb.GeneratedMessage {
     if (classIds != null) {
       $result.classIds.addAll(classIds);
     }
+    if (restartProgress != null) {
+      $result.restartProgress = restartProgress;
+    }
     return $result;
   }
   CreateTeachingTaskRequest._() : super();
@@ -1616,6 +1620,7 @@ class CreateTeachingTaskRequest extends $pb.GeneratedMessage {
     ..aInt64(3, _omitFieldNames ? '' : 'courseId')
     ..aInt64(4, _omitFieldNames ? '' : 'eduSchemeId')
     ..p<$fixnum.Int64>(5, _omitFieldNames ? '' : 'classIds', $pb.PbFieldType.K6)
+    ..aOB(6, _omitFieldNames ? '' : 'restartProgress')
     ..hasRequiredFields = false
   ;
 
@@ -1680,6 +1685,15 @@ class CreateTeachingTaskRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(5)
   $core.List<$fixnum.Int64> get classIds => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $core.bool get restartProgress => $_getBF(5);
+  @$pb.TagNumber(6)
+  set restartProgress($core.bool v) { $_setBool(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasRestartProgress() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearRestartProgress() => clearField(6);
 }
 
 class CreateTeachingTaskResponse extends $pb.GeneratedMessage {
@@ -1768,6 +1782,125 @@ class CreateTeachingTaskResponse extends $pb.GeneratedMessage {
   $core.bool hasExistedCount() => $_has(3);
   @$pb.TagNumber(4)
   void clearExistedCount() => clearField(4);
+}
+
+/// 取消授课：软删除当前课程当前班级的在授任务，原进度保留(再次加入可选择恢复)
+class DeleteTeachingTaskRequest extends $pb.GeneratedMessage {
+  factory DeleteTeachingTaskRequest({
+    $0.BaseRequest? baseRequest,
+    $fixnum.Int64? taskId,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (taskId != null) {
+      $result.taskId = taskId;
+    }
+    return $result;
+  }
+  DeleteTeachingTaskRequest._() : super();
+  factory DeleteTeachingTaskRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteTeachingTaskRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteTeachingTaskRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'taskId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteTeachingTaskRequest clone() => DeleteTeachingTaskRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteTeachingTaskRequest copyWith(void Function(DeleteTeachingTaskRequest) updates) => super.copyWith((message) => updates(message as DeleteTeachingTaskRequest)) as DeleteTeachingTaskRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteTeachingTaskRequest create() => DeleteTeachingTaskRequest._();
+  DeleteTeachingTaskRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteTeachingTaskRequest> createRepeated() => $pb.PbList<DeleteTeachingTaskRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteTeachingTaskRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteTeachingTaskRequest>(create);
+  static DeleteTeachingTaskRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get taskId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set taskId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTaskId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTaskId() => clearField(2);
+}
+
+class DeleteTeachingTaskResponse extends $pb.GeneratedMessage {
+  factory DeleteTeachingTaskResponse({
+    $0.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  DeleteTeachingTaskResponse._() : super();
+  factory DeleteTeachingTaskResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteTeachingTaskResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteTeachingTaskResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteTeachingTaskResponse clone() => DeleteTeachingTaskResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteTeachingTaskResponse copyWith(void Function(DeleteTeachingTaskResponse) updates) => super.copyWith((message) => updates(message as DeleteTeachingTaskResponse)) as DeleteTeachingTaskResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteTeachingTaskResponse create() => DeleteTeachingTaskResponse._();
+  DeleteTeachingTaskResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteTeachingTaskResponse> createRepeated() => $pb.PbList<DeleteTeachingTaskResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteTeachingTaskResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteTeachingTaskResponse>(create);
+  static DeleteTeachingTaskResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
 

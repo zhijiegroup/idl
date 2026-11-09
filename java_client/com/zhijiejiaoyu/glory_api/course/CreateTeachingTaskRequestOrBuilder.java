@@ -80,4 +80,14 @@ public interface CreateTeachingTaskRequestOrBuilder extends
    * @return The classIds at the given index.
    */
   long getClassIds(int index);
+
+  /**
+   * <pre>
+   * 所选班级存在已取消(软删除)任务时：true 进度清零重新开始；false(默认零值，不传兼容原接口) 恢复原进度
+   * </pre>
+   *
+   * <code>bool restart_progress = 6;</code>
+   * @return The restartProgress.
+   */
+  boolean getRestartProgress();
 }

@@ -139,7 +139,7 @@ export interface TaskCounts {
 /** 在授课程列表(一任务一卡片，按 COALESCE(last_taught_at, created_at) DESC 排序) */
 export interface ListTeachingTaskRequest {
   base_request?: base.BaseRequest;
-  /** 任务状态：0.全部；1.进行中(默认，含 0%)；2.已结课 */
+  /** 任务状态：0.全部(未取消)；1.进行中(默认，含 0%)；2.已结课；3.已取消(软删除任务，供再次加入授课时识别历史进度) */
   status?: number;
   /** 专业过滤(预留) */
   major_code?: string;
@@ -165,6 +165,8 @@ export interface CreateTeachingTaskRequest {
   edu_scheme_id?: string;
   /** 授课班级，至少 1 个 */
   class_ids?: Array<string>;
+  /** 所选班级存在已取消(软删除)任务时：true 进度清零重新开始；false(默认零值，不传兼容原接口) 恢复原进度 */
+  restart_progress?: boolean;
 }
 
 export interface CreateTeachingTaskResponse {
@@ -175,4 +177,15 @@ export interface CreateTeachingTaskResponse {
   created_count?: number;
   /** 已存在数量 */
   existed_count?: number;
+}
+
+/** 取消授课：软删除当前课程当前班级的在授任务，原进度保留(再次加入可选择恢复) */
+export interface DeleteTeachingTaskRequest {
+  base_request?: base.BaseRequest;
+  /** 授课任务ID(在授课程卡片 task_id) */
+  task_id?: string;
+}
+
+export interface DeleteTeachingTaskResponse {
+  base_resp?: base.BaseResponse;
 }

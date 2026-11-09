@@ -1562,6 +1562,11 @@ CreateLivePlanProduct create live plan product */
     request: teaching_plan.CreateTeachingTaskRequest
   ): Promise<teaching_plan.CreateTeachingTaskResponse>;
 
+  /** 取消授课(软删除，原进度保留；再次加入可选择恢复) */
+  DeleteTeachingTask(
+    request: teaching_plan.DeleteTeachingTaskRequest
+  ): Promise<teaching_plan.DeleteTeachingTaskResponse>;
+
   /** 培养方案 */
   CreateEduScheme(
     request: edu_scheme.CreateEduSchemeRequest

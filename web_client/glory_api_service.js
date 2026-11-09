@@ -2734,6 +2734,14 @@ export class glory_api {
     );
   }
 
+  DeleteTeachingTask(request) {
+    const uri = `${this.uriPrefix}/api/course/delete_teaching_task`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CreateEduScheme(request) {
     const uri = `${this.uriPrefix}/api/course/create_edu_scheme`;
     const body = JSONbigint.stringify(request);
