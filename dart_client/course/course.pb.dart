@@ -1810,10 +1810,14 @@ class MajorCategoryGroup extends $pb.GeneratedMessage {
 class GetCourseTypeTreeRequest extends $pb.GeneratedMessage {
   factory GetCourseTypeTreeRequest({
     $1.BaseRequest? baseRequest,
+    $core.String? language,
   }) {
     final $result = create();
     if (baseRequest != null) {
       $result.baseRequest = baseRequest;
+    }
+    if (language != null) {
+      $result.language = language;
     }
     return $result;
   }
@@ -1823,6 +1827,7 @@ class GetCourseTypeTreeRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetCourseTypeTreeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'language')
     ..hasRequiredFields = false
   ;
 
@@ -1857,6 +1862,15 @@ class GetCourseTypeTreeRequest extends $pb.GeneratedMessage {
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
   $1.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get language => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set language($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasLanguage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLanguage() => clearField(2);
 }
 
 class GetCourseTypeTreeResponse extends $pb.GeneratedMessage {
@@ -1923,6 +1937,7 @@ class GetCourseTypeListRequest extends $pb.GeneratedMessage {
   factory GetCourseTypeListRequest({
     $1.BaseRequest? baseRequest,
     $core.bool? assigned,
+    $core.String? language,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -1930,6 +1945,9 @@ class GetCourseTypeListRequest extends $pb.GeneratedMessage {
     }
     if (assigned != null) {
       $result.assigned = assigned;
+    }
+    if (language != null) {
+      $result.language = language;
     }
     return $result;
   }
@@ -1940,6 +1958,7 @@ class GetCourseTypeListRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetCourseTypeListRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aOB(2, _omitFieldNames ? '' : 'assigned')
+    ..aOS(3, _omitFieldNames ? '' : 'language')
     ..hasRequiredFields = false
   ;
 
@@ -1983,6 +2002,15 @@ class GetCourseTypeListRequest extends $pb.GeneratedMessage {
   $core.bool hasAssigned() => $_has(1);
   @$pb.TagNumber(2)
   void clearAssigned() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get language => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set language($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasLanguage() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLanguage() => clearField(3);
 }
 
 class GetCourseTypeListResponse extends $pb.GeneratedMessage {

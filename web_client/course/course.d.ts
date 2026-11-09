@@ -176,6 +176,7 @@ export interface ListHottestCourseResponse {
 }
 
 export interface CourseType {
+  /** 双态字段：请求无 language 时为 i18n key(由前端语言包翻译)；请求带 language 时为该语言译文(直接显示，勿再作为 key 翻译) */
   label?: string;
   value?: string;
   children?: Array<CourseType>;
@@ -191,6 +192,8 @@ export interface MajorCategoryGroup {
 
 export interface GetCourseTypeTreeRequest {
   base_request?: base.BaseRequest;
+  /** 可选语言码(zh-CN/en-US/th-TH/ru-RU/id-ID/vi-VN，兼容 zh/th 简码)；空=label 返回 i18n key(现状)，非空=label 直接返回该语言译文 */
+  language?: string;
 }
 
 export interface GetCourseTypeTreeResponse {
@@ -201,6 +204,8 @@ export interface GetCourseTypeTreeResponse {
 export interface GetCourseTypeListRequest {
   base_request?: base.BaseRequest;
   assigned?: boolean;
+  /** 可选语言码(zh-CN/en-US/th-TH/ru-RU/id-ID/vi-VN，兼容 zh/th 简码)；空=label 返回 i18n key(现状)，非空=label 直接返回该语言译文 */
+  language?: string;
 }
 
 export interface GetCourseTypeListResponse {

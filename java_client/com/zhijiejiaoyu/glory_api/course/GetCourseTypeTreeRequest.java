@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GetCourseTypeTreeRequest() {
+    language = "";
   }
 
   @java.lang.Override
@@ -59,6 +60,12 @@ private static final long serialVersionUID = 0L;
               baseRequest = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            language = s;
             break;
           }
           default: {
@@ -119,6 +126,52 @@ private static final long serialVersionUID = 0L;
     return getBaseRequest();
   }
 
+  public static final int LANGUAGE_FIELD_NUMBER = 2;
+  private volatile java.lang.Object language ;
+  /**
+   * <pre>
+   * 可选语言码(zh-CN/en-US/th-TH/ru-RU/id-ID/vi-VN，兼容 zh/th 简码)；空=label 返回 i18n key(现状)，非空=label 直接返回该语言译文
+   * </pre>
+   *
+   * <code>string language = 2;</code>
+   * @return The language.
+   */
+  @java.lang.Override
+  public java.lang.String getLanguage() {
+    java.lang.Object ref = language ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      language = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 可选语言码(zh-CN/en-US/th-TH/ru-RU/id-ID/vi-VN，兼容 zh/th 简码)；空=label 返回 i18n key(现状)，非空=label 直接返回该语言译文
+   * </pre>
+   *
+   * <code>string language = 2;</code>
+   * @return The bytes for language.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getLanguageBytes() {
+    java.lang.Object ref = language ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      language = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -136,6 +189,9 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
+    if (!getLanguageBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, language );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -148,6 +204,9 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
+    }
+    if (!getLanguageBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, language );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -169,6 +228,8 @@ private static final long serialVersionUID = 0L;
       if (!getBaseRequest()
           .equals(other.getBaseRequest())) return false;
     }
+    if (!getLanguage()
+        .equals(other.getLanguage())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -184,6 +245,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getBaseRequest().hashCode();
     }
+    hash = (37 * hash) + LANGUAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getLanguage().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -323,6 +386,8 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
         baseRequestBuilder = null;
       }
+      language = "";
+
       return this;
     }
 
@@ -354,6 +419,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseRequest = baseRequestBuilder .build();
       }
+      result.language = language ;
       onBuilt();
       return result;
     }
@@ -404,6 +470,10 @@ private static final long serialVersionUID = 0L;
       if (other == com.zhijiejiaoyu.glory_api.course.GetCourseTypeTreeRequest.getDefaultInstance()) return this;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
+      }
+      if (!other.getLanguage().isEmpty()) {
+        language = other.language ;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -551,6 +621,102 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
       }
       return baseRequestBuilder ;
+    }
+
+    private java.lang.Object language = "";
+    /**
+     * <pre>
+     * 可选语言码(zh-CN/en-US/th-TH/ru-RU/id-ID/vi-VN，兼容 zh/th 简码)；空=label 返回 i18n key(现状)，非空=label 直接返回该语言译文
+     * </pre>
+     *
+     * <code>string language = 2;</code>
+     * @return The language.
+     */
+    public java.lang.String getLanguage() {
+      java.lang.Object ref = language ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        language = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 可选语言码(zh-CN/en-US/th-TH/ru-RU/id-ID/vi-VN，兼容 zh/th 简码)；空=label 返回 i18n key(现状)，非空=label 直接返回该语言译文
+     * </pre>
+     *
+     * <code>string language = 2;</code>
+     * @return The bytes for language.
+     */
+    public com.google.protobuf.ByteString
+        getLanguageBytes() {
+      java.lang.Object ref = language ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        language = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 可选语言码(zh-CN/en-US/th-TH/ru-RU/id-ID/vi-VN，兼容 zh/th 简码)；空=label 返回 i18n key(现状)，非空=label 直接返回该语言译文
+     * </pre>
+     *
+     * <code>string language = 2;</code>
+     * @param value The language to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguage(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      language = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 可选语言码(zh-CN/en-US/th-TH/ru-RU/id-ID/vi-VN，兼容 zh/th 简码)；空=label 返回 i18n key(现状)，非空=label 直接返回该语言译文
+     * </pre>
+     *
+     * <code>string language = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLanguage() {
+      
+      language = getDefaultInstance().getLanguage();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 可选语言码(zh-CN/en-US/th-TH/ru-RU/id-ID/vi-VN，兼容 zh/th 简码)；空=label 返回 i18n key(现状)，非空=label 直接返回该语言译文
+     * </pre>
+     *
+     * <code>string language = 2;</code>
+     * @param value The bytes for language to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      language = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

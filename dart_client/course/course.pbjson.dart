@@ -377,13 +377,14 @@ const GetCourseTypeTreeRequest$json = {
   '1': 'GetCourseTypeTreeRequest',
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'language', '3': 2, '4': 1, '5': 9, '10': 'language'},
   ],
 };
 
 /// Descriptor for `GetCourseTypeTreeRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getCourseTypeTreeRequestDescriptor = $convert.base64Decode(
     'ChhHZXRDb3Vyc2VUeXBlVHJlZVJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS'
-    '5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3Q=');
+    '5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSGgoIbGFuZ3VhZ2UYAiABKAlSCGxhbmd1YWdl');
 
 @$core.Deprecated('Use getCourseTypeTreeResponseDescriptor instead')
 const GetCourseTypeTreeResponse$json = {
@@ -406,13 +407,15 @@ const GetCourseTypeListRequest$json = {
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'assigned', '3': 2, '4': 1, '5': 8, '10': 'assigned'},
+    {'1': 'language', '3': 3, '4': 1, '5': 9, '10': 'language'},
   ],
 };
 
 /// Descriptor for `GetCourseTypeListRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getCourseTypeListRequestDescriptor = $convert.base64Decode(
     'ChhHZXRDb3Vyc2VUeXBlTGlzdFJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS'
-    '5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSGgoIYXNzaWduZWQYAiABKAhSCGFzc2lnbmVk');
+    '5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSGgoIYXNzaWduZWQYAiABKAhSCGFzc2lnbmVkEhoK'
+    'CGxhbmd1YWdlGAMgASgJUghsYW5ndWFnZQ==');
 
 @$core.Deprecated('Use getCourseTypeListResponseDescriptor instead')
 const GetCourseTypeListResponse$json = {

@@ -111,6 +111,10 @@ private static final long serialVersionUID = 0L;
   public static final int LABEL_FIELD_NUMBER = 1;
   private volatile java.lang.Object label ;
   /**
+   * <pre>
+   * 双态字段：请求无 language 时为 i18n key(由前端语言包翻译)；请求带 language 时为该语言译文(直接显示，勿再作为 key 翻译)
+   * </pre>
+   *
    * <code>string label = 1;</code>
    * @return The label.
    */
@@ -128,6 +132,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 双态字段：请求无 language 时为 i18n key(由前端语言包翻译)；请求带 language 时为该语言译文(直接显示，勿再作为 key 翻译)
+   * </pre>
+   *
    * <code>string label = 1;</code>
    * @return The bytes for label.
    */
@@ -602,6 +610,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object label = "";
     /**
+     * <pre>
+     * 双态字段：请求无 language 时为 i18n key(由前端语言包翻译)；请求带 language 时为该语言译文(直接显示，勿再作为 key 翻译)
+     * </pre>
+     *
      * <code>string label = 1;</code>
      * @return The label.
      */
@@ -618,6 +630,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 双态字段：请求无 language 时为 i18n key(由前端语言包翻译)；请求带 language 时为该语言译文(直接显示，勿再作为 key 翻译)
+     * </pre>
+     *
      * <code>string label = 1;</code>
      * @return The bytes for label.
      */
@@ -635,6 +651,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 双态字段：请求无 language 时为 i18n key(由前端语言包翻译)；请求带 language 时为该语言译文(直接显示，勿再作为 key 翻译)
+     * </pre>
+     *
      * <code>string label = 1;</code>
      * @param value The label to set.
      * @return This builder for chaining.
@@ -650,6 +670,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 双态字段：请求无 language 时为 i18n key(由前端语言包翻译)；请求带 language 时为该语言译文(直接显示，勿再作为 key 翻译)
+     * </pre>
+     *
      * <code>string label = 1;</code>
      * @return This builder for chaining.
      */
@@ -660,6 +684,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 双态字段：请求无 language 时为 i18n key(由前端语言包翻译)；请求带 language 时为该语言译文(直接显示，勿再作为 key 翻译)
+     * </pre>
+     *
      * <code>string label = 1;</code>
      * @param value The bytes for label to set.
      * @return This builder for chaining.

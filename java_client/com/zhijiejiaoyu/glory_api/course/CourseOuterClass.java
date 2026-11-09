@@ -215,25 +215,26 @@ public final class CourseOuterClass {
       "\022\r\n\005label\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\022\'\n\010childr" +
       "en\030\003 \003(\0132\025.glory_api.CourseType\";\n\022Major" +
       "CategoryGroup\022\026\n\016major_category\030\001 \001(\005\022\r\n" +
-      "\005major\030\002 \003(\t\"C\n\030GetCourseTypeTreeRequest" +
+      "\005major\030\002 \003(\t\"U\n\030GetCourseTypeTreeRequest" +
       "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
-      "t\"h\n\031GetCourseTypeTreeResponse\022%\n\tbase_r" +
-      "esp\030\001 \001(\0132\022.base.BaseResponse\022$\n\005types\030\002" +
-      " \003(\0132\025.glory_api.CourseType\"U\n\030GetCourse" +
-      "TypeListRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
-      "base.BaseRequest\022\020\n\010assigned\030\002 \001(\010\"\254\003\n\031G" +
-      "etCourseTypeListResponse\022%\n\tbase_resp\030\001 " +
-      "\001(\0132\022.base.BaseResponse\022%\n\006levels\030\002 \003(\0132" +
-      "\025.glory_api.CourseType\022$\n\005types\030\003 \003(\0132\025." +
-      "glory_api.CourseType\022%\n\006majors\030\004 \003(\0132\025.g" +
-      "lory_api.CourseType\022)\n\nindustries\030\005 \003(\0132" +
-      "\025.glory_api.CourseType\022(\n\tlanguages\030\006 \003(" +
-      "\0132\025.glory_api.CourseType\022/\n\020major_catego" +
-      "ries\030\007 \003(\0132\025.glory_api.CourseType\0220\n\021cou" +
-      "rse_attributes\030\010 \003(\0132\025.glory_api.CourseT" +
-      "ype\022<\n\025major_category_majors\030\t \003(\0132\035.glo" +
-      "ry_api.MajorCategoryGroupB%\n!com.zhijiej" +
-      "iaoyu.glory_api.courseP\001b\006proto3"
+      "t\022\020\n\010language\030\002 \001(\t\"h\n\031GetCourseTypeTree" +
+      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
+      "esponse\022$\n\005types\030\002 \003(\0132\025.glory_api.Cours" +
+      "eType\"g\n\030GetCourseTypeListRequest\022\'\n\014bas" +
+      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010as" +
+      "signed\030\002 \001(\010\022\020\n\010language\030\003 \001(\t\"\254\003\n\031GetCo" +
+      "urseTypeListResponse\022%\n\tbase_resp\030\001 \001(\0132" +
+      "\022.base.BaseResponse\022%\n\006levels\030\002 \003(\0132\025.gl" +
+      "ory_api.CourseType\022$\n\005types\030\003 \003(\0132\025.glor" +
+      "y_api.CourseType\022%\n\006majors\030\004 \003(\0132\025.glory" +
+      "_api.CourseType\022)\n\nindustries\030\005 \003(\0132\025.gl" +
+      "ory_api.CourseType\022(\n\tlanguages\030\006 \003(\0132\025." +
+      "glory_api.CourseType\022/\n\020major_categories" +
+      "\030\007 \003(\0132\025.glory_api.CourseType\0220\n\021course_" +
+      "attributes\030\010 \003(\0132\025.glory_api.CourseType\022" +
+      "<\n\025major_category_majors\030\t \003(\0132\035.glory_a" +
+      "pi.MajorCategoryGroupB%\n!com.zhijiejiaoy" +
+      "u.glory_api.courseP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -372,7 +373,7 @@ public final class CourseOuterClass {
     internal_static_glory_api_GetCourseTypeTreeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetCourseTypeTreeRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", });
+        new java.lang.String[] { "BaseRequest", "Language", });
     internal_static_glory_api_GetCourseTypeTreeResponse_descriptor =
       getDescriptor().getMessageTypes().get(22);
     internal_static_glory_api_GetCourseTypeTreeResponse_fieldAccessorTable = new
@@ -384,7 +385,7 @@ public final class CourseOuterClass {
     internal_static_glory_api_GetCourseTypeListRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetCourseTypeListRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "Assigned", });
+        new java.lang.String[] { "BaseRequest", "Assigned", "Language", });
     internal_static_glory_api_GetCourseTypeListResponse_descriptor =
       getDescriptor().getMessageTypes().get(24);
     internal_static_glory_api_GetCourseTypeListResponse_fieldAccessorTable = new

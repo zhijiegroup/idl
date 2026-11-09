@@ -698,6 +698,7 @@ nonisolated struct GloryApi_CourseType: Sendable {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// 双态字段：请求无 language 时为 i18n key(由前端语言包翻译)；请求带 language 时为该语言译文(直接显示，勿再作为 key 翻译)
   var label: String = String()
 
   var value: String = String()
@@ -739,6 +740,9 @@ nonisolated struct GloryApi_GetCourseTypeTreeRequest: Sendable {
   var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  /// 可选语言码(zh-CN/en-US/th-TH/ru-RU/id-ID/vi-VN，兼容 zh/th 简码)；空=label 返回 i18n key(现状)，非空=label 直接返回该语言译文
+  var language: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -785,6 +789,9 @@ nonisolated struct GloryApi_GetCourseTypeListRequest: Sendable {
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var assigned: Bool = false
+
+  /// 可选语言码(zh-CN/en-US/th-TH/ru-RU/id-ID/vi-VN，兼容 zh/th 简码)；空=label 返回 i18n key(现状)，非空=label 直接返回该语言译文
+  var language: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1951,7 +1958,7 @@ nonisolated extension GloryApi_MajorCategoryGroup: SwiftProtobuf.Message, SwiftP
 
 nonisolated extension GloryApi_GetCourseTypeTreeRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetCourseTypeTreeRequest"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{1}language\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1960,6 +1967,7 @@ nonisolated extension GloryApi_GetCourseTypeTreeRequest: SwiftProtobuf.Message, 
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.language) }()
       default: break
       }
     }
@@ -1973,11 +1981,15 @@ nonisolated extension GloryApi_GetCourseTypeTreeRequest: SwiftProtobuf.Message, 
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if !self.language.isEmpty {
+      try visitor.visitSingularStringField(value: self.language, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetCourseTypeTreeRequest, rhs: GloryApi_GetCourseTypeTreeRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.language != rhs.language {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -2024,7 +2036,7 @@ nonisolated extension GloryApi_GetCourseTypeTreeResponse: SwiftProtobuf.Message,
 
 nonisolated extension GloryApi_GetCourseTypeListRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetCourseTypeListRequest"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{1}assigned\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{1}assigned\0\u{1}language\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -2034,6 +2046,7 @@ nonisolated extension GloryApi_GetCourseTypeListRequest: SwiftProtobuf.Message, 
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularBoolField(value: &self.assigned) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.language) }()
       default: break
       }
     }
@@ -2050,12 +2063,16 @@ nonisolated extension GloryApi_GetCourseTypeListRequest: SwiftProtobuf.Message, 
     if self.assigned != false {
       try visitor.visitSingularBoolField(value: self.assigned, fieldNumber: 2)
     }
+    if !self.language.isEmpty {
+      try visitor.visitSingularStringField(value: self.language, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetCourseTypeListRequest, rhs: GloryApi_GetCourseTypeListRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.assigned != rhs.assigned {return false}
+    if lhs.language != rhs.language {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -8,11 +8,19 @@ public interface CourseTypeOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 双态字段：请求无 language 时为 i18n key(由前端语言包翻译)；请求带 language 时为该语言译文(直接显示，勿再作为 key 翻译)
+   * </pre>
+   *
    * <code>string label = 1;</code>
    * @return The label.
    */
   java.lang.String getLabel();
   /**
+   * <pre>
+   * 双态字段：请求无 language 时为 i18n key(由前端语言包翻译)；请求带 language 时为该语言译文(直接显示，勿再作为 key 翻译)
+   * </pre>
+   *
    * <code>string label = 1;</code>
    * @return The bytes for label.
    */

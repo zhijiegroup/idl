@@ -27,4 +27,24 @@ public interface GetCourseTypeListRequestOrBuilder extends
    * @return The assigned.
    */
   boolean getAssigned();
+
+  /**
+   * <pre>
+   * 可选语言码(zh-CN/en-US/th-TH/ru-RU/id-ID/vi-VN，兼容 zh/th 简码)；空=label 返回 i18n key(现状)，非空=label 直接返回该语言译文
+   * </pre>
+   *
+   * <code>string language = 3;</code>
+   * @return The language.
+   */
+  java.lang.String getLanguage();
+  /**
+   * <pre>
+   * 可选语言码(zh-CN/en-US/th-TH/ru-RU/id-ID/vi-VN，兼容 zh/th 简码)；空=label 返回 i18n key(现状)，非空=label 直接返回该语言译文
+   * </pre>
+   *
+   * <code>string language = 3;</code>
+   * @return The bytes for language.
+   */
+  com.google.protobuf.ByteString
+      getLanguageBytes();
 }
