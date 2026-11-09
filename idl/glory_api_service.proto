@@ -1381,6 +1381,11 @@ service glory_api {
     option (api.post) = '/api/course/create_teaching_task';
   }
 
+  // 取消授课(软删除，原进度保留；再次加入可选择恢复)
+  rpc DeleteTeachingTask(DeleteTeachingTaskRequest) returns (DeleteTeachingTaskResponse) {
+    option (api.post) = '/api/course/delete_teaching_task';
+  }
+
   // 培养方案
   rpc CreateEduScheme(CreateEduSchemeRequest) returns (CreateEduSchemeResponse) {
     option (api.post) = '/api/course/create_edu_scheme';
