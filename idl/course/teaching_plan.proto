@@ -118,7 +118,7 @@ message TaskCounts {
 // 在授课程列表(一任务一卡片，按 COALESCE(last_taught_at, created_at) DESC 排序)
 message ListTeachingTaskRequest {
     base.BaseRequest base_request = 1;
-    int32 status = 2; // 任务状态：0.全部；1.进行中(默认，含 0%)；2.已结课
+    int32 status = 2; // 任务状态：0.全部(未取消)；1.进行中(默认，含 0%)；2.已结课；3.已取消(软删除任务，供再次加入授课时识别历史进度)
     string major_code = 3; // 专业过滤(预留)
     base.PaginationRequest pagination = 100; // 默认 size=12(三列×四行)
 }
@@ -137,6 +137,7 @@ message CreateTeachingTaskRequest {
     int64 course_id = 3; // target_type=1 时必填
     int64 edu_scheme_id = 4; // target_type=2 时必填
     repeated int64 class_ids = 5; // 授课班级，至少 1 个
+    bool restart_progress = 6; // 所选班级存在已取消(软删除)任务时：true 进度清零重新开始；false(默认零值，不传兼容原接口) 恢复原进度
 }
 
 message CreateTeachingTaskResponse {
@@ -144,4 +145,14 @@ message CreateTeachingTaskResponse {
     repeated int64 task_ids = 2; // 本次涉及的任务ID(新建+已存在)
     int32 created_count = 3; // 新建数量
     int32 existed_count = 4; // 已存在数量
+}
+
+// 取消授课：软删除当前课程当前班级的在授任务，原进度保留(再次加入可选择恢复)
+message DeleteTeachingTaskRequest {
+    base.BaseRequest base_request = 1;
+    int64 task_id = 2; // 授课任务ID(在授课程卡片 task_id)
+}
+
+message DeleteTeachingTaskResponse {
+    base.BaseResponse base_resp = 1;
 }
