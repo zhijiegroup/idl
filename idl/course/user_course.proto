@@ -16,6 +16,8 @@ message UserCourseSummary {
   string course_organization = 8; // 课程开发单位
   string course_teacher_name = 9; // 授课老师名称
   int32 course_progress = 10; // 课程进度
+  int32 finished_lesson_count = 11; // 已完成节数（视频资源进度达100%的数量）
+  int32 total_lesson_count = 12; // 总节数（课程视频资源总数）
 }
 
 // 加入课程
