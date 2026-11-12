@@ -55,6 +55,12 @@ nonisolated struct GloryApi_UserCourseSummary: Sendable {
   /// 课程进度
   var courseProgress: Int32 = 0
 
+  /// 已完成节数（视频资源进度达100%的数量）
+  var finishedLessonCount: Int32 = 0
+
+  /// 总节数（课程视频资源总数）
+  var totalLessonCount: Int32 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -440,7 +446,7 @@ fileprivate nonisolated let _protobuf_package = "glory_api"
 
 nonisolated extension GloryApi_UserCourseSummary: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UserCourseSummary"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}course_id\0\u{3}course_name\0\u{3}knowledge_hours\0\u{3}skill_hours\0\u{3}course_state\0\u{3}course_origin\0\u{3}course_module\0\u{3}course_organization\0\u{3}course_teacher_name\0\u{3}course_progress\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}course_id\0\u{3}course_name\0\u{3}knowledge_hours\0\u{3}skill_hours\0\u{3}course_state\0\u{3}course_origin\0\u{3}course_module\0\u{3}course_organization\0\u{3}course_teacher_name\0\u{3}course_progress\0\u{3}finished_lesson_count\0\u{3}total_lesson_count\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -458,6 +464,8 @@ nonisolated extension GloryApi_UserCourseSummary: SwiftProtobuf.Message, SwiftPr
       case 8: try { try decoder.decodeSingularStringField(value: &self.courseOrganization) }()
       case 9: try { try decoder.decodeSingularStringField(value: &self.courseTeacherName) }()
       case 10: try { try decoder.decodeSingularInt32Field(value: &self.courseProgress) }()
+      case 11: try { try decoder.decodeSingularInt32Field(value: &self.finishedLessonCount) }()
+      case 12: try { try decoder.decodeSingularInt32Field(value: &self.totalLessonCount) }()
       default: break
       }
     }
@@ -494,6 +502,12 @@ nonisolated extension GloryApi_UserCourseSummary: SwiftProtobuf.Message, SwiftPr
     if self.courseProgress != 0 {
       try visitor.visitSingularInt32Field(value: self.courseProgress, fieldNumber: 10)
     }
+    if self.finishedLessonCount != 0 {
+      try visitor.visitSingularInt32Field(value: self.finishedLessonCount, fieldNumber: 11)
+    }
+    if self.totalLessonCount != 0 {
+      try visitor.visitSingularInt32Field(value: self.totalLessonCount, fieldNumber: 12)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -508,6 +522,8 @@ nonisolated extension GloryApi_UserCourseSummary: SwiftProtobuf.Message, SwiftPr
     if lhs.courseOrganization != rhs.courseOrganization {return false}
     if lhs.courseTeacherName != rhs.courseTeacherName {return false}
     if lhs.courseProgress != rhs.courseProgress {return false}
+    if lhs.finishedLessonCount != rhs.finishedLessonCount {return false}
+    if lhs.totalLessonCount != rhs.totalLessonCount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

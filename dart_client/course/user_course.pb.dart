@@ -28,6 +28,8 @@ class UserCourseSummary extends $pb.GeneratedMessage {
     $core.String? courseOrganization,
     $core.String? courseTeacherName,
     $core.int? courseProgress,
+    $core.int? finishedLessonCount,
+    $core.int? totalLessonCount,
   }) {
     final $result = create();
     if (courseId != null) {
@@ -60,6 +62,12 @@ class UserCourseSummary extends $pb.GeneratedMessage {
     if (courseProgress != null) {
       $result.courseProgress = courseProgress;
     }
+    if (finishedLessonCount != null) {
+      $result.finishedLessonCount = finishedLessonCount;
+    }
+    if (totalLessonCount != null) {
+      $result.totalLessonCount = totalLessonCount;
+    }
     return $result;
   }
   UserCourseSummary._() : super();
@@ -77,6 +85,8 @@ class UserCourseSummary extends $pb.GeneratedMessage {
     ..aOS(8, _omitFieldNames ? '' : 'courseOrganization')
     ..aOS(9, _omitFieldNames ? '' : 'courseTeacherName')
     ..a<$core.int>(10, _omitFieldNames ? '' : 'courseProgress', $pb.PbFieldType.O3)
+    ..a<$core.int>(11, _omitFieldNames ? '' : 'finishedLessonCount', $pb.PbFieldType.O3)
+    ..a<$core.int>(12, _omitFieldNames ? '' : 'totalLessonCount', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -190,6 +200,24 @@ class UserCourseSummary extends $pb.GeneratedMessage {
   $core.bool hasCourseProgress() => $_has(9);
   @$pb.TagNumber(10)
   void clearCourseProgress() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.int get finishedLessonCount => $_getIZ(10);
+  @$pb.TagNumber(11)
+  set finishedLessonCount($core.int v) { $_setSignedInt32(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasFinishedLessonCount() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearFinishedLessonCount() => clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.int get totalLessonCount => $_getIZ(11);
+  @$pb.TagNumber(12)
+  set totalLessonCount($core.int v) { $_setSignedInt32(11, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasTotalLessonCount() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearTotalLessonCount() => clearField(12);
 }
 
 /// 加入课程

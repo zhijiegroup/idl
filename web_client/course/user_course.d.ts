@@ -26,6 +26,10 @@ export interface UserCourseSummary {
   course_teacher_name?: string;
   /** 课程进度 */
   course_progress?: number;
+  /** 已完成节数（视频资源进度达100%的数量） */
+  finished_lesson_count?: number;
+  /** 总节数（课程视频资源总数） */
+  total_lesson_count?: number;
 }
 
 /** 加入课程 */

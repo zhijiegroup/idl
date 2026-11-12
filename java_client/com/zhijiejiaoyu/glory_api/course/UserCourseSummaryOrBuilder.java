@@ -136,4 +136,24 @@ public interface UserCourseSummaryOrBuilder extends
    * @return The courseProgress.
    */
   int getCourseProgress();
+
+  /**
+   * <pre>
+   * 已完成节数（视频资源进度达100%的数量）
+   * </pre>
+   *
+   * <code>int32 finished_lesson_count = 11;</code>
+   * @return The finishedLessonCount.
+   */
+  int getFinishedLessonCount();
+
+  /**
+   * <pre>
+   * 总节数（课程视频资源总数）
+   * </pre>
+   *
+   * <code>int32 total_lesson_count = 12;</code>
+   * @return The totalLessonCount.
+   */
+  int getTotalLessonCount();
 }

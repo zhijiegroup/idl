@@ -104,6 +104,16 @@ private static final long serialVersionUID = 0L;
             courseProgress = input.readInt32();
             break;
           }
+          case 88: {
+
+            finishedLessonCount = input.readInt32();
+            break;
+          }
+          case 96: {
+
+            totalLessonCount = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -379,6 +389,36 @@ private static final long serialVersionUID = 0L;
     return courseProgress ;
   }
 
+  public static final int FINISHED_LESSON_COUNT_FIELD_NUMBER = 11;
+  private int finishedLessonCount ;
+  /**
+   * <pre>
+   * 已完成节数（视频资源进度达100%的数量）
+   * </pre>
+   *
+   * <code>int32 finished_lesson_count = 11;</code>
+   * @return The finishedLessonCount.
+   */
+  @java.lang.Override
+  public int getFinishedLessonCount() {
+    return finishedLessonCount ;
+  }
+
+  public static final int TOTAL_LESSON_COUNT_FIELD_NUMBER = 12;
+  private int totalLessonCount ;
+  /**
+   * <pre>
+   * 总节数（课程视频资源总数）
+   * </pre>
+   *
+   * <code>int32 total_lesson_count = 12;</code>
+   * @return The totalLessonCount.
+   */
+  @java.lang.Override
+  public int getTotalLessonCount() {
+    return totalLessonCount ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -422,6 +462,12 @@ private static final long serialVersionUID = 0L;
     }
     if (courseProgress != 0) {
       output.writeInt32(10, courseProgress );
+    }
+    if (finishedLessonCount != 0) {
+      output.writeInt32(11, finishedLessonCount );
+    }
+    if (totalLessonCount != 0) {
+      output.writeInt32(12, totalLessonCount );
     }
     unknownFields.writeTo(output);
   }
@@ -469,6 +515,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(10, courseProgress );
     }
+    if (finishedLessonCount != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(11, finishedLessonCount );
+    }
+    if (totalLessonCount != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(12, totalLessonCount );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -506,6 +560,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCourseTeacherName())) return false;
     if (getCourseProgress()
         != other.getCourseProgress()) return false;
+    if (getFinishedLessonCount()
+        != other.getFinishedLessonCount()) return false;
+    if (getTotalLessonCount()
+        != other.getTotalLessonCount()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -540,6 +598,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCourseTeacherName().hashCode();
     hash = (37 * hash) + COURSE_PROGRESS_FIELD_NUMBER;
     hash = (53 * hash) + getCourseProgress();
+    hash = (37 * hash) + FINISHED_LESSON_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getFinishedLessonCount();
+    hash = (37 * hash) + TOTAL_LESSON_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getTotalLessonCount();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -693,6 +755,10 @@ private static final long serialVersionUID = 0L;
 
       courseProgress = 0;
 
+      finishedLessonCount = 0;
+
+      totalLessonCount = 0;
+
       return this;
     }
 
@@ -729,6 +795,8 @@ private static final long serialVersionUID = 0L;
       result.courseOrganization = courseOrganization ;
       result.courseTeacherName = courseTeacherName ;
       result.courseProgress = courseProgress ;
+      result.finishedLessonCount = finishedLessonCount ;
+      result.totalLessonCount = totalLessonCount ;
       onBuilt();
       return result;
     }
@@ -809,6 +877,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getCourseProgress() != 0) {
         setCourseProgress(other.getCourseProgress());
+      }
+      if (other.getFinishedLessonCount() != 0) {
+        setFinishedLessonCount(other.getFinishedLessonCount());
+      }
+      if (other.getTotalLessonCount() != 0) {
+        setTotalLessonCount(other.getTotalLessonCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1424,6 +1498,92 @@ private static final long serialVersionUID = 0L;
     public Builder clearCourseProgress() {
       
       courseProgress = 0;
+      onChanged();
+      return this;
+    }
+
+    private int finishedLessonCount ;
+    /**
+     * <pre>
+     * 已完成节数（视频资源进度达100%的数量）
+     * </pre>
+     *
+     * <code>int32 finished_lesson_count = 11;</code>
+     * @return The finishedLessonCount.
+     */
+    @java.lang.Override
+    public int getFinishedLessonCount() {
+      return finishedLessonCount ;
+    }
+    /**
+     * <pre>
+     * 已完成节数（视频资源进度达100%的数量）
+     * </pre>
+     *
+     * <code>int32 finished_lesson_count = 11;</code>
+     * @param value The finishedLessonCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFinishedLessonCount(int value) {
+      
+      finishedLessonCount = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 已完成节数（视频资源进度达100%的数量）
+     * </pre>
+     *
+     * <code>int32 finished_lesson_count = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearFinishedLessonCount() {
+      
+      finishedLessonCount = 0;
+      onChanged();
+      return this;
+    }
+
+    private int totalLessonCount ;
+    /**
+     * <pre>
+     * 总节数（课程视频资源总数）
+     * </pre>
+     *
+     * <code>int32 total_lesson_count = 12;</code>
+     * @return The totalLessonCount.
+     */
+    @java.lang.Override
+    public int getTotalLessonCount() {
+      return totalLessonCount ;
+    }
+    /**
+     * <pre>
+     * 总节数（课程视频资源总数）
+     * </pre>
+     *
+     * <code>int32 total_lesson_count = 12;</code>
+     * @param value The totalLessonCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalLessonCount(int value) {
+      
+      totalLessonCount = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 总节数（课程视频资源总数）
+     * </pre>
+     *
+     * <code>int32 total_lesson_count = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTotalLessonCount() {
+      
+      totalLessonCount = 0;
       onChanged();
       return this;
     }
