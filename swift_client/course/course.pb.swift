@@ -174,7 +174,7 @@ nonisolated struct GloryApi_Course: @unchecked Sendable {
     set {_uniqueStorage()._majorCategory = newValue}
   }
 
-  /// 课程属性：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+  /// 课程属性：0.未设置(其它)；1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；8.职场提升课（6.选修课程/7.实习实训课已废弃，存量迁移为0）
   var courseAttribute: Int32 {
     get {_storage._courseAttribute}
     set {_uniqueStorage()._courseAttribute = newValue}
@@ -500,7 +500,7 @@ nonisolated struct GloryApi_ListCourseRequest: @unchecked Sendable {
     set {_uniqueStorage()._majorCategory = newValue}
   }
 
-  /// 课程属性(多选)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+  /// 课程属性(多选)：0.其它(未标注)；1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；8.职场提升课（6/7已废弃，归并为0）
   var courseAttribute: [Int32] {
     get {_storage._courseAttribute}
     set {_uniqueStorage()._courseAttribute = newValue}
@@ -829,7 +829,7 @@ nonisolated struct GloryApi_GetCourseTypeListResponse: Sendable {
   /// 专业大类(5项)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
   var majorCategories: [GloryApi_CourseType] = []
 
-  /// 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+  /// 课程属性(6项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；8.职场提升课（6.选修课程/7.实习实训课已废弃，存量归并0其它）
   var courseAttributes: [GloryApi_CourseType] = []
 
   /// 专业大类与专业映射

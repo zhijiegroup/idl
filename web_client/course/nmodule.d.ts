@@ -28,7 +28,7 @@ export interface NmCourse {
   language?: string;
   /** 专业大类：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术；新增字段 */
   major_category?: number;
-  /** 课程属性：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课；新增字段 */
+  /** 课程属性：0.未设置(其它)；1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；8.职场提升课（6/7已废弃，迁移为0）；新增字段 */
   course_attribute?: number;
 }
 
@@ -73,7 +73,7 @@ export interface CreateNmCourseRequest {
   course_industry?: string;
   chapters?: Array<NmChapter>;
   language?: string;
-  /** 课程属性：0.未设置；1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课；新增字段(仅 course_classification=1 学校课程适用) */
+  /** 课程属性：0.未设置；1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；8.职场提升课（6/7已废弃，归并为0）；新增字段(仅 course_classification=1 学校课程适用) */
   course_attribute?: number;
 }
 
@@ -125,7 +125,7 @@ export interface UpdateNmCourseRequest {
   chapters?: Array<NmChapter>;
   course_id?: string;
   language?: string;
-  /** 课程属性：0.未设置；1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课；新增字段(仅 course_classification=1 学校课程适用) */
+  /** 课程属性：0.未设置；1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；8.职场提升课（6/7已废弃，归并为0）；新增字段(仅 course_classification=1 学校课程适用) */
   course_attribute?: number;
 }
 

@@ -228,7 +228,7 @@ public interface GetCourseTypeListResponseOrBuilder extends
 
   /**
    * <pre>
-   * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+   * 课程属性(6项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；8.职场提升课（6.选修课程/7.实习实训课已废弃，存量归并0其它）
    * </pre>
    *
    * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
@@ -237,7 +237,7 @@ public interface GetCourseTypeListResponseOrBuilder extends
       getCourseAttributesList();
   /**
    * <pre>
-   * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+   * 课程属性(6项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；8.职场提升课（6.选修课程/7.实习实训课已废弃，存量归并0其它）
    * </pre>
    *
    * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
@@ -245,7 +245,7 @@ public interface GetCourseTypeListResponseOrBuilder extends
   com.zhijiejiaoyu.glory_api.course.CourseType getCourseAttributes(int index);
   /**
    * <pre>
-   * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+   * 课程属性(6项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；8.职场提升课（6.选修课程/7.实习实训课已废弃，存量归并0其它）
    * </pre>
    *
    * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
@@ -253,7 +253,7 @@ public interface GetCourseTypeListResponseOrBuilder extends
   int getCourseAttributesCount();
   /**
    * <pre>
-   * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+   * 课程属性(6项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；8.职场提升课（6.选修课程/7.实习实训课已废弃，存量归并0其它）
    * </pre>
    *
    * <code>repeated .glory_api.CourseType course_attributes = 8;</code>
@@ -262,7 +262,7 @@ public interface GetCourseTypeListResponseOrBuilder extends
       getCourseAttributesOrBuilderList();
   /**
    * <pre>
-   * 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课
+   * 课程属性(6项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；8.职场提升课（6.选修课程/7.实习实训课已废弃，存量归并0其它）
    * </pre>
    *
    * <code>repeated .glory_api.CourseType course_attributes = 8;</code>

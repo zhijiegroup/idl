@@ -55,7 +55,7 @@ export interface Course {
   language?: string;
   /** 专业大类：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术 */
   major_category?: number;
-  /** 课程属性：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课 */
+  /** 课程属性：0.未设置(其它)；1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；8.职场提升课（6.选修课程/7.实习实训课已废弃，存量迁移为0） */
   course_attribute?: number;
 }
 
@@ -134,7 +134,7 @@ export interface ListCourseRequest {
   purchased_first?: boolean;
   /** 专业大类(单选)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术 */
   major_category?: number;
-  /** 课程属性(多选)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课 */
+  /** 课程属性(多选)：0.其它(未标注)；1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；8.职场提升课（6/7已废弃，归并为0） */
   course_attribute?: Array<number>;
   pagination?: base.PaginationRequest;
 }
@@ -219,7 +219,7 @@ export interface GetCourseTypeListResponse {
   languages?: Array<CourseType>;
   /** 专业大类(5项)：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术 */
   major_categories?: Array<CourseType>;
-  /** 课程属性(8项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；6.选修课程；7.实习实训课；8.职场提升课 */
+  /** 课程属性(6项)：1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；8.职场提升课（6.选修课程/7.实习实训课已废弃，存量归并0其它） */
   course_attributes?: Array<CourseType>;
   /** 专业大类与专业映射 */
   major_category_majors?: Array<MajorCategoryGroup>;
