@@ -3405,11 +3405,18 @@ class UploadedFile extends $pb.GeneratedMessage {
   void clearDocId() => clearField(5);
 }
 
-/// 通用上传(multipart/form-data；file_list 为多文件表单字段，不体现在 proto 字段中)
+/// 通用上传
+/// 两种模式：
+///   1) multipart/form-data（file_list 多文件表单字段，不体现在 proto 字段中）——服务端中转；
+///   2) 直传登记：传 object_key 等字段（JSON），前端经 get_sts(upload=true) 直传 OSS 后调本接口登记。
 class UploadFileRequest extends $pb.GeneratedMessage {
   factory UploadFileRequest({
     $0.BaseRequest? baseRequest,
     $fixnum.Int64? parentId,
+    $core.String? objectKey,
+    $core.String? fileName,
+    $fixnum.Int64? fileSize,
+    $core.String? contentType,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -3417,6 +3424,18 @@ class UploadFileRequest extends $pb.GeneratedMessage {
     }
     if (parentId != null) {
       $result.parentId = parentId;
+    }
+    if (objectKey != null) {
+      $result.objectKey = objectKey;
+    }
+    if (fileName != null) {
+      $result.fileName = fileName;
+    }
+    if (fileSize != null) {
+      $result.fileSize = fileSize;
+    }
+    if (contentType != null) {
+      $result.contentType = contentType;
     }
     return $result;
   }
@@ -3427,6 +3446,10 @@ class UploadFileRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UploadFileRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'parentId')
+    ..aOS(3, _omitFieldNames ? '' : 'objectKey')
+    ..aOS(4, _omitFieldNames ? '' : 'fileName')
+    ..aInt64(5, _omitFieldNames ? '' : 'fileSize')
+    ..aOS(6, _omitFieldNames ? '' : 'contentType')
     ..hasRequiredFields = false
   ;
 
@@ -3470,6 +3493,42 @@ class UploadFileRequest extends $pb.GeneratedMessage {
   $core.bool hasParentId() => $_has(1);
   @$pb.TagNumber(2)
   void clearParentId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get objectKey => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set objectKey($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasObjectKey() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearObjectKey() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get fileName => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set fileName($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasFileName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearFileName() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get fileSize => $_getI64(4);
+  @$pb.TagNumber(5)
+  set fileSize($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasFileSize() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearFileSize() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get contentType => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set contentType($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasContentType() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearContentType() => clearField(6);
 }
 
 class UploadFileResponse extends $pb.GeneratedMessage {

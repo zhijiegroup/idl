@@ -31,4 +31,74 @@ public interface UploadFileRequestOrBuilder extends
    * @return The parentId.
    */
   long getParentId();
+
+  /**
+   * <pre>
+   * 直传登记：OSS 对象 key（有值时不再解析 multipart，直接登记）
+   * </pre>
+   *
+   * <code>string object_key = 3;</code>
+   * @return The objectKey.
+   */
+  java.lang.String getObjectKey();
+  /**
+   * <pre>
+   * 直传登记：OSS 对象 key（有值时不再解析 multipart，直接登记）
+   * </pre>
+   *
+   * <code>string object_key = 3;</code>
+   * @return The bytes for objectKey.
+   */
+  com.google.protobuf.ByteString
+      getObjectKeyBytes();
+
+  /**
+   * <pre>
+   * 直传登记：原文件名（含扩展名，用于白名单校验与展示）
+   * </pre>
+   *
+   * <code>string file_name = 4;</code>
+   * @return The fileName.
+   */
+  java.lang.String getFileName();
+  /**
+   * <pre>
+   * 直传登记：原文件名（含扩展名，用于白名单校验与展示）
+   * </pre>
+   *
+   * <code>string file_name = 4;</code>
+   * @return The bytes for fileName.
+   */
+  com.google.protobuf.ByteString
+      getFileNameBytes();
+
+  /**
+   * <pre>
+   * 直传登记：文件大小（字节，需与对象 HEAD 结果一致）
+   * </pre>
+   *
+   * <code>int64 file_size = 5;</code>
+   * @return The fileSize.
+   */
+  long getFileSize();
+
+  /**
+   * <pre>
+   * 直传登记：MIME 类型（可选，缺省按扩展名推断）
+   * </pre>
+   *
+   * <code>string content_type = 6;</code>
+   * @return The contentType.
+   */
+  java.lang.String getContentType();
+  /**
+   * <pre>
+   * 直传登记：MIME 类型（可选，缺省按扩展名推断）
+   * </pre>
+   *
+   * <code>string content_type = 6;</code>
+   * @return The bytes for contentType.
+   */
+  com.google.protobuf.ByteString
+      getContentTypeBytes();
 }

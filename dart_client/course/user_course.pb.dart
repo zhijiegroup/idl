@@ -30,6 +30,8 @@ class UserCourseSummary extends $pb.GeneratedMessage {
     $core.int? courseProgress,
     $core.int? finishedLessonCount,
     $core.int? totalLessonCount,
+    $core.String? courseCoverPath,
+    $core.String? courseCoverUrl,
   }) {
     final $result = create();
     if (courseId != null) {
@@ -68,6 +70,12 @@ class UserCourseSummary extends $pb.GeneratedMessage {
     if (totalLessonCount != null) {
       $result.totalLessonCount = totalLessonCount;
     }
+    if (courseCoverPath != null) {
+      $result.courseCoverPath = courseCoverPath;
+    }
+    if (courseCoverUrl != null) {
+      $result.courseCoverUrl = courseCoverUrl;
+    }
     return $result;
   }
   UserCourseSummary._() : super();
@@ -87,6 +95,8 @@ class UserCourseSummary extends $pb.GeneratedMessage {
     ..a<$core.int>(10, _omitFieldNames ? '' : 'courseProgress', $pb.PbFieldType.O3)
     ..a<$core.int>(11, _omitFieldNames ? '' : 'finishedLessonCount', $pb.PbFieldType.O3)
     ..a<$core.int>(12, _omitFieldNames ? '' : 'totalLessonCount', $pb.PbFieldType.O3)
+    ..aOS(13, _omitFieldNames ? '' : 'courseCoverPath')
+    ..aOS(14, _omitFieldNames ? '' : 'courseCoverUrl')
     ..hasRequiredFields = false
   ;
 
@@ -218,6 +228,24 @@ class UserCourseSummary extends $pb.GeneratedMessage {
   $core.bool hasTotalLessonCount() => $_has(11);
   @$pb.TagNumber(12)
   void clearTotalLessonCount() => clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get courseCoverPath => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set courseCoverPath($core.String v) { $_setString(12, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasCourseCoverPath() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearCourseCoverPath() => clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.String get courseCoverUrl => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set courseCoverUrl($core.String v) { $_setString(13, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasCourseCoverUrl() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearCourseCoverUrl() => clearField(14);
 }
 
 /// 加入课程

@@ -369,6 +369,18 @@ nonisolated struct GloryApi_STS: Sendable {
 
   var securityToken: String = String()
 
+  /// OSS 桶名（直传 SDK 初始化用）
+  var bucket: String = String()
+
+  /// OSS 区域，如 oss-cn-qingdao
+  var region: String = String()
+
+  /// OSS 访问域名，如 https://oss-cn-qingdao.aliyuncs.com
+  var endpoint: String = String()
+
+  /// 允许直传的对象 key 前缀，如 glory_api/dev/{uid}/
+  var objectPrefix: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -387,6 +399,9 @@ nonisolated struct GloryApi_GetSTSRequest: Sendable {
   var hasBaseRequest: Bool {self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  /// true=上传专用收窄策略（仅 PutObject/分片，限定 object_prefix）；不传=存量全量策略
+  var upload: Bool = false
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1174,7 +1189,7 @@ nonisolated extension GloryApi_GetConfigResponse: SwiftProtobuf.Message, SwiftPr
 
 nonisolated extension GloryApi_STS: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".STS"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}access_key_id\0\u{3}access_key_secret\0\u{1}expiration\0\u{3}security_token\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}access_key_id\0\u{3}access_key_secret\0\u{1}expiration\0\u{3}security_token\0\u{1}bucket\0\u{1}region\0\u{1}endpoint\0\u{3}object_prefix\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1186,6 +1201,10 @@ nonisolated extension GloryApi_STS: SwiftProtobuf.Message, SwiftProtobuf._Messag
       case 2: try { try decoder.decodeSingularStringField(value: &self.accessKeySecret) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.expiration) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.securityToken) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.bucket) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.region) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.endpoint) }()
+      case 8: try { try decoder.decodeSingularStringField(value: &self.objectPrefix) }()
       default: break
       }
     }
@@ -1204,6 +1223,18 @@ nonisolated extension GloryApi_STS: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if !self.securityToken.isEmpty {
       try visitor.visitSingularStringField(value: self.securityToken, fieldNumber: 4)
     }
+    if !self.bucket.isEmpty {
+      try visitor.visitSingularStringField(value: self.bucket, fieldNumber: 5)
+    }
+    if !self.region.isEmpty {
+      try visitor.visitSingularStringField(value: self.region, fieldNumber: 6)
+    }
+    if !self.endpoint.isEmpty {
+      try visitor.visitSingularStringField(value: self.endpoint, fieldNumber: 7)
+    }
+    if !self.objectPrefix.isEmpty {
+      try visitor.visitSingularStringField(value: self.objectPrefix, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1212,6 +1243,10 @@ nonisolated extension GloryApi_STS: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if lhs.accessKeySecret != rhs.accessKeySecret {return false}
     if lhs.expiration != rhs.expiration {return false}
     if lhs.securityToken != rhs.securityToken {return false}
+    if lhs.bucket != rhs.bucket {return false}
+    if lhs.region != rhs.region {return false}
+    if lhs.endpoint != rhs.endpoint {return false}
+    if lhs.objectPrefix != rhs.objectPrefix {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1219,7 +1254,7 @@ nonisolated extension GloryApi_STS: SwiftProtobuf.Message, SwiftProtobuf._Messag
 
 nonisolated extension GloryApi_GetSTSRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetSTSRequest"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{1}upload\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1228,6 +1263,7 @@ nonisolated extension GloryApi_GetSTSRequest: SwiftProtobuf.Message, SwiftProtob
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularBoolField(value: &self.upload) }()
       default: break
       }
     }
@@ -1241,11 +1277,15 @@ nonisolated extension GloryApi_GetSTSRequest: SwiftProtobuf.Message, SwiftProtob
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if self.upload != false {
+      try visitor.visitSingularBoolField(value: self.upload, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetSTSRequest, rhs: GloryApi_GetSTSRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.upload != rhs.upload {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

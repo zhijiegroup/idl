@@ -54,4 +54,84 @@ public interface STSOrBuilder extends
    */
   com.google.protobuf.ByteString
       getSecurityTokenBytes();
+
+  /**
+   * <pre>
+   * OSS 桶名（直传 SDK 初始化用）
+   * </pre>
+   *
+   * <code>string bucket = 5;</code>
+   * @return The bucket.
+   */
+  java.lang.String getBucket();
+  /**
+   * <pre>
+   * OSS 桶名（直传 SDK 初始化用）
+   * </pre>
+   *
+   * <code>string bucket = 5;</code>
+   * @return The bytes for bucket.
+   */
+  com.google.protobuf.ByteString
+      getBucketBytes();
+
+  /**
+   * <pre>
+   * OSS 区域，如 oss-cn-qingdao
+   * </pre>
+   *
+   * <code>string region = 6;</code>
+   * @return The region.
+   */
+  java.lang.String getRegion();
+  /**
+   * <pre>
+   * OSS 区域，如 oss-cn-qingdao
+   * </pre>
+   *
+   * <code>string region = 6;</code>
+   * @return The bytes for region.
+   */
+  com.google.protobuf.ByteString
+      getRegionBytes();
+
+  /**
+   * <pre>
+   * OSS 访问域名，如 https://oss-cn-qingdao.aliyuncs.com
+   * </pre>
+   *
+   * <code>string endpoint = 7;</code>
+   * @return The endpoint.
+   */
+  java.lang.String getEndpoint();
+  /**
+   * <pre>
+   * OSS 访问域名，如 https://oss-cn-qingdao.aliyuncs.com
+   * </pre>
+   *
+   * <code>string endpoint = 7;</code>
+   * @return The bytes for endpoint.
+   */
+  com.google.protobuf.ByteString
+      getEndpointBytes();
+
+  /**
+   * <pre>
+   * 允许直传的对象 key 前缀，如 glory_api/dev/{uid}/
+   * </pre>
+   *
+   * <code>string object_prefix = 8;</code>
+   * @return The objectPrefix.
+   */
+  java.lang.String getObjectPrefix();
+  /**
+   * <pre>
+   * 允许直传的对象 key 前缀，如 glory_api/dev/{uid}/
+   * </pre>
+   *
+   * <code>string object_prefix = 8;</code>
+   * @return The bytes for objectPrefix.
+   */
+  com.google.protobuf.ByteString
+      getObjectPrefixBytes();
 }

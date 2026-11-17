@@ -20,6 +20,10 @@ private static final long serialVersionUID = 0L;
     accessKeySecret = "";
     expiration = "";
     securityToken = "";
+    bucket = "";
+    region = "";
+    endpoint = "";
+    objectPrefix = "";
   }
 
   @java.lang.Override
@@ -74,6 +78,30 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             securityToken = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            bucket = s;
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            region = s;
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            endpoint = s;
+            break;
+          }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            objectPrefix = s;
             break;
           }
           default: {
@@ -260,6 +288,190 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int BUCKET_FIELD_NUMBER = 5;
+  private volatile java.lang.Object bucket ;
+  /**
+   * <pre>
+   * OSS 桶名（直传 SDK 初始化用）
+   * </pre>
+   *
+   * <code>string bucket = 5;</code>
+   * @return The bucket.
+   */
+  @java.lang.Override
+  public java.lang.String getBucket() {
+    java.lang.Object ref = bucket ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      bucket = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * OSS 桶名（直传 SDK 初始化用）
+   * </pre>
+   *
+   * <code>string bucket = 5;</code>
+   * @return The bytes for bucket.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getBucketBytes() {
+    java.lang.Object ref = bucket ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      bucket = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int REGION_FIELD_NUMBER = 6;
+  private volatile java.lang.Object region ;
+  /**
+   * <pre>
+   * OSS 区域，如 oss-cn-qingdao
+   * </pre>
+   *
+   * <code>string region = 6;</code>
+   * @return The region.
+   */
+  @java.lang.Override
+  public java.lang.String getRegion() {
+    java.lang.Object ref = region ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      region = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * OSS 区域，如 oss-cn-qingdao
+   * </pre>
+   *
+   * <code>string region = 6;</code>
+   * @return The bytes for region.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getRegionBytes() {
+    java.lang.Object ref = region ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      region = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ENDPOINT_FIELD_NUMBER = 7;
+  private volatile java.lang.Object endpoint ;
+  /**
+   * <pre>
+   * OSS 访问域名，如 https://oss-cn-qingdao.aliyuncs.com
+   * </pre>
+   *
+   * <code>string endpoint = 7;</code>
+   * @return The endpoint.
+   */
+  @java.lang.Override
+  public java.lang.String getEndpoint() {
+    java.lang.Object ref = endpoint ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      endpoint = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * OSS 访问域名，如 https://oss-cn-qingdao.aliyuncs.com
+   * </pre>
+   *
+   * <code>string endpoint = 7;</code>
+   * @return The bytes for endpoint.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getEndpointBytes() {
+    java.lang.Object ref = endpoint ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      endpoint = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int OBJECT_PREFIX_FIELD_NUMBER = 8;
+  private volatile java.lang.Object objectPrefix ;
+  /**
+   * <pre>
+   * 允许直传的对象 key 前缀，如 glory_api/dev/{uid}/
+   * </pre>
+   *
+   * <code>string object_prefix = 8;</code>
+   * @return The objectPrefix.
+   */
+  @java.lang.Override
+  public java.lang.String getObjectPrefix() {
+    java.lang.Object ref = objectPrefix ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      objectPrefix = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 允许直传的对象 key 前缀，如 glory_api/dev/{uid}/
+   * </pre>
+   *
+   * <code>string object_prefix = 8;</code>
+   * @return The bytes for objectPrefix.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getObjectPrefixBytes() {
+    java.lang.Object ref = objectPrefix ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      objectPrefix = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -286,6 +498,18 @@ private static final long serialVersionUID = 0L;
     if (!getSecurityTokenBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, securityToken );
     }
+    if (!getBucketBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, bucket );
+    }
+    if (!getRegionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, region );
+    }
+    if (!getEndpointBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, endpoint );
+    }
+    if (!getObjectPrefixBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, objectPrefix );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -306,6 +530,18 @@ private static final long serialVersionUID = 0L;
     }
     if (!getSecurityTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, securityToken );
+    }
+    if (!getBucketBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, bucket );
+    }
+    if (!getRegionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, region );
+    }
+    if (!getEndpointBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, endpoint );
+    }
+    if (!getObjectPrefixBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, objectPrefix );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -330,6 +566,14 @@ private static final long serialVersionUID = 0L;
         .equals(other.getExpiration())) return false;
     if (!getSecurityToken()
         .equals(other.getSecurityToken())) return false;
+    if (!getBucket()
+        .equals(other.getBucket())) return false;
+    if (!getRegion()
+        .equals(other.getRegion())) return false;
+    if (!getEndpoint()
+        .equals(other.getEndpoint())) return false;
+    if (!getObjectPrefix()
+        .equals(other.getObjectPrefix())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -349,6 +593,14 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getExpiration().hashCode();
     hash = (37 * hash) + SECURITY_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getSecurityToken().hashCode();
+    hash = (37 * hash) + BUCKET_FIELD_NUMBER;
+    hash = (53 * hash) + getBucket().hashCode();
+    hash = (37 * hash) + REGION_FIELD_NUMBER;
+    hash = (53 * hash) + getRegion().hashCode();
+    hash = (37 * hash) + ENDPOINT_FIELD_NUMBER;
+    hash = (53 * hash) + getEndpoint().hashCode();
+    hash = (37 * hash) + OBJECT_PREFIX_FIELD_NUMBER;
+    hash = (53 * hash) + getObjectPrefix().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -490,6 +742,14 @@ private static final long serialVersionUID = 0L;
 
       securityToken = "";
 
+      bucket = "";
+
+      region = "";
+
+      endpoint = "";
+
+      objectPrefix = "";
+
       return this;
     }
 
@@ -520,6 +780,10 @@ private static final long serialVersionUID = 0L;
       result.accessKeySecret = accessKeySecret ;
       result.expiration = expiration ;
       result.securityToken = securityToken ;
+      result.bucket = bucket ;
+      result.region = region ;
+      result.endpoint = endpoint ;
+      result.objectPrefix = objectPrefix ;
       onBuilt();
       return result;
     }
@@ -582,6 +846,22 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getSecurityToken().isEmpty()) {
         securityToken = other.securityToken ;
+        onChanged();
+      }
+      if (!other.getBucket().isEmpty()) {
+        bucket = other.bucket ;
+        onChanged();
+      }
+      if (!other.getRegion().isEmpty()) {
+        region = other.region ;
+        onChanged();
+      }
+      if (!other.getEndpoint().isEmpty()) {
+        endpoint = other.endpoint ;
+        onChanged();
+      }
+      if (!other.getObjectPrefix().isEmpty()) {
+        objectPrefix = other.objectPrefix ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -913,6 +1193,390 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       securityToken = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object bucket = "";
+    /**
+     * <pre>
+     * OSS 桶名（直传 SDK 初始化用）
+     * </pre>
+     *
+     * <code>string bucket = 5;</code>
+     * @return The bucket.
+     */
+    public java.lang.String getBucket() {
+      java.lang.Object ref = bucket ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bucket = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * OSS 桶名（直传 SDK 初始化用）
+     * </pre>
+     *
+     * <code>string bucket = 5;</code>
+     * @return The bytes for bucket.
+     */
+    public com.google.protobuf.ByteString
+        getBucketBytes() {
+      java.lang.Object ref = bucket ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        bucket = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * OSS 桶名（直传 SDK 初始化用）
+     * </pre>
+     *
+     * <code>string bucket = 5;</code>
+     * @param value The bucket to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBucket(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      bucket = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * OSS 桶名（直传 SDK 初始化用）
+     * </pre>
+     *
+     * <code>string bucket = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearBucket() {
+      
+      bucket = getDefaultInstance().getBucket();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * OSS 桶名（直传 SDK 初始化用）
+     * </pre>
+     *
+     * <code>string bucket = 5;</code>
+     * @param value The bytes for bucket to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBucketBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      bucket = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object region = "";
+    /**
+     * <pre>
+     * OSS 区域，如 oss-cn-qingdao
+     * </pre>
+     *
+     * <code>string region = 6;</code>
+     * @return The region.
+     */
+    public java.lang.String getRegion() {
+      java.lang.Object ref = region ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        region = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * OSS 区域，如 oss-cn-qingdao
+     * </pre>
+     *
+     * <code>string region = 6;</code>
+     * @return The bytes for region.
+     */
+    public com.google.protobuf.ByteString
+        getRegionBytes() {
+      java.lang.Object ref = region ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        region = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * OSS 区域，如 oss-cn-qingdao
+     * </pre>
+     *
+     * <code>string region = 6;</code>
+     * @param value The region to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegion(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      region = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * OSS 区域，如 oss-cn-qingdao
+     * </pre>
+     *
+     * <code>string region = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRegion() {
+      
+      region = getDefaultInstance().getRegion();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * OSS 区域，如 oss-cn-qingdao
+     * </pre>
+     *
+     * <code>string region = 6;</code>
+     * @param value The bytes for region to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      region = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object endpoint = "";
+    /**
+     * <pre>
+     * OSS 访问域名，如 https://oss-cn-qingdao.aliyuncs.com
+     * </pre>
+     *
+     * <code>string endpoint = 7;</code>
+     * @return The endpoint.
+     */
+    public java.lang.String getEndpoint() {
+      java.lang.Object ref = endpoint ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        endpoint = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * OSS 访问域名，如 https://oss-cn-qingdao.aliyuncs.com
+     * </pre>
+     *
+     * <code>string endpoint = 7;</code>
+     * @return The bytes for endpoint.
+     */
+    public com.google.protobuf.ByteString
+        getEndpointBytes() {
+      java.lang.Object ref = endpoint ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        endpoint = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * OSS 访问域名，如 https://oss-cn-qingdao.aliyuncs.com
+     * </pre>
+     *
+     * <code>string endpoint = 7;</code>
+     * @param value The endpoint to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEndpoint(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      endpoint = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * OSS 访问域名，如 https://oss-cn-qingdao.aliyuncs.com
+     * </pre>
+     *
+     * <code>string endpoint = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEndpoint() {
+      
+      endpoint = getDefaultInstance().getEndpoint();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * OSS 访问域名，如 https://oss-cn-qingdao.aliyuncs.com
+     * </pre>
+     *
+     * <code>string endpoint = 7;</code>
+     * @param value The bytes for endpoint to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEndpointBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      endpoint = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object objectPrefix = "";
+    /**
+     * <pre>
+     * 允许直传的对象 key 前缀，如 glory_api/dev/{uid}/
+     * </pre>
+     *
+     * <code>string object_prefix = 8;</code>
+     * @return The objectPrefix.
+     */
+    public java.lang.String getObjectPrefix() {
+      java.lang.Object ref = objectPrefix ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        objectPrefix = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 允许直传的对象 key 前缀，如 glory_api/dev/{uid}/
+     * </pre>
+     *
+     * <code>string object_prefix = 8;</code>
+     * @return The bytes for objectPrefix.
+     */
+    public com.google.protobuf.ByteString
+        getObjectPrefixBytes() {
+      java.lang.Object ref = objectPrefix ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        objectPrefix = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 允许直传的对象 key 前缀，如 glory_api/dev/{uid}/
+     * </pre>
+     *
+     * <code>string object_prefix = 8;</code>
+     * @param value The objectPrefix to set.
+     * @return This builder for chaining.
+     */
+    public Builder setObjectPrefix(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      objectPrefix = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 允许直传的对象 key 前缀，如 glory_api/dev/{uid}/
+     * </pre>
+     *
+     * <code>string object_prefix = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearObjectPrefix() {
+      
+      objectPrefix = getDefaultInstance().getObjectPrefix();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 允许直传的对象 key 前缀，如 glory_api/dev/{uid}/
+     * </pre>
+     *
+     * <code>string object_prefix = 8;</code>
+     * @param value The bytes for objectPrefix to set.
+     * @return This builder for chaining.
+     */
+    public Builder setObjectPrefixBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      objectPrefix = value;
       onChanged();
       return this;
     }

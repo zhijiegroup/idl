@@ -30,6 +30,10 @@ export interface UserCourseSummary {
   finished_lesson_count?: number;
   /** 总节数（课程视频资源总数） */
   total_lesson_count?: number;
+  /** 课程封面OSS路径 */
+  course_cover_path?: string;
+  /** 课程封面访问URL（签名地址；无封面时为空） */
+  course_cover_url?: string;
 }
 
 /** 加入课程 */

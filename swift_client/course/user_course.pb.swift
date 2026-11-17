@@ -61,6 +61,12 @@ nonisolated struct GloryApi_UserCourseSummary: Sendable {
   /// 总节数（课程视频资源总数）
   var totalLessonCount: Int32 = 0
 
+  /// 课程封面OSS路径
+  var courseCoverPath: String = String()
+
+  /// 课程封面访问URL（签名地址；无封面时为空）
+  var courseCoverURL: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -446,7 +452,7 @@ fileprivate nonisolated let _protobuf_package = "glory_api"
 
 nonisolated extension GloryApi_UserCourseSummary: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UserCourseSummary"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}course_id\0\u{3}course_name\0\u{3}knowledge_hours\0\u{3}skill_hours\0\u{3}course_state\0\u{3}course_origin\0\u{3}course_module\0\u{3}course_organization\0\u{3}course_teacher_name\0\u{3}course_progress\0\u{3}finished_lesson_count\0\u{3}total_lesson_count\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}course_id\0\u{3}course_name\0\u{3}knowledge_hours\0\u{3}skill_hours\0\u{3}course_state\0\u{3}course_origin\0\u{3}course_module\0\u{3}course_organization\0\u{3}course_teacher_name\0\u{3}course_progress\0\u{3}finished_lesson_count\0\u{3}total_lesson_count\0\u{3}course_cover_path\0\u{3}course_cover_url\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -466,6 +472,8 @@ nonisolated extension GloryApi_UserCourseSummary: SwiftProtobuf.Message, SwiftPr
       case 10: try { try decoder.decodeSingularInt32Field(value: &self.courseProgress) }()
       case 11: try { try decoder.decodeSingularInt32Field(value: &self.finishedLessonCount) }()
       case 12: try { try decoder.decodeSingularInt32Field(value: &self.totalLessonCount) }()
+      case 13: try { try decoder.decodeSingularStringField(value: &self.courseCoverPath) }()
+      case 14: try { try decoder.decodeSingularStringField(value: &self.courseCoverURL) }()
       default: break
       }
     }
@@ -508,6 +516,12 @@ nonisolated extension GloryApi_UserCourseSummary: SwiftProtobuf.Message, SwiftPr
     if self.totalLessonCount != 0 {
       try visitor.visitSingularInt32Field(value: self.totalLessonCount, fieldNumber: 12)
     }
+    if !self.courseCoverPath.isEmpty {
+      try visitor.visitSingularStringField(value: self.courseCoverPath, fieldNumber: 13)
+    }
+    if !self.courseCoverURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.courseCoverURL, fieldNumber: 14)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -524,6 +538,8 @@ nonisolated extension GloryApi_UserCourseSummary: SwiftProtobuf.Message, SwiftPr
     if lhs.courseProgress != rhs.courseProgress {return false}
     if lhs.finishedLessonCount != rhs.finishedLessonCount {return false}
     if lhs.totalLessonCount != rhs.totalLessonCount {return false}
+    if lhs.courseCoverPath != rhs.courseCoverPath {return false}
+    if lhs.courseCoverURL != rhs.courseCoverURL {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

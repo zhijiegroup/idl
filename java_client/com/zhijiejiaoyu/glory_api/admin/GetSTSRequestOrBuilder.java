@@ -21,4 +21,14 @@ public interface GetSTSRequestOrBuilder extends
    * <code>.base.BaseRequest base_request = 1;</code>
    */
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
+
+  /**
+   * <pre>
+   * true=上传专用收窄策略（仅 PutObject/分片，限定 object_prefix）；不传=存量全量策略
+   * </pre>
+   *
+   * <code>bool upload = 2;</code>
+   * @return The upload.
+   */
+  boolean getUpload();
 }

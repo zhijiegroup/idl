@@ -1132,6 +1132,10 @@ class STS extends $pb.GeneratedMessage {
     $core.String? accessKeySecret,
     $core.String? expiration,
     $core.String? securityToken,
+    $core.String? bucket,
+    $core.String? region,
+    $core.String? endpoint,
+    $core.String? objectPrefix,
   }) {
     final $result = create();
     if (accessKeyId != null) {
@@ -1146,6 +1150,18 @@ class STS extends $pb.GeneratedMessage {
     if (securityToken != null) {
       $result.securityToken = securityToken;
     }
+    if (bucket != null) {
+      $result.bucket = bucket;
+    }
+    if (region != null) {
+      $result.region = region;
+    }
+    if (endpoint != null) {
+      $result.endpoint = endpoint;
+    }
+    if (objectPrefix != null) {
+      $result.objectPrefix = objectPrefix;
+    }
     return $result;
   }
   STS._() : super();
@@ -1157,6 +1173,10 @@ class STS extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'accessKeySecret')
     ..aOS(3, _omitFieldNames ? '' : 'expiration')
     ..aOS(4, _omitFieldNames ? '' : 'securityToken')
+    ..aOS(5, _omitFieldNames ? '' : 'bucket')
+    ..aOS(6, _omitFieldNames ? '' : 'region')
+    ..aOS(7, _omitFieldNames ? '' : 'endpoint')
+    ..aOS(8, _omitFieldNames ? '' : 'objectPrefix')
     ..hasRequiredFields = false
   ;
 
@@ -1216,15 +1236,55 @@ class STS extends $pb.GeneratedMessage {
   $core.bool hasSecurityToken() => $_has(3);
   @$pb.TagNumber(4)
   void clearSecurityToken() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get bucket => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set bucket($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasBucket() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearBucket() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get region => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set region($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasRegion() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearRegion() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get endpoint => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set endpoint($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasEndpoint() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearEndpoint() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get objectPrefix => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set objectPrefix($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasObjectPrefix() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearObjectPrefix() => clearField(8);
 }
 
 class GetSTSRequest extends $pb.GeneratedMessage {
   factory GetSTSRequest({
     $0.BaseRequest? baseRequest,
+    $core.bool? upload,
   }) {
     final $result = create();
     if (baseRequest != null) {
       $result.baseRequest = baseRequest;
+    }
+    if (upload != null) {
+      $result.upload = upload;
     }
     return $result;
   }
@@ -1234,6 +1294,7 @@ class GetSTSRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSTSRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOB(2, _omitFieldNames ? '' : 'upload')
     ..hasRequiredFields = false
   ;
 
@@ -1268,6 +1329,15 @@ class GetSTSRequest extends $pb.GeneratedMessage {
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
   $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get upload => $_getBF(1);
+  @$pb.TagNumber(2)
+  set upload($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasUpload() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUpload() => clearField(2);
 }
 
 class GetSTSResponse extends $pb.GeneratedMessage {

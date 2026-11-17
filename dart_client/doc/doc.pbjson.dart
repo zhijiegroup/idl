@@ -654,13 +654,20 @@ const UploadFileRequest$json = {
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'parent_id', '3': 2, '4': 1, '5': 3, '10': 'parentId'},
+    {'1': 'object_key', '3': 3, '4': 1, '5': 9, '10': 'objectKey'},
+    {'1': 'file_name', '3': 4, '4': 1, '5': 9, '10': 'fileName'},
+    {'1': 'file_size', '3': 5, '4': 1, '5': 3, '10': 'fileSize'},
+    {'1': 'content_type', '3': 6, '4': 1, '5': 9, '10': 'contentType'},
   ],
 };
 
 /// Descriptor for `UploadFileRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List uploadFileRequestDescriptor = $convert.base64Decode(
     'ChFVcGxvYWRGaWxlUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLkJhc2VSZX'
-    'F1ZXN0UgtiYXNlUmVxdWVzdBIbCglwYXJlbnRfaWQYAiABKANSCHBhcmVudElk');
+    'F1ZXN0UgtiYXNlUmVxdWVzdBIbCglwYXJlbnRfaWQYAiABKANSCHBhcmVudElkEh0KCm9iamVj'
+    'dF9rZXkYAyABKAlSCW9iamVjdEtleRIbCglmaWxlX25hbWUYBCABKAlSCGZpbGVOYW1lEhsKCW'
+    'ZpbGVfc2l6ZRgFIAEoA1IIZmlsZVNpemUSIQoMY29udGVudF90eXBlGAYgASgJUgtjb250ZW50'
+    'VHlwZQ==');
 
 @$core.Deprecated('Use uploadFileResponseDescriptor instead')
 const UploadFileResponse$json = {

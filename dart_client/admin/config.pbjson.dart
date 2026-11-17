@@ -240,6 +240,10 @@ const STS$json = {
     {'1': 'access_key_secret', '3': 2, '4': 1, '5': 9, '10': 'accessKeySecret'},
     {'1': 'expiration', '3': 3, '4': 1, '5': 9, '10': 'expiration'},
     {'1': 'security_token', '3': 4, '4': 1, '5': 9, '10': 'securityToken'},
+    {'1': 'bucket', '3': 5, '4': 1, '5': 9, '10': 'bucket'},
+    {'1': 'region', '3': 6, '4': 1, '5': 9, '10': 'region'},
+    {'1': 'endpoint', '3': 7, '4': 1, '5': 9, '10': 'endpoint'},
+    {'1': 'object_prefix', '3': 8, '4': 1, '5': 9, '10': 'objectPrefix'},
   ],
 };
 
@@ -247,20 +251,23 @@ const STS$json = {
 final $typed_data.Uint8List sTSDescriptor = $convert.base64Decode(
     'CgNTVFMSIgoNYWNjZXNzX2tleV9pZBgBIAEoCVILYWNjZXNzS2V5SWQSKgoRYWNjZXNzX2tleV'
     '9zZWNyZXQYAiABKAlSD2FjY2Vzc0tleVNlY3JldBIeCgpleHBpcmF0aW9uGAMgASgJUgpleHBp'
-    'cmF0aW9uEiUKDnNlY3VyaXR5X3Rva2VuGAQgASgJUg1zZWN1cml0eVRva2Vu');
+    'cmF0aW9uEiUKDnNlY3VyaXR5X3Rva2VuGAQgASgJUg1zZWN1cml0eVRva2VuEhYKBmJ1Y2tldB'
+    'gFIAEoCVIGYnVja2V0EhYKBnJlZ2lvbhgGIAEoCVIGcmVnaW9uEhoKCGVuZHBvaW50GAcgASgJ'
+    'UghlbmRwb2ludBIjCg1vYmplY3RfcHJlZml4GAggASgJUgxvYmplY3RQcmVmaXg=');
 
 @$core.Deprecated('Use getSTSRequestDescriptor instead')
 const GetSTSRequest$json = {
   '1': 'GetSTSRequest',
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'upload', '3': 2, '4': 1, '5': 8, '10': 'upload'},
   ],
 };
 
 /// Descriptor for `GetSTSRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getSTSRequestDescriptor = $convert.base64Decode(
     'Cg1HZXRTVFNSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2UuQmFzZVJlcXVlc3'
-    'RSC2Jhc2VSZXF1ZXN0');
+    'RSC2Jhc2VSZXF1ZXN0EhYKBnVwbG9hZBgCIAEoCFIGdXBsb2Fk');
 
 @$core.Deprecated('Use getSTSResponseDescriptor instead')
 const GetSTSResponse$json = {

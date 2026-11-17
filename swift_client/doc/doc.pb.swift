@@ -1230,7 +1230,10 @@ nonisolated struct GloryApi_UploadedFile: Sendable {
   init() {}
 }
 
-/// 通用上传(multipart/form-data；file_list 为多文件表单字段，不体现在 proto 字段中)
+/// 通用上传
+/// 两种模式：
+///   1) multipart/form-data（file_list 多文件表单字段，不体现在 proto 字段中）——服务端中转；
+///   2) 直传登记：传 object_key 等字段（JSON），前端经 get_sts(upload=true) 直传 OSS 后调本接口登记。
 nonisolated struct GloryApi_UploadFileRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -1247,6 +1250,18 @@ nonisolated struct GloryApi_UploadFileRequest: Sendable {
 
   /// 传值→落我的文档对应目录并返回 doc_id；不传/0→仅返回文件地址
   var parentID: Int64 = 0
+
+  /// 直传登记：OSS 对象 key（有值时不再解析 multipart，直接登记）
+  var objectKey: String = String()
+
+  /// 直传登记：原文件名（含扩展名，用于白名单校验与展示）
+  var fileName: String = String()
+
+  /// 直传登记：文件大小（字节，需与对象 HEAD 结果一致）
+  var fileSize: Int64 = 0
+
+  /// 直传登记：MIME 类型（可选，缺省按扩展名推断）
+  var contentType: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -3191,7 +3206,7 @@ nonisolated extension GloryApi_UploadedFile: SwiftProtobuf.Message, SwiftProtobu
 
 nonisolated extension GloryApi_UploadFileRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UploadFileRequest"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}parent_id\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}parent_id\0\u{3}object_key\0\u{3}file_name\0\u{3}file_size\0\u{3}content_type\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -3201,6 +3216,10 @@ nonisolated extension GloryApi_UploadFileRequest: SwiftProtobuf.Message, SwiftPr
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.parentID) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.objectKey) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.fileName) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.fileSize) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.contentType) }()
       default: break
       }
     }
@@ -3217,12 +3236,28 @@ nonisolated extension GloryApi_UploadFileRequest: SwiftProtobuf.Message, SwiftPr
     if self.parentID != 0 {
       try visitor.visitSingularInt64Field(value: self.parentID, fieldNumber: 2)
     }
+    if !self.objectKey.isEmpty {
+      try visitor.visitSingularStringField(value: self.objectKey, fieldNumber: 3)
+    }
+    if !self.fileName.isEmpty {
+      try visitor.visitSingularStringField(value: self.fileName, fieldNumber: 4)
+    }
+    if self.fileSize != 0 {
+      try visitor.visitSingularInt64Field(value: self.fileSize, fieldNumber: 5)
+    }
+    if !self.contentType.isEmpty {
+      try visitor.visitSingularStringField(value: self.contentType, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_UploadFileRequest, rhs: GloryApi_UploadFileRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.parentID != rhs.parentID {return false}
+    if lhs.objectKey != rhs.objectKey {return false}
+    if lhs.fileName != rhs.fileName {return false}
+    if lhs.fileSize != rhs.fileSize {return false}
+    if lhs.contentType != rhs.contentType {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -5,7 +5,10 @@ package com.zhijiejiaoyu.glory_api.doc;
 
 /**
  * <pre>
- * 通用上传(multipart/form-data；file_list 为多文件表单字段，不体现在 proto 字段中)
+ * 通用上传
+ * 两种模式：
+ *   1) multipart/form-data（file_list 多文件表单字段，不体现在 proto 字段中）——服务端中转；
+ *   2) 直传登记：传 object_key 等字段（JSON），前端经 get_sts(upload=true) 直传 OSS 后调本接口登记。
  * </pre>
  *
  * Protobuf type {@code glory_api.UploadFileRequest}
@@ -20,6 +23,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private UploadFileRequest() {
+    objectKey = "";
+    fileName = "";
+    contentType = "";
   }
 
   @java.lang.Override
@@ -68,6 +74,29 @@ private static final long serialVersionUID = 0L;
           case 16: {
 
             parentId = input.readInt64();
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            objectKey = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            fileName = s;
+            break;
+          }
+          case 40: {
+
+            fileSize = input.readInt64();
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            contentType = s;
             break;
           }
           default: {
@@ -143,6 +172,159 @@ private static final long serialVersionUID = 0L;
     return parentId ;
   }
 
+  public static final int OBJECT_KEY_FIELD_NUMBER = 3;
+  private volatile java.lang.Object objectKey ;
+  /**
+   * <pre>
+   * 直传登记：OSS 对象 key（有值时不再解析 multipart，直接登记）
+   * </pre>
+   *
+   * <code>string object_key = 3;</code>
+   * @return The objectKey.
+   */
+  @java.lang.Override
+  public java.lang.String getObjectKey() {
+    java.lang.Object ref = objectKey ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      objectKey = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 直传登记：OSS 对象 key（有值时不再解析 multipart，直接登记）
+   * </pre>
+   *
+   * <code>string object_key = 3;</code>
+   * @return The bytes for objectKey.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getObjectKeyBytes() {
+    java.lang.Object ref = objectKey ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      objectKey = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int FILE_NAME_FIELD_NUMBER = 4;
+  private volatile java.lang.Object fileName ;
+  /**
+   * <pre>
+   * 直传登记：原文件名（含扩展名，用于白名单校验与展示）
+   * </pre>
+   *
+   * <code>string file_name = 4;</code>
+   * @return The fileName.
+   */
+  @java.lang.Override
+  public java.lang.String getFileName() {
+    java.lang.Object ref = fileName ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      fileName = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 直传登记：原文件名（含扩展名，用于白名单校验与展示）
+   * </pre>
+   *
+   * <code>string file_name = 4;</code>
+   * @return The bytes for fileName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getFileNameBytes() {
+    java.lang.Object ref = fileName ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      fileName = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int FILE_SIZE_FIELD_NUMBER = 5;
+  private long fileSize ;
+  /**
+   * <pre>
+   * 直传登记：文件大小（字节，需与对象 HEAD 结果一致）
+   * </pre>
+   *
+   * <code>int64 file_size = 5;</code>
+   * @return The fileSize.
+   */
+  @java.lang.Override
+  public long getFileSize() {
+    return fileSize ;
+  }
+
+  public static final int CONTENT_TYPE_FIELD_NUMBER = 6;
+  private volatile java.lang.Object contentType ;
+  /**
+   * <pre>
+   * 直传登记：MIME 类型（可选，缺省按扩展名推断）
+   * </pre>
+   *
+   * <code>string content_type = 6;</code>
+   * @return The contentType.
+   */
+  @java.lang.Override
+  public java.lang.String getContentType() {
+    java.lang.Object ref = contentType ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      contentType = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 直传登记：MIME 类型（可选，缺省按扩展名推断）
+   * </pre>
+   *
+   * <code>string content_type = 6;</code>
+   * @return The bytes for contentType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getContentTypeBytes() {
+    java.lang.Object ref = contentType ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      contentType = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -163,6 +345,18 @@ private static final long serialVersionUID = 0L;
     if (parentId != 0L) {
       output.writeInt64(2, parentId );
     }
+    if (!getObjectKeyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, objectKey );
+    }
+    if (!getFileNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, fileName );
+    }
+    if (fileSize != 0L) {
+      output.writeInt64(5, fileSize );
+    }
+    if (!getContentTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, contentType );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -179,6 +373,19 @@ private static final long serialVersionUID = 0L;
     if (parentId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, parentId );
+    }
+    if (!getObjectKeyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, objectKey );
+    }
+    if (!getFileNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, fileName );
+    }
+    if (fileSize != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(5, fileSize );
+    }
+    if (!getContentTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, contentType );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -202,6 +409,14 @@ private static final long serialVersionUID = 0L;
     }
     if (getParentId()
         != other.getParentId()) return false;
+    if (!getObjectKey()
+        .equals(other.getObjectKey())) return false;
+    if (!getFileName()
+        .equals(other.getFileName())) return false;
+    if (getFileSize()
+        != other.getFileSize()) return false;
+    if (!getContentType()
+        .equals(other.getContentType())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -220,6 +435,15 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + PARENT_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getParentId());
+    hash = (37 * hash) + OBJECT_KEY_FIELD_NUMBER;
+    hash = (53 * hash) + getObjectKey().hashCode();
+    hash = (37 * hash) + FILE_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getFileName().hashCode();
+    hash = (37 * hash) + FILE_SIZE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getFileSize());
+    hash = (37 * hash) + CONTENT_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getContentType().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -317,7 +541,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 通用上传(multipart/form-data；file_list 为多文件表单字段，不体现在 proto 字段中)
+   * 通用上传
+   * 两种模式：
+   *   1) multipart/form-data（file_list 多文件表单字段，不体现在 proto 字段中）——服务端中转；
+   *   2) 直传登记：传 object_key 等字段（JSON），前端经 get_sts(upload=true) 直传 OSS 后调本接口登记。
    * </pre>
    *
    * Protobuf type {@code glory_api.UploadFileRequest}
@@ -365,6 +592,14 @@ private static final long serialVersionUID = 0L;
       }
       parentId = 0L;
 
+      objectKey = "";
+
+      fileName = "";
+
+      fileSize = 0L;
+
+      contentType = "";
+
       return this;
     }
 
@@ -397,6 +632,10 @@ private static final long serialVersionUID = 0L;
         result.baseRequest = baseRequestBuilder .build();
       }
       result.parentId = parentId ;
+      result.objectKey = objectKey ;
+      result.fileName = fileName ;
+      result.fileSize = fileSize ;
+      result.contentType = contentType ;
       onBuilt();
       return result;
     }
@@ -450,6 +689,21 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getParentId() != 0L) {
         setParentId(other.getParentId());
+      }
+      if (!other.getObjectKey().isEmpty()) {
+        objectKey = other.objectKey ;
+        onChanged();
+      }
+      if (!other.getFileName().isEmpty()) {
+        fileName = other.fileName ;
+        onChanged();
+      }
+      if (other.getFileSize() != 0L) {
+        setFileSize(other.getFileSize());
+      }
+      if (!other.getContentType().isEmpty()) {
+        contentType = other.contentType ;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -638,6 +892,337 @@ private static final long serialVersionUID = 0L;
     public Builder clearParentId() {
       
       parentId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object objectKey = "";
+    /**
+     * <pre>
+     * 直传登记：OSS 对象 key（有值时不再解析 multipart，直接登记）
+     * </pre>
+     *
+     * <code>string object_key = 3;</code>
+     * @return The objectKey.
+     */
+    public java.lang.String getObjectKey() {
+      java.lang.Object ref = objectKey ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        objectKey = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 直传登记：OSS 对象 key（有值时不再解析 multipart，直接登记）
+     * </pre>
+     *
+     * <code>string object_key = 3;</code>
+     * @return The bytes for objectKey.
+     */
+    public com.google.protobuf.ByteString
+        getObjectKeyBytes() {
+      java.lang.Object ref = objectKey ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        objectKey = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 直传登记：OSS 对象 key（有值时不再解析 multipart，直接登记）
+     * </pre>
+     *
+     * <code>string object_key = 3;</code>
+     * @param value The objectKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setObjectKey(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      objectKey = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 直传登记：OSS 对象 key（有值时不再解析 multipart，直接登记）
+     * </pre>
+     *
+     * <code>string object_key = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearObjectKey() {
+      
+      objectKey = getDefaultInstance().getObjectKey();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 直传登记：OSS 对象 key（有值时不再解析 multipart，直接登记）
+     * </pre>
+     *
+     * <code>string object_key = 3;</code>
+     * @param value The bytes for objectKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setObjectKeyBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      objectKey = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object fileName = "";
+    /**
+     * <pre>
+     * 直传登记：原文件名（含扩展名，用于白名单校验与展示）
+     * </pre>
+     *
+     * <code>string file_name = 4;</code>
+     * @return The fileName.
+     */
+    public java.lang.String getFileName() {
+      java.lang.Object ref = fileName ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fileName = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 直传登记：原文件名（含扩展名，用于白名单校验与展示）
+     * </pre>
+     *
+     * <code>string file_name = 4;</code>
+     * @return The bytes for fileName.
+     */
+    public com.google.protobuf.ByteString
+        getFileNameBytes() {
+      java.lang.Object ref = fileName ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fileName = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 直传登记：原文件名（含扩展名，用于白名单校验与展示）
+     * </pre>
+     *
+     * <code>string file_name = 4;</code>
+     * @param value The fileName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFileName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      fileName = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 直传登记：原文件名（含扩展名，用于白名单校验与展示）
+     * </pre>
+     *
+     * <code>string file_name = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearFileName() {
+      
+      fileName = getDefaultInstance().getFileName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 直传登记：原文件名（含扩展名，用于白名单校验与展示）
+     * </pre>
+     *
+     * <code>string file_name = 4;</code>
+     * @param value The bytes for fileName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFileNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      fileName = value;
+      onChanged();
+      return this;
+    }
+
+    private long fileSize ;
+    /**
+     * <pre>
+     * 直传登记：文件大小（字节，需与对象 HEAD 结果一致）
+     * </pre>
+     *
+     * <code>int64 file_size = 5;</code>
+     * @return The fileSize.
+     */
+    @java.lang.Override
+    public long getFileSize() {
+      return fileSize ;
+    }
+    /**
+     * <pre>
+     * 直传登记：文件大小（字节，需与对象 HEAD 结果一致）
+     * </pre>
+     *
+     * <code>int64 file_size = 5;</code>
+     * @param value The fileSize to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFileSize(long value) {
+      
+      fileSize = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 直传登记：文件大小（字节，需与对象 HEAD 结果一致）
+     * </pre>
+     *
+     * <code>int64 file_size = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearFileSize() {
+      
+      fileSize = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object contentType = "";
+    /**
+     * <pre>
+     * 直传登记：MIME 类型（可选，缺省按扩展名推断）
+     * </pre>
+     *
+     * <code>string content_type = 6;</code>
+     * @return The contentType.
+     */
+    public java.lang.String getContentType() {
+      java.lang.Object ref = contentType ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        contentType = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 直传登记：MIME 类型（可选，缺省按扩展名推断）
+     * </pre>
+     *
+     * <code>string content_type = 6;</code>
+     * @return The bytes for contentType.
+     */
+    public com.google.protobuf.ByteString
+        getContentTypeBytes() {
+      java.lang.Object ref = contentType ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        contentType = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 直传登记：MIME 类型（可选，缺省按扩展名推断）
+     * </pre>
+     *
+     * <code>string content_type = 6;</code>
+     * @param value The contentType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setContentType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      contentType = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 直传登记：MIME 类型（可选，缺省按扩展名推断）
+     * </pre>
+     *
+     * <code>string content_type = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearContentType() {
+      
+      contentType = getDefaultInstance().getContentType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 直传登记：MIME 类型（可选，缺省按扩展名推断）
+     * </pre>
+     *
+     * <code>string content_type = 6;</code>
+     * @param value The bytes for contentType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setContentTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      contentType = value;
       onChanged();
       return this;
     }

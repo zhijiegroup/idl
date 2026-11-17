@@ -171,35 +171,37 @@ public final class ConfigOuterClass {
       "\t\022\027\n\017business_system\030\004 \001(\t\022\t\n\001q\030\005 \001(\t\"^\n" +
       "\021GetConfigResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
       "base.BaseResponse\022\"\n\007configs\030\002 \003(\0132\021.glo" +
-      "ry_api.Config\"c\n\003STS\022\025\n\raccess_key_id\030\001 " +
-      "\001(\t\022\031\n\021access_key_secret\030\002 \001(\t\022\022\n\nexpira" +
-      "tion\030\003 \001(\t\022\026\n\016security_token\030\004 \001(\t\"8\n\rGe" +
-      "tSTSRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
-      ".BaseRequest\"T\n\016GetSTSResponse\022%\n\tbase_r" +
-      "esp\030\001 \001(\0132\022.base.BaseResponse\022\033\n\003sts\030\002 \001" +
-      "(\0132\016.glory_api.STS\"\257\001\n\016WebofficeToken\022\024\n" +
-      "\014access_token\030\001 \001(\t\022!\n\031access_token_expi" +
-      "red_time\030\002 \001(\t\022\025\n\rrefresh_token\030\003 \001(\t\022\"\n" +
-      "\032refresh_token_expired_time\030\004 \001(\t\022\022\n\nreq" +
-      "uest_id\030\005 \001(\t\022\025\n\rweboffice_url\030\006 \001(\t\"]\n\035" +
-      "GenerateWebofficeTokenRequest\022\'\n\014base_re" +
-      "quest\030\001 \001(\0132\021.base.BaseRequest\022\023\n\013object" +
-      "_path\030\002 \001(\t\"{\n\036GenerateWebofficeTokenRes" +
-      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
-      "onse\0222\n\017weboffice_token\030\002 \001(\0132\031.glory_ap" +
-      "i.WebofficeToken\"\237\001\n\025RefreshWebofficeTok" +
-      "en\022\024\n\014access_token\030\001 \001(\t\022!\n\031access_token" +
-      "_expired_time\030\002 \001(\t\022\025\n\rrefresh_token\030\003 \001" +
-      "(\t\022\"\n\032refresh_token_expired_time\030\004 \001(\t\022\022" +
-      "\n\nrequest_id\030\005 \001(\t\"t\n\034RefreshWebofficeTo" +
-      "kenRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
-      "BaseRequest\022\024\n\014access_token\030\002 \001(\t\022\025\n\rref" +
-      "resh_token\030\003 \001(\t\"\211\001\n\035RefreshWebofficeTok" +
-      "enResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
-      "eResponse\022A\n\027refresh_weboffice_token\030\002 \001" +
-      "(\0132 .glory_api.RefreshWebofficeTokenB$\n " +
-      "com.zhijiejiaoyu.glory_api.adminP\001b\006prot" +
-      "o3"
+      "ry_api.Config\"\254\001\n\003STS\022\025\n\raccess_key_id\030\001" +
+      " \001(\t\022\031\n\021access_key_secret\030\002 \001(\t\022\022\n\nexpir" +
+      "ation\030\003 \001(\t\022\026\n\016security_token\030\004 \001(\t\022\016\n\006b" +
+      "ucket\030\005 \001(\t\022\016\n\006region\030\006 \001(\t\022\020\n\010endpoint\030" +
+      "\007 \001(\t\022\025\n\robject_prefix\030\010 \001(\t\"H\n\rGetSTSRe" +
+      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
+      "equest\022\016\n\006upload\030\002 \001(\010\"T\n\016GetSTSResponse" +
+      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022" +
+      "\033\n\003sts\030\002 \001(\0132\016.glory_api.STS\"\257\001\n\016Weboffi" +
+      "ceToken\022\024\n\014access_token\030\001 \001(\t\022!\n\031access_" +
+      "token_expired_time\030\002 \001(\t\022\025\n\rrefresh_toke" +
+      "n\030\003 \001(\t\022\"\n\032refresh_token_expired_time\030\004 " +
+      "\001(\t\022\022\n\nrequest_id\030\005 \001(\t\022\025\n\rweboffice_url" +
+      "\030\006 \001(\t\"]\n\035GenerateWebofficeTokenRequest\022" +
+      "\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequest" +
+      "\022\023\n\013object_path\030\002 \001(\t\"{\n\036GenerateWeboffi" +
+      "ceTokenResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponse\0222\n\017weboffice_token\030\002 \001(\0132" +
+      "\031.glory_api.WebofficeToken\"\237\001\n\025RefreshWe" +
+      "bofficeToken\022\024\n\014access_token\030\001 \001(\t\022!\n\031ac" +
+      "cess_token_expired_time\030\002 \001(\t\022\025\n\rrefresh" +
+      "_token\030\003 \001(\t\022\"\n\032refresh_token_expired_ti" +
+      "me\030\004 \001(\t\022\022\n\nrequest_id\030\005 \001(\t\"t\n\034RefreshW" +
+      "ebofficeTokenRequest\022\'\n\014base_request\030\001 \001" +
+      "(\0132\021.base.BaseRequest\022\024\n\014access_token\030\002 " +
+      "\001(\t\022\025\n\rrefresh_token\030\003 \001(\t\"\211\001\n\035RefreshWe" +
+      "bofficeTokenResponse\022%\n\tbase_resp\030\001 \001(\0132" +
+      "\022.base.BaseResponse\022A\n\027refresh_weboffice" +
+      "_token\030\002 \001(\0132 .glory_api.RefreshWeboffic" +
+      "eTokenB$\n com.zhijiejiaoyu.glory_api.adm" +
+      "inP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -289,13 +291,13 @@ public final class ConfigOuterClass {
     internal_static_glory_api_STS_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_STS_descriptor,
-        new java.lang.String[] { "AccessKeyId", "AccessKeySecret", "Expiration", "SecurityToken", });
+        new java.lang.String[] { "AccessKeyId", "AccessKeySecret", "Expiration", "SecurityToken", "Bucket", "Region", "Endpoint", "ObjectPrefix", });
     internal_static_glory_api_GetSTSRequest_descriptor =
       getDescriptor().getMessageTypes().get(14);
     internal_static_glory_api_GetSTSRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetSTSRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", });
+        new java.lang.String[] { "BaseRequest", "Upload", });
     internal_static_glory_api_GetSTSResponse_descriptor =
       getDescriptor().getMessageTypes().get(15);
     internal_static_glory_api_GetSTSResponse_fieldAccessorTable = new

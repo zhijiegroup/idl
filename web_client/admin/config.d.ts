@@ -104,10 +104,20 @@ export interface STS {
   access_key_secret?: string;
   expiration?: string;
   security_token?: string;
+  /** OSS 桶名（直传 SDK 初始化用） */
+  bucket?: string;
+  /** OSS 区域，如 oss-cn-qingdao */
+  region?: string;
+  /** OSS 访问域名，如 https://oss-cn-qingdao.aliyuncs.com */
+  endpoint?: string;
+  /** 允许直传的对象 key 前缀，如 glory_api/dev/{uid}/ */
+  object_prefix?: string;
 }
 
 export interface GetSTSRequest {
   base_request?: base.BaseRequest;
+  /** true=上传专用收窄策略（仅 PutObject/分片，限定 object_prefix）；不传=存量全量策略 */
+  upload?: boolean;
 }
 
 export interface GetSTSResponse {

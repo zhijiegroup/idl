@@ -330,12 +330,14 @@ public final class Doc {
       "ry_api.PolicyProvinceItem\"i\n\014UploadedFil" +
       "e\022\020\n\010file_url\030\001 \001(\t\022\021\n\tfile_name\030\002 \001(\t\022\021" +
       "\n\tfile_size\030\003 \001(\003\022\021\n\tfile_type\030\004 \001(\t\022\016\n\006" +
-      "doc_id\030\005 \001(\003\"O\n\021UploadFileRequest\022\'\n\014bas" +
-      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tpa" +
-      "rent_id\030\002 \001(\003\"c\n\022UploadFileResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022&\n\005fi" +
-      "les\030\002 \003(\0132\027.glory_api.UploadedFileB\"\n\036co" +
-      "m.zhijiejiaoyu.glory_api.docP\001b\006proto3"
+      "doc_id\030\005 \001(\003\"\237\001\n\021UploadFileRequest\022\'\n\014ba" +
+      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tp" +
+      "arent_id\030\002 \001(\003\022\022\n\nobject_key\030\003 \001(\t\022\021\n\tfi" +
+      "le_name\030\004 \001(\t\022\021\n\tfile_size\030\005 \001(\003\022\024\n\014cont" +
+      "ent_type\030\006 \001(\t\"c\n\022UploadFileResponse\022%\n\t" +
+      "base_resp\030\001 \001(\0132\022.base.BaseResponse\022&\n\005f" +
+      "iles\030\002 \003(\0132\027.glory_api.UploadedFileB\"\n\036c" +
+      "om.zhijiejiaoyu.glory_api.docP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -569,7 +571,7 @@ public final class Doc {
     internal_static_glory_api_UploadFileRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UploadFileRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "ParentId", });
+        new java.lang.String[] { "BaseRequest", "ParentId", "ObjectKey", "FileName", "FileSize", "ContentType", });
     internal_static_glory_api_UploadFileResponse_descriptor =
       getDescriptor().getMessageTypes().get(38);
     internal_static_glory_api_UploadFileResponse_fieldAccessorTable = new

@@ -61,6 +61,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 16: {
+
+            upload = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -119,6 +124,21 @@ private static final long serialVersionUID = 0L;
     return getBaseRequest();
   }
 
+  public static final int UPLOAD_FIELD_NUMBER = 2;
+  private boolean upload ;
+  /**
+   * <pre>
+   * true=上传专用收窄策略（仅 PutObject/分片，限定 object_prefix）；不传=存量全量策略
+   * </pre>
+   *
+   * <code>bool upload = 2;</code>
+   * @return The upload.
+   */
+  @java.lang.Override
+  public boolean getUpload() {
+    return upload ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -136,6 +156,9 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
+    if (upload != false) {
+      output.writeBool(2, upload );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -148,6 +171,10 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
+    }
+    if (upload != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(2, upload );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -169,6 +196,8 @@ private static final long serialVersionUID = 0L;
       if (!getBaseRequest()
           .equals(other.getBaseRequest())) return false;
     }
+    if (getUpload()
+        != other.getUpload()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -184,6 +213,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getBaseRequest().hashCode();
     }
+    hash = (37 * hash) + UPLOAD_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getUpload());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -323,6 +355,8 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
         baseRequestBuilder = null;
       }
+      upload = false;
+
       return this;
     }
 
@@ -354,6 +388,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseRequest = baseRequestBuilder .build();
       }
+      result.upload = upload ;
       onBuilt();
       return result;
     }
@@ -404,6 +439,9 @@ private static final long serialVersionUID = 0L;
       if (other == com.zhijiejiaoyu.glory_api.admin.GetSTSRequest.getDefaultInstance()) return this;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
+      }
+      if (other.getUpload() != false) {
+        setUpload(other.getUpload());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -551,6 +589,49 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
       }
       return baseRequestBuilder ;
+    }
+
+    private boolean upload ;
+    /**
+     * <pre>
+     * true=上传专用收窄策略（仅 PutObject/分片，限定 object_prefix）；不传=存量全量策略
+     * </pre>
+     *
+     * <code>bool upload = 2;</code>
+     * @return The upload.
+     */
+    @java.lang.Override
+    public boolean getUpload() {
+      return upload ;
+    }
+    /**
+     * <pre>
+     * true=上传专用收窄策略（仅 PutObject/分片，限定 object_prefix）；不传=存量全量策略
+     * </pre>
+     *
+     * <code>bool upload = 2;</code>
+     * @param value The upload to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUpload(boolean value) {
+      
+      upload = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * true=上传专用收窄策略（仅 PutObject/分片，限定 object_prefix）；不传=存量全量策略
+     * </pre>
+     *
+     * <code>bool upload = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUpload() {
+      
+      upload = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

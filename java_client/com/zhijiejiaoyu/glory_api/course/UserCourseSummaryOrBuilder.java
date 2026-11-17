@@ -156,4 +156,44 @@ public interface UserCourseSummaryOrBuilder extends
    * @return The totalLessonCount.
    */
   int getTotalLessonCount();
+
+  /**
+   * <pre>
+   * 课程封面OSS路径
+   * </pre>
+   *
+   * <code>string course_cover_path = 13;</code>
+   * @return The courseCoverPath.
+   */
+  java.lang.String getCourseCoverPath();
+  /**
+   * <pre>
+   * 课程封面OSS路径
+   * </pre>
+   *
+   * <code>string course_cover_path = 13;</code>
+   * @return The bytes for courseCoverPath.
+   */
+  com.google.protobuf.ByteString
+      getCourseCoverPathBytes();
+
+  /**
+   * <pre>
+   * 课程封面访问URL（签名地址；无封面时为空）
+   * </pre>
+   *
+   * <code>string course_cover_url = 14;</code>
+   * @return The courseCoverUrl.
+   */
+  java.lang.String getCourseCoverUrl();
+  /**
+   * <pre>
+   * 课程封面访问URL（签名地址；无封面时为空）
+   * </pre>
+   *
+   * <code>string course_cover_url = 14;</code>
+   * @return The bytes for courseCoverUrl.
+   */
+  com.google.protobuf.ByteString
+      getCourseCoverUrlBytes();
 }

@@ -29,6 +29,8 @@ const UserCourseSummary$json = {
     {'1': 'course_progress', '3': 10, '4': 1, '5': 5, '10': 'courseProgress'},
     {'1': 'finished_lesson_count', '3': 11, '4': 1, '5': 5, '10': 'finishedLessonCount'},
     {'1': 'total_lesson_count', '3': 12, '4': 1, '5': 5, '10': 'totalLessonCount'},
+    {'1': 'course_cover_path', '3': 13, '4': 1, '5': 9, '10': 'courseCoverPath'},
+    {'1': 'course_cover_url', '3': 14, '4': 1, '5': 9, '10': 'courseCoverUrl'},
   ],
 };
 
@@ -43,7 +45,8 @@ final $typed_data.Uint8List userCourseSummaryDescriptor = $convert.base64Decode(
     'YW1lGAkgASgJUhFjb3Vyc2VUZWFjaGVyTmFtZRInCg9jb3Vyc2VfcHJvZ3Jlc3MYCiABKAVSDm'
     'NvdXJzZVByb2dyZXNzEjIKFWZpbmlzaGVkX2xlc3Nvbl9jb3VudBgLIAEoBVITZmluaXNoZWRM'
     'ZXNzb25Db3VudBIsChJ0b3RhbF9sZXNzb25fY291bnQYDCABKAVSEHRvdGFsTGVzc29uQ291bn'
-    'Q=');
+    'QSKgoRY291cnNlX2NvdmVyX3BhdGgYDSABKAlSD2NvdXJzZUNvdmVyUGF0aBIoChBjb3Vyc2Vf'
+    'Y292ZXJfdXJsGA4gASgJUg5jb3Vyc2VDb3ZlclVybA==');
 
 @$core.Deprecated('Use enrollCourseRequestDescriptor instead')
 const EnrollCourseRequest$json = {
