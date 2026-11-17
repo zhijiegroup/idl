@@ -290,10 +290,17 @@ message UploadedFile {
   int64 doc_id = 5; // 落入我的文档时返回；否则为空
 }
 
-// 通用上传(multipart/form-data；file_list 为多文件表单字段，不体现在 proto 字段中)
+// 通用上传
+// 两种模式：
+//   1) multipart/form-data（file_list 多文件表单字段，不体现在 proto 字段中）——服务端中转；
+//   2) 直传登记：传 object_key 等字段（JSON），前端经 get_sts(upload=true) 直传 OSS 后调本接口登记。
 message UploadFileRequest {
   base.BaseRequest base_request = 1;
   int64 parent_id = 2; // 传值→落我的文档对应目录并返回 doc_id；不传/0→仅返回文件地址
+  string object_key = 3; // 直传登记：OSS 对象 key（有值时不再解析 multipart，直接登记）
+  string file_name = 4; // 直传登记：原文件名（含扩展名，用于白名单校验与展示）
+  int64 file_size = 5; // 直传登记：文件大小（字节，需与对象 HEAD 结果一致）
+  string content_type = 6; // 直传登记：MIME 类型（可选，缺省按扩展名推断）
 }
 
 message UploadFileResponse {

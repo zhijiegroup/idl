@@ -91,10 +91,15 @@ message STS {
   string access_key_secret = 2;
   string expiration = 3;
   string security_token = 4;
+  string bucket = 5; // OSS 桶名（直传 SDK 初始化用）
+  string region = 6; // OSS 区域，如 oss-cn-qingdao
+  string endpoint = 7; // OSS 访问域名，如 https://oss-cn-qingdao.aliyuncs.com
+  string object_prefix = 8; // 允许直传的对象 key 前缀，如 glory_api/dev/{uid}/
 }
 
 message GetSTSRequest {
   base.BaseRequest base_request = 1;
+  bool upload = 2; // true=上传专用收窄策略（仅 PutObject/分片，限定 object_prefix）；不传=存量全量策略
 }
 
 message GetSTSResponse {
