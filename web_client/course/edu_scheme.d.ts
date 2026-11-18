@@ -106,6 +106,10 @@ export interface EduScheme {
   classes?: Array<user.TenantDept>;
   /** 三级课程结构(章节→课节→小节/任务+资源)；新增字段 */
   chapters?: Array<SchemeChapter>;
+  /** 课程封面OSS路径(保存时提交、详情/列表原样返回)；新增字段 */
+  cover_path?: string;
+  /** 课程封面签名访问URL(展示用，后端按 cover_path 签发)；新增字段 */
+  cover_url?: string;
 }
 
 export interface CreateEduSchemeRequest {
@@ -134,6 +138,8 @@ export interface CreateEduSchemeRequest {
   course_modules?: Array<modules.CourseModule>;
   /** 三级课程结构(章节→课节→小节/任务+资源)，全量覆盖保存；新增字段 */
   chapters?: Array<SchemeChapter>;
+  /** 课程封面OSS路径(可空，先通过上传接口取得对象 key)；新增字段 */
+  cover_path?: string;
 }
 
 export interface CreateEduSchemeResponse {
@@ -168,6 +174,8 @@ export interface UpdateEduSchemeRequest {
   course_modules?: Array<modules.CourseModule>;
   /** 三级课程结构(章节→课节→小节/任务+资源)，覆盖本人原方案全量保存；新增字段 */
   chapters?: Array<SchemeChapter>;
+  /** 课程封面OSS路径(可空；传空字符串表示清除封面)；新增字段 */
+  cover_path?: string;
 }
 
 export interface UpdateEduSchemeResponse {

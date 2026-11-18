@@ -285,4 +285,24 @@ public interface UpdateEduSchemeRequestOrBuilder extends
    */
   com.zhijiejiaoyu.glory_api.course.SchemeChapterOrBuilder getChaptersOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 课程封面OSS路径(可空；传空字符串表示清除封面)；新增字段
+   * </pre>
+   *
+   * <code>string cover_path = 15;</code>
+   * @return The coverPath.
+   */
+  java.lang.String getCoverPath();
+  /**
+   * <pre>
+   * 课程封面OSS路径(可空；传空字符串表示清除封面)；新增字段
+   * </pre>
+   *
+   * <code>string cover_path = 15;</code>
+   * @return The bytes for coverPath.
+   */
+  com.google.protobuf.ByteString
+      getCoverPathBytes();
 }

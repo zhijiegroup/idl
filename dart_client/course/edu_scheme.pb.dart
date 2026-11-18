@@ -554,6 +554,8 @@ class EduScheme extends $pb.GeneratedMessage {
     $core.Iterable<$0.CourseModule>? courseModules,
     $core.Iterable<$1.TenantDept>? classes,
     $core.Iterable<SchemeChapter>? chapters,
+    $core.String? coverPath,
+    $core.String? coverUrl,
   }) {
     final $result = create();
     if (eduSchemeId != null) {
@@ -607,6 +609,12 @@ class EduScheme extends $pb.GeneratedMessage {
     if (chapters != null) {
       $result.chapters.addAll(chapters);
     }
+    if (coverPath != null) {
+      $result.coverPath = coverPath;
+    }
+    if (coverUrl != null) {
+      $result.coverUrl = coverUrl;
+    }
     return $result;
   }
   EduScheme._() : super();
@@ -631,6 +639,8 @@ class EduScheme extends $pb.GeneratedMessage {
     ..pc<$0.CourseModule>(15, _omitFieldNames ? '' : 'courseModules', $pb.PbFieldType.PM, subBuilder: $0.CourseModule.create)
     ..pc<$1.TenantDept>(16, _omitFieldNames ? '' : 'classes', $pb.PbFieldType.PM, subBuilder: $1.TenantDept.create)
     ..pc<SchemeChapter>(17, _omitFieldNames ? '' : 'chapters', $pb.PbFieldType.PM, subBuilder: SchemeChapter.create)
+    ..aOS(18, _omitFieldNames ? '' : 'coverPath')
+    ..aOS(19, _omitFieldNames ? '' : 'coverUrl')
     ..hasRequiredFields = false
   ;
 
@@ -789,6 +799,24 @@ class EduScheme extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(17)
   $core.List<SchemeChapter> get chapters => $_getList(16);
+
+  @$pb.TagNumber(18)
+  $core.String get coverPath => $_getSZ(17);
+  @$pb.TagNumber(18)
+  set coverPath($core.String v) { $_setString(17, v); }
+  @$pb.TagNumber(18)
+  $core.bool hasCoverPath() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearCoverPath() => clearField(18);
+
+  @$pb.TagNumber(19)
+  $core.String get coverUrl => $_getSZ(18);
+  @$pb.TagNumber(19)
+  set coverUrl($core.String v) { $_setString(18, v); }
+  @$pb.TagNumber(19)
+  $core.bool hasCoverUrl() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearCoverUrl() => clearField(19);
 }
 
 class CreateEduSchemeRequest extends $pb.GeneratedMessage {
@@ -806,6 +834,7 @@ class CreateEduSchemeRequest extends $pb.GeneratedMessage {
     $core.double? knowledgeHours,
     $core.Iterable<$0.CourseModule>? courseModules,
     $core.Iterable<SchemeChapter>? chapters,
+    $core.String? coverPath,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -847,6 +876,9 @@ class CreateEduSchemeRequest extends $pb.GeneratedMessage {
     if (chapters != null) {
       $result.chapters.addAll(chapters);
     }
+    if (coverPath != null) {
+      $result.coverPath = coverPath;
+    }
     return $result;
   }
   CreateEduSchemeRequest._() : super();
@@ -867,6 +899,7 @@ class CreateEduSchemeRequest extends $pb.GeneratedMessage {
     ..a<$core.double>(11, _omitFieldNames ? '' : 'knowledgeHours', $pb.PbFieldType.OF)
     ..pc<$0.CourseModule>(15, _omitFieldNames ? '' : 'courseModules', $pb.PbFieldType.PM, subBuilder: $0.CourseModule.create)
     ..pc<SchemeChapter>(16, _omitFieldNames ? '' : 'chapters', $pb.PbFieldType.PM, subBuilder: SchemeChapter.create)
+    ..aOS(17, _omitFieldNames ? '' : 'coverPath')
     ..hasRequiredFields = false
   ;
 
@@ -997,6 +1030,15 @@ class CreateEduSchemeRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(16)
   $core.List<SchemeChapter> get chapters => $_getList(12);
+
+  @$pb.TagNumber(17)
+  $core.String get coverPath => $_getSZ(13);
+  @$pb.TagNumber(17)
+  set coverPath($core.String v) { $_setString(13, v); }
+  @$pb.TagNumber(17)
+  $core.bool hasCoverPath() => $_has(13);
+  @$pb.TagNumber(17)
+  void clearCoverPath() => clearField(17);
 }
 
 class CreateEduSchemeResponse extends $pb.GeneratedMessage {
@@ -1081,6 +1123,7 @@ class UpdateEduSchemeRequest extends $pb.GeneratedMessage {
     $core.double? knowledgeHours,
     $core.Iterable<$0.CourseModule>? courseModules,
     $core.Iterable<SchemeChapter>? chapters,
+    $core.String? coverPath,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -1125,6 +1168,9 @@ class UpdateEduSchemeRequest extends $pb.GeneratedMessage {
     if (chapters != null) {
       $result.chapters.addAll(chapters);
     }
+    if (coverPath != null) {
+      $result.coverPath = coverPath;
+    }
     return $result;
   }
   UpdateEduSchemeRequest._() : super();
@@ -1146,6 +1192,7 @@ class UpdateEduSchemeRequest extends $pb.GeneratedMessage {
     ..a<$core.double>(12, _omitFieldNames ? '' : 'knowledgeHours', $pb.PbFieldType.OF)
     ..pc<$0.CourseModule>(13, _omitFieldNames ? '' : 'courseModules', $pb.PbFieldType.PM, subBuilder: $0.CourseModule.create)
     ..pc<SchemeChapter>(14, _omitFieldNames ? '' : 'chapters', $pb.PbFieldType.PM, subBuilder: SchemeChapter.create)
+    ..aOS(15, _omitFieldNames ? '' : 'coverPath')
     ..hasRequiredFields = false
   ;
 
@@ -1285,6 +1332,15 @@ class UpdateEduSchemeRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(14)
   $core.List<SchemeChapter> get chapters => $_getList(13);
+
+  @$pb.TagNumber(15)
+  $core.String get coverPath => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set coverPath($core.String v) { $_setString(14, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasCoverPath() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearCoverPath() => clearField(15);
 }
 
 class UpdateEduSchemeResponse extends $pb.GeneratedMessage {

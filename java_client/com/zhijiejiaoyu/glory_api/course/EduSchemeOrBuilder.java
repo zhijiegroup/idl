@@ -294,4 +294,44 @@ public interface EduSchemeOrBuilder extends
    */
   com.zhijiejiaoyu.glory_api.course.SchemeChapterOrBuilder getChaptersOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 课程封面OSS路径(保存时提交、详情/列表原样返回)；新增字段
+   * </pre>
+   *
+   * <code>string cover_path = 18;</code>
+   * @return The coverPath.
+   */
+  java.lang.String getCoverPath();
+  /**
+   * <pre>
+   * 课程封面OSS路径(保存时提交、详情/列表原样返回)；新增字段
+   * </pre>
+   *
+   * <code>string cover_path = 18;</code>
+   * @return The bytes for coverPath.
+   */
+  com.google.protobuf.ByteString
+      getCoverPathBytes();
+
+  /**
+   * <pre>
+   * 课程封面签名访问URL(展示用，后端按 cover_path 签发)；新增字段
+   * </pre>
+   *
+   * <code>string cover_url = 19;</code>
+   * @return The coverUrl.
+   */
+  java.lang.String getCoverUrl();
+  /**
+   * <pre>
+   * 课程封面签名访问URL(展示用，后端按 cover_path 签发)；新增字段
+   * </pre>
+   *
+   * <code>string cover_url = 19;</code>
+   * @return The bytes for coverUrl.
+   */
+  com.google.protobuf.ByteString
+      getCoverUrlBytes();
 }

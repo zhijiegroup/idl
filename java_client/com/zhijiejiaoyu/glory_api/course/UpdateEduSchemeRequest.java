@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
     groupName = "";
     courseModules = java.util.Collections.emptyList();
     chapters = java.util.Collections.emptyList();
+    coverPath = "";
   }
 
   @java.lang.Override
@@ -149,6 +150,12 @@ private static final long serialVersionUID = 0L;
             }
             chapters .add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.course.SchemeChapter.parser(), extensionRegistry));
+            break;
+          }
+          case 122: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            coverPath = s;
             break;
           }
           default: {
@@ -713,6 +720,52 @@ private static final long serialVersionUID = 0L;
     return chapters .get(index);
   }
 
+  public static final int COVER_PATH_FIELD_NUMBER = 15;
+  private volatile java.lang.Object coverPath ;
+  /**
+   * <pre>
+   * 课程封面OSS路径(可空；传空字符串表示清除封面)；新增字段
+   * </pre>
+   *
+   * <code>string cover_path = 15;</code>
+   * @return The coverPath.
+   */
+  @java.lang.Override
+  public java.lang.String getCoverPath() {
+    java.lang.Object ref = coverPath ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      coverPath = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 课程封面OSS路径(可空；传空字符串表示清除封面)；新增字段
+   * </pre>
+   *
+   * <code>string cover_path = 15;</code>
+   * @return The bytes for coverPath.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCoverPathBytes() {
+    java.lang.Object ref = coverPath ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      coverPath = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -768,6 +821,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < chapters .size(); i++) {
       output.writeMessage(14, chapters .get(i));
+    }
+    if (!getCoverPathBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, coverPath );
     }
     unknownFields.writeTo(output);
   }
@@ -827,6 +883,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(14, chapters .get(i));
     }
+    if (!getCoverPathBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, coverPath );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -875,6 +934,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCourseModulesList())) return false;
     if (!getChaptersList()
         .equals(other.getChaptersList())) return false;
+    if (!getCoverPath()
+        .equals(other.getCoverPath())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -923,6 +984,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + CHAPTERS_FIELD_NUMBER;
       hash = (53 * hash) + getChaptersList().hashCode();
     }
+    hash = (37 * hash) + COVER_PATH_FIELD_NUMBER;
+    hash = (53 * hash) + getCoverPath().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1098,6 +1161,8 @@ private static final long serialVersionUID = 0L;
       } else {
         chaptersBuilder .clear();
       }
+      coverPath = "";
+
       return this;
     }
 
@@ -1159,6 +1224,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.chapters = chaptersBuilder .build();
       }
+      result.coverPath = coverPath ;
       onBuilt();
       return result;
     }
@@ -1301,6 +1367,10 @@ private static final long serialVersionUID = 0L;
             chaptersBuilder .addAllMessages(other.chapters );
           }
         }
+      }
+      if (!other.getCoverPath().isEmpty()) {
+        coverPath = other.coverPath ;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2905,6 +2975,102 @@ private static final long serialVersionUID = 0L;
         chapters = null;
       }
       return chaptersBuilder ;
+    }
+
+    private java.lang.Object coverPath = "";
+    /**
+     * <pre>
+     * 课程封面OSS路径(可空；传空字符串表示清除封面)；新增字段
+     * </pre>
+     *
+     * <code>string cover_path = 15;</code>
+     * @return The coverPath.
+     */
+    public java.lang.String getCoverPath() {
+      java.lang.Object ref = coverPath ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        coverPath = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 课程封面OSS路径(可空；传空字符串表示清除封面)；新增字段
+     * </pre>
+     *
+     * <code>string cover_path = 15;</code>
+     * @return The bytes for coverPath.
+     */
+    public com.google.protobuf.ByteString
+        getCoverPathBytes() {
+      java.lang.Object ref = coverPath ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        coverPath = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 课程封面OSS路径(可空；传空字符串表示清除封面)；新增字段
+     * </pre>
+     *
+     * <code>string cover_path = 15;</code>
+     * @param value The coverPath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCoverPath(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      coverPath = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程封面OSS路径(可空；传空字符串表示清除封面)；新增字段
+     * </pre>
+     *
+     * <code>string cover_path = 15;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCoverPath() {
+      
+      coverPath = getDefaultInstance().getCoverPath();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程封面OSS路径(可空；传空字符串表示清除封面)；新增字段
+     * </pre>
+     *
+     * <code>string cover_path = 15;</code>
+     * @param value The bytes for coverPath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCoverPathBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      coverPath = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
