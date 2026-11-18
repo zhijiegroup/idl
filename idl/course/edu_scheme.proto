@@ -70,6 +70,8 @@ message EduScheme {
     repeated CourseModule course_modules = 15;  // 能力指标(已废弃，保留字段号兼容；详情接口不再返回)
     repeated TenantDept classes = 16; // 应用班级
     repeated SchemeChapter chapters = 17; // 三级课程结构(章节→课节→小节/任务+资源)；新增字段
+    string cover_path = 18; // 课程封面OSS路径(保存时提交、详情/列表原样返回)；新增字段
+    string cover_url = 19; // 课程封面签名访问URL(展示用，后端按 cover_path 签发)；新增字段
 }
 
 message CreateEduSchemeRequest {
@@ -86,6 +88,7 @@ message CreateEduSchemeRequest {
     float knowledge_hours = 11; // 【调整】由后端按三级结构计算写入，前端无需传
     repeated CourseModule course_modules = 15; // 【废弃】不再使用，保留字段号兼容
     repeated SchemeChapter chapters = 16; // 三级课程结构(章节→课节→小节/任务+资源)，全量覆盖保存；新增字段
+    string cover_path = 17; // 课程封面OSS路径(可空，先通过上传接口取得对象 key)；新增字段
 }
 
 message CreateEduSchemeResponse {
@@ -108,6 +111,7 @@ message UpdateEduSchemeRequest {
     float knowledge_hours = 12; // 【调整】由后端按三级结构计算写入，前端无需传
     repeated CourseModule course_modules = 13; // 【废弃】不再使用，保留字段号兼容
     repeated SchemeChapter chapters = 14; // 三级课程结构(章节→课节→小节/任务+资源)，覆盖本人原方案全量保存；新增字段
+    string cover_path = 15; // 课程封面OSS路径(可空；传空字符串表示清除封面)；新增字段
 }
 
 message UpdateEduSchemeResponse {
