@@ -49,7 +49,7 @@ public interface MyDocItemOrBuilder extends
 
   /**
    * <pre>
-   * 来源：1.政策文件；2.人才培养方案；3.我的上传
+   * 来源：1.政策文件；2.人才培养方案；3.我的上传（我的文档列表恒为 3，收藏不再进入我的文档）
    * </pre>
    *
    * <code>int32 source = 4;</code>

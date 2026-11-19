@@ -5,7 +5,7 @@ package com.zhijiejiaoyu.glory_api.doc;
 
 /**
  * <pre>
- * 我的文档全量文件列表(跨目录平铺：不区分文件夹层级，仅返回文件、不返回文件夹；支持文件名关键词检索)
+ * 我的文档全量文件列表(跨目录平铺：仅本地上传文件，不返回文件夹、不含收藏；支持文件名关键词检索)
  * </pre>
  *
  * Protobuf type {@code glory_api.ListAllMyDocRequest}
@@ -415,7 +415,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 我的文档全量文件列表(跨目录平铺：不区分文件夹层级，仅返回文件、不返回文件夹；支持文件名关键词检索)
+   * 我的文档全量文件列表(跨目录平铺：仅本地上传文件，不返回文件夹、不含收藏；支持文件名关键词检索)
    * </pre>
    *
    * Protobuf type {@code glory_api.ListAllMyDocRequest}

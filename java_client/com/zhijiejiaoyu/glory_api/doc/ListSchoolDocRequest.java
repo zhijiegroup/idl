@@ -5,7 +5,7 @@ package com.zhijiejiaoyu.glory_api.doc;
 
 /**
  * <pre>
- * 学校文档列表(按发布日期倒序；政策文件全平台可读，人才培养方案本校可读；学生不可见)
+ * 学校文档列表(**收藏置顶**，收藏组内与非收藏组内均按发布日期倒序；政策文件全平台可读，人才培养方案本校可读；学生不可见)
  * </pre>
  *
  * Protobuf type {@code glory_api.ListSchoolDocRequest}
@@ -873,7 +873,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 学校文档列表(按发布日期倒序；政策文件全平台可读，人才培养方案本校可读；学生不可见)
+   * 学校文档列表(**收藏置顶**，收藏组内与非收藏组内均按发布日期倒序；政策文件全平台可读，人才培养方案本校可读；学生不可见)
    * </pre>
    *
    * Protobuf type {@code glory_api.ListSchoolDocRequest}

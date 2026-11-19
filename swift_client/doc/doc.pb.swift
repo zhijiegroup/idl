@@ -140,7 +140,7 @@ nonisolated struct GloryApi_SchoolDocItem: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-/// 学校文档列表(按发布日期倒序；政策文件全平台可读，人才培养方案本校可读；学生不可见)
+/// 学校文档列表(**收藏置顶**，收藏组内与非收藏组内均按发布日期倒序；政策文件全平台可读，人才培养方案本校可读；学生不可见)
 nonisolated struct GloryApi_ListSchoolDocRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -507,7 +507,7 @@ nonisolated struct GloryApi_DeleteSchoolDocResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-/// 收藏/取消收藏学校文档(幂等；收藏即在「我的文档」生成来源记录，取消即移除)
+/// 收藏/取消收藏学校文档(幂等；收藏后该文档在政策文件 / 人才培养方案列表中置顶，不再写入「我的文档」；取消即取消置顶与星标)
 nonisolated struct GloryApi_FavoriteSchoolDocRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -642,7 +642,7 @@ nonisolated struct GloryApi_MyDocItem: Sendable {
   /// 名称(同目录重名自动追加 -n)
   var name: String = String()
 
-  /// 来源：1.政策文件；2.人才培养方案；3.我的上传
+  /// 来源：1.政策文件；2.人才培养方案；3.我的上传（我的文档列表恒为 3，收藏不再进入我的文档）
   var source: Int32 = 0
 
   /// 分类文案(如「全国级」「省级·江苏省」「电子商务专业」)
@@ -864,7 +864,7 @@ nonisolated struct GloryApi_ListMyDocFolderResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-/// 当前目录列表(文件夹 + 文件)
+/// 我的文档当前目录列表(仅本地上传文件 + 文件夹；收藏不再进入我的文档)
 nonisolated struct GloryApi_ListMyDocRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -882,10 +882,10 @@ nonisolated struct GloryApi_ListMyDocRequest: Sendable {
   /// 目录ID，0=根目录
   var parentID: Int64 = 0
 
-  /// 来源筛选：0.全部；1.政策文件；2.人才培养方案；3.我的上传
+  /// 【已废弃·忽略】我的文档不再展示收藏文件(source=1/2)，固定仅返回本地上传(source=3)；字段保留兼容存量
   var source: Int32 = 0
 
-  /// 名称搜索(与来源筛选叠加，仅当前目录)
+  /// 名称搜索(仅当前目录)
   var name: String = String()
 
   /// 预留；当前目录一次性展示不分页
@@ -929,7 +929,7 @@ nonisolated struct GloryApi_ListMyDocResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-/// 我的文档全量文件列表(跨目录平铺：不区分文件夹层级，仅返回文件、不返回文件夹；支持文件名关键词检索)
+/// 我的文档全量文件列表(跨目录平铺：仅本地上传文件，不返回文件夹、不含收藏；支持文件名关键词检索)
 nonisolated struct GloryApi_ListAllMyDocRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for

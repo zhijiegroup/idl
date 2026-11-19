@@ -308,7 +308,7 @@ class SchoolDocItem extends $pb.GeneratedMessage {
   void clearDocCategory() => clearField(18);
 }
 
-/// 学校文档列表(按发布日期倒序；政策文件全平台可读，人才培养方案本校可读；学生不可见)
+/// 学校文档列表(**收藏置顶**，收藏组内与非收藏组内均按发布日期倒序；政策文件全平台可读，人才培养方案本校可读；学生不可见)
 class ListSchoolDocRequest extends $pb.GeneratedMessage {
   factory ListSchoolDocRequest({
     $0.BaseRequest? baseRequest,
@@ -1350,7 +1350,7 @@ class DeleteSchoolDocResponse extends $pb.GeneratedMessage {
   $0.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
-/// 收藏/取消收藏学校文档(幂等；收藏即在「我的文档」生成来源记录，取消即移除)
+/// 收藏/取消收藏学校文档(幂等；收藏后该文档在政策文件 / 人才培养方案列表中置顶，不再写入「我的文档」；取消即取消置顶与星标)
 class FavoriteSchoolDocRequest extends $pb.GeneratedMessage {
   factory FavoriteSchoolDocRequest({
     $0.BaseRequest? baseRequest,
@@ -2359,7 +2359,7 @@ class ListMyDocFolderResponse extends $pb.GeneratedMessage {
   $core.List<MyDocItem> get folders => $_getList(1);
 }
 
-/// 当前目录列表(文件夹 + 文件)
+/// 我的文档当前目录列表(仅本地上传文件 + 文件夹；收藏不再进入我的文档)
 class ListMyDocRequest extends $pb.GeneratedMessage {
   factory ListMyDocRequest({
     $0.BaseRequest? baseRequest,
@@ -2530,7 +2530,7 @@ class ListMyDocResponse extends $pb.GeneratedMessage {
   $core.List<MyDocItem> get items => $_getList(1);
 }
 
-/// 我的文档全量文件列表(跨目录平铺：不区分文件夹层级，仅返回文件、不返回文件夹；支持文件名关键词检索)
+/// 我的文档全量文件列表(跨目录平铺：仅本地上传文件，不返回文件夹、不含收藏；支持文件名关键词检索)
 class ListAllMyDocRequest extends $pb.GeneratedMessage {
   factory ListAllMyDocRequest({
     $0.BaseRequest? baseRequest,

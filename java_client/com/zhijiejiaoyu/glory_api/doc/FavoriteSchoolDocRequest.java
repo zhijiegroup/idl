@@ -5,7 +5,7 @@ package com.zhijiejiaoyu.glory_api.doc;
 
 /**
  * <pre>
- * 收藏/取消收藏学校文档(幂等；收藏即在「我的文档」生成来源记录，取消即移除)
+ * 收藏/取消收藏学校文档(幂等；收藏后该文档在政策文件 / 人才培养方案列表中置顶，不再写入「我的文档」；取消即取消置顶与星标)
  * </pre>
  *
  * Protobuf type {@code glory_api.FavoriteSchoolDocRequest}
@@ -345,7 +345,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 收藏/取消收藏学校文档(幂等；收藏即在「我的文档」生成来源记录，取消即移除)
+   * 收藏/取消收藏学校文档(幂等；收藏后该文档在政策文件 / 人才培养方案列表中置顶，不再写入「我的文档」；取消即取消置顶与星标)
    * </pre>
    *
    * Protobuf type {@code glory_api.FavoriteSchoolDocRequest}

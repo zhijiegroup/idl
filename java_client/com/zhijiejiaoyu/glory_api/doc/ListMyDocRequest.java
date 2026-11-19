@@ -5,7 +5,7 @@ package com.zhijiejiaoyu.glory_api.doc;
 
 /**
  * <pre>
- * 当前目录列表(文件夹 + 文件)
+ * 我的文档当前目录列表(仅本地上传文件 + 文件夹；收藏不再进入我的文档)
  * </pre>
  *
  * Protobuf type {@code glory_api.ListMyDocRequest}
@@ -172,7 +172,7 @@ private static final long serialVersionUID = 0L;
   private int source ;
   /**
    * <pre>
-   * 来源筛选：0.全部；1.政策文件；2.人才培养方案；3.我的上传
+   * 【已废弃·忽略】我的文档不再展示收藏文件(source=1/2)，固定仅返回本地上传(source=3)；字段保留兼容存量
    * </pre>
    *
    * <code>int32 source = 3;</code>
@@ -187,7 +187,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name ;
   /**
    * <pre>
-   * 名称搜索(与来源筛选叠加，仅当前目录)
+   * 名称搜索(仅当前目录)
    * </pre>
    *
    * <code>string name = 4;</code>
@@ -208,7 +208,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 名称搜索(与来源筛选叠加，仅当前目录)
+   * 名称搜索(仅当前目录)
    * </pre>
    *
    * <code>string name = 4;</code>
@@ -478,7 +478,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 当前目录列表(文件夹 + 文件)
+   * 我的文档当前目录列表(仅本地上传文件 + 文件夹；收藏不再进入我的文档)
    * </pre>
    *
    * Protobuf type {@code glory_api.ListMyDocRequest}
@@ -833,7 +833,7 @@ private static final long serialVersionUID = 0L;
     private int source ;
     /**
      * <pre>
-     * 来源筛选：0.全部；1.政策文件；2.人才培养方案；3.我的上传
+     * 【已废弃·忽略】我的文档不再展示收藏文件(source=1/2)，固定仅返回本地上传(source=3)；字段保留兼容存量
      * </pre>
      *
      * <code>int32 source = 3;</code>
@@ -845,7 +845,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 来源筛选：0.全部；1.政策文件；2.人才培养方案；3.我的上传
+     * 【已废弃·忽略】我的文档不再展示收藏文件(source=1/2)，固定仅返回本地上传(source=3)；字段保留兼容存量
      * </pre>
      *
      * <code>int32 source = 3;</code>
@@ -860,7 +860,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 来源筛选：0.全部；1.政策文件；2.人才培养方案；3.我的上传
+     * 【已废弃·忽略】我的文档不再展示收藏文件(source=1/2)，固定仅返回本地上传(source=3)；字段保留兼容存量
      * </pre>
      *
      * <code>int32 source = 3;</code>
@@ -876,7 +876,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name = "";
     /**
      * <pre>
-     * 名称搜索(与来源筛选叠加，仅当前目录)
+     * 名称搜索(仅当前目录)
      * </pre>
      *
      * <code>string name = 4;</code>
@@ -896,7 +896,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 名称搜索(与来源筛选叠加，仅当前目录)
+     * 名称搜索(仅当前目录)
      * </pre>
      *
      * <code>string name = 4;</code>
@@ -917,7 +917,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 名称搜索(与来源筛选叠加，仅当前目录)
+     * 名称搜索(仅当前目录)
      * </pre>
      *
      * <code>string name = 4;</code>
@@ -936,7 +936,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 名称搜索(与来源筛选叠加，仅当前目录)
+     * 名称搜索(仅当前目录)
      * </pre>
      *
      * <code>string name = 4;</code>
@@ -950,7 +950,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 名称搜索(与来源筛选叠加，仅当前目录)
+     * 名称搜索(仅当前目录)
      * </pre>
      *
      * <code>string name = 4;</code>
