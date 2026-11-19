@@ -562,6 +562,9 @@ nonisolated struct GloryApi_EduSchemeDetailRequest: Sendable {
 
   var eduSchemeID: Int64 = 0
 
+  /// 播放场景：true 时章节资源的 file_url 返回签名访问地址；false/不传（编辑场景）返回 OSS 路径
+  var playback: Bool = false
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1594,7 +1597,7 @@ nonisolated extension GloryApi_ListEduSchemeResponse: SwiftProtobuf.Message, Swi
 
 nonisolated extension GloryApi_EduSchemeDetailRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".EduSchemeDetailRequest"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}edu_scheme_id\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}edu_scheme_id\0\u{1}playback\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1604,6 +1607,7 @@ nonisolated extension GloryApi_EduSchemeDetailRequest: SwiftProtobuf.Message, Sw
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.eduSchemeID) }()
+      case 3: try { try decoder.decodeSingularBoolField(value: &self.playback) }()
       default: break
       }
     }
@@ -1620,12 +1624,16 @@ nonisolated extension GloryApi_EduSchemeDetailRequest: SwiftProtobuf.Message, Sw
     if self.eduSchemeID != 0 {
       try visitor.visitSingularInt64Field(value: self.eduSchemeID, fieldNumber: 2)
     }
+    if self.playback != false {
+      try visitor.visitSingularBoolField(value: self.playback, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_EduSchemeDetailRequest, rhs: GloryApi_EduSchemeDetailRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.eduSchemeID != rhs.eduSchemeID {return false}
+    if lhs.playback != rhs.playback {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

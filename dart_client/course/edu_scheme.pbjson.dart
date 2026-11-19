@@ -312,6 +312,7 @@ const EduSchemeDetailRequest$json = {
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'edu_scheme_id', '3': 2, '4': 1, '5': 3, '10': 'eduSchemeId'},
+    {'1': 'playback', '3': 3, '4': 1, '5': 8, '10': 'playback'},
   ],
 };
 
@@ -319,7 +320,7 @@ const EduSchemeDetailRequest$json = {
 final $typed_data.Uint8List eduSchemeDetailRequestDescriptor = $convert.base64Decode(
     'ChZFZHVTY2hlbWVEZXRhaWxSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2UuQm'
     'FzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EiIKDWVkdV9zY2hlbWVfaWQYAiABKANSC2VkdVNjaGVt'
-    'ZUlk');
+    'ZUlkEhoKCHBsYXliYWNrGAMgASgIUghwbGF5YmFjaw==');
 
 @$core.Deprecated('Use eduSchemeDetailResponseDescriptor instead')
 const EduSchemeDetailResponse$json = {

@@ -27,4 +27,14 @@ public interface EduSchemeDetailRequestOrBuilder extends
    * @return The eduSchemeId.
    */
   long getEduSchemeId();
+
+  /**
+   * <pre>
+   * 播放场景：true 时章节资源的 file_url 返回签名访问地址；false/不传（编辑场景）返回 OSS 路径
+   * </pre>
+   *
+   * <code>bool playback = 3;</code>
+   * @return The playback.
+   */
+  boolean getPlayback();
 }

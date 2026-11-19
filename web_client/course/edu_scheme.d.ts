@@ -209,6 +209,8 @@ export interface ListEduSchemeResponse {
 export interface EduSchemeDetailRequest {
   base_request?: base.BaseRequest;
   edu_scheme_id?: string;
+  /** 播放场景：true 时章节资源的 file_url 返回签名访问地址；false/不传（编辑场景）返回 OSS 路径 */
+  playback?: boolean;
 }
 
 export interface EduSchemeDetailResponse {

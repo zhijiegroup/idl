@@ -1704,6 +1704,7 @@ class EduSchemeDetailRequest extends $pb.GeneratedMessage {
   factory EduSchemeDetailRequest({
     $2.BaseRequest? baseRequest,
     $fixnum.Int64? eduSchemeId,
+    $core.bool? playback,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -1711,6 +1712,9 @@ class EduSchemeDetailRequest extends $pb.GeneratedMessage {
     }
     if (eduSchemeId != null) {
       $result.eduSchemeId = eduSchemeId;
+    }
+    if (playback != null) {
+      $result.playback = playback;
     }
     return $result;
   }
@@ -1721,6 +1725,7 @@ class EduSchemeDetailRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EduSchemeDetailRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'eduSchemeId')
+    ..aOB(3, _omitFieldNames ? '' : 'playback')
     ..hasRequiredFields = false
   ;
 
@@ -1764,6 +1769,15 @@ class EduSchemeDetailRequest extends $pb.GeneratedMessage {
   $core.bool hasEduSchemeId() => $_has(1);
   @$pb.TagNumber(2)
   void clearEduSchemeId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get playback => $_getBF(2);
+  @$pb.TagNumber(3)
+  set playback($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasPlayback() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPlayback() => clearField(3);
 }
 
 class EduSchemeDetailResponse extends $pb.GeneratedMessage {

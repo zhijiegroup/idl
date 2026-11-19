@@ -66,6 +66,11 @@ private static final long serialVersionUID = 0L;
             eduSchemeId = input.readInt64();
             break;
           }
+          case 24: {
+
+            playback = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -135,6 +140,21 @@ private static final long serialVersionUID = 0L;
     return eduSchemeId ;
   }
 
+  public static final int PLAYBACK_FIELD_NUMBER = 3;
+  private boolean playback ;
+  /**
+   * <pre>
+   * 播放场景：true 时章节资源的 file_url 返回签名访问地址；false/不传（编辑场景）返回 OSS 路径
+   * </pre>
+   *
+   * <code>bool playback = 3;</code>
+   * @return The playback.
+   */
+  @java.lang.Override
+  public boolean getPlayback() {
+    return playback ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -155,6 +175,9 @@ private static final long serialVersionUID = 0L;
     if (eduSchemeId != 0L) {
       output.writeInt64(2, eduSchemeId );
     }
+    if (playback != false) {
+      output.writeBool(3, playback );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -171,6 +194,10 @@ private static final long serialVersionUID = 0L;
     if (eduSchemeId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, eduSchemeId );
+    }
+    if (playback != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(3, playback );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -194,6 +221,8 @@ private static final long serialVersionUID = 0L;
     }
     if (getEduSchemeId()
         != other.getEduSchemeId()) return false;
+    if (getPlayback()
+        != other.getPlayback()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -212,6 +241,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + EDU_SCHEME_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getEduSchemeId());
+    hash = (37 * hash) + PLAYBACK_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getPlayback());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -353,6 +385,8 @@ private static final long serialVersionUID = 0L;
       }
       eduSchemeId = 0L;
 
+      playback = false;
+
       return this;
     }
 
@@ -385,6 +419,7 @@ private static final long serialVersionUID = 0L;
         result.baseRequest = baseRequestBuilder .build();
       }
       result.eduSchemeId = eduSchemeId ;
+      result.playback = playback ;
       onBuilt();
       return result;
     }
@@ -438,6 +473,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getEduSchemeId() != 0L) {
         setEduSchemeId(other.getEduSchemeId());
+      }
+      if (other.getPlayback() != false) {
+        setPlayback(other.getPlayback());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -614,6 +652,49 @@ private static final long serialVersionUID = 0L;
     public Builder clearEduSchemeId() {
       
       eduSchemeId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private boolean playback ;
+    /**
+     * <pre>
+     * 播放场景：true 时章节资源的 file_url 返回签名访问地址；false/不传（编辑场景）返回 OSS 路径
+     * </pre>
+     *
+     * <code>bool playback = 3;</code>
+     * @return The playback.
+     */
+    @java.lang.Override
+    public boolean getPlayback() {
+      return playback ;
+    }
+    /**
+     * <pre>
+     * 播放场景：true 时章节资源的 file_url 返回签名访问地址；false/不传（编辑场景）返回 OSS 路径
+     * </pre>
+     *
+     * <code>bool playback = 3;</code>
+     * @param value The playback to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPlayback(boolean value) {
+      
+      playback = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 播放场景：true 时章节资源的 file_url 返回签名访问地址；false/不传（编辑场景）返回 OSS 路径
+     * </pre>
+     *
+     * <code>bool playback = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPlayback() {
+      
+      playback = false;
       onChanged();
       return this;
     }

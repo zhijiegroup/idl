@@ -187,25 +187,25 @@ public final class EduSchemeOuterClass {
       "duSchemeResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
       "se.BaseResponse\022-\n\017edu_scheme_list\030\002 \003(\013" +
       "2\024.glory_api.EduScheme\022,\n\npagination\030d \001" +
-      "(\0132\030.base.PaginationResponse\"X\n\026EduSchem" +
+      "(\0132\030.base.PaginationResponse\"j\n\026EduSchem" +
       "eDetailRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
-      "ase.BaseRequest\022\025\n\redu_scheme_id\030\002 \001(\003\"\177" +
-      "\n\027EduSchemeDetailResponse\022%\n\tbase_resp\030\001" +
-      " \001(\0132\022.base.BaseResponse\022+\n\rscheme_detai" +
-      "l\030\002 \001(\0132\024.glory_api.EduScheme\022\020\n\010clas_id" +
-      "s\030\003 \003(\003\"n\n\032DistributeEduSchemeRequest\022\'\n" +
-      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022\025" +
-      "\n\redu_scheme_id\030\002 \001(\003\022\020\n\010clas_ids\030\003 \003(\003\"" +
-      "D\n\033DistributeEduSchemeResponse\022%\n\tbase_r" +
-      "esp\030\001 \001(\0132\022.base.BaseResponse\"m\n\035GetEduS" +
-      "chemeLikeCourseRequest\022\'\n\014base_request\030\001" +
-      " \001(\0132\021.base.BaseRequest\022\025\n\redu_scheme_id" +
-      "\030\002 \001(\003\022\014\n\004role\030\003 \001(\t\"\203\001\n\036GetEduSchemeLik" +
-      "eCourseResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
-      "e.BaseResponse\022!\n\006course\030\002 \001(\0132\021.glory_a" +
-      "pi.Course\022\027\n\017course_progress\030\003 \001(\003B%\n!co" +
-      "m.zhijiejiaoyu.glory_api.courseP\001b\006proto" +
-      "3"
+      "ase.BaseRequest\022\025\n\redu_scheme_id\030\002 \001(\003\022\020" +
+      "\n\010playback\030\003 \001(\010\"\177\n\027EduSchemeDetailRespo" +
+      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
+      "se\022+\n\rscheme_detail\030\002 \001(\0132\024.glory_api.Ed" +
+      "uScheme\022\020\n\010clas_ids\030\003 \003(\003\"n\n\032DistributeE" +
+      "duSchemeRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
+      "base.BaseRequest\022\025\n\redu_scheme_id\030\002 \001(\003\022" +
+      "\020\n\010clas_ids\030\003 \003(\003\"D\n\033DistributeEduScheme" +
+      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
+      "esponse\"m\n\035GetEduSchemeLikeCourseRequest" +
+      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
+      "t\022\025\n\redu_scheme_id\030\002 \001(\003\022\014\n\004role\030\003 \001(\t\"\203" +
+      "\001\n\036GetEduSchemeLikeCourseResponse\022%\n\tbas" +
+      "e_resp\030\001 \001(\0132\022.base.BaseResponse\022!\n\006cour" +
+      "se\030\002 \001(\0132\021.glory_api.Course\022\027\n\017course_pr" +
+      "ogress\030\003 \001(\003B%\n!com.zhijiejiaoyu.glory_a" +
+      "pi.courseP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -298,7 +298,7 @@ public final class EduSchemeOuterClass {
     internal_static_glory_api_EduSchemeDetailRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_EduSchemeDetailRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "EduSchemeId", });
+        new java.lang.String[] { "BaseRequest", "EduSchemeId", "Playback", });
     internal_static_glory_api_EduSchemeDetailResponse_descriptor =
       getDescriptor().getMessageTypes().get(14);
     internal_static_glory_api_EduSchemeDetailResponse_fieldAccessorTable = new
