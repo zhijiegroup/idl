@@ -145,6 +145,7 @@ message ListEduSchemeResponse {
 message EduSchemeDetailRequest {
     base.BaseRequest base_request = 1;
     int64 edu_scheme_id = 2;
+    bool playback = 3; // 播放场景：true 时章节资源的 file_url 返回签名访问地址；false/不传（编辑场景）返回 OSS 路径
 }
 
 message EduSchemeDetailResponse {
