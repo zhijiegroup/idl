@@ -321,6 +321,7 @@ class ListSchoolDocRequest extends $pb.GeneratedMessage {
     $core.String? name,
     $core.int? docCategory,
     $core.Iterable<$core.int>? docCategories,
+    $core.int? publishYear,
     $0.PaginationRequest? pagination,
   }) {
     final $result = create();
@@ -354,6 +355,9 @@ class ListSchoolDocRequest extends $pb.GeneratedMessage {
     if (docCategories != null) {
       $result.docCategories.addAll(docCategories);
     }
+    if (publishYear != null) {
+      $result.publishYear = publishYear;
+    }
     if (pagination != null) {
       $result.pagination = pagination;
     }
@@ -374,6 +378,7 @@ class ListSchoolDocRequest extends $pb.GeneratedMessage {
     ..aOS(8, _omitFieldNames ? '' : 'name')
     ..a<$core.int>(9, _omitFieldNames ? '' : 'docCategory', $pb.PbFieldType.O3)
     ..p<$core.int>(10, _omitFieldNames ? '' : 'docCategories', $pb.PbFieldType.K3)
+    ..a<$core.int>(11, _omitFieldNames ? '' : 'publishYear', $pb.PbFieldType.O3)
     ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -485,16 +490,25 @@ class ListSchoolDocRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   $core.List<$core.int> get docCategories => $_getList(9);
 
+  @$pb.TagNumber(11)
+  $core.int get publishYear => $_getIZ(10);
+  @$pb.TagNumber(11)
+  set publishYear($core.int v) { $_setSignedInt32(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasPublishYear() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearPublishYear() => clearField(11);
+
   @$pb.TagNumber(100)
-  $0.PaginationRequest get pagination => $_getN(10);
+  $0.PaginationRequest get pagination => $_getN(11);
   @$pb.TagNumber(100)
   set pagination($0.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasPagination() => $_has(10);
+  $core.bool hasPagination() => $_has(11);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationRequest ensurePagination() => $_ensure(10);
+  $0.PaginationRequest ensurePagination() => $_ensure(11);
 }
 
 class ListSchoolDocResponse extends $pb.GeneratedMessage {

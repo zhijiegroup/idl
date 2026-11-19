@@ -68,6 +68,8 @@ export interface ListSchoolDocRequest {
   doc_category?: number;
   /** 仅 doc_type=1：分类多选筛选(并集；元素 1.技工教育 2.职业教育，非法值 400；含 0 或空=全部；非空时优先于 doc_category) */
   doc_categories?: Array<number>;
+  /** 仅 doc_type=1：按发布年份筛选(如 2025；不传/0=全部年份；非 1970~2100 返回 400) */
+  publish_year?: number;
   pagination?: base.PaginationRequest;
 }
 

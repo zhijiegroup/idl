@@ -227,117 +227,118 @@ public final class Doc {
       "\t\022\024\n\014publish_date\030\013 \001(\t\022\021\n\tfile_size\030\014 \001" +
       "(\003\022\020\n\010file_url\030\r \001(\t\022\022\n\npage_count\030\016 \001(\003" +
       "\022\021\n\tfavorited\030\017 \001(\010\022\022\n\ncreated_at\030\020 \001(\t\022" +
-      "\022\n\ncreated_by\030\021 \001(\003\"\207\002\n\024ListSchoolDocReq" +
+      "\022\n\ncreated_by\030\021 \001(\003\"\235\002\n\024ListSchoolDocReq" +
       "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
       "quest\022\020\n\010doc_type\030\002 \001(\005\022\r\n\005level\030\003 \001(\005\022\020" +
       "\n\010province\030\004 \001(\t\022\014\n\004city\030\005 \001(\t\022\r\n\005major\030" +
       "\006 \001(\t\022\r\n\005grade\030\007 \001(\t\022\014\n\004name\030\010 \001(\t\022\024\n\014do" +
       "c_category\030\t \001(\005\022\026\n\016doc_categories\030\n \003(\005" +
-      "\022+\n\npagination\030d \001(\0132\027.base.PaginationRe" +
-      "quest\"\224\001\n\025ListSchoolDocResponse\022%\n\tbase_" +
-      "resp\030\001 \001(\0132\022.base.BaseResponse\022&\n\004docs\030\002" +
-      " \003(\0132\030.glory_api.SchoolDocItem\022,\n\npagina" +
-      "tion\030d \001(\0132\030.base.PaginationResponse\"\271\002\n" +
-      "\026CreateSchoolDocRequest\022\'\n\014base_request\030" +
-      "\001 \001(\0132\021.base.BaseRequest\022\020\n\010doc_type\030\002 \001" +
-      "(\005\022\020\n\010doc_name\030\003 \001(\t\022\r\n\005level\030\004 \001(\005\022\020\n\010p" +
-      "rovince\030\005 \001(\t\022\014\n\004city\030\006 \001(\t\022\013\n\003org\030\007 \001(\t" +
-      "\022\r\n\005major\030\010 \001(\t\022\r\n\005grade\030\t \001(\t\022\023\n\013compil" +
-      "e_org\030\n \001(\t\022\024\n\014publish_date\030\013 \001(\t\022\020\n\010fil" +
-      "e_url\030\014 \001(\t\022\021\n\tfile_size\030\r \001(\003\022\022\n\npage_c" +
-      "ount\030\016 \001(\003\022\024\n\014doc_category\030\017 \001(\005\"P\n\027Crea" +
-      "teSchoolDocResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
-      ".base.BaseResponse\022\016\n\006doc_id\030\002 \001(\003\"\337\002\n\026U" +
-      "pdateSchoolDocRequest\022\'\n\014base_request\030\001 " +
-      "\001(\0132\021.base.BaseRequest\022\016\n\006doc_id\030\002 \001(\003\022\020" +
-      "\n\010doc_type\030\003 \001(\005\022\020\n\010doc_name\030\004 \001(\t\022\r\n\005le" +
-      "vel\030\005 \001(\005\022\020\n\010province\030\006 \001(\t\022\014\n\004city\030\007 \001(" +
-      "\t\022\013\n\003org\030\010 \001(\t\022\r\n\005major\030\t \001(\t\022\r\n\005grade\030\n" +
-      " \001(\t\022\023\n\013compile_org\030\013 \001(\t\022\024\n\014publish_dat" +
-      "e\030\014 \001(\t\022\020\n\010file_url\030\r \001(\t\022\021\n\tfile_size\030\016" +
-      " \001(\003\022\022\n\npage_count\030\017 \001(\003\022\024\n\014replace_file" +
-      "\030\020 \001(\010\022\024\n\014doc_category\030\021 \001(\005\"@\n\027UpdateSc" +
-      "hoolDocResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
-      "e.BaseResponse\"Q\n\026DeleteSchoolDocRequest" +
-      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
-      "t\022\016\n\006doc_id\030\002 \001(\003\"@\n\027DeleteSchoolDocResp" +
-      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
-      "nse\"e\n\030FavoriteSchoolDocRequest\022\'\n\014base_" +
-      "request\030\001 \001(\0132\021.base.BaseRequest\022\016\n\006doc_" +
-      "id\030\002 \001(\003\022\020\n\010favorite\030\003 \001(\010\"B\n\031FavoriteSc" +
-      "hoolDocResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
-      "e.BaseResponse\"\226\001\n\036ListMyFavoriteSchoolD" +
-      "ocRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
-      "aseRequest\022\020\n\010doc_type\030\002 \001(\005\022\014\n\004name\030\003 \001" +
-      "(\t\022+\n\npagination\030d \001(\0132\027.base.Pagination" +
-      "Request\"\236\001\n\037ListMyFavoriteSchoolDocRespo" +
-      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
-      "se\022&\n\004docs\030\002 \003(\0132\030.glory_api.SchoolDocIt" +
-      "em\022,\n\npagination\030d \001(\0132\030.base.Pagination" +
-      "Response\"\265\001\n\tMyDocItem\022\n\n\002id\030\001 \001(\003\022\014\n\004ty" +
-      "pe\030\002 \001(\005\022\014\n\004name\030\003 \001(\t\022\016\n\006source\030\004 \001(\005\022\024" +
-      "\n\014source_label\030\005 \001(\t\022\021\n\tfile_size\030\006 \001(\003\022" +
-      "\021\n\tfile_type\030\007 \001(\t\022\022\n\ncreated_at\030\010 \001(\t\022\016" +
-      "\n\006ref_id\030\t \001(\003\022\020\n\010jump_url\030\n \001(\t\"k\n\030Crea" +
-      "teMyDocFolderRequest\022\'\n\014base_request\030\001 \001" +
-      "(\0132\021.base.BaseRequest\022\021\n\tparent_id\030\002 \001(\003" +
-      "\022\023\n\013folder_name\030\003 \001(\t\"U\n\031CreateMyDocFold" +
-      "erResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
-      "eResponse\022\021\n\tfolder_id\030\002 \001(\003\"k\n\030RenameMy" +
-      "DocFolderRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
-      ".base.BaseRequest\022\021\n\tfolder_id\030\002 \001(\003\022\023\n\013" +
-      "folder_name\030\003 \001(\t\"B\n\031RenameMyDocFolderRe" +
-      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
-      "ponse\"V\n\030DeleteMyDocFolderRequest\022\'\n\014bas" +
-      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tfo" +
-      "lder_id\030\002 \001(\003\"B\n\031DeleteMyDocFolderRespon" +
-      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
-      "e\"T\n\026ListMyDocFolderRequest\022\'\n\014base_requ" +
-      "est\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tparent_i" +
-      "d\030\002 \001(\003\"g\n\027ListMyDocFolderResponse\022%\n\tba" +
-      "se_resp\030\001 \001(\0132\022.base.BaseResponse\022%\n\007fol" +
-      "ders\030\002 \003(\0132\024.glory_api.MyDocItem\"\231\001\n\020Lis" +
-      "tMyDocRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
-      "se.BaseRequest\022\021\n\tparent_id\030\002 \001(\003\022\016\n\006sou" +
-      "rce\030\003 \001(\005\022\014\n\004name\030\004 \001(\t\022+\n\npagination\030d " +
-      "\001(\0132\027.base.PaginationRequest\"_\n\021ListMyDo" +
-      "cResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
-      "Response\022#\n\005items\030\002 \003(\0132\024.glory_api.MyDo" +
-      "cItem\"N\n\023MoveOutMyDocRequest\022\'\n\014base_req" +
-      "uest\030\001 \001(\0132\021.base.BaseRequest\022\016\n\006doc_id\030" +
-      "\002 \001(\003\"=\n\024MoveOutMyDocResponse\022%\n\tbase_re" +
-      "sp\030\001 \001(\0132\022.base.BaseResponse\"M\n\022DeleteMy" +
-      "DocRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
-      "BaseRequest\022\016\n\006doc_id\030\002 \001(\003\"<\n\023DeleteMyD" +
-      "ocResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
-      "eResponse\"O\n\024DownloadMyDocRequest\022\'\n\014bas" +
-      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\016\n\006do" +
-      "c_id\030\002 \001(\003\"{\n\025DownloadMyDocResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022\024\n\014do" +
-      "wnload_url\030\002 \001(\t\022\021\n\tfile_name\030\003 \001(\t\022\022\n\ne" +
-      "xpires_in\030\004 \001(\005\"(\n\nRegionItem\022\014\n\004code\030\001 " +
-      "\001(\t\022\014\n\004name\030\002 \001(\t\"Q\n\021ListRegionRequest\022\'" +
+      "\022\024\n\014publish_year\030\013 \001(\005\022+\n\npagination\030d \001" +
+      "(\0132\027.base.PaginationRequest\"\224\001\n\025ListScho" +
+      "olDocResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
+      "BaseResponse\022&\n\004docs\030\002 \003(\0132\030.glory_api.S" +
+      "choolDocItem\022,\n\npagination\030d \001(\0132\030.base." +
+      "PaginationResponse\"\271\002\n\026CreateSchoolDocRe" +
+      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
+      "equest\022\020\n\010doc_type\030\002 \001(\005\022\020\n\010doc_name\030\003 \001" +
+      "(\t\022\r\n\005level\030\004 \001(\005\022\020\n\010province\030\005 \001(\t\022\014\n\004c" +
+      "ity\030\006 \001(\t\022\013\n\003org\030\007 \001(\t\022\r\n\005major\030\010 \001(\t\022\r\n" +
+      "\005grade\030\t \001(\t\022\023\n\013compile_org\030\n \001(\t\022\024\n\014pub" +
+      "lish_date\030\013 \001(\t\022\020\n\010file_url\030\014 \001(\t\022\021\n\tfil" +
+      "e_size\030\r \001(\003\022\022\n\npage_count\030\016 \001(\003\022\024\n\014doc_" +
+      "category\030\017 \001(\005\"P\n\027CreateSchoolDocRespons" +
+      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
+      "\022\016\n\006doc_id\030\002 \001(\003\"\337\002\n\026UpdateSchoolDocRequ" +
+      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
+      "uest\022\016\n\006doc_id\030\002 \001(\003\022\020\n\010doc_type\030\003 \001(\005\022\020" +
+      "\n\010doc_name\030\004 \001(\t\022\r\n\005level\030\005 \001(\005\022\020\n\010provi" +
+      "nce\030\006 \001(\t\022\014\n\004city\030\007 \001(\t\022\013\n\003org\030\010 \001(\t\022\r\n\005" +
+      "major\030\t \001(\t\022\r\n\005grade\030\n \001(\t\022\023\n\013compile_or" +
+      "g\030\013 \001(\t\022\024\n\014publish_date\030\014 \001(\t\022\020\n\010file_ur" +
+      "l\030\r \001(\t\022\021\n\tfile_size\030\016 \001(\003\022\022\n\npage_count" +
+      "\030\017 \001(\003\022\024\n\014replace_file\030\020 \001(\010\022\024\n\014doc_cate" +
+      "gory\030\021 \001(\005\"@\n\027UpdateSchoolDocResponse\022%\n" +
+      "\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"Q\n\026" +
+      "DeleteSchoolDocRequest\022\'\n\014base_request\030\001" +
+      " \001(\0132\021.base.BaseRequest\022\016\n\006doc_id\030\002 \001(\003\"" +
+      "@\n\027DeleteSchoolDocResponse\022%\n\tbase_resp\030" +
+      "\001 \001(\0132\022.base.BaseResponse\"e\n\030FavoriteSch" +
+      "oolDocRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
+      "se.BaseRequest\022\016\n\006doc_id\030\002 \001(\003\022\020\n\010favori" +
+      "te\030\003 \001(\010\"B\n\031FavoriteSchoolDocResponse\022%\n" +
+      "\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"\226\001\n" +
+      "\036ListMyFavoriteSchoolDocRequest\022\'\n\014base_" +
+      "request\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010doc_" +
+      "type\030\002 \001(\005\022\014\n\004name\030\003 \001(\t\022+\n\npagination\030d" +
+      " \001(\0132\027.base.PaginationRequest\"\236\001\n\037ListMy" +
+      "FavoriteSchoolDocResponse\022%\n\tbase_resp\030\001" +
+      " \001(\0132\022.base.BaseResponse\022&\n\004docs\030\002 \003(\0132\030" +
+      ".glory_api.SchoolDocItem\022,\n\npagination\030d" +
+      " \001(\0132\030.base.PaginationResponse\"\265\001\n\tMyDoc" +
+      "Item\022\n\n\002id\030\001 \001(\003\022\014\n\004type\030\002 \001(\005\022\014\n\004name\030\003" +
+      " \001(\t\022\016\n\006source\030\004 \001(\005\022\024\n\014source_label\030\005 \001" +
+      "(\t\022\021\n\tfile_size\030\006 \001(\003\022\021\n\tfile_type\030\007 \001(\t" +
+      "\022\022\n\ncreated_at\030\010 \001(\t\022\016\n\006ref_id\030\t \001(\003\022\020\n\010" +
+      "jump_url\030\n \001(\t\"k\n\030CreateMyDocFolderReque" +
+      "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
+      "est\022\021\n\tparent_id\030\002 \001(\003\022\023\n\013folder_name\030\003 " +
+      "\001(\t\"U\n\031CreateMyDocFolderResponse\022%\n\tbase" +
+      "_resp\030\001 \001(\0132\022.base.BaseResponse\022\021\n\tfolde" +
+      "r_id\030\002 \001(\003\"k\n\030RenameMyDocFolderRequest\022\'" +
       "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
-      "\023\n\013parent_code\030\002 \001(\t\"c\n\022ListRegionRespon" +
-      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
-      "e\022&\n\007regions\030\002 \003(\0132\025.glory_api.RegionIte" +
-      "m\"G\n\034ListPolicyDocProvinceRequest\022\'\n\014bas" +
-      "e_request\030\001 \001(\0132\021.base.BaseRequest\"C\n\022Po" +
-      "licyProvinceItem\022\014\n\004code\030\001 \001(\t\022\014\n\004name\030\002" +
-      " \001(\t\022\021\n\tdoc_count\030\003 \001(\003\"x\n\035ListPolicyDoc" +
-      "ProvinceResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
-      "se.BaseResponse\0220\n\tprovinces\030\002 \003(\0132\035.glo" +
-      "ry_api.PolicyProvinceItem\"i\n\014UploadedFil" +
-      "e\022\020\n\010file_url\030\001 \001(\t\022\021\n\tfile_name\030\002 \001(\t\022\021" +
-      "\n\tfile_size\030\003 \001(\003\022\021\n\tfile_type\030\004 \001(\t\022\016\n\006" +
-      "doc_id\030\005 \001(\003\"\237\001\n\021UploadFileRequest\022\'\n\014ba" +
-      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tp" +
-      "arent_id\030\002 \001(\003\022\022\n\nobject_key\030\003 \001(\t\022\021\n\tfi" +
-      "le_name\030\004 \001(\t\022\021\n\tfile_size\030\005 \001(\003\022\024\n\014cont" +
-      "ent_type\030\006 \001(\t\"c\n\022UploadFileResponse\022%\n\t" +
-      "base_resp\030\001 \001(\0132\022.base.BaseResponse\022&\n\005f" +
-      "iles\030\002 \003(\0132\027.glory_api.UploadedFileB\"\n\036c" +
-      "om.zhijiejiaoyu.glory_api.docP\001b\006proto3"
+      "\021\n\tfolder_id\030\002 \001(\003\022\023\n\013folder_name\030\003 \001(\t\"" +
+      "B\n\031RenameMyDocFolderResponse\022%\n\tbase_res" +
+      "p\030\001 \001(\0132\022.base.BaseResponse\"V\n\030DeleteMyD" +
+      "ocFolderRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
+      "base.BaseRequest\022\021\n\tfolder_id\030\002 \001(\003\"B\n\031D" +
+      "eleteMyDocFolderResponse\022%\n\tbase_resp\030\001 " +
+      "\001(\0132\022.base.BaseResponse\"T\n\026ListMyDocFold" +
+      "erRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
+      "aseRequest\022\021\n\tparent_id\030\002 \001(\003\"g\n\027ListMyD" +
+      "ocFolderResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
+      "se.BaseResponse\022%\n\007folders\030\002 \003(\0132\024.glory" +
+      "_api.MyDocItem\"\231\001\n\020ListMyDocRequest\022\'\n\014b" +
+      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\t" +
+      "parent_id\030\002 \001(\003\022\016\n\006source\030\003 \001(\005\022\014\n\004name\030" +
+      "\004 \001(\t\022+\n\npagination\030d \001(\0132\027.base.Paginat" +
+      "ionRequest\"_\n\021ListMyDocResponse\022%\n\tbase_" +
+      "resp\030\001 \001(\0132\022.base.BaseResponse\022#\n\005items\030" +
+      "\002 \003(\0132\024.glory_api.MyDocItem\"N\n\023MoveOutMy" +
+      "DocRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
+      "BaseRequest\022\016\n\006doc_id\030\002 \001(\003\"=\n\024MoveOutMy" +
+      "DocResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
+      "seResponse\"M\n\022DeleteMyDocRequest\022\'\n\014base" +
+      "_request\030\001 \001(\0132\021.base.BaseRequest\022\016\n\006doc" +
+      "_id\030\002 \001(\003\"<\n\023DeleteMyDocResponse\022%\n\tbase" +
+      "_resp\030\001 \001(\0132\022.base.BaseResponse\"O\n\024Downl" +
+      "oadMyDocRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
+      "base.BaseRequest\022\016\n\006doc_id\030\002 \001(\003\"{\n\025Down" +
+      "loadMyDocResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
+      "ase.BaseResponse\022\024\n\014download_url\030\002 \001(\t\022\021" +
+      "\n\tfile_name\030\003 \001(\t\022\022\n\nexpires_in\030\004 \001(\005\"(\n" +
+      "\nRegionItem\022\014\n\004code\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"" +
+      "Q\n\021ListRegionRequest\022\'\n\014base_request\030\001 \001" +
+      "(\0132\021.base.BaseRequest\022\023\n\013parent_code\030\002 \001" +
+      "(\t\"c\n\022ListRegionResponse\022%\n\tbase_resp\030\001 " +
+      "\001(\0132\022.base.BaseResponse\022&\n\007regions\030\002 \003(\013" +
+      "2\025.glory_api.RegionItem\"G\n\034ListPolicyDoc" +
+      "ProvinceRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
+      "base.BaseRequest\"C\n\022PolicyProvinceItem\022\014" +
+      "\n\004code\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\021\n\tdoc_count\030" +
+      "\003 \001(\003\"x\n\035ListPolicyDocProvinceResponse\022%" +
+      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\0220\n" +
+      "\tprovinces\030\002 \003(\0132\035.glory_api.PolicyProvi" +
+      "nceItem\"i\n\014UploadedFile\022\020\n\010file_url\030\001 \001(" +
+      "\t\022\021\n\tfile_name\030\002 \001(\t\022\021\n\tfile_size\030\003 \001(\003\022" +
+      "\021\n\tfile_type\030\004 \001(\t\022\016\n\006doc_id\030\005 \001(\003\"\237\001\n\021U" +
+      "ploadFileRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
+      ".base.BaseRequest\022\021\n\tparent_id\030\002 \001(\003\022\022\n\n" +
+      "object_key\030\003 \001(\t\022\021\n\tfile_name\030\004 \001(\t\022\021\n\tf" +
+      "ile_size\030\005 \001(\003\022\024\n\014content_type\030\006 \001(\t\"c\n\022" +
+      "UploadFileResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
+      "base.BaseResponse\022&\n\005files\030\002 \003(\0132\027.glory" +
+      "_api.UploadedFileB\"\n\036com.zhijiejiaoyu.gl" +
+      "ory_api.docP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -355,7 +356,7 @@ public final class Doc {
     internal_static_glory_api_ListSchoolDocRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListSchoolDocRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "DocType", "Level", "Province", "City", "Major", "Grade", "Name", "DocCategory", "DocCategories", "Pagination", });
+        new java.lang.String[] { "BaseRequest", "DocType", "Level", "Province", "City", "Major", "Grade", "Name", "DocCategory", "DocCategories", "PublishYear", "Pagination", });
     internal_static_glory_api_ListSchoolDocResponse_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_glory_api_ListSchoolDocResponse_fieldAccessorTable = new

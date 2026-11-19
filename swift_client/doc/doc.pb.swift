@@ -182,6 +182,9 @@ nonisolated struct GloryApi_ListSchoolDocRequest: Sendable {
   /// 仅 doc_type=1：分类多选筛选(并集；元素 1.技工教育 2.职业教育，非法值 400；含 0 或空=全部；非空时优先于 doc_category)
   var docCategories: [Int32] = []
 
+  /// 仅 doc_type=1：按发布年份筛选(如 2025；不传/0=全部年份；非 1970~2100 返回 400)
+  var publishYear: Int32 = 0
+
   var pagination: Base_PaginationRequest {
     get {_pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
@@ -1485,7 +1488,7 @@ nonisolated extension GloryApi_SchoolDocItem: SwiftProtobuf.Message, SwiftProtob
 
 nonisolated extension GloryApi_ListSchoolDocRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListSchoolDocRequest"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}doc_type\0\u{1}level\0\u{1}province\0\u{1}city\0\u{1}major\0\u{1}grade\0\u{1}name\0\u{3}doc_category\0\u{3}doc_categories\0\u{2}Z\u{1}pagination\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{3}doc_type\0\u{1}level\0\u{1}province\0\u{1}city\0\u{1}major\0\u{1}grade\0\u{1}name\0\u{3}doc_category\0\u{3}doc_categories\0\u{3}publish_year\0\u{2}Y\u{1}pagination\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1503,6 +1506,7 @@ nonisolated extension GloryApi_ListSchoolDocRequest: SwiftProtobuf.Message, Swif
       case 8: try { try decoder.decodeSingularStringField(value: &self.name) }()
       case 9: try { try decoder.decodeSingularInt32Field(value: &self.docCategory) }()
       case 10: try { try decoder.decodeRepeatedInt32Field(value: &self.docCategories) }()
+      case 11: try { try decoder.decodeSingularInt32Field(value: &self.publishYear) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -1544,6 +1548,9 @@ nonisolated extension GloryApi_ListSchoolDocRequest: SwiftProtobuf.Message, Swif
     if !self.docCategories.isEmpty {
       try visitor.visitPackedInt32Field(value: self.docCategories, fieldNumber: 10)
     }
+    if self.publishYear != 0 {
+      try visitor.visitSingularInt32Field(value: self.publishYear, fieldNumber: 11)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -1561,6 +1568,7 @@ nonisolated extension GloryApi_ListSchoolDocRequest: SwiftProtobuf.Message, Swif
     if lhs.name != rhs.name {return false}
     if lhs.docCategory != rhs.docCategory {return false}
     if lhs.docCategories != rhs.docCategories {return false}
+    if lhs.publishYear != rhs.publishYear {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

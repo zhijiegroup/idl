@@ -182,6 +182,16 @@ public interface ListSchoolDocRequestOrBuilder extends
   int getDocCategories(int index);
 
   /**
+   * <pre>
+   * 仅 doc_type=1：按发布年份筛选(如 2025；不传/0=全部年份；非 1970~2100 返回 400)
+   * </pre>
+   *
+   * <code>int32 publish_year = 11;</code>
+   * @return The publishYear.
+   */
+  int getPublishYear();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

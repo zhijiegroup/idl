@@ -138,6 +138,11 @@ private static final long serialVersionUID = 0L;
             input.popLimit(limit);
             break;
           }
+          case 88: {
+
+            publishYear = input.readInt32();
+            break;
+          }
           case 802: {
             com.zhijiejiaoyu.base.PaginationRequest.Builder subBuilder = null;
             if (pagination != null) {
@@ -527,6 +532,21 @@ private static final long serialVersionUID = 0L;
   }
   private int docCategoriesMemoizedSerializedSize = -1;
 
+  public static final int PUBLISH_YEAR_FIELD_NUMBER = 11;
+  private int publishYear ;
+  /**
+   * <pre>
+   * 仅 doc_type=1：按发布年份筛选(如 2025；不传/0=全部年份；非 1970~2100 返回 400)
+   * </pre>
+   *
+   * <code>int32 publish_year = 11;</code>
+   * @return The publishYear.
+   */
+  @java.lang.Override
+  public int getPublishYear() {
+    return publishYear ;
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
   /**
@@ -602,6 +622,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < docCategories .size(); i++) {
       output.writeInt32NoTag(docCategories .getInt(i));
     }
+    if (publishYear != 0) {
+      output.writeInt32(11, publishYear );
+    }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
@@ -659,6 +682,10 @@ private static final long serialVersionUID = 0L;
       }
       docCategoriesMemoizedSerializedSize = dataSize;
     }
+    if (publishYear != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(11, publishYear );
+    }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(100, getPagination());
@@ -701,6 +728,8 @@ private static final long serialVersionUID = 0L;
         != other.getDocCategory()) return false;
     if (!getDocCategoriesList()
         .equals(other.getDocCategoriesList())) return false;
+    if (getPublishYear()
+        != other.getPublishYear()) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -741,6 +770,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + DOC_CATEGORIES_FIELD_NUMBER;
       hash = (53 * hash) + getDocCategoriesList().hashCode();
     }
+    hash = (37 * hash) + PUBLISH_YEAR_FIELD_NUMBER;
+    hash = (53 * hash) + getPublishYear();
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -906,6 +937,8 @@ private static final long serialVersionUID = 0L;
 
       docCategories = emptyIntList();
       bitField0 = (bitField0 & ~0x00000001);
+      publishYear = 0;
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -957,6 +990,7 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0 & ~0x00000001);
       }
       result.docCategories = docCategories ;
+      result.publishYear = publishYear ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -1051,6 +1085,9 @@ private static final long serialVersionUID = 0L;
           docCategories .addAll(other.docCategories );
         }
         onChanged();
+      }
+      if (other.getPublishYear() != 0) {
+        setPublishYear(other.getPublishYear());
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -1916,6 +1953,49 @@ private static final long serialVersionUID = 0L;
     public Builder clearDocCategories() {
       docCategories = emptyIntList();
       bitField0 = (bitField0 & ~0x00000001);
+      onChanged();
+      return this;
+    }
+
+    private int publishYear ;
+    /**
+     * <pre>
+     * 仅 doc_type=1：按发布年份筛选(如 2025；不传/0=全部年份；非 1970~2100 返回 400)
+     * </pre>
+     *
+     * <code>int32 publish_year = 11;</code>
+     * @return The publishYear.
+     */
+    @java.lang.Override
+    public int getPublishYear() {
+      return publishYear ;
+    }
+    /**
+     * <pre>
+     * 仅 doc_type=1：按发布年份筛选(如 2025；不传/0=全部年份；非 1970~2100 返回 400)
+     * </pre>
+     *
+     * <code>int32 publish_year = 11;</code>
+     * @param value The publishYear to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPublishYear(int value) {
+      
+      publishYear = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 仅 doc_type=1：按发布年份筛选(如 2025；不传/0=全部年份；非 1970~2100 返回 400)
+     * </pre>
+     *
+     * <code>int32 publish_year = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPublishYear() {
+      
+      publishYear = 0;
       onChanged();
       return this;
     }
