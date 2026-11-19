@@ -2530,6 +2530,165 @@ class ListMyDocResponse extends $pb.GeneratedMessage {
   $core.List<MyDocItem> get items => $_getList(1);
 }
 
+/// 我的文档全量文件列表(跨目录平铺：不区分文件夹层级，仅返回文件、不返回文件夹；支持文件名关键词检索)
+class ListAllMyDocRequest extends $pb.GeneratedMessage {
+  factory ListAllMyDocRequest({
+    $0.BaseRequest? baseRequest,
+    $core.String? name,
+    $0.PaginationRequest? pagination,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
+    }
+    return $result;
+  }
+  ListAllMyDocRequest._() : super();
+  factory ListAllMyDocRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListAllMyDocRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAllMyDocRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListAllMyDocRequest clone() => ListAllMyDocRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListAllMyDocRequest copyWith(void Function(ListAllMyDocRequest) updates) => super.copyWith((message) => updates(message as ListAllMyDocRequest)) as ListAllMyDocRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListAllMyDocRequest create() => ListAllMyDocRequest._();
+  ListAllMyDocRequest createEmptyInstance() => create();
+  static $pb.PbList<ListAllMyDocRequest> createRepeated() => $pb.PbList<ListAllMyDocRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListAllMyDocRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListAllMyDocRequest>(create);
+  static ListAllMyDocRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(100)
+  $0.PaginationRequest get pagination => $_getN(2);
+  @$pb.TagNumber(100)
+  set pagination($0.PaginationRequest v) { setField(100, v); }
+  @$pb.TagNumber(100)
+  $core.bool hasPagination() => $_has(2);
+  @$pb.TagNumber(100)
+  void clearPagination() => clearField(100);
+  @$pb.TagNumber(100)
+  $0.PaginationRequest ensurePagination() => $_ensure(2);
+}
+
+class ListAllMyDocResponse extends $pb.GeneratedMessage {
+  factory ListAllMyDocResponse({
+    $0.BaseResponse? baseResp,
+    $core.Iterable<MyDocItem>? items,
+    $0.PaginationResponse? pagination,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (items != null) {
+      $result.items.addAll(items);
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
+    }
+    return $result;
+  }
+  ListAllMyDocResponse._() : super();
+  factory ListAllMyDocResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListAllMyDocResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAllMyDocResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..pc<MyDocItem>(2, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: MyDocItem.create)
+    ..aOM<$0.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListAllMyDocResponse clone() => ListAllMyDocResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListAllMyDocResponse copyWith(void Function(ListAllMyDocResponse) updates) => super.copyWith((message) => updates(message as ListAllMyDocResponse)) as ListAllMyDocResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListAllMyDocResponse create() => ListAllMyDocResponse._();
+  ListAllMyDocResponse createEmptyInstance() => create();
+  static $pb.PbList<ListAllMyDocResponse> createRepeated() => $pb.PbList<ListAllMyDocResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListAllMyDocResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListAllMyDocResponse>(create);
+  static ListAllMyDocResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<MyDocItem> get items => $_getList(1);
+
+  @$pb.TagNumber(100)
+  $0.PaginationResponse get pagination => $_getN(2);
+  @$pb.TagNumber(100)
+  set pagination($0.PaginationResponse v) { setField(100, v); }
+  @$pb.TagNumber(100)
+  $core.bool hasPagination() => $_has(2);
+  @$pb.TagNumber(100)
+  void clearPagination() => clearField(100);
+  @$pb.TagNumber(100)
+  $0.PaginationResponse ensurePagination() => $_ensure(2);
+}
+
 /// 移出收藏文档(等价于取消源文档收藏，原页面星标同步取消)
 class MoveOutMyDocRequest extends $pb.GeneratedMessage {
   factory MoveOutMyDocRequest({

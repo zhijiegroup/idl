@@ -442,6 +442,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$51.DeleteMyDocFolderResponse> deleteMyDocFolder($pb.ServerContext ctx, $51.DeleteMyDocFolderRequest request);
   $async.Future<$51.ListMyDocFolderResponse> listMyDocFolder($pb.ServerContext ctx, $51.ListMyDocFolderRequest request);
   $async.Future<$51.ListMyDocResponse> listMyDoc($pb.ServerContext ctx, $51.ListMyDocRequest request);
+  $async.Future<$51.ListAllMyDocResponse> listAllMyDoc($pb.ServerContext ctx, $51.ListAllMyDocRequest request);
   $async.Future<$51.MoveOutMyDocResponse> moveOutMyDoc($pb.ServerContext ctx, $51.MoveOutMyDocRequest request);
   $async.Future<$51.DeleteMyDocResponse> deleteMyDoc($pb.ServerContext ctx, $51.DeleteMyDocRequest request);
   $async.Future<$51.DownloadMyDocResponse> downloadMyDoc($pb.ServerContext ctx, $51.DownloadMyDocRequest request);
@@ -930,6 +931,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'DeleteMyDocFolder': return $51.DeleteMyDocFolderRequest();
       case 'ListMyDocFolder': return $51.ListMyDocFolderRequest();
       case 'ListMyDoc': return $51.ListMyDocRequest();
+      case 'ListAllMyDoc': return $51.ListAllMyDocRequest();
       case 'MoveOutMyDoc': return $51.MoveOutMyDocRequest();
       case 'DeleteMyDoc': return $51.DeleteMyDocRequest();
       case 'DownloadMyDoc': return $51.DownloadMyDocRequest();
@@ -1421,6 +1423,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'DeleteMyDocFolder': return this.deleteMyDocFolder(ctx, request as $51.DeleteMyDocFolderRequest);
       case 'ListMyDocFolder': return this.listMyDocFolder(ctx, request as $51.ListMyDocFolderRequest);
       case 'ListMyDoc': return this.listMyDoc(ctx, request as $51.ListMyDocRequest);
+      case 'ListAllMyDoc': return this.listAllMyDoc(ctx, request as $51.ListAllMyDocRequest);
       case 'MoveOutMyDoc': return this.moveOutMyDoc(ctx, request as $51.MoveOutMyDocRequest);
       case 'DeleteMyDoc': return this.deleteMyDoc(ctx, request as $51.DeleteMyDocRequest);
       case 'DownloadMyDoc': return this.downloadMyDoc(ctx, request as $51.DownloadMyDocRequest);

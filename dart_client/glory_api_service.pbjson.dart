@@ -450,6 +450,7 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'DeleteMyDocFolder', '2': '.glory_api.DeleteMyDocFolderRequest', '3': '.glory_api.DeleteMyDocFolderResponse', '4': {}},
     {'1': 'ListMyDocFolder', '2': '.glory_api.ListMyDocFolderRequest', '3': '.glory_api.ListMyDocFolderResponse', '4': {}},
     {'1': 'ListMyDoc', '2': '.glory_api.ListMyDocRequest', '3': '.glory_api.ListMyDocResponse', '4': {}},
+    {'1': 'ListAllMyDoc', '2': '.glory_api.ListAllMyDocRequest', '3': '.glory_api.ListAllMyDocResponse', '4': {}},
     {'1': 'MoveOutMyDoc', '2': '.glory_api.MoveOutMyDocRequest', '3': '.glory_api.MoveOutMyDocResponse', '4': {}},
     {'1': 'DeleteMyDoc', '2': '.glory_api.DeleteMyDocRequest', '3': '.glory_api.DeleteMyDocResponse', '4': {}},
     {'1': 'DownloadMyDoc', '2': '.glory_api.DownloadMyDocRequest', '3': '.glory_api.DownloadMyDocResponse', '4': {}},
@@ -1497,6 +1498,8 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.MyDocItem': $51.MyDocItem$json,
   '.glory_api.ListMyDocRequest': $51.ListMyDocRequest$json,
   '.glory_api.ListMyDocResponse': $51.ListMyDocResponse$json,
+  '.glory_api.ListAllMyDocRequest': $51.ListAllMyDocRequest$json,
+  '.glory_api.ListAllMyDocResponse': $51.ListAllMyDocResponse$json,
   '.glory_api.MoveOutMyDocRequest': $51.MoveOutMyDocRequest$json,
   '.glory_api.MoveOutMyDocResponse': $51.MoveOutMyDocResponse$json,
   '.glory_api.DeleteMyDocRequest': $51.DeleteMyDocRequest$json,
@@ -2619,7 +2622,9 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     'cnlfYXBpLkxpc3RNeURvY0ZvbGRlclJlcXVlc3QaIi5nbG9yeV9hcGkuTGlzdE15RG9jRm9sZG'
     'VyUmVzcG9uc2UiH8rBGBsvYXBpL2RvYy9saXN0X215X2RvY19mb2xkZXISYAoJTGlzdE15RG9j'
     'EhsuZ2xvcnlfYXBpLkxpc3RNeURvY1JlcXVlc3QaHC5nbG9yeV9hcGkuTGlzdE15RG9jUmVzcG'
-    '9uc2UiGNLBGBQvYXBpL2RvYy9saXN0X215X2RvYxJtCgxNb3ZlT3V0TXlEb2MSHi5nbG9yeV9h'
+    '9uc2UiGNLBGBQvYXBpL2RvYy9saXN0X215X2RvYxJtCgxMaXN0QWxsTXlEb2MSHi5nbG9yeV9h'
+    'cGkuTGlzdEFsbE15RG9jUmVxdWVzdBofLmdsb3J5X2FwaS5MaXN0QWxsTXlEb2NSZXNwb25zZS'
+    'Ic0sEYGC9hcGkvZG9jL2xpc3RfYWxsX215X2RvYxJtCgxNb3ZlT3V0TXlEb2MSHi5nbG9yeV9h'
     'cGkuTW92ZU91dE15RG9jUmVxdWVzdBofLmdsb3J5X2FwaS5Nb3ZlT3V0TXlEb2NSZXNwb25zZS'
     'Ic0sEYGC9hcGkvZG9jL21vdmVfb3V0X215X2RvYxJoCgtEZWxldGVNeURvYxIdLmdsb3J5X2Fw'
     'aS5EZWxldGVNeURvY1JlcXVlc3QaHi5nbG9yeV9hcGkuRGVsZXRlTXlEb2NSZXNwb25zZSIa0s'

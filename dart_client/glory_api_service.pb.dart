@@ -1155,6 +1155,9 @@ class glory_apiApi {
   $async.Future<$51.ListMyDocResponse> listMyDoc($pb.ClientContext? ctx, $51.ListMyDocRequest request) =>
     _client.invoke<$51.ListMyDocResponse>(ctx, 'glory_api', 'ListMyDoc', request, $51.ListMyDocResponse())
   ;
+  $async.Future<$51.ListAllMyDocResponse> listAllMyDoc($pb.ClientContext? ctx, $51.ListAllMyDocRequest request) =>
+    _client.invoke<$51.ListAllMyDocResponse>(ctx, 'glory_api', 'ListAllMyDoc', request, $51.ListAllMyDocResponse())
+  ;
   $async.Future<$51.MoveOutMyDocResponse> moveOutMyDoc($pb.ClientContext? ctx, $51.MoveOutMyDocRequest request) =>
     _client.invoke<$51.MoveOutMyDocResponse>(ctx, 'glory_api', 'MoveOutMyDoc', request, $51.MoveOutMyDocResponse())
   ;

@@ -1659,6 +1659,11 @@ CreateLivePlanProduct create live plan product */
   /** 我的文档当前目录列表 */
   ListMyDoc(request: doc.ListMyDocRequest): Promise<doc.ListMyDocResponse>;
 
+  /** 我的文档全量文件列表(跨目录平铺 + 文件名关键词) */
+  ListAllMyDoc(
+    request: doc.ListAllMyDocRequest
+  ): Promise<doc.ListAllMyDocResponse>;
+
   /** 移出收藏文档 */
   MoveOutMyDoc(
     request: doc.MoveOutMyDocRequest

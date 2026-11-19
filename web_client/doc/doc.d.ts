@@ -292,6 +292,22 @@ export interface ListMyDocResponse {
   items?: Array<MyDocItem>;
 }
 
+/** 我的文档全量文件列表(跨目录平铺：不区分文件夹层级，仅返回文件、不返回文件夹；支持文件名关键词检索) */
+export interface ListAllMyDocRequest {
+  base_request?: base.BaseRequest;
+  /** 文件名关键词(模糊匹配；空=全部文件) */
+  name?: string;
+  /** 分页；size 上限 100，默认 20 */
+  pagination?: base.PaginationRequest;
+}
+
+export interface ListAllMyDocResponse {
+  base_resp?: base.BaseResponse;
+  /** 文件条目(type 恒为 2)，按创建时间倒序 */
+  items?: Array<MyDocItem>;
+  pagination?: base.PaginationResponse;
+}
+
 /** 移出收藏文档(等价于取消源文档收藏，原页面星标同步取消) */
 export interface MoveOutMyDocRequest {
   base_request?: base.BaseRequest;

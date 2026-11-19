@@ -2898,6 +2898,14 @@ export class glory_api {
     );
   }
 
+  ListAllMyDoc(request) {
+    const uri = `${this.uriPrefix}/api/doc/list_all_my_doc`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   MoveOutMyDoc(request) {
     const uri = `${this.uriPrefix}/api/doc/move_out_my_doc`;
     const body = JSONbigint.stringify(request);

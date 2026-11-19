@@ -461,6 +461,39 @@ final $typed_data.Uint8List listMyDocResponseDescriptor = $convert.base64Decode(
     '5zZVIIYmFzZVJlc3ASKgoFaXRlbXMYAiADKAsyFC5nbG9yeV9hcGkuTXlEb2NJdGVtUgVpdGVt'
     'cw==');
 
+@$core.Deprecated('Use listAllMyDocRequestDescriptor instead')
+const ListAllMyDocRequest$json = {
+  '1': 'ListAllMyDocRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `ListAllMyDocRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listAllMyDocRequestDescriptor = $convert.base64Decode(
+    'ChNMaXN0QWxsTXlEb2NSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2UuQmFzZV'
+    'JlcXVlc3RSC2Jhc2VSZXF1ZXN0EhIKBG5hbWUYAiABKAlSBG5hbWUSNwoKcGFnaW5hdGlvbhhk'
+    'IAEoCzIXLmJhc2UuUGFnaW5hdGlvblJlcXVlc3RSCnBhZ2luYXRpb24=');
+
+@$core.Deprecated('Use listAllMyDocResponseDescriptor instead')
+const ListAllMyDocResponse$json = {
+  '1': 'ListAllMyDocResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'items', '3': 2, '4': 3, '5': 11, '6': '.glory_api.MyDocItem', '10': 'items'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationResponse', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `ListAllMyDocResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listAllMyDocResponseDescriptor = $convert.base64Decode(
+    'ChRMaXN0QWxsTXlEb2NSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLkJhc2VSZX'
+    'Nwb25zZVIIYmFzZVJlc3ASKgoFaXRlbXMYAiADKAsyFC5nbG9yeV9hcGkuTXlEb2NJdGVtUgVp'
+    'dGVtcxI4CgpwYWdpbmF0aW9uGGQgASgLMhguYmFzZS5QYWdpbmF0aW9uUmVzcG9uc2VSCnBhZ2'
+    'luYXRpb24=');
+
 @$core.Deprecated('Use moveOutMyDocRequestDescriptor instead')
 const MoveOutMyDocRequest$json = {
   '1': 'MoveOutMyDocRequest',
