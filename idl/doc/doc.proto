@@ -212,6 +212,19 @@ message ListMyDocResponse {
   repeated MyDocItem items = 2;
 }
 
+// 我的文档全量文件列表(跨目录平铺：不区分文件夹层级，仅返回文件、不返回文件夹；支持文件名关键词检索)
+message ListAllMyDocRequest {
+  base.BaseRequest base_request = 1;
+  string name = 2; // 文件名关键词(模糊匹配；空=全部文件)
+  base.PaginationRequest pagination = 100; // 分页；size 上限 100，默认 20
+}
+
+message ListAllMyDocResponse {
+  base.BaseResponse base_resp = 1;
+  repeated MyDocItem items = 2; // 文件条目(type 恒为 2)，按创建时间倒序
+  base.PaginationResponse pagination = 100;
+}
+
 // 移出收藏文档(等价于取消源文档收藏，原页面星标同步取消)
 message MoveOutMyDocRequest {
   base.BaseRequest base_request = 1;
