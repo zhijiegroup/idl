@@ -1471,6 +1471,10 @@ service glory_api {
   rpc MoveOutMyDoc(MoveOutMyDocRequest) returns (MoveOutMyDocResponse) {
     option (api.post) = '/api/doc/move_out_my_doc';
   }
+  // 置顶 / 取消置顶我的文档文件
+  rpc UpdateMyDocPinned(UpdateMyDocPinnedRequest) returns (UpdateMyDocPinnedResponse) {
+    option (api.post) = '/api/doc/update_my_doc_pinned';
+  }
   // 删除自上传文件
   rpc DeleteMyDoc(DeleteMyDocRequest) returns (DeleteMyDocResponse) {
     option (api.post) = '/api/doc/delete_my_doc';

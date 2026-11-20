@@ -152,6 +152,7 @@ message MyDocItem {
   string created_at = 8; // 时间
   int64 ref_id = 9; // 文件夹→folder_id；收藏→doc_id；上传→自身 id
   string jump_url = 10; // 收藏来源跳回原页面地址
+  bool is_pinned = 11; // 是否置顶（仅文件生效，v2.20）；文件夹恒 false
 }
 
 // 新建文件夹(同级不可重名、不可为空)
@@ -209,7 +210,7 @@ message ListMyDocRequest {
 
 message ListMyDocResponse {
   base.BaseResponse base_resp = 1;
-  repeated MyDocItem items = 2;
+  repeated MyDocItem items = 2; // 文件夹在前（创建时间倒序）→ 文件（置顶优先，置顶组内与其余均按创建时间倒序）
 }
 
 // 我的文档全量文件列表(跨目录平铺：仅本地上传文件，不返回文件夹、不含收藏；支持文件名关键词检索)
@@ -221,8 +222,19 @@ message ListAllMyDocRequest {
 
 message ListAllMyDocResponse {
   base.BaseResponse base_resp = 1;
-  repeated MyDocItem items = 2; // 文件条目(type 恒为 2)，按创建时间倒序
+  repeated MyDocItem items = 2; // 文件条目(type 恒为 2)，置顶优先，置顶组内与其余均按创建时间倒序
   base.PaginationResponse pagination = 100;
+}
+
+// 置顶 / 取消置顶我的文档文件(仅本地上传文件；文件夹不支持置顶)
+message UpdateMyDocPinnedRequest {
+  base.BaseRequest base_request = 1;
+  int64 doc_id = 2; // 文件条目ID(source=3)
+  bool pinned = 3; // true=置顶；false=取消置顶
+}
+
+message UpdateMyDocPinnedResponse {
+  base.BaseResponse base_resp = 1;
 }
 
 // 移出收藏文档(等价于取消源文档收藏，原页面星标同步取消)
