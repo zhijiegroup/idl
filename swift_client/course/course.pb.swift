@@ -180,6 +180,12 @@ nonisolated struct GloryApi_Course: @unchecked Sendable {
     set {_uniqueStorage()._courseAttribute = newValue}
   }
 
+  /// 当前登录用户是否已加入该课程（user_course 存在未删除记录）；list_course 列表按登录用户回填，未登录或其他接口默认 false
+  var isJoined: Bool {
+    get {_storage._isJoined}
+    set {_uniqueStorage()._isJoined = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -902,7 +908,7 @@ nonisolated extension GloryApi_Occupation: SwiftProtobuf.Message, SwiftProtobuf.
 
 nonisolated extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Course"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}course_id\0\u{3}course_name\0\u{3}course_organization\0\u{3}course_teacher_name\0\u{3}knowledge_hours\0\u{3}skill_hours\0\u{3}course_description\0\u{3}course_occupation\0\u{3}course_cover_path\0\u{3}course_cover_url\0\u{3}course_classification\0\u{3}course_level\0\u{3}course_major\0\u{3}course_industry\0\u{3}course_type\0\u{3}course_module\0\u{3}course_modules\0\u{3}created_at\0\u{1}assigned\0\u{1}language\0\u{3}major_category\0\u{3}course_attribute\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}course_id\0\u{3}course_name\0\u{3}course_organization\0\u{3}course_teacher_name\0\u{3}knowledge_hours\0\u{3}skill_hours\0\u{3}course_description\0\u{3}course_occupation\0\u{3}course_cover_path\0\u{3}course_cover_url\0\u{3}course_classification\0\u{3}course_level\0\u{3}course_major\0\u{3}course_industry\0\u{3}course_type\0\u{3}course_module\0\u{3}course_modules\0\u{3}created_at\0\u{1}assigned\0\u{1}language\0\u{3}major_category\0\u{3}course_attribute\0\u{3}is_joined\0")
 
   fileprivate class _StorageClass {
     var _courseID: Int64 = 0
@@ -927,6 +933,7 @@ nonisolated extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._Mes
     var _language: String = String()
     var _majorCategory: Int32 = 0
     var _courseAttribute: Int32 = 0
+    var _isJoined: Bool = false
 
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
@@ -959,6 +966,7 @@ nonisolated extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._Mes
       _language = source._language
       _majorCategory = source._majorCategory
       _courseAttribute = source._courseAttribute
+      _isJoined = source._isJoined
     }
   }
 
@@ -999,6 +1007,7 @@ nonisolated extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._Mes
         case 20: try { try decoder.decodeSingularStringField(value: &_storage._language) }()
         case 21: try { try decoder.decodeSingularInt32Field(value: &_storage._majorCategory) }()
         case 22: try { try decoder.decodeSingularInt32Field(value: &_storage._courseAttribute) }()
+        case 23: try { try decoder.decodeSingularBoolField(value: &_storage._isJoined) }()
         default: break
         }
       }
@@ -1073,6 +1082,9 @@ nonisolated extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._Mes
       if _storage._courseAttribute != 0 {
         try visitor.visitSingularInt32Field(value: _storage._courseAttribute, fieldNumber: 22)
       }
+      if _storage._isJoined != false {
+        try visitor.visitSingularBoolField(value: _storage._isJoined, fieldNumber: 23)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1104,6 +1116,7 @@ nonisolated extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._Mes
         if _storage._language != rhs_storage._language {return false}
         if _storage._majorCategory != rhs_storage._majorCategory {return false}
         if _storage._courseAttribute != rhs_storage._courseAttribute {return false}
+        if _storage._isJoined != rhs_storage._isJoined {return false}
         return true
       }
       if !storagesAreEqual {return false}

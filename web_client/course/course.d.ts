@@ -57,6 +57,8 @@ export interface Course {
   major_category?: number;
   /** 课程属性：0.未设置(其它)；1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；8.职场提升课（6.选修课程/7.实习实训课已废弃，存量迁移为0） */
   course_attribute?: number;
+  /** 当前登录用户是否已加入该课程（user_course 存在未删除记录）；list_course 列表按登录用户回填，未登录或其他接口默认 false */
+  is_joined?: boolean;
 }
 
 /** 创建模块化课程 */

@@ -137,6 +137,7 @@ class Course extends $pb.GeneratedMessage {
     $core.String? language,
     $core.int? majorCategory,
     $core.int? courseAttribute,
+    $core.bool? isJoined,
   }) {
     final $result = create();
     if (courseId != null) {
@@ -205,6 +206,9 @@ class Course extends $pb.GeneratedMessage {
     if (courseAttribute != null) {
       $result.courseAttribute = courseAttribute;
     }
+    if (isJoined != null) {
+      $result.isJoined = isJoined;
+    }
     return $result;
   }
   Course._() : super();
@@ -234,6 +238,7 @@ class Course extends $pb.GeneratedMessage {
     ..aOS(20, _omitFieldNames ? '' : 'language')
     ..a<$core.int>(21, _omitFieldNames ? '' : 'majorCategory', $pb.PbFieldType.O3)
     ..a<$core.int>(22, _omitFieldNames ? '' : 'courseAttribute', $pb.PbFieldType.O3)
+    ..aOB(23, _omitFieldNames ? '' : 'isJoined')
     ..hasRequiredFields = false
   ;
 
@@ -443,6 +448,15 @@ class Course extends $pb.GeneratedMessage {
   $core.bool hasCourseAttribute() => $_has(21);
   @$pb.TagNumber(22)
   void clearCourseAttribute() => clearField(22);
+
+  @$pb.TagNumber(23)
+  $core.bool get isJoined => $_getBF(22);
+  @$pb.TagNumber(23)
+  set isJoined($core.bool v) { $_setBool(22, v); }
+  @$pb.TagNumber(23)
+  $core.bool hasIsJoined() => $_has(22);
+  @$pb.TagNumber(23)
+  void clearIsJoined() => clearField(23);
 }
 
 /// 创建模块化课程

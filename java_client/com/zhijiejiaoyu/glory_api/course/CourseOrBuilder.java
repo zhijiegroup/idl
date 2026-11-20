@@ -390,4 +390,14 @@ public interface CourseOrBuilder extends
    * @return The courseAttribute.
    */
   int getCourseAttribute();
+
+  /**
+   * <pre>
+   * 当前登录用户是否已加入该课程（user_course 存在未删除记录）；list_course 列表按登录用户回填，未登录或其他接口默认 false
+   * </pre>
+   *
+   * <code>bool is_joined = 23;</code>
+   * @return The isJoined.
+   */
+  boolean getIsJoined();
 }

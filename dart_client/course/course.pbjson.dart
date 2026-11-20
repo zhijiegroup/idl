@@ -62,6 +62,7 @@ const Course$json = {
     {'1': 'language', '3': 20, '4': 1, '5': 9, '10': 'language'},
     {'1': 'major_category', '3': 21, '4': 1, '5': 5, '10': 'majorCategory'},
     {'1': 'course_attribute', '3': 22, '4': 1, '5': 5, '10': 'courseAttribute'},
+    {'1': 'is_joined', '3': 23, '4': 1, '5': 8, '10': 'isJoined'},
   ],
 };
 
@@ -83,7 +84,7 @@ final $typed_data.Uint8List courseDescriptor = $convert.base64Decode(
     'R1bGVSDWNvdXJzZU1vZHVsZXMSHQoKY3JlYXRlZF9hdBgSIAEoCVIJY3JlYXRlZEF0EhoKCGFz'
     'c2lnbmVkGBMgASgIUghhc3NpZ25lZBIaCghsYW5ndWFnZRgUIAEoCVIIbGFuZ3VhZ2USJQoObW'
     'Fqb3JfY2F0ZWdvcnkYFSABKAVSDW1ham9yQ2F0ZWdvcnkSKQoQY291cnNlX2F0dHJpYnV0ZRgW'
-    'IAEoBVIPY291cnNlQXR0cmlidXRl');
+    'IAEoBVIPY291cnNlQXR0cmlidXRlEhsKCWlzX2pvaW5lZBgXIAEoCFIIaXNKb2luZWQ=');
 
 @$core.Deprecated('Use createCourseRequestDescriptor instead')
 const CreateCourseRequest$json = {

@@ -189,6 +189,11 @@ private static final long serialVersionUID = 0L;
             courseAttribute = input.readInt32();
             break;
           }
+          case 184: {
+
+            isJoined = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -953,6 +958,21 @@ private static final long serialVersionUID = 0L;
     return courseAttribute ;
   }
 
+  public static final int IS_JOINED_FIELD_NUMBER = 23;
+  private boolean isJoined ;
+  /**
+   * <pre>
+   * 当前登录用户是否已加入该课程（user_course 存在未删除记录）；list_course 列表按登录用户回填，未登录或其他接口默认 false
+   * </pre>
+   *
+   * <code>bool is_joined = 23;</code>
+   * @return The isJoined.
+   */
+  @java.lang.Override
+  public boolean getIsJoined() {
+    return isJoined ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1032,6 +1052,9 @@ private static final long serialVersionUID = 0L;
     }
     if (courseAttribute != 0) {
       output.writeInt32(22, courseAttribute );
+    }
+    if (isJoined != false) {
+      output.writeBool(23, isJoined );
     }
     unknownFields.writeTo(output);
   }
@@ -1120,6 +1143,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(22, courseAttribute );
     }
+    if (isJoined != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(23, isJoined );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1181,6 +1208,8 @@ private static final long serialVersionUID = 0L;
         != other.getMajorCategory()) return false;
     if (getCourseAttribute()
         != other.getCourseAttribute()) return false;
+    if (getIsJoined()
+        != other.getIsJoined()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1244,6 +1273,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getMajorCategory();
     hash = (37 * hash) + COURSE_ATTRIBUTE_FIELD_NUMBER;
     hash = (53 * hash) + getCourseAttribute();
+    hash = (37 * hash) + IS_JOINED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsJoined());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1431,6 +1463,8 @@ private static final long serialVersionUID = 0L;
 
       courseAttribute = 0;
 
+      isJoined = false;
+
       return this;
     }
 
@@ -1496,6 +1530,7 @@ private static final long serialVersionUID = 0L;
       result.language = language ;
       result.majorCategory = majorCategory ;
       result.courseAttribute = courseAttribute ;
+      result.isJoined = isJoined ;
       onBuilt();
       return result;
     }
@@ -1665,6 +1700,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getCourseAttribute() != 0) {
         setCourseAttribute(other.getCourseAttribute());
+      }
+      if (other.getIsJoined() != false) {
+        setIsJoined(other.getIsJoined());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3694,6 +3732,49 @@ private static final long serialVersionUID = 0L;
     public Builder clearCourseAttribute() {
       
       courseAttribute = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean isJoined ;
+    /**
+     * <pre>
+     * 当前登录用户是否已加入该课程（user_course 存在未删除记录）；list_course 列表按登录用户回填，未登录或其他接口默认 false
+     * </pre>
+     *
+     * <code>bool is_joined = 23;</code>
+     * @return The isJoined.
+     */
+    @java.lang.Override
+    public boolean getIsJoined() {
+      return isJoined ;
+    }
+    /**
+     * <pre>
+     * 当前登录用户是否已加入该课程（user_course 存在未删除记录）；list_course 列表按登录用户回填，未登录或其他接口默认 false
+     * </pre>
+     *
+     * <code>bool is_joined = 23;</code>
+     * @param value The isJoined to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsJoined(boolean value) {
+      
+      isJoined = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 当前登录用户是否已加入该课程（user_course 存在未删除记录）；list_course 列表按登录用户回填，未登录或其他接口默认 false
+     * </pre>
+     *
+     * <code>bool is_joined = 23;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsJoined() {
+      
+      isJoined = false;
       onChanged();
       return this;
     }
