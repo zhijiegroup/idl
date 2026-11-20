@@ -301,6 +301,7 @@ const MyDocItem$json = {
     {'1': 'created_at', '3': 8, '4': 1, '5': 9, '10': 'createdAt'},
     {'1': 'ref_id', '3': 9, '4': 1, '5': 3, '10': 'refId'},
     {'1': 'jump_url', '3': 10, '4': 1, '5': 9, '10': 'jumpUrl'},
+    {'1': 'is_pinned', '3': 11, '4': 1, '5': 8, '10': 'isPinned'},
   ],
 };
 
@@ -310,7 +311,8 @@ final $typed_data.Uint8List myDocItemDescriptor = $convert.base64Decode(
     'gDIAEoCVIEbmFtZRIWCgZzb3VyY2UYBCABKAVSBnNvdXJjZRIhCgxzb3VyY2VfbGFiZWwYBSAB'
     'KAlSC3NvdXJjZUxhYmVsEhsKCWZpbGVfc2l6ZRgGIAEoA1IIZmlsZVNpemUSGwoJZmlsZV90eX'
     'BlGAcgASgJUghmaWxlVHlwZRIdCgpjcmVhdGVkX2F0GAggASgJUgljcmVhdGVkQXQSFQoGcmVm'
-    'X2lkGAkgASgDUgVyZWZJZBIZCghqdW1wX3VybBgKIAEoCVIHanVtcFVybA==');
+    'X2lkGAkgASgDUgVyZWZJZBIZCghqdW1wX3VybBgKIAEoCVIHanVtcFVybBIbCglpc19waW5uZW'
+    'QYCyABKAhSCGlzUGlubmVk');
 
 @$core.Deprecated('Use createMyDocFolderRequestDescriptor instead')
 const CreateMyDocFolderRequest$json = {
@@ -493,6 +495,35 @@ final $typed_data.Uint8List listAllMyDocResponseDescriptor = $convert.base64Deco
     'Nwb25zZVIIYmFzZVJlc3ASKgoFaXRlbXMYAiADKAsyFC5nbG9yeV9hcGkuTXlEb2NJdGVtUgVp'
     'dGVtcxI4CgpwYWdpbmF0aW9uGGQgASgLMhguYmFzZS5QYWdpbmF0aW9uUmVzcG9uc2VSCnBhZ2'
     'luYXRpb24=');
+
+@$core.Deprecated('Use updateMyDocPinnedRequestDescriptor instead')
+const UpdateMyDocPinnedRequest$json = {
+  '1': 'UpdateMyDocPinnedRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'doc_id', '3': 2, '4': 1, '5': 3, '10': 'docId'},
+    {'1': 'pinned', '3': 3, '4': 1, '5': 8, '10': 'pinned'},
+  ],
+};
+
+/// Descriptor for `UpdateMyDocPinnedRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateMyDocPinnedRequestDescriptor = $convert.base64Decode(
+    'ChhVcGRhdGVNeURvY1Bpbm5lZFJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS'
+    '5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSFQoGZG9jX2lkGAIgASgDUgVkb2NJZBIWCgZwaW5u'
+    'ZWQYAyABKAhSBnBpbm5lZA==');
+
+@$core.Deprecated('Use updateMyDocPinnedResponseDescriptor instead')
+const UpdateMyDocPinnedResponse$json = {
+  '1': 'UpdateMyDocPinnedResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `UpdateMyDocPinnedResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateMyDocPinnedResponseDescriptor = $convert.base64Decode(
+    'ChlVcGRhdGVNeURvY1Bpbm5lZFJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQm'
+    'FzZVJlc3BvbnNlUghiYXNlUmVzcA==');
 
 @$core.Deprecated('Use moveOutMyDocRequestDescriptor instead')
 const MoveOutMyDocRequest$json = {

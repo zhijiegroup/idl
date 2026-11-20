@@ -150,7 +150,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.zhijiejiaoyu.glory_api.doc.MyDocItem> items ;
   /**
    * <pre>
-   * 文件条目(type 恒为 2)，按创建时间倒序
+   * 文件条目(type 恒为 2)，置顶优先，置顶组内与其余均按创建时间倒序
    * </pre>
    *
    * <code>repeated .glory_api.MyDocItem items = 2;</code>
@@ -161,7 +161,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 文件条目(type 恒为 2)，按创建时间倒序
+   * 文件条目(type 恒为 2)，置顶优先，置顶组内与其余均按创建时间倒序
    * </pre>
    *
    * <code>repeated .glory_api.MyDocItem items = 2;</code>
@@ -173,7 +173,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 文件条目(type 恒为 2)，按创建时间倒序
+   * 文件条目(type 恒为 2)，置顶优先，置顶组内与其余均按创建时间倒序
    * </pre>
    *
    * <code>repeated .glory_api.MyDocItem items = 2;</code>
@@ -184,7 +184,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 文件条目(type 恒为 2)，按创建时间倒序
+   * 文件条目(type 恒为 2)，置顶优先，置顶组内与其余均按创建时间倒序
    * </pre>
    *
    * <code>repeated .glory_api.MyDocItem items = 2;</code>
@@ -195,7 +195,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 文件条目(type 恒为 2)，按创建时间倒序
+   * 文件条目(type 恒为 2)，置顶优先，置顶组内与其余均按创建时间倒序
    * </pre>
    *
    * <code>repeated .glory_api.MyDocItem items = 2;</code>
@@ -767,7 +767,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * 文件条目(type 恒为 2)，按创建时间倒序
+     * 文件条目(type 恒为 2)，置顶优先，置顶组内与其余均按创建时间倒序
      * </pre>
      *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
@@ -781,7 +781,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 文件条目(type 恒为 2)，按创建时间倒序
+     * 文件条目(type 恒为 2)，置顶优先，置顶组内与其余均按创建时间倒序
      * </pre>
      *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
@@ -795,7 +795,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 文件条目(type 恒为 2)，按创建时间倒序
+     * 文件条目(type 恒为 2)，置顶优先，置顶组内与其余均按创建时间倒序
      * </pre>
      *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
@@ -809,7 +809,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 文件条目(type 恒为 2)，按创建时间倒序
+     * 文件条目(type 恒为 2)，置顶优先，置顶组内与其余均按创建时间倒序
      * </pre>
      *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
@@ -830,7 +830,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 文件条目(type 恒为 2)，按创建时间倒序
+     * 文件条目(type 恒为 2)，置顶优先，置顶组内与其余均按创建时间倒序
      * </pre>
      *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
@@ -848,7 +848,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 文件条目(type 恒为 2)，按创建时间倒序
+     * 文件条目(type 恒为 2)，置顶优先，置顶组内与其余均按创建时间倒序
      * </pre>
      *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
@@ -868,7 +868,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 文件条目(type 恒为 2)，按创建时间倒序
+     * 文件条目(type 恒为 2)，置顶优先，置顶组内与其余均按创建时间倒序
      * </pre>
      *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
@@ -889,7 +889,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 文件条目(type 恒为 2)，按创建时间倒序
+     * 文件条目(type 恒为 2)，置顶优先，置顶组内与其余均按创建时间倒序
      * </pre>
      *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
@@ -907,7 +907,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 文件条目(type 恒为 2)，按创建时间倒序
+     * 文件条目(type 恒为 2)，置顶优先，置顶组内与其余均按创建时间倒序
      * </pre>
      *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
@@ -925,7 +925,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 文件条目(type 恒为 2)，按创建时间倒序
+     * 文件条目(type 恒为 2)，置顶优先，置顶组内与其余均按创建时间倒序
      * </pre>
      *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
@@ -944,7 +944,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 文件条目(type 恒为 2)，按创建时间倒序
+     * 文件条目(type 恒为 2)，置顶优先，置顶组内与其余均按创建时间倒序
      * </pre>
      *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
@@ -961,7 +961,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 文件条目(type 恒为 2)，按创建时间倒序
+     * 文件条目(type 恒为 2)，置顶优先，置顶组内与其余均按创建时间倒序
      * </pre>
      *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
@@ -978,7 +978,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 文件条目(type 恒为 2)，按创建时间倒序
+     * 文件条目(type 恒为 2)，置顶优先，置顶组内与其余均按创建时间倒序
      * </pre>
      *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
@@ -989,7 +989,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 文件条目(type 恒为 2)，按创建时间倒序
+     * 文件条目(type 恒为 2)，置顶优先，置顶组内与其余均按创建时间倒序
      * </pre>
      *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
@@ -1003,7 +1003,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 文件条目(type 恒为 2)，按创建时间倒序
+     * 文件条目(type 恒为 2)，置顶优先，置顶组内与其余均按创建时间倒序
      * </pre>
      *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
@@ -1018,7 +1018,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 文件条目(type 恒为 2)，按创建时间倒序
+     * 文件条目(type 恒为 2)，置顶优先，置顶组内与其余均按创建时间倒序
      * </pre>
      *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
@@ -1029,7 +1029,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 文件条目(type 恒为 2)，按创建时间倒序
+     * 文件条目(type 恒为 2)，置顶优先，置顶组内与其余均按创建时间倒序
      * </pre>
      *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
@@ -1041,7 +1041,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 文件条目(type 恒为 2)，按创建时间倒序
+     * 文件条目(type 恒为 2)，置顶优先，置顶组内与其余均按创建时间倒序
      * </pre>
      *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>

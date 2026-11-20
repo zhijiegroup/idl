@@ -1669,6 +1669,7 @@ class MyDocItem extends $pb.GeneratedMessage {
     $core.String? createdAt,
     $fixnum.Int64? refId,
     $core.String? jumpUrl,
+    $core.bool? isPinned,
   }) {
     final $result = create();
     if (id != null) {
@@ -1701,6 +1702,9 @@ class MyDocItem extends $pb.GeneratedMessage {
     if (jumpUrl != null) {
       $result.jumpUrl = jumpUrl;
     }
+    if (isPinned != null) {
+      $result.isPinned = isPinned;
+    }
     return $result;
   }
   MyDocItem._() : super();
@@ -1718,6 +1722,7 @@ class MyDocItem extends $pb.GeneratedMessage {
     ..aOS(8, _omitFieldNames ? '' : 'createdAt')
     ..aInt64(9, _omitFieldNames ? '' : 'refId')
     ..aOS(10, _omitFieldNames ? '' : 'jumpUrl')
+    ..aOB(11, _omitFieldNames ? '' : 'isPinned')
     ..hasRequiredFields = false
   ;
 
@@ -1831,6 +1836,15 @@ class MyDocItem extends $pb.GeneratedMessage {
   $core.bool hasJumpUrl() => $_has(9);
   @$pb.TagNumber(10)
   void clearJumpUrl() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.bool get isPinned => $_getBF(10);
+  @$pb.TagNumber(11)
+  set isPinned($core.bool v) { $_setBool(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasIsPinned() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearIsPinned() => clearField(11);
 }
 
 /// 新建文件夹(同级不可重名、不可为空)
@@ -2687,6 +2701,139 @@ class ListAllMyDocResponse extends $pb.GeneratedMessage {
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
   $0.PaginationResponse ensurePagination() => $_ensure(2);
+}
+
+/// 置顶 / 取消置顶我的文档文件(仅本地上传文件；文件夹不支持置顶)
+class UpdateMyDocPinnedRequest extends $pb.GeneratedMessage {
+  factory UpdateMyDocPinnedRequest({
+    $0.BaseRequest? baseRequest,
+    $fixnum.Int64? docId,
+    $core.bool? pinned,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (docId != null) {
+      $result.docId = docId;
+    }
+    if (pinned != null) {
+      $result.pinned = pinned;
+    }
+    return $result;
+  }
+  UpdateMyDocPinnedRequest._() : super();
+  factory UpdateMyDocPinnedRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateMyDocPinnedRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateMyDocPinnedRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'docId')
+    ..aOB(3, _omitFieldNames ? '' : 'pinned')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateMyDocPinnedRequest clone() => UpdateMyDocPinnedRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateMyDocPinnedRequest copyWith(void Function(UpdateMyDocPinnedRequest) updates) => super.copyWith((message) => updates(message as UpdateMyDocPinnedRequest)) as UpdateMyDocPinnedRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateMyDocPinnedRequest create() => UpdateMyDocPinnedRequest._();
+  UpdateMyDocPinnedRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateMyDocPinnedRequest> createRepeated() => $pb.PbList<UpdateMyDocPinnedRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateMyDocPinnedRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateMyDocPinnedRequest>(create);
+  static UpdateMyDocPinnedRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get docId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set docId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasDocId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDocId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get pinned => $_getBF(2);
+  @$pb.TagNumber(3)
+  set pinned($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasPinned() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPinned() => clearField(3);
+}
+
+class UpdateMyDocPinnedResponse extends $pb.GeneratedMessage {
+  factory UpdateMyDocPinnedResponse({
+    $0.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  UpdateMyDocPinnedResponse._() : super();
+  factory UpdateMyDocPinnedResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateMyDocPinnedResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateMyDocPinnedResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateMyDocPinnedResponse clone() => UpdateMyDocPinnedResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateMyDocPinnedResponse copyWith(void Function(UpdateMyDocPinnedResponse) updates) => super.copyWith((message) => updates(message as UpdateMyDocPinnedResponse)) as UpdateMyDocPinnedResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateMyDocPinnedResponse create() => UpdateMyDocPinnedResponse._();
+  UpdateMyDocPinnedResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateMyDocPinnedResponse> createRepeated() => $pb.PbList<UpdateMyDocPinnedResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateMyDocPinnedResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateMyDocPinnedResponse>(create);
+  static UpdateMyDocPinnedResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
 /// 移出收藏文档(等价于取消源文档收藏，原页面星标同步取消)

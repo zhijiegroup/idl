@@ -112,6 +112,11 @@ private static final long serialVersionUID = 0L;
             jumpUrl = s;
             break;
           }
+          case 88: {
+
+            isPinned = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -449,6 +454,21 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int IS_PINNED_FIELD_NUMBER = 11;
+  private boolean isPinned ;
+  /**
+   * <pre>
+   * 是否置顶（仅文件生效，v2.20）；文件夹恒 false
+   * </pre>
+   *
+   * <code>bool is_pinned = 11;</code>
+   * @return The isPinned.
+   */
+  @java.lang.Override
+  public boolean getIsPinned() {
+    return isPinned ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -492,6 +512,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getJumpUrlBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, jumpUrl );
+    }
+    if (isPinned != false) {
+      output.writeBool(11, isPinned );
     }
     unknownFields.writeTo(output);
   }
@@ -537,6 +560,10 @@ private static final long serialVersionUID = 0L;
     if (!getJumpUrlBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, jumpUrl );
     }
+    if (isPinned != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(11, isPinned );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -572,6 +599,8 @@ private static final long serialVersionUID = 0L;
         != other.getRefId()) return false;
     if (!getJumpUrl()
         .equals(other.getJumpUrl())) return false;
+    if (getIsPinned()
+        != other.getIsPinned()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -606,6 +635,9 @@ private static final long serialVersionUID = 0L;
         getRefId());
     hash = (37 * hash) + JUMP_URL_FIELD_NUMBER;
     hash = (53 * hash) + getJumpUrl().hashCode();
+    hash = (37 * hash) + IS_PINNED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsPinned());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -763,6 +795,8 @@ private static final long serialVersionUID = 0L;
 
       jumpUrl = "";
 
+      isPinned = false;
+
       return this;
     }
 
@@ -799,6 +833,7 @@ private static final long serialVersionUID = 0L;
       result.createdAt = createdAt ;
       result.refId = refId ;
       result.jumpUrl = jumpUrl ;
+      result.isPinned = isPinned ;
       onBuilt();
       return result;
     }
@@ -881,6 +916,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getJumpUrl().isEmpty()) {
         jumpUrl = other.jumpUrl ;
         onChanged();
+      }
+      if (other.getIsPinned() != false) {
+        setIsPinned(other.getIsPinned());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1602,6 +1640,49 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       jumpUrl = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean isPinned ;
+    /**
+     * <pre>
+     * 是否置顶（仅文件生效，v2.20）；文件夹恒 false
+     * </pre>
+     *
+     * <code>bool is_pinned = 11;</code>
+     * @return The isPinned.
+     */
+    @java.lang.Override
+    public boolean getIsPinned() {
+      return isPinned ;
+    }
+    /**
+     * <pre>
+     * 是否置顶（仅文件生效，v2.20）；文件夹恒 false
+     * </pre>
+     *
+     * <code>bool is_pinned = 11;</code>
+     * @param value The isPinned to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsPinned(boolean value) {
+      
+      isPinned = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 是否置顶（仅文件生效，v2.20）；文件夹恒 false
+     * </pre>
+     *
+     * <code>bool is_pinned = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsPinned() {
+      
+      isPinned = false;
       onChanged();
       return this;
     }

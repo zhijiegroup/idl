@@ -1669,6 +1669,11 @@ CreateLivePlanProduct create live plan product */
     request: doc.MoveOutMyDocRequest
   ): Promise<doc.MoveOutMyDocResponse>;
 
+  /** 置顶 / 取消置顶我的文档文件 */
+  UpdateMyDocPinned(
+    request: doc.UpdateMyDocPinnedRequest
+  ): Promise<doc.UpdateMyDocPinnedResponse>;
+
   /** 删除自上传文件 */
   DeleteMyDoc(
     request: doc.DeleteMyDocRequest

@@ -156,4 +156,14 @@ public interface MyDocItemOrBuilder extends
    */
   com.google.protobuf.ByteString
       getJumpUrlBytes();
+
+  /**
+   * <pre>
+   * 是否置顶（仅文件生效，v2.20）；文件夹恒 false
+   * </pre>
+   *
+   * <code>bool is_pinned = 11;</code>
+   * @return The isPinned.
+   */
+  boolean getIsPinned();
 }

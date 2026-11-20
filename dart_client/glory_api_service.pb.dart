@@ -1161,6 +1161,9 @@ class glory_apiApi {
   $async.Future<$51.MoveOutMyDocResponse> moveOutMyDoc($pb.ClientContext? ctx, $51.MoveOutMyDocRequest request) =>
     _client.invoke<$51.MoveOutMyDocResponse>(ctx, 'glory_api', 'MoveOutMyDoc', request, $51.MoveOutMyDocResponse())
   ;
+  $async.Future<$51.UpdateMyDocPinnedResponse> updateMyDocPinned($pb.ClientContext? ctx, $51.UpdateMyDocPinnedRequest request) =>
+    _client.invoke<$51.UpdateMyDocPinnedResponse>(ctx, 'glory_api', 'UpdateMyDocPinned', request, $51.UpdateMyDocPinnedResponse())
+  ;
   $async.Future<$51.DeleteMyDocResponse> deleteMyDoc($pb.ClientContext? ctx, $51.DeleteMyDocRequest request) =>
     _client.invoke<$51.DeleteMyDocResponse>(ctx, 'glory_api', 'DeleteMyDoc', request, $51.DeleteMyDocResponse())
   ;

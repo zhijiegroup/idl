@@ -2914,6 +2914,14 @@ export class glory_api {
     );
   }
 
+  UpdateMyDocPinned(request) {
+    const uri = `${this.uriPrefix}/api/doc/update_my_doc_pinned`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   DeleteMyDoc(request) {
     const uri = `${this.uriPrefix}/api/doc/delete_my_doc`;
     const body = JSONbigint.stringify(request);

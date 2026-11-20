@@ -24,7 +24,7 @@ public interface ListAllMyDocResponseOrBuilder extends
 
   /**
    * <pre>
-   * 文件条目(type 恒为 2)，按创建时间倒序
+   * 文件条目(type 恒为 2)，置顶优先，置顶组内与其余均按创建时间倒序
    * </pre>
    *
    * <code>repeated .glory_api.MyDocItem items = 2;</code>
@@ -33,7 +33,7 @@ public interface ListAllMyDocResponseOrBuilder extends
       getItemsList();
   /**
    * <pre>
-   * 文件条目(type 恒为 2)，按创建时间倒序
+   * 文件条目(type 恒为 2)，置顶优先，置顶组内与其余均按创建时间倒序
    * </pre>
    *
    * <code>repeated .glory_api.MyDocItem items = 2;</code>
@@ -41,7 +41,7 @@ public interface ListAllMyDocResponseOrBuilder extends
   com.zhijiejiaoyu.glory_api.doc.MyDocItem getItems(int index);
   /**
    * <pre>
-   * 文件条目(type 恒为 2)，按创建时间倒序
+   * 文件条目(type 恒为 2)，置顶优先，置顶组内与其余均按创建时间倒序
    * </pre>
    *
    * <code>repeated .glory_api.MyDocItem items = 2;</code>
@@ -49,7 +49,7 @@ public interface ListAllMyDocResponseOrBuilder extends
   int getItemsCount();
   /**
    * <pre>
-   * 文件条目(type 恒为 2)，按创建时间倒序
+   * 文件条目(type 恒为 2)，置顶优先，置顶组内与其余均按创建时间倒序
    * </pre>
    *
    * <code>repeated .glory_api.MyDocItem items = 2;</code>
@@ -58,7 +58,7 @@ public interface ListAllMyDocResponseOrBuilder extends
       getItemsOrBuilderList();
   /**
    * <pre>
-   * 文件条目(type 恒为 2)，按创建时间倒序
+   * 文件条目(type 恒为 2)，置顶优先，置顶组内与其余均按创建时间倒序
    * </pre>
    *
    * <code>repeated .glory_api.MyDocItem items = 2;</code>

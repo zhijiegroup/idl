@@ -220,6 +220,8 @@ export interface MyDocItem {
   ref_id?: string;
   /** 收藏来源跳回原页面地址 */
   jump_url?: string;
+  /** 是否置顶（仅文件生效，v2.20）；文件夹恒 false */
+  is_pinned?: boolean;
 }
 
 /** 新建文件夹(同级不可重名、不可为空) */
@@ -289,6 +291,7 @@ export interface ListMyDocRequest {
 
 export interface ListMyDocResponse {
   base_resp?: base.BaseResponse;
+  /** 文件夹在前（创建时间倒序）→ 文件（置顶优先，置顶组内与其余均按创建时间倒序） */
   items?: Array<MyDocItem>;
 }
 
@@ -303,9 +306,22 @@ export interface ListAllMyDocRequest {
 
 export interface ListAllMyDocResponse {
   base_resp?: base.BaseResponse;
-  /** 文件条目(type 恒为 2)，按创建时间倒序 */
+  /** 文件条目(type 恒为 2)，置顶优先，置顶组内与其余均按创建时间倒序 */
   items?: Array<MyDocItem>;
   pagination?: base.PaginationResponse;
+}
+
+/** 置顶 / 取消置顶我的文档文件(仅本地上传文件；文件夹不支持置顶) */
+export interface UpdateMyDocPinnedRequest {
+  base_request?: base.BaseRequest;
+  /** 文件条目ID(source=3) */
+  doc_id?: string;
+  /** true=置顶；false=取消置顶 */
+  pinned?: boolean;
+}
+
+export interface UpdateMyDocPinnedResponse {
+  base_resp?: base.BaseResponse;
 }
 
 /** 移出收藏文档(等价于取消源文档收藏，原页面星标同步取消) */

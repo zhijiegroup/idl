@@ -23,24 +23,44 @@ public interface ListMyDocResponseOrBuilder extends
   com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder();
 
   /**
+   * <pre>
+   * 文件夹在前（创建时间倒序）→ 文件（置顶优先，置顶组内与其余均按创建时间倒序）
+   * </pre>
+   *
    * <code>repeated .glory_api.MyDocItem items = 2;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.doc.MyDocItem> 
       getItemsList();
   /**
+   * <pre>
+   * 文件夹在前（创建时间倒序）→ 文件（置顶优先，置顶组内与其余均按创建时间倒序）
+   * </pre>
+   *
    * <code>repeated .glory_api.MyDocItem items = 2;</code>
    */
   com.zhijiejiaoyu.glory_api.doc.MyDocItem getItems(int index);
   /**
+   * <pre>
+   * 文件夹在前（创建时间倒序）→ 文件（置顶优先，置顶组内与其余均按创建时间倒序）
+   * </pre>
+   *
    * <code>repeated .glory_api.MyDocItem items = 2;</code>
    */
   int getItemsCount();
   /**
+   * <pre>
+   * 文件夹在前（创建时间倒序）→ 文件（置顶优先，置顶组内与其余均按创建时间倒序）
+   * </pre>
+   *
    * <code>repeated .glory_api.MyDocItem items = 2;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.doc.MyDocItemOrBuilder> 
       getItemsOrBuilderList();
   /**
+   * <pre>
+   * 文件夹在前（创建时间倒序）→ 文件（置顶优先，置顶组内与其余均按创建时间倒序）
+   * </pre>
+   *
    * <code>repeated .glory_api.MyDocItem items = 2;</code>
    */
   com.zhijiejiaoyu.glory_api.doc.MyDocItemOrBuilder getItemsOrBuilder(

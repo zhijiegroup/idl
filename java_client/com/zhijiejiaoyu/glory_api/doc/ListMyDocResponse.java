@@ -136,6 +136,10 @@ private static final long serialVersionUID = 0L;
   public static final int ITEMS_FIELD_NUMBER = 2;
   private java.util.List<com.zhijiejiaoyu.glory_api.doc.MyDocItem> items ;
   /**
+   * <pre>
+   * 文件夹在前（创建时间倒序）→ 文件（置顶优先，置顶组内与其余均按创建时间倒序）
+   * </pre>
+   *
    * <code>repeated .glory_api.MyDocItem items = 2;</code>
    */
   @java.lang.Override
@@ -143,6 +147,10 @@ private static final long serialVersionUID = 0L;
     return items ;
   }
   /**
+   * <pre>
+   * 文件夹在前（创建时间倒序）→ 文件（置顶优先，置顶组内与其余均按创建时间倒序）
+   * </pre>
+   *
    * <code>repeated .glory_api.MyDocItem items = 2;</code>
    */
   @java.lang.Override
@@ -151,6 +159,10 @@ private static final long serialVersionUID = 0L;
     return items ;
   }
   /**
+   * <pre>
+   * 文件夹在前（创建时间倒序）→ 文件（置顶优先，置顶组内与其余均按创建时间倒序）
+   * </pre>
+   *
    * <code>repeated .glory_api.MyDocItem items = 2;</code>
    */
   @java.lang.Override
@@ -158,6 +170,10 @@ private static final long serialVersionUID = 0L;
     return items .size();
   }
   /**
+   * <pre>
+   * 文件夹在前（创建时间倒序）→ 文件（置顶优先，置顶组内与其余均按创建时间倒序）
+   * </pre>
+   *
    * <code>repeated .glory_api.MyDocItem items = 2;</code>
    */
   @java.lang.Override
@@ -165,6 +181,10 @@ private static final long serialVersionUID = 0L;
     return items .get(index);
   }
   /**
+   * <pre>
+   * 文件夹在前（创建时间倒序）→ 文件（置顶优先，置顶组内与其余均按创建时间倒序）
+   * </pre>
+   *
    * <code>repeated .glory_api.MyDocItem items = 2;</code>
    */
   @java.lang.Override
@@ -677,6 +697,10 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.doc.MyDocItem, com.zhijiejiaoyu.glory_api.doc.MyDocItem.Builder, com.zhijiejiaoyu.glory_api.doc.MyDocItemOrBuilder> itemsBuilder ;
 
     /**
+     * <pre>
+     * 文件夹在前（创建时间倒序）→ 文件（置顶优先，置顶组内与其余均按创建时间倒序）
+     * </pre>
+     *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.doc.MyDocItem> getItemsList() {
@@ -687,6 +711,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 文件夹在前（创建时间倒序）→ 文件（置顶优先，置顶组内与其余均按创建时间倒序）
+     * </pre>
+     *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
      */
     public int getItemsCount() {
@@ -697,6 +725,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 文件夹在前（创建时间倒序）→ 文件（置顶优先，置顶组内与其余均按创建时间倒序）
+     * </pre>
+     *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.doc.MyDocItem getItems(int index) {
@@ -707,6 +739,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 文件夹在前（创建时间倒序）→ 文件（置顶优先，置顶组内与其余均按创建时间倒序）
+     * </pre>
+     *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
      */
     public Builder setItems(
@@ -724,6 +760,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 文件夹在前（创建时间倒序）→ 文件（置顶优先，置顶组内与其余均按创建时间倒序）
+     * </pre>
+     *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
      */
     public Builder setItems(
@@ -738,6 +778,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 文件夹在前（创建时间倒序）→ 文件（置顶优先，置顶组内与其余均按创建时间倒序）
+     * </pre>
+     *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
      */
     public Builder addItems(com.zhijiejiaoyu.glory_api.doc.MyDocItem value) {
@@ -754,6 +798,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 文件夹在前（创建时间倒序）→ 文件（置顶优先，置顶组内与其余均按创建时间倒序）
+     * </pre>
+     *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
      */
     public Builder addItems(
@@ -771,6 +819,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 文件夹在前（创建时间倒序）→ 文件（置顶优先，置顶组内与其余均按创建时间倒序）
+     * </pre>
+     *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
      */
     public Builder addItems(
@@ -785,6 +837,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 文件夹在前（创建时间倒序）→ 文件（置顶优先，置顶组内与其余均按创建时间倒序）
+     * </pre>
+     *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
      */
     public Builder addItems(
@@ -799,6 +855,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 文件夹在前（创建时间倒序）→ 文件（置顶优先，置顶组内与其余均按创建时间倒序）
+     * </pre>
+     *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
      */
     public Builder addAllItems(
@@ -814,6 +874,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 文件夹在前（创建时间倒序）→ 文件（置顶优先，置顶组内与其余均按创建时间倒序）
+     * </pre>
+     *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
      */
     public Builder clearItems() {
@@ -827,6 +891,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 文件夹在前（创建时间倒序）→ 文件（置顶优先，置顶组内与其余均按创建时间倒序）
+     * </pre>
+     *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
      */
     public Builder removeItems(int index) {
@@ -840,6 +908,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 文件夹在前（创建时间倒序）→ 文件（置顶优先，置顶组内与其余均按创建时间倒序）
+     * </pre>
+     *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.doc.MyDocItem.Builder getItemsBuilder(
@@ -847,6 +919,10 @@ private static final long serialVersionUID = 0L;
       return getItemsFieldBuilder().getBuilder(index);
     }
     /**
+     * <pre>
+     * 文件夹在前（创建时间倒序）→ 文件（置顶优先，置顶组内与其余均按创建时间倒序）
+     * </pre>
+     *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.doc.MyDocItemOrBuilder getItemsOrBuilder(
@@ -857,6 +933,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 文件夹在前（创建时间倒序）→ 文件（置顶优先，置顶组内与其余均按创建时间倒序）
+     * </pre>
+     *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.doc.MyDocItemOrBuilder> 
@@ -868,6 +948,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 文件夹在前（创建时间倒序）→ 文件（置顶优先，置顶组内与其余均按创建时间倒序）
+     * </pre>
+     *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.doc.MyDocItem.Builder addItemsBuilder() {
@@ -875,6 +959,10 @@ private static final long serialVersionUID = 0L;
           com.zhijiejiaoyu.glory_api.doc.MyDocItem.getDefaultInstance());
     }
     /**
+     * <pre>
+     * 文件夹在前（创建时间倒序）→ 文件（置顶优先，置顶组内与其余均按创建时间倒序）
+     * </pre>
+     *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
      */
     public com.zhijiejiaoyu.glory_api.doc.MyDocItem.Builder addItemsBuilder(
@@ -883,6 +971,10 @@ private static final long serialVersionUID = 0L;
           index, com.zhijiejiaoyu.glory_api.doc.MyDocItem.getDefaultInstance());
     }
     /**
+     * <pre>
+     * 文件夹在前（创建时间倒序）→ 文件（置顶优先，置顶组内与其余均按创建时间倒序）
+     * </pre>
+     *
      * <code>repeated .glory_api.MyDocItem items = 2;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.doc.MyDocItem.Builder> 
