@@ -334,4 +334,44 @@ public interface EduSchemeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCoverUrlBytes();
+
+  /**
+   * <pre>
+   * 方形封面OSS路径(选填，空串=未设置)；新增字段
+   * </pre>
+   *
+   * <code>string square_cover_path = 20;</code>
+   * @return The squareCoverPath.
+   */
+  java.lang.String getSquareCoverPath();
+  /**
+   * <pre>
+   * 方形封面OSS路径(选填，空串=未设置)；新增字段
+   * </pre>
+   *
+   * <code>string square_cover_path = 20;</code>
+   * @return The bytes for squareCoverPath.
+   */
+  com.google.protobuf.ByteString
+      getSquareCoverPathBytes();
+
+  /**
+   * <pre>
+   * 方形封面签名访问URL(无方形封面时为空，前端回退 cover_url)；新增字段
+   * </pre>
+   *
+   * <code>string square_cover_url = 21;</code>
+   * @return The squareCoverUrl.
+   */
+  java.lang.String getSquareCoverUrl();
+  /**
+   * <pre>
+   * 方形封面签名访问URL(无方形封面时为空，前端回退 cover_url)；新增字段
+   * </pre>
+   *
+   * <code>string square_cover_url = 21;</code>
+   * @return The bytes for squareCoverUrl.
+   */
+  com.google.protobuf.ByteString
+      getSquareCoverUrlBytes();
 }

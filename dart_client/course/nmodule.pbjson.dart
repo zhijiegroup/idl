@@ -37,6 +37,8 @@ const NmCourse$json = {
     {'1': 'language', '3': 18, '4': 1, '5': 9, '10': 'language'},
     {'1': 'major_category', '3': 19, '4': 1, '5': 5, '10': 'majorCategory'},
     {'1': 'course_attribute', '3': 20, '4': 1, '5': 5, '10': 'courseAttribute'},
+    {'1': 'course_square_cover_path', '3': 21, '4': 1, '5': 9, '10': 'courseSquareCoverPath'},
+    {'1': 'square_cover_url', '3': 22, '4': 1, '5': 9, '10': 'squareCoverUrl'},
   ],
 };
 
@@ -55,7 +57,9 @@ final $typed_data.Uint8List nmCourseDescriptor = $convert.base64Decode(
     'Y291cnNlX21vZHVsZRgPIAEoA1IMY291cnNlTW9kdWxlEjAKCGNoYXB0ZXJzGBAgAygLMhQuZ2'
     'xvcnlfYXBpLk5tQ2hhcHRlclIIY2hhcHRlcnMSGgoIYXNzaWduZWQYESABKAhSCGFzc2lnbmVk'
     'EhoKCGxhbmd1YWdlGBIgASgJUghsYW5ndWFnZRIlCg5tYWpvcl9jYXRlZ29yeRgTIAEoBVINbW'
-    'Fqb3JDYXRlZ29yeRIpChBjb3Vyc2VfYXR0cmlidXRlGBQgASgFUg9jb3Vyc2VBdHRyaWJ1dGU=');
+    'Fqb3JDYXRlZ29yeRIpChBjb3Vyc2VfYXR0cmlidXRlGBQgASgFUg9jb3Vyc2VBdHRyaWJ1dGUS'
+    'NwoYY291cnNlX3NxdWFyZV9jb3Zlcl9wYXRoGBUgASgJUhVjb3Vyc2VTcXVhcmVDb3ZlclBhdG'
+    'gSKAoQc3F1YXJlX2NvdmVyX3VybBgWIAEoCVIOc3F1YXJlQ292ZXJVcmw=');
 
 @$core.Deprecated('Use createNmCourseChapterResourceRequestDescriptor instead')
 const CreateNmCourseChapterResourceRequest$json = {
@@ -141,6 +145,7 @@ const CreateNmCourseRequest$json = {
     {'1': 'chapters', '3': 13, '4': 3, '5': 11, '6': '.glory_api.NmChapter', '10': 'chapters'},
     {'1': 'language', '3': 14, '4': 1, '5': 9, '10': 'language'},
     {'1': 'course_attribute', '3': 15, '4': 1, '5': 5, '10': 'courseAttribute'},
+    {'1': 'course_square_cover_path', '3': 16, '4': 1, '5': 9, '10': 'courseSquareCoverPath'},
   ],
 };
 
@@ -157,7 +162,8 @@ final $typed_data.Uint8List createNmCourseRequestDescriptor = $convert.base64Dec
     'HwoLY291cnNlX3R5cGUYCyABKANSCmNvdXJzZVR5cGUSJwoPY291cnNlX2luZHVzdHJ5GAwgAS'
     'gJUg5jb3Vyc2VJbmR1c3RyeRIwCghjaGFwdGVycxgNIAMoCzIULmdsb3J5X2FwaS5ObUNoYXB0'
     'ZXJSCGNoYXB0ZXJzEhoKCGxhbmd1YWdlGA4gASgJUghsYW5ndWFnZRIpChBjb3Vyc2VfYXR0cm'
-    'lidXRlGA8gASgFUg9jb3Vyc2VBdHRyaWJ1dGU=');
+    'lidXRlGA8gASgFUg9jb3Vyc2VBdHRyaWJ1dGUSNwoYY291cnNlX3NxdWFyZV9jb3Zlcl9wYXRo'
+    'GBAgASgJUhVjb3Vyc2VTcXVhcmVDb3ZlclBhdGg=');
 
 @$core.Deprecated('Use nmChapterDescriptor instead')
 const NmChapter$json = {
@@ -239,6 +245,7 @@ const UpdateNmCourseRequest$json = {
     {'1': 'course_id', '3': 14, '4': 1, '5': 3, '10': 'courseId'},
     {'1': 'language', '3': 15, '4': 1, '5': 9, '10': 'language'},
     {'1': 'course_attribute', '3': 16, '4': 1, '5': 5, '10': 'courseAttribute'},
+    {'1': 'course_square_cover_path', '3': 17, '4': 1, '5': 9, '10': 'courseSquareCoverPath'},
   ],
 };
 
@@ -256,7 +263,8 @@ final $typed_data.Uint8List updateNmCourseRequestDescriptor = $convert.base64Dec
     'gJUg5jb3Vyc2VJbmR1c3RyeRIwCghjaGFwdGVycxgNIAMoCzIULmdsb3J5X2FwaS5ObUNoYXB0'
     'ZXJSCGNoYXB0ZXJzEhsKCWNvdXJzZV9pZBgOIAEoA1IIY291cnNlSWQSGgoIbGFuZ3VhZ2UYDy'
     'ABKAlSCGxhbmd1YWdlEikKEGNvdXJzZV9hdHRyaWJ1dGUYECABKAVSD2NvdXJzZUF0dHJpYnV0'
-    'ZQ==');
+    'ZRI3Chhjb3Vyc2Vfc3F1YXJlX2NvdmVyX3BhdGgYESABKAlSFWNvdXJzZVNxdWFyZUNvdmVyUG'
+    'F0aA==');
 
 @$core.Deprecated('Use updateNmCourseResponseDescriptor instead')
 const UpdateNmCourseResponse$json = {

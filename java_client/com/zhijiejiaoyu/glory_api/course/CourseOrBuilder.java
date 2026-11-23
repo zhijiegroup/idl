@@ -400,4 +400,44 @@ public interface CourseOrBuilder extends
    * @return The isJoined.
    */
   boolean getIsJoined();
+
+  /**
+   * <pre>
+   * 方形封面OSS路径（选填；列表小封面图使用，空串=未设置）；新增字段
+   * </pre>
+   *
+   * <code>string course_square_cover_path = 24;</code>
+   * @return The courseSquareCoverPath.
+   */
+  java.lang.String getCourseSquareCoverPath();
+  /**
+   * <pre>
+   * 方形封面OSS路径（选填；列表小封面图使用，空串=未设置）；新增字段
+   * </pre>
+   *
+   * <code>string course_square_cover_path = 24;</code>
+   * @return The bytes for courseSquareCoverPath.
+   */
+  com.google.protobuf.ByteString
+      getCourseSquareCoverPathBytes();
+
+  /**
+   * <pre>
+   * 方形封面签名访问URL（无方形封面时为空，前端回退横版封面）；新增字段
+   * </pre>
+   *
+   * <code>string course_square_cover_url = 25;</code>
+   * @return The courseSquareCoverUrl.
+   */
+  java.lang.String getCourseSquareCoverUrl();
+  /**
+   * <pre>
+   * 方形封面签名访问URL（无方形封面时为空，前端回退横版封面）；新增字段
+   * </pre>
+   *
+   * <code>string course_square_cover_url = 25;</code>
+   * @return The bytes for courseSquareCoverUrl.
+   */
+  com.google.protobuf.ByteString
+      getCourseSquareCoverUrlBytes();
 }

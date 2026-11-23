@@ -305,4 +305,24 @@ public interface UpdateEduSchemeRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCoverPathBytes();
+
+  /**
+   * <pre>
+   * 方形封面OSS路径(可空；传空字符串表示清除方形封面)；新增字段
+   * </pre>
+   *
+   * <code>string square_cover_path = 16;</code>
+   * @return The squareCoverPath.
+   */
+  java.lang.String getSquareCoverPath();
+  /**
+   * <pre>
+   * 方形封面OSS路径(可空；传空字符串表示清除方形封面)；新增字段
+   * </pre>
+   *
+   * <code>string square_cover_path = 16;</code>
+   * @return The bytes for squareCoverPath.
+   */
+  com.google.protobuf.ByteString
+      getSquareCoverPathBytes();
 }

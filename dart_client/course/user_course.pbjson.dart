@@ -31,6 +31,7 @@ const UserCourseSummary$json = {
     {'1': 'total_lesson_count', '3': 12, '4': 1, '5': 5, '10': 'totalLessonCount'},
     {'1': 'course_cover_path', '3': 13, '4': 1, '5': 9, '10': 'courseCoverPath'},
     {'1': 'course_cover_url', '3': 14, '4': 1, '5': 9, '10': 'courseCoverUrl'},
+    {'1': 'course_square_cover_url', '3': 15, '4': 1, '5': 9, '10': 'courseSquareCoverUrl'},
   ],
 };
 
@@ -46,7 +47,8 @@ final $typed_data.Uint8List userCourseSummaryDescriptor = $convert.base64Decode(
     'NvdXJzZVByb2dyZXNzEjIKFWZpbmlzaGVkX2xlc3Nvbl9jb3VudBgLIAEoBVITZmluaXNoZWRM'
     'ZXNzb25Db3VudBIsChJ0b3RhbF9sZXNzb25fY291bnQYDCABKAVSEHRvdGFsTGVzc29uQ291bn'
     'QSKgoRY291cnNlX2NvdmVyX3BhdGgYDSABKAlSD2NvdXJzZUNvdmVyUGF0aBIoChBjb3Vyc2Vf'
-    'Y292ZXJfdXJsGA4gASgJUg5jb3Vyc2VDb3ZlclVybA==');
+    'Y292ZXJfdXJsGA4gASgJUg5jb3Vyc2VDb3ZlclVybBI1Chdjb3Vyc2Vfc3F1YXJlX2NvdmVyX3'
+    'VybBgPIAEoCVIUY291cnNlU3F1YXJlQ292ZXJVcmw=');
 
 @$core.Deprecated('Use enrollCourseRequestDescriptor instead')
 const EnrollCourseRequest$json = {
@@ -187,6 +189,7 @@ const FavoriteLessonItem$json = {
     {'1': 'lesson_name', '3': 5, '4': 1, '5': 9, '10': 'lessonName'},
     {'1': 'chapter_path', '3': 6, '4': 1, '5': 9, '10': 'chapterPath'},
     {'1': 'created_at', '3': 7, '4': 1, '5': 9, '10': 'createdAt'},
+    {'1': 'course_square_cover_url', '3': 8, '4': 1, '5': 9, '10': 'courseSquareCoverUrl'},
   ],
 };
 
@@ -196,7 +199,8 @@ final $typed_data.Uint8List favoriteLessonItemDescriptor = $convert.base64Decode
     'Vyc2VfbmFtZRgCIAEoCVIKY291cnNlTmFtZRIoChBjb3Vyc2VfY292ZXJfdXJsGAMgASgJUg5j'
     'b3Vyc2VDb3ZlclVybBIZCghub2RlX2tleRgEIAEoCVIHbm9kZUtleRIfCgtsZXNzb25fbmFtZR'
     'gFIAEoCVIKbGVzc29uTmFtZRIhCgxjaGFwdGVyX3BhdGgYBiABKAlSC2NoYXB0ZXJQYXRoEh0K'
-    'CmNyZWF0ZWRfYXQYByABKAlSCWNyZWF0ZWRBdA==');
+    'CmNyZWF0ZWRfYXQYByABKAlSCWNyZWF0ZWRBdBI1Chdjb3Vyc2Vfc3F1YXJlX2NvdmVyX3VybB'
+    'gIIAEoCVIUY291cnNlU3F1YXJlQ292ZXJVcmw=');
 
 @$core.Deprecated('Use favoriteLessonRequestDescriptor instead')
 const FavoriteLessonRequest$json = {

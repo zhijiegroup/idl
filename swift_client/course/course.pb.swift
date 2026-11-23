@@ -186,6 +186,18 @@ nonisolated struct GloryApi_Course: @unchecked Sendable {
     set {_uniqueStorage()._isJoined = newValue}
   }
 
+  /// 方形封面OSS路径（选填；列表小封面图使用，空串=未设置）；新增字段
+  var courseSquareCoverPath: String {
+    get {_storage._courseSquareCoverPath}
+    set {_uniqueStorage()._courseSquareCoverPath = newValue}
+  }
+
+  /// 方形封面签名访问URL（无方形封面时为空，前端回退横版封面）；新增字段
+  var courseSquareCoverURL: String {
+    get {_storage._courseSquareCoverURL}
+    set {_uniqueStorage()._courseSquareCoverURL = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -908,7 +920,7 @@ nonisolated extension GloryApi_Occupation: SwiftProtobuf.Message, SwiftProtobuf.
 
 nonisolated extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Course"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}course_id\0\u{3}course_name\0\u{3}course_organization\0\u{3}course_teacher_name\0\u{3}knowledge_hours\0\u{3}skill_hours\0\u{3}course_description\0\u{3}course_occupation\0\u{3}course_cover_path\0\u{3}course_cover_url\0\u{3}course_classification\0\u{3}course_level\0\u{3}course_major\0\u{3}course_industry\0\u{3}course_type\0\u{3}course_module\0\u{3}course_modules\0\u{3}created_at\0\u{1}assigned\0\u{1}language\0\u{3}major_category\0\u{3}course_attribute\0\u{3}is_joined\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}course_id\0\u{3}course_name\0\u{3}course_organization\0\u{3}course_teacher_name\0\u{3}knowledge_hours\0\u{3}skill_hours\0\u{3}course_description\0\u{3}course_occupation\0\u{3}course_cover_path\0\u{3}course_cover_url\0\u{3}course_classification\0\u{3}course_level\0\u{3}course_major\0\u{3}course_industry\0\u{3}course_type\0\u{3}course_module\0\u{3}course_modules\0\u{3}created_at\0\u{1}assigned\0\u{1}language\0\u{3}major_category\0\u{3}course_attribute\0\u{3}is_joined\0\u{3}course_square_cover_path\0\u{3}course_square_cover_url\0")
 
   fileprivate class _StorageClass {
     var _courseID: Int64 = 0
@@ -934,6 +946,8 @@ nonisolated extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._Mes
     var _majorCategory: Int32 = 0
     var _courseAttribute: Int32 = 0
     var _isJoined: Bool = false
+    var _courseSquareCoverPath: String = String()
+    var _courseSquareCoverURL: String = String()
 
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
@@ -967,6 +981,8 @@ nonisolated extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._Mes
       _majorCategory = source._majorCategory
       _courseAttribute = source._courseAttribute
       _isJoined = source._isJoined
+      _courseSquareCoverPath = source._courseSquareCoverPath
+      _courseSquareCoverURL = source._courseSquareCoverURL
     }
   }
 
@@ -1008,6 +1024,8 @@ nonisolated extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._Mes
         case 21: try { try decoder.decodeSingularInt32Field(value: &_storage._majorCategory) }()
         case 22: try { try decoder.decodeSingularInt32Field(value: &_storage._courseAttribute) }()
         case 23: try { try decoder.decodeSingularBoolField(value: &_storage._isJoined) }()
+        case 24: try { try decoder.decodeSingularStringField(value: &_storage._courseSquareCoverPath) }()
+        case 25: try { try decoder.decodeSingularStringField(value: &_storage._courseSquareCoverURL) }()
         default: break
         }
       }
@@ -1085,6 +1103,12 @@ nonisolated extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._Mes
       if _storage._isJoined != false {
         try visitor.visitSingularBoolField(value: _storage._isJoined, fieldNumber: 23)
       }
+      if !_storage._courseSquareCoverPath.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._courseSquareCoverPath, fieldNumber: 24)
+      }
+      if !_storage._courseSquareCoverURL.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._courseSquareCoverURL, fieldNumber: 25)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1117,6 +1141,8 @@ nonisolated extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._Mes
         if _storage._majorCategory != rhs_storage._majorCategory {return false}
         if _storage._courseAttribute != rhs_storage._courseAttribute {return false}
         if _storage._isJoined != rhs_storage._isJoined {return false}
+        if _storage._courseSquareCoverPath != rhs_storage._courseSquareCoverPath {return false}
+        if _storage._courseSquareCoverURL != rhs_storage._courseSquareCoverURL {return false}
         return true
       }
       if !storagesAreEqual {return false}

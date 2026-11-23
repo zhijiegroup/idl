@@ -94,7 +94,7 @@ public final class UserCourse {
   static {
     java.lang.String[] descriptorData = {
       "\n\030course/user_course.proto\022\tglory_api\032\nb" +
-      "ase.proto\"\360\002\n\021UserCourseSummary\022\021\n\tcours" +
+      "ase.proto\"\221\003\n\021UserCourseSummary\022\021\n\tcours" +
       "e_id\030\001 \001(\003\022\023\n\013course_name\030\002 \001(\t\022\027\n\017knowl" +
       "edge_hours\030\003 \001(\002\022\023\n\013skill_hours\030\004 \001(\002\022\024\n" +
       "\014course_state\030\005 \001(\005\022\025\n\rcourse_origin\030\006 \001" +
@@ -103,47 +103,49 @@ public final class UserCourse {
       "\001(\t\022\027\n\017course_progress\030\n \001(\005\022\035\n\025finished" +
       "_lesson_count\030\013 \001(\005\022\032\n\022total_lesson_coun" +
       "t\030\014 \001(\005\022\031\n\021course_cover_path\030\r \001(\t\022\030\n\020co" +
-      "urse_cover_url\030\016 \001(\t\"Q\n\023EnrollCourseRequ" +
-      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
-      "uest\022\021\n\tcourse_id\030\002 \001(\003\"=\n\024EnrollCourseR" +
-      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
-      "sponse\"S\n\025DeleteMyCourseRequest\022\'\n\014base_" +
-      "request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tcour" +
-      "se_id\030\002 \001(\003\"?\n\026DeleteMyCourseResponse\022%\n" +
-      "\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"\340\001\n" +
-      "\033UpdateCourseProgressRequest\022\'\n\014base_req" +
-      "uest\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tcourse_" +
-      "id\030\002 \001(\003\022\033\n\023chapter_resource_id\030\003 \001(\003\022!\n" +
-      "\031chapter_resource_progress\030\004 \001(\002\022!\n\031chap" +
-      "ter_resource_duration\030\005 \001(\003\022\036\n\026resource_" +
-      "play_position\030\006 \001(\003:\002\030\001\"b\n\034UpdateCourseP" +
-      "rogressResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
-      "e.BaseResponse\022\027\n\017course_progress\030\002 \001(\005:" +
-      "\002\030\001\"\201\001\n\023ListMyCourseRequest\022\'\n\014base_requ" +
-      "est\030\001 \001(\0132\021.base.BaseRequest\022\024\n\014course_s" +
-      "tate\030\002 \001(\005\022+\n\npagination\030d \001(\0132\027.base.Pa" +
-      "ginationRequest\"\237\001\n\024ListMyCourseResponse" +
-      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022" +
-      "2\n\014user_courses\030\002 \003(\0132\034.glory_api.UserCo" +
-      "urseSummary\022,\n\npagination\030d \001(\0132\030.base.P" +
-      "aginationResponse\"\247\001\n\022FavoriteLessonItem" +
-      "\022\021\n\tcourse_id\030\001 \001(\003\022\023\n\013course_name\030\002 \001(\t" +
-      "\022\030\n\020course_cover_url\030\003 \001(\t\022\020\n\010node_key\030\004" +
-      " \001(\t\022\023\n\013lesson_name\030\005 \001(\t\022\024\n\014chapter_pat" +
-      "h\030\006 \001(\t\022\022\n\ncreated_at\030\007 \001(\t\"w\n\025FavoriteL" +
-      "essonRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
-      "e.BaseRequest\022\021\n\tcourse_id\030\002 \001(\003\022\020\n\010node" +
-      "_key\030\003 \001(\t\022\020\n\010favorite\030\004 \001(\010\"?\n\026Favorite" +
-      "LessonResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
-      ".BaseResponse\"s\n\033ListMyFavoriteLessonReq" +
-      "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
-      "quest\022+\n\npagination\030d \001(\0132\027.base.Paginat" +
-      "ionRequest\"\241\001\n\034ListMyFavoriteLessonRespo" +
-      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
-      "se\022,\n\005items\030\002 \003(\0132\035.glory_api.FavoriteLe" +
-      "ssonItem\022,\n\npagination\030d \001(\0132\030.base.Pagi" +
-      "nationResponseB%\n!com.zhijiejiaoyu.glory" +
-      "_api.courseP\001b\006proto3"
+      "urse_cover_url\030\016 \001(\t\022\037\n\027course_square_co" +
+      "ver_url\030\017 \001(\t\"Q\n\023EnrollCourseRequest\022\'\n\014" +
+      "base_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n" +
+      "\tcourse_id\030\002 \001(\003\"=\n\024EnrollCourseResponse" +
+      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"" +
+      "S\n\025DeleteMyCourseRequest\022\'\n\014base_request" +
+      "\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tcourse_id\030\002" +
+      " \001(\003\"?\n\026DeleteMyCourseResponse\022%\n\tbase_r" +
+      "esp\030\001 \001(\0132\022.base.BaseResponse\"\340\001\n\033Update" +
+      "CourseProgressRequest\022\'\n\014base_request\030\001 " +
+      "\001(\0132\021.base.BaseRequest\022\021\n\tcourse_id\030\002 \001(" +
+      "\003\022\033\n\023chapter_resource_id\030\003 \001(\003\022!\n\031chapte" +
+      "r_resource_progress\030\004 \001(\002\022!\n\031chapter_res" +
+      "ource_duration\030\005 \001(\003\022\036\n\026resource_play_po" +
+      "sition\030\006 \001(\003:\002\030\001\"b\n\034UpdateCourseProgress" +
+      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
+      "esponse\022\027\n\017course_progress\030\002 \001(\005:\002\030\001\"\201\001\n" +
+      "\023ListMyCourseRequest\022\'\n\014base_request\030\001 \001" +
+      "(\0132\021.base.BaseRequest\022\024\n\014course_state\030\002 " +
+      "\001(\005\022+\n\npagination\030d \001(\0132\027.base.Paginatio" +
+      "nRequest\"\237\001\n\024ListMyCourseResponse\022%\n\tbas" +
+      "e_resp\030\001 \001(\0132\022.base.BaseResponse\0222\n\014user" +
+      "_courses\030\002 \003(\0132\034.glory_api.UserCourseSum" +
+      "mary\022,\n\npagination\030d \001(\0132\030.base.Paginati" +
+      "onResponse\"\310\001\n\022FavoriteLessonItem\022\021\n\tcou" +
+      "rse_id\030\001 \001(\003\022\023\n\013course_name\030\002 \001(\t\022\030\n\020cou" +
+      "rse_cover_url\030\003 \001(\t\022\020\n\010node_key\030\004 \001(\t\022\023\n" +
+      "\013lesson_name\030\005 \001(\t\022\024\n\014chapter_path\030\006 \001(\t" +
+      "\022\022\n\ncreated_at\030\007 \001(\t\022\037\n\027course_square_co" +
+      "ver_url\030\010 \001(\t\"w\n\025FavoriteLessonRequest\022\'" +
+      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
+      "\021\n\tcourse_id\030\002 \001(\003\022\020\n\010node_key\030\003 \001(\t\022\020\n\010" +
+      "favorite\030\004 \001(\010\"?\n\026FavoriteLessonResponse" +
+      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"" +
+      "s\n\033ListMyFavoriteLessonRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\022+\n\npagin" +
+      "ation\030d \001(\0132\027.base.PaginationRequest\"\241\001\n" +
+      "\034ListMyFavoriteLessonResponse\022%\n\tbase_re" +
+      "sp\030\001 \001(\0132\022.base.BaseResponse\022,\n\005items\030\002 " +
+      "\003(\0132\035.glory_api.FavoriteLessonItem\022,\n\npa" +
+      "gination\030d \001(\0132\030.base.PaginationResponse" +
+      "B%\n!com.zhijiejiaoyu.glory_api.courseP\001b" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -155,7 +157,7 @@ public final class UserCourse {
     internal_static_glory_api_UserCourseSummary_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UserCourseSummary_descriptor,
-        new java.lang.String[] { "CourseId", "CourseName", "KnowledgeHours", "SkillHours", "CourseState", "CourseOrigin", "CourseModule", "CourseOrganization", "CourseTeacherName", "CourseProgress", "FinishedLessonCount", "TotalLessonCount", "CourseCoverPath", "CourseCoverUrl", });
+        new java.lang.String[] { "CourseId", "CourseName", "KnowledgeHours", "SkillHours", "CourseState", "CourseOrigin", "CourseModule", "CourseOrganization", "CourseTeacherName", "CourseProgress", "FinishedLessonCount", "TotalLessonCount", "CourseCoverPath", "CourseCoverUrl", "CourseSquareCoverUrl", });
     internal_static_glory_api_EnrollCourseRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_EnrollCourseRequest_fieldAccessorTable = new
@@ -209,7 +211,7 @@ public final class UserCourse {
     internal_static_glory_api_FavoriteLessonItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_FavoriteLessonItem_descriptor,
-        new java.lang.String[] { "CourseId", "CourseName", "CourseCoverUrl", "NodeKey", "LessonName", "ChapterPath", "CreatedAt", });
+        new java.lang.String[] { "CourseId", "CourseName", "CourseCoverUrl", "NodeKey", "LessonName", "ChapterPath", "CreatedAt", "CourseSquareCoverUrl", });
     internal_static_glory_api_FavoriteLessonRequest_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_glory_api_FavoriteLessonRequest_fieldAccessorTable = new

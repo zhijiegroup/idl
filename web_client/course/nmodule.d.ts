@@ -30,6 +30,10 @@ export interface NmCourse {
   major_category?: number;
   /** 课程属性：0.未设置(其它)；1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；8.职场提升课（6/7已废弃，迁移为0）；新增字段 */
   course_attribute?: number;
+  /** 方形封面OSS路径（选填；编辑回显用，空串=未设置）；新增字段 */
+  course_square_cover_path?: string;
+  /** 方形封面签名访问URL（无方形封面时为空，前端回退横版封面）；新增字段 */
+  square_cover_url?: string;
 }
 
 export interface CreateNmCourseChapterResourceRequest {
@@ -75,6 +79,8 @@ export interface CreateNmCourseRequest {
   language?: string;
   /** 课程属性：0.未设置；1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；8.职场提升课（6/7已废弃，归并为0）；新增字段(仅 course_classification=1 学校课程适用) */
   course_attribute?: number;
+  /** 方形封面OSS路径（选填；空串=未设置）；新增字段 */
+  course_square_cover_path?: string;
 }
 
 export interface NmChapter {
@@ -127,6 +133,8 @@ export interface UpdateNmCourseRequest {
   language?: string;
   /** 课程属性：0.未设置；1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；8.职场提升课（6/7已废弃，归并为0）；新增字段(仅 course_classification=1 学校课程适用) */
   course_attribute?: number;
+  /** 方形封面OSS路径（选填；空串=保持原值，不修改）；新增字段 */
+  course_square_cover_path?: string;
 }
 
 export interface UpdateNmCourseResponse {

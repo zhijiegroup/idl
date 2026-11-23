@@ -67,6 +67,9 @@ nonisolated struct GloryApi_UserCourseSummary: Sendable {
   /// 课程封面访问URL（签名地址；无封面时为空）
   var courseCoverURL: String = String()
 
+  /// 方形封面访问URL（签名地址；无方形封面时为空，前端回退 course_cover_url）；新增字段
+  var courseSquareCoverURL: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -324,6 +327,9 @@ nonisolated struct GloryApi_FavoriteLessonItem: Sendable {
   /// 收藏时间
   var createdAt: String = String()
 
+  /// 方形封面访问URL（无方形封面时为空，前端回退 course_cover_url）；新增字段
+  var courseSquareCoverURL: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -452,7 +458,7 @@ fileprivate nonisolated let _protobuf_package = "glory_api"
 
 nonisolated extension GloryApi_UserCourseSummary: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UserCourseSummary"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}course_id\0\u{3}course_name\0\u{3}knowledge_hours\0\u{3}skill_hours\0\u{3}course_state\0\u{3}course_origin\0\u{3}course_module\0\u{3}course_organization\0\u{3}course_teacher_name\0\u{3}course_progress\0\u{3}finished_lesson_count\0\u{3}total_lesson_count\0\u{3}course_cover_path\0\u{3}course_cover_url\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}course_id\0\u{3}course_name\0\u{3}knowledge_hours\0\u{3}skill_hours\0\u{3}course_state\0\u{3}course_origin\0\u{3}course_module\0\u{3}course_organization\0\u{3}course_teacher_name\0\u{3}course_progress\0\u{3}finished_lesson_count\0\u{3}total_lesson_count\0\u{3}course_cover_path\0\u{3}course_cover_url\0\u{3}course_square_cover_url\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -474,6 +480,7 @@ nonisolated extension GloryApi_UserCourseSummary: SwiftProtobuf.Message, SwiftPr
       case 12: try { try decoder.decodeSingularInt32Field(value: &self.totalLessonCount) }()
       case 13: try { try decoder.decodeSingularStringField(value: &self.courseCoverPath) }()
       case 14: try { try decoder.decodeSingularStringField(value: &self.courseCoverURL) }()
+      case 15: try { try decoder.decodeSingularStringField(value: &self.courseSquareCoverURL) }()
       default: break
       }
     }
@@ -522,6 +529,9 @@ nonisolated extension GloryApi_UserCourseSummary: SwiftProtobuf.Message, SwiftPr
     if !self.courseCoverURL.isEmpty {
       try visitor.visitSingularStringField(value: self.courseCoverURL, fieldNumber: 14)
     }
+    if !self.courseSquareCoverURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.courseSquareCoverURL, fieldNumber: 15)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -540,6 +550,7 @@ nonisolated extension GloryApi_UserCourseSummary: SwiftProtobuf.Message, SwiftPr
     if lhs.totalLessonCount != rhs.totalLessonCount {return false}
     if lhs.courseCoverPath != rhs.courseCoverPath {return false}
     if lhs.courseCoverURL != rhs.courseCoverURL {return false}
+    if lhs.courseSquareCoverURL != rhs.courseSquareCoverURL {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -879,7 +890,7 @@ nonisolated extension GloryApi_ListMyCourseResponse: SwiftProtobuf.Message, Swif
 
 nonisolated extension GloryApi_FavoriteLessonItem: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".FavoriteLessonItem"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}course_id\0\u{3}course_name\0\u{3}course_cover_url\0\u{3}node_key\0\u{3}lesson_name\0\u{3}chapter_path\0\u{3}created_at\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}course_id\0\u{3}course_name\0\u{3}course_cover_url\0\u{3}node_key\0\u{3}lesson_name\0\u{3}chapter_path\0\u{3}created_at\0\u{3}course_square_cover_url\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -894,6 +905,7 @@ nonisolated extension GloryApi_FavoriteLessonItem: SwiftProtobuf.Message, SwiftP
       case 5: try { try decoder.decodeSingularStringField(value: &self.lessonName) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.chapterPath) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
+      case 8: try { try decoder.decodeSingularStringField(value: &self.courseSquareCoverURL) }()
       default: break
       }
     }
@@ -921,6 +933,9 @@ nonisolated extension GloryApi_FavoriteLessonItem: SwiftProtobuf.Message, SwiftP
     if !self.createdAt.isEmpty {
       try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 7)
     }
+    if !self.courseSquareCoverURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.courseSquareCoverURL, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -932,6 +947,7 @@ nonisolated extension GloryApi_FavoriteLessonItem: SwiftProtobuf.Message, SwiftP
     if lhs.lessonName != rhs.lessonName {return false}
     if lhs.chapterPath != rhs.chapterPath {return false}
     if lhs.createdAt != rhs.createdAt {return false}
+    if lhs.courseSquareCoverURL != rhs.courseSquareCoverURL {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

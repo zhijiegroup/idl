@@ -1109,6 +1109,7 @@ class TeachingTaskItem extends $pb.GeneratedMessage {
     $core.int? progress,
     $core.String? lastTaughtAt,
     $core.int? status,
+    $core.String? courseSquareCoverUrl,
   }) {
     final $result = create();
     if (taskId != null) {
@@ -1153,6 +1154,9 @@ class TeachingTaskItem extends $pb.GeneratedMessage {
     if (status != null) {
       $result.status = status;
     }
+    if (courseSquareCoverUrl != null) {
+      $result.courseSquareCoverUrl = courseSquareCoverUrl;
+    }
     return $result;
   }
   TeachingTaskItem._() : super();
@@ -1174,6 +1178,7 @@ class TeachingTaskItem extends $pb.GeneratedMessage {
     ..a<$core.int>(12, _omitFieldNames ? '' : 'progress', $pb.PbFieldType.O3)
     ..aOS(13, _omitFieldNames ? '' : 'lastTaughtAt')
     ..a<$core.int>(14, _omitFieldNames ? '' : 'status', $pb.PbFieldType.O3)
+    ..aOS(15, _omitFieldNames ? '' : 'courseSquareCoverUrl')
     ..hasRequiredFields = false
   ;
 
@@ -1323,6 +1328,15 @@ class TeachingTaskItem extends $pb.GeneratedMessage {
   $core.bool hasStatus() => $_has(13);
   @$pb.TagNumber(14)
   void clearStatus() => clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.String get courseSquareCoverUrl => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set courseSquareCoverUrl($core.String v) { $_setString(14, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasCourseSquareCoverUrl() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearCourseSquareCoverUrl() => clearField(15);
 }
 
 /// 在授课程两个 Tab 的全量计数

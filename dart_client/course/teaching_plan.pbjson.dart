@@ -245,6 +245,7 @@ const TeachingTaskItem$json = {
     {'1': 'progress', '3': 12, '4': 1, '5': 5, '10': 'progress'},
     {'1': 'last_taught_at', '3': 13, '4': 1, '5': 9, '10': 'lastTaughtAt'},
     {'1': 'status', '3': 14, '4': 1, '5': 5, '10': 'status'},
+    {'1': 'course_square_cover_url', '3': 15, '4': 1, '5': 9, '10': 'courseSquareCoverUrl'},
   ],
 };
 
@@ -258,7 +259,8 @@ final $typed_data.Uint8List teachingTaskItemDescriptor = $convert.base64Decode(
     'pjbGFzc19uYW1lGAkgASgJUgljbGFzc05hbWUSKgoRY3VycmVudF9sZXNzb25fbm8YCiABKAVS'
     'D2N1cnJlbnRMZXNzb25ObxImCg90b3RhbF9sZXNzb25fbm8YCyABKAVSDXRvdGFsTGVzc29uTm'
     '8SGgoIcHJvZ3Jlc3MYDCABKAVSCHByb2dyZXNzEiQKDmxhc3RfdGF1Z2h0X2F0GA0gASgJUgxs'
-    'YXN0VGF1Z2h0QXQSFgoGc3RhdHVzGA4gASgFUgZzdGF0dXM=');
+    'YXN0VGF1Z2h0QXQSFgoGc3RhdHVzGA4gASgFUgZzdGF0dXMSNQoXY291cnNlX3NxdWFyZV9jb3'
+    'Zlcl91cmwYDyABKAlSFGNvdXJzZVNxdWFyZUNvdmVyVXJs');
 
 @$core.Deprecated('Use taskCountsDescriptor instead')
 const TaskCounts$json = {

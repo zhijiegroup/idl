@@ -258,6 +258,18 @@ nonisolated struct GloryApi_EduScheme: @unchecked Sendable {
     set {_uniqueStorage()._coverURL = newValue}
   }
 
+  /// 方形封面OSS路径(选填，空串=未设置)；新增字段
+  var squareCoverPath: String {
+    get {_storage._squareCoverPath}
+    set {_uniqueStorage()._squareCoverPath = newValue}
+  }
+
+  /// 方形封面签名访问URL(无方形封面时为空，前端回退 cover_url)；新增字段
+  var squareCoverURL: String {
+    get {_storage._squareCoverURL}
+    set {_uniqueStorage()._squareCoverURL = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -317,6 +329,9 @@ nonisolated struct GloryApi_CreateEduSchemeRequest: Sendable {
 
   /// 课程封面OSS路径(可空，先通过上传接口取得对象 key)；新增字段
   var coverPath: String = String()
+
+  /// 方形封面OSS路径(选填，可空)；新增字段
+  var squareCoverPath: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -402,6 +417,9 @@ nonisolated struct GloryApi_UpdateEduSchemeRequest: Sendable {
 
   /// 课程封面OSS路径(可空；传空字符串表示清除封面)；新增字段
   var coverPath: String = String()
+
+  /// 方形封面OSS路径(可空；传空字符串表示清除方形封面)；新增字段
+  var squareCoverPath: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -958,7 +976,7 @@ nonisolated extension GloryApi_SchemeLessonResource: SwiftProtobuf.Message, Swif
 
 nonisolated extension GloryApi_EduScheme: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".EduScheme"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}edu_scheme_id\0\u{1}name\0\u{1}major\0\u{1}goal\0\u{3}total_hours\0\u{3}knowledge_hours\0\u{3}skill_hours\0\u{3}created_at\0\u{3}knowledge_standard\0\u{3}ability_standard\0\u{3}character_standard\0\u{3}course_group_name\0\u{3}course_group_id\0\u{3}created_by\0\u{3}course_modules\0\u{1}classes\0\u{1}chapters\0\u{3}cover_path\0\u{3}cover_url\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}edu_scheme_id\0\u{1}name\0\u{1}major\0\u{1}goal\0\u{3}total_hours\0\u{3}knowledge_hours\0\u{3}skill_hours\0\u{3}created_at\0\u{3}knowledge_standard\0\u{3}ability_standard\0\u{3}character_standard\0\u{3}course_group_name\0\u{3}course_group_id\0\u{3}created_by\0\u{3}course_modules\0\u{1}classes\0\u{1}chapters\0\u{3}cover_path\0\u{3}cover_url\0\u{3}square_cover_path\0\u{3}square_cover_url\0")
 
   fileprivate class _StorageClass {
     var _eduSchemeID: Int64 = 0
@@ -980,6 +998,8 @@ nonisolated extension GloryApi_EduScheme: SwiftProtobuf.Message, SwiftProtobuf._
     var _chapters: [GloryApi_SchemeChapter] = []
     var _coverPath: String = String()
     var _coverURL: String = String()
+    var _squareCoverPath: String = String()
+    var _squareCoverURL: String = String()
 
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
@@ -1009,6 +1029,8 @@ nonisolated extension GloryApi_EduScheme: SwiftProtobuf.Message, SwiftProtobuf._
       _chapters = source._chapters
       _coverPath = source._coverPath
       _coverURL = source._coverURL
+      _squareCoverPath = source._squareCoverPath
+      _squareCoverURL = source._squareCoverURL
     }
   }
 
@@ -1046,6 +1068,8 @@ nonisolated extension GloryApi_EduScheme: SwiftProtobuf.Message, SwiftProtobuf._
         case 17: try { try decoder.decodeRepeatedMessageField(value: &_storage._chapters) }()
         case 18: try { try decoder.decodeSingularStringField(value: &_storage._coverPath) }()
         case 19: try { try decoder.decodeSingularStringField(value: &_storage._coverURL) }()
+        case 20: try { try decoder.decodeSingularStringField(value: &_storage._squareCoverPath) }()
+        case 21: try { try decoder.decodeSingularStringField(value: &_storage._squareCoverURL) }()
         default: break
         }
       }
@@ -1111,6 +1135,12 @@ nonisolated extension GloryApi_EduScheme: SwiftProtobuf.Message, SwiftProtobuf._
       if !_storage._coverURL.isEmpty {
         try visitor.visitSingularStringField(value: _storage._coverURL, fieldNumber: 19)
       }
+      if !_storage._squareCoverPath.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._squareCoverPath, fieldNumber: 20)
+      }
+      if !_storage._squareCoverURL.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._squareCoverURL, fieldNumber: 21)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1139,6 +1169,8 @@ nonisolated extension GloryApi_EduScheme: SwiftProtobuf.Message, SwiftProtobuf._
         if _storage._chapters != rhs_storage._chapters {return false}
         if _storage._coverPath != rhs_storage._coverPath {return false}
         if _storage._coverURL != rhs_storage._coverURL {return false}
+        if _storage._squareCoverPath != rhs_storage._squareCoverPath {return false}
+        if _storage._squareCoverURL != rhs_storage._squareCoverURL {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -1150,7 +1182,7 @@ nonisolated extension GloryApi_EduScheme: SwiftProtobuf.Message, SwiftProtobuf._
 
 nonisolated extension GloryApi_CreateEduSchemeRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CreateEduSchemeRequest"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{1}name\0\u{1}major\0\u{1}goal\0\u{1}type\0\u{3}knowledge_standard\0\u{3}ability_standard\0\u{3}character_standard\0\u{3}group_name\0\u{3}skill_hours\0\u{3}knowledge_hours\0\u{4}\u{4}course_modules\0\u{1}chapters\0\u{3}cover_path\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{1}name\0\u{1}major\0\u{1}goal\0\u{1}type\0\u{3}knowledge_standard\0\u{3}ability_standard\0\u{3}character_standard\0\u{3}group_name\0\u{3}skill_hours\0\u{3}knowledge_hours\0\u{4}\u{4}course_modules\0\u{1}chapters\0\u{3}cover_path\0\u{3}square_cover_path\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1172,6 +1204,7 @@ nonisolated extension GloryApi_CreateEduSchemeRequest: SwiftProtobuf.Message, Sw
       case 15: try { try decoder.decodeRepeatedMessageField(value: &self.courseModules) }()
       case 16: try { try decoder.decodeRepeatedMessageField(value: &self.chapters) }()
       case 17: try { try decoder.decodeSingularStringField(value: &self.coverPath) }()
+      case 18: try { try decoder.decodeSingularStringField(value: &self.squareCoverPath) }()
       default: break
       }
     }
@@ -1224,6 +1257,9 @@ nonisolated extension GloryApi_CreateEduSchemeRequest: SwiftProtobuf.Message, Sw
     if !self.coverPath.isEmpty {
       try visitor.visitSingularStringField(value: self.coverPath, fieldNumber: 17)
     }
+    if !self.squareCoverPath.isEmpty {
+      try visitor.visitSingularStringField(value: self.squareCoverPath, fieldNumber: 18)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1242,6 +1278,7 @@ nonisolated extension GloryApi_CreateEduSchemeRequest: SwiftProtobuf.Message, Sw
     if lhs.courseModules != rhs.courseModules {return false}
     if lhs.chapters != rhs.chapters {return false}
     if lhs.coverPath != rhs.coverPath {return false}
+    if lhs.squareCoverPath != rhs.squareCoverPath {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1288,7 +1325,7 @@ nonisolated extension GloryApi_CreateEduSchemeResponse: SwiftProtobuf.Message, S
 
 nonisolated extension GloryApi_UpdateEduSchemeRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".UpdateEduSchemeRequest"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{1}name\0\u{1}major\0\u{1}goal\0\u{1}type\0\u{3}knowledge_standard\0\u{3}ability_standard\0\u{3}character_standard\0\u{3}group_name\0\u{3}edu_scheme_id\0\u{3}skill_hours\0\u{3}knowledge_hours\0\u{3}course_modules\0\u{1}chapters\0\u{3}cover_path\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0\u{1}name\0\u{1}major\0\u{1}goal\0\u{1}type\0\u{3}knowledge_standard\0\u{3}ability_standard\0\u{3}character_standard\0\u{3}group_name\0\u{3}edu_scheme_id\0\u{3}skill_hours\0\u{3}knowledge_hours\0\u{3}course_modules\0\u{1}chapters\0\u{3}cover_path\0\u{3}square_cover_path\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1311,6 +1348,7 @@ nonisolated extension GloryApi_UpdateEduSchemeRequest: SwiftProtobuf.Message, Sw
       case 13: try { try decoder.decodeRepeatedMessageField(value: &self.courseModules) }()
       case 14: try { try decoder.decodeRepeatedMessageField(value: &self.chapters) }()
       case 15: try { try decoder.decodeSingularStringField(value: &self.coverPath) }()
+      case 16: try { try decoder.decodeSingularStringField(value: &self.squareCoverPath) }()
       default: break
       }
     }
@@ -1366,6 +1404,9 @@ nonisolated extension GloryApi_UpdateEduSchemeRequest: SwiftProtobuf.Message, Sw
     if !self.coverPath.isEmpty {
       try visitor.visitSingularStringField(value: self.coverPath, fieldNumber: 15)
     }
+    if !self.squareCoverPath.isEmpty {
+      try visitor.visitSingularStringField(value: self.squareCoverPath, fieldNumber: 16)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1385,6 +1426,7 @@ nonisolated extension GloryApi_UpdateEduSchemeRequest: SwiftProtobuf.Message, Sw
     if lhs.courseModules != rhs.courseModules {return false}
     if lhs.chapters != rhs.chapters {return false}
     if lhs.coverPath != rhs.coverPath {return false}
+    if lhs.squareCoverPath != rhs.squareCoverPath {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

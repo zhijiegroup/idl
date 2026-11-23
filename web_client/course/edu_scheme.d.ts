@@ -110,6 +110,10 @@ export interface EduScheme {
   cover_path?: string;
   /** 课程封面签名访问URL(展示用，后端按 cover_path 签发)；新增字段 */
   cover_url?: string;
+  /** 方形封面OSS路径(选填，空串=未设置)；新增字段 */
+  square_cover_path?: string;
+  /** 方形封面签名访问URL(无方形封面时为空，前端回退 cover_url)；新增字段 */
+  square_cover_url?: string;
 }
 
 export interface CreateEduSchemeRequest {
@@ -140,6 +144,8 @@ export interface CreateEduSchemeRequest {
   chapters?: Array<SchemeChapter>;
   /** 课程封面OSS路径(可空，先通过上传接口取得对象 key)；新增字段 */
   cover_path?: string;
+  /** 方形封面OSS路径(选填，可空)；新增字段 */
+  square_cover_path?: string;
 }
 
 export interface CreateEduSchemeResponse {
@@ -176,6 +182,8 @@ export interface UpdateEduSchemeRequest {
   chapters?: Array<SchemeChapter>;
   /** 课程封面OSS路径(可空；传空字符串表示清除封面)；新增字段 */
   cover_path?: string;
+  /** 方形封面OSS路径(可空；传空字符串表示清除方形封面)；新增字段 */
+  square_cover_path?: string;
 }
 
 export interface UpdateEduSchemeResponse {

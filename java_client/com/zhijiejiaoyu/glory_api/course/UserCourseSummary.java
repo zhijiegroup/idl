@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
     courseTeacherName = "";
     courseCoverPath = "";
     courseCoverUrl = "";
+    courseSquareCoverUrl = "";
   }
 
   @java.lang.Override
@@ -126,6 +127,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             courseCoverUrl = s;
+            break;
+          }
+          case 122: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            courseSquareCoverUrl = s;
             break;
           }
           default: {
@@ -525,6 +532,52 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int COURSE_SQUARE_COVER_URL_FIELD_NUMBER = 15;
+  private volatile java.lang.Object courseSquareCoverUrl ;
+  /**
+   * <pre>
+   * 方形封面访问URL（签名地址；无方形封面时为空，前端回退 course_cover_url）；新增字段
+   * </pre>
+   *
+   * <code>string course_square_cover_url = 15;</code>
+   * @return The courseSquareCoverUrl.
+   */
+  @java.lang.Override
+  public java.lang.String getCourseSquareCoverUrl() {
+    java.lang.Object ref = courseSquareCoverUrl ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      courseSquareCoverUrl = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 方形封面访问URL（签名地址；无方形封面时为空，前端回退 course_cover_url）；新增字段
+   * </pre>
+   *
+   * <code>string course_square_cover_url = 15;</code>
+   * @return The bytes for courseSquareCoverUrl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCourseSquareCoverUrlBytes() {
+    java.lang.Object ref = courseSquareCoverUrl ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      courseSquareCoverUrl = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -580,6 +633,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getCourseCoverUrlBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, courseCoverUrl );
+    }
+    if (!getCourseSquareCoverUrlBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, courseSquareCoverUrl );
     }
     unknownFields.writeTo(output);
   }
@@ -641,6 +697,9 @@ private static final long serialVersionUID = 0L;
     if (!getCourseCoverUrlBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, courseCoverUrl );
     }
+    if (!getCourseSquareCoverUrlBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, courseSquareCoverUrl );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -686,6 +745,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCourseCoverPath())) return false;
     if (!getCourseCoverUrl()
         .equals(other.getCourseCoverUrl())) return false;
+    if (!getCourseSquareCoverUrl()
+        .equals(other.getCourseSquareCoverUrl())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -728,6 +789,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCourseCoverPath().hashCode();
     hash = (37 * hash) + COURSE_COVER_URL_FIELD_NUMBER;
     hash = (53 * hash) + getCourseCoverUrl().hashCode();
+    hash = (37 * hash) + COURSE_SQUARE_COVER_URL_FIELD_NUMBER;
+    hash = (53 * hash) + getCourseSquareCoverUrl().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -889,6 +952,8 @@ private static final long serialVersionUID = 0L;
 
       courseCoverUrl = "";
 
+      courseSquareCoverUrl = "";
+
       return this;
     }
 
@@ -929,6 +994,7 @@ private static final long serialVersionUID = 0L;
       result.totalLessonCount = totalLessonCount ;
       result.courseCoverPath = courseCoverPath ;
       result.courseCoverUrl = courseCoverUrl ;
+      result.courseSquareCoverUrl = courseSquareCoverUrl ;
       onBuilt();
       return result;
     }
@@ -1022,6 +1088,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getCourseCoverUrl().isEmpty()) {
         courseCoverUrl = other.courseCoverUrl ;
+        onChanged();
+      }
+      if (!other.getCourseSquareCoverUrl().isEmpty()) {
+        courseSquareCoverUrl = other.courseSquareCoverUrl ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1916,6 +1986,102 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       courseCoverUrl = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object courseSquareCoverUrl = "";
+    /**
+     * <pre>
+     * 方形封面访问URL（签名地址；无方形封面时为空，前端回退 course_cover_url）；新增字段
+     * </pre>
+     *
+     * <code>string course_square_cover_url = 15;</code>
+     * @return The courseSquareCoverUrl.
+     */
+    public java.lang.String getCourseSquareCoverUrl() {
+      java.lang.Object ref = courseSquareCoverUrl ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        courseSquareCoverUrl = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 方形封面访问URL（签名地址；无方形封面时为空，前端回退 course_cover_url）；新增字段
+     * </pre>
+     *
+     * <code>string course_square_cover_url = 15;</code>
+     * @return The bytes for courseSquareCoverUrl.
+     */
+    public com.google.protobuf.ByteString
+        getCourseSquareCoverUrlBytes() {
+      java.lang.Object ref = courseSquareCoverUrl ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        courseSquareCoverUrl = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 方形封面访问URL（签名地址；无方形封面时为空，前端回退 course_cover_url）；新增字段
+     * </pre>
+     *
+     * <code>string course_square_cover_url = 15;</code>
+     * @param value The courseSquareCoverUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCourseSquareCoverUrl(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      courseSquareCoverUrl = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 方形封面访问URL（签名地址；无方形封面时为空，前端回退 course_cover_url）；新增字段
+     * </pre>
+     *
+     * <code>string course_square_cover_url = 15;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCourseSquareCoverUrl() {
+      
+      courseSquareCoverUrl = getDefaultInstance().getCourseSquareCoverUrl();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 方形封面访问URL（签名地址；无方形封面时为空，前端回退 course_cover_url）；新增字段
+     * </pre>
+     *
+     * <code>string course_square_cover_url = 15;</code>
+     * @param value The bytes for courseSquareCoverUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCourseSquareCoverUrlBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      courseSquareCoverUrl = value;
       onChanged();
       return this;
     }

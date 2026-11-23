@@ -138,6 +138,8 @@ class Course extends $pb.GeneratedMessage {
     $core.int? majorCategory,
     $core.int? courseAttribute,
     $core.bool? isJoined,
+    $core.String? courseSquareCoverPath,
+    $core.String? courseSquareCoverUrl,
   }) {
     final $result = create();
     if (courseId != null) {
@@ -209,6 +211,12 @@ class Course extends $pb.GeneratedMessage {
     if (isJoined != null) {
       $result.isJoined = isJoined;
     }
+    if (courseSquareCoverPath != null) {
+      $result.courseSquareCoverPath = courseSquareCoverPath;
+    }
+    if (courseSquareCoverUrl != null) {
+      $result.courseSquareCoverUrl = courseSquareCoverUrl;
+    }
     return $result;
   }
   Course._() : super();
@@ -239,6 +247,8 @@ class Course extends $pb.GeneratedMessage {
     ..a<$core.int>(21, _omitFieldNames ? '' : 'majorCategory', $pb.PbFieldType.O3)
     ..a<$core.int>(22, _omitFieldNames ? '' : 'courseAttribute', $pb.PbFieldType.O3)
     ..aOB(23, _omitFieldNames ? '' : 'isJoined')
+    ..aOS(24, _omitFieldNames ? '' : 'courseSquareCoverPath')
+    ..aOS(25, _omitFieldNames ? '' : 'courseSquareCoverUrl')
     ..hasRequiredFields = false
   ;
 
@@ -457,6 +467,24 @@ class Course extends $pb.GeneratedMessage {
   $core.bool hasIsJoined() => $_has(22);
   @$pb.TagNumber(23)
   void clearIsJoined() => clearField(23);
+
+  @$pb.TagNumber(24)
+  $core.String get courseSquareCoverPath => $_getSZ(23);
+  @$pb.TagNumber(24)
+  set courseSquareCoverPath($core.String v) { $_setString(23, v); }
+  @$pb.TagNumber(24)
+  $core.bool hasCourseSquareCoverPath() => $_has(23);
+  @$pb.TagNumber(24)
+  void clearCourseSquareCoverPath() => clearField(24);
+
+  @$pb.TagNumber(25)
+  $core.String get courseSquareCoverUrl => $_getSZ(24);
+  @$pb.TagNumber(25)
+  set courseSquareCoverUrl($core.String v) { $_setString(24, v); }
+  @$pb.TagNumber(25)
+  $core.bool hasCourseSquareCoverUrl() => $_has(24);
+  @$pb.TagNumber(25)
+  void clearCourseSquareCoverUrl() => clearField(25);
 }
 
 /// 创建模块化课程

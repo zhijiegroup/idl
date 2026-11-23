@@ -125,6 +125,8 @@ const EduScheme$json = {
     {'1': 'chapters', '3': 17, '4': 3, '5': 11, '6': '.glory_api.SchemeChapter', '10': 'chapters'},
     {'1': 'cover_path', '3': 18, '4': 1, '5': 9, '10': 'coverPath'},
     {'1': 'cover_url', '3': 19, '4': 1, '5': 9, '10': 'coverUrl'},
+    {'1': 'square_cover_path', '3': 20, '4': 1, '5': 9, '10': 'squareCoverPath'},
+    {'1': 'square_cover_url', '3': 21, '4': 1, '5': 9, '10': 'squareCoverUrl'},
   ],
 };
 
@@ -143,7 +145,8 @@ final $typed_data.Uint8List eduSchemeDescriptor = $convert.base64Decode(
     'ZU1vZHVsZXMSLwoHY2xhc3NlcxgQIAMoCzIVLmdsb3J5X2FwaS5UZW5hbnREZXB0UgdjbGFzc2'
     'VzEjQKCGNoYXB0ZXJzGBEgAygLMhguZ2xvcnlfYXBpLlNjaGVtZUNoYXB0ZXJSCGNoYXB0ZXJz'
     'Eh0KCmNvdmVyX3BhdGgYEiABKAlSCWNvdmVyUGF0aBIbCgljb3Zlcl91cmwYEyABKAlSCGNvdm'
-    'VyVXJs');
+    'VyVXJsEioKEXNxdWFyZV9jb3Zlcl9wYXRoGBQgASgJUg9zcXVhcmVDb3ZlclBhdGgSKAoQc3F1'
+    'YXJlX2NvdmVyX3VybBgVIAEoCVIOc3F1YXJlQ292ZXJVcmw=');
 
 @$core.Deprecated('Use createEduSchemeRequestDescriptor instead')
 const CreateEduSchemeRequest$json = {
@@ -163,6 +166,7 @@ const CreateEduSchemeRequest$json = {
     {'1': 'course_modules', '3': 15, '4': 3, '5': 11, '6': '.glory_api.CourseModule', '10': 'courseModules'},
     {'1': 'chapters', '3': 16, '4': 3, '5': 11, '6': '.glory_api.SchemeChapter', '10': 'chapters'},
     {'1': 'cover_path', '3': 17, '4': 1, '5': 9, '10': 'coverPath'},
+    {'1': 'square_cover_path', '3': 18, '4': 1, '5': 9, '10': 'squareCoverPath'},
   ],
 };
 
@@ -177,7 +181,8 @@ final $typed_data.Uint8List createEduSchemeRequestDescriptor = $convert.base64De
     'a2lsbF9ob3VycxgKIAEoAlIKc2tpbGxIb3VycxInCg9rbm93bGVkZ2VfaG91cnMYCyABKAJSDm'
     'tub3dsZWRnZUhvdXJzEj4KDmNvdXJzZV9tb2R1bGVzGA8gAygLMhcuZ2xvcnlfYXBpLkNvdXJz'
     'ZU1vZHVsZVINY291cnNlTW9kdWxlcxI0CghjaGFwdGVycxgQIAMoCzIYLmdsb3J5X2FwaS5TY2'
-    'hlbWVDaGFwdGVyUghjaGFwdGVycxIdCgpjb3Zlcl9wYXRoGBEgASgJUgljb3ZlclBhdGg=');
+    'hlbWVDaGFwdGVyUghjaGFwdGVycxIdCgpjb3Zlcl9wYXRoGBEgASgJUgljb3ZlclBhdGgSKgoR'
+    'c3F1YXJlX2NvdmVyX3BhdGgYEiABKAlSD3NxdWFyZUNvdmVyUGF0aA==');
 
 @$core.Deprecated('Use createEduSchemeResponseDescriptor instead')
 const CreateEduSchemeResponse$json = {
@@ -212,6 +217,7 @@ const UpdateEduSchemeRequest$json = {
     {'1': 'course_modules', '3': 13, '4': 3, '5': 11, '6': '.glory_api.CourseModule', '10': 'courseModules'},
     {'1': 'chapters', '3': 14, '4': 3, '5': 11, '6': '.glory_api.SchemeChapter', '10': 'chapters'},
     {'1': 'cover_path', '3': 15, '4': 1, '5': 9, '10': 'coverPath'},
+    {'1': 'square_cover_path', '3': 16, '4': 1, '5': 9, '10': 'squareCoverPath'},
   ],
 };
 
@@ -227,7 +233,8 @@ final $typed_data.Uint8List updateEduSchemeRequestDescriptor = $convert.base64De
     'tpbGxIb3VycxInCg9rbm93bGVkZ2VfaG91cnMYDCABKAJSDmtub3dsZWRnZUhvdXJzEj4KDmNv'
     'dXJzZV9tb2R1bGVzGA0gAygLMhcuZ2xvcnlfYXBpLkNvdXJzZU1vZHVsZVINY291cnNlTW9kdW'
     'xlcxI0CghjaGFwdGVycxgOIAMoCzIYLmdsb3J5X2FwaS5TY2hlbWVDaGFwdGVyUghjaGFwdGVy'
-    'cxIdCgpjb3Zlcl9wYXRoGA8gASgJUgljb3ZlclBhdGg=');
+    'cxIdCgpjb3Zlcl9wYXRoGA8gASgJUgljb3ZlclBhdGgSKgoRc3F1YXJlX2NvdmVyX3BhdGgYEC'
+    'ABKAlSD3NxdWFyZUNvdmVyUGF0aA==');
 
 @$core.Deprecated('Use updateEduSchemeResponseDescriptor instead')
 const UpdateEduSchemeResponse$json = {

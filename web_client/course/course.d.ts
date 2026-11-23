@@ -59,6 +59,10 @@ export interface Course {
   course_attribute?: number;
   /** 当前登录用户是否已加入该课程（user_course 存在未删除记录）；list_course 列表按登录用户回填，未登录或其他接口默认 false */
   is_joined?: boolean;
+  /** 方形封面OSS路径（选填；列表小封面图使用，空串=未设置）；新增字段 */
+  course_square_cover_path?: string;
+  /** 方形封面签名访问URL（无方形封面时为空，前端回退横版封面）；新增字段 */
+  course_square_cover_url?: string;
 }
 
 /** 创建模块化课程 */

@@ -396,6 +396,9 @@ nonisolated struct GloryApi_TeachingTaskItem: Sendable {
   /// 任务状态：1.进行中；2.已结课(current>=total 自动置 2)
   var status: Int32 = 0
 
+  /// 方形封面访问URL（自建课程优先方案方形封面、平台课程取课程方形封面；无则空，前端回退 course_cover_url）；新增字段
+  var courseSquareCoverURL: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1184,7 +1187,7 @@ nonisolated extension GloryApi_UpdateTeachingCourseProgressResponse: SwiftProtob
 
 nonisolated extension GloryApi_TeachingTaskItem: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".TeachingTaskItem"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}task_id\0\u{3}target_type\0\u{3}course_id\0\u{3}edu_scheme_id\0\u{3}course_name\0\u{3}course_cover_url\0\u{3}major_name\0\u{3}class_id\0\u{3}class_name\0\u{3}current_lesson_no\0\u{3}total_lesson_no\0\u{1}progress\0\u{3}last_taught_at\0\u{1}status\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}task_id\0\u{3}target_type\0\u{3}course_id\0\u{3}edu_scheme_id\0\u{3}course_name\0\u{3}course_cover_url\0\u{3}major_name\0\u{3}class_id\0\u{3}class_name\0\u{3}current_lesson_no\0\u{3}total_lesson_no\0\u{1}progress\0\u{3}last_taught_at\0\u{1}status\0\u{3}course_square_cover_url\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1206,6 +1209,7 @@ nonisolated extension GloryApi_TeachingTaskItem: SwiftProtobuf.Message, SwiftPro
       case 12: try { try decoder.decodeSingularInt32Field(value: &self.progress) }()
       case 13: try { try decoder.decodeSingularStringField(value: &self.lastTaughtAt) }()
       case 14: try { try decoder.decodeSingularInt32Field(value: &self.status) }()
+      case 15: try { try decoder.decodeSingularStringField(value: &self.courseSquareCoverURL) }()
       default: break
       }
     }
@@ -1254,6 +1258,9 @@ nonisolated extension GloryApi_TeachingTaskItem: SwiftProtobuf.Message, SwiftPro
     if self.status != 0 {
       try visitor.visitSingularInt32Field(value: self.status, fieldNumber: 14)
     }
+    if !self.courseSquareCoverURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.courseSquareCoverURL, fieldNumber: 15)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1272,6 +1279,7 @@ nonisolated extension GloryApi_TeachingTaskItem: SwiftProtobuf.Message, SwiftPro
     if lhs.progress != rhs.progress {return false}
     if lhs.lastTaughtAt != rhs.lastTaughtAt {return false}
     if lhs.status != rhs.status {return false}
+    if lhs.courseSquareCoverURL != rhs.courseSquareCoverURL {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

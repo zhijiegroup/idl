@@ -39,6 +39,8 @@ class NmCourse extends $pb.GeneratedMessage {
     $core.String? language,
     $core.int? majorCategory,
     $core.int? courseAttribute,
+    $core.String? courseSquareCoverPath,
+    $core.String? squareCoverUrl,
   }) {
     final $result = create();
     if (courseId != null) {
@@ -101,6 +103,12 @@ class NmCourse extends $pb.GeneratedMessage {
     if (courseAttribute != null) {
       $result.courseAttribute = courseAttribute;
     }
+    if (courseSquareCoverPath != null) {
+      $result.courseSquareCoverPath = courseSquareCoverPath;
+    }
+    if (squareCoverUrl != null) {
+      $result.squareCoverUrl = squareCoverUrl;
+    }
     return $result;
   }
   NmCourse._() : super();
@@ -128,6 +136,8 @@ class NmCourse extends $pb.GeneratedMessage {
     ..aOS(18, _omitFieldNames ? '' : 'language')
     ..a<$core.int>(19, _omitFieldNames ? '' : 'majorCategory', $pb.PbFieldType.O3)
     ..a<$core.int>(20, _omitFieldNames ? '' : 'courseAttribute', $pb.PbFieldType.O3)
+    ..aOS(21, _omitFieldNames ? '' : 'courseSquareCoverPath')
+    ..aOS(22, _omitFieldNames ? '' : 'squareCoverUrl')
     ..hasRequiredFields = false
   ;
 
@@ -325,6 +335,24 @@ class NmCourse extends $pb.GeneratedMessage {
   $core.bool hasCourseAttribute() => $_has(19);
   @$pb.TagNumber(20)
   void clearCourseAttribute() => clearField(20);
+
+  @$pb.TagNumber(21)
+  $core.String get courseSquareCoverPath => $_getSZ(20);
+  @$pb.TagNumber(21)
+  set courseSquareCoverPath($core.String v) { $_setString(20, v); }
+  @$pb.TagNumber(21)
+  $core.bool hasCourseSquareCoverPath() => $_has(20);
+  @$pb.TagNumber(21)
+  void clearCourseSquareCoverPath() => clearField(21);
+
+  @$pb.TagNumber(22)
+  $core.String get squareCoverUrl => $_getSZ(21);
+  @$pb.TagNumber(22)
+  set squareCoverUrl($core.String v) { $_setString(21, v); }
+  @$pb.TagNumber(22)
+  $core.bool hasSquareCoverUrl() => $_has(21);
+  @$pb.TagNumber(22)
+  void clearSquareCoverUrl() => clearField(22);
 }
 
 class CreateNmCourseChapterResourceRequest extends $pb.GeneratedMessage {
@@ -664,6 +692,7 @@ class CreateNmCourseRequest extends $pb.GeneratedMessage {
     $core.Iterable<NmChapter>? chapters,
     $core.String? language,
     $core.int? courseAttribute,
+    $core.String? courseSquareCoverPath,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -711,6 +740,9 @@ class CreateNmCourseRequest extends $pb.GeneratedMessage {
     if (courseAttribute != null) {
       $result.courseAttribute = courseAttribute;
     }
+    if (courseSquareCoverPath != null) {
+      $result.courseSquareCoverPath = courseSquareCoverPath;
+    }
     return $result;
   }
   CreateNmCourseRequest._() : super();
@@ -733,6 +765,7 @@ class CreateNmCourseRequest extends $pb.GeneratedMessage {
     ..pc<NmChapter>(13, _omitFieldNames ? '' : 'chapters', $pb.PbFieldType.PM, subBuilder: NmChapter.create)
     ..aOS(14, _omitFieldNames ? '' : 'language')
     ..a<$core.int>(15, _omitFieldNames ? '' : 'courseAttribute', $pb.PbFieldType.O3)
+    ..aOS(16, _omitFieldNames ? '' : 'courseSquareCoverPath')
     ..hasRequiredFields = false
   ;
 
@@ -887,6 +920,15 @@ class CreateNmCourseRequest extends $pb.GeneratedMessage {
   $core.bool hasCourseAttribute() => $_has(14);
   @$pb.TagNumber(15)
   void clearCourseAttribute() => clearField(15);
+
+  @$pb.TagNumber(16)
+  $core.String get courseSquareCoverPath => $_getSZ(15);
+  @$pb.TagNumber(16)
+  set courseSquareCoverPath($core.String v) { $_setString(15, v); }
+  @$pb.TagNumber(16)
+  $core.bool hasCourseSquareCoverPath() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearCourseSquareCoverPath() => clearField(16);
 }
 
 class NmChapter extends $pb.GeneratedMessage {
@@ -1229,6 +1271,7 @@ class UpdateNmCourseRequest extends $pb.GeneratedMessage {
     $fixnum.Int64? courseId,
     $core.String? language,
     $core.int? courseAttribute,
+    $core.String? courseSquareCoverPath,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -1279,6 +1322,9 @@ class UpdateNmCourseRequest extends $pb.GeneratedMessage {
     if (courseAttribute != null) {
       $result.courseAttribute = courseAttribute;
     }
+    if (courseSquareCoverPath != null) {
+      $result.courseSquareCoverPath = courseSquareCoverPath;
+    }
     return $result;
   }
   UpdateNmCourseRequest._() : super();
@@ -1302,6 +1348,7 @@ class UpdateNmCourseRequest extends $pb.GeneratedMessage {
     ..aInt64(14, _omitFieldNames ? '' : 'courseId')
     ..aOS(15, _omitFieldNames ? '' : 'language')
     ..a<$core.int>(16, _omitFieldNames ? '' : 'courseAttribute', $pb.PbFieldType.O3)
+    ..aOS(17, _omitFieldNames ? '' : 'courseSquareCoverPath')
     ..hasRequiredFields = false
   ;
 
@@ -1465,6 +1512,15 @@ class UpdateNmCourseRequest extends $pb.GeneratedMessage {
   $core.bool hasCourseAttribute() => $_has(15);
   @$pb.TagNumber(16)
   void clearCourseAttribute() => clearField(16);
+
+  @$pb.TagNumber(17)
+  $core.String get courseSquareCoverPath => $_getSZ(16);
+  @$pb.TagNumber(17)
+  set courseSquareCoverPath($core.String v) { $_setString(16, v); }
+  @$pb.TagNumber(17)
+  $core.bool hasCourseSquareCoverPath() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearCourseSquareCoverPath() => clearField(17);
 }
 
 class UpdateNmCourseResponse extends $pb.GeneratedMessage {

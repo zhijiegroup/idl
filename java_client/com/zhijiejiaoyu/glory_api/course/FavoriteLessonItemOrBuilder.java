@@ -136,4 +136,24 @@ public interface FavoriteLessonItemOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCreatedAtBytes();
+
+  /**
+   * <pre>
+   * 方形封面访问URL（无方形封面时为空，前端回退 course_cover_url）；新增字段
+   * </pre>
+   *
+   * <code>string course_square_cover_url = 8;</code>
+   * @return The courseSquareCoverUrl.
+   */
+  java.lang.String getCourseSquareCoverUrl();
+  /**
+   * <pre>
+   * 方形封面访问URL（无方形封面时为空，前端回退 course_cover_url）；新增字段
+   * </pre>
+   *
+   * <code>string course_square_cover_url = 8;</code>
+   * @return The bytes for courseSquareCoverUrl.
+   */
+  com.google.protobuf.ByteString
+      getCourseSquareCoverUrlBytes();
 }

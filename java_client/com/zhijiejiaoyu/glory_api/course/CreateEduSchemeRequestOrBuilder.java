@@ -299,4 +299,24 @@ public interface CreateEduSchemeRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCoverPathBytes();
+
+  /**
+   * <pre>
+   * 方形封面OSS路径(选填，可空)；新增字段
+   * </pre>
+   *
+   * <code>string square_cover_path = 18;</code>
+   * @return The squareCoverPath.
+   */
+  java.lang.String getSquareCoverPath();
+  /**
+   * <pre>
+   * 方形封面OSS路径(选填，可空)；新增字段
+   * </pre>
+   *
+   * <code>string square_cover_path = 18;</code>
+   * @return The bytes for squareCoverPath.
+   */
+  com.google.protobuf.ByteString
+      getSquareCoverPathBytes();
 }

@@ -204,4 +204,44 @@ public interface NmCourseOrBuilder extends
    * @return The courseAttribute.
    */
   int getCourseAttribute();
+
+  /**
+   * <pre>
+   * 方形封面OSS路径（选填；编辑回显用，空串=未设置）；新增字段
+   * </pre>
+   *
+   * <code>string course_square_cover_path = 21;</code>
+   * @return The courseSquareCoverPath.
+   */
+  java.lang.String getCourseSquareCoverPath();
+  /**
+   * <pre>
+   * 方形封面OSS路径（选填；编辑回显用，空串=未设置）；新增字段
+   * </pre>
+   *
+   * <code>string course_square_cover_path = 21;</code>
+   * @return The bytes for courseSquareCoverPath.
+   */
+  com.google.protobuf.ByteString
+      getCourseSquareCoverPathBytes();
+
+  /**
+   * <pre>
+   * 方形封面签名访问URL（无方形封面时为空，前端回退横版封面）；新增字段
+   * </pre>
+   *
+   * <code>string square_cover_url = 22;</code>
+   * @return The squareCoverUrl.
+   */
+  java.lang.String getSquareCoverUrl();
+  /**
+   * <pre>
+   * 方形封面签名访问URL（无方形封面时为空，前端回退横版封面）；新增字段
+   * </pre>
+   *
+   * <code>string square_cover_url = 22;</code>
+   * @return The bytes for squareCoverUrl.
+   */
+  com.google.protobuf.ByteString
+      getSquareCoverUrlBytes();
 }

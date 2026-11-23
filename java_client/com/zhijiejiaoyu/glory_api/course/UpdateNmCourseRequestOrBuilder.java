@@ -189,4 +189,24 @@ public interface UpdateNmCourseRequestOrBuilder extends
    * @return The courseAttribute.
    */
   int getCourseAttribute();
+
+  /**
+   * <pre>
+   * 方形封面OSS路径（选填；空串=保持原值，不修改）；新增字段
+   * </pre>
+   *
+   * <code>string course_square_cover_path = 17;</code>
+   * @return The courseSquareCoverPath.
+   */
+  java.lang.String getCourseSquareCoverPath();
+  /**
+   * <pre>
+   * 方形封面OSS路径（选填；空串=保持原值，不修改）；新增字段
+   * </pre>
+   *
+   * <code>string course_square_cover_path = 17;</code>
+   * @return The bytes for courseSquareCoverPath.
+   */
+  com.google.protobuf.ByteString
+      getCourseSquareCoverPathBytes();
 }

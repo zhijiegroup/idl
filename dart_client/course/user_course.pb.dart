@@ -32,6 +32,7 @@ class UserCourseSummary extends $pb.GeneratedMessage {
     $core.int? totalLessonCount,
     $core.String? courseCoverPath,
     $core.String? courseCoverUrl,
+    $core.String? courseSquareCoverUrl,
   }) {
     final $result = create();
     if (courseId != null) {
@@ -76,6 +77,9 @@ class UserCourseSummary extends $pb.GeneratedMessage {
     if (courseCoverUrl != null) {
       $result.courseCoverUrl = courseCoverUrl;
     }
+    if (courseSquareCoverUrl != null) {
+      $result.courseSquareCoverUrl = courseSquareCoverUrl;
+    }
     return $result;
   }
   UserCourseSummary._() : super();
@@ -97,6 +101,7 @@ class UserCourseSummary extends $pb.GeneratedMessage {
     ..a<$core.int>(12, _omitFieldNames ? '' : 'totalLessonCount', $pb.PbFieldType.O3)
     ..aOS(13, _omitFieldNames ? '' : 'courseCoverPath')
     ..aOS(14, _omitFieldNames ? '' : 'courseCoverUrl')
+    ..aOS(15, _omitFieldNames ? '' : 'courseSquareCoverUrl')
     ..hasRequiredFields = false
   ;
 
@@ -246,6 +251,15 @@ class UserCourseSummary extends $pb.GeneratedMessage {
   $core.bool hasCourseCoverUrl() => $_has(13);
   @$pb.TagNumber(14)
   void clearCourseCoverUrl() => clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.String get courseSquareCoverUrl => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set courseSquareCoverUrl($core.String v) { $_setString(14, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasCourseSquareCoverUrl() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearCourseSquareCoverUrl() => clearField(15);
 }
 
 /// 加入课程
@@ -845,6 +859,7 @@ class FavoriteLessonItem extends $pb.GeneratedMessage {
     $core.String? lessonName,
     $core.String? chapterPath,
     $core.String? createdAt,
+    $core.String? courseSquareCoverUrl,
   }) {
     final $result = create();
     if (courseId != null) {
@@ -868,6 +883,9 @@ class FavoriteLessonItem extends $pb.GeneratedMessage {
     if (createdAt != null) {
       $result.createdAt = createdAt;
     }
+    if (courseSquareCoverUrl != null) {
+      $result.courseSquareCoverUrl = courseSquareCoverUrl;
+    }
     return $result;
   }
   FavoriteLessonItem._() : super();
@@ -882,6 +900,7 @@ class FavoriteLessonItem extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'lessonName')
     ..aOS(6, _omitFieldNames ? '' : 'chapterPath')
     ..aOS(7, _omitFieldNames ? '' : 'createdAt')
+    ..aOS(8, _omitFieldNames ? '' : 'courseSquareCoverUrl')
     ..hasRequiredFields = false
   ;
 
@@ -968,6 +987,15 @@ class FavoriteLessonItem extends $pb.GeneratedMessage {
   $core.bool hasCreatedAt() => $_has(6);
   @$pb.TagNumber(7)
   void clearCreatedAt() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get courseSquareCoverUrl => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set courseSquareCoverUrl($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasCourseSquareCoverUrl() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCourseSquareCoverUrl() => clearField(8);
 }
 
 /// 收藏/取消收藏课节(幂等，重复调用返回成功)

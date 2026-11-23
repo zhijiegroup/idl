@@ -34,6 +34,8 @@ export interface UserCourseSummary {
   course_cover_path?: string;
   /** 课程封面访问URL（签名地址；无封面时为空） */
   course_cover_url?: string;
+  /** 方形封面访问URL（签名地址；无方形封面时为空，前端回退 course_cover_url）；新增字段 */
+  course_square_cover_url?: string;
 }
 
 /** 加入课程 */
@@ -110,6 +112,8 @@ export interface FavoriteLessonItem {
   chapter_path?: string;
   /** 收藏时间 */
   created_at?: string;
+  /** 方形封面访问URL（无方形封面时为空，前端回退 course_cover_url）；新增字段 */
+  course_square_cover_url?: string;
 }
 
 /** 收藏/取消收藏课节(幂等，重复调用返回成功) */

@@ -126,6 +126,8 @@ export interface TeachingTaskItem {
   last_taught_at?: string;
   /** 任务状态：1.进行中；2.已结课(current>=total 自动置 2) */
   status?: number;
+  /** 方形封面访问URL（自建课程优先方案方形封面、平台课程取课程方形封面；无则空，前端回退 course_cover_url）；新增字段 */
+  course_square_cover_url?: string;
 }
 
 /** 在授课程两个 Tab 的全量计数 */

@@ -29,6 +29,8 @@ private static final long serialVersionUID = 0L;
     chapters = java.util.Collections.emptyList();
     coverPath = "";
     coverUrl = "";
+    squareCoverPath = "";
+    squareCoverUrl = "";
   }
 
   @java.lang.Override
@@ -177,6 +179,18 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             coverUrl = s;
+            break;
+          }
+          case 162: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            squareCoverPath = s;
+            break;
+          }
+          case 170: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            squareCoverUrl = s;
             break;
           }
           default: {
@@ -886,6 +900,98 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int SQUARE_COVER_PATH_FIELD_NUMBER = 20;
+  private volatile java.lang.Object squareCoverPath ;
+  /**
+   * <pre>
+   * 方形封面OSS路径(选填，空串=未设置)；新增字段
+   * </pre>
+   *
+   * <code>string square_cover_path = 20;</code>
+   * @return The squareCoverPath.
+   */
+  @java.lang.Override
+  public java.lang.String getSquareCoverPath() {
+    java.lang.Object ref = squareCoverPath ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      squareCoverPath = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 方形封面OSS路径(选填，空串=未设置)；新增字段
+   * </pre>
+   *
+   * <code>string square_cover_path = 20;</code>
+   * @return The bytes for squareCoverPath.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSquareCoverPathBytes() {
+    java.lang.Object ref = squareCoverPath ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      squareCoverPath = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SQUARE_COVER_URL_FIELD_NUMBER = 21;
+  private volatile java.lang.Object squareCoverUrl ;
+  /**
+   * <pre>
+   * 方形封面签名访问URL(无方形封面时为空，前端回退 cover_url)；新增字段
+   * </pre>
+   *
+   * <code>string square_cover_url = 21;</code>
+   * @return The squareCoverUrl.
+   */
+  @java.lang.Override
+  public java.lang.String getSquareCoverUrl() {
+    java.lang.Object ref = squareCoverUrl ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      squareCoverUrl = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 方形封面签名访问URL(无方形封面时为空，前端回退 cover_url)；新增字段
+   * </pre>
+   *
+   * <code>string square_cover_url = 21;</code>
+   * @return The bytes for squareCoverUrl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSquareCoverUrlBytes() {
+    java.lang.Object ref = squareCoverUrl ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      squareCoverUrl = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -956,6 +1062,12 @@ private static final long serialVersionUID = 0L;
     }
     if (!getCoverUrlBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 19, coverUrl );
+    }
+    if (!getSquareCoverPathBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 20, squareCoverPath );
+    }
+    if (!getSquareCoverUrlBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 21, squareCoverUrl );
     }
     unknownFields.writeTo(output);
   }
@@ -1032,6 +1144,12 @@ private static final long serialVersionUID = 0L;
     if (!getCoverUrlBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, coverUrl );
     }
+    if (!getSquareCoverPathBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, squareCoverPath );
+    }
+    if (!getSquareCoverUrlBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, squareCoverUrl );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1088,6 +1206,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCoverPath())) return false;
     if (!getCoverUrl()
         .equals(other.getCoverUrl())) return false;
+    if (!getSquareCoverPath()
+        .equals(other.getSquareCoverPath())) return false;
+    if (!getSquareCoverUrl()
+        .equals(other.getSquareCoverUrl())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1149,6 +1271,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCoverPath().hashCode();
     hash = (37 * hash) + COVER_URL_FIELD_NUMBER;
     hash = (53 * hash) + getCoverUrl().hashCode();
+    hash = (37 * hash) + SQUARE_COVER_PATH_FIELD_NUMBER;
+    hash = (53 * hash) + getSquareCoverPath().hashCode();
+    hash = (37 * hash) + SQUARE_COVER_URL_FIELD_NUMBER;
+    hash = (53 * hash) + getSquareCoverUrl().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1335,6 +1461,10 @@ private static final long serialVersionUID = 0L;
 
       coverUrl = "";
 
+      squareCoverPath = "";
+
+      squareCoverUrl = "";
+
       return this;
     }
 
@@ -1405,6 +1535,8 @@ private static final long serialVersionUID = 0L;
       }
       result.coverPath = coverPath ;
       result.coverUrl = coverUrl ;
+      result.squareCoverPath = squareCoverPath ;
+      result.squareCoverUrl = squareCoverUrl ;
       onBuilt();
       return result;
     }
@@ -1587,6 +1719,14 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getCoverUrl().isEmpty()) {
         coverUrl = other.coverUrl ;
+        onChanged();
+      }
+      if (!other.getSquareCoverPath().isEmpty()) {
+        squareCoverPath = other.squareCoverPath ;
+        onChanged();
+      }
+      if (!other.getSquareCoverUrl().isEmpty()) {
+        squareCoverUrl = other.squareCoverUrl ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -3605,6 +3745,198 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       coverUrl = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object squareCoverPath = "";
+    /**
+     * <pre>
+     * 方形封面OSS路径(选填，空串=未设置)；新增字段
+     * </pre>
+     *
+     * <code>string square_cover_path = 20;</code>
+     * @return The squareCoverPath.
+     */
+    public java.lang.String getSquareCoverPath() {
+      java.lang.Object ref = squareCoverPath ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        squareCoverPath = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 方形封面OSS路径(选填，空串=未设置)；新增字段
+     * </pre>
+     *
+     * <code>string square_cover_path = 20;</code>
+     * @return The bytes for squareCoverPath.
+     */
+    public com.google.protobuf.ByteString
+        getSquareCoverPathBytes() {
+      java.lang.Object ref = squareCoverPath ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        squareCoverPath = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 方形封面OSS路径(选填，空串=未设置)；新增字段
+     * </pre>
+     *
+     * <code>string square_cover_path = 20;</code>
+     * @param value The squareCoverPath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSquareCoverPath(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      squareCoverPath = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 方形封面OSS路径(选填，空串=未设置)；新增字段
+     * </pre>
+     *
+     * <code>string square_cover_path = 20;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSquareCoverPath() {
+      
+      squareCoverPath = getDefaultInstance().getSquareCoverPath();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 方形封面OSS路径(选填，空串=未设置)；新增字段
+     * </pre>
+     *
+     * <code>string square_cover_path = 20;</code>
+     * @param value The bytes for squareCoverPath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSquareCoverPathBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      squareCoverPath = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object squareCoverUrl = "";
+    /**
+     * <pre>
+     * 方形封面签名访问URL(无方形封面时为空，前端回退 cover_url)；新增字段
+     * </pre>
+     *
+     * <code>string square_cover_url = 21;</code>
+     * @return The squareCoverUrl.
+     */
+    public java.lang.String getSquareCoverUrl() {
+      java.lang.Object ref = squareCoverUrl ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        squareCoverUrl = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 方形封面签名访问URL(无方形封面时为空，前端回退 cover_url)；新增字段
+     * </pre>
+     *
+     * <code>string square_cover_url = 21;</code>
+     * @return The bytes for squareCoverUrl.
+     */
+    public com.google.protobuf.ByteString
+        getSquareCoverUrlBytes() {
+      java.lang.Object ref = squareCoverUrl ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        squareCoverUrl = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 方形封面签名访问URL(无方形封面时为空，前端回退 cover_url)；新增字段
+     * </pre>
+     *
+     * <code>string square_cover_url = 21;</code>
+     * @param value The squareCoverUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSquareCoverUrl(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      squareCoverUrl = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 方形封面签名访问URL(无方形封面时为空，前端回退 cover_url)；新增字段
+     * </pre>
+     *
+     * <code>string square_cover_url = 21;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSquareCoverUrl() {
+      
+      squareCoverUrl = getDefaultInstance().getSquareCoverUrl();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 方形封面签名访问URL(无方形封面时为空，前端回退 cover_url)；新增字段
+     * </pre>
+     *
+     * <code>string square_cover_url = 21;</code>
+     * @param value The bytes for squareCoverUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSquareCoverUrlBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      squareCoverUrl = value;
       onChanged();
       return this;
     }
