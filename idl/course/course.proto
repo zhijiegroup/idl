@@ -39,6 +39,8 @@ message Course {
   int32 major_category = 21; // 专业大类：1.财经商贸；2.电子信息；3.装备制造；4.交通运输；5.文化艺术
   int32 course_attribute = 22; // 课程属性：0.未设置(其它)；1.公共基础课；2.专业基础课；3.专业核心课；4.工学一体化课程；5.专业拓展课；8.职场提升课（6.选修课程/7.实习实训课已废弃，存量迁移为0）
   bool is_joined = 23; // 当前登录用户是否已加入该课程（user_course 存在未删除记录）；list_course 列表按登录用户回填，未登录或其他接口默认 false
+  string course_square_cover_path = 24; // 方形封面OSS路径（选填；列表小封面图使用，空串=未设置）；新增字段
+  string course_square_cover_url = 25; // 方形封面签名访问URL（无方形封面时为空，前端回退横版封面）；新增字段
 }
 
 // 创建模块化课程

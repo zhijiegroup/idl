@@ -72,6 +72,8 @@ message EduScheme {
     repeated SchemeChapter chapters = 17; // 三级课程结构(章节→课节→小节/任务+资源)；新增字段
     string cover_path = 18; // 课程封面OSS路径(保存时提交、详情/列表原样返回)；新增字段
     string cover_url = 19; // 课程封面签名访问URL(展示用，后端按 cover_path 签发)；新增字段
+    string square_cover_path = 20; // 方形封面OSS路径(选填，空串=未设置)；新增字段
+    string square_cover_url = 21; // 方形封面签名访问URL(无方形封面时为空，前端回退 cover_url)；新增字段
 }
 
 message CreateEduSchemeRequest {
@@ -89,6 +91,7 @@ message CreateEduSchemeRequest {
     repeated CourseModule course_modules = 15; // 【废弃】不再使用，保留字段号兼容
     repeated SchemeChapter chapters = 16; // 三级课程结构(章节→课节→小节/任务+资源)，全量覆盖保存；新增字段
     string cover_path = 17; // 课程封面OSS路径(可空，先通过上传接口取得对象 key)；新增字段
+    string square_cover_path = 18; // 方形封面OSS路径(选填，可空)；新增字段
 }
 
 message CreateEduSchemeResponse {
@@ -112,6 +115,7 @@ message UpdateEduSchemeRequest {
     repeated CourseModule course_modules = 13; // 【废弃】不再使用，保留字段号兼容
     repeated SchemeChapter chapters = 14; // 三级课程结构(章节→课节→小节/任务+资源)，覆盖本人原方案全量保存；新增字段
     string cover_path = 15; // 课程封面OSS路径(可空；传空字符串表示清除封面)；新增字段
+    string square_cover_path = 16; // 方形封面OSS路径(可空；传空字符串表示清除方形封面)；新增字段
 }
 
 message UpdateEduSchemeResponse {
