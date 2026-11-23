@@ -107,6 +107,7 @@ message TeachingTaskItem {
     int32 progress = 12; // 进度 0-100 = round(current/total*100)
     string last_taught_at = 13; // 最近授课时间
     int32 status = 14; // 任务状态：1.进行中；2.已结课(current>=total 自动置 2)
+    string course_square_cover_url = 15; // 方形封面访问URL（自建课程优先方案方形封面、平台课程取课程方形封面；无则空，前端回退 course_cover_url）；新增字段
 }
 
 // 在授课程两个 Tab 的全量计数
