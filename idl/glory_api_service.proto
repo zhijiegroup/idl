@@ -1487,6 +1487,10 @@ service glory_api {
   rpc DownloadMyDoc(DownloadMyDocRequest) returns (DownloadMyDocResponse) {
     option (api.get) = '/api/doc/download_my_doc';
   }
+  // 我的文档容量统计(已用 / 上限)
+  rpc GetMyDocQuota(GetMyDocQuotaRequest) returns (GetMyDocQuotaResponse) {
+    option (api.get) = '/api/doc/get_my_doc_quota';
+  }
   // 通用上传
   rpc UploadFile(UploadFileRequest) returns (UploadFileResponse) {
     option (api.post) = '/api/doc/upload_file';
