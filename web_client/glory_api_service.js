@@ -2844,6 +2844,12 @@ export class glory_api {
     );
   }
 
+  DownloadSchoolDoc(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/doc/download_school_doc${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   ListRegion(request) {
     const uri = `${this.uriPrefix}/api/doc/list_region`;
     const body = JSONbigint.stringify(request);

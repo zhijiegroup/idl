@@ -435,6 +435,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$51.DeleteSchoolDocResponse> deleteSchoolDoc($pb.ServerContext ctx, $51.DeleteSchoolDocRequest request);
   $async.Future<$51.FavoriteSchoolDocResponse> favoriteSchoolDoc($pb.ServerContext ctx, $51.FavoriteSchoolDocRequest request);
   $async.Future<$51.ListMyFavoriteSchoolDocResponse> listMyFavoriteSchoolDoc($pb.ServerContext ctx, $51.ListMyFavoriteSchoolDocRequest request);
+  $async.Future<$51.DownloadSchoolDocResponse> downloadSchoolDoc($pb.ServerContext ctx, $51.DownloadSchoolDocRequest request);
   $async.Future<$51.ListRegionResponse> listRegion($pb.ServerContext ctx, $51.ListRegionRequest request);
   $async.Future<$51.ListPolicyDocProvinceResponse> listPolicyDocProvince($pb.ServerContext ctx, $51.ListPolicyDocProvinceRequest request);
   $async.Future<$51.CreateMyDocFolderResponse> createMyDocFolder($pb.ServerContext ctx, $51.CreateMyDocFolderRequest request);
@@ -925,6 +926,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'DeleteSchoolDoc': return $51.DeleteSchoolDocRequest();
       case 'FavoriteSchoolDoc': return $51.FavoriteSchoolDocRequest();
       case 'ListMyFavoriteSchoolDoc': return $51.ListMyFavoriteSchoolDocRequest();
+      case 'DownloadSchoolDoc': return $51.DownloadSchoolDocRequest();
       case 'ListRegion': return $51.ListRegionRequest();
       case 'ListPolicyDocProvince': return $51.ListPolicyDocProvinceRequest();
       case 'CreateMyDocFolder': return $51.CreateMyDocFolderRequest();
@@ -1418,6 +1420,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'DeleteSchoolDoc': return this.deleteSchoolDoc(ctx, request as $51.DeleteSchoolDocRequest);
       case 'FavoriteSchoolDoc': return this.favoriteSchoolDoc(ctx, request as $51.FavoriteSchoolDocRequest);
       case 'ListMyFavoriteSchoolDoc': return this.listMyFavoriteSchoolDoc(ctx, request as $51.ListMyFavoriteSchoolDocRequest);
+      case 'DownloadSchoolDoc': return this.downloadSchoolDoc(ctx, request as $51.DownloadSchoolDocRequest);
       case 'ListRegion': return this.listRegion(ctx, request as $51.ListRegionRequest);
       case 'ListPolicyDocProvince': return this.listPolicyDocProvince(ctx, request as $51.ListPolicyDocProvinceRequest);
       case 'CreateMyDocFolder': return this.createMyDocFolder(ctx, request as $51.CreateMyDocFolderRequest);

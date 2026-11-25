@@ -1628,6 +1628,11 @@ CreateLivePlanProduct create live plan product */
     request: doc.ListMyFavoriteSchoolDocRequest
   ): Promise<doc.ListMyFavoriteSchoolDocResponse>;
 
+  /** 获取学校文档下载地址(政策文件 / 人才培养方案) */
+  DownloadSchoolDoc(
+    request: doc.DownloadSchoolDocRequest
+  ): Promise<doc.DownloadSchoolDocResponse>;
+
   /** 省市行政区划字典(GB/T 2260，政策文件省市联动) */
   ListRegion(request: doc.ListRegionRequest): Promise<doc.ListRegionResponse>;
 

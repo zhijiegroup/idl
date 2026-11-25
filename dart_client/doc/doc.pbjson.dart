@@ -611,6 +611,38 @@ final $typed_data.Uint8List downloadMyDocResponseDescriptor = $convert.base64Dec
     'ZmlsZV9uYW1lGAMgASgJUghmaWxlTmFtZRIdCgpleHBpcmVzX2luGAQgASgFUglleHBpcmVzSW'
     '4=');
 
+@$core.Deprecated('Use downloadSchoolDocRequestDescriptor instead')
+const DownloadSchoolDocRequest$json = {
+  '1': 'DownloadSchoolDocRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'doc_id', '3': 2, '4': 1, '5': 3, '10': 'docId'},
+  ],
+};
+
+/// Descriptor for `DownloadSchoolDocRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List downloadSchoolDocRequestDescriptor = $convert.base64Decode(
+    'ChhEb3dubG9hZFNjaG9vbERvY1JlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS'
+    '5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSFQoGZG9jX2lkGAIgASgDUgVkb2NJZA==');
+
+@$core.Deprecated('Use downloadSchoolDocResponseDescriptor instead')
+const DownloadSchoolDocResponse$json = {
+  '1': 'DownloadSchoolDocResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'download_url', '3': 2, '4': 1, '5': 9, '10': 'downloadUrl'},
+    {'1': 'file_name', '3': 3, '4': 1, '5': 9, '10': 'fileName'},
+    {'1': 'expires_in', '3': 4, '4': 1, '5': 5, '10': 'expiresIn'},
+  ],
+};
+
+/// Descriptor for `DownloadSchoolDocResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List downloadSchoolDocResponseDescriptor = $convert.base64Decode(
+    'ChlEb3dubG9hZFNjaG9vbERvY1Jlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQm'
+    'FzZVJlc3BvbnNlUghiYXNlUmVzcBIhCgxkb3dubG9hZF91cmwYAiABKAlSC2Rvd25sb2FkVXJs'
+    'EhsKCWZpbGVfbmFtZRgDIAEoCVIIZmlsZU5hbWUSHQoKZXhwaXJlc19pbhgEIAEoBVIJZXhwaX'
+    'Jlc0lu');
+
 @$core.Deprecated('Use regionItemDescriptor instead')
 const RegionItem$json = {
   '1': 'RegionItem',

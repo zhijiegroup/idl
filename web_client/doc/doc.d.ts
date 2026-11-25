@@ -363,6 +363,23 @@ export interface DownloadMyDocResponse {
   expires_in?: number;
 }
 
+/** 获取学校文档下载地址(政策文件 / 人才培养方案；签名 URL，5 分钟有效，Content-Disposition: attachment) */
+export interface DownloadSchoolDocRequest {
+  base_request?: base.BaseRequest;
+  /** 学校文档ID(school_document.doc_id) */
+  doc_id?: string;
+}
+
+export interface DownloadSchoolDocResponse {
+  base_resp?: base.BaseResponse;
+  /** 签名URL */
+  download_url?: string;
+  /** 下载文件名(doc_name + .pdf 兜底) */
+  file_name?: string;
+  /** 有效秒数(300) */
+  expires_in?: number;
+}
+
 /** 行政区划项(省级 / 地级市) */
 export interface RegionItem {
   /** 国标行政区划码(6 位)：省级如 110000；地级市如 320100；直辖市市级单条为市辖区码(如 110100) */

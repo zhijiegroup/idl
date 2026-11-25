@@ -3235,6 +3235,167 @@ class DownloadMyDocResponse extends $pb.GeneratedMessage {
   void clearExpiresIn() => clearField(4);
 }
 
+/// 获取学校文档下载地址(政策文件 / 人才培养方案；签名 URL，5 分钟有效，Content-Disposition: attachment)
+class DownloadSchoolDocRequest extends $pb.GeneratedMessage {
+  factory DownloadSchoolDocRequest({
+    $0.BaseRequest? baseRequest,
+    $fixnum.Int64? docId,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (docId != null) {
+      $result.docId = docId;
+    }
+    return $result;
+  }
+  DownloadSchoolDocRequest._() : super();
+  factory DownloadSchoolDocRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DownloadSchoolDocRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DownloadSchoolDocRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'docId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DownloadSchoolDocRequest clone() => DownloadSchoolDocRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DownloadSchoolDocRequest copyWith(void Function(DownloadSchoolDocRequest) updates) => super.copyWith((message) => updates(message as DownloadSchoolDocRequest)) as DownloadSchoolDocRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DownloadSchoolDocRequest create() => DownloadSchoolDocRequest._();
+  DownloadSchoolDocRequest createEmptyInstance() => create();
+  static $pb.PbList<DownloadSchoolDocRequest> createRepeated() => $pb.PbList<DownloadSchoolDocRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DownloadSchoolDocRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DownloadSchoolDocRequest>(create);
+  static DownloadSchoolDocRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get docId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set docId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasDocId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDocId() => clearField(2);
+}
+
+class DownloadSchoolDocResponse extends $pb.GeneratedMessage {
+  factory DownloadSchoolDocResponse({
+    $0.BaseResponse? baseResp,
+    $core.String? downloadUrl,
+    $core.String? fileName,
+    $core.int? expiresIn,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (downloadUrl != null) {
+      $result.downloadUrl = downloadUrl;
+    }
+    if (fileName != null) {
+      $result.fileName = fileName;
+    }
+    if (expiresIn != null) {
+      $result.expiresIn = expiresIn;
+    }
+    return $result;
+  }
+  DownloadSchoolDocResponse._() : super();
+  factory DownloadSchoolDocResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DownloadSchoolDocResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DownloadSchoolDocResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOS(2, _omitFieldNames ? '' : 'downloadUrl')
+    ..aOS(3, _omitFieldNames ? '' : 'fileName')
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'expiresIn', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DownloadSchoolDocResponse clone() => DownloadSchoolDocResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DownloadSchoolDocResponse copyWith(void Function(DownloadSchoolDocResponse) updates) => super.copyWith((message) => updates(message as DownloadSchoolDocResponse)) as DownloadSchoolDocResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DownloadSchoolDocResponse create() => DownloadSchoolDocResponse._();
+  DownloadSchoolDocResponse createEmptyInstance() => create();
+  static $pb.PbList<DownloadSchoolDocResponse> createRepeated() => $pb.PbList<DownloadSchoolDocResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DownloadSchoolDocResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DownloadSchoolDocResponse>(create);
+  static DownloadSchoolDocResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get downloadUrl => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set downloadUrl($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasDownloadUrl() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDownloadUrl() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get fileName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set fileName($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasFileName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFileName() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get expiresIn => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set expiresIn($core.int v) { $_setSignedInt32(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasExpiresIn() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearExpiresIn() => clearField(4);
+}
+
 /// 行政区划项(省级 / 地级市)
 class RegionItem extends $pb.GeneratedMessage {
   factory RegionItem({

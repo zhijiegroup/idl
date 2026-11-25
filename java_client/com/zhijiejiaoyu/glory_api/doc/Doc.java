@@ -185,6 +185,16 @@ public final class Doc {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_DownloadMyDocResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_DownloadSchoolDocRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_DownloadSchoolDocRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_DownloadSchoolDocResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_DownloadSchoolDocResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_RegionItem_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -347,29 +357,35 @@ public final class Doc {
       "c_id\030\002 \001(\003\"{\n\025DownloadMyDocResponse\022%\n\tb" +
       "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022\024\n\014do" +
       "wnload_url\030\002 \001(\t\022\021\n\tfile_name\030\003 \001(\t\022\022\n\ne" +
-      "xpires_in\030\004 \001(\005\"(\n\nRegionItem\022\014\n\004code\030\001 " +
-      "\001(\t\022\014\n\004name\030\002 \001(\t\"Q\n\021ListRegionRequest\022\'" +
-      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
-      "\023\n\013parent_code\030\002 \001(\t\"c\n\022ListRegionRespon" +
-      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
-      "e\022&\n\007regions\030\002 \003(\0132\025.glory_api.RegionIte" +
-      "m\"G\n\034ListPolicyDocProvinceRequest\022\'\n\014bas" +
-      "e_request\030\001 \001(\0132\021.base.BaseRequest\"C\n\022Po" +
-      "licyProvinceItem\022\014\n\004code\030\001 \001(\t\022\014\n\004name\030\002" +
-      " \001(\t\022\021\n\tdoc_count\030\003 \001(\003\"x\n\035ListPolicyDoc" +
-      "ProvinceResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
-      "se.BaseResponse\0220\n\tprovinces\030\002 \003(\0132\035.glo" +
-      "ry_api.PolicyProvinceItem\"i\n\014UploadedFil" +
-      "e\022\020\n\010file_url\030\001 \001(\t\022\021\n\tfile_name\030\002 \001(\t\022\021" +
-      "\n\tfile_size\030\003 \001(\003\022\021\n\tfile_type\030\004 \001(\t\022\016\n\006" +
-      "doc_id\030\005 \001(\003\"\237\001\n\021UploadFileRequest\022\'\n\014ba" +
-      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tp" +
-      "arent_id\030\002 \001(\003\022\022\n\nobject_key\030\003 \001(\t\022\021\n\tfi" +
-      "le_name\030\004 \001(\t\022\021\n\tfile_size\030\005 \001(\003\022\024\n\014cont" +
-      "ent_type\030\006 \001(\t\"c\n\022UploadFileResponse\022%\n\t" +
-      "base_resp\030\001 \001(\0132\022.base.BaseResponse\022&\n\005f" +
-      "iles\030\002 \003(\0132\027.glory_api.UploadedFileB\"\n\036c" +
-      "om.zhijiejiaoyu.glory_api.docP\001b\006proto3"
+      "xpires_in\030\004 \001(\005\"S\n\030DownloadSchoolDocRequ" +
+      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
+      "uest\022\016\n\006doc_id\030\002 \001(\003\"\177\n\031DownloadSchoolDo" +
+      "cResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
+      "Response\022\024\n\014download_url\030\002 \001(\t\022\021\n\tfile_n" +
+      "ame\030\003 \001(\t\022\022\n\nexpires_in\030\004 \001(\005\"(\n\nRegionI" +
+      "tem\022\014\n\004code\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"Q\n\021ListR" +
+      "egionRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
+      "e.BaseRequest\022\023\n\013parent_code\030\002 \001(\t\"c\n\022Li" +
+      "stRegionResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
+      "se.BaseResponse\022&\n\007regions\030\002 \003(\0132\025.glory" +
+      "_api.RegionItem\"G\n\034ListPolicyDocProvince" +
+      "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
+      "eRequest\"C\n\022PolicyProvinceItem\022\014\n\004code\030\001" +
+      " \001(\t\022\014\n\004name\030\002 \001(\t\022\021\n\tdoc_count\030\003 \001(\003\"x\n" +
+      "\035ListPolicyDocProvinceResponse\022%\n\tbase_r" +
+      "esp\030\001 \001(\0132\022.base.BaseResponse\0220\n\tprovinc" +
+      "es\030\002 \003(\0132\035.glory_api.PolicyProvinceItem\"" +
+      "i\n\014UploadedFile\022\020\n\010file_url\030\001 \001(\t\022\021\n\tfil" +
+      "e_name\030\002 \001(\t\022\021\n\tfile_size\030\003 \001(\003\022\021\n\tfile_" +
+      "type\030\004 \001(\t\022\016\n\006doc_id\030\005 \001(\003\"\237\001\n\021UploadFil" +
+      "eRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
+      "seRequest\022\021\n\tparent_id\030\002 \001(\003\022\022\n\nobject_k" +
+      "ey\030\003 \001(\t\022\021\n\tfile_name\030\004 \001(\t\022\021\n\tfile_size" +
+      "\030\005 \001(\003\022\024\n\014content_type\030\006 \001(\t\"c\n\022UploadFi" +
+      "leResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
+      "eResponse\022&\n\005files\030\002 \003(\0132\027.glory_api.Upl" +
+      "oadedFileB\"\n\036com.zhijiejiaoyu.glory_api." +
+      "docP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -580,56 +596,68 @@ public final class Doc {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DownloadMyDocResponse_descriptor,
         new java.lang.String[] { "BaseResp", "DownloadUrl", "FileName", "ExpiresIn", });
-    internal_static_glory_api_RegionItem_descriptor =
+    internal_static_glory_api_DownloadSchoolDocRequest_descriptor =
       getDescriptor().getMessageTypes().get(34);
+    internal_static_glory_api_DownloadSchoolDocRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_DownloadSchoolDocRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "DocId", });
+    internal_static_glory_api_DownloadSchoolDocResponse_descriptor =
+      getDescriptor().getMessageTypes().get(35);
+    internal_static_glory_api_DownloadSchoolDocResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_DownloadSchoolDocResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "DownloadUrl", "FileName", "ExpiresIn", });
+    internal_static_glory_api_RegionItem_descriptor =
+      getDescriptor().getMessageTypes().get(36);
     internal_static_glory_api_RegionItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_RegionItem_descriptor,
         new java.lang.String[] { "Code", "Name", });
     internal_static_glory_api_ListRegionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(35);
+      getDescriptor().getMessageTypes().get(37);
     internal_static_glory_api_ListRegionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListRegionRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ParentCode", });
     internal_static_glory_api_ListRegionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(36);
+      getDescriptor().getMessageTypes().get(38);
     internal_static_glory_api_ListRegionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListRegionResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Regions", });
     internal_static_glory_api_ListPolicyDocProvinceRequest_descriptor =
-      getDescriptor().getMessageTypes().get(37);
+      getDescriptor().getMessageTypes().get(39);
     internal_static_glory_api_ListPolicyDocProvinceRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListPolicyDocProvinceRequest_descriptor,
         new java.lang.String[] { "BaseRequest", });
     internal_static_glory_api_PolicyProvinceItem_descriptor =
-      getDescriptor().getMessageTypes().get(38);
+      getDescriptor().getMessageTypes().get(40);
     internal_static_glory_api_PolicyProvinceItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_PolicyProvinceItem_descriptor,
         new java.lang.String[] { "Code", "Name", "DocCount", });
     internal_static_glory_api_ListPolicyDocProvinceResponse_descriptor =
-      getDescriptor().getMessageTypes().get(39);
+      getDescriptor().getMessageTypes().get(41);
     internal_static_glory_api_ListPolicyDocProvinceResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListPolicyDocProvinceResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Provinces", });
     internal_static_glory_api_UploadedFile_descriptor =
-      getDescriptor().getMessageTypes().get(40);
+      getDescriptor().getMessageTypes().get(42);
     internal_static_glory_api_UploadedFile_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UploadedFile_descriptor,
         new java.lang.String[] { "FileUrl", "FileName", "FileSize", "FileType", "DocId", });
     internal_static_glory_api_UploadFileRequest_descriptor =
-      getDescriptor().getMessageTypes().get(41);
+      getDescriptor().getMessageTypes().get(43);
     internal_static_glory_api_UploadFileRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UploadFileRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ParentId", "ObjectKey", "FileName", "FileSize", "ContentType", });
     internal_static_glory_api_UploadFileResponse_descriptor =
-      getDescriptor().getMessageTypes().get(42);
+      getDescriptor().getMessageTypes().get(44);
     internal_static_glory_api_UploadFileResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UploadFileResponse_descriptor,
