@@ -363,6 +363,21 @@ export interface DownloadMyDocResponse {
   expires_in?: number;
 }
 
+/** 我的文档容量统计(个人配额：已用 / 上限；已用含我的上传 + 新建课程自定义课节/小节资源) */
+export interface GetMyDocQuotaRequest {
+  base_request?: base.BaseRequest;
+}
+
+export interface GetMyDocQuotaResponse {
+  base_resp?: base.BaseResponse;
+  /** 已用容量(字节)：我的上传 + 新建课程自定义课节/小节资源 */
+  used_bytes?: string;
+  /** 容量上限(字节)：教师个人 10GB */
+  limit_bytes?: string;
+  /** 其中「我的文档」上传统计(字节)，用于前端拆分展示 */
+  my_doc_used_bytes?: string;
+}
+
 /** 获取学校文档下载地址(政策文件 / 人才培养方案；签名 URL，5 分钟有效，Content-Disposition: attachment) */
 export interface DownloadSchoolDocRequest {
   base_request?: base.BaseRequest;

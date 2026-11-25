@@ -1173,6 +1173,9 @@ class glory_apiApi {
   $async.Future<$51.DownloadMyDocResponse> downloadMyDoc($pb.ClientContext? ctx, $51.DownloadMyDocRequest request) =>
     _client.invoke<$51.DownloadMyDocResponse>(ctx, 'glory_api', 'DownloadMyDoc', request, $51.DownloadMyDocResponse())
   ;
+  $async.Future<$51.GetMyDocQuotaResponse> getMyDocQuota($pb.ClientContext? ctx, $51.GetMyDocQuotaRequest request) =>
+    _client.invoke<$51.GetMyDocQuotaResponse>(ctx, 'glory_api', 'GetMyDocQuota', request, $51.GetMyDocQuotaResponse())
+  ;
   $async.Future<$51.UploadFileResponse> uploadFile($pb.ClientContext? ctx, $51.UploadFileRequest request) =>
     _client.invoke<$51.UploadFileResponse>(ctx, 'glory_api', 'UploadFile', request, $51.UploadFileResponse())
   ;

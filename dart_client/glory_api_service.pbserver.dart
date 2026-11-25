@@ -448,6 +448,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$51.UpdateMyDocPinnedResponse> updateMyDocPinned($pb.ServerContext ctx, $51.UpdateMyDocPinnedRequest request);
   $async.Future<$51.DeleteMyDocResponse> deleteMyDoc($pb.ServerContext ctx, $51.DeleteMyDocRequest request);
   $async.Future<$51.DownloadMyDocResponse> downloadMyDoc($pb.ServerContext ctx, $51.DownloadMyDocRequest request);
+  $async.Future<$51.GetMyDocQuotaResponse> getMyDocQuota($pb.ServerContext ctx, $51.GetMyDocQuotaRequest request);
   $async.Future<$51.UploadFileResponse> uploadFile($pb.ServerContext ctx, $51.UploadFileRequest request);
   $async.Future<$52.GetAndroidQRCodeResponse> getAndroidQRcode($pb.ServerContext ctx, $52.GetAndroidQRCodeRequest request);
   $async.Future<$53.CreateJobResponse> createJob($pb.ServerContext ctx, $53.CreateJobRequest request);
@@ -939,6 +940,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'UpdateMyDocPinned': return $51.UpdateMyDocPinnedRequest();
       case 'DeleteMyDoc': return $51.DeleteMyDocRequest();
       case 'DownloadMyDoc': return $51.DownloadMyDocRequest();
+      case 'GetMyDocQuota': return $51.GetMyDocQuotaRequest();
       case 'UploadFile': return $51.UploadFileRequest();
       case 'GetAndroidQRcode': return $52.GetAndroidQRCodeRequest();
       case 'CreateJob': return $53.CreateJobRequest();
@@ -1433,6 +1435,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'UpdateMyDocPinned': return this.updateMyDocPinned(ctx, request as $51.UpdateMyDocPinnedRequest);
       case 'DeleteMyDoc': return this.deleteMyDoc(ctx, request as $51.DeleteMyDocRequest);
       case 'DownloadMyDoc': return this.downloadMyDoc(ctx, request as $51.DownloadMyDocRequest);
+      case 'GetMyDocQuota': return this.getMyDocQuota(ctx, request as $51.GetMyDocQuotaRequest);
       case 'UploadFile': return this.uploadFile(ctx, request as $51.UploadFileRequest);
       case 'GetAndroidQRcode': return this.getAndroidQRcode(ctx, request as $52.GetAndroidQRCodeRequest);
       case 'CreateJob': return this.createJob(ctx, request as $53.CreateJobRequest);

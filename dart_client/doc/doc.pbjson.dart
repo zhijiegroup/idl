@@ -611,6 +611,37 @@ final $typed_data.Uint8List downloadMyDocResponseDescriptor = $convert.base64Dec
     'ZmlsZV9uYW1lGAMgASgJUghmaWxlTmFtZRIdCgpleHBpcmVzX2luGAQgASgFUglleHBpcmVzSW'
     '4=');
 
+@$core.Deprecated('Use getMyDocQuotaRequestDescriptor instead')
+const GetMyDocQuotaRequest$json = {
+  '1': 'GetMyDocQuotaRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+  ],
+};
+
+/// Descriptor for `GetMyDocQuotaRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getMyDocQuotaRequestDescriptor = $convert.base64Decode(
+    'ChRHZXRNeURvY1F1b3RhUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLkJhc2'
+    'VSZXF1ZXN0UgtiYXNlUmVxdWVzdA==');
+
+@$core.Deprecated('Use getMyDocQuotaResponseDescriptor instead')
+const GetMyDocQuotaResponse$json = {
+  '1': 'GetMyDocQuotaResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'used_bytes', '3': 2, '4': 1, '5': 3, '10': 'usedBytes'},
+    {'1': 'limit_bytes', '3': 3, '4': 1, '5': 3, '10': 'limitBytes'},
+    {'1': 'my_doc_used_bytes', '3': 4, '4': 1, '5': 3, '10': 'myDocUsedBytes'},
+  ],
+};
+
+/// Descriptor for `GetMyDocQuotaResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getMyDocQuotaResponseDescriptor = $convert.base64Decode(
+    'ChVHZXRNeURvY1F1b3RhUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYXNlUm'
+    'VzcG9uc2VSCGJhc2VSZXNwEh0KCnVzZWRfYnl0ZXMYAiABKANSCXVzZWRCeXRlcxIfCgtsaW1p'
+    'dF9ieXRlcxgDIAEoA1IKbGltaXRCeXRlcxIpChFteV9kb2NfdXNlZF9ieXRlcxgEIAEoA1IObX'
+    'lEb2NVc2VkQnl0ZXM=');
+
 @$core.Deprecated('Use downloadSchoolDocRequestDescriptor instead')
 const DownloadSchoolDocRequest$json = {
   '1': 'DownloadSchoolDocRequest',

@@ -1199,6 +1199,58 @@ nonisolated struct GloryApi_DownloadMyDocResponse: Sendable {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
+/// 我的文档容量统计(个人配额：已用 / 上限；已用含我的上传 + 新建课程自定义课节/小节资源)
+nonisolated struct GloryApi_GetMyDocQuotaRequest: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {_baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+nonisolated struct GloryApi_GetMyDocQuotaResponse: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {_baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  /// 已用容量(字节)：我的上传 + 新建课程自定义课节/小节资源
+  var usedBytes: Int64 = 0
+
+  /// 容量上限(字节)：教师个人 10GB
+  var limitBytes: Int64 = 0
+
+  /// 其中「我的文档」上传统计(字节)，用于前端拆分展示
+  var myDocUsedBytes: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
 /// 获取学校文档下载地址(政策文件 / 人才培养方案；签名 URL，5 分钟有效，Content-Disposition: attachment)
 nonisolated struct GloryApi_DownloadSchoolDocRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
@@ -3280,6 +3332,89 @@ nonisolated extension GloryApi_DownloadMyDocResponse: SwiftProtobuf.Message, Swi
     if lhs.downloadURL != rhs.downloadURL {return false}
     if lhs.fileName != rhs.fileName {return false}
     if lhs.expiresIn != rhs.expiresIn {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+nonisolated extension GloryApi_GetMyDocQuotaRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetMyDocQuotaRequest"
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_request\0")
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetMyDocQuotaRequest, rhs: GloryApi_GetMyDocQuotaRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+nonisolated extension GloryApi_GetMyDocQuotaResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetMyDocQuotaResponse"
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}used_bytes\0\u{3}limit_bytes\0\u{3}my_doc_used_bytes\0")
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.usedBytes) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.limitBytes) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.myDocUsedBytes) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.usedBytes != 0 {
+      try visitor.visitSingularInt64Field(value: self.usedBytes, fieldNumber: 2)
+    }
+    if self.limitBytes != 0 {
+      try visitor.visitSingularInt64Field(value: self.limitBytes, fieldNumber: 3)
+    }
+    if self.myDocUsedBytes != 0 {
+      try visitor.visitSingularInt64Field(value: self.myDocUsedBytes, fieldNumber: 4)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetMyDocQuotaResponse, rhs: GloryApi_GetMyDocQuotaResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.usedBytes != rhs.usedBytes {return false}
+    if lhs.limitBytes != rhs.limitBytes {return false}
+    if lhs.myDocUsedBytes != rhs.myDocUsedBytes {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

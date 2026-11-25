@@ -2942,6 +2942,12 @@ export class glory_api {
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
+  GetMyDocQuota(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/doc/get_my_doc_quota${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   UploadFile(request) {
     const uri = `${this.uriPrefix}/api/doc/upload_file`;
     const body = JSONbigint.stringify(request);

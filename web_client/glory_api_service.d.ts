@@ -1689,6 +1689,11 @@ CreateLivePlanProduct create live plan product */
     request: doc.DownloadMyDocRequest
   ): Promise<doc.DownloadMyDocResponse>;
 
+  /** 我的文档容量统计(已用 / 上限) */
+  GetMyDocQuota(
+    request: doc.GetMyDocQuotaRequest
+  ): Promise<doc.GetMyDocQuotaResponse>;
+
   /** 通用上传 */
   UploadFile(request: doc.UploadFileRequest): Promise<doc.UploadFileResponse>;
 

@@ -3235,6 +3235,153 @@ class DownloadMyDocResponse extends $pb.GeneratedMessage {
   void clearExpiresIn() => clearField(4);
 }
 
+/// 我的文档容量统计(个人配额：已用 / 上限；已用含我的上传 + 新建课程自定义课节/小节资源)
+class GetMyDocQuotaRequest extends $pb.GeneratedMessage {
+  factory GetMyDocQuotaRequest({
+    $0.BaseRequest? baseRequest,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    return $result;
+  }
+  GetMyDocQuotaRequest._() : super();
+  factory GetMyDocQuotaRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetMyDocQuotaRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetMyDocQuotaRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetMyDocQuotaRequest clone() => GetMyDocQuotaRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetMyDocQuotaRequest copyWith(void Function(GetMyDocQuotaRequest) updates) => super.copyWith((message) => updates(message as GetMyDocQuotaRequest)) as GetMyDocQuotaRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMyDocQuotaRequest create() => GetMyDocQuotaRequest._();
+  GetMyDocQuotaRequest createEmptyInstance() => create();
+  static $pb.PbList<GetMyDocQuotaRequest> createRepeated() => $pb.PbList<GetMyDocQuotaRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetMyDocQuotaRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetMyDocQuotaRequest>(create);
+  static GetMyDocQuotaRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+}
+
+class GetMyDocQuotaResponse extends $pb.GeneratedMessage {
+  factory GetMyDocQuotaResponse({
+    $0.BaseResponse? baseResp,
+    $fixnum.Int64? usedBytes,
+    $fixnum.Int64? limitBytes,
+    $fixnum.Int64? myDocUsedBytes,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (usedBytes != null) {
+      $result.usedBytes = usedBytes;
+    }
+    if (limitBytes != null) {
+      $result.limitBytes = limitBytes;
+    }
+    if (myDocUsedBytes != null) {
+      $result.myDocUsedBytes = myDocUsedBytes;
+    }
+    return $result;
+  }
+  GetMyDocQuotaResponse._() : super();
+  factory GetMyDocQuotaResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetMyDocQuotaResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetMyDocQuotaResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'usedBytes')
+    ..aInt64(3, _omitFieldNames ? '' : 'limitBytes')
+    ..aInt64(4, _omitFieldNames ? '' : 'myDocUsedBytes')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetMyDocQuotaResponse clone() => GetMyDocQuotaResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetMyDocQuotaResponse copyWith(void Function(GetMyDocQuotaResponse) updates) => super.copyWith((message) => updates(message as GetMyDocQuotaResponse)) as GetMyDocQuotaResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMyDocQuotaResponse create() => GetMyDocQuotaResponse._();
+  GetMyDocQuotaResponse createEmptyInstance() => create();
+  static $pb.PbList<GetMyDocQuotaResponse> createRepeated() => $pb.PbList<GetMyDocQuotaResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetMyDocQuotaResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetMyDocQuotaResponse>(create);
+  static GetMyDocQuotaResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get usedBytes => $_getI64(1);
+  @$pb.TagNumber(2)
+  set usedBytes($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasUsedBytes() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUsedBytes() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get limitBytes => $_getI64(2);
+  @$pb.TagNumber(3)
+  set limitBytes($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasLimitBytes() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLimitBytes() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get myDocUsedBytes => $_getI64(3);
+  @$pb.TagNumber(4)
+  set myDocUsedBytes($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasMyDocUsedBytes() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMyDocUsedBytes() => clearField(4);
+}
+
 /// 获取学校文档下载地址(政策文件 / 人才培养方案；签名 URL，5 分钟有效，Content-Disposition: attachment)
 class DownloadSchoolDocRequest extends $pb.GeneratedMessage {
   factory DownloadSchoolDocRequest({
