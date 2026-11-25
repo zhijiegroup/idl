@@ -270,6 +270,19 @@ message DownloadMyDocResponse {
   int32 expires_in = 4; // 有效秒数(300)
 }
 
+// 获取学校文档下载地址(政策文件 / 人才培养方案；签名 URL，5 分钟有效，Content-Disposition: attachment)
+message DownloadSchoolDocRequest {
+  base.BaseRequest base_request = 1;
+  int64 doc_id = 2; // 学校文档ID(school_document.doc_id)
+}
+
+message DownloadSchoolDocResponse {
+  base.BaseResponse base_resp = 1;
+  string download_url = 2; // 签名URL
+  string file_name = 3; // 下载文件名(doc_name + .pdf 兜底)
+  int32 expires_in = 4; // 有效秒数(300)
+}
+
 // ==================== 省市行政区划字典(GB/T 2260，政策文件省市联动) ====================
 
 // 行政区划项(省级 / 地级市)
