@@ -3294,6 +3294,7 @@ class GetMyDocQuotaResponse extends $pb.GeneratedMessage {
     $fixnum.Int64? usedBytes,
     $fixnum.Int64? limitBytes,
     $fixnum.Int64? myDocUsedBytes,
+    $core.int? usagePercent,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -3308,6 +3309,9 @@ class GetMyDocQuotaResponse extends $pb.GeneratedMessage {
     if (myDocUsedBytes != null) {
       $result.myDocUsedBytes = myDocUsedBytes;
     }
+    if (usagePercent != null) {
+      $result.usagePercent = usagePercent;
+    }
     return $result;
   }
   GetMyDocQuotaResponse._() : super();
@@ -3319,6 +3323,7 @@ class GetMyDocQuotaResponse extends $pb.GeneratedMessage {
     ..aInt64(2, _omitFieldNames ? '' : 'usedBytes')
     ..aInt64(3, _omitFieldNames ? '' : 'limitBytes')
     ..aInt64(4, _omitFieldNames ? '' : 'myDocUsedBytes')
+    ..a<$core.int>(5, _omitFieldNames ? '' : 'usagePercent', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -3380,6 +3385,15 @@ class GetMyDocQuotaResponse extends $pb.GeneratedMessage {
   $core.bool hasMyDocUsedBytes() => $_has(3);
   @$pb.TagNumber(4)
   void clearMyDocUsedBytes() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get usagePercent => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set usagePercent($core.int v) { $_setSignedInt32(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasUsagePercent() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearUsagePercent() => clearField(5);
 }
 
 /// 获取学校文档下载地址(政策文件 / 人才培养方案；签名 URL，5 分钟有效，Content-Disposition: attachment)

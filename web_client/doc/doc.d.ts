@@ -376,6 +376,8 @@ export interface GetMyDocQuotaResponse {
   limit_bytes?: string;
   /** 其中「我的文档」上传统计(字节)，用于前端拆分展示 */
   my_doc_used_bytes?: string;
+  /** 使用率百分比(0-100，四舍五入；上限为 0 时返回 0) */
+  usage_percent?: number;
 }
 
 /** 获取学校文档下载地址(政策文件 / 人才培养方案；签名 URL，5 分钟有效，Content-Disposition: attachment) */

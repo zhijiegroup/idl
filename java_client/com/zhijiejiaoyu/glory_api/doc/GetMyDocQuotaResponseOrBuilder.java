@@ -51,4 +51,14 @@ public interface GetMyDocQuotaResponseOrBuilder extends
    * @return The myDocUsedBytes.
    */
   long getMyDocUsedBytes();
+
+  /**
+   * <pre>
+   * 使用率百分比(0-100，四舍五入；上限为 0 时返回 0)
+   * </pre>
+   *
+   * <code>int32 usage_percent = 5;</code>
+   * @return The usagePercent.
+   */
+  int getUsagePercent();
 }

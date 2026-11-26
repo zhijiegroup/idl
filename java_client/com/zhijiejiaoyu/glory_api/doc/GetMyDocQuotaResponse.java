@@ -76,6 +76,11 @@ private static final long serialVersionUID = 0L;
             myDocUsedBytes = input.readInt64();
             break;
           }
+          case 40: {
+
+            usagePercent = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -179,6 +184,21 @@ private static final long serialVersionUID = 0L;
     return myDocUsedBytes ;
   }
 
+  public static final int USAGE_PERCENT_FIELD_NUMBER = 5;
+  private int usagePercent ;
+  /**
+   * <pre>
+   * 使用率百分比(0-100，四舍五入；上限为 0 时返回 0)
+   * </pre>
+   *
+   * <code>int32 usage_percent = 5;</code>
+   * @return The usagePercent.
+   */
+  @java.lang.Override
+  public int getUsagePercent() {
+    return usagePercent ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -205,6 +225,9 @@ private static final long serialVersionUID = 0L;
     if (myDocUsedBytes != 0L) {
       output.writeInt64(4, myDocUsedBytes );
     }
+    if (usagePercent != 0) {
+      output.writeInt32(5, usagePercent );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -229,6 +252,10 @@ private static final long serialVersionUID = 0L;
     if (myDocUsedBytes != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, myDocUsedBytes );
+    }
+    if (usagePercent != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(5, usagePercent );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -256,6 +283,8 @@ private static final long serialVersionUID = 0L;
         != other.getLimitBytes()) return false;
     if (getMyDocUsedBytes()
         != other.getMyDocUsedBytes()) return false;
+    if (getUsagePercent()
+        != other.getUsagePercent()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -280,6 +309,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + MY_DOC_USED_BYTES_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getMyDocUsedBytes());
+    hash = (37 * hash) + USAGE_PERCENT_FIELD_NUMBER;
+    hash = (53 * hash) + getUsagePercent();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -425,6 +456,8 @@ private static final long serialVersionUID = 0L;
 
       myDocUsedBytes = 0L;
 
+      usagePercent = 0;
+
       return this;
     }
 
@@ -459,6 +492,7 @@ private static final long serialVersionUID = 0L;
       result.usedBytes = usedBytes ;
       result.limitBytes = limitBytes ;
       result.myDocUsedBytes = myDocUsedBytes ;
+      result.usagePercent = usagePercent ;
       onBuilt();
       return result;
     }
@@ -518,6 +552,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getMyDocUsedBytes() != 0L) {
         setMyDocUsedBytes(other.getMyDocUsedBytes());
+      }
+      if (other.getUsagePercent() != 0) {
+        setUsagePercent(other.getUsagePercent());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -792,6 +829,49 @@ private static final long serialVersionUID = 0L;
     public Builder clearMyDocUsedBytes() {
       
       myDocUsedBytes = 0L;
+      onChanged();
+      return this;
+    }
+
+    private int usagePercent ;
+    /**
+     * <pre>
+     * 使用率百分比(0-100，四舍五入；上限为 0 时返回 0)
+     * </pre>
+     *
+     * <code>int32 usage_percent = 5;</code>
+     * @return The usagePercent.
+     */
+    @java.lang.Override
+    public int getUsagePercent() {
+      return usagePercent ;
+    }
+    /**
+     * <pre>
+     * 使用率百分比(0-100，四舍五入；上限为 0 时返回 0)
+     * </pre>
+     *
+     * <code>int32 usage_percent = 5;</code>
+     * @param value The usagePercent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUsagePercent(int value) {
+      
+      usagePercent = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 使用率百分比(0-100，四舍五入；上限为 0 时返回 0)
+     * </pre>
+     *
+     * <code>int32 usage_percent = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUsagePercent() {
+      
+      usagePercent = 0;
       onChanged();
       return this;
     }

@@ -632,6 +632,7 @@ const GetMyDocQuotaResponse$json = {
     {'1': 'used_bytes', '3': 2, '4': 1, '5': 3, '10': 'usedBytes'},
     {'1': 'limit_bytes', '3': 3, '4': 1, '5': 3, '10': 'limitBytes'},
     {'1': 'my_doc_used_bytes', '3': 4, '4': 1, '5': 3, '10': 'myDocUsedBytes'},
+    {'1': 'usage_percent', '3': 5, '4': 1, '5': 5, '10': 'usagePercent'},
   ],
 };
 
@@ -640,7 +641,7 @@ final $typed_data.Uint8List getMyDocQuotaResponseDescriptor = $convert.base64Dec
     'ChVHZXRNeURvY1F1b3RhUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYXNlUm'
     'VzcG9uc2VSCGJhc2VSZXNwEh0KCnVzZWRfYnl0ZXMYAiABKANSCXVzZWRCeXRlcxIfCgtsaW1p'
     'dF9ieXRlcxgDIAEoA1IKbGltaXRCeXRlcxIpChFteV9kb2NfdXNlZF9ieXRlcxgEIAEoA1IObX'
-    'lEb2NVc2VkQnl0ZXM=');
+    'lEb2NVc2VkQnl0ZXMSIwoNdXNhZ2VfcGVyY2VudBgFIAEoBVIMdXNhZ2VQZXJjZW50');
 
 @$core.Deprecated('Use downloadSchoolDocRequestDescriptor instead')
 const DownloadSchoolDocRequest$json = {

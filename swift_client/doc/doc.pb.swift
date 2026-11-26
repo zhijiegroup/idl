@@ -1244,6 +1244,9 @@ nonisolated struct GloryApi_GetMyDocQuotaResponse: Sendable {
   /// 其中「我的文档」上传统计(字节)，用于前端拆分展示
   var myDocUsedBytes: Int64 = 0
 
+  /// 使用率百分比(0-100，四舍五入；上限为 0 时返回 0)
+  var usagePercent: Int32 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -3373,7 +3376,7 @@ nonisolated extension GloryApi_GetMyDocQuotaRequest: SwiftProtobuf.Message, Swif
 
 nonisolated extension GloryApi_GetMyDocQuotaResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetMyDocQuotaResponse"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}used_bytes\0\u{3}limit_bytes\0\u{3}my_doc_used_bytes\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_resp\0\u{3}used_bytes\0\u{3}limit_bytes\0\u{3}my_doc_used_bytes\0\u{3}usage_percent\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -3385,6 +3388,7 @@ nonisolated extension GloryApi_GetMyDocQuotaResponse: SwiftProtobuf.Message, Swi
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.usedBytes) }()
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.limitBytes) }()
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.myDocUsedBytes) }()
+      case 5: try { try decoder.decodeSingularInt32Field(value: &self.usagePercent) }()
       default: break
       }
     }
@@ -3407,6 +3411,9 @@ nonisolated extension GloryApi_GetMyDocQuotaResponse: SwiftProtobuf.Message, Swi
     if self.myDocUsedBytes != 0 {
       try visitor.visitSingularInt64Field(value: self.myDocUsedBytes, fieldNumber: 4)
     }
+    if self.usagePercent != 0 {
+      try visitor.visitSingularInt32Field(value: self.usagePercent, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -3415,6 +3422,7 @@ nonisolated extension GloryApi_GetMyDocQuotaResponse: SwiftProtobuf.Message, Swi
     if lhs.usedBytes != rhs.usedBytes {return false}
     if lhs.limitBytes != rhs.limitBytes {return false}
     if lhs.myDocUsedBytes != rhs.myDocUsedBytes {return false}
+    if lhs.usagePercent != rhs.usagePercent {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

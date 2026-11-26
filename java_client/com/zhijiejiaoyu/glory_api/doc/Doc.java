@@ -369,38 +369,38 @@ public final class Doc {
       "wnload_url\030\002 \001(\t\022\021\n\tfile_name\030\003 \001(\t\022\022\n\ne" +
       "xpires_in\030\004 \001(\005\"?\n\024GetMyDocQuotaRequest\022" +
       "\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequest" +
-      "\"\202\001\n\025GetMyDocQuotaResponse\022%\n\tbase_resp\030" +
+      "\"\231\001\n\025GetMyDocQuotaResponse\022%\n\tbase_resp\030" +
       "\001 \001(\0132\022.base.BaseResponse\022\022\n\nused_bytes\030" +
       "\002 \001(\003\022\023\n\013limit_bytes\030\003 \001(\003\022\031\n\021my_doc_use" +
-      "d_bytes\030\004 \001(\003\"S\n\030DownloadSchoolDocReques" +
-      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
-      "st\022\016\n\006doc_id\030\002 \001(\003\"\177\n\031DownloadSchoolDocR" +
-      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
-      "sponse\022\024\n\014download_url\030\002 \001(\t\022\021\n\tfile_nam" +
-      "e\030\003 \001(\t\022\022\n\nexpires_in\030\004 \001(\005\"(\n\nRegionIte" +
-      "m\022\014\n\004code\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"Q\n\021ListReg" +
-      "ionRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
-      "BaseRequest\022\023\n\013parent_code\030\002 \001(\t\"c\n\022List" +
-      "RegionResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
-      ".BaseResponse\022&\n\007regions\030\002 \003(\0132\025.glory_a" +
-      "pi.RegionItem\"G\n\034ListPolicyDocProvinceRe" +
-      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
-      "equest\"C\n\022PolicyProvinceItem\022\014\n\004code\030\001 \001" +
-      "(\t\022\014\n\004name\030\002 \001(\t\022\021\n\tdoc_count\030\003 \001(\003\"x\n\035L" +
-      "istPolicyDocProvinceResponse\022%\n\tbase_res" +
-      "p\030\001 \001(\0132\022.base.BaseResponse\0220\n\tprovinces" +
-      "\030\002 \003(\0132\035.glory_api.PolicyProvinceItem\"i\n" +
-      "\014UploadedFile\022\020\n\010file_url\030\001 \001(\t\022\021\n\tfile_" +
-      "name\030\002 \001(\t\022\021\n\tfile_size\030\003 \001(\003\022\021\n\tfile_ty" +
-      "pe\030\004 \001(\t\022\016\n\006doc_id\030\005 \001(\003\"\237\001\n\021UploadFileR" +
-      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
-      "Request\022\021\n\tparent_id\030\002 \001(\003\022\022\n\nobject_key" +
-      "\030\003 \001(\t\022\021\n\tfile_name\030\004 \001(\t\022\021\n\tfile_size\030\005" +
-      " \001(\003\022\024\n\014content_type\030\006 \001(\t\"c\n\022UploadFile" +
-      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
-      "esponse\022&\n\005files\030\002 \003(\0132\027.glory_api.Uploa" +
-      "dedFileB\"\n\036com.zhijiejiaoyu.glory_api.do" +
-      "cP\001b\006proto3"
+      "d_bytes\030\004 \001(\003\022\025\n\rusage_percent\030\005 \001(\005\"S\n\030" +
+      "DownloadSchoolDocRequest\022\'\n\014base_request" +
+      "\030\001 \001(\0132\021.base.BaseRequest\022\016\n\006doc_id\030\002 \001(" +
+      "\003\"\177\n\031DownloadSchoolDocResponse\022%\n\tbase_r" +
+      "esp\030\001 \001(\0132\022.base.BaseResponse\022\024\n\014downloa" +
+      "d_url\030\002 \001(\t\022\021\n\tfile_name\030\003 \001(\t\022\022\n\nexpire" +
+      "s_in\030\004 \001(\005\"(\n\nRegionItem\022\014\n\004code\030\001 \001(\t\022\014" +
+      "\n\004name\030\002 \001(\t\"Q\n\021ListRegionRequest\022\'\n\014bas" +
+      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\023\n\013pa" +
+      "rent_code\030\002 \001(\t\"c\n\022ListRegionResponse\022%\n" +
+      "\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022&\n\007" +
+      "regions\030\002 \003(\0132\025.glory_api.RegionItem\"G\n\034" +
+      "ListPolicyDocProvinceRequest\022\'\n\014base_req" +
+      "uest\030\001 \001(\0132\021.base.BaseRequest\"C\n\022PolicyP" +
+      "rovinceItem\022\014\n\004code\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022" +
+      "\021\n\tdoc_count\030\003 \001(\003\"x\n\035ListPolicyDocProvi" +
+      "nceResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
+      "seResponse\0220\n\tprovinces\030\002 \003(\0132\035.glory_ap" +
+      "i.PolicyProvinceItem\"i\n\014UploadedFile\022\020\n\010" +
+      "file_url\030\001 \001(\t\022\021\n\tfile_name\030\002 \001(\t\022\021\n\tfil" +
+      "e_size\030\003 \001(\003\022\021\n\tfile_type\030\004 \001(\t\022\016\n\006doc_i" +
+      "d\030\005 \001(\003\"\237\001\n\021UploadFileRequest\022\'\n\014base_re" +
+      "quest\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tparent" +
+      "_id\030\002 \001(\003\022\022\n\nobject_key\030\003 \001(\t\022\021\n\tfile_na" +
+      "me\030\004 \001(\t\022\021\n\tfile_size\030\005 \001(\003\022\024\n\014content_t" +
+      "ype\030\006 \001(\t\"c\n\022UploadFileResponse\022%\n\tbase_" +
+      "resp\030\001 \001(\0132\022.base.BaseResponse\022&\n\005files\030" +
+      "\002 \003(\0132\027.glory_api.UploadedFileB\"\n\036com.zh" +
+      "ijiejiaoyu.glory_api.docP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -622,7 +622,7 @@ public final class Doc {
     internal_static_glory_api_GetMyDocQuotaResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetMyDocQuotaResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "UsedBytes", "LimitBytes", "MyDocUsedBytes", });
+        new java.lang.String[] { "BaseResp", "UsedBytes", "LimitBytes", "MyDocUsedBytes", "UsagePercent", });
     internal_static_glory_api_DownloadSchoolDocRequest_descriptor =
       getDescriptor().getMessageTypes().get(36);
     internal_static_glory_api_DownloadSchoolDocRequest_fieldAccessorTable = new
