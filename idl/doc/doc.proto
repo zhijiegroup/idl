@@ -280,6 +280,7 @@ message GetMyDocQuotaResponse {
   int64 used_bytes = 2; // 已用容量(字节)：我的上传 + 新建课程自定义课节/小节资源
   int64 limit_bytes = 3; // 容量上限(字节)：教师个人 10GB
   int64 my_doc_used_bytes = 4; // 其中「我的文档」上传统计(字节)，用于前端拆分展示
+  int32 usage_percent = 5; // 使用率百分比(0-100，四舍五入；上限为 0 时返回 0)
 }
 
 // 获取学校文档下载地址(政策文件 / 人才培养方案；签名 URL，5 分钟有效，Content-Disposition: attachment)
