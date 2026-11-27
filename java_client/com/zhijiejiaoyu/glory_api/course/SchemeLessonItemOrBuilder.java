@@ -9,7 +9,7 @@ public interface SchemeLessonItemOrBuilder extends
 
   /**
    * <pre>
-   * 下级节点类型：1.小节；2.任务
+   * 下级节点类型：1.小节（新数据固定 1）；2.任务（仅历史数据兼容，不再新增）
    * </pre>
    *
    * <code>int32 item_type = 1;</code>

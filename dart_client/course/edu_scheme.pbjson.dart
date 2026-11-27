@@ -92,6 +92,11 @@ const SchemeLessonResource$json = {
     {'1': 'file_size', '3': 4, '4': 1, '5': 3, '10': 'fileSize'},
     {'1': 'sort', '3': 5, '4': 1, '5': 5, '10': 'sort'},
     {'1': 'resource_id', '3': 6, '4': 1, '5': 3, '10': 'resourceId'},
+    {'1': 'origin_type', '3': 7, '4': 1, '5': 5, '10': 'originType'},
+    {'1': 'origin_course_type', '3': 8, '4': 1, '5': 5, '10': 'originCourseType'},
+    {'1': 'origin_course_id', '3': 9, '4': 1, '5': 3, '10': 'originCourseId'},
+    {'1': 'origin_chapter_id', '3': 10, '4': 1, '5': 3, '10': 'originChapterId'},
+    {'1': 'origin_resource_id', '3': 11, '4': 1, '5': 3, '10': 'originResourceId'},
   ],
 };
 
@@ -100,7 +105,11 @@ final $typed_data.Uint8List schemeLessonResourceDescriptor = $convert.base64Deco
     'ChRTY2hlbWVMZXNzb25SZXNvdXJjZRIjCg1yZXNvdXJjZV90eXBlGAEgASgFUgxyZXNvdXJjZV'
     'R5cGUSGQoIZmlsZV91cmwYAiABKAlSB2ZpbGVVcmwSGwoJZmlsZV9uYW1lGAMgASgJUghmaWxl'
     'TmFtZRIbCglmaWxlX3NpemUYBCABKANSCGZpbGVTaXplEhIKBHNvcnQYBSABKAVSBHNvcnQSHw'
-    'oLcmVzb3VyY2VfaWQYBiABKANSCnJlc291cmNlSWQ=');
+    'oLcmVzb3VyY2VfaWQYBiABKANSCnJlc291cmNlSWQSHwoLb3JpZ2luX3R5cGUYByABKAVSCm9y'
+    'aWdpblR5cGUSLAoSb3JpZ2luX2NvdXJzZV90eXBlGAggASgFUhBvcmlnaW5Db3Vyc2VUeXBlEi'
+    'gKEG9yaWdpbl9jb3Vyc2VfaWQYCSABKANSDm9yaWdpbkNvdXJzZUlkEioKEW9yaWdpbl9jaGFw'
+    'dGVyX2lkGAogASgDUg9vcmlnaW5DaGFwdGVySWQSLAoSb3JpZ2luX3Jlc291cmNlX2lkGAsgAS'
+    'gDUhBvcmlnaW5SZXNvdXJjZUlk');
 
 @$core.Deprecated('Use eduSchemeDescriptor instead')
 const EduScheme$json = {

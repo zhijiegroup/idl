@@ -5,7 +5,7 @@ package com.zhijiejiaoyu.glory_api.course;
 
 /**
  * <pre>
- * 课程体系三级结构：课节或小节/任务挂载的资源
+ * 课程体系三级结构：课节或小节挂载的资源
  * </pre>
  *
  * Protobuf type {@code glory_api.SchemeLessonResource}
@@ -86,6 +86,31 @@ private static final long serialVersionUID = 0L;
             resourceId = input.readInt64();
             break;
           }
+          case 56: {
+
+            originType = input.readInt32();
+            break;
+          }
+          case 64: {
+
+            originCourseType = input.readInt32();
+            break;
+          }
+          case 72: {
+
+            originCourseId = input.readInt64();
+            break;
+          }
+          case 80: {
+
+            originChapterId = input.readInt64();
+            break;
+          }
+          case 88: {
+
+            originResourceId = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -137,7 +162,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object fileUrl ;
   /**
    * <pre>
-   * OSS 地址(私有，展示时签名)
+   * OSS 地址(私有，展示时签名；平台资源为源课程资源对象 key)
    * </pre>
    *
    * <code>string file_url = 2;</code>
@@ -158,7 +183,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * OSS 地址(私有，展示时签名)
+   * OSS 地址(私有，展示时签名；平台资源为源课程资源对象 key)
    * </pre>
    *
    * <code>string file_url = 2;</code>
@@ -259,7 +284,7 @@ private static final long serialVersionUID = 0L;
   private long resourceId ;
   /**
    * <pre>
-   * 资源稳定标识；平台来源课节为课程资源ID，自定义资源为 scheme_lesson_resource_id
+   * 资源稳定标识；平台来源资源为课程资源ID，自定义资源为 scheme_lesson_resource_id
    * </pre>
    *
    * <code>int64 resource_id = 6;</code>
@@ -268,6 +293,81 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public long getResourceId() {
     return resourceId ;
+  }
+
+  public static final int ORIGIN_TYPE_FIELD_NUMBER = 7;
+  private int originType ;
+  /**
+   * <pre>
+   * 资源来源：1.平台课程资源引用(只读、不计配额)；2.自定义上传(默认 2，计入个人配额)
+   * </pre>
+   *
+   * <code>int32 origin_type = 7;</code>
+   * @return The originType.
+   */
+  @java.lang.Override
+  public int getOriginType() {
+    return originType ;
+  }
+
+  public static final int ORIGIN_COURSE_TYPE_FIELD_NUMBER = 8;
+  private int originCourseType ;
+  /**
+   * <pre>
+   * 平台资源来源课程类型：1.模块化；2.非模块化(origin_type=1 时有效)
+   * </pre>
+   *
+   * <code>int32 origin_course_type = 8;</code>
+   * @return The originCourseType.
+   */
+  @java.lang.Override
+  public int getOriginCourseType() {
+    return originCourseType ;
+  }
+
+  public static final int ORIGIN_COURSE_ID_FIELD_NUMBER = 9;
+  private long originCourseId ;
+  /**
+   * <pre>
+   * 来源课程ID(origin_type=1 时必填)
+   * </pre>
+   *
+   * <code>int64 origin_course_id = 9;</code>
+   * @return The originCourseId.
+   */
+  @java.lang.Override
+  public long getOriginCourseId() {
+    return originCourseId ;
+  }
+
+  public static final int ORIGIN_CHAPTER_ID_FIELD_NUMBER = 10;
+  private long originChapterId ;
+  /**
+   * <pre>
+   * 来源章节ID(origin_type=1 时必填)
+   * </pre>
+   *
+   * <code>int64 origin_chapter_id = 10;</code>
+   * @return The originChapterId.
+   */
+  @java.lang.Override
+  public long getOriginChapterId() {
+    return originChapterId ;
+  }
+
+  public static final int ORIGIN_RESOURCE_ID_FIELD_NUMBER = 11;
+  private long originResourceId ;
+  /**
+   * <pre>
+   * 来源资源ID(origin_type=1 时必填)
+   * </pre>
+   *
+   * <code>int64 origin_resource_id = 11;</code>
+   * @return The originResourceId.
+   */
+  @java.lang.Override
+  public long getOriginResourceId() {
+    return originResourceId ;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -302,6 +402,21 @@ private static final long serialVersionUID = 0L;
     if (resourceId != 0L) {
       output.writeInt64(6, resourceId );
     }
+    if (originType != 0) {
+      output.writeInt32(7, originType );
+    }
+    if (originCourseType != 0) {
+      output.writeInt32(8, originCourseType );
+    }
+    if (originCourseId != 0L) {
+      output.writeInt64(9, originCourseId );
+    }
+    if (originChapterId != 0L) {
+      output.writeInt64(10, originChapterId );
+    }
+    if (originResourceId != 0L) {
+      output.writeInt64(11, originResourceId );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -333,6 +448,26 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(6, resourceId );
     }
+    if (originType != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(7, originType );
+    }
+    if (originCourseType != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(8, originCourseType );
+    }
+    if (originCourseId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(9, originCourseId );
+    }
+    if (originChapterId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(10, originChapterId );
+    }
+    if (originResourceId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(11, originResourceId );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -360,6 +495,16 @@ private static final long serialVersionUID = 0L;
         != other.getSort()) return false;
     if (getResourceId()
         != other.getResourceId()) return false;
+    if (getOriginType()
+        != other.getOriginType()) return false;
+    if (getOriginCourseType()
+        != other.getOriginCourseType()) return false;
+    if (getOriginCourseId()
+        != other.getOriginCourseId()) return false;
+    if (getOriginChapterId()
+        != other.getOriginChapterId()) return false;
+    if (getOriginResourceId()
+        != other.getOriginResourceId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -385,6 +530,19 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + RESOURCE_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getResourceId());
+    hash = (37 * hash) + ORIGIN_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getOriginType();
+    hash = (37 * hash) + ORIGIN_COURSE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getOriginCourseType();
+    hash = (37 * hash) + ORIGIN_COURSE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getOriginCourseId());
+    hash = (37 * hash) + ORIGIN_CHAPTER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getOriginChapterId());
+    hash = (37 * hash) + ORIGIN_RESOURCE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getOriginResourceId());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -482,7 +640,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 课程体系三级结构：课节或小节/任务挂载的资源
+   * 课程体系三级结构：课节或小节挂载的资源
    * </pre>
    *
    * Protobuf type {@code glory_api.SchemeLessonResource}
@@ -534,6 +692,16 @@ private static final long serialVersionUID = 0L;
 
       resourceId = 0L;
 
+      originType = 0;
+
+      originCourseType = 0;
+
+      originCourseId = 0L;
+
+      originChapterId = 0L;
+
+      originResourceId = 0L;
+
       return this;
     }
 
@@ -566,6 +734,11 @@ private static final long serialVersionUID = 0L;
       result.fileSize = fileSize ;
       result.sort = sort ;
       result.resourceId = resourceId ;
+      result.originType = originType ;
+      result.originCourseType = originCourseType ;
+      result.originCourseId = originCourseId ;
+      result.originChapterId = originChapterId ;
+      result.originResourceId = originResourceId ;
       onBuilt();
       return result;
     }
@@ -633,6 +806,21 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getResourceId() != 0L) {
         setResourceId(other.getResourceId());
+      }
+      if (other.getOriginType() != 0) {
+        setOriginType(other.getOriginType());
+      }
+      if (other.getOriginCourseType() != 0) {
+        setOriginCourseType(other.getOriginCourseType());
+      }
+      if (other.getOriginCourseId() != 0L) {
+        setOriginCourseId(other.getOriginCourseId());
+      }
+      if (other.getOriginChapterId() != 0L) {
+        setOriginChapterId(other.getOriginChapterId());
+      }
+      if (other.getOriginResourceId() != 0L) {
+        setOriginResourceId(other.getOriginResourceId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -709,7 +897,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object fileUrl = "";
     /**
      * <pre>
-     * OSS 地址(私有，展示时签名)
+     * OSS 地址(私有，展示时签名；平台资源为源课程资源对象 key)
      * </pre>
      *
      * <code>string file_url = 2;</code>
@@ -729,7 +917,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * OSS 地址(私有，展示时签名)
+     * OSS 地址(私有，展示时签名；平台资源为源课程资源对象 key)
      * </pre>
      *
      * <code>string file_url = 2;</code>
@@ -750,7 +938,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * OSS 地址(私有，展示时签名)
+     * OSS 地址(私有，展示时签名；平台资源为源课程资源对象 key)
      * </pre>
      *
      * <code>string file_url = 2;</code>
@@ -769,7 +957,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * OSS 地址(私有，展示时签名)
+     * OSS 地址(私有，展示时签名；平台资源为源课程资源对象 key)
      * </pre>
      *
      * <code>string file_url = 2;</code>
@@ -783,7 +971,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * OSS 地址(私有，展示时签名)
+     * OSS 地址(私有，展示时签名；平台资源为源课程资源对象 key)
      * </pre>
      *
      * <code>string file_url = 2;</code>
@@ -987,7 +1175,7 @@ private static final long serialVersionUID = 0L;
     private long resourceId ;
     /**
      * <pre>
-     * 资源稳定标识；平台来源课节为课程资源ID，自定义资源为 scheme_lesson_resource_id
+     * 资源稳定标识；平台来源资源为课程资源ID，自定义资源为 scheme_lesson_resource_id
      * </pre>
      *
      * <code>int64 resource_id = 6;</code>
@@ -999,7 +1187,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 资源稳定标识；平台来源课节为课程资源ID，自定义资源为 scheme_lesson_resource_id
+     * 资源稳定标识；平台来源资源为课程资源ID，自定义资源为 scheme_lesson_resource_id
      * </pre>
      *
      * <code>int64 resource_id = 6;</code>
@@ -1014,7 +1202,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 资源稳定标识；平台来源课节为课程资源ID，自定义资源为 scheme_lesson_resource_id
+     * 资源稳定标识；平台来源资源为课程资源ID，自定义资源为 scheme_lesson_resource_id
      * </pre>
      *
      * <code>int64 resource_id = 6;</code>
@@ -1023,6 +1211,221 @@ private static final long serialVersionUID = 0L;
     public Builder clearResourceId() {
       
       resourceId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private int originType ;
+    /**
+     * <pre>
+     * 资源来源：1.平台课程资源引用(只读、不计配额)；2.自定义上传(默认 2，计入个人配额)
+     * </pre>
+     *
+     * <code>int32 origin_type = 7;</code>
+     * @return The originType.
+     */
+    @java.lang.Override
+    public int getOriginType() {
+      return originType ;
+    }
+    /**
+     * <pre>
+     * 资源来源：1.平台课程资源引用(只读、不计配额)；2.自定义上传(默认 2，计入个人配额)
+     * </pre>
+     *
+     * <code>int32 origin_type = 7;</code>
+     * @param value The originType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOriginType(int value) {
+      
+      originType = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 资源来源：1.平台课程资源引用(只读、不计配额)；2.自定义上传(默认 2，计入个人配额)
+     * </pre>
+     *
+     * <code>int32 origin_type = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOriginType() {
+      
+      originType = 0;
+      onChanged();
+      return this;
+    }
+
+    private int originCourseType ;
+    /**
+     * <pre>
+     * 平台资源来源课程类型：1.模块化；2.非模块化(origin_type=1 时有效)
+     * </pre>
+     *
+     * <code>int32 origin_course_type = 8;</code>
+     * @return The originCourseType.
+     */
+    @java.lang.Override
+    public int getOriginCourseType() {
+      return originCourseType ;
+    }
+    /**
+     * <pre>
+     * 平台资源来源课程类型：1.模块化；2.非模块化(origin_type=1 时有效)
+     * </pre>
+     *
+     * <code>int32 origin_course_type = 8;</code>
+     * @param value The originCourseType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOriginCourseType(int value) {
+      
+      originCourseType = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 平台资源来源课程类型：1.模块化；2.非模块化(origin_type=1 时有效)
+     * </pre>
+     *
+     * <code>int32 origin_course_type = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOriginCourseType() {
+      
+      originCourseType = 0;
+      onChanged();
+      return this;
+    }
+
+    private long originCourseId ;
+    /**
+     * <pre>
+     * 来源课程ID(origin_type=1 时必填)
+     * </pre>
+     *
+     * <code>int64 origin_course_id = 9;</code>
+     * @return The originCourseId.
+     */
+    @java.lang.Override
+    public long getOriginCourseId() {
+      return originCourseId ;
+    }
+    /**
+     * <pre>
+     * 来源课程ID(origin_type=1 时必填)
+     * </pre>
+     *
+     * <code>int64 origin_course_id = 9;</code>
+     * @param value The originCourseId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOriginCourseId(long value) {
+      
+      originCourseId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 来源课程ID(origin_type=1 时必填)
+     * </pre>
+     *
+     * <code>int64 origin_course_id = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOriginCourseId() {
+      
+      originCourseId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long originChapterId ;
+    /**
+     * <pre>
+     * 来源章节ID(origin_type=1 时必填)
+     * </pre>
+     *
+     * <code>int64 origin_chapter_id = 10;</code>
+     * @return The originChapterId.
+     */
+    @java.lang.Override
+    public long getOriginChapterId() {
+      return originChapterId ;
+    }
+    /**
+     * <pre>
+     * 来源章节ID(origin_type=1 时必填)
+     * </pre>
+     *
+     * <code>int64 origin_chapter_id = 10;</code>
+     * @param value The originChapterId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOriginChapterId(long value) {
+      
+      originChapterId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 来源章节ID(origin_type=1 时必填)
+     * </pre>
+     *
+     * <code>int64 origin_chapter_id = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOriginChapterId() {
+      
+      originChapterId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long originResourceId ;
+    /**
+     * <pre>
+     * 来源资源ID(origin_type=1 时必填)
+     * </pre>
+     *
+     * <code>int64 origin_resource_id = 11;</code>
+     * @return The originResourceId.
+     */
+    @java.lang.Override
+    public long getOriginResourceId() {
+      return originResourceId ;
+    }
+    /**
+     * <pre>
+     * 来源资源ID(origin_type=1 时必填)
+     * </pre>
+     *
+     * <code>int64 origin_resource_id = 11;</code>
+     * @param value The originResourceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOriginResourceId(long value) {
+      
+      originResourceId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 来源资源ID(origin_type=1 时必填)
+     * </pre>
+     *
+     * <code>int64 origin_resource_id = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOriginResourceId() {
+      
+      originResourceId = 0L;
       onChanged();
       return this;
     }

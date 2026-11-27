@@ -12,11 +12,11 @@ export { base, modules, course, user };
 export interface SchemeChapter {
   /** 章节名称(自定义) */
   chapter_name?: string;
-  /** 章节来源：1.来源课程章节；2.自定义 */
+  /** 章节来源：1.来源课程章节(仅历史数据兼容)；2.自定义(新数据固定为 2) */
   origin_type?: number;
-  /** 来源课程ID(origin_type=1 时填写) */
+  /** 来源课程ID(仅 origin_type=1 的历史数据有效) */
   origin_course_id?: string;
-  /** 原章节ID(origin_type=1 时填写) */
+  /** 原章节ID(仅 origin_type=1 的历史数据有效) */
   origin_chapter_id?: string;
   /** 顺序(从 1 开始) */
   chapter_index?: number;
@@ -28,11 +28,11 @@ export interface SchemeChapter {
 export interface SchemeLesson {
   /** 课节名称(自定义) */
   lesson_name?: string;
-  /** 课节形态：1.直接挂资源；2.含小节或任务(二者互斥) */
+  /** 课节形态：1.直接挂资源；2.含小节(二者互斥) */
   node_mode?: number;
-  /** 课节来源：1.来源课节；2.自定义 */
+  /** 课节来源：1.来源课节(仅历史数据兼容)；2.自定义(新数据固定为 2) */
   origin_type?: number;
-  /** 来源课程类型：1.模块化(course_resource)；2.非模块化(nm_course_resource) */
+  /** 来源课程类型：1.模块化(course_resource)；2.非模块化(nm_course_resource)（仅历史数据有效） */
   origin_course_type?: number;
   /** 来源课程ID(origin_type=1 时填写) */
   origin_course_id?: string;
@@ -50,9 +50,9 @@ export interface SchemeLesson {
   resources?: Array<SchemeLessonResource>;
 }
 
-/** 课程体系三级结构：小节/任务(不可再嵌套) */
+/** 课程体系三级结构：小节(不可再嵌套) */
 export interface SchemeLessonItem {
-  /** 下级节点类型：1.小节；2.任务 */
+  /** 下级节点类型：1.小节（新数据固定 1）；2.任务（仅历史数据兼容，不再新增） */
   item_type?: number;
   /** 名称(自定义) */
   item_name?: string;
@@ -64,11 +64,11 @@ export interface SchemeLessonItem {
   resources?: Array<SchemeLessonResource>;
 }
 
-/** 课程体系三级结构：课节或小节/任务挂载的资源 */
+/** 课程体系三级结构：课节或小节挂载的资源 */
 export interface SchemeLessonResource {
   /** 资源类型：1.视频；2.课件 */
   resource_type?: number;
-  /** OSS 地址(私有，展示时签名) */
+  /** OSS 地址(私有，展示时签名；平台资源为源课程资源对象 key) */
   file_url?: string;
   /** 原文件名 */
   file_name?: string;
@@ -76,8 +76,18 @@ export interface SchemeLessonResource {
   file_size?: string;
   /** 顺序 */
   sort?: number;
-  /** 资源稳定标识；平台来源课节为课程资源ID，自定义资源为 scheme_lesson_resource_id */
+  /** 资源稳定标识；平台来源资源为课程资源ID，自定义资源为 scheme_lesson_resource_id */
   resource_id?: string;
+  /** 资源来源：1.平台课程资源引用(只读、不计配额)；2.自定义上传(默认 2，计入个人配额) */
+  origin_type?: number;
+  /** 平台资源来源课程类型：1.模块化；2.非模块化(origin_type=1 时有效) */
+  origin_course_type?: number;
+  /** 来源课程ID(origin_type=1 时必填) */
+  origin_course_id?: string;
+  /** 来源章节ID(origin_type=1 时必填) */
+  origin_chapter_id?: string;
+  /** 来源资源ID(origin_type=1 时必填) */
+  origin_resource_id?: string;
 }
 
 export interface EduScheme {

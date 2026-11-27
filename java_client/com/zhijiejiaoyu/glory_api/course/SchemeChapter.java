@@ -175,7 +175,7 @@ private static final long serialVersionUID = 0L;
   private int originType ;
   /**
    * <pre>
-   * 章节来源：1.来源课程章节；2.自定义
+   * 章节来源：1.来源课程章节(仅历史数据兼容)；2.自定义(新数据固定为 2)
    * </pre>
    *
    * <code>int32 origin_type = 2;</code>
@@ -190,7 +190,7 @@ private static final long serialVersionUID = 0L;
   private long originCourseId ;
   /**
    * <pre>
-   * 来源课程ID(origin_type=1 时填写)
+   * 来源课程ID(仅 origin_type=1 的历史数据有效)
    * </pre>
    *
    * <code>int64 origin_course_id = 3;</code>
@@ -205,7 +205,7 @@ private static final long serialVersionUID = 0L;
   private long originChapterId ;
   /**
    * <pre>
-   * 原章节ID(origin_type=1 时填写)
+   * 原章节ID(仅 origin_type=1 的历史数据有效)
    * </pre>
    *
    * <code>int64 origin_chapter_id = 4;</code>
@@ -823,7 +823,7 @@ private static final long serialVersionUID = 0L;
     private int originType ;
     /**
      * <pre>
-     * 章节来源：1.来源课程章节；2.自定义
+     * 章节来源：1.来源课程章节(仅历史数据兼容)；2.自定义(新数据固定为 2)
      * </pre>
      *
      * <code>int32 origin_type = 2;</code>
@@ -835,7 +835,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 章节来源：1.来源课程章节；2.自定义
+     * 章节来源：1.来源课程章节(仅历史数据兼容)；2.自定义(新数据固定为 2)
      * </pre>
      *
      * <code>int32 origin_type = 2;</code>
@@ -850,7 +850,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 章节来源：1.来源课程章节；2.自定义
+     * 章节来源：1.来源课程章节(仅历史数据兼容)；2.自定义(新数据固定为 2)
      * </pre>
      *
      * <code>int32 origin_type = 2;</code>
@@ -866,7 +866,7 @@ private static final long serialVersionUID = 0L;
     private long originCourseId ;
     /**
      * <pre>
-     * 来源课程ID(origin_type=1 时填写)
+     * 来源课程ID(仅 origin_type=1 的历史数据有效)
      * </pre>
      *
      * <code>int64 origin_course_id = 3;</code>
@@ -878,7 +878,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 来源课程ID(origin_type=1 时填写)
+     * 来源课程ID(仅 origin_type=1 的历史数据有效)
      * </pre>
      *
      * <code>int64 origin_course_id = 3;</code>
@@ -893,7 +893,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 来源课程ID(origin_type=1 时填写)
+     * 来源课程ID(仅 origin_type=1 的历史数据有效)
      * </pre>
      *
      * <code>int64 origin_course_id = 3;</code>
@@ -909,7 +909,7 @@ private static final long serialVersionUID = 0L;
     private long originChapterId ;
     /**
      * <pre>
-     * 原章节ID(origin_type=1 时填写)
+     * 原章节ID(仅 origin_type=1 的历史数据有效)
      * </pre>
      *
      * <code>int64 origin_chapter_id = 4;</code>
@@ -921,7 +921,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 原章节ID(origin_type=1 时填写)
+     * 原章节ID(仅 origin_type=1 的历史数据有效)
      * </pre>
      *
      * <code>int64 origin_chapter_id = 4;</code>
@@ -936,7 +936,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 原章节ID(origin_type=1 时填写)
+     * 原章节ID(仅 origin_type=1 的历史数据有效)
      * </pre>
      *
      * <code>int64 origin_chapter_id = 4;</code>

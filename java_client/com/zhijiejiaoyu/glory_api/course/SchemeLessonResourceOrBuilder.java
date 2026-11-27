@@ -19,7 +19,7 @@ public interface SchemeLessonResourceOrBuilder extends
 
   /**
    * <pre>
-   * OSS 地址(私有，展示时签名)
+   * OSS 地址(私有，展示时签名；平台资源为源课程资源对象 key)
    * </pre>
    *
    * <code>string file_url = 2;</code>
@@ -28,7 +28,7 @@ public interface SchemeLessonResourceOrBuilder extends
   java.lang.String getFileUrl();
   /**
    * <pre>
-   * OSS 地址(私有，展示时签名)
+   * OSS 地址(私有，展示时签名；平台资源为源课程资源对象 key)
    * </pre>
    *
    * <code>string file_url = 2;</code>
@@ -79,11 +79,61 @@ public interface SchemeLessonResourceOrBuilder extends
 
   /**
    * <pre>
-   * 资源稳定标识；平台来源课节为课程资源ID，自定义资源为 scheme_lesson_resource_id
+   * 资源稳定标识；平台来源资源为课程资源ID，自定义资源为 scheme_lesson_resource_id
    * </pre>
    *
    * <code>int64 resource_id = 6;</code>
    * @return The resourceId.
    */
   long getResourceId();
+
+  /**
+   * <pre>
+   * 资源来源：1.平台课程资源引用(只读、不计配额)；2.自定义上传(默认 2，计入个人配额)
+   * </pre>
+   *
+   * <code>int32 origin_type = 7;</code>
+   * @return The originType.
+   */
+  int getOriginType();
+
+  /**
+   * <pre>
+   * 平台资源来源课程类型：1.模块化；2.非模块化(origin_type=1 时有效)
+   * </pre>
+   *
+   * <code>int32 origin_course_type = 8;</code>
+   * @return The originCourseType.
+   */
+  int getOriginCourseType();
+
+  /**
+   * <pre>
+   * 来源课程ID(origin_type=1 时必填)
+   * </pre>
+   *
+   * <code>int64 origin_course_id = 9;</code>
+   * @return The originCourseId.
+   */
+  long getOriginCourseId();
+
+  /**
+   * <pre>
+   * 来源章节ID(origin_type=1 时必填)
+   * </pre>
+   *
+   * <code>int64 origin_chapter_id = 10;</code>
+   * @return The originChapterId.
+   */
+  long getOriginChapterId();
+
+  /**
+   * <pre>
+   * 来源资源ID(origin_type=1 时必填)
+   * </pre>
+   *
+   * <code>int64 origin_resource_id = 11;</code>
+   * @return The originResourceId.
+   */
+  long getOriginResourceId();
 }

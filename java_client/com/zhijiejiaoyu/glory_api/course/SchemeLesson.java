@@ -208,7 +208,7 @@ private static final long serialVersionUID = 0L;
   private int nodeMode ;
   /**
    * <pre>
-   * 课节形态：1.直接挂资源；2.含小节或任务(二者互斥)
+   * 课节形态：1.直接挂资源；2.含小节(二者互斥)
    * </pre>
    *
    * <code>int32 node_mode = 2;</code>
@@ -223,7 +223,7 @@ private static final long serialVersionUID = 0L;
   private int originType ;
   /**
    * <pre>
-   * 课节来源：1.来源课节；2.自定义
+   * 课节来源：1.来源课节(仅历史数据兼容)；2.自定义(新数据固定为 2)
    * </pre>
    *
    * <code>int32 origin_type = 3;</code>
@@ -238,7 +238,7 @@ private static final long serialVersionUID = 0L;
   private int originCourseType ;
   /**
    * <pre>
-   * 来源课程类型：1.模块化(course_resource)；2.非模块化(nm_course_resource)
+   * 来源课程类型：1.模块化(course_resource)；2.非模块化(nm_course_resource)（仅历史数据有效）
    * </pre>
    *
    * <code>int32 origin_course_type = 4;</code>
@@ -1102,7 +1102,7 @@ private static final long serialVersionUID = 0L;
     private int nodeMode ;
     /**
      * <pre>
-     * 课节形态：1.直接挂资源；2.含小节或任务(二者互斥)
+     * 课节形态：1.直接挂资源；2.含小节(二者互斥)
      * </pre>
      *
      * <code>int32 node_mode = 2;</code>
@@ -1114,7 +1114,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课节形态：1.直接挂资源；2.含小节或任务(二者互斥)
+     * 课节形态：1.直接挂资源；2.含小节(二者互斥)
      * </pre>
      *
      * <code>int32 node_mode = 2;</code>
@@ -1129,7 +1129,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课节形态：1.直接挂资源；2.含小节或任务(二者互斥)
+     * 课节形态：1.直接挂资源；2.含小节(二者互斥)
      * </pre>
      *
      * <code>int32 node_mode = 2;</code>
@@ -1145,7 +1145,7 @@ private static final long serialVersionUID = 0L;
     private int originType ;
     /**
      * <pre>
-     * 课节来源：1.来源课节；2.自定义
+     * 课节来源：1.来源课节(仅历史数据兼容)；2.自定义(新数据固定为 2)
      * </pre>
      *
      * <code>int32 origin_type = 3;</code>
@@ -1157,7 +1157,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课节来源：1.来源课节；2.自定义
+     * 课节来源：1.来源课节(仅历史数据兼容)；2.自定义(新数据固定为 2)
      * </pre>
      *
      * <code>int32 origin_type = 3;</code>
@@ -1172,7 +1172,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 课节来源：1.来源课节；2.自定义
+     * 课节来源：1.来源课节(仅历史数据兼容)；2.自定义(新数据固定为 2)
      * </pre>
      *
      * <code>int32 origin_type = 3;</code>
@@ -1188,7 +1188,7 @@ private static final long serialVersionUID = 0L;
     private int originCourseType ;
     /**
      * <pre>
-     * 来源课程类型：1.模块化(course_resource)；2.非模块化(nm_course_resource)
+     * 来源课程类型：1.模块化(course_resource)；2.非模块化(nm_course_resource)（仅历史数据有效）
      * </pre>
      *
      * <code>int32 origin_course_type = 4;</code>
@@ -1200,7 +1200,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 来源课程类型：1.模块化(course_resource)；2.非模块化(nm_course_resource)
+     * 来源课程类型：1.模块化(course_resource)；2.非模块化(nm_course_resource)（仅历史数据有效）
      * </pre>
      *
      * <code>int32 origin_course_type = 4;</code>
@@ -1215,7 +1215,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 来源课程类型：1.模块化(course_resource)；2.非模块化(nm_course_resource)
+     * 来源课程类型：1.模块化(course_resource)；2.非模块化(nm_course_resource)（仅历史数据有效）
      * </pre>
      *
      * <code>int32 origin_course_type = 4;</code>

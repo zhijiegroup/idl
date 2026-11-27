@@ -5,7 +5,7 @@ package com.zhijiejiaoyu.glory_api.course;
 
 /**
  * <pre>
- * 课程体系三级结构：小节/任务(不可再嵌套)
+ * 课程体系三级结构：小节(不可再嵌套)
  * </pre>
  *
  * Protobuf type {@code glory_api.SchemeLessonItem}
@@ -124,7 +124,7 @@ private static final long serialVersionUID = 0L;
   private int itemType ;
   /**
    * <pre>
-   * 下级节点类型：1.小节；2.任务
+   * 下级节点类型：1.小节（新数据固定 1）；2.任务（仅历史数据兼容，不再新增）
    * </pre>
    *
    * <code>int32 item_type = 1;</code>
@@ -475,7 +475,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 课程体系三级结构：小节/任务(不可再嵌套)
+   * 课程体系三级结构：小节(不可再嵌套)
    * </pre>
    *
    * Protobuf type {@code glory_api.SchemeLessonItem}
@@ -690,7 +690,7 @@ private static final long serialVersionUID = 0L;
     private int itemType ;
     /**
      * <pre>
-     * 下级节点类型：1.小节；2.任务
+     * 下级节点类型：1.小节（新数据固定 1）；2.任务（仅历史数据兼容，不再新增）
      * </pre>
      *
      * <code>int32 item_type = 1;</code>
@@ -702,7 +702,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 下级节点类型：1.小节；2.任务
+     * 下级节点类型：1.小节（新数据固定 1）；2.任务（仅历史数据兼容，不再新增）
      * </pre>
      *
      * <code>int32 item_type = 1;</code>
@@ -717,7 +717,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 下级节点类型：1.小节；2.任务
+     * 下级节点类型：1.小节（新数据固定 1）；2.任务（仅历史数据兼容，不再新增）
      * </pre>
      *
      * <code>int32 item_type = 1;</code>

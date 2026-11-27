@@ -313,7 +313,7 @@ class SchemeLesson extends $pb.GeneratedMessage {
   $core.List<SchemeLessonResource> get resources => $_getList(10);
 }
 
-/// 课程体系三级结构：小节/任务(不可再嵌套)
+/// 课程体系三级结构：小节(不可再嵌套)
 class SchemeLessonItem extends $pb.GeneratedMessage {
   factory SchemeLessonItem({
     $core.int? itemType,
@@ -414,7 +414,7 @@ class SchemeLessonItem extends $pb.GeneratedMessage {
   $core.List<SchemeLessonResource> get resources => $_getList(4);
 }
 
-/// 课程体系三级结构：课节或小节/任务挂载的资源
+/// 课程体系三级结构：课节或小节挂载的资源
 class SchemeLessonResource extends $pb.GeneratedMessage {
   factory SchemeLessonResource({
     $core.int? resourceType,
@@ -423,6 +423,11 @@ class SchemeLessonResource extends $pb.GeneratedMessage {
     $fixnum.Int64? fileSize,
     $core.int? sort,
     $fixnum.Int64? resourceId,
+    $core.int? originType,
+    $core.int? originCourseType,
+    $fixnum.Int64? originCourseId,
+    $fixnum.Int64? originChapterId,
+    $fixnum.Int64? originResourceId,
   }) {
     final $result = create();
     if (resourceType != null) {
@@ -443,6 +448,21 @@ class SchemeLessonResource extends $pb.GeneratedMessage {
     if (resourceId != null) {
       $result.resourceId = resourceId;
     }
+    if (originType != null) {
+      $result.originType = originType;
+    }
+    if (originCourseType != null) {
+      $result.originCourseType = originCourseType;
+    }
+    if (originCourseId != null) {
+      $result.originCourseId = originCourseId;
+    }
+    if (originChapterId != null) {
+      $result.originChapterId = originChapterId;
+    }
+    if (originResourceId != null) {
+      $result.originResourceId = originResourceId;
+    }
     return $result;
   }
   SchemeLessonResource._() : super();
@@ -456,6 +476,11 @@ class SchemeLessonResource extends $pb.GeneratedMessage {
     ..aInt64(4, _omitFieldNames ? '' : 'fileSize')
     ..a<$core.int>(5, _omitFieldNames ? '' : 'sort', $pb.PbFieldType.O3)
     ..aInt64(6, _omitFieldNames ? '' : 'resourceId')
+    ..a<$core.int>(7, _omitFieldNames ? '' : 'originType', $pb.PbFieldType.O3)
+    ..a<$core.int>(8, _omitFieldNames ? '' : 'originCourseType', $pb.PbFieldType.O3)
+    ..aInt64(9, _omitFieldNames ? '' : 'originCourseId')
+    ..aInt64(10, _omitFieldNames ? '' : 'originChapterId')
+    ..aInt64(11, _omitFieldNames ? '' : 'originResourceId')
     ..hasRequiredFields = false
   ;
 
@@ -533,6 +558,51 @@ class SchemeLessonResource extends $pb.GeneratedMessage {
   $core.bool hasResourceId() => $_has(5);
   @$pb.TagNumber(6)
   void clearResourceId() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get originType => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set originType($core.int v) { $_setSignedInt32(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasOriginType() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearOriginType() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get originCourseType => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set originCourseType($core.int v) { $_setSignedInt32(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasOriginCourseType() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearOriginCourseType() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $fixnum.Int64 get originCourseId => $_getI64(8);
+  @$pb.TagNumber(9)
+  set originCourseId($fixnum.Int64 v) { $_setInt64(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasOriginCourseId() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearOriginCourseId() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $fixnum.Int64 get originChapterId => $_getI64(9);
+  @$pb.TagNumber(10)
+  set originChapterId($fixnum.Int64 v) { $_setInt64(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasOriginChapterId() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearOriginChapterId() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $fixnum.Int64 get originResourceId => $_getI64(10);
+  @$pb.TagNumber(11)
+  set originResourceId($fixnum.Int64 v) { $_setInt64(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasOriginResourceId() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearOriginResourceId() => clearField(11);
 }
 
 class EduScheme extends $pb.GeneratedMessage {

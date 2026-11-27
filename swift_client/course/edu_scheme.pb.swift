@@ -29,13 +29,13 @@ nonisolated struct GloryApi_SchemeChapter: Sendable {
   /// 章节名称(自定义)
   var chapterName: String = String()
 
-  /// 章节来源：1.来源课程章节；2.自定义
+  /// 章节来源：1.来源课程章节(仅历史数据兼容)；2.自定义(新数据固定为 2)
   var originType: Int32 = 0
 
-  /// 来源课程ID(origin_type=1 时填写)
+  /// 来源课程ID(仅 origin_type=1 的历史数据有效)
   var originCourseID: Int64 = 0
 
-  /// 原章节ID(origin_type=1 时填写)
+  /// 原章节ID(仅 origin_type=1 的历史数据有效)
   var originChapterID: Int64 = 0
 
   /// 顺序(从 1 开始)
@@ -58,13 +58,13 @@ nonisolated struct GloryApi_SchemeLesson: Sendable {
   /// 课节名称(自定义)
   var lessonName: String = String()
 
-  /// 课节形态：1.直接挂资源；2.含小节或任务(二者互斥)
+  /// 课节形态：1.直接挂资源；2.含小节(二者互斥)
   var nodeMode: Int32 = 0
 
-  /// 课节来源：1.来源课节；2.自定义
+  /// 课节来源：1.来源课节(仅历史数据兼容)；2.自定义(新数据固定为 2)
   var originType: Int32 = 0
 
-  /// 来源课程类型：1.模块化(course_resource)；2.非模块化(nm_course_resource)
+  /// 来源课程类型：1.模块化(course_resource)；2.非模块化(nm_course_resource)（仅历史数据有效）
   var originCourseType: Int32 = 0
 
   /// 来源课程ID(origin_type=1 时填写)
@@ -93,13 +93,13 @@ nonisolated struct GloryApi_SchemeLesson: Sendable {
   init() {}
 }
 
-/// 课程体系三级结构：小节/任务(不可再嵌套)
+/// 课程体系三级结构：小节(不可再嵌套)
 nonisolated struct GloryApi_SchemeLessonItem: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  /// 下级节点类型：1.小节；2.任务
+  /// 下级节点类型：1.小节（新数据固定 1）；2.任务（仅历史数据兼容，不再新增）
   var itemType: Int32 = 0
 
   /// 名称(自定义)
@@ -119,7 +119,7 @@ nonisolated struct GloryApi_SchemeLessonItem: Sendable {
   init() {}
 }
 
-/// 课程体系三级结构：课节或小节/任务挂载的资源
+/// 课程体系三级结构：课节或小节挂载的资源
 nonisolated struct GloryApi_SchemeLessonResource: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -128,7 +128,7 @@ nonisolated struct GloryApi_SchemeLessonResource: Sendable {
   /// 资源类型：1.视频；2.课件
   var resourceType: Int32 = 0
 
-  /// OSS 地址(私有，展示时签名)
+  /// OSS 地址(私有，展示时签名；平台资源为源课程资源对象 key)
   var fileURL: String = String()
 
   /// 原文件名
@@ -140,8 +140,23 @@ nonisolated struct GloryApi_SchemeLessonResource: Sendable {
   /// 顺序
   var sort: Int32 = 0
 
-  /// 资源稳定标识；平台来源课节为课程资源ID，自定义资源为 scheme_lesson_resource_id
+  /// 资源稳定标识；平台来源资源为课程资源ID，自定义资源为 scheme_lesson_resource_id
   var resourceID: Int64 = 0
+
+  /// 资源来源：1.平台课程资源引用(只读、不计配额)；2.自定义上传(默认 2，计入个人配额)
+  var originType: Int32 = 0
+
+  /// 平台资源来源课程类型：1.模块化；2.非模块化(origin_type=1 时有效)
+  var originCourseType: Int32 = 0
+
+  /// 来源课程ID(origin_type=1 时必填)
+  var originCourseID: Int64 = 0
+
+  /// 来源章节ID(origin_type=1 时必填)
+  var originChapterID: Int64 = 0
+
+  /// 来源资源ID(origin_type=1 时必填)
+  var originResourceID: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -921,7 +936,7 @@ nonisolated extension GloryApi_SchemeLessonItem: SwiftProtobuf.Message, SwiftPro
 
 nonisolated extension GloryApi_SchemeLessonResource: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".SchemeLessonResource"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}resource_type\0\u{3}file_url\0\u{3}file_name\0\u{3}file_size\0\u{1}sort\0\u{3}resource_id\0")
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}resource_type\0\u{3}file_url\0\u{3}file_name\0\u{3}file_size\0\u{1}sort\0\u{3}resource_id\0\u{3}origin_type\0\u{3}origin_course_type\0\u{3}origin_course_id\0\u{3}origin_chapter_id\0\u{3}origin_resource_id\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -935,6 +950,11 @@ nonisolated extension GloryApi_SchemeLessonResource: SwiftProtobuf.Message, Swif
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.fileSize) }()
       case 5: try { try decoder.decodeSingularInt32Field(value: &self.sort) }()
       case 6: try { try decoder.decodeSingularInt64Field(value: &self.resourceID) }()
+      case 7: try { try decoder.decodeSingularInt32Field(value: &self.originType) }()
+      case 8: try { try decoder.decodeSingularInt32Field(value: &self.originCourseType) }()
+      case 9: try { try decoder.decodeSingularInt64Field(value: &self.originCourseID) }()
+      case 10: try { try decoder.decodeSingularInt64Field(value: &self.originChapterID) }()
+      case 11: try { try decoder.decodeSingularInt64Field(value: &self.originResourceID) }()
       default: break
       }
     }
@@ -959,6 +979,21 @@ nonisolated extension GloryApi_SchemeLessonResource: SwiftProtobuf.Message, Swif
     if self.resourceID != 0 {
       try visitor.visitSingularInt64Field(value: self.resourceID, fieldNumber: 6)
     }
+    if self.originType != 0 {
+      try visitor.visitSingularInt32Field(value: self.originType, fieldNumber: 7)
+    }
+    if self.originCourseType != 0 {
+      try visitor.visitSingularInt32Field(value: self.originCourseType, fieldNumber: 8)
+    }
+    if self.originCourseID != 0 {
+      try visitor.visitSingularInt64Field(value: self.originCourseID, fieldNumber: 9)
+    }
+    if self.originChapterID != 0 {
+      try visitor.visitSingularInt64Field(value: self.originChapterID, fieldNumber: 10)
+    }
+    if self.originResourceID != 0 {
+      try visitor.visitSingularInt64Field(value: self.originResourceID, fieldNumber: 11)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -969,6 +1004,11 @@ nonisolated extension GloryApi_SchemeLessonResource: SwiftProtobuf.Message, Swif
     if lhs.fileSize != rhs.fileSize {return false}
     if lhs.sort != rhs.sort {return false}
     if lhs.resourceID != rhs.resourceID {return false}
+    if lhs.originType != rhs.originType {return false}
+    if lhs.originCourseType != rhs.originCourseType {return false}
+    if lhs.originCourseID != rhs.originCourseID {return false}
+    if lhs.originChapterID != rhs.originChapterID {return false}
+    if lhs.originResourceID != rhs.originResourceID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

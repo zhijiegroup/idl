@@ -136,79 +136,82 @@ public final class EduSchemeOuterClass {
       "\001\n\020SchemeLessonItem\022\021\n\titem_type\030\001 \001(\005\022\021" +
       "\n\titem_name\030\002 \001(\t\022\r\n\005hours\030\003 \001(\002\022\014\n\004sort" +
       "\030\004 \001(\005\0222\n\tresources\030\005 \003(\0132\037.glory_api.Sc" +
-      "hemeLessonResource\"\210\001\n\024SchemeLessonResou" +
+      "hemeLessonResource\"\212\002\n\024SchemeLessonResou" +
       "rce\022\025\n\rresource_type\030\001 \001(\005\022\020\n\010file_url\030\002" +
       " \001(\t\022\021\n\tfile_name\030\003 \001(\t\022\021\n\tfile_size\030\004 \001" +
-      "(\003\022\014\n\004sort\030\005 \001(\005\022\023\n\013resource_id\030\006 \001(\003\"\237\004" +
-      "\n\tEduScheme\022\025\n\redu_scheme_id\030\001 \001(\003\022\014\n\004na" +
-      "me\030\002 \001(\t\022\r\n\005major\030\003 \001(\t\022\014\n\004goal\030\004 \001(\t\022\023\n" +
-      "\013total_hours\030\005 \001(\001\022\027\n\017knowledge_hours\030\006 " +
-      "\001(\001\022\023\n\013skill_hours\030\007 \001(\001\022\022\n\ncreated_at\030\010" +
-      " \001(\t\022\032\n\022knowledge_standard\030\t \001(\t\022\030\n\020abil" +
-      "ity_standard\030\n \001(\t\022\032\n\022character_standard" +
-      "\030\013 \001(\t\022\031\n\021course_group_name\030\014 \001(\t\022\027\n\017cou" +
-      "rse_group_id\030\r \001(\003\022\022\n\ncreated_by\030\016 \001(\003\022/" +
-      "\n\016course_modules\030\017 \003(\0132\027.glory_api.Cours" +
-      "eModule\022&\n\007classes\030\020 \003(\0132\025.glory_api.Ten" +
-      "antDept\022*\n\010chapters\030\021 \003(\0132\030.glory_api.Sc" +
-      "hemeChapter\022\022\n\ncover_path\030\022 \001(\t\022\021\n\tcover" +
-      "_url\030\023 \001(\t\022\031\n\021square_cover_path\030\024 \001(\t\022\030\n" +
-      "\020square_cover_url\030\025 \001(\t\"\232\003\n\026CreateEduSch" +
-      "emeRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
-      "BaseRequest\022\014\n\004name\030\002 \001(\t\022\r\n\005major\030\003 \001(\t" +
-      "\022\014\n\004goal\030\004 \001(\t\022\014\n\004type\030\005 \001(\005\022\032\n\022knowledg" +
-      "e_standard\030\006 \001(\t\022\030\n\020ability_standard\030\007 \001" +
-      "(\t\022\032\n\022character_standard\030\010 \001(\t\022\022\n\ngroup_" +
-      "name\030\t \001(\t\022\023\n\013skill_hours\030\n \001(\002\022\027\n\017knowl" +
-      "edge_hours\030\013 \001(\002\022/\n\016course_modules\030\017 \003(\013" +
-      "2\027.glory_api.CourseModule\022*\n\010chapters\030\020 " +
-      "\003(\0132\030.glory_api.SchemeChapter\022\022\n\ncover_p" +
-      "ath\030\021 \001(\t\022\031\n\021square_cover_path\030\022 \001(\t\"W\n\027" +
-      "CreateEduSchemeResponse\022%\n\tbase_resp\030\001 \001" +
-      "(\0132\022.base.BaseResponse\022\025\n\redu_scheme_id\030" +
-      "\002 \001(\003\"\261\003\n\026UpdateEduSchemeRequest\022\'\n\014base" +
-      "_request\030\001 \001(\0132\021.base.BaseRequest\022\014\n\004nam" +
-      "e\030\002 \001(\t\022\r\n\005major\030\003 \001(\t\022\014\n\004goal\030\004 \001(\t\022\014\n\004" +
-      "type\030\005 \001(\005\022\032\n\022knowledge_standard\030\006 \001(\t\022\030" +
-      "\n\020ability_standard\030\007 \001(\t\022\032\n\022character_st" +
-      "andard\030\010 \001(\t\022\022\n\ngroup_name\030\t \001(\t\022\025\n\redu_" +
-      "scheme_id\030\n \001(\003\022\023\n\013skill_hours\030\013 \001(\002\022\027\n\017" +
-      "knowledge_hours\030\014 \001(\002\022/\n\016course_modules\030" +
-      "\r \003(\0132\027.glory_api.CourseModule\022*\n\010chapte" +
-      "rs\030\016 \003(\0132\030.glory_api.SchemeChapter\022\022\n\nco" +
-      "ver_path\030\017 \001(\t\022\031\n\021square_cover_path\030\020 \001(" +
-      "\t\"@\n\027UpdateEduSchemeResponse\022%\n\tbase_res" +
-      "p\030\001 \001(\0132\022.base.BaseResponse\"X\n\026DeleteEdu" +
-      "SchemeRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
-      "se.BaseRequest\022\025\n\redu_scheme_id\030\002 \001(\003\"@\n" +
-      "\027DeleteEduSchemeResponse\022%\n\tbase_resp\030\001 " +
-      "\001(\0132\022.base.BaseResponse\"\227\001\n\024ListEduSchem" +
-      "eRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
-      "seRequest\022\014\n\004type\030\002 \001(\005\022\014\n\004name\030\003 \001(\t\022\r\n" +
-      "\005major\030\004 \001(\t\022+\n\npagination\030d \001(\0132\027.base." +
-      "PaginationRequest\"\233\001\n\025ListEduSchemeRespo" +
-      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
-      "se\022-\n\017edu_scheme_list\030\002 \003(\0132\024.glory_api." +
-      "EduScheme\022,\n\npagination\030d \001(\0132\030.base.Pag" +
-      "inationResponse\"j\n\026EduSchemeDetailReques" +
-      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
-      "st\022\025\n\redu_scheme_id\030\002 \001(\003\022\020\n\010playback\030\003 " +
-      "\001(\010\"\177\n\027EduSchemeDetailResponse\022%\n\tbase_r" +
-      "esp\030\001 \001(\0132\022.base.BaseResponse\022+\n\rscheme_" +
-      "detail\030\002 \001(\0132\024.glory_api.EduScheme\022\020\n\010cl" +
-      "as_ids\030\003 \003(\003\"n\n\032DistributeEduSchemeReque" +
+      "(\003\022\014\n\004sort\030\005 \001(\005\022\023\n\013resource_id\030\006 \001(\003\022\023\n" +
+      "\013origin_type\030\007 \001(\005\022\032\n\022origin_course_type" +
+      "\030\010 \001(\005\022\030\n\020origin_course_id\030\t \001(\003\022\031\n\021orig" +
+      "in_chapter_id\030\n \001(\003\022\032\n\022origin_resource_i" +
+      "d\030\013 \001(\003\"\237\004\n\tEduScheme\022\025\n\redu_scheme_id\030\001" +
+      " \001(\003\022\014\n\004name\030\002 \001(\t\022\r\n\005major\030\003 \001(\t\022\014\n\004goa" +
+      "l\030\004 \001(\t\022\023\n\013total_hours\030\005 \001(\001\022\027\n\017knowledg" +
+      "e_hours\030\006 \001(\001\022\023\n\013skill_hours\030\007 \001(\001\022\022\n\ncr" +
+      "eated_at\030\010 \001(\t\022\032\n\022knowledge_standard\030\t \001" +
+      "(\t\022\030\n\020ability_standard\030\n \001(\t\022\032\n\022characte" +
+      "r_standard\030\013 \001(\t\022\031\n\021course_group_name\030\014 " +
+      "\001(\t\022\027\n\017course_group_id\030\r \001(\003\022\022\n\ncreated_" +
+      "by\030\016 \001(\003\022/\n\016course_modules\030\017 \003(\0132\027.glory" +
+      "_api.CourseModule\022&\n\007classes\030\020 \003(\0132\025.glo" +
+      "ry_api.TenantDept\022*\n\010chapters\030\021 \003(\0132\030.gl" +
+      "ory_api.SchemeChapter\022\022\n\ncover_path\030\022 \001(" +
+      "\t\022\021\n\tcover_url\030\023 \001(\t\022\031\n\021square_cover_pat" +
+      "h\030\024 \001(\t\022\030\n\020square_cover_url\030\025 \001(\t\"\232\003\n\026Cr" +
+      "eateEduSchemeRequest\022\'\n\014base_request\030\001 \001" +
+      "(\0132\021.base.BaseRequest\022\014\n\004name\030\002 \001(\t\022\r\n\005m" +
+      "ajor\030\003 \001(\t\022\014\n\004goal\030\004 \001(\t\022\014\n\004type\030\005 \001(\005\022\032" +
+      "\n\022knowledge_standard\030\006 \001(\t\022\030\n\020ability_st" +
+      "andard\030\007 \001(\t\022\032\n\022character_standard\030\010 \001(\t" +
+      "\022\022\n\ngroup_name\030\t \001(\t\022\023\n\013skill_hours\030\n \001(" +
+      "\002\022\027\n\017knowledge_hours\030\013 \001(\002\022/\n\016course_mod" +
+      "ules\030\017 \003(\0132\027.glory_api.CourseModule\022*\n\010c" +
+      "hapters\030\020 \003(\0132\030.glory_api.SchemeChapter\022" +
+      "\022\n\ncover_path\030\021 \001(\t\022\031\n\021square_cover_path" +
+      "\030\022 \001(\t\"W\n\027CreateEduSchemeResponse\022%\n\tbas" +
+      "e_resp\030\001 \001(\0132\022.base.BaseResponse\022\025\n\redu_" +
+      "scheme_id\030\002 \001(\003\"\261\003\n\026UpdateEduSchemeReque" +
       "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
-      "est\022\025\n\redu_scheme_id\030\002 \001(\003\022\020\n\010clas_ids\030\003" +
-      " \003(\003\"D\n\033DistributeEduSchemeResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\"m\n\035Ge" +
-      "tEduSchemeLikeCourseRequest\022\'\n\014base_requ" +
-      "est\030\001 \001(\0132\021.base.BaseRequest\022\025\n\redu_sche" +
-      "me_id\030\002 \001(\003\022\014\n\004role\030\003 \001(\t\"\203\001\n\036GetEduSche" +
-      "meLikeCourseResponse\022%\n\tbase_resp\030\001 \001(\0132" +
-      "\022.base.BaseResponse\022!\n\006course\030\002 \001(\0132\021.gl" +
-      "ory_api.Course\022\027\n\017course_progress\030\003 \001(\003B" +
-      "%\n!com.zhijiejiaoyu.glory_api.courseP\001b\006" +
-      "proto3"
+      "est\022\014\n\004name\030\002 \001(\t\022\r\n\005major\030\003 \001(\t\022\014\n\004goal" +
+      "\030\004 \001(\t\022\014\n\004type\030\005 \001(\005\022\032\n\022knowledge_standa" +
+      "rd\030\006 \001(\t\022\030\n\020ability_standard\030\007 \001(\t\022\032\n\022ch" +
+      "aracter_standard\030\010 \001(\t\022\022\n\ngroup_name\030\t \001" +
+      "(\t\022\025\n\redu_scheme_id\030\n \001(\003\022\023\n\013skill_hours" +
+      "\030\013 \001(\002\022\027\n\017knowledge_hours\030\014 \001(\002\022/\n\016cours" +
+      "e_modules\030\r \003(\0132\027.glory_api.CourseModule" +
+      "\022*\n\010chapters\030\016 \003(\0132\030.glory_api.SchemeCha" +
+      "pter\022\022\n\ncover_path\030\017 \001(\t\022\031\n\021square_cover" +
+      "_path\030\020 \001(\t\"@\n\027UpdateEduSchemeResponse\022%" +
+      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"X\n" +
+      "\026DeleteEduSchemeRequest\022\'\n\014base_request\030" +
+      "\001 \001(\0132\021.base.BaseRequest\022\025\n\redu_scheme_i" +
+      "d\030\002 \001(\003\"@\n\027DeleteEduSchemeResponse\022%\n\tba" +
+      "se_resp\030\001 \001(\0132\022.base.BaseResponse\"\227\001\n\024Li" +
+      "stEduSchemeRequest\022\'\n\014base_request\030\001 \001(\013" +
+      "2\021.base.BaseRequest\022\014\n\004type\030\002 \001(\005\022\014\n\004nam" +
+      "e\030\003 \001(\t\022\r\n\005major\030\004 \001(\t\022+\n\npagination\030d \001" +
+      "(\0132\027.base.PaginationRequest\"\233\001\n\025ListEduS" +
+      "chemeResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
+      "BaseResponse\022-\n\017edu_scheme_list\030\002 \003(\0132\024." +
+      "glory_api.EduScheme\022,\n\npagination\030d \001(\0132" +
+      "\030.base.PaginationResponse\"j\n\026EduSchemeDe" +
+      "tailRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
+      ".BaseRequest\022\025\n\redu_scheme_id\030\002 \001(\003\022\020\n\010p" +
+      "layback\030\003 \001(\010\"\177\n\027EduSchemeDetailResponse" +
+      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022" +
+      "+\n\rscheme_detail\030\002 \001(\0132\024.glory_api.EduSc" +
+      "heme\022\020\n\010clas_ids\030\003 \003(\003\"n\n\032DistributeEduS" +
+      "chemeRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
+      "e.BaseRequest\022\025\n\redu_scheme_id\030\002 \001(\003\022\020\n\010" +
+      "clas_ids\030\003 \003(\003\"D\n\033DistributeEduSchemeRes" +
+      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
+      "onse\"m\n\035GetEduSchemeLikeCourseRequest\022\'\n" +
+      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022\025" +
+      "\n\redu_scheme_id\030\002 \001(\003\022\014\n\004role\030\003 \001(\t\"\203\001\n\036" +
+      "GetEduSchemeLikeCourseResponse\022%\n\tbase_r" +
+      "esp\030\001 \001(\0132\022.base.BaseResponse\022!\n\006course\030" +
+      "\002 \001(\0132\021.glory_api.Course\022\027\n\017course_progr" +
+      "ess\030\003 \001(\003B%\n!com.zhijiejiaoyu.glory_api." +
+      "courseP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -241,7 +244,7 @@ public final class EduSchemeOuterClass {
     internal_static_glory_api_SchemeLessonResource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_SchemeLessonResource_descriptor,
-        new java.lang.String[] { "ResourceType", "FileUrl", "FileName", "FileSize", "Sort", "ResourceId", });
+        new java.lang.String[] { "ResourceType", "FileUrl", "FileName", "FileSize", "Sort", "ResourceId", "OriginType", "OriginCourseType", "OriginCourseId", "OriginChapterId", "OriginResourceId", });
     internal_static_glory_api_EduScheme_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_glory_api_EduScheme_fieldAccessorTable = new
