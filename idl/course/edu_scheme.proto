@@ -11,9 +11,9 @@ import "user/user.proto";
 // 课程体系三级结构：章节
 message SchemeChapter {
     string chapter_name = 1; // 章节名称(自定义)
-    int32 origin_type = 2; // 章节来源：1.来源课程章节；2.自定义
-    int64 origin_course_id = 3; // 来源课程ID(origin_type=1 时填写)
-    int64 origin_chapter_id = 4; // 原章节ID(origin_type=1 时填写)
+    int32 origin_type = 2; // 章节来源：1.来源课程章节(仅历史数据兼容)；2.自定义(新数据固定为 2)
+    int64 origin_course_id = 3; // 来源课程ID(仅 origin_type=1 的历史数据有效)
+    int64 origin_chapter_id = 4; // 原章节ID(仅 origin_type=1 的历史数据有效)
     int32 chapter_index = 5; // 顺序(从 1 开始)
     repeated SchemeLesson lessons = 6; // 课节列表
 }
@@ -21,9 +21,9 @@ message SchemeChapter {
 // 课程体系三级结构：课节
 message SchemeLesson {
     string lesson_name = 1; // 课节名称(自定义)
-    int32 node_mode = 2; // 课节形态：1.直接挂资源；2.含小节或任务(二者互斥)
-    int32 origin_type = 3; // 课节来源：1.来源课节；2.自定义
-    int32 origin_course_type = 4; // 来源课程类型：1.模块化(course_resource)；2.非模块化(nm_course_resource)
+    int32 node_mode = 2; // 课节形态：1.直接挂资源；2.含小节(二者互斥)
+    int32 origin_type = 3; // 课节来源：1.来源课节(仅历史数据兼容)；2.自定义(新数据固定为 2)
+    int32 origin_course_type = 4; // 来源课程类型：1.模块化(course_resource)；2.非模块化(nm_course_resource)（仅历史数据有效）
     int64 origin_course_id = 5; // 来源课程ID(origin_type=1 时填写)
     int64 origin_chapter_id = 6; // 来源章节ID(origin_type=1 时填写)
     int64 origin_resource_id = 7; // 来源课节资源ID(origin_type=1 时填写)
@@ -33,23 +33,28 @@ message SchemeLesson {
     repeated SchemeLessonResource resources = 11; // 课节直挂资源(node_mode=1 时可用)
 }
 
-// 课程体系三级结构：小节/任务(不可再嵌套)
+// 课程体系三级结构：小节(不可再嵌套)
 message SchemeLessonItem {
-    int32 item_type = 1; // 下级节点类型：1.小节；2.任务
+    int32 item_type = 1; // 下级节点类型：1.小节（新数据固定 1）；2.任务（仅历史数据兼容，不再新增）
     string item_name = 2; // 名称(自定义)
     float hours = 3; // 课时
     int32 sort = 4; // 顺序
     repeated SchemeLessonResource resources = 5; // 资源列表
 }
 
-// 课程体系三级结构：课节或小节/任务挂载的资源
+// 课程体系三级结构：课节或小节挂载的资源
 message SchemeLessonResource {
     int32 resource_type = 1; // 资源类型：1.视频；2.课件
-    string file_url = 2; // OSS 地址(私有，展示时签名)
+    string file_url = 2; // OSS 地址(私有，展示时签名；平台资源为源课程资源对象 key)
     string file_name = 3; // 原文件名
     int64 file_size = 4; // 文件大小(字节)
     int32 sort = 5; // 顺序
-    int64 resource_id = 6; // 资源稳定标识；平台来源课节为课程资源ID，自定义资源为 scheme_lesson_resource_id
+    int64 resource_id = 6; // 资源稳定标识；平台来源资源为课程资源ID，自定义资源为 scheme_lesson_resource_id
+    int32 origin_type = 7; // 资源来源：1.平台课程资源引用(只读、不计配额)；2.自定义上传(默认 2，计入个人配额)
+    int32 origin_course_type = 8; // 平台资源来源课程类型：1.模块化；2.非模块化(origin_type=1 时有效)
+    int64 origin_course_id = 9; // 来源课程ID(origin_type=1 时必填)
+    int64 origin_chapter_id = 10; // 来源章节ID(origin_type=1 时必填)
+    int64 origin_resource_id = 11; // 来源资源ID(origin_type=1 时必填)
 }
 
 message EduScheme {
